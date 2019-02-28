@@ -59,6 +59,20 @@ const Component = Platform.select({
 <Component />;
 ```
 
+
+说明：：
+
+这一方法可以接受任何合法类型的参数，因此你也可以直接用它针对不同平台返回不同的组件，像下面这样：
+
+导入的组件需要访问default属性，不然得到是一个对象！！ --  组件写法不变内部也是使用export default作为导出
+```
+const PlatformComp = Platform.select({
+  ios: () => require('../../components/plantform.ios'),
+  android: () => require('../../components/plantform.android')
+})().default
+```
+然后就能正常使用组件了，PlatformComp
+
 ### 检测 Android 版本
 
 在 Android 上，`Version`属性是一个数字，表示 Android 的 api level：
