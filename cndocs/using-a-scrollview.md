@@ -52,8 +52,8 @@ export default class IScrolledDownAndWhatHappenedNextShockedMe extends Component
 }
 ```
 
-ScrollViews can be configured to allow paging through views using swiping gestures by using the `pagingEnabled` props. Swiping horizontally between views can also be implemented on Android using the [ViewPagerAndroid](viewpagerandroid.md) component.
+可以通过配置 ScrollViews 组件的 `pagingEnabled` 属性来开启多个 View 组件间扫动翻页的功能。在安卓系统中，可以通过 [ViewPagerAndroid](viewpagerandroid.md) 组件来实现多个 View 组件间的横向扫动。
 
-在iOS上A ScrollView with a single item can be used to allow the user to zoom content. Set up the `maximumZoomScale` and `minimumZoomScale` props and your user will be able to use pinch and expand gestures to zoom in and out.
+只有一个子组件的 ScrollView 组件可以用于伸缩页面大小。通过设置 `maximunZoonScale` 和 `minimumZoonScale` 属性，用户可以在手机屏幕通过两手指来缩小和放大页面内容。
 
 `ScrollView`适合用来显示数量不多的滚动元素。放置在`ScrollView`中的所有组件都会被渲染，哪怕有些组件因为内容太长被挤出了屏幕外。如果你需要显示较长的滚动列表，那么应该使用功能差不多但性能更好的`FlatList`组件。下面我们来看看[如何使用长列表](using-a-listview.md)。
