@@ -137,10 +137,10 @@ public class CustomToastPackage implements ReactPackage {
 }
 ```
 
-这个 package 需要在`MainApplication.java`文件的`getPackages`方法中提供。这个文件位于你的 react-native 应用文件夹的 android 目录中。具体路径是: `android/app/src/main/java/com/your-app-name/MainApplication.java`.
+这个 package 需要在`MainActivity.java`文件的`getPackages`方法中提供。这个文件位于你的 react-native 应用文件夹的 android 目录中。具体路径是: `android/app/src/main/java/com/your-app-name/MainActivity.java`.
 
 ```java
-// MainApplication.java
+// MainActivity.java
 ...
 import com.your-app-name.CustomToastPackage; // <-- 引入你自己的包
 ...
