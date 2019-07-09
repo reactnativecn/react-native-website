@@ -52,7 +52,7 @@ export default class IScrolledDownAndWhatHappenedNextShockedMe extends Component
 }
 ```
 
-ScrollViews can be configured to allow paging through views using swiping gestures by using the `pagingEnabled` props. Swiping horizontally between views can also be implemented on Android using the [ViewPagerAndroid](viewpagerandroid.md) component.
+可以通过配置ScrollViews的属性 `pagingEnabled` 去允许使用滑动手势对视图进行浏览。 在Android里，视图之间水平滑动也可以使用 [ViewPagerAndroid](viewpagerandroid.md) 组件实现。
 
 在iOS上A ScrollView with a single item can be used to allow the user to zoom content. Set up the `maximumZoomScale` and `minimumZoomScale` props and your user will be able to use pinch and expand gestures to zoom in and out.
 
