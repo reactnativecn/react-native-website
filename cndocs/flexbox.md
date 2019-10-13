@@ -13,9 +13,8 @@ title: 使用Flexbox布局
 
 ### Flex
 
-[`flex`](layout-props#flex) will define how your items are going to **“fill”** over the available space along your main axis. Space will be divided according to each element's flex property.
+[`flex`](layout-props#flex)将定义您的项目如何沿主轴的可用空间**“填充”**。空间将根据每个元素的flex属性进行划分。在以下示例中，红色，黄色和绿色视图都是容器视图中具有flex：1集的所有子级。红色视图使用`flex：1`，黄色视图使用`flex：2`，绿色视图使用`flex：3`。 **1+2+3 = 6** ，这意味着红色视图将获得空间的`1/6`，黄色将获得空间的`2/6`，绿色将获得空间的`3/6`。
 
-In the following example the red, yellow and the green views are all children in the container view that have `flex: 1` set. The red view uses `flex: 1` , the yellow view uses `flex: 2` and the green view uses `flex: 3` . **1+2+3 = 6** which means that the red view will get `1/6` of the space, the yellow `2/6` of the space and the green `3/6` of the space.
 
 ![Flex](https://cdn-images-1.medium.com/max/800/1*PhCFmO5tYX_sZSyCd4vO3w.png)
 
