@@ -5,7 +5,7 @@ title: ScrollView
 
 一个封装了平台的ScrollView（滚动视图）的组件，同时还集成了触摸锁定的“响应者”系统。
 
-记住ScrollView必须有一个确定的高度才能正常工作，因为它实际上所做的就是将一系列不确定高度的子组件装进一个确定高度的容器（通过滚动操作）。要给ScrollView一个确定的高度的话，要么直接给它设置高度（不建议），要么确定所有的父容器都有确定的高度。一般来说我们会给ScrollView设置`flex: 1`以使其自动填充父容器的空余空间，但前提条件是所有的父容器本身也设置了flex或者指定了高度，否则就会导致无法正常滚动，你可以使用元素查看器来查找具体哪一层高度不正确。
+记住ScrollView必须有一个确定的高度才能正常工作，因为它实际上所做的就是将一系列不确定高度的子组件装进一个确定高度的容器（通过滚动操作）。要给一个ScrollView确定一个高度的话，要么直接给它设置高度（不建议），要么确定所有的父容器都有确定的高度。一般来说我们会给ScrollView设置`flex: 1`以使其自动填充父容器的空余空间，但前提条件是所有的父容器本身也设置了flex或者指定了高度，否则就会导致无法正常滚动，你可以使用元素查看器来查找问题的原因。
 
 ScrollView内部的其他响应者尚无法阻止ScrollView本身成为响应者。
 
@@ -15,21 +15,67 @@ ScrollView内部的其他响应者尚无法阻止ScrollView本身成为响应者
 
 此外`FlatList`还可以方便地渲染行间分隔线，支持多列布局，无限滚动加载等等。
 
+### 查看Props
+
+* [View props...](view.md#props)
+
+- [`alwaysBounceVertical`](scrollview.md#alwaysbouncevertical)
+- [`contentContainerStyle`](scrollview.md#contentcontainerstyle)
+- [`keyboardDismissMode`](scrollview.md#keyboarddismissmode)
+- [`keyboardShouldPersistTaps`](scrollview.md#keyboardshouldpersisttaps)
+- [`onContentSizeChange`](scrollview.md#oncontentsizechange)
+- [`onMomentumScrollBegin`](scrollview.md#onmomentumscrollbegin)
+- [`onMomentumScrollEnd`](scrollview.md#onmomentumscrollend)
+- [`onScroll`](scrollview.md#onscroll)
+- [`onScrollBeginDrag`](scrollview.md#onscrollbegindrag)
+- [`onScrollEndDrag`](scrollview.md#onscrollenddrag)
+- [`pagingEnabled`](scrollview.md#pagingenabled)
+- [`refreshControl`](scrollview.md#refreshcontrol)
+- [`removeClippedSubviews`](scrollview.md#removeclippedsubviews)
+- [`scrollEnabled`](scrollview.md#scrollenabled)
+- [`showsHorizontalScrollIndicator`](scrollview.md#showshorizontalscrollindicator)
+- [`showsVerticalScrollIndicator`](scrollview.md#showsverticalscrollindicator)
+- [`stickyHeaderIndices`](scrollview.md#stickyheaderindices)
+- [`endFillColor`](scrollview.md#endfillcolor)
+- [`overScrollMode`](scrollview.md#overscrollmode)
+- [`scrollPerfTag`](scrollview.md#scrollperftag)
+- [`DEPRECATED_sendUpdatedChildFrames`](scrollview.md#deprecated-sendupdatedchildframes)
+- [`alwaysBounceHorizontal`](scrollview.md#alwaysbouncehorizontal)
+- [`horizontal`](scrollview.md#horizontal)
+- [`automaticallyAdjustContentInsets`](scrollview.md#automaticallyadjustcontentinsets)
+- [`bounces`](scrollview.md#bounces)
+- [`bouncesZoom`](scrollview.md#bounceszoom)
+- [`canCancelContentTouches`](scrollview.md#cancancelcontenttouches)
+- [`centerContent`](scrollview.md#centercontent)
+- [`contentInset`](scrollview.md#contentinset)
+- [`contentInsetAdjustmentBehavior`](scrollview.md#contentinsetadjustmentbehavior)
+- [`contentOffset`](scrollview.md#contentoffset)
+- [`decelerationRate`](scrollview.md#decelerationrate)
+- [`directionalLockEnabled`](scrollview.md#directionallockenabled)
+- [`indicatorStyle`](scrollview.md#indicatorstyle)
+- [`maximumZoomScale`](scrollview.md#maximumzoomscale)
+- [`minimumZoomScale`](scrollview.md#minimumzoomscale)
+- [`pinchGestureEnabled`](scrollview.md#pinchgestureenabled)
+- [`scrollEventThrottle`](scrollview.md#scrolleventthrottle)
+- [`scrollIndicatorInsets`](scrollview.md#scrollindicatorinsets)
+- [`scrollsToTop`](scrollview.md#scrollstotop)
+- [`snapToAlignment`](scrollview.md#snaptoalignment)
+- [`snapToInterval`](scrollview.md#snaptointerval)
+- [`zoomScale`](scrollview.md#zoomscale)
+- [`nestedScrollEnabled`](scrollview.md#nestedscrollenabled)
+
+### 查看方法
+
+* [`scrollTo`](scrollview.md#scrollto)
+* [`scrollToEnd`](scrollview.md#scrolltoend)
+* [`scrollWithoutAnimationTo`](scrollview.md#scrollwithoutanimationto)
+* [`flashScrollIndicators`](scrollview.md#flashscrollindicators)
+
 ---
 
 # 文档
 
 ## Props
-
-### `alwaysBounceHorizontal`
-
-When true, the scroll view bounces horizontally when it reaches the end even if the content is smaller than the scroll view itself. The default value is true when `horizontal={true}` and false otherwise.
-
-| Type | Required | Platform |
-| ---- | -------- | -------- |
-| bool | No       | iOS      |
-
----
 
 ### `alwaysBounceVertical`
 
@@ -61,16 +107,6 @@ const styles = StyleSheet.create({
 | 类型                                 | 必填 |
 | ------------------------------------ | ---- |
 | StyleSheetPropType(View Style props) | 否   |
-
----
-
-### `disableScrollViewPanResponder`
-
-When true, the default JS pan responder on the ScrollView is disabled, and full control over touches inside the ScrollView is left to its child components. This is particularly useful if `snapToInterval` is enabled, since it does not follow typical touch patterns. Do not use this on regular ScrollView use cases without `snapToInterval` as it may cause unexpected touches to occur while scrolling. The default value is false.
-
-| Type | Required |
-| ---- | -------- |
-| bool | No       |
 
 ---
 
@@ -145,7 +181,7 @@ _仅iOS可用的值_
 
 ### `onScroll`
 
-在滚动的过程中，每帧最多调用一次此回调函数。调用的频率可以用`scrollEventThrottle`属性来控制。The event has the shape `{ nativeEvent: { contentInset: { bottom, left, right, top }, contentOffset: { x, y }, contentSize: { height, width }, layoutMeasurement: { height, width }, zoomScale } }`. All values are numbers.
+在滚动的过程中，每帧最多调用一次此回调函数。调用的频率可以用`scrollEventThrottle`属性来控制。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -375,7 +411,7 @@ When true, ScrollView will emit updateChildFrames data in scroll events, otherwi
 
 ### `contentInsetAdjustmentBehavior`
 
-This property specifies how the safe area insets are used to modify the content area of the scroll view. The default value of this property is "never". Available on iOS 11 and later.
+指定如何使用安全区域插图来修改滚动视图的内容区域。默认值为“从不”在 iOS 11 及更高版本上可用。
 
 | 类型                                                   | 必填 | 平台 |
 | ------------------------------------------------------ | ---- | ---- |
@@ -397,12 +433,12 @@ This property specifies how the safe area insets are used to modify the content 
 
 一个浮点数，用于决定当用户抬起手指之后，滚动视图减速停下的速度。你也可以设置为`"normal"`或者`"fast"`，分别对应的是iOS上的`UIScrollViewDecelerationRateNormal`和 `UIScrollViewDecelerationRateFast`。
 
-* `'normal'`: iOS上是0.998，Android上是0.985（默认值）
+* `'normal'`: 0.998 （默认值）
 * `'fast'`: 0.99
 
-| 类型                            | 必填 |
-| ------------------------------- | ---- |
-| enum('fast', 'normal'), ,number | 否   |
+| 类型                            | 必填 | 平台 |
+| ------------------------------- | ---- | ---- |
+| enum('fast', 'normal'), ,number | 否   | iOS  |
 
 ---
 
@@ -462,7 +498,7 @@ This property specifies how the safe area insets are used to modify the content 
 
 ### `scrollEventThrottle`
 
-这个属性控制在滚动过程中，scroll事件被调用的频率（单位是每秒事件数量）。更小的数值能够更及时的跟踪滚动位置，不过可能会带来性能问题，因为更多的信息会通过bridge传递。由于JS事件循环需要和屏幕刷新率同步，因此设置1-16之间的数值不会有实质区别。默认值为0，意味着每次视图被滚动，scroll事件只会被调用一次。
+这个属性控制在滚动过程中，scroll事件被调用的频率（单位是每秒事件数量）。更大的数值能够更及时的跟踪滚动位置，不过可能会带来性能问题，因为更多的信息会通过bridge传递。由于JS事件循环需要和屏幕刷新率同步，因此设置1-16之间的数值不会有实质区别。默认值为0，意味着每次视图被滚动，scroll事件只会被调用一次。
 
 | 类型   | 必填 | 平台 |
 | ------ | ---- | ---- |
@@ -508,39 +544,11 @@ This property specifies how the safe area insets are used to modify the content 
 
 当设置了此属性时，会让滚动视图滚动停止后，停止在`snapToInterval`的倍数的位置。这可以在一些子视图比滚动视图本身小的时候用于实现分页显示。需要与`snapToAlignment`组合使用。
 
+注意：竖直的snapToInterval在Android上不支持。
+
 | 类型   | 必填 |
 | ------ | ---- |
 | number | 否   |
-
----
-
-### `snapToOffsets`
-
-When set, causes the scroll view to stop at the defined offsets. This can be used for paginating through variously sized children that have lengths smaller than the scroll view. Typically used in combination with `decelerationRate="fast"`. Overrides less configurable `pagingEnabled` and `snapToInterval` props.
-
-| 类型            | 必填 |
-| --------------- | -------- |
-| 以数字为元素的数组 | 否       |
-
----
-
-### `snapToStart`
-
-Use in conjuction with `snapToOffsets`. By default, the beginning of the list counts as a snap offset. Set `snapToStart` to false to disable this behavior and allow the list to scroll freely between its start and the first `snapToOffsets` offset. The default value is true.
-
-| 类型    | 必填 |
-| ------- | -------- |
-| boolean | 否       |
-
----
-
-### `snapToEnd`
-
-Use in conjuction with `snapToOffsets`. By default, the end of the list counts as a snap offset. Set `snapToEnd` to false to disable this behavior and allow the list to scroll freely between its end and the last `snapToOffsets` offset. The default value is true.
-
-| 类型    | 必填 |
-| ------- | -------- |
-| boolean | 否       |
 
 ---
 
@@ -566,53 +574,43 @@ Use in conjuction with `snapToOffsets`. By default, the end of the list counts a
 
 ### `scrollTo()`
 
-```jsx
-scrollTo(
-  ([y]: number),
-  object,
-  ([x]: number),
-  ([animated]: boolean),
-  ([duration]: number),
-);
+```javascript
+scrollTo(([y]: number), object, ([x]: number), ([animated]: boolean));
 ```
 
-滚动到指定的x, y偏移处。第三个参数为是否启用平滑滚动动画。还有一个duration参数则是仅限android可以使用的滚动持续时间。
+滚动到指定的x, y偏移处。第三个参数为是否启用平滑滚动动画。
 
 示例：
 
 `scrollTo({x: 0, y: 0, animated: true})`
 
-指定滚动持续时间的示例(仅限Android):
-
- `scrollTo({x: 0, y: 0, duration: 500})`
-
 ---
 
 ### `scrollToEnd()`
 
-```jsx
-scrollToEnd(([options]: {animated: boolean, duration: number}));
+```javascript
+scrollToEnd(([options]: object));
 ```
 
 滚动到视图底部（水平方向的视图则滚动到最右边）。
 
-加上动画参数`scrollToEnd({animated: true})`则启用平滑滚动动画，或是调用`scrollToEnd({animated: false})`来立即跳转。For Android, you may specify a duration, e.g. `scrollToEnd({duration: 500})` for a controlled duration scroll。如果不使用参数，则`animated`选项默认启用。
+加上动画参数`scrollToEnd({animated: true})`则启用平滑滚动动画，或是调用`scrollToEnd({animated: false})`来立即跳转。如果不使用参数，则`animated`选项默认启用。
 
 ---
 
 ### `scrollWithoutAnimationTo()`
 
-```jsx
+```javascript
 scrollWithoutAnimationTo(y, x);
 ```
 
-Deprecated, use `scrollTo` instead.
+已弃用，请使用 `scrollTo`。
 
 ---
 
 ### `flashScrollIndicators()`
 
-```jsx
+```javascript
 flashScrollIndicators();
 ```
 
