@@ -3,13 +3,14 @@ id: version-0.57-animated
 title: Animated
 original_id: animated
 ---
-##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(97.58%), [not.committed.yet](https://github.com/search?q=not.committed.yet+in%3Aemail&type=Users)(2.42%)
+
+##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 `Animated`库旨在使动画变得流畅，强大并易于构建和维护。`Animated`侧重于输入和输出之间的声明性关系，以及两者之间的可配置变换，此外还提供了简单的 `start/stop`方法来控制基于时间的动画执行。
 
 创建动画最简单的工作流程是创建一个 `Animated.Value` ，将它连接到动画组件的一个或多个样式属性，然后使用`Animated.timing()`通过动画效果展示数据的变化：
 
-```javascript
+```jsx
 Animated.timing(
   // Animate value over time
   this.state.fadeAnim, // The value to drive
@@ -102,7 +103,7 @@ Animated.timing(
 
 例如，在使用水平滚动手势时，为了将`event.nativeEvent.contentOffset.x`映射到`scrollX`（`Animated.Value`），您需要执行以下操作：
 
-```javascript
+```jsx
  onScroll={Animated.event(
    // scrollX = e.nativeEvent.contentOffset.x
    [{ nativeEvent: {
@@ -153,7 +154,7 @@ Animated.timing(
 
 ### `decay()`
 
-```javascript
+```jsx
 static decay(value, config)
 ```
 
@@ -170,7 +171,7 @@ Config 参数有以下这些属性：
 
 ### `timing()`
 
-```javascript
+```jsx
 static timing(value, config)
 ```
 
@@ -188,7 +189,7 @@ Config 参数有以下这些属性：
 
 ### `spring()`
 
-```javascript
+```jsx
 static spring(value, config)
 ```
 
@@ -225,7 +226,7 @@ Other configuration options are as follows:
 
 ### `add()`
 
-```javascript
+```jsx
 static add(a, b)
 ```
 
@@ -235,7 +236,7 @@ static add(a, b)
 
 ### `subtract()`
 
-```javascript
+```jsx
 static subtract(a, b)
 ```
 
@@ -245,7 +246,7 @@ static subtract(a, b)
 
 ### `divide()`
 
-```javascript
+```jsx
 static divide(a, b)
 ```
 
@@ -255,7 +256,7 @@ static divide(a, b)
 
 ### `multiply()`
 
-```javascript
+```jsx
 static multiply(a, b)
 ```
 
@@ -265,7 +266,7 @@ static multiply(a, b)
 
 ### `modulo()`
 
-```javascript
+```jsx
 static modulo(a, modulus)
 ```
 
@@ -275,7 +276,7 @@ static modulo(a, modulus)
 
 ### `diffClamp()`
 
-```javascript
+```jsx
 static diffClamp(a, min, max)
 ```
 
@@ -287,7 +288,7 @@ This is useful with scroll events, for example, to show the navbar when scrollin
 
 ### `delay()`
 
-```javascript
+```jsx
 static delay(time)
 ```
 
@@ -297,7 +298,7 @@ static delay(time)
 
 ### `sequence()`
 
-```javascript
+```jsx
 static sequence(animations)
 ```
 
@@ -307,7 +308,7 @@ static sequence(animations)
 
 ### `parallel()`
 
-```javascript
+```jsx
 static parallel(animations, config?)
 ```
 
@@ -317,7 +318,7 @@ static parallel(animations, config?)
 
 ### `stagger()`
 
-```javascript
+```jsx
 static stagger(time, animations)
 ```
 
@@ -327,7 +328,7 @@ static stagger(time, animations)
 
 ### `loop()`
 
-```javascript
+```jsx
 static loop(animation)
 ```
 
@@ -337,13 +338,13 @@ static loop(animation)
 
 ### `event()`
 
-```javascript
+```jsx
 static event(argMapping, config?)
 ```
 
 接受一个映射的数组，对应的解开每个值，然后调用所有对应的输出的`setValue`方法。例如：
 
-```javascript
+```jsx
  onScroll={Animated.event(
    [{nativeEvent: {contentOffset: {x: this._scrollX}}}],
    {listener: (event) => console.log(event)}, // 可选的异步监听函数
@@ -365,7 +366,7 @@ Config 参数有以下这些属性：
 
 ### `forkEvent()`
 
-```javascript
+```jsx
 static forkEvent(event, listener)
 ```
 
@@ -375,7 +376,7 @@ Advanced imperative API for snooping on animated events that are passed in throu
 
 ### `unforkEvent()`
 
-```javascript
+```jsx
 static unforkEvent(event, listener)
 ```
 

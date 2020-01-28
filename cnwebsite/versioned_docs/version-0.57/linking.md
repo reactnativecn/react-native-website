@@ -3,6 +3,7 @@ id: version-0.57-linking
 title: Linking
 original_id: linking
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(98.10%), [kt.tian](https://github.com/search?q=kt.tian%40gmail.com+in%3Aemail&type=Users)(1.90%)
 
 <div class="banner-crna-ejected">
@@ -129,7 +130,7 @@ Linking.canOpenURL(url).then(supported => {
 
 ### `constructor()`
 
-```javascript
+```jsx
 constructor();
 ```
 
@@ -137,7 +138,7 @@ constructor();
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 addEventListener(type, handler);
 ```
 
@@ -147,7 +148,7 @@ addEventListener(type, handler);
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 removeEventListener(type, handler);
 ```
 
@@ -157,7 +158,7 @@ removeEventListener(type, handler);
 
 ### `openURL()`
 
-```javascript
+```jsx
 openURL(url);
 ```
 
@@ -181,7 +182,7 @@ openURL(url);
 
 ### `canOpenURL()`
 
-```javascript
+```jsx
 canOpenURL(url);
 ```
 
@@ -203,7 +204,7 @@ canOpenURL(url);
 
 ### `getInitialURL()`
 
-```javascript
+```jsx
 getInitialURL();
 ```
 

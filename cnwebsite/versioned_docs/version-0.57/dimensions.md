@@ -3,6 +3,7 @@ id: version-0.57-dimensions
 title: Dimensions
 original_id: dimensions
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 本模块用于获取设备屏幕的宽高。
@@ -22,7 +23,7 @@ original_id: dimensions
 
 ### `set()`
 
-```javascript
+```jsx
 static set(dims)
 ```
 
@@ -34,7 +35,7 @@ static set(dims)
 
 ### `get()`
 
-```javascript
+```jsx
 static get(dim)
 ```
 
@@ -50,7 +51,7 @@ static get(dim)
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 static addEventListener(type, handler)
 ```
 
@@ -62,7 +63,7 @@ Add an event handler. Supported events:
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(type, handler)
 ```
 

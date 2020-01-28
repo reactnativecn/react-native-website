@@ -6,12 +6,12 @@ original_id: snapshotviewios
 
 ### Props
 
-* [`onSnapshotReady`](snapshotviewios.md#onsnapshotready)
-* [`testIdentifier`](snapshotviewios.md#testidentifier)
+- [`onSnapshotReady`](snapshotviewios.md#onsnapshotready)
+- [`testIdentifier`](snapshotviewios.md#testidentifier)
 
 ### Methods
 
-* [`onDefaultAction`](snapshotviewios.md#ondefaultaction)
+- [`onDefaultAction`](snapshotviewios.md#ondefaultaction)
 
 ---
 
@@ -37,6 +37,6 @@ original_id: snapshotviewios
 
 ### `onDefaultAction()`
 
-```javascript
+```jsx
 onDefaultAction((event: Object));
 ```

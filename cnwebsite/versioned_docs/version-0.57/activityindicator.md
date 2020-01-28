@@ -3,7 +3,8 @@ id: version-0.57-activityindicator
 title: ActivityIndicator
 original_id: activityindicator
 ---
-##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(98.99%), [not.committed.yet](https://github.com/search?q=not.committed.yet+in%3Aemail&type=Users)(1.01%)
+
+##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 显示一个圆形的 loading 提示符号。
 

@@ -3,25 +3,6 @@ id: image-style-props
 title: Image样式属性
 ---
 
-### Props
-
-* [`borderTopRightRadius`](image-style-props.md#bordertoprightradius)
-* [`backfaceVisibility`](image-style-props.md#backfacevisibility)
-* [`borderBottomLeftRadius`](image-style-props.md#borderbottomleftradius)
-* [`borderBottomRightRadius`](image-style-props.md#borderbottomrightradius)
-* [`borderColor`](image-style-props.md#bordercolor)
-* [`borderRadius`](image-style-props.md#borderradius)
-* [`borderTopLeftRadius`](image-style-props.md#bordertopleftradius)
-* [`backgroundColor`](image-style-props.md#backgroundcolor)
-* [`borderWidth`](image-style-props.md#borderwidth)
-* [`opacity`](image-style-props.md#opacity)
-* [`overflow`](image-style-props.md#overflow)
-* [`resizeMode`](image-style-props.md#resizemode)
-* [`tintColor`](image-style-props.md#tintcolor)
-* [`overlayColor`](image-style-props.md#overlaycolor)
-
----
-
 # 文档
 
 ## Props
@@ -116,9 +97,9 @@ title: Image样式属性
 
 ### `resizeMode`
 
-| 类型                         | 必填 |
-| ---------------------------- | ---- |
-| Object.keys(ImageResizeMode) | 否   |
+| 类型                                                    | 必填 |
+| ------------------------------------------------------- | ---- |
+| enum('cover', 'contain', 'stretch', 'repeat', 'center') | 否   |
 
 ---
 
@@ -141,7 +122,7 @@ title: Image样式属性
 
 常见的用法就是在不能圆角透明时，设置`overlayColor`和背景色一致。
 
-详细说明可参考<http://frescolib.org/rounded-corners-and-circles.md>。
+详细说明可参考<https://frescolib.org/docs/rounded-corners-and-circles.html>。
 
 | 类型   | 必填 | 平台    |
 | ------ | ---- | ------- |

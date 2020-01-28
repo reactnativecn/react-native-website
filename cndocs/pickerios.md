@@ -3,38 +3,40 @@ id: pickerios
 title: PickerIOS
 ---
 
-### Props
-
-* [View props...](view.md#props)
-
-- [`itemStyle`](pickerios.md#itemstyle)
-- [`onValueChange`](pickerios.md#onvaluechange)
-- [`selectedValue`](pickerios.md#selectedvalue)
-
----
+> **Deprecated.** Use [Picker](picker.md) instead.
 
 # 文档
 
 ## Props
 
+Inherits [View Props](view.md#props).
+
 ### `itemStyle`
 
 | 类型                               | 必填 |
-| ---------------------------------- | -------- |
-| [text styles](text-style-props.md) | 否       |
+| ---------------------------------- | ---- |
+| [text styles](text-style-props.md) | 否   |
 
 ---
 
 ### `onValueChange`
 
 | 类型     | 必填 |
+| -------- | ---- |
+| function | 否   |
+
+---
+
+### `onChange`
+
+| Type     | Required |
 | -------- | -------- |
-| function | 否       |
+| function | No       |
 
 ---
 
 ### `selectedValue`
 
-| 类型 | 必填 |
-| ---- | -------- |
-| any  | 否       |
+| 类型             | 必填 |
+| ---------------- | ---- |
+| number or string | 否   |

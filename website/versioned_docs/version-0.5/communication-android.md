@@ -10,7 +10,7 @@ In [Integrating with Existing Apps guide](integration-with-existing-apps.md) and
 
 React Native is inspired by React, so the basic idea of the information flow is similar. The flow in React is one-directional. We maintain a hierarchy of components, in which each component depends only on its parent and its own internal state. We do this with properties: data is passed from a parent to its children in a top-down manner. If an ancestor component relies on the state of its descendant, one should pass down a callback to be used by the descendant to update the ancestor.
 
-The same concept applies to React Native. As long as we are building our application purely within the framework, we can drive our app with properties and callbacks. But, when we mix React Native and native components, we need some special, cross-language mechanisms that would allow us to pass information between them.
+The same concept applies to React Native. As long as we are building our application purely within the framework, we can drive our app with properties and callbacks. But, when we mix React Native and native components, we need some specific, cross-language mechanisms that would allow us to pass information between them.
 
 ## Properties
 
@@ -87,7 +87,7 @@ There is no way to update only a few properties at a time. We suggest that you b
 
 ### Passing properties from React Native to native
 
-The problem exposing properties of native components is covered in detail in [this article](native-components-android.md#3-expose-view-property-setters-using-reactprop-or-reactpropgroup-annotation). In short, properties that are to be reflected in JavaScript needs to be exposed as setter method annotated with `@ReactProp`, then just use them in React Native as if the component was an ordinary React Native component.
+The problem exposing properties of native components is covered in detail in [this article](native-components-android.md#3-expose-view-property-setters-using-reactprop-or-reactpropgroup-annotation). In short, properties that are to be reflected in JavaScript needs to be exposed as setter method annotated with `@ReactProp`, then use them in React Native as if the component was an ordinary React Native component.
 
 ### Limits of properties
 
@@ -107,9 +107,9 @@ Events are described in detail in [this article](native-components-android.md#ev
 
 Events are powerful, because they allow us to change React Native components without needing a reference to them. However, there are some pitfalls that you can fall into while using them:
 
-* As events can be sent from anywhere, they can introduce spaghetti-style dependencies into your project.
-* Events share namespace, which means that you may encounter some name collisions. Collisions will not be detected statically, which makes them hard to debug.
-* If you use several instances of the same React Native component and you want to distinguish them from the perspective of your event, you'll likely need to introduce identifiers and pass them along with events (you can use the native view's `reactTag` as an identifier).
+- As events can be sent from anywhere, they can introduce spaghetti-style dependencies into your project.
+- Events share namespace, which means that you may encounter some name collisions. Collisions will not be detected statically, which makes them hard to debug.
+- If you use several instances of the same React Native component and you want to distinguish them from the perspective of your event, you'll likely need to introduce identifiers and pass them along with events (you can use the native view's `reactTag` as an identifier).
 
 ### Calling native functions from React Native (native modules)
 

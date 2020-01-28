@@ -6,31 +6,31 @@ original_id: webview
 
 ### Props
 
-* [`renderLoading`](webview.md#renderloading)
-* [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
-* [`contentInset`](webview.md#contentinset)
-* [`html`](webview.md#html)
-* [`javaScriptEnabledAndroid`](webview.md#javascriptenabledandroid)
-* [`onNavigationStateChange`](webview.md#onnavigationstatechange)
-* [`renderError`](webview.md#rendererror)
-* [`bounces`](webview.md#bounces)
-* [`scalesPageToFit`](webview.md#scalespagetofit)
-* [`scrollEnabled`](webview.md#scrollenabled)
-* [`shouldInjectAJAXHandler`](webview.md#shouldinjectajaxhandler)
-* [`startInLoadingState`](webview.md#startinloadingstate)
-* [`style`](webview.md#style)
-* [`url`](webview.md#url)
+- [`renderLoading`](webview.md#renderloading)
+- [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
+- [`contentInset`](webview.md#contentinset)
+- [`html`](webview.md#html)
+- [`javaScriptEnabledAndroid`](webview.md#javascriptenabledandroid)
+- [`onNavigationStateChange`](webview.md#onnavigationstatechange)
+- [`renderError`](webview.md#rendererror)
+- [`bounces`](webview.md#bounces)
+- [`scalesPageToFit`](webview.md#scalespagetofit)
+- [`scrollEnabled`](webview.md#scrollenabled)
+- [`shouldInjectAJAXHandler`](webview.md#shouldinjectajaxhandler)
+- [`startInLoadingState`](webview.md#startinloadingstate)
+- [`style`](webview.md#style)
+- [`url`](webview.md#url)
 
 ### Methods
 
-* [`goForward`](webview.md#goforward)
-* [`goBack`](webview.md#goback)
-* [`reload`](webview.md#reload)
-* [`updateNavigationState`](webview.md#updatenavigationstate)
-* [`getWebWiewHandle`](webview.md#getwebwiewhandle)
-* [`onLoadingStart`](webview.md#onloadingstart)
-* [`onLoadingError`](webview.md#onloadingerror)
-* [`onLoadingFinish`](webview.md#onloadingfinish)
+- [`goForward`](webview.md#goforward)
+- [`goBack`](webview.md#goback)
+- [`reload`](webview.md#reload)
+- [`updateNavigationState`](webview.md#updatenavigationstate)
+- [`getWebWiewHandle`](webview.md#getwebwiewhandle)
+- [`onLoadingStart`](webview.md#onloadingstart)
+- [`onLoadingError`](webview.md#onloadingerror)
+- [`onLoadingFinish`](webview.md#onloadingfinish)
 
 ---
 
@@ -156,7 +156,7 @@ Used for iOS only, sets whether the webpage scales to fit the view and the user 
 
 ### `goForward()`
 
-```javascript
+```jsx
 goForward();
 ```
 
@@ -164,7 +164,7 @@ goForward();
 
 ### `goBack()`
 
-```javascript
+```jsx
 goBack();
 ```
 
@@ -172,7 +172,7 @@ goBack();
 
 ### `reload()`
 
-```javascript
+```jsx
 reload();
 ```
 
@@ -180,7 +180,7 @@ reload();
 
 ### `updateNavigationState()`
 
-```javascript
+```jsx
 updateNavigationState((event: Event));
 ```
 
@@ -190,7 +190,7 @@ We return an event with a bunch of fields including: url, title, loading, canGoB
 
 ### `getWebWiewHandle()`
 
-```javascript
+```jsx
 getWebWiewHandle():
 ```
 
@@ -198,7 +198,7 @@ getWebWiewHandle():
 
 ### `onLoadingStart()`
 
-```javascript
+```jsx
 onLoadingStart((event: Event));
 ```
 
@@ -206,7 +206,7 @@ onLoadingStart((event: Event));
 
 ### `onLoadingError()`
 
-```javascript
+```jsx
 onLoadingError((event: Event));
 ```
 
@@ -214,6 +214,6 @@ onLoadingError((event: Event));
 
 ### `onLoadingFinish()`
 
-```javascript
+```jsx
 onLoadingFinish((event: Event));
 ```

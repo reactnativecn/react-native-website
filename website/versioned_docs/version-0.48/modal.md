@@ -4,11 +4,11 @@ title: Modal
 original_id: modal
 ---
 
-The Modal component is a simple way to present content above an enclosing view.
+The Modal component is a basic way to present content above an enclosing view.
 
 _Note: If you need more control over how to present modals over the rest of your app, then consider using a top-level Navigator._
 
-```javascript
+```jsx
 import React, {Component} from 'react';
 import {Modal, Text, TouchableHighlight, View} from 'react-native';
 
@@ -59,16 +59,16 @@ class ModalExample extends Component {
 
 ### Props
 
-* [`animationType`](modal.md#animationtype)
-* [`onShow`](modal.md#onshow)
-* [`transparent`](modal.md#transparent)
-* [`visible`](modal.md#visible)
-* [`hardwareAccelerated`](modal.md#hardwareaccelerated)
-* [`onRequestClose`](modal.md#onrequestclose)
-* [`onOrientationChange`](modal.md#onorientationchange)
-* [`presentationStyle`](modal.md#presentationstyle)
-* [`supportedOrientations`](modal.md#supportedorientations)
-* [`animated`](modal.md#animated)
+- [`animationType`](modal.md#animationtype)
+- [`onShow`](modal.md#onshow)
+- [`transparent`](modal.md#transparent)
+- [`visible`](modal.md#visible)
+- [`hardwareAccelerated`](modal.md#hardwareaccelerated)
+- [`onRequestClose`](modal.md#onrequestclose)
+- [`onOrientationChange`](modal.md#onorientationchange)
+- [`presentationStyle`](modal.md#presentationstyle)
+- [`supportedOrientations`](modal.md#supportedorientations)
+- [`animated`](modal.md#animated)
 
 ---
 
@@ -80,9 +80,9 @@ class ModalExample extends Component {
 
 The `animationType` prop controls how the modal animates.
 
-* `slide` slides in from the bottom
-* `fade` fades into view
-* `none` appears without an animation
+- `slide` slides in from the bottom
+- `fade` fades into view
+- `none` appears without an animation
 
 Default is set to `none`.
 
@@ -156,10 +156,10 @@ The `onOrientationChange` callback is called when the orientation changes while 
 
 The `presentationStyle` prop controls how the modal appears (generally on larger devices such as iPad or plus-sized iPhones). See https://developer.apple.com/reference/uikit/uimodalpresentationstyle for details.
 
-* `fullScreen` covers the screen completely
-* `pageSheet` covers portrait-width view centered (only on larger devices)
-* `formSheet` covers narrow-width view centered (only on larger devices)
-* `overFullScreen` covers the screen completely, but allows transparency
+- `fullScreen` covers the screen completely
+- `pageSheet` covers portrait-width view centered (only on larger devices)
+- `formSheet` covers narrow-width view centered (only on larger devices)
+- `overFullScreen` covers the screen completely, but allows transparency
 
 Default is set to `overFullScreen` or `fullScreen` depending on `transparent` property.
 

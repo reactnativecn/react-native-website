@@ -6,59 +6,59 @@ original_id: layout-props
 
 ### Props
 
-* [`marginHorizontal`](layout-props.md#marginhorizontal)
-* [`alignContent`](layout-props.md#aligncontent)
-* [`alignSelf`](layout-props.md#alignself)
-* [`aspectRatio`](layout-props.md#aspectratio)
-* [`borderBottomWidth`](layout-props.md#borderbottomwidth)
-* [`borderEndWidth`](layout-props.md#borderendwidth)
-* [`borderLeftWidth`](layout-props.md#borderleftwidth)
-* [`borderRightWidth`](layout-props.md#borderrightwidth)
-* [`borderStartWidth`](layout-props.md#borderstartwidth)
-* [`borderTopWidth`](layout-props.md#bordertopwidth)
-* [`borderWidth`](layout-props.md#borderwidth)
-* [`bottom`](layout-props.md#bottom)
-* [`direction`](layout-props.md#direction)
-* [`display`](layout-props.md#display)
-* [`end`](layout-props.md#end)
-* [`flex`](layout-props.md#flex)
-* [`flexBasis`](layout-props.md#flexbasis)
-* [`flexDirection`](layout-props.md#flexdirection)
-* [`flexGrow`](layout-props.md#flexgrow)
-* [`flexShrink`](layout-props.md#flexshrink)
-* [`flexWrap`](layout-props.md#flexwrap)
-* [`height`](layout-props.md#height)
-* [`justifyContent`](layout-props.md#justifycontent)
-* [`left`](layout-props.md#left)
-* [`margin`](layout-props.md#margin)
-* [`marginBottom`](layout-props.md#marginbottom)
-* [`marginEnd`](layout-props.md#marginend)
-* [`alignItems`](layout-props.md#alignitems)
-* [`marginLeft`](layout-props.md#marginleft)
-* [`marginRight`](layout-props.md#marginright)
-* [`marginStart`](layout-props.md#marginstart)
-* [`marginTop`](layout-props.md#margintop)
-* [`marginVertical`](layout-props.md#marginvertical)
-* [`maxHeight`](layout-props.md#maxheight)
-* [`maxWidth`](layout-props.md#maxwidth)
-* [`minHeight`](layout-props.md#minheight)
-* [`minWidth`](layout-props.md#minwidth)
-* [`overflow`](layout-props.md#overflow)
-* [`padding`](layout-props.md#padding)
-* [`paddingBottom`](layout-props.md#paddingbottom)
-* [`paddingEnd`](layout-props.md#paddingend)
-* [`paddingHorizontal`](layout-props.md#paddinghorizontal)
-* [`paddingLeft`](layout-props.md#paddingleft)
-* [`paddingRight`](layout-props.md#paddingright)
-* [`paddingStart`](layout-props.md#paddingstart)
-* [`paddingTop`](layout-props.md#paddingtop)
-* [`paddingVertical`](layout-props.md#paddingvertical)
-* [`position`](layout-props.md#position)
-* [`right`](layout-props.md#right)
-* [`start`](layout-props.md#start)
-* [`top`](layout-props.md#top)
-* [`width`](layout-props.md#width)
-* [`zIndex`](layout-props.md#zindex)
+- [`marginHorizontal`](layout-props.md#marginhorizontal)
+- [`alignContent`](layout-props.md#aligncontent)
+- [`alignSelf`](layout-props.md#alignself)
+- [`aspectRatio`](layout-props.md#aspectratio)
+- [`borderBottomWidth`](layout-props.md#borderbottomwidth)
+- [`borderEndWidth`](layout-props.md#borderendwidth)
+- [`borderLeftWidth`](layout-props.md#borderleftwidth)
+- [`borderRightWidth`](layout-props.md#borderrightwidth)
+- [`borderStartWidth`](layout-props.md#borderstartwidth)
+- [`borderTopWidth`](layout-props.md#bordertopwidth)
+- [`borderWidth`](layout-props.md#borderwidth)
+- [`bottom`](layout-props.md#bottom)
+- [`direction`](layout-props.md#direction)
+- [`display`](layout-props.md#display)
+- [`end`](layout-props.md#end)
+- [`flex`](layout-props.md#flex)
+- [`flexBasis`](layout-props.md#flexbasis)
+- [`flexDirection`](layout-props.md#flexdirection)
+- [`flexGrow`](layout-props.md#flexgrow)
+- [`flexShrink`](layout-props.md#flexshrink)
+- [`flexWrap`](layout-props.md#flexwrap)
+- [`height`](layout-props.md#height)
+- [`justifyContent`](layout-props.md#justifycontent)
+- [`left`](layout-props.md#left)
+- [`margin`](layout-props.md#margin)
+- [`marginBottom`](layout-props.md#marginbottom)
+- [`marginEnd`](layout-props.md#marginend)
+- [`alignItems`](layout-props.md#alignitems)
+- [`marginLeft`](layout-props.md#marginleft)
+- [`marginRight`](layout-props.md#marginright)
+- [`marginStart`](layout-props.md#marginstart)
+- [`marginTop`](layout-props.md#margintop)
+- [`marginVertical`](layout-props.md#marginvertical)
+- [`maxHeight`](layout-props.md#maxheight)
+- [`maxWidth`](layout-props.md#maxwidth)
+- [`minHeight`](layout-props.md#minheight)
+- [`minWidth`](layout-props.md#minwidth)
+- [`overflow`](layout-props.md#overflow)
+- [`padding`](layout-props.md#padding)
+- [`paddingBottom`](layout-props.md#paddingbottom)
+- [`paddingEnd`](layout-props.md#paddingend)
+- [`paddingHorizontal`](layout-props.md#paddinghorizontal)
+- [`paddingLeft`](layout-props.md#paddingleft)
+- [`paddingRight`](layout-props.md#paddingright)
+- [`paddingStart`](layout-props.md#paddingstart)
+- [`paddingTop`](layout-props.md#paddingtop)
+- [`paddingVertical`](layout-props.md#paddingvertical)
+- [`position`](layout-props.md#position)
+- [`right`](layout-props.md#right)
+- [`start`](layout-props.md#start)
+- [`top`](layout-props.md#top)
+- [`width`](layout-props.md#width)
+- [`zIndex`](layout-props.md#zindex)
 
 ---
 
@@ -100,11 +100,11 @@ Setting `marginHorizontal` has the same effect as setting both `marginLeft` and 
 
 Aspect ratio control the size of the undefined dimension of a node. Aspect ratio is a non-standard property only available in react native and not CSS.
 
-* On a node with a set width/height aspect ratio control the size of the unset dimension
-* On a node with a set flex basis aspect ratio controls the size of the node in the cross axis if unset
-* On a node with a measure function aspect ratio works as though the measure function measures the flex basis
-* On a node with flex grow/shrink aspect ratio controls the size of the node in the cross axis if unset
-* Aspect ratio takes min/max dimensions into account
+- On a node with a set width/height aspect ratio control the size of the unset dimension
+- On a node with a set flex basis aspect ratio controls the size of the node in the cross axis if unset
+- On a node with a measure function aspect ratio works as though the measure function measures the flex basis
+- On a node with flex grow/shrink aspect ratio controls the size of the node in the cross axis if unset
+- Aspect ratio takes min/max dimensions into account
 
 | Type   | Required |
 | ------ | -------- |
@@ -576,11 +576,11 @@ Setting `paddingVertical` is like setting both of `paddingTop` and `paddingBotto
 
 ### `position`
 
-`position` in React Native is similar to regular CSS, but everything is set to `relative` by default, so `absolute` positioning is always just relative to the parent.
+`position` in React Native is similar to regular CSS, but everything is set to `relative` by default, so `absolute` positioning is always relative to the parent.
 
 If you want to position a child using specific numbers of logical pixels relative to its parent, set the child to have `absolute` position.
 
-If you want to position a child relative to something that is not its parent, just don't use styles for that. Use the component tree.
+If you want to position a child relative to something that is not its parent, don't use styles for that. Use the component tree.
 
 See https://github.com/facebook/yoga for more details on how `position` differs between React Native and CSS.
 

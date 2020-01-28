@@ -5,7 +5,7 @@ title: Modal
 
 Modal 组件是一种简单的覆盖在其他视图之上显示内容的方式。
 
-```javascript
+```jsx
 import React, { Component } from "react";
 import { Modal, Text, TouchableHighlight, View } from "react-native";
 
@@ -57,20 +57,6 @@ class ModalExample extends Component {
 }
 ```
 
-### 查看 Props
-
-* [`visible`](modal.md#visible)
-* [`supportedOrientations`](modal.md#supportedorientations)
-* [`onRequestClose`](modal.md#onrequestclose)
-* [`onShow`](modal.md#onshow)
-* [`transparent`](modal.md#transparent)
-* [`animationType`](modal.md#animationtype)
-* [`hardwareAccelerated`](modal.md#hardwareaccelerated)
-* [`onDismiss`](modal.md#ondismiss)
-* [`onOrientationChange`](modal.md#onorientationchange)
-* [`presentationStyle`](modal.md#presentationstyle)
-* [`animated`](modal.md#animated)
-
 ---
 
 # 文档
@@ -120,7 +106,7 @@ class ModalExample extends Component {
 
 ### `transparent`
 
-`transparent` prop determines whether your modal will fill the entire view. Setting this to `true` will render the modal over a transparent background.
+`transparent` 属性是指背景是否透明，默认为白色，将这个属性设为：true 的时候弹出一个透明背景层的modal。
 
 | 类型 | 必填 |
 | ---- | ---- |
@@ -166,7 +152,7 @@ class ModalExample extends Component {
 
 ### `onOrientationChange`
 
-The `onOrientationChange` callback is called when the orientation changes while the modal is being displayed. The orientation provided is only 'portrait' or 'landscape'. This callback is also called on initial render, regardless of the current orientation.
+模态窗显示的时候，当设备方向发生更改时，将调用`onOrientationChange`回调方法。 提供的设备方向仅为“竖屏”或“横屏”。 无论当前方向如何，也会在初始渲染时调用此回调方法。
 
 | 类型     | 必填 | 平台 |
 | -------- | ---- | ---- |

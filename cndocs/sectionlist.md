@@ -20,7 +20,7 @@ title: SectionList
 
 简单的例子：
 
-```javascript
+```jsx
 // Example 1 (Homogeneous Rendering)
 <SectionList
   renderItem={({ item, index, section }) => <Text key={index}>{item}</Text>}
@@ -36,7 +36,7 @@ title: SectionList
 />
 ```
 
-```javascript
+```jsx
 // Example 2 (Heterogeneous Rendering / No Section Headers)
 const overrideRenderItem = ({ item, index, section: { title, data } }) => <Text key={index}>Override{item}</Text>
 
@@ -64,12 +64,12 @@ const overrideRenderItem = ({ item, index, section: { title, data } }) => <Text 
 必须的props:
 
 * [`sections`](sectionlist.md#sections)
+* [`renderItem`](sectionlist.md#renderitem)
 
 可选的props:
 
 * [`initialNumToRender`](sectionlist.md#initialnumtorender)
 * [`keyExtractor`](sectionlist.md#keyextractor)
-* [`renderItem`](sectionlist.md#renderitem)
 * [`onEndReached`](sectionlist.md#onendreached)
 * [`extraData`](sectionlist.md#extradata)
 * [`ItemSeparatorComponent`](sectionlist.md#itemseparatorcomponent)
@@ -236,7 +236,7 @@ The render function will be passed an object with the following keys:
 
 ### `onRefresh`
 
-如果设置了此选项，则会在列表头部添加一个标准的[`RefreshControl`](refreshcontrol.md)控件，以便实现“下拉刷新”的功能。同时你需要正确设置`refreshing`属性。
+如果设置了此选项，则会在列表头部添加一个标准的[`RefreshControl`](refreshcontrol.md)控件，以便实现“下拉刷新”的功能。同时你需要正确设置`refreshing`属性。如果你想把刷新控件往下移动一些（比如100个pt），可以设置`progressViewOffset={100}`。
 
 | 类型         | 必填 |
 | ------------ | ---- |
@@ -343,7 +343,7 @@ This may improve scroll performance for large lists.
 
 ### `scrollToLocation()`
 
-```javascript
+```jsx
 scrollToLocation(params);
 ```
 
@@ -369,7 +369,7 @@ Valid `params` keys are:
 
 ### `recordInteraction()`
 
-```javascript
+```jsx
 recordInteraction();
 ```
 
@@ -379,7 +379,7 @@ recordInteraction();
 
 ### `flashScrollIndicators()`
 
-```javascript
+```jsx
 flashScrollIndicators();
 ```
 

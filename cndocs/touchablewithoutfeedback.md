@@ -9,47 +9,11 @@ title: TouchableWithoutFeedback
 
 > 译注：常见的使用场景比如想实现点击空白处触发某个操作，那么就可以把空白部分用`TouchableWithoutFeedback`包起来，或者绝对定位覆盖住。
 
-### 查看Props
-
-* [`hitSlop`](touchablewithoutfeedback.md#hitslop)
-* [`accessibilityComponentType`](touchablewithoutfeedback.md#accessibilitycomponenttype)
-* [`accessibilityHint`](touchablewithoutfeedback.md#accessibilityhint)
-* [`accessibilityLabel`](touchablewithoutfeedback.md#accessibilitylabel)
-* [`accessibilityRole`](view.md#accessibilityrole)
-* [`accessibilityStates`](view.md#accessibilitystates)
-* [`accessibilityTraits`](touchablewithoutfeedback.md#accessibilitytraits)
-* [`accessible`](touchablewithoutfeedback.md#accessible)
-* [`delayLongPress`](touchablewithoutfeedback.md#delaylongpress)
-* [`delayPressIn`](touchablewithoutfeedback.md#delaypressin)
-* [`delayPressOut`](touchablewithoutfeedback.md#delaypressout)
-* [`disabled`](touchablewithoutfeedback.md#disabled)
-* [`onLayout`](touchablewithoutfeedback.md#onlayout)
-* [`onLongPress`](touchablewithoutfeedback.md#onlongpress)
-* [`onPress`](touchablewithoutfeedback.md#onpress)
-* [`onPressIn`](touchablewithoutfeedback.md#onpressin)
-* [`onPressOut`](touchablewithoutfeedback.md#onpressout)
-* [`pressRetentionOffset`](touchablewithoutfeedback.md#pressretentionoffset)
-
-### 查看类型定义
-
-* [`Event`](touchablewithoutfeedback.md#event)
-
 ---
 
 # 文档
 
 ## Props
-
-### `hitSlop`
-
-这一属性定义了按钮的外延范围。这一范围也会使`pressRetentionOffset`变得更大。
-**注意：** 触摸范围不会超过父视图的边界，也不会影响原先和本组件层叠的视图（保留原先的触摸优先级）。
-
-| 类型                                                               | 必填 |
-| ------------------------------------------------------------------ | -------- |
-| object: {top: number, left: number, bottom: number, right: number} | 否       |
-
----
 
 ### `accessibilityComponentType`
 
@@ -153,6 +117,37 @@ Overrides the text that's read by the screen reader when the user interacts with
 
 ---
 
+### `hitSlop`
+
+这一属性定义了按钮的外延范围。这一范围也会使`pressRetentionOffset`变得更大。
+**注意：** 触摸范围不会超过父视图的边界，也不会影响原先和本组件层叠的视图（保留原先的触摸优先级）。
+
+| 类型                                                               | 必填 |
+| ------------------------------------------------------------------ | -------- |
+| object: {top: number, left: number, bottom: number, right: number} | 否       |
+
+---
+
+### `onBlur`
+
+Invoked when the item loses focus.
+
+| Type     | Required |
+| -------- | -------- |
+| function | No       |
+
+---
+
+### `onFocus`
+
+Invoked when the item receives focus.
+
+| Type     | Required |
+| -------- | -------- |
+| function | No       |
+
+---
+
 ### `onLayout`
 
 当加载或者布局改变的时候被调用，参数为：
@@ -210,6 +205,18 @@ Called as soon as the touch is released even before onPress.
 | 类型                                                               | 必填 |
 | ------------------------------------------------------------------ | -------- |
 | object: {top: number, left: number, bottom: number, right: number} | 否       |
+
+---
+
+### `testID`
+
+Used to locate this view in end-to-end tests.
+
+| Type   | Required |
+| ------ | -------- |
+| string | No       |
+
+---
 
 ## 类型定义
 

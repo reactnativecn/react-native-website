@@ -9,24 +9,6 @@ title: AppRegistry
 
 `AppRegistry`应当在`require`序列中尽可能早的被 require 到，以确保 JS 运行环境在其它模块之前被准备好。
 
-### 查看方法
-
-* [`setWrapperComponentProvider`](appregistry.md#setwrappercomponentprovider)
-* [`registerConfig`](appregistry.md#registerconfig)
-* [`registerComponent`](appregistry.md#registercomponent)
-* [`registerRunnable`](appregistry.md#registerrunnable)
-* [`registerSection`](appregistry.md#registersection)
-* [`getAppKeys`](appregistry.md#getappkeys)
-* [`getSectionKeys`](appregistry.md#getsectionkeys)
-* [`getSections`](appregistry.md#getsections)
-* [`getRunnable`](appregistry.md#getrunnable)
-* [`getRegistry`](appregistry.md#getregistry)
-* [`setComponentProviderInstrumentationHook`](appregistry.md#setcomponentproviderinstrumentationhook)
-* [`runApplication`](appregistry.md#runapplication)
-* [`unmountApplicationComponentAtRootTag`](appregistry.md#unmountapplicationcomponentatroottag)
-* [`registerHeadlessTask`](appregistry.md#registerheadlesstask)
-* [`startHeadlessTask`](appregistry.md#startheadlesstask)
-
 ---
 
 # 文档
@@ -35,7 +17,7 @@ title: AppRegistry
 
 ### `setWrapperComponentProvider()`
 
-```javascript
+```jsx
 static setWrapperComponentProvider(provider)
 ```
 
@@ -43,7 +25,7 @@ static setWrapperComponentProvider(provider)
 
 ### `registerConfig()`
 
-```javascript
+```jsx
 static registerConfig(config)
 ```
 
@@ -51,7 +33,7 @@ static registerConfig(config)
 
 ### `registerComponent()`
 
-```javascript
+```jsx
 static registerComponent(appKey, componentProvider, section?)
 ```
 
@@ -59,7 +41,7 @@ static registerComponent(appKey, componentProvider, section?)
 
 ### `registerRunnable()`
 
-```javascript
+```jsx
 static registerRunnable(appKey, run)
 ```
 
@@ -67,7 +49,7 @@ static registerRunnable(appKey, run)
 
 ### `registerSection()`
 
-```javascript
+```jsx
 static registerSection(appKey, component)
 ```
 
@@ -75,7 +57,7 @@ static registerSection(appKey, component)
 
 ### `getAppKeys()`
 
-```javascript
+```jsx
 static getAppKeys()
 ```
 
@@ -83,7 +65,7 @@ static getAppKeys()
 
 ### `getSectionKeys()`
 
-```javascript
+```jsx
 static getSectionKeys()
 ```
 
@@ -91,7 +73,7 @@ static getSectionKeys()
 
 ### `getSections()`
 
-```javascript
+```jsx
 static getSections()
 ```
 
@@ -99,7 +81,7 @@ static getSections()
 
 ### `getRunnable()`
 
-```javascript
+```jsx
 static getRunnable(appKey)
 ```
 
@@ -107,7 +89,7 @@ static getRunnable(appKey)
 
 ### `getRegistry()`
 
-```javascript
+```jsx
 static getRegistry()
 ```
 
@@ -115,7 +97,7 @@ static getRegistry()
 
 ### `setComponentProviderInstrumentationHook()`
 
-```javascript
+```jsx
 static setComponentProviderInstrumentationHook(hook)
 ```
 
@@ -123,7 +105,7 @@ static setComponentProviderInstrumentationHook(hook)
 
 ### `runApplication()`
 
-```javascript
+```jsx
 static runApplication(appKey, appParameters)
 ```
 
@@ -131,7 +113,7 @@ static runApplication(appKey, appParameters)
 
 ### `unmountApplicationComponentAtRootTag()`
 
-```javascript
+```jsx
 static unmountApplicationComponentAtRootTag(rootTag)
 ```
 
@@ -139,20 +121,38 @@ static unmountApplicationComponentAtRootTag(rootTag)
 
 ### `registerHeadlessTask()`
 
-```javascript
-static registerHeadlessTask(taskKey, task)
+```jsx
+static registerHeadlessTask(taskKey, taskProvider)
 ```
 
-Register a headless task. A headless task is a bit of code that runs without a UI. @param taskKey the key associated with this task @param task a promise returning function that takes some data passed from the native side as the only argument; when the promise is resolved or rejected the native side is notified of this event and it may decide to destroy the JS context.
+Register a headless task. A headless task is a bit of code that runs without a UI. @param taskKey the key associated with this task @param taskProvider a promise returning function that takes some data passed from the native side as the only argument; when the promise is resolved or rejected the native side is notified of this event and it may decide to destroy the JS context.
 
 ---
 
+### `registerCancellableHeadlessTask()`
+
+```jsx
+static registerCancellableHeadlessTask(taskKey, taskProvider, taskCancelProvider)
+```
+
+Register a headless task which can be cancelled. A headless task is a bit of code that runs without a UI. @param taskKey the key associated with this task @param taskProvider a promise returning function that takes some data passed from the native side as the only argument; when the promise is resolved or rejected the native side is notified of this event and it may decide to destroy the JS context. @param taskCancelProvider a void returning function that takes no arguments; when a cancellation is requested, the function being executed by taskProvider should wrap up and return ASAP.
+
 ### `startHeadlessTask()`
 
-```javascript
+```jsx
 static startHeadlessTask(taskId, taskKey, data)
 ```
 
 Only called from native code. Starts a headless task.
 
 @param taskId the native id for this task instance to keep track of its execution @param taskKey the key for the task to start @param data the data to pass to the task
+
+---
+
+### `cancelHeadlessTask()`
+
+```jsx
+static cancelHeadlessTask(taskId, taskKey)
+```
+
+Only called from native code. Cancels a headless task. @param taskId the native id for this task instance that was used when startHeadlessTask was called @param taskKey the key for the task that was used when startHeadlessTask was called

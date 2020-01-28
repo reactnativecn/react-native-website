@@ -41,7 +41,7 @@ onPanResponderMove: (event, gestureState) => {}
 
 ### 基本用法
 
-```javascript
+```jsx
   componentWillMount: function() {
     this._panResponder = PanResponder.create({
       // 要求成为响应者：
@@ -85,11 +85,7 @@ onPanResponderMove: (event, gestureState) => {}
 
 ### 可运行的例子
 
-要想看看可以直接使用的例子，请参阅[官方示例 RNTester 中的 PanResponder](https://github.com/facebook/react-native/blob/master/RNTester/js/PanResponderExample.js)
-
-### 查看方法
-
-- [`create`](panresponder.md#create)
+要想看看可以直接使用的例子，请参阅[官方示例 RNTester 中的 PanResponder](https://github.com/facebook/react-native/blob/master/RNTester/js/examples/PanResponder/PanResponderExample.js)
 
 ---
 
@@ -99,7 +95,7 @@ onPanResponderMove: (event, gestureState) => {}
 
 ### `create()`
 
-```javascript
+```jsx
 static create(config)
 ```
 

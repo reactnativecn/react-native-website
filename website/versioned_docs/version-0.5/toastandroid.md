@@ -15,35 +15,35 @@ The 'showWithGravityAndOffset' function adds on the ability to specify offset Th
 
 Basic usage:
 
-```javascript
+```jsx
 ToastAndroid.show('A pikachu appeared nearby !', ToastAndroid.SHORT);
 ToastAndroid.showWithGravity(
   'All Your Base Are Belong To Us',
   ToastAndroid.SHORT,
-  ToastAndroid.CENTER
+  ToastAndroid.CENTER,
 );
 ToastAndroid.showWithGravityAndOffset(
   'A wild toast appeared!',
   ToastAndroid.LONG,
   ToastAndroid.BOTTOM,
   25,
-  50
+  50,
 );
 ```
 
 ### Methods
 
-* [`show`](toastandroid.md#show)
-* [`showWithGravity`](toastandroid.md#showwithgravity)
-* [`showWithGravityAndOffset`](toastandroid.md#showwithgravityandoffset)
+- [`show`](toastandroid.md#show)
+- [`showWithGravity`](toastandroid.md#showwithgravity)
+- [`showWithGravityAndOffset`](toastandroid.md#showwithgravityandoffset)
 
 ### Properties
 
-* [`SHORT`](toastandroid.md#short)
-* [`LONG`](toastandroid.md#long)
-* [`TOP`](toastandroid.md#top)
-* [`BOTTOM`](toastandroid.md#bottom)
-* [`CENTER`](toastandroid.md#center)
+- [`SHORT`](toastandroid.md#short)
+- [`LONG`](toastandroid.md#long)
+- [`TOP`](toastandroid.md#top)
+- [`BOTTOM`](toastandroid.md#bottom)
+- [`CENTER`](toastandroid.md#center)
 
 ---
 
@@ -53,7 +53,7 @@ ToastAndroid.showWithGravityAndOffset(
 
 ### `show()`
 
-```javascript
+```jsx
 ToastAndroid.show(message, duration);
 ```
 
@@ -61,7 +61,7 @@ ToastAndroid.show(message, duration);
 
 ### `showWithGravity()`
 
-```javascript
+```jsx
 ToastAndroid.showWithGravity(message, duration, gravity);
 ```
 
@@ -69,13 +69,13 @@ ToastAndroid.showWithGravity(message, duration, gravity);
 
 ### `showWithGravityAndOffset()`
 
-```javascript
+```jsx
 ToastAndroid.showWithGravityAndOffset(
   message,
   duration,
   gravity,
   xOffset,
-  yOffset
+  yOffset,
 );
 ```
 
@@ -83,7 +83,7 @@ ToastAndroid.showWithGravityAndOffset(
 
 ### `SHORT`
 
-```javascript
+```jsx
 ToastAndroid.SHORT;
 ```
 
@@ -91,7 +91,7 @@ ToastAndroid.SHORT;
 
 ### `LONG`
 
-```javascript
+```jsx
 ToastAndroid.LONG;
 ```
 
@@ -99,7 +99,7 @@ ToastAndroid.LONG;
 
 ### `TOP`
 
-```javascript
+```jsx
 ToastAndroid.TOP;
 ```
 
@@ -107,7 +107,7 @@ ToastAndroid.TOP;
 
 ### `BOTTOM`
 
-```javascript
+```jsx
 ToastAndroid.BOTTOM;
 ```
 
@@ -115,6 +115,6 @@ ToastAndroid.BOTTOM;
 
 ### `CENTER`
 
-```javascript
+```jsx
 ToastAndroid.CENTER;
 ```

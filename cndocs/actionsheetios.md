@@ -3,20 +3,13 @@ id: actionsheetios
 title: ActionSheetIOS
 ---
 
-### 查看方法
-
-* [`showActionSheetWithOptions`](actionsheetios.md#showactionsheetwithoptions)
-* [`showShareActionSheetWithOptions`](actionsheetios.md#showshareactionsheetwithoptions)
-
----
-
 # 文档
 
 ## 方法
 
 ### `showActionSheetWithOptions()`
 
-```javascript
+```jsx
 static showActionSheetWithOptions(options, callback)
 ```
 
@@ -27,6 +20,7 @@ static showActionSheetWithOptions(options, callback)
 * `destructiveButtonIndex` （整型） - 删除性质的按钮在`options`中的位置（索引）
 * `title` （字符串） - 弹出框顶部的标题
 * `message` （字符串） - 弹出框顶部标题下方的信息
+* `anchor` (number) - the node to which the action sheet should be anchored (used for iPad)
 * `tintColor` (字符串) - 指定删除性质的按钮的文字的[颜色](colors.md)
 
 'callback'函数则仅接受一个参数，即所点击按钮的索引。
@@ -48,7 +42,7 @@ if (buttonIndex === 1) { /* 当接收到的索引为1，即点击了删除按钮
 
 ### `showShareActionSheetWithOptions()`
 
-```javascript
+```jsx
 static showShareActionSheetWithOptions(options, failureCallback, successCallback)
 ```
 

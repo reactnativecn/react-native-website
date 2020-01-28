@@ -3,6 +3,7 @@ id: version-0.57-state
 title: State（状态）
 original_id: state
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 我们使用两种数据来控制一个组件：`props`和`state`。`props`是在父组件中指定，而且一经指定，在被指定的组件的生命周期中则不再改变。 对于需要改变的数据，我们需要使用`state`。
@@ -18,21 +19,24 @@ import { Text, View } from 'react-native';
 class Blink extends Component {
   constructor(props) {
     super(props);
-    this.state = { showText: true };
+    this.state = { isShowingText: true };
 
     // 每1000毫秒对showText状态做一次取反操作
     setInterval(() => {
       this.setState(previousState => {
-        return { showText: !previousState.showText };
+        return { isShowingText: !previousState.isShowingText };
       });
     }, 1000);
   }
 
   render() {
     // 根据当前showText的值决定是否显示text内容
-    let display = this.state.showText ? this.props.text : ' ';
+    if (!this.state.isShowingText) {
+      return null;
+    }
+
     return (
-      <Text>{display}</Text>
+      <Text>{this.props.text}</Text>
     );
   }
 }

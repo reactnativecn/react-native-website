@@ -3,6 +3,7 @@ id: version-0.57-image
 title: Image
 original_id: image
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 用于显示多种不同类型图片的 React 组件，包括网络图片、静态资源、临时的本地图片、以及本地磁盘上的图片（如相册）等。
@@ -105,6 +106,7 @@ dependencies {
 * [`onPartialLoad`](image.md#onpartialload)
 * [`onProgress`](image.md#onprogress)
 * [`fadeDuration`](image.md#fadeduration)
+* [`progressiveRenderingEnabled`](image.md#progressiverenderingenabled)
 
 ### 查看方法
 
@@ -343,7 +345,7 @@ Similarly to `source`, this property represents the resource used to render the 
 
 ### `defaultSource`
 
-在读取图片时默认显示的图片。仅限 iOS 使用。
+在读取图片时默认显示的图片。
 
 | 类型           | 必填 | 平台    |
 | -------------- | ---- | ------- |
@@ -380,19 +382,32 @@ If passing an object, the general shape is `{uri: string, width: number, height:
 | -------- | ---- | ---- |
 | function | 否   | iOS  |
 
+---
+
 ### `fadeDuration`
 
 Android only. By default, it is 300ms.
 
-| Type   | Required | Platform |
-| ------ | -------- | -------- |
-| number | No       | Android  |
+| 类型   | 必填 | 平台    |
+| ------ | ---- | ------- |
+| number | 否   | Android |
+
+---
+
+### `progressiveRenderingEnabled`
+
+Android only. When true, enables progressive jpeg streaming. https://frescolib.org/docs/progressive-jpegs.html
+
+| 类型 | 必填 | 平台    |
+| ---- | ---- | ------- |
+| bool | 否   | Android |
+
 
 ## 方法
 
 ### `getSize()`
 
-```javascript
+```jsx
 Image.getSize(uri, success, [failure]);
 ```
 
@@ -414,7 +429,7 @@ Image.getSize(uri, success, [failure]);
 
 ### `prefetch()`
 
-```javascript
+```jsx
 Image.prefetch(url);
 ```
 
@@ -430,7 +445,7 @@ Image.prefetch(url);
 
 ### `abortPrefetch()`
 
-```javascript
+```jsx
 Image.abortPrefetch(requestId);
 ```
 
@@ -446,7 +461,7 @@ Image.abortPrefetch(requestId);
 
 ### `queryCache()`
 
-```javascript
+```jsx
 Image.queryCache(urls);
 ```
 
@@ -462,7 +477,7 @@ Image.queryCache(urls);
 
 ### `resolveAssetSource()`
 
-```javascript
+```jsx
 Image.resolveAssetSource(source);
 ```
 

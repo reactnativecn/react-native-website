@@ -3,14 +3,10 @@ id: appregistry
 title: AppRegistry
 ---
 
-<div class="banner-crna-ejected">
+<div class="banner-native-code-required">
   <h3>Project with Native Code Required</h3>
   <p>
-    This API only works in projects made with <code>react-native init</code>
-    or in those made with <code>expo init</code> or Create React Native App which have since ejected. For
-    more information about ejecting, please see
-    the <a href="https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md" target="_blank">guide</a> on
-    the Create React Native App repository.
+    If you are using the managed `expo-cli` workflow there is only ever one entry component registered with `AppRegistry` and it is handled automatically, you do not need to use this API.
   </p>
 </div>
 
@@ -20,24 +16,6 @@ To "stop" an application when a view should be destroyed, call `AppRegistry.unmo
 
 `AppRegistry` should be required early in the `require` sequence to make sure the JS execution environment is setup before other modules are required.
 
-### Methods
-
-* [`setWrapperComponentProvider`](appregistry.md#setwrappercomponentprovider)
-* [`registerConfig`](appregistry.md#registerconfig)
-* [`registerComponent`](appregistry.md#registercomponent)
-* [`registerRunnable`](appregistry.md#registerrunnable)
-* [`registerSection`](appregistry.md#registersection)
-* [`getAppKeys`](appregistry.md#getappkeys)
-* [`getSectionKeys`](appregistry.md#getsectionkeys)
-* [`getSections`](appregistry.md#getsections)
-* [`getRunnable`](appregistry.md#getrunnable)
-* [`getRegistry`](appregistry.md#getregistry)
-* [`setComponentProviderInstrumentationHook`](appregistry.md#setcomponentproviderinstrumentationhook)
-* [`runApplication`](appregistry.md#runapplication)
-* [`unmountApplicationComponentAtRootTag`](appregistry.md#unmountapplicationcomponentatroottag)
-* [`registerHeadlessTask`](appregistry.md#registerheadlesstask)
-* [`startHeadlessTask`](appregistry.md#startheadlesstask)
-
 ---
 
 # Reference
@@ -46,7 +24,7 @@ To "stop" an application when a view should be destroyed, call `AppRegistry.unmo
 
 ### `setWrapperComponentProvider()`
 
-```javascript
+```jsx
 static setWrapperComponentProvider(provider)
 ```
 
@@ -54,7 +32,7 @@ static setWrapperComponentProvider(provider)
 
 ### `registerConfig()`
 
-```javascript
+```jsx
 static registerConfig(config)
 ```
 
@@ -62,7 +40,7 @@ static registerConfig(config)
 
 ### `registerComponent()`
 
-```javascript
+```jsx
 static registerComponent(appKey, componentProvider, section?)
 ```
 
@@ -70,7 +48,7 @@ static registerComponent(appKey, componentProvider, section?)
 
 ### `registerRunnable()`
 
-```javascript
+```jsx
 static registerRunnable(appKey, run)
 ```
 
@@ -78,7 +56,7 @@ static registerRunnable(appKey, run)
 
 ### `registerSection()`
 
-```javascript
+```jsx
 static registerSection(appKey, component)
 ```
 
@@ -86,7 +64,7 @@ static registerSection(appKey, component)
 
 ### `getAppKeys()`
 
-```javascript
+```jsx
 static getAppKeys()
 ```
 
@@ -94,7 +72,7 @@ static getAppKeys()
 
 ### `getSectionKeys()`
 
-```javascript
+```jsx
 static getSectionKeys()
 ```
 
@@ -102,7 +80,7 @@ static getSectionKeys()
 
 ### `getSections()`
 
-```javascript
+```jsx
 static getSections()
 ```
 
@@ -110,7 +88,7 @@ static getSections()
 
 ### `getRunnable()`
 
-```javascript
+```jsx
 static getRunnable(appKey)
 ```
 
@@ -118,7 +96,7 @@ static getRunnable(appKey)
 
 ### `getRegistry()`
 
-```javascript
+```jsx
 static getRegistry()
 ```
 
@@ -126,7 +104,7 @@ static getRegistry()
 
 ### `setComponentProviderInstrumentationHook()`
 
-```javascript
+```jsx
 static setComponentProviderInstrumentationHook(hook)
 ```
 
@@ -134,7 +112,7 @@ static setComponentProviderInstrumentationHook(hook)
 
 ### `runApplication()`
 
-```javascript
+```jsx
 static runApplication(appKey, appParameters)
 ```
 
@@ -142,7 +120,7 @@ static runApplication(appKey, appParameters)
 
 ### `unmountApplicationComponentAtRootTag()`
 
-```javascript
+```jsx
 static unmountApplicationComponentAtRootTag(rootTag)
 ```
 
@@ -150,20 +128,42 @@ static unmountApplicationComponentAtRootTag(rootTag)
 
 ### `registerHeadlessTask()`
 
-```javascript
-static registerHeadlessTask(taskKey, task)
+```jsx
+static registerHeadlessTask(taskKey, taskProvider)
 ```
 
-Register a headless task. A headless task is a bit of code that runs without a UI. @param taskKey the key associated with this task @param task a promise returning function that takes some data passed from the native side as the only argument; when the promise is resolved or rejected the native side is notified of this event and it may decide to destroy the JS context.
+Register a headless task. A headless task is a bit of code that runs without a UI. @param taskKey the key associated with this task @param taskProvider a promise returning function that takes some data passed from the native side as the only argument; when the promise is resolved or rejected the native side is notified of this event and it may decide to destroy the JS context.
+
+---
+
+### `registerCancellableHeadlessTask()`
+
+```jsx
+static registerCancellableHeadlessTask(taskKey, taskProvider, taskCancelProvider)
+```
+
+Register a headless task which can be cancelled. A headless task is a bit of code that runs without a UI. @param taskKey the key associated with this task @param taskProvider a promise returning function that takes some data passed from the native side as the only argument; when the promise is resolved or rejected the native side is notified of this event and it may decide to destroy the JS context. @param taskCancelProvider a void returning function that takes no arguments; when a cancellation is requested, the function being executed by taskProvider should wrap up and return ASAP.
 
 ---
 
 ### `startHeadlessTask()`
 
-```javascript
+```jsx
 static startHeadlessTask(taskId, taskKey, data)
 ```
 
 Only called from native code. Starts a headless task.
 
 @param taskId the native id for this task instance to keep track of its execution @param taskKey the key for the task to start @param data the data to pass to the task
+
+---
+
+### `cancelHeadlessTask()`
+
+```jsx
+static cancelHeadlessTask(taskId, taskKey)
+```
+
+Only called from native code. Cancels a headless task.
+
+@param taskId the native id for this task instance that was used when startHeadlessTask was called @param taskKey the key for the task that was used when startHeadlessTask was called

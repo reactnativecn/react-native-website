@@ -3,13 +3,14 @@ id: version-0.57-accessibilityinfo
 title: AccessibilityInfo
 original_id: accessibilityinfo
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 有时候我们希望知道用户的设备是否正在运行读屏应用。`AccessibilityInfo`正是用于此目的。你可以用它来查询读屏应用的当前状态，并且可以监听其状态变化。
 
 下面是一个使用`AccessibilityInfo`的小例子:
 
-```javascript
+```jsx
 class ScreenReaderStatusExample extends React.Component {
   state = {
     screenReaderEnabled: false
@@ -69,7 +70,7 @@ class ScreenReaderStatusExample extends React.Component {
 
 ### `fetch()`
 
-```javascript
+```jsx
 static fetch()
 ```
 
@@ -79,7 +80,7 @@ static fetch()
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 static addEventListener(eventName, handler)
 ```
 
@@ -94,7 +95,7 @@ static addEventListener(eventName, handler)
 
 ### `setAccessibilityFocus()`
 
-```javascript
+```jsx
 static setAccessibilityFocus(reactTag)
 ```
 
@@ -104,7 +105,7 @@ static setAccessibilityFocus(reactTag)
 
 ### `announceForAccessibility()`
 
-```javascript
+```jsx
 static announceForAccessibility(announcement)
 ```
 
@@ -114,7 +115,7 @@ static announceForAccessibility(announcement)
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(eventName, handler)
 ```
 

@@ -11,7 +11,7 @@ TouchableHighlight must have one child (not zero or more than one). If you wish 
 
 Example:
 
-```
+```jsx
 renderButton: function() {
   return (
     <TouchableHighlight onPress={this._onPressButton}>
@@ -26,17 +26,16 @@ renderButton: function() {
 
 ### Example
 
-```ReactNativeWebPlayer
+```SnackPlayer name=TouchableHighlight
 import React, { Component } from 'react'
 import {
-  AppRegistry,
   StyleSheet,
   TouchableHighlight,
   Text,
   View,
 } from 'react-native'
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = { count: 0 }
@@ -86,21 +85,25 @@ const styles = StyleSheet.create({
     color: '#FF00FF'
   }
 })
-
-AppRegistry.registerComponent('App', () => App)
 ```
 
 ### Props
 
-* [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
+- [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
 
-- [`activeOpacity`](touchablehighlight.md#activeopacity)
-- [`onHideUnderlay`](touchablehighlight.md#onhideunderlay)
-- [`onShowUnderlay`](touchablehighlight.md#onshowunderlay)
-- [`style`](touchablehighlight.md#style)
-- [`underlayColor`](touchablehighlight.md#underlaycolor)
-- [`hasTVPreferredFocus`](touchablehighlight.md#hastvpreferredfocus)
-- [`tvParallaxProperties`](touchablehighlight.md#tvparallaxproperties)
+* [`activeOpacity`](touchablehighlight.md#activeopacity)
+* [`onHideUnderlay`](touchablehighlight.md#onhideunderlay)
+* [`onShowUnderlay`](touchablehighlight.md#onshowunderlay)
+* [`style`](touchablehighlight.md#style)
+* [`underlayColor`](touchablehighlight.md#underlaycolor)
+* [`hasTVPreferredFocus`](touchablehighlight.md#hastvpreferredfocus)
+* [`tvParallaxProperties`](touchablehighlight.md#tvparallaxproperties)
+* [`nextFocusDown`](touchablehighlight.md#nextFocusDown)
+* [`nextFocusForward`](touchablehighlight.md#nextFocusForward)
+* [`nextFocusLeft`](touchablehighlight.md#nextFocusLeft)
+* [`nextFocusRight`](touchablehighlight.md#nextFocusRight)
+* [`nextFocusUp`](touchablehighlight.md#nextFocusUp)
+* [`testOnly_pressed`](touchablehighlight.md#testOnly_pressed)
 
 ---
 
@@ -108,9 +111,11 @@ AppRegistry.registerComponent('App', () => App)
 
 ## Props
 
+Inherits [TouchableWithoutFeedback Props](touchablewithoutfeedback.md#props).
+
 ### `activeOpacity`
 
-Determines what the opacity of the wrapped view should be when touch is active.
+Determines what the opacity of the wrapped view should be when touch is active. The value should be between 0 and 1. Defaults to 0.85. Requires `underlayColor` to be set.
 
 | Type   | Required |
 | ------ | -------- |
@@ -120,7 +125,7 @@ Determines what the opacity of the wrapped view should be when touch is active.
 
 ### `onHideUnderlay`
 
-Called immediately after the underlay is hidden
+Called immediately after the underlay is hidden.
 
 | Type     | Required |
 | -------- | -------- |
@@ -130,7 +135,7 @@ Called immediately after the underlay is hidden
 
 ### `onShowUnderlay`
 
-Called immediately after the underlay is shown
+Called immediately after the underlay is shown.
 
 | Type     | Required |
 | -------- | -------- |
@@ -175,3 +180,63 @@ enabled: If true, parallax effects are enabled. Defaults to true. shiftDistanceX
 | Type   | Required | Platform |
 | ------ | -------- | -------- |
 | object | No       | iOS      |
+
+---
+
+### `nextFocusDown`
+
+TV next focus down (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `nextFocusForward`
+
+TV next focus forward (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `nextFocusLeft`
+
+TV next focus left (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `nextFocusRight`
+
+TV next focus right (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `nextFocusUp`
+
+TV next focus up (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `testOnly_pressed`
+
+Handy for snapshot tests.
+
+| Type | Required |
+| ---- | -------- |
+| bool | No       |

@@ -6,10 +6,10 @@ original_id: imagepickerios
 
 ### Methods
 
-* [`canRecordVideos`](imagepickerios.md#canrecordvideos)
-* [`canUseCamera`](imagepickerios.md#canusecamera)
-* [`openCameraDialog`](imagepickerios.md#opencameradialog)
-* [`openSelectDialog`](imagepickerios.md#openselectdialog)
+- [`canRecordVideos`](imagepickerios.md#canrecordvideos)
+- [`canUseCamera`](imagepickerios.md#canusecamera)
+- [`openCameraDialog`](imagepickerios.md#opencameradialog)
+- [`openSelectDialog`](imagepickerios.md#openselectdialog)
 
 ---
 
@@ -19,7 +19,7 @@ original_id: imagepickerios
 
 ### `canRecordVideos()`
 
-```javascript
+```jsx
 static canRecordVideos(callback)
 ```
 
@@ -27,7 +27,7 @@ static canRecordVideos(callback)
 
 ### `canUseCamera()`
 
-```javascript
+```jsx
 static canUseCamera(callback)
 ```
 
@@ -35,7 +35,7 @@ static canUseCamera(callback)
 
 ### `openCameraDialog()`
 
-```javascript
+```jsx
 static openCameraDialog(config, successCallback, cancelCallback)
 ```
 
@@ -43,6 +43,6 @@ static openCameraDialog(config, successCallback, cancelCallback)
 
 ### `openSelectDialog()`
 
-```javascript
+```jsx
 static openSelectDialog(config, successCallback, cancelCallback)
 ```

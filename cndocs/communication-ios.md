@@ -35,12 +35,11 @@ RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
 ```
 import React from 'react';
 import {
-  AppRegistry,
   View,
   Image
 } from 'react-native';
 
-class ImageBrowserApp extends React.Component {
+export default class ImageBrowserApp extends React.Component {
   renderImage(imgURI) {
     return (
       <Image source={{uri: imgURI}} />
@@ -55,7 +54,6 @@ class ImageBrowserApp extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('AwesomeProject', () => ImageBrowserApp);
 ```
 
 `RCTRootView`同样提供了一个可读写的属性`appProperties`。在`appProperties`设置之后，React Native 应用将会根据新的属性重新渲染。当然，只有在新属性和之前的属性有区别时更新才会被触发。
@@ -68,6 +66,8 @@ rootView.appProperties = @{@"images" : imageList};
 ```
 
 你可以随时更新属性，但是更新必须在主线程中进行，读取则可以在任何线程中进行。
+
+> **_注意:_** 目前有一个已知问题，如果在 bridge 还没初始化完成前就设置 appProperties，设置可能会无效，具体讨论请见 https://github.com/facebook/react-native/issues/20115
 
 更新属性时并不能做到只更新一部分属性。我们建议你自己封装一个函数来构造属性。
 
@@ -95,9 +95,9 @@ React Native 允许使用跨语言的函数调用。你可以在 JS 中调用原
 
 事件很强大，它可以不需要引用直接修改 React Native 组件。但是，当你使用时要注意下面这些陷阱：
 
-* 由于事件可以从各种地方产生，它们可能导致混乱的依赖。
-* 事件共享相同的命名空间，因此你可能遇到名字冲突。冲突不会在编写代码时被探测到，因此很难排错。
-* 如果你使用了同一个 React Native 组件的多个引用，然后想在事件中区分它们，name 你很可能需要在事件中同时传递一些标识（你可以使用原生视图中的`reactTag`作为标识）。
+- 由于事件可以从各种地方产生，它们可能导致混乱的依赖。
+- 事件共享相同的命名空间，因此你可能遇到名字冲突。冲突不会在编写代码时被探测到，因此很难排错。
+- 如果你使用了同一个 React Native 组件的多个引用，然后想在事件中区分它们，name 你很可能需要在事件中同时传递一些标识（你可以使用原生视图中的`reactTag`作为标识）。
 
 在 React Native 中嵌入原生组件时，通常的做法是用原生组件的 RCTViewManager 作为视图的代理，通过 bridge 向 JS 发送事件。这样可以集中在一处调用相关的事件。
 
@@ -199,5 +199,4 @@ typedef NS_ENUM(NSInteger, RCTRootViewSizeFlexibility) {
 
 动态改变根视图的弹性模式是可行的。改变根视图的弹性模式将会导致布局的重新计算，并且在重新量出内容尺寸时会调用`rootViewDidChangeIntrinsicSize`方法。
 
-> **_注意：_** React Native 布局是通过一个特殊的线程进行计算，而原生 UI 视图是通过主线程更新。这可能导致短暂的原生端和 React Native 端的不一致。这是一个已知的问题，我们的团队已经在着手解决不同源的 UI 同步更新。
-> **_注意：_** 除非根视图成为其他视图的子视图，否则 React Native 不会进行任何的布局计算。如果你想在还没有获得 React Native 视图的尺寸之前先隐藏视图，请将根视图添加为子视图并且在初始化的时候进行隐藏（使用`UIView`的`hidden`属性），然后在代理方法中改变它的可见性。
+> **_注意：_** React Native 布局是通过一个单独的线程进行计算，而原生 UI 视图是通过主线程更新。这可能导致短暂的原生端和 React Native 端的不一致。这是一个已知的问题，我们的团队已经在着手解决不同源的 UI 同步更新。 **_注意：_** 除非根视图成为其他视图的子视图，否则 React Native 不会进行任何的布局计算。如果你想在还没有获得 React Native 视图的尺寸之前先隐藏视图，请将根视图添加为子视图并且在初始化的时候进行隐藏（使用`UIView`的`hidden`属性），然后在代理方法中改变它的可见性。

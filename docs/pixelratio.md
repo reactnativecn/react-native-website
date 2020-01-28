@@ -9,12 +9,12 @@ PixelRatio class gives access to the device pixel density.
 
 You should get a higher resolution image if you are on a high pixel density device. A good rule of thumb is to multiply the size of the image you display by the pixel ratio.
 
-```
+```jsx
 var image = getImage({
   width: PixelRatio.getPixelSizeForLayoutSize(200),
   height: PixelRatio.getPixelSizeForLayoutSize(100),
 });
-<Image source={image} style={{width: 200, height: 100}} />
+<Image source={image} style={{width: 200, height: 100}} />;
 ```
 
 ## Pixel grid snapping
@@ -27,13 +27,6 @@ We have to be careful when to do this rounding. You never want to work with roun
 
 In React Native, everything in JavaScript and within the layout engine works with arbitrary precision numbers. It's only when we set the position and dimensions of the native element on the main thread that we round. Also, rounding is done relative to the root rather than the parent, again to avoid accumulating rounding errors.
 
-### Methods
-
-* [`get`](pixelratio.md#get)
-* [`getFontScale`](pixelratio.md#getfontscale)
-* [`getPixelSizeForLayoutSize`](pixelratio.md#getpixelsizeforlayoutsize)
-* [`roundToNearestPixel`](pixelratio.md#roundtonearestpixel)
-
 ---
 
 # Reference
@@ -42,37 +35,37 @@ In React Native, everything in JavaScript and within the layout engine works wit
 
 ### `get()`
 
-```javascript
+```jsx
 static get()
 ```
 
 Returns the device pixel density. Some examples:
 
-* PixelRatio.get() === 1
-  * [mdpi Android devices](https://material.io/tools/devices/)
-* PixelRatio.get() === 1.5
-  * [hdpi Android devices](https://material.io/tools/devices/)
-* PixelRatio.get() === 2
-  * iPhone 4, 4S
-  * iPhone 5, 5C, 5S
-  * iPhone 6, 7, 8
-  * iPhone XR
-  * [xhdpi Android devices](https://material.io/tools/devices/)
-* PixelRatio.get() === 3
-  * iPhone 6 Plus, 7 Plus, 8 Plus
-  * iPhone X, XS, XS Max
-  * Pixel, Pixel 2
-  * [xxhdpi Android devices](https://material.io/tools/devices/)
-* PixelRatio.get() === 3.5
-  * Nexus 6
-  * Pixel XL, Pixel 2 XL
-  * [xxxhdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 1
+  - [mdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 1.5
+  - [hdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 2
+  - iPhone 4, 4S
+  - iPhone 5, 5C, 5S
+  - iPhone 6, 7, 8
+  - iPhone XR
+  - [xhdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 3
+  - iPhone 6 Plus, 7 Plus, 8 Plus
+  - iPhone X, XS, XS Max
+  - Pixel, Pixel 2
+  - [xxhdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 3.5
+  - Nexus 6
+  - Pixel XL, Pixel 2 XL
+  - [xxxhdpi Android devices](https://material.io/tools/devices/)
 
 ---
 
 ### `getFontScale()`
 
-```javascript
+```jsx
 static getFontScale()
 ```
 
@@ -86,7 +79,7 @@ Currently this is only implemented on Android and reflects the user preference s
 
 ### `getPixelSizeForLayoutSize()`
 
-```javascript
+```jsx
 static getPixelSizeForLayoutSize(layoutSize)
 ```
 
@@ -98,7 +91,7 @@ Guaranteed to return an integer number.
 
 ### `roundToNearestPixel()`
 
-```javascript
+```jsx
 static roundToNearestPixel(layoutSize)
 ```
 

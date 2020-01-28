@@ -3,19 +3,15 @@ id: pickerios
 title: PickerIOS
 ---
 
-### Props
-
-* [View props...](view.md#props)
-
-- [`itemStyle`](pickerios.md#itemstyle)
-- [`onValueChange`](pickerios.md#onvaluechange)
-- [`selectedValue`](pickerios.md#selectedvalue)
+> **Deprecated.** Use [Picker](picker.md) instead.
 
 ---
 
 # Reference
 
 ## Props
+
+Inherits [View Props](view.md#props).
 
 ### `itemStyle`
 
@@ -33,8 +29,16 @@ title: PickerIOS
 
 ---
 
+### `onChange`
+
+| Type     | Required |
+| -------- | -------- |
+| function | No       |
+
+---
+
 ### `selectedValue`
 
-| Type | Required |
-| ---- | -------- |
-| any  | No       |
+| Type             | Required |
+| ---------------- | -------- |
+| number or string | No       |

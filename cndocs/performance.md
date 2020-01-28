@@ -37,25 +37,9 @@ JavaScript 线程的性能在开发模式下是很糟糕的。这是不可避免
 
 ### console.log 语句
 
-在运行打好了离线包的应用时，控制台打印语句可能会极大地拖累 JavaScript 线程。注意有些第三方调试库也可能包含控制台打印语句，比如[redux-logger](https://github.com/evgenyrodionov/redux-logger)，所以在发布应用前请务必仔细检查，确保全部移除。
+在运行打好了离线包的应用时，控制台大量打印语句可能会拖累 JavaScript 线程。注意有些第三方调试库也可能包含控制台打印语句，比如[redux-logger](https://github.com/evgenyrodionov/redux-logger)，所以在发布应用前请务必仔细检查，确保全部移除。
 
-> 这里有个小技巧可以在发布时屏蔽掉所有的`console.*`调用。React Native 中有一个全局变量`__DEV__`用于指示当前运行环境是否是开发环境。我们可以据此在正式环境中替换掉系统原先的 console 实现。
-
-```js
-if (!__DEV__) {
-  global.console = {
-    info: () => {},
-    log: () => {},
-    warn: () => {},
-    debug: () => {},
-    error: () => {}
-  };
-}
-```
-
-这样在打包发布时，所有的控制台语句就会被自动替换为空函数，而在调试时它们仍然会被正常调用。
-
-> 还有个[babel 插件](https://babeljs.io/docs/plugins/transform-remove-console/)可以帮你移除所有的`console.*`调用。首先需要使用`yarn add --dev babel-plugin-transform-remove-console`来安装，然后在项目根目录下编辑（或者是新建）一个名为·.babelrc`的文件，在其中加入：
+> 有个[babel 插件](https://babeljs.io/docs/plugins/transform-remove-console/)可以帮你移除所有的`console.*`调用。首先需要使用`yarn add --dev babel-plugin-transform-remove-console`来安装，然后在项目根目录下编辑（或者是新建）一个名为·.babelrc`的文件，在其中加入：
 
 ```json
 {
@@ -92,7 +76,7 @@ if (!__DEV__) {
 
 有些时候，如果我们有一项操作与点击事件所带来的透明度改变或者高亮效果发生在同一帧中，那么有可能在`onPress`函数结束之前我们都看不到这些效果。比如在`onPress`执行了一个`setState`的操作，这个操作需要大量计算工作并且导致了掉帧。对此的一个解决方案是将`onPress`处理函数中的操作封装到`requestAnimationFrame`中：
 
-```javascript
+```jsx
 handleOnPress() {
   // 谨记在使用requestAnimationFrame、setTimeout以及setInterval时
   // 要使用TimerMixin（其作用是在组件unmount时，清除所有定时器）
@@ -316,12 +300,12 @@ export default class Optimized extends Component {
 
 在 iOS 上使用 RAM 格式将创建一个简单的索引文件，React Native 将根据此文件一次加载一个模块。在 Android 上，默认情况下它会为每个模块创建一组文件。你可以像 iOS 一样，强制 Android 只创建一个文件，但使用多个文件可以提高性能，并降低内存占用。
 
-在 Xcode 中启用 RAM 格式，需要编辑 build phase 里的"Bundle React Native code and images"。在`../node_modules/react-native/scripts/react-native-xcode.sh.sh`中添加 `export BUNDLE_COMMAND="ram-bundle"`:
+在 Xcode 中启用 RAM 格式，需要编辑 build phase 里的"Bundle React Native code and images"。在`../node_modules/react-native/scripts/react-native-xcode.sh`中添加 `export BUNDLE_COMMAND="ram-bundle"`:
 
 ```
 export BUNDLE_COMMAND="ram-bundle"
 export NODE_BINARY=node
-../node_modules/react-native/scripts/react-native-xcode.sh.sh
+../node_modules/react-native/scripts/react-native-xcode.sh
 ```
 
 在 Android 上启用 RAM 格式，需要编辑 android/app/build.gradle 文件。在`apply from: "../../node_modules/react-native/react.gradle"`之前修改或添加`project.ext.react`：
@@ -341,51 +325,11 @@ project.ext.react = [
 ]
 ```
 
+> **_Note_**: If you are using [Hermes JS Engine](https://github.com/facebook/hermes), you do not need RAM bundles. When loading the bytecode, `mmap` ensures that the entire file is not loaded.
+
 ### 配置预加载及内联引用
 
 现在我们已经启用了RAM格式，然而调用`require`会造成额外的开销。因为当遇到尚未加载的模块时，`require`需要通过bridge来发送消息。这主要会影响到启动速度，因为在应用程序加载初始模块时可能触发相当大量的请求调用。幸运的是，我们可以配置一部分模块进行预加载。为了做到这一点，你将需要实现某种形式的内联引用。
-
-### 添加 packager 配置文件
-
-在项目中创建一个名为 packager 的文件夹，并创建一个名为 config.js 的文件。添加以下内容：
-
-```
-const config = {
-  transformer: {
-    getTransformOptions: () => {
-      return {
-        transform: { inlineRequires: true },
-      };
-    },
-  },
-};
-
-module.exports = config;
-```
-
-在 Xcode 的 Build phase 中添加`export BUNDLE_CONFIG="packager/config.js"`
-
-```
-export BUNDLE_COMMAND="ram-bundle"
-export BUNDLE_CONFIG="packager/config.js"
-export NODE_BINARY=node
-../node_modules/react-native/scripts/react-native-xcode.sh.sh
-```
-
-编辑 android/app/build.gradle 文件，添加`bundleConfig: "packager/config.js",`
-
-```
-project.ext.react = [
-  bundleCommand: "ram-bundle",
-  bundleConfig: "packager/config.js"
-]
-```
-
-最后，在 package.json 的“scripts”下修改“start”命令来启用配置文件：
-
-`"start": "node node_modules/react-native/local-cli/cli.js start --config ../../../../packager/config.js",`
-
-此时用`npm start`启动你的 packager 服务即会加载配置文件。请注意，如果你仍然通过 xcode 或是 react-native run-android 等方式自动启动 packager 服务，则由于没有使用上面的参数，不会加载配置文件。
 
 ### 调试预加载的模块
 
@@ -425,17 +369,17 @@ require.Systrace.beginEvent = (message) => {
 
 虽然每个 App 各有不同，但只加载第一个页面所需的模块是有普适意义的。当你满意时，把 loadedModuleNames 的输出放到 packager/modulePaths.js 文件中。
 
-### 更新配置文件
+### 更新配置文件(metro.config.js)
 
-Returning to packager/config.js we should update it to use our newly generated modulePaths.js file.
+We now need to update `metro.config.js` in the root of the project to use our newly generated `modulePaths.js` file:
 
 ```
-const modulePaths = require('./modulePaths');
+const modulePaths = require('./packager/modulePaths');
 const resolve = require('path').resolve;
 const fs = require('fs');
 
 // Update the following line if the root folder of your app is somewhere else.
-const ROOT_FOLDER = path.resolve(__dirname, '..');
+const ROOT_FOLDER = resolve(__dirname, '..');
 
 const config = {
   transformer: {
@@ -452,6 +396,7 @@ const config = {
       };
     },
   },
+  projectRoot: ROOT_FOLDER,
 };
 
 module.exports = config;

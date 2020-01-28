@@ -11,11 +11,11 @@ tvOS(即 Apple TV 机顶盒)：监听遥控器上的后退按钮事件（阻止�
 
 iOS：尚无作用。
 
-监听函数是按倒序的顺序执行（即后添加的函数先执行）。如果某一个函数返回 true，则后续的函数都不会被调用。
+监听函数是按倒序的顺序执行（即后添加的函数先执行）。如果某一个函数返回 true，则后续的函数都不会被调用。Beware: If your app shows an opened `Modal`, BackHandler will not publish any events ([see `Modal` docs](modal.md#onrequestclose)).
 
 示例：
 
-```javascript
+```jsx
 BackHandler.addEventListener("hardwareBackPress", function() {
   // this.onMainScreen()和this.goBack()两个方法都只是伪方法，需要你自己去实现！
 
@@ -29,7 +29,7 @@ BackHandler.addEventListener("hardwareBackPress", function() {
 
 在生命周期方法中使用的示例：
 
-```javascript
+```jsx
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
   }
@@ -46,7 +46,7 @@ BackHandler.addEventListener("hardwareBackPress", function() {
 
 在生命周期方法中使用的另一种写法：
 
-```javascript
+```jsx
   componentDidMount() {
     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       this.goBack(); // works best when the goBack is async
@@ -59,36 +59,30 @@ BackHandler.addEventListener("hardwareBackPress", function() {
   }
 ```
 
-### 查看方法
-
-- [`exitApp`](backhandler.md#exitapp)
-- [`addEventListener`](backhandler.md#addeventlistener)
-- [`removeEventListener`](backhandler.md#removeeventlistener)
-
 ---
 
 # 文档
 
 ## 方法
 
-### `exitApp()`
+### `addEventListener()`
 
-```javascript
-static exitApp()
+```jsx
+static addEventListener(eventName, handler)
 ```
 
 ---
 
-### `addEventListener()`
+### `exitApp()`
 
-```javascript
-static addEventListener(eventName, handler)
+```jsx
+static exitApp()
 ```
 
 ---
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(eventName, handler)
 ```

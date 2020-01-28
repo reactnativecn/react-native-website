@@ -11,11 +11,11 @@ tvOS: Detect presses of the menu button on the TV remote. (Still to be implement
 
 iOS: Not applicable.
 
-The event subscriptions are called in reverse order (i.e. last registered subscription first), and if one subscription returns true then subscriptions registered earlier will not be called.
+The event subscriptions are called in reverse order (i.e. last registered subscription first), and if one subscription returns true then subscriptions registered earlier will not be called. Beware: If your app shows an opened `Modal`, BackHandler will not publish any events ([see `Modal` docs](https://facebook.github.io/react-native/docs/modal#onrequestclose)).
 
 Example:
 
-```javascript
+```jsx
 BackHandler.addEventListener('hardwareBackPress', function() {
   // this.onMainScreen and this.goBack are just examples, you need to use your own implementation here
   // Typically you would use the navigator here to go to the last state.
@@ -30,13 +30,13 @@ BackHandler.addEventListener('hardwareBackPress', function() {
 
 Lifecycle example:
 
-```javascript
+```jsx
   componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+    this.backHandler = BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
   }
 
   componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    this.backHandler.remove()
   }
 
   handleBackPress = () => {
@@ -47,7 +47,7 @@ Lifecycle example:
 
 Lifecycle alternative:
 
-```javascript
+```jsx
   componentDidMount() {
     this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       this.goBack(); // works best when the goBack is async
@@ -60,36 +60,30 @@ Lifecycle alternative:
   }
 ```
 
-### Methods
-
-* [`exitApp`](backhandler.md#exitapp)
-* [`addEventListener`](backhandler.md#addeventlistener)
-* [`removeEventListener`](backhandler.md#removeeventlistener)
-
 ---
 
 # Reference
 
 ## Methods
 
-### `exitApp()`
+### `addEventListener()`
 
-```javascript
-static exitApp()
+```jsx
+static addEventListener(eventName, handler)
 ```
 
 ---
 
-### `addEventListener()`
+### `exitApp()`
 
-```javascript
-static addEventListener(eventName, handler)
+```jsx
+static exitApp()
 ```
 
 ---
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(eventName, handler)
 ```

@@ -3,6 +3,7 @@ id: version-0.57-keyboard
 title: Keyboard
 original_id: keyboard
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 `Keyboard`模块用来控制键盘相关的事件。
@@ -59,7 +60,7 @@ class Example extends Component {
 
 ### `addListener()`
 
-```javascript
+```jsx
 static addListener(eventName, callback)
 ```
 
@@ -84,7 +85,7 @@ static addListener(eventName, callback)
 
 ### `removeListener()`
 
-```javascript
+```jsx
 static removeListener(eventName, callback)
 ```
 
@@ -97,7 +98,7 @@ static removeListener(eventName, callback)
 
 ### `removeAllListeners()`
 
-```javascript
+```jsx
 static removeAllListeners(eventName)
 ```
 
@@ -109,7 +110,7 @@ static removeAllListeners(eventName)
 
 ### `dismiss()`
 
-```javascript
+```jsx
 static dismiss()
 ```
 

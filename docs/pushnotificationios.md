@@ -3,14 +3,12 @@ id: pushnotificationios
 title: PushNotificationIOS
 ---
 
-<div class="banner-crna-ejected">
+> **Deprecated.** Use [@react-native-community/push-notification-ios](https://github.com/react-native-community/react-native-push-notification-ios) instead.
+
+<div class="banner-native-code-required">
   <h3>Projects with Native Code Only</h3>
   <p>
-    This section only applies to projects made with <code>react-native init</code>
-    or to those made with <code>expo init</code> or Create React Native App which have since ejected. For
-    more information about ejecting, please see
-    the <a href="https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md" target="_blank">guide</a> on
-    the Create React Native App repository.
+    The following section only applies to projects with native code exposed. If you are using the managed `expo-cli` workflow, see the guide on <a href="https://docs.expo.io/versions/latest/sdk/notifications/">Notifications</a> in the Expo documentation for the appropriate alternative.
   </p>
 </div>
 
@@ -18,10 +16,32 @@ Handle push notifications for your app, including permission handling and icon b
 
 To get up and running, [configure your notifications with Apple](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW6) and your server-side system.
 
-[Manually link](linking-libraries-ios.md#manual-linking) the PushNotificationIOS library
+React Native version equal or higher than 0.60.0:
 
-* Add the following to your Project: `node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj`
-* Add the following to `Link Binary With Libraries`: `libRCTPushNotification.a`
+- Autolinking in 0.60.0 handles the linking for you!
+
+React Native versions lower than 0.60.0:
+
+Add the PushNotificationIOS library to your Podfile: ./ios/Podfile
+
+- CocoaPods:
+
+  - Add the PushNotificationIOS library to your Podfile: ./ios/Podfile
+
+    ```
+
+    ``
+    ..
+    do
+    pp
+    ..
+    S'
+    ...
+    ```
+
+- [Manually link](linking-libraries-ios.md#manual-linking) the PushNotificationIOS library:
+  - Add the following to your Project: `node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj`
+  - Add the following to `Link Binary With Libraries`: `libRCTPushNotification.a`
 
 Finally, to enable support for `notification` and `register` events you need to augment your AppDelegate.
 
@@ -31,7 +51,7 @@ At the top of your `AppDelegate.m`:
 
 And then in your AppDelegate implementation add the following:
 
-```
+```objectivec
  // Required to register for notifications
  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
  {
@@ -60,33 +80,33 @@ And then in your AppDelegate implementation add the following:
  }
 ```
 
-### Methods
+To show notifications while being in the foreground (available starting from iOS 10) add the following lines:
 
-* [`presentLocalNotification`](pushnotificationios.md#presentLocalNotification)
-* [`scheduleLocalNotification`](pushnotificationios.md#schedulelocalnotification)
-* [`cancelAllLocalNotifications`](pushnotificationios.md#cancelalllocalnotifications)
-* [`removeAllDeliveredNotifications`](pushnotificationios.md#removealldeliverednotifications)
-* [`getDeliveredNotifications`](pushnotificationios.md#getdeliverednotifications)
-* [`removeDeliveredNotifications`](pushnotificationios.md#removedeliverednotifications)
-* [`setApplicationIconBadgeNumber`](pushnotificationios.md#setapplicationiconbadgenumber)
-* [`getApplicationIconBadgeNumber`](pushnotificationios.md#getapplicationiconbadgenumber)
-* [`cancelLocalNotifications`](pushnotificationios.md#cancellocalnotifications)
-* [`getScheduledLocalNotifications`](pushnotificationios.md#getscheduledlocalnotifications)
-* [`addEventListener`](pushnotificationios.md#addeventlistener)
-* [`removeEventListener`](pushnotificationios.md#removeeventlistener)
-* [`requestPermissions`](pushnotificationios.md#requestpermissions)
-* [`abandonPermissions`](pushnotificationios.md#abandonpermissions)
-* [`checkPermissions`](pushnotificationios.md#checkpermissions)
-* [`getInitialNotification`](pushnotificationios.md#getinitialnotification)
-* [`constructor`](pushnotificationios.md#constructor)
-* [`finish`](pushnotificationios.md#finish)
-* [`getMessage`](pushnotificationios.md#getmessage)
-* [`getSound`](pushnotificationios.md#getsound)
-* [`getCategory`](pushnotificationios.md#getcategory)
-* [`getAlert`](pushnotificationios.md#getalert)
-* [`getContentAvailable`](pushnotificationios.md#getcontentavailable)
-* [`getBadgeCount`](pushnotificationios.md#getbadgecount)
-* [`getData`](pushnotificationios.md#getdata)
+At the top of your `AppDelegate.m`:
+
+`#import <UserNotifications/UserNotifications.h>`
+
+And then in your AppDelegate implementation add the following:
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  ...
+  // Define UNUserNotificationCenter
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+  center.delegate = self;
+
+  return YES;
+}
+
+//Called when a notification is delivered to a foreground app.
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+{
+  completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+}
+```
+
+Then enable Background Modes/Remote notifications to be able to use remote notifications properly. The easiest way to do this is via the project settings. Navigate to Targets -> Your App -> Capabilities -> Background Modes and check Remote notifications. This will automatically enable the required settings.
 
 ---
 
@@ -96,7 +116,7 @@ And then in your AppDelegate implementation add the following:
 
 ### `presentLocalNotification()`
 
-```javascript
+```jsx
 PushNotificationIOS.presentLocalNotification(details);
 ```
 
@@ -110,19 +130,20 @@ Schedules the localNotification for immediate presentation.
 
 details is an object containing:
 
-* `alertBody` : The message displayed in the notification alert.
-* `alertAction` : The "action" displayed beneath an actionable notification. Defaults to "view";
-* `soundName` : The sound played when the notification is fired (optional).
-* `isSilent` : If true, the notification will appear without sound (optional).
-* `category` : The category of this notification, required for actionable notifications (optional).
-* `userInfo` : An optional object containing additional notification data.
-* `applicationIconBadgeNumber` (optional) : The number to display as the app's icon badge. The default value of this property is 0, which means that no badge is displayed.
+- `alertBody` : The message displayed in the notification alert.
+- `alertTitle` : The text displayed as the title of the notification alert.
+- `alertAction` : The "action" displayed beneath an actionable notification. Defaults to "view";
+- `soundName` : The sound played when the notification is fired (optional).
+- `isSilent` : If true, the notification will appear without sound (optional).
+- `category` : The category of this notification, required for actionable notifications (optional).
+- `userInfo` : An optional object containing additional notification data.
+- `applicationIconBadgeNumber` (optional) : The number to display as the app's icon badge. The default value of this property is 0, which means that no badge is displayed.
 
 ---
 
 ### `scheduleLocalNotification()`
 
-```javascript
+```jsx
 PushNotificationIOS.scheduleLocalNotification(details);
 ```
 
@@ -136,22 +157,22 @@ Schedules the localNotification for future presentation.
 
 details is an object containing:
 
-* `fireDate` : The date and time when the system should deliver the notification.
-* `alertTitle` : The text displayed as the title of the notification alert.
-* `alertBody` : The message displayed in the notification alert.
-* `alertAction` : The "action" displayed beneath an actionable notification. Defaults to "view";
-* `soundName` : The sound played when the notification is fired (optional).
-* `isSilent` : If true, the notification will appear without sound (optional).
-* `category` : The category of this notification, required for actionable notifications (optional).
-* `userInfo` : An optional object containing additional notification data.
-* `applicationIconBadgeNumber` (optional) : The number to display as the app's icon badge. Setting the number to 0 removes the icon badge.
-* `repeatInterval` : The interval to repeat as a string. Possible values: `minute`, `hour`, `day`, `week`, `month`, `year`.
+- `fireDate` : The date and time when the system should deliver the notification.
+- `alertTitle` : The text displayed as the title of the notification alert.
+- `alertBody` : The message displayed in the notification alert.
+- `alertAction` : The "action" displayed beneath an actionable notification. Defaults to "view";
+- `soundName` : The sound played when the notification is fired (optional).
+- `isSilent` : If true, the notification will appear without sound (optional).
+- `category` : The category of this notification, required for actionable notifications (optional).
+- `userInfo` : An optional object containing additional notification data.
+- `applicationIconBadgeNumber` (optional) : The number to display as the app's icon badge. Setting the number to 0 removes the icon badge.
+- `repeatInterval` : The interval to repeat as a string. Possible values: `minute`, `hour`, `day`, `week`, `month`, `year`.
 
 ---
 
 ### `cancelAllLocalNotifications()`
 
-```javascript
+```jsx
 PushNotificationIOS.cancelAllLocalNotifications();
 ```
 
@@ -161,7 +182,7 @@ Cancels all scheduled localNotifications
 
 ### `removeAllDeliveredNotifications()`
 
-```javascript
+```jsx
 PushNotificationIOS.removeAllDeliveredNotifications();
 ```
 
@@ -171,7 +192,7 @@ Remove all delivered notifications from Notification Center
 
 ### `getDeliveredNotifications()`
 
-```javascript
+```jsx
 PushNotificationIOS.getDeliveredNotifications(callback);
 ```
 
@@ -185,18 +206,18 @@ Provides you with a list of the app’s notifications that are still displayed i
 
 A delivered notification is an object containing:
 
-* `identifier` : The identifier of this notification.
-* `title` : The title of this notification.
-* `body` : The body of this notification.
-* `category` : The category of this notification, if has one.
-* `userInfo` : An optional object containing additional notification data.
-* `thread-id` : The thread identifier of this notification, if has one.
+- `identifier` : The identifier of this notification.
+- `title` : The title of this notification.
+- `body` : The body of this notification.
+- `category` : The category of this notification, if has one.
+- `userInfo` : An optional object containing additional notification data.
+- `thread-id` : The thread identifier of this notification, if has one.
 
 ---
 
 ### `removeDeliveredNotifications()`
 
-```javascript
+```jsx
 PushNotificationIOS.removeDeliveredNotifications(identifiers);
 ```
 
@@ -212,7 +233,7 @@ Removes the specified notifications from Notification Center
 
 ### `setApplicationIconBadgeNumber()`
 
-```javascript
+```jsx
 PushNotificationIOS.setApplicationIconBadgeNumber(number);
 ```
 
@@ -228,7 +249,7 @@ Sets the badge number for the app icon on the home screen
 
 ### `getApplicationIconBadgeNumber()`
 
-```javascript
+```jsx
 PushNotificationIOS.getApplicationIconBadgeNumber(callback);
 ```
 
@@ -244,7 +265,7 @@ Gets the current badge number for the app icon on the home screen
 
 ### `cancelLocalNotifications()`
 
-```javascript
+```jsx
 PushNotificationIOS.cancelLocalNotifications(userInfo);
 ```
 
@@ -262,7 +283,7 @@ Optionally restricts the set of canceled notifications to those notifications wh
 
 ### `getScheduledLocalNotifications()`
 
-```javascript
+```jsx
 PushNotificationIOS.getScheduledLocalNotifications(callback);
 ```
 
@@ -278,7 +299,7 @@ Gets the local notifications that are currently scheduled.
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 PushNotificationIOS.addEventListener(type, handler);
 ```
 
@@ -293,16 +314,16 @@ Attaches a listener to remote or local notification events while the app is runn
 
 Valid events are:
 
-* `notification` : Fired when a remote notification is received. The handler will be invoked with an instance of `PushNotificationIOS`.
-* `localNotification` : Fired when a local notification is received. The handler will be invoked with an instance of `PushNotificationIOS`.
-* `register`: Fired when the user registers for remote notifications. The handler will be invoked with a hex string representing the deviceToken.
-* `registrationError`: Fired when the user fails to register for remote notifications. Typically occurs when APNS is having issues, or the device is a simulator. The handler will be invoked with {message: string, code: number, details: any}.
+- `notification` : Fired when a remote notification is received. The handler will be invoked with an instance of `PushNotificationIOS`.
+- `localNotification` : Fired when a local notification is received. The handler will be invoked with an instance of `PushNotificationIOS`.
+- `register`: Fired when the user registers for remote notifications. The handler will be invoked with a hex string representing the deviceToken.
+- `registrationError`: Fired when the user fails to register for remote notifications. Typically occurs when APNS is having issues, or the device is a simulator. The handler will be invoked with {message: string, code: number, details: any}.
 
 ---
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 PushNotificationIOS.removeEventListener(type, handler);
 ```
 
@@ -319,15 +340,15 @@ Removes the event listener. Do this in `componentWillUnmount` to prevent memory 
 
 ### `requestPermissions()`
 
-```javascript
+```jsx
 PushNotificationIOS.requestPermissions([permissions]);
 ```
 
 Requests notification permissions from iOS, prompting the user's dialog box. By default, it will request all notification permissions, but a subset of these can be requested by passing a map of requested permissions. The following permissions are supported:
 
-* `alert`
-* `badge`
-* `sound`
+- `alert`
+- `badge`
+- `sound`
 
 If a map is provided to the method, only the permissions with truthy values will be requested.
 
@@ -343,7 +364,7 @@ This method returns a promise that will resolve when the user accepts, rejects, 
 
 ### `abandonPermissions()`
 
-```javascript
+```jsx
 PushNotificationIOS.abandonPermissions();
 ```
 
@@ -355,7 +376,7 @@ You should call this method in rare circumstances only, such as when a new versi
 
 ### `checkPermissions()`
 
-```javascript
+```jsx
 PushNotificationIOS.checkPermissions(callback);
 ```
 
@@ -369,15 +390,15 @@ See what push permissions are currently enabled.
 
 `callback` will be invoked with a `permissions` object:
 
-* `alert` :boolean
-* `badge` :boolean
-* `sound` :boolean
+- `alert` :boolean
+- `badge` :boolean
+- `sound` :boolean
 
 ---
 
 ### `getInitialNotification()`
 
-```javascript
+```jsx
 PushNotificationIOS.getInitialNotification();
 ```
 
@@ -387,7 +408,7 @@ This method returns a promise. If the app was launched by a push notification, t
 
 ### `constructor()`
 
-```javascript
+```jsx
 constructor(nativeNotif);
 ```
 
@@ -397,7 +418,7 @@ You will never need to instantiate `PushNotificationIOS` yourself. Listening to 
 
 ### `finish()`
 
-```javascript
+```jsx
 finish(fetchResult);
 ```
 
@@ -411,7 +432,7 @@ If you do not call this method your background remote notifications could be thr
 
 ### `getMessage()`
 
-```javascript
+```jsx
 getMessage();
 ```
 
@@ -421,7 +442,7 @@ An alias for `getAlert` to get the notification's main message string
 
 ### `getSound()`
 
-```javascript
+```jsx
 getSound();
 ```
 
@@ -431,7 +452,7 @@ Gets the sound string from the `aps` object
 
 ### `getCategory()`
 
-```javascript
+```jsx
 getCategory();
 ```
 
@@ -441,7 +462,7 @@ Gets the category string from the `aps` object
 
 ### `getAlert()`
 
-```javascript
+```jsx
 getAlert();
 ```
 
@@ -451,7 +472,7 @@ Gets the notification's main message from the `aps` object
 
 ### `getContentAvailable()`
 
-```javascript
+```jsx
 getContentAvailable();
 ```
 
@@ -461,7 +482,7 @@ Gets the content-available number from the `aps` object
 
 ### `getBadgeCount()`
 
-```javascript
+```jsx
 getBadgeCount();
 ```
 
@@ -471,8 +492,18 @@ Gets the badge count number from the `aps` object
 
 ### `getData()`
 
-```javascript
+```jsx
 getData();
 ```
 
-Gets the data object on the notif
+Gets the data object on the notification
+
+---
+
+### `getThreadID()`
+
+```jsx
+getThreadID();
+```
+
+Gets the thread ID on the notification

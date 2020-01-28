@@ -6,9 +6,9 @@ original_id: inputaccessoryview
 
 A component which enables customization of the keyboard input accessory view on iOS. The input accessory view is displayed above the keyboard whenever a `TextInput` has focus. This component can be used to create custom toolbars.
 
-To use this component wrap your custom toolbar with the InputAccessoryView component, and set a `nativeID`. Then, pass that `nativeID` as the `inputAccessoryViewID` of whatever `TextInput` you desire. A simple example:
+To use this component wrap your custom toolbar with the InputAccessoryView component, and set a `nativeID`. Then, pass that `nativeID` as the `inputAccessoryViewID` of whatever `TextInput` you desire. A basic example:
 
-```ReactNativeWebPlayer
+```SnackPlayer platform=ios
 import React, { Component } from 'react';
 import { View, ScrollView, AppRegistry, TextInput, InputAccessoryView, Button } from 'react-native';
 
@@ -52,9 +52,9 @@ This component can also be used to create sticky text inputs (text inputs which 
 
 ### Props
 
-* [`backgroundColor`](inputaccessoryview.md#backgroundcolor)
-* [`nativeID`](inputaccessoryview.md#nativeid)
-* [`style`](inputaccessoryview.md#style)
+- [`backgroundColor`](inputaccessoryview.md#backgroundcolor)
+- [`nativeID`](inputaccessoryview.md#nativeid)
+- [`style`](inputaccessoryview.md#style)
 
 ---
 

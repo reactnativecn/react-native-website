@@ -3,6 +3,7 @@ id: version-0.57-keyboardavoidingview
 title: KeyboardAvoidingView
 original_id: keyboardavoidingview
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 本组件用于解决一个常见的尴尬问题：手机上弹出的键盘常常会挡住当前的视图。本组件可以自动根据键盘的位置，调整自身的 position 或底部的 padding，以避免被遮挡。
@@ -29,12 +30,6 @@ import { KeyboardAvoidingView } from 'react-native';
 - [`behavior`](keyboardavoidingview.md#behavior)
 - [`contentContainerStyle`](keyboardavoidingview.md#contentcontainerstyle)
 - [`enabled`](keyboardavoidingview.md#enabled)
-
-### 查看方法
-
-* [`relativeKeyboardHeight`](keyboardavoidingview.md#relativekeyboardheight)
-* [`onKeyboardChange`](keyboardavoidingview.md#onkeyboardchange)
-* [`onLayout`](keyboardavoidingview.md#onlayout)
 
 ---
 
@@ -77,27 +72,3 @@ _注意：Android 和 iOS 在此属性上表现并不一致。_ _Android 可能�
 | 类型    | 必填 |
 | ------- | ---- |
 | boolean | 否   |
-
-## 方法
-
-### `relativeKeyboardHeight()`
-
-```javascript
-relativeKeyboardHeight(keyboardFrame: object):
-```
-
----
-
-### `onKeyboardChange()`
-
-```javascript
-onKeyboardChange((event: object));
-```
-
----
-
-### `onLayout()`
-
-```javascript
-onLayout((event: ViewLayoutEvent));
-```

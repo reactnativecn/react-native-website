@@ -3,6 +3,7 @@ id: version-0.57-settings
 title: Settings
 original_id: settings
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 `Settings` serves as a wrapper for [`NSUserDefaults`](https://developer.apple.com/documentation/foundation/nsuserdefaults), a persistent key-value store available only on iOS.
@@ -22,7 +23,7 @@ original_id: settings
 
 ### `get()`
 
-```javascript
+```jsx
 static get(key)
 ```
 
@@ -32,7 +33,7 @@ Get the current value for a key in `NSUserDefaults`.
 
 ### `set()`
 
-```javascript
+```jsx
 static set(settings)
 ```
 
@@ -42,7 +43,7 @@ Set one or more values in `NSUserDefaults`.
 
 ### `watchKeys()`
 
-```javascript
+```jsx
 static watchKeys(keys, callback)
 ```
 
@@ -52,7 +53,7 @@ Subscribe to be notified when the value for any of the keys specified by the `ke
 
 ### `clearWatch()`
 
-```javascript
+```jsx
 static clearWatch(watchId)
 ```
 

@@ -3,6 +3,7 @@ id: version-0.57-virtualizedlist
 title: VirtualizedList
 original_id: virtualizedlist
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(95.08%), [yahoo.007](https://github.com/search?q=yahoo.007%40163.com+in%3Aemail&type=Users)(4.92%)
 
 [`FlatList`](flatlist.md)和[`SectionList`](sectionlist.md)的底层实现。FlatList 和 SectionList 使用起来更方便，同时也有相对更详细的文档。一般来说，仅当想获得比 FlatList 更高的灵活性（比如说在使用 immutable data 而不是 普通数组）的时候，你才应该考虑使用 VirtualizedList。
@@ -69,7 +70,7 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 
 ### `renderItem`
 
-```javascript
+```jsx
 (info: any) => ?React.Element<any>
 ```
 
@@ -93,7 +94,7 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 
 ### `getItem`
 
-```javascript
+```jsx
 (data: any, index: number) => object;
 ```
 
@@ -107,7 +108,7 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 
 ### `getItemCount`
 
-```javascript
+```jsx
 (data: any) => number;
 ```
 
@@ -141,7 +142,7 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 
 ### `getItemLayout`
 
-```javascript
+```jsx
 (
     data: any,
     index: number,
@@ -226,7 +227,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `onRefresh`
 
-```javascript
+```jsx
 () => void
 ```
 
@@ -240,7 +241,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `onScrollToIndexFailed`
 
-```javascript
+```jsx
 (info: {
     index: number,
     highestMeasuredFrameIndex: number,
@@ -258,7 +259,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `onViewableItemsChanged`
 
-```javascript
+```jsx
 (info: {
     viewableItems: array,
     changed: array,
@@ -299,7 +300,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `renderScrollComponent`
 
-```javascript
+```jsx
 (props: object) => element;
 ```
 
@@ -351,7 +352,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `keyExtractor`
 
-```javascript
+```jsx
 (item: object, index: number) => string;
 ```
 
@@ -375,7 +376,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `onEndReached`
 
-```javascript
+```jsx
 (info: {distanceFromEnd: number}) => void
 ```
 
@@ -439,7 +440,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `scrollToEnd()`
 
-```javascript
+```jsx
 scrollToEnd(([params]: object));
 ```
 
@@ -447,7 +448,7 @@ scrollToEnd(([params]: object));
 
 ### `scrollToIndex()`
 
-```javascript
+```jsx
 scrollToIndex((params: object));
 ```
 
@@ -455,7 +456,7 @@ scrollToIndex((params: object));
 
 ### `scrollToItem()`
 
-```javascript
+```jsx
 scrollToItem((params: object));
 ```
 
@@ -463,7 +464,7 @@ scrollToItem((params: object));
 
 ### `scrollToOffset()`
 
-```javascript
+```jsx
 scrollToOffset((params: object));
 ```
 
@@ -477,7 +478,7 @@ scrollToOffset((params: object));
 
 ### `recordInteraction()`
 
-```javascript
+```jsx
 recordInteraction();
 ```
 
@@ -485,6 +486,6 @@ recordInteraction();
 
 ### `flashScrollIndicators()`
 
-```javascript
+```jsx
 flashScrollIndicators();
 ```

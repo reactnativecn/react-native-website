@@ -3,14 +3,10 @@ id: linking
 title: Linking
 ---
 
-<div class="banner-crna-ejected">
+<div class="banner-native-code-required">
   <h3>Projects with Native Code Only</h3>
   <p>
-    This section only applies to projects made with <code>react-native init</code>
-    or to those made with <code>expo init</code> or Create React Native App which have since ejected. For
-    more information about ejecting, please see
-    the <a href="https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md" target="_blank">guide</a> on
-    the Create React Native App repository.
+    The following section only applies to projects with native code exposed. If you are using the managed `expo-cli` workflow, see the guide on <a href="http://docs.expo.io/versions/latest/workflow/linking/">Linking</a> in the Expo documentation for the appropriate alternative.
   </p>
 </div>
 
@@ -20,9 +16,9 @@ title: Linking
 
 #### Handling deep links
 
-If your app was launched from an external url registered to your app you can access and handle it from any component you want with
+If your app was launched from an external url registered to your app you can access and handle it from any component you want with:
 
-```
+```jsx
 componentDidMount() {
   Linking.getInitialURL().then((url) => {
     if (url) {
@@ -36,7 +32,7 @@ componentDidMount() {
 
 If you wish to receive the intent in an existing instance of MainActivity, you may set the `launchMode` of MainActivity to `singleTask` in `AndroidManifest.xml`. See [`<activity>`](http://developer.android.com/guide/topics/manifest/activity-element.html) documentation for more information.
 
-```
+```xml
 <activity
   android:name=".MainActivity"
   android:launchMode="singleTask">
@@ -44,7 +40,7 @@ If you wish to receive the intent in an existing instance of MainActivity, you m
 
 NOTE: On iOS, you'll need to link `RCTLinking` to your project by following the steps described [here](linking-libraries-ios.md#manual-linking). If you also want to listen to incoming app links during your app's execution, you'll need to add the following lines to your `*AppDelegate.m`:
 
-```
+```objectivec
 // iOS 9.x or newer
 #import <React/RCTLinkingManager.h>
 
@@ -58,7 +54,7 @@ NOTE: On iOS, you'll need to link `RCTLinking` to your project by following the 
 
 If you're targeting iOS 8.x or older, you can use the following code instead:
 
-```
+```objectivec
 // iOS 8.x or older
 #import <React/RCTLinkingManager.h>
 
@@ -72,9 +68,9 @@ If you're targeting iOS 8.x or older, you can use the following code instead:
 
 If your app is using [Universal Links](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/UniversalLinks.html), you'll need to add the following code as well:
 
-```
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
- restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+```objectivec
+- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity
+ restorationHandler:(nonnull void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 {
  return [RCTLinkingManager application:application
                   continueUserActivity:userActivity
@@ -82,15 +78,15 @@ If your app is using [Universal Links](https://developer.apple.com/library/prere
 }
 ```
 
-And then on your React component you'll be able to listen to the events on `Linking` as follows
+And then on your React component you'll be able to listen to the events on `Linking` as follows:
 
-```
+```jsx
 componentDidMount() {
   Linking.addEventListener('url', this._handleOpenURL);
-},
+}
 componentWillUnmount() {
   Linking.removeEventListener('url', this._handleOpenURL);
-},
+}
 _handleOpenURL(event) {
   console.log(event.url);
 }
@@ -98,32 +94,25 @@ _handleOpenURL(event) {
 
 #### Opening external links
 
-To start the corresponding activity for a link (web URL, email, contact etc.), call
+To start the corresponding activity for a link (web URL, email, contact etc.), call:
 
-```
-Linking.openURL(url).catch(err => console.error('An error occurred', err));
-```
-
-If you want to check if any installed app can handle a given URL beforehand you can call
-
-```
-Linking.canOpenURL(url).then(supported => {
-  if (!supported) {
-    console.log('Can\'t handle url: ' + url);
-  } else {
-    return Linking.openURL(url);
-  }
-}).catch(err => console.error('An error occurred', err));
+```jsx
+Linking.openURL(url).catch((err) => console.error('An error occurred', err));
 ```
 
-### Methods
+If you want to check if any installed app can handle a given URL beforehand you can call:
 
-* [`constructor`](linking.md#constructor)
-* [`addEventListener`](linking.md#addeventlistener)
-* [`removeEventListener`](linking.md#removeeventlistener)
-* [`openURL`](linking.md#openurl)
-* [`canOpenURL`](linking.md#canopenurl)
-* [`getInitialURL`](linking.md#getinitialurl)
+```jsx
+Linking.canOpenURL(url)
+  .then((supported) => {
+    if (!supported) {
+      console.log("Can't handle url: " + url);
+    } else {
+      return Linking.openURL(url);
+    }
+  })
+  .catch((err) => console.error('An error occurred', err));
+```
 
 ---
 
@@ -133,7 +122,7 @@ Linking.canOpenURL(url).then(supported => {
 
 ### `constructor()`
 
-```javascript
+```jsx
 constructor();
 ```
 
@@ -141,27 +130,27 @@ constructor();
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 addEventListener(type, handler);
 ```
 
-Add a handler to Linking changes by listening to the `url` event type and providing the handler
+Add a handler to Linking changes by listening to the `url` event type and providing the handler.
 
 ---
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 removeEventListener(type, handler);
 ```
 
-Remove a handler by passing the `url` event type and the handler
+Remove a handler by passing the `url` event type and the handler.
 
 ---
 
 ### `openURL()`
 
-```javascript
+```jsx
 openURL(url);
 ```
 
@@ -185,13 +174,15 @@ The method returns a `Promise` object. If the user confirms the open dialog or t
 
 ### `canOpenURL()`
 
-```javascript
+```jsx
 canOpenURL(url);
 ```
 
 Determine whether or not an installed app can handle a given URL.
 
 The method returns a `Promise` object. When it is determined whether or not the given URL can be handled, the promise is resolved and the first parameter is whether or not it can be opened.
+
+The `Promise` will reject on Android if it was impossible to check if the URL can be opened, and on iOS if you didn't add the specific scheme in the `LSApplicationQueriesSchemes` key inside `Info.plist` (see bellow).
 
 **Parameters:**
 
@@ -203,14 +194,40 @@ The method returns a `Promise` object. When it is determined whether or not the 
 
 > As of iOS 9, your app needs to provide the `LSApplicationQueriesSchemes` key inside `Info.plist` or canOpenURL will always return false.
 
+> This method has limitations on iOS 9+. From [the official Apple documentation](https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl):
+
+> If your app is linked against an earlier version of iOS but is running in iOS 9.0 or later, you can call this method up to 50 times. After reaching that limit, subsequent calls always return false. If the user reinstalls or upgrades the app, iOS resets the limit.
+
+---
+
+### `openSettings()`
+
+```jsx
+openSettings();
+```
+
+Open the Settings app and displays the app’s custom settings, if it has any.
+
 ---
 
 ### `getInitialURL()`
 
-```javascript
+```jsx
 getInitialURL();
 ```
 
-If the app launch was triggered by an app link, it will give the link url, otherwise it will give `null`
+If the app launch was triggered by an app link, it will give the link url, otherwise it will give `null`.
 
 > To support deep linking on Android, refer http://developer.android.com/training/app-indexing/deep-linking.html#handling-intents
+
+---
+
+### `sendIntent()`
+
+```jsx
+sendIntent(action: string, extras?: Array<{key: string, value: string | number | boolean}>)
+```
+
+> @platform android
+
+**Android-Only.** Launch an Android intent with extras (optional)

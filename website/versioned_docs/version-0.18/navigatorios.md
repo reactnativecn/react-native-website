@@ -50,15 +50,15 @@ var MyView = React.createClass({
 
 A navigation object contains the following functions:
 
-* `push(route)` - Navigate forward to a new route
-* `pop()` - Go back one page
-* `popN(n)` - Go back N pages at once. When N=1, behavior matches `pop()`
-* `replace(route)` - Replace the route for the current page and immediately load the view for the new route
-* `replacePrevious(route)` - Replace the route/view for the previous page
-* `replacePreviousAndPop(route)` - Replaces the previous route/view and transitions back to it
-* `resetTo(route)` - Replaces the top item and popToTop
-* `popToRoute(route)` - Go back to the item for a particular route object
-* `popToTop()` - Go back to the top item
+- `push(route)` - Navigate forward to a new route
+- `pop()` - Go back one page
+- `popN(n)` - Go back N pages at once. When N=1, behavior matches `pop()`
+- `replace(route)` - Replace the route for the current page and immediately load the view for the new route
+- `replacePrevious(route)` - Replace the route/view for the previous page
+- `replacePreviousAndPop(route)` - Replaces the previous route/view and transitions back to it
+- `resetTo(route)` - Replaces the top item and popToTop
+- `popToRoute(route)` - Go back to the item for a particular route object
+- `popToTop()` - Go back to the top item
 
 Navigator functions are also available on the NavigatorIOS component:
 
@@ -80,29 +80,29 @@ Props passed to the NavigatorIOS component will set the default configuration fo
 
 ### Props
 
-* [`initialRoute`](navigatorios.md#initialroute)
-* [`barTintColor`](navigatorios.md#bartintcolor)
-* [`itemWrapperStyle`](navigatorios.md#itemwrapperstyle)
-* [`navigationBarHidden`](navigatorios.md#navigationbarhidden)
-* [`shadowHidden`](navigatorios.md#shadowhidden)
-* [`tintColor`](navigatorios.md#tintcolor)
-* [`titleTextColor`](navigatorios.md#titletextcolor)
-* [`translucent`](navigatorios.md#translucent)
+- [`initialRoute`](navigatorios.md#initialroute)
+- [`barTintColor`](navigatorios.md#bartintcolor)
+- [`itemWrapperStyle`](navigatorios.md#itemwrapperstyle)
+- [`navigationBarHidden`](navigatorios.md#navigationbarhidden)
+- [`shadowHidden`](navigatorios.md#shadowhidden)
+- [`tintColor`](navigatorios.md#tintcolor)
+- [`titleTextColor`](navigatorios.md#titletextcolor)
+- [`translucent`](navigatorios.md#translucent)
 
 ### Methods
 
-* [`push`](navigatorios.md#push)
-* [`popN`](navigatorios.md#popn)
-* [`pop`](navigatorios.md#pop)
-* [`replaceAtIndex`](navigatorios.md#replaceatindex)
-* [`replace`](navigatorios.md#replace)
-* [`replacePrevious`](navigatorios.md#replaceprevious)
-* [`popToTop`](navigatorios.md#poptotop)
-* [`popToRoute`](navigatorios.md#poptoroute)
-* [`replacePreviousAndPop`](navigatorios.md#replacepreviousandpop)
-* [`resetTo`](navigatorios.md#resetto)
-* [`handleNavigationComplete`](navigatorios.md#handlenavigationcomplete)
-* [`renderNavigationStackItems`](navigatorios.md#rendernavigationstackitems)
+- [`push`](navigatorios.md#push)
+- [`popN`](navigatorios.md#popn)
+- [`pop`](navigatorios.md#pop)
+- [`replaceAtIndex`](navigatorios.md#replaceatindex)
+- [`replace`](navigatorios.md#replace)
+- [`replacePrevious`](navigatorios.md#replaceprevious)
+- [`popToTop`](navigatorios.md#poptotop)
+- [`popToRoute`](navigatorios.md#poptoroute)
+- [`replacePreviousAndPop`](navigatorios.md#replacepreviousandpop)
+- [`resetTo`](navigatorios.md#resetto)
+- [`handleNavigationComplete`](navigatorios.md#handlenavigationcomplete)
+- [`renderNavigationStackItems`](navigatorios.md#rendernavigationstackitems)
 
 ---
 
@@ -192,7 +192,7 @@ A Boolean value that indicates whether the navigation bar is translucent by defa
 
 ### `push()`
 
-```javascript
+```jsx
 push((route: object));
 ```
 
@@ -200,7 +200,7 @@ push((route: object));
 
 ### `popN()`
 
-```javascript
+```jsx
 popN((n: number));
 ```
 
@@ -208,7 +208,7 @@ popN((n: number));
 
 ### `pop()`
 
-```javascript
+```jsx
 pop();
 ```
 
@@ -216,7 +216,7 @@ pop();
 
 ### `replaceAtIndex()`
 
-```javascript
+```jsx
 replaceAtIndex((route: object), (index: number));
 ```
 
@@ -228,7 +228,7 @@ Replace a route in the navigation stack.
 
 ### `replace()`
 
-```javascript
+```jsx
 replace((route: object));
 ```
 
@@ -238,7 +238,7 @@ Replaces the top of the navigation stack.
 
 ### `replacePrevious()`
 
-```javascript
+```jsx
 replacePrevious((route: object));
 ```
 
@@ -248,7 +248,7 @@ Replace the current route's parent.
 
 ### `popToTop()`
 
-```javascript
+```jsx
 popToTop();
 ```
 
@@ -256,7 +256,7 @@ popToTop();
 
 ### `popToRoute()`
 
-```javascript
+```jsx
 popToRoute((route: object));
 ```
 
@@ -264,7 +264,7 @@ popToRoute((route: object));
 
 ### `replacePreviousAndPop()`
 
-```javascript
+```jsx
 replacePreviousAndPop((route: object));
 ```
 
@@ -272,7 +272,7 @@ replacePreviousAndPop((route: object));
 
 ### `resetTo()`
 
-```javascript
+```jsx
 resetTo((route: object));
 ```
 
@@ -280,7 +280,7 @@ resetTo((route: object));
 
 ### `handleNavigationComplete()`
 
-```javascript
+```jsx
 handleNavigationComplete((e: Event));
 ```
 
@@ -288,6 +288,6 @@ handleNavigationComplete((e: Event));
 
 ### `renderNavigationStackItems()`
 
-```javascript
+```jsx
 renderNavigationStackItems();
 ```

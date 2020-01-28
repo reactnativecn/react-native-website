@@ -6,61 +6,61 @@ original_id: scrollview
 
 Component that wraps platform ScrollView while providing integration with touch locking "responder" system.
 
-Keep in mind that ScrollViews must have a bounded height in order to work, since they contain unbounded-height children into a bounded container (via a scroll interaction). In order to bound the height of a ScrollView, either set the height of the view directly (discouraged) or make sure all parent views have bounded height. Forgetting to transfer `{flex: 1}` down the view stack can lead to errors here, which the element inspector makes easy to debug.
+Keep in mind that ScrollViews must have a bounded height in order to work, since they contain unbounded-height children into a bounded container (via a scroll interaction). In order to bound the height of a ScrollView, either set the height of the view directly (discouraged) or make sure all parent views have bounded height. Forgetting to transfer `{flex: 1}` down the view stack can lead to errors here, which the element inspector makes quick to debug.
 
 Doesn't yet support other contained responders from blocking this scroll view from becoming the responder.
 
-`<ScrollView>` vs `<ListView>` - which one to use? ScrollView simply renders all its react child components at once. That makes it very easy to understand and use. On the other hand, this has a performance downside. Imagine you have a very long list of items you want to display, worth of couple of your ScrollView’s heights. Creating JS components and native views upfront for all its items, which may not even be shown, will contribute to slow rendering of your screen and increased memory usage.
+`<ScrollView>` vs `<ListView>` - which one to use? ScrollView renders all its react child components at once, but this has a performance downside. Imagine you have a very long list of items you want to display, worth of couple of your ScrollView’s heights. Creating JS components and native views upfront for all its items, which may not even be shown, will contribute to slow rendering of your screen and increased memory usage.
 
-This is where ListView comes into play. ListView renders items lazily, just when they are about to appear. This laziness comes at cost of a more complicated API, which is worth it unless you are rendering a small fixed set of items.
+This is where ListView comes into play. ListView renders items lazily, when they are about to appear. This laziness comes at cost of a more complicated API, which is worth it unless you are rendering a small fixed set of items.
 
 ### Props
 
-* [View props...](view.md#props)
+- [View props...](view.md#props)
 
-- [`bounces`](scrollview.md#bounces)
-- [`contentContainerStyle`](scrollview.md#contentcontainerstyle)
-- [`keyboardDismissMode`](scrollview.md#keyboarddismissmode)
-- [`keyboardShouldPersistTaps`](scrollview.md#keyboardshouldpersisttaps)
-- [`onContentSizeChange`](scrollview.md#oncontentsizechange)
-- [`onScroll`](scrollview.md#onscroll)
-- [`pagingEnabled`](scrollview.md#pagingenabled)
-- [`refreshControl`](scrollview.md#refreshcontrol)
-- [`removeClippedSubviews`](scrollview.md#removeclippedsubviews)
-- [`scrollEnabled`](scrollview.md#scrollenabled)
-- [`showsHorizontalScrollIndicator`](scrollview.md#showshorizontalscrollindicator)
-- [`showsVerticalScrollIndicator`](scrollview.md#showsverticalscrollindicator)
-- [`style`](scrollview.md#style)
-- [`endFillColor`](scrollview.md#endfillcolor)
-- [`scrollPerfTag`](scrollview.md#scrollperftag)
-- [`alwaysBounceHorizontal`](scrollview.md#alwaysbouncehorizontal)
-- [`alwaysBounceVertical`](scrollview.md#alwaysbouncevertical)
-- [`automaticallyAdjustContentInsets`](scrollview.md#automaticallyadjustcontentinsets)
-- [`horizontal`](scrollview.md#horizontal)
-- [`bouncesZoom`](scrollview.md#bounceszoom)
-- [`canCancelContentTouches`](scrollview.md#cancancelcontenttouches)
-- [`centerContent`](scrollview.md#centercontent)
-- [`contentInset`](scrollview.md#contentinset)
-- [`contentOffset`](scrollview.md#contentoffset)
-- [`decelerationRate`](scrollview.md#decelerationrate)
-- [`directionalLockEnabled`](scrollview.md#directionallockenabled)
-- [`indicatorStyle`](scrollview.md#indicatorstyle)
-- [`maximumZoomScale`](scrollview.md#maximumzoomscale)
-- [`minimumZoomScale`](scrollview.md#minimumzoomscale)
-- [`onScrollAnimationEnd`](scrollview.md#onscrollanimationend)
-- [`scrollEventThrottle`](scrollview.md#scrolleventthrottle)
-- [`scrollIndicatorInsets`](scrollview.md#scrollindicatorinsets)
-- [`scrollsToTop`](scrollview.md#scrollstotop)
-- [`snapToAlignment`](scrollview.md#snaptoalignment)
-- [`snapToInterval`](scrollview.md#snaptointerval)
-- [`stickyHeaderIndices`](scrollview.md#stickyheaderindices)
-- [`zoomScale`](scrollview.md#zoomscale)
+* [`bounces`](scrollview.md#bounces)
+* [`contentContainerStyle`](scrollview.md#contentcontainerstyle)
+* [`keyboardDismissMode`](scrollview.md#keyboarddismissmode)
+* [`keyboardShouldPersistTaps`](scrollview.md#keyboardshouldpersisttaps)
+* [`onContentSizeChange`](scrollview.md#oncontentsizechange)
+* [`onScroll`](scrollview.md#onscroll)
+* [`pagingEnabled`](scrollview.md#pagingenabled)
+* [`refreshControl`](scrollview.md#refreshcontrol)
+* [`removeClippedSubviews`](scrollview.md#removeclippedsubviews)
+* [`scrollEnabled`](scrollview.md#scrollenabled)
+* [`showsHorizontalScrollIndicator`](scrollview.md#showshorizontalscrollindicator)
+* [`showsVerticalScrollIndicator`](scrollview.md#showsverticalscrollindicator)
+* [`style`](scrollview.md#style)
+* [`endFillColor`](scrollview.md#endfillcolor)
+* [`scrollPerfTag`](scrollview.md#scrollperftag)
+* [`alwaysBounceHorizontal`](scrollview.md#alwaysbouncehorizontal)
+* [`alwaysBounceVertical`](scrollview.md#alwaysbouncevertical)
+* [`automaticallyAdjustContentInsets`](scrollview.md#automaticallyadjustcontentinsets)
+* [`horizontal`](scrollview.md#horizontal)
+* [`bouncesZoom`](scrollview.md#bounceszoom)
+* [`canCancelContentTouches`](scrollview.md#cancancelcontenttouches)
+* [`centerContent`](scrollview.md#centercontent)
+* [`contentInset`](scrollview.md#contentinset)
+* [`contentOffset`](scrollview.md#contentoffset)
+* [`decelerationRate`](scrollview.md#decelerationrate)
+* [`directionalLockEnabled`](scrollview.md#directionallockenabled)
+* [`indicatorStyle`](scrollview.md#indicatorstyle)
+* [`maximumZoomScale`](scrollview.md#maximumzoomscale)
+* [`minimumZoomScale`](scrollview.md#minimumzoomscale)
+* [`onScrollAnimationEnd`](scrollview.md#onscrollanimationend)
+* [`scrollEventThrottle`](scrollview.md#scrolleventthrottle)
+* [`scrollIndicatorInsets`](scrollview.md#scrollindicatorinsets)
+* [`scrollsToTop`](scrollview.md#scrollstotop)
+* [`snapToAlignment`](scrollview.md#snaptoalignment)
+* [`snapToInterval`](scrollview.md#snaptointerval)
+* [`stickyHeaderIndices`](scrollview.md#stickyheaderindices)
+* [`zoomScale`](scrollview.md#zoomscale)
 
 ### Methods
 
-* [`scrollTo`](scrollview.md#scrollto)
-* [`scrollToEnd`](scrollview.md#scrolltoend)
-* [`scrollWithoutAnimationTo`](scrollview.md#scrollwithoutanimationto)
+- [`scrollTo`](scrollview.md#scrollto)
+- [`scrollToEnd`](scrollview.md#scrolltoend)
+- [`scrollWithoutAnimationTo`](scrollview.md#scrollwithoutanimationto)
 
 ---
 
@@ -94,9 +94,9 @@ return ( <ScrollView contentContainerStyle={styles.contentContainer}> </ScrollVi
 
 Determines whether the keyboard gets dismissed in response to a drag.
 
-* 'none' (the default), drags do not dismiss the keyboard.
-* 'on-drag', the keyboard is dismissed when a drag begins.
-* 'interactive', the keyboard is dismissed interactively with the drag and moves in synchrony with the touch; dragging upwards cancels the dismissal. On android this is not supported and it will have the same behavior as 'none'.
+- 'none' (the default), drags do not dismiss the keyboard.
+- 'on-drag', the keyboard is dismissed when a drag begins.
+- 'interactive', the keyboard is dismissed interactively with the drag and moves in synchrony with the touch; dragging upwards cancels the dismissal. On android this is not supported and it will have the same behavior as 'none'.
 
 | Type                                   | Required |
 | -------------------------------------- | -------- |
@@ -108,11 +108,11 @@ Determines whether the keyboard gets dismissed in response to a drag.
 
 Determines when the keyboard should stay visible after a tap.
 
-* 'never' (the default), tapping outside of the focused text input when the keyboard is up dismisses the keyboard. When this happens, children won't receive the tap.
-* 'always', the keyboard will not dismiss automatically, and the scroll view will not catch taps, but children of the scroll view can catch taps.
-* 'handled', the keyboard will not dismiss automatically when the tap was handled by a children, (or captured by an ancestor).
-* false, deprecated, use 'never' instead
-* true, deprecated, use 'always' instead
+- 'never' (the default), tapping outside of the focused text input when the keyboard is up dismisses the keyboard. When this happens, children won't receive the tap.
+- 'always', the keyboard will not dismiss automatically, and the scroll view will not catch taps, but children of the scroll view can catch taps.
+- 'handled', the keyboard will not dismiss automatically when the tap was handled by a children, (or captured by an ancestor).
+- false, deprecated, use 'never' instead
+- true, deprecated, use 'always' instead
 
 | Type                                            | Required |
 | ----------------------------------------------- | -------- |
@@ -212,51 +212,51 @@ When true, shows a vertical scroll indicator. The default value is true.
 | ----- | -------- |
 | style | No       |
 
-* [Layout Props...](layout-props.md#props)
+- [Layout Props...](layout-props.md#props)
 
-* [Shadow Props...](shadow-props.md#props)
+- [Shadow Props...](shadow-props.md#props)
 
-* [Transforms...](transforms.md#props)
+- [Transforms...](transforms.md#props)
 
-* **`borderRightColor`**: [color](colors.md)
+- **`borderRightColor`**: [color](colors.md)
 
-* **`backfaceVisibility`**: enum('visible', 'hidden')
+- **`backfaceVisibility`**: enum('visible', 'hidden')
 
-* **`borderBottomColor`**: [color](colors.md)
+- **`borderBottomColor`**: [color](colors.md)
 
-* **`borderBottomLeftRadius`**: number
+- **`borderBottomLeftRadius`**: number
 
-* **`borderBottomRightRadius`**: number
+- **`borderBottomRightRadius`**: number
 
-* **`borderBottomWidth`**: number
+- **`borderBottomWidth`**: number
 
-* **`borderColor`**: [color](colors.md)
+- **`borderColor`**: [color](colors.md)
 
-* **`borderLeftColor`**: [color](colors.md)
+- **`borderLeftColor`**: [color](colors.md)
 
-* **`borderLeftWidth`**: number
+- **`borderLeftWidth`**: number
 
-* **`borderRadius`**: number
+- **`borderRadius`**: number
 
-* **`backgroundColor`**: [color](colors.md)
+- **`backgroundColor`**: [color](colors.md)
 
-* **`borderRightWidth`**: number
+- **`borderRightWidth`**: number
 
-* **`borderStyle`**: enum('solid', 'dotted', 'dashed')
+- **`borderStyle`**: enum('solid', 'dotted', 'dashed')
 
-* **`borderTopColor`**: [color](colors.md)
+- **`borderTopColor`**: [color](colors.md)
 
-* **`borderTopLeftRadius`**: number
+- **`borderTopLeftRadius`**: number
 
-* **`borderTopRightRadius`**: number
+- **`borderTopRightRadius`**: number
 
-* **`borderTopWidth`**: number
+- **`borderTopWidth`**: number
 
-* **`borderWidth`**: number
+- **`borderWidth`**: number
 
-* **`opacity`**: number
+- **`opacity`**: number
 
-* **`elevation`**: number (_Android_)
+- **`elevation`**: number (_Android_)
 
   (Android-only) Sets the elevation of a view, using Android's underlying [elevation API](https://developer.android.com/training/material/shadows-clipping.html#Elevation). This adds a drop shadow to the item and affects z-order for overlapping views. Only supported on Android 5.0+, has no effect on earlier versions.
 
@@ -376,8 +376,8 @@ Used to manually set the starting scroll offset. The default value is `{x: 0, y:
 
 A floating-point number that determines how quickly the scroll view decelerates after the user lifts their finger. You may also use string shortcuts `"normal"` and `"fast"` which match the underlying iOS settings for `UIScrollViewDecelerationRateNormal` and `UIScrollViewDecelerationRateFast` respectively.
 
-* normal: 0.998 (the default)
-* fast: 0.99
+- normal: 0.998 (the default)
+- fast: 0.99
 
 | Type                            | Required | Platform |
 | ------------------------------- | -------- | -------- |
@@ -399,9 +399,9 @@ When true, the ScrollView will try to lock to only vertical or horizontal scroll
 
 The style of the scroll indicators.
 
-* `default` (the default), same as `black`.
-* `black`, scroll indicator is black. This style is good against a white content background.
-* `white`, scroll indicator is white. This style is good against a black content background.
+- `default` (the default), same as `black`.
+- `black`, scroll indicator is `black`. This style is good against a light background.
+- `white`, scroll indicator is `white`. This style is good against a dark background.
 
 | Type                              | Required | Platform |
 | --------------------------------- | -------- | -------- |
@@ -473,9 +473,9 @@ When true, the scroll view scrolls to top when the status bar is tapped. The def
 
 When `snapToInterval` is set, `snapToAlignment` will define the relationship of the snapping to the scroll view.
 
-* `start` (the default) will align the snap at the left (horizontal) or top (vertical)
-* `center` will align the snap in the center
-* `end` will align the snap at the right (horizontal) or bottom (vertical)
+- `start` (the default) will align the snap at the left (horizontal) or top (vertical)
+- `center` will align the snap in the center
+- `end` will align the snap at the right (horizontal) or bottom (vertical)
 
 | Type                           | Required | Platform |
 | ------------------------------ | -------- | -------- |
@@ -515,7 +515,7 @@ The current scale of the scroll view content. The default value is 1.0.
 
 ### `scrollTo()`
 
-```javascript
+```jsx
 scrollTo(([y]: number), object, ([x]: number), ([animated]: boolean));
 ```
 
@@ -531,7 +531,7 @@ Note: The weird function signature is due to the fact that, for historical reaso
 
 ### `scrollToEnd()`
 
-```javascript
+```jsx
 scrollToEnd(([options]: object));
 ```
 
@@ -543,7 +543,7 @@ Use `scrollToEnd({animated: true})` for smooth animated scrolling, `scrollToEnd(
 
 ### `scrollWithoutAnimationTo()`
 
-```javascript
+```jsx
 scrollWithoutAnimationTo(y, x);
 ```
 

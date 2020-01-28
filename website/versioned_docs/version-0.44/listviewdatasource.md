@@ -4,9 +4,9 @@ title: ListViewDataSource
 original_id: listviewdatasource
 ---
 
-Provides efficient data processing and access to the `ListView` component. A `ListViewDataSource` is created with functions for extracting data from the input blob, and comparing elements (with default implementations for convenience). The input blob can be as simple as an array of strings, or an object with rows nested inside section objects.
+Provides efficient data processing and access to the `ListView` component. A `ListViewDataSource` is created with functions for extracting data from the input blob, and comparing elements (with default implementations for convenience). The input blob can be an array of strings, or an object with rows nested inside section objects.
 
-To update the data in the datasource, use `cloneWithRows` (or `cloneWithRowsAndSections` if you care about sections). The data in the data source is immutable, so you can't modify it directly. The clone methods suck in the new data and compute a diff for each row so ListView knows whether to re-render it or not.
+To update the data in the datasource, use `cloneWithRows` (or `cloneWithRowsAndSections` if you care about sections). The data in the data source is immutable, so you can't modify it directly. The clone methods feed from the new data and compute a diff for each row so ListView knows whether to re-render it or not.
 
 In this example, a component receives data in chunks, handled by `_onDataArrived`, which concats the new data onto the old data and updates the data source. We use `concat` to create a new array - mutating `this._data`, e.g. with `this._data.push(newRowData)`, would be an error. `_rowHasChanged` understands the shape of the row data and knows how to efficiently compare it.
 
@@ -25,18 +25,18 @@ _onDataArrived(newData) {
 
 ### Methods
 
-* [`constructor`](listviewdatasource.md#constructor)
-* [`cloneWithRows`](listviewdatasource.md#clonewithrows)
-* [`cloneWithRowsAndSections`](listviewdatasource.md#clonewithrowsandsections)
-* [`getRowCount`](listviewdatasource.md#getrowcount)
-* [`getRowAndSectionCount`](listviewdatasource.md#getrowandsectioncount)
-* [`rowShouldUpdate`](listviewdatasource.md#rowshouldupdate)
-* [`getRowData`](listviewdatasource.md#getrowdata)
-* [`getRowIDForFlatIndex`](listviewdatasource.md#getrowidforflatindex)
-* [`getSectionIDForFlatIndex`](listviewdatasource.md#getsectionidforflatindex)
-* [`getSectionLengths`](listviewdatasource.md#getsectionlengths)
-* [`sectionHeaderShouldUpdate`](listviewdatasource.md#sectionheadershouldupdate)
-* [`getSectionHeaderData`](listviewdatasource.md#getsectionheaderdata)
+- [`constructor`](listviewdatasource.md#constructor)
+- [`cloneWithRows`](listviewdatasource.md#clonewithrows)
+- [`cloneWithRowsAndSections`](listviewdatasource.md#clonewithrowsandsections)
+- [`getRowCount`](listviewdatasource.md#getrowcount)
+- [`getRowAndSectionCount`](listviewdatasource.md#getrowandsectioncount)
+- [`rowShouldUpdate`](listviewdatasource.md#rowshouldupdate)
+- [`getRowData`](listviewdatasource.md#getrowdata)
+- [`getRowIDForFlatIndex`](listviewdatasource.md#getrowidforflatindex)
+- [`getSectionIDForFlatIndex`](listviewdatasource.md#getsectionidforflatindex)
+- [`getSectionLengths`](listviewdatasource.md#getsectionlengths)
+- [`sectionHeaderShouldUpdate`](listviewdatasource.md#sectionheadershouldupdate)
+- [`getSectionHeaderData`](listviewdatasource.md#getsectionheaderdata)
 
 ---
 
@@ -46,7 +46,7 @@ _onDataArrived(newData) {
 
 ### `constructor()`
 
-```javascript
+```jsx
 constructor(params);
 ```
 
@@ -66,30 +66,30 @@ or
 
 The constructor takes in a params argument that can contain any of the following:
 
-* getRowData(dataBlob, sectionID, rowID);
-* getSectionHeaderData(dataBlob, sectionID);
-* rowHasChanged(prevRowData, nextRowData);
-* sectionHeaderHasChanged(prevSectionData, nextSectionData);
+- getRowData(dataBlob, sectionID, rowID);
+- getSectionHeaderData(dataBlob, sectionID);
+- rowHasChanged(prevRowData, nextRowData);
+- sectionHeaderHasChanged(prevSectionData, nextSectionData);
 
 ---
 
 ### `cloneWithRows()`
 
-```javascript
+```jsx
 cloneWithRows(dataBlob, rowIdentities);
 ```
 
-Clones this `ListViewDataSource` with the specified `dataBlob` and `rowIdentities`. The `dataBlob` is just an arbitrary blob of data. At construction an extractor to get the interesting information was defined (or the default was used).
+Clones this `ListViewDataSource` with the specified `dataBlob` and `rowIdentities`. The `dataBlob` is only an arbitrary blob of data. At construction an extractor to get the interesting information was defined (or the default was used).
 
 The `rowIdentities` is a 2D array of identifiers for rows. ie. [['a1', 'a2'], ['b1', 'b2', 'b3'], ...]. If not provided, it's assumed that the keys of the section data are the row identities.
 
-Note: This function does NOT clone the data in this data source. It simply passes the functions defined at construction to a new data source with the data specified. If you wish to maintain the existing data you must handle merging of old and new data separately and then pass that into this function as the `dataBlob`.
+Note: This function does NOT clone the data in this data source. It passes the functions defined at construction to a new data source with the data specified. If you wish to maintain the existing data you must handle merging of old and new data separately and then pass that into this function as the `dataBlob`.
 
 ---
 
 ### `cloneWithRowsAndSections()`
 
-```javascript
+```jsx
 cloneWithRowsAndSections(dataBlob, sectionIdentities, rowIdentities);
 ```
 
@@ -103,7 +103,7 @@ Note: this returns a new object!
 
 ### `getRowCount()`
 
-```javascript
+```jsx
 getRowCount();
 ```
 
@@ -111,7 +111,7 @@ getRowCount();
 
 ### `getRowAndSectionCount()`
 
-```javascript
+```jsx
 getRowAndSectionCount();
 ```
 
@@ -119,7 +119,7 @@ getRowAndSectionCount();
 
 ### `rowShouldUpdate()`
 
-```javascript
+```jsx
 rowShouldUpdate(sectionIndex, rowIndex);
 ```
 
@@ -129,7 +129,7 @@ Returns if the row is dirtied and needs to be rerendered
 
 ### `getRowData()`
 
-```javascript
+```jsx
 getRowData(sectionIndex, rowIndex);
 ```
 
@@ -139,7 +139,7 @@ Gets the data required to render the row.
 
 ### `getRowIDForFlatIndex()`
 
-```javascript
+```jsx
 getRowIDForFlatIndex(index);
 ```
 
@@ -149,7 +149,7 @@ Gets the rowID at index provided if the dataSource arrays were flattened, or nul
 
 ### `getSectionIDForFlatIndex()`
 
-```javascript
+```jsx
 getSectionIDForFlatIndex(index);
 ```
 
@@ -159,7 +159,7 @@ Gets the sectionID at index provided if the dataSource arrays were flattened, or
 
 ### `getSectionLengths()`
 
-```javascript
+```jsx
 getSectionLengths();
 ```
 
@@ -169,7 +169,7 @@ Returns an array containing the number of rows in each section
 
 ### `sectionHeaderShouldUpdate()`
 
-```javascript
+```jsx
 sectionHeaderShouldUpdate(sectionIndex);
 ```
 
@@ -179,7 +179,7 @@ Returns if the section header is dirtied and needs to be rerendered
 
 ### `getSectionHeaderData()`
 
-```javascript
+```jsx
 getSectionHeaderData(sectionIndex);
 ```
 

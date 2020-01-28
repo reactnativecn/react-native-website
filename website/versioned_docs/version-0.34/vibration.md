@@ -6,8 +6,8 @@ original_id: vibration
 
 ### Methods
 
-* [`vibrate`](vibration.md#vibrate)
-* [`cancel`](vibration.md#cancel)
+- [`vibrate`](vibration.md#vibrate)
+- [`cancel`](vibration.md#cancel)
 
 ---
 
@@ -17,7 +17,7 @@ original_id: vibration
 
 ### `vibrate()`
 
-```javascript
+```jsx
 static vibrate(pattern, repeat)
 ```
 
@@ -25,7 +25,7 @@ static vibrate(pattern, repeat)
 
 ### `cancel()`
 
-```javascript
+```jsx
 static cancel()
 ```
 

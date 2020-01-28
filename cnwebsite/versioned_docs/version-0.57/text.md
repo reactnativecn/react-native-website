@@ -3,7 +3,8 @@ id: version-0.57-text
 title: Text
 original_id: text
 ---
-##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
+
+##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(98.60%), [hqwlkj](https://github.com/search?q=hqwlkj%40outlook.com+in%3Aemail&type=Users)(1.40%)
 
 一个用于显示文本的React组件，并且它也支持嵌套、样式，以及触摸处理。
 
@@ -72,7 +73,7 @@ export default class BoldAndBeautiful extends Component {
 
 而实际上在框架内部，这会生成一个扁平结构的`NSAttributedString`或是`SpannableString`，包含以下信息：
 
-```javascript
+```jsx
 "I am bold and red"
 0-9: bold
 9-17: bold, red
@@ -105,12 +106,15 @@ export default class BlueIsCool extends Component {
 
 `<Text>`元素在布局上不同于其它组件：在Text内部的元素不再使用flexbox布局，而是采用文本布局。这意味着`<Text>`内部的元素不再是一个个矩形，而可能会在行末进行折叠。
 
-```javascript
+```jsx
 <Text>
   <Text>First part and </Text>
   <Text>second part</Text>
 </Text>
-// Text container: all the text flows as if it was one
+// Text container: the text will be inline if the space allowed it
+// |First part and second part|
+
+// otherwise, the text will flow as if it was one
 // |First part |
 // |and second |
 // |part       |
@@ -120,6 +124,10 @@ export default class BlueIsCool extends Component {
   <Text>second part</Text>
 </View>
 // View container: each text is its own block
+// |First part and|
+// |second part   |
+
+// the text will flow in its own block
 // |First part |
 // |and        |
 // |second part|
@@ -142,7 +150,7 @@ html {
 
 在React Native中，我们把这个问题设计的更加严谨：**你必须把你的文本节点放在`<Text>`组件内**。你不能直接在`<View>`下放置一段文本。
 
-```javascript
+```jsx
 // 错误的做法：会导致一个错误。<View>下不能直接放一段文本。
 <View>
   一些文本
@@ -158,7 +166,7 @@ html {
 
 并且你也不能直接设置一整颗子树的默认样式。使用一个一致的文本和尺寸的推荐方式是创建一个包含相关样式的组件`MyAppText`，然后在你的App中反复使用它。你还可以创建更多特殊的组件譬如`MyAppHeaderText`来表达不同样式的文本。
 
-```javascript
+```jsx
 <View>
   <MyAppText>这个组件包含了一个默认的字体样式，用于整个应用的文本</MyAppText>
   <MyAppHeaderText>这个组件包含了用于标题的样式</MyAppHeaderText>
@@ -167,7 +175,7 @@ html {
 
 Assuming that `MyAppText` is a component that simply renders out its children into a `Text` component with styling, then `MyAppHeaderText` can be defined as follows:
 
-```javascript
+```jsx
 class MyAppHeaderText extends Component {
   render() {
     return (
@@ -183,7 +191,7 @@ Composing `MyAppText` in this way ensures that we get the styles from a top-leve
 
 React Native实际上还是有一部分样式继承的实现，不过仅限于文本标签的子树。在下面的代码里，第二部分会在加粗的同时又显示为红色：
 
-```javascript
+```jsx
 <Text style={{ fontWeight: "bold" }}>
   I am bold
   <Text style={{ color: "red" }}>and red</Text>
@@ -269,14 +277,15 @@ See the [Accessibility guide](accessibility.md#accessible-ios-android) for more 
 
 ### `ellipsizeMode`
 
-When `numberOfLines` is set, this prop defines how text will be truncated. `numberOfLines` must be set in conjunction with this prop.
+这个属性通常和下面的 `numberOfLines` 属性配合使用，表示当 Text 组件无法全部显示需要显示的字符串时如何用省略号进行修饰。
 
-This can be one of the following values:
+该属性有如下 4 种取值:
 
-* `head` - The line is displayed so that the end fits in the container and the missing text at the beginning of the line is indicated by an ellipsis glyph. e.g., "...wxyz"
-* `middle` - The line is displayed so that the beginning and end fit in the container and the missing text in the middle is indicated by an ellipsis glyph. "ab...yz"
-* `tail` - The line is displayed so that the beginning fits in the container and the missing text at the end of the line is indicated by an ellipsis glyph. e.g., "abcd..."
-* `clip` - Lines are not drawn past the edge of the text container.
+
+* `head` - 从文本内容头部截取显示省略号。例如： "...efg"
+* `middle` - 在文本内容中间截取显示省略号。例如： "ab...yz"
+* `tail` - 从文本内容尾部截取显示省略号。例如： "abcd..."
+* `clip` - 不显示省略号，直接从尾部截断。
 
 The default is `tail`.
 

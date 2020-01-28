@@ -3,6 +3,8 @@ id: webview
 title: WebView
 ---
 
+> **Warning** Please use the [react-native-community/react-native-webview](https://github.com/react-native-community/react-native-webview) fork of this component instead. To reduce the surface area of React Native, `<WebView/>` is going to be removed from the React Native core. For more information, please read [The Slimmening proposal](https://github.com/react-native-community/discussions-and-proposals/issues/6).
+
 `WebView` 创建一个原生的 WebView，可以用于访问一个网页。
 
 ```
@@ -49,6 +51,7 @@ On iOS, the `useWebKit` prop can be used to opt into a WKWebView-backed implemen
 * [View props...](view.md#props)
 
 - [`allowsInlineMediaPlayback`](webview.md#allowsinlinemediaplayback)
+- [`allowFileAccess`](webview.md#allowFileAccess)
 - [`allowUniversalAccessFromFileURLs`](webview.md#allowUniversalAccessFromFileURLs)
 - [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
 - [`bounces`](webview.md#bounces)
@@ -107,6 +110,16 @@ Boolean that sets whether JavaScript running in the context of a file scheme URL
 | bool | 否   | Android |
 
 ---
+
+### `allowFileAccess`
+
+ Boolean that sets whether the `WebView` has access to the file system. The default value is `false`.
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+ ---
 
 ### `geolocationEnabled`
 
@@ -502,13 +515,13 @@ webview 插入到滑动视图时距离边缘的距离。默认为`{top: 0, left:
 
 ### `extraNativeComponentConfig()`
 
-```javascript
+```jsx
 static extraNativeComponentConfig()
 ```
 
 ### `goForward()`
 
-```javascript
+```jsx
 goForward();
 ```
 
@@ -516,7 +529,7 @@ goForward();
 
 ### `goBack()`
 
-```javascript
+```jsx
 goBack();
 ```
 
@@ -524,7 +537,7 @@ goBack();
 
 ### `reload()`
 
-```javascript
+```jsx
 reload();
 ```
 
@@ -532,7 +545,7 @@ reload();
 
 ### `stopLoading()`
 
-```javascript
+```jsx
 stopLoading();
 ```
 

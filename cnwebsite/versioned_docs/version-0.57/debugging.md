@@ -3,6 +3,7 @@ id: version-0.57-debugging
 title: 调试
 original_id: debugging
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 ## 开启调试的快捷键
@@ -46,16 +47,16 @@ React Native 在 iOS 模拟器上支持一些快捷键操作，具体会在下�
 
 应用内的警告会以全屏黄色显示在应用中（调试模式下），我们称为黄屏（yellow box）报错。点击警告可以查看详情或是忽略掉。和红屏报警类似，你可以使用`console.warn()`来手动触发黄屏警告。在默认情况下，开发模式中启用了黄屏警告。可以通过以下代码关闭：
 
-```javascript
+```jsx
 console.disableYellowBox = true;
-console.warn("YellowBox is disabled.");
+console.warn('YellowBox is disabled.');
 ```
 
 你也可以通过代码屏蔽指定的警告，像下面这样调用 ignoreWarnings 方法，参数为一个数组：
 
-```javascript
-import { YellowBox } from "react-native";
-YellowBox.ignoreWarnings(["Warning: ..."]);
+```jsx
+import {YellowBox} from 'react-native';
+YellowBox.ignoreWarnings(['Warning: ...']);
 ```
 
 在 CI/Xcode 中，黄屏警告还可以通过设置`IS_TESTING`环境变量来控制启用与否。
@@ -79,6 +80,17 @@ YellowBox.ignoreWarnings(["Warning: ..."]);
 被指定的调试器需要知道项目所在的目录（可以一次传递多个目录参数，以空格隔开）。例如，如果你设定了`REACT_DEBUGGER="node /某个路径/launchDebugger.js --port 2345 --type ReactNative"`，那么启动调试器的命令就应该是`node /某个路径/launchDebugger.js --port 2345 --type ReactNative /某个路径/你的RN项目目录`。
 
 > 以这种方式执行的调试器最好是一个短进程（short-lived processes），同时最好也不要有超过 200k 的文字输出。
+
+## Safari Developer Tools
+
+You can use Safari to debug the iOS version of your app without having to enable "Debug JS Remotely".
+
+- Enable Develop menu in Safari: `Preferences → Advanced → Select "Show Develop menu in menu bar"`
+- Select your app's JSContext: `Develop → Simulator → JSContext`
+- Safari's Web Inspector should open which has a Console and a Debugger However, there are some disadvantages:
+
+1. No sourcemaps when debugging
+2. Every time the app is reloaded (using live reload, or by manually reloading), a new JSContext is created. Choosing "Automatically Show Web Inspectors for JSContexts" saves you from having to select the latest JSContext manually.
 
 ## React Developer Tools
 

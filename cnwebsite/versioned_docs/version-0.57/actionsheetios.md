@@ -3,6 +3,7 @@ id: version-0.57-actionsheetios
 title: ActionSheetIOS
 original_id: actionsheetios
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 ### 查看方法
@@ -18,7 +19,7 @@ original_id: actionsheetios
 
 ### `showActionSheetWithOptions()`
 
-```javascript
+```jsx
 static showActionSheetWithOptions(options, callback)
 ```
 
@@ -50,7 +51,7 @@ if (buttonIndex === 1) { /* 当接收到的索引为1，即点击了删除按钮
 
 ### `showShareActionSheetWithOptions()`
 
-```javascript
+```jsx
 static showShareActionSheetWithOptions(options, failureCallback, successCallback)
 ```
 

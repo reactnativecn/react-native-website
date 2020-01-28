@@ -41,24 +41,13 @@ const styles = StyleSheet.create({
     padding: 10
   }
 })
-
-AppRegistry.registerComponent('App', () => App)
 ```
-
-### 查看属性
-
-* [View props...](view.md#props)
-
-- [`animating`](activityindicator.md#animating)
-- [`color`](activityindicator.md#color)
-- [`size`](activityindicator.md#size)
-- [`hidesWhenStopped`](activityindicator.md#hideswhenstopped)
-
----
 
 # 文档
 
 ## Props
+
+继承了所有[View Props](view.md#props).
 
 ### `animating`
 
@@ -72,7 +61,7 @@ AppRegistry.registerComponent('App', () => App)
 
 ### `color`
 
-滚轮的前景颜色（默认为灰色）。
+滚轮的前景颜色（iOS上默认为灰色，安卓上默认为深绿色）。
 
 | 类型               | 必填 |
 | ------------------ | ---- |

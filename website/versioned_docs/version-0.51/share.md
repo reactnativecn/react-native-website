@@ -6,9 +6,9 @@ original_id: share
 
 ### Methods
 
-* [`share`](share.md#share)
-* [`sharedAction`](share.md#sharedaction)
-* [`dismissedAction`](share.md#dismissedaction)
+- [`share`](share.md#share)
+- [`sharedAction`](share.md#sharedaction)
+- [`dismissedAction`](share.md#dismissedaction)
 
 ---
 
@@ -18,7 +18,7 @@ original_id: share
 
 ### `share()`
 
-```javascript
+```jsx
 static share(content, options)
 ```
 
@@ -30,12 +30,12 @@ In Android, Returns a Promise which always be resolved with action being `Share.
 
 ### Content
 
-* `message` - a message to share
-* `title` - title of the message
+- `message` - a message to share
+- `title` - title of the message
 
 #### iOS
 
-* `url` - an URL to share
+- `url` - an URL to share
 
 At least one of URL and message is required.
 
@@ -43,19 +43,19 @@ At least one of URL and message is required.
 
 #### iOS
 
-* `subject` - a subject to share via email
-* `excludedActivityTypes`
-* `tintColor`
+- `subject` - a subject to share via email
+- `excludedActivityTypes`
+- `tintColor`
 
 #### Android
 
-* `dialogTitle`
+- `dialogTitle`
 
 ---
 
 ### `sharedAction()`
 
-```javascript
+```jsx
 static sharedAction()
 ```
 
@@ -65,7 +65,7 @@ The content was successfully shared.
 
 ### `dismissedAction()`
 
-```javascript
+```jsx
 static dismissedAction()
 ```
 

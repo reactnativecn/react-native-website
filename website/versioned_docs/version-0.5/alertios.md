@@ -29,7 +29,7 @@ AlertIOS.prompt(
 
 Example with custom buttons:
 
-```javascript
+```jsx
 AlertIOS.alert(
   'Update available',
   'Keep your app up to date to enjoy the latest features',
@@ -43,13 +43,13 @@ AlertIOS.alert(
       text: 'Install',
       onPress: () => console.log('Install Pressed'),
     },
-  ]
+  ],
 );
 ```
 
 Example with custom buttons:
 
-```javascript
+```jsx
 AlertIOS.prompt(
   'Enter password',
   'Enter your password to claim your $1.5B in lottery winnings',
@@ -64,32 +64,32 @@ AlertIOS.prompt(
       onPress: (password) => console.log('OK Pressed, password: ' + password),
     },
   ],
-  'secure-text'
+  'secure-text',
 );
 ```
 
 Example with the default button and a custom callback:
 
-```javascript
+```jsx
 AlertIOS.prompt(
   'Update username',
   null,
   (text) => console.log('Your username is ' + text),
   null,
-  'default'
+  'default',
 );
 ```
 
 ### Methods
 
-* [`alert`](alertios.md#alert)
-* [`prompt`](alertios.md#prompt)
+- [`alert`](alertios.md#alert)
+- [`prompt`](alertios.md#prompt)
 
 ### Type Definitions
 
-* [`AlertType`](alertios.md#alerttype)
-* [`AlertButtonStyle`](alertios.md#alertbuttonstyle)
-* [`ButtonsArray`](alertios.md#buttonsarray)
+- [`AlertType`](alertios.md#alerttype)
+- [`AlertButtonStyle`](alertios.md#alertbuttonstyle)
+- [`ButtonsArray`](alertios.md#buttonsarray)
 
 ---
 
@@ -99,7 +99,7 @@ AlertIOS.prompt(
 
 ### `alert()`
 
-```javascript
+```jsx
 AlertIOS.alert(title, [message], [callbackOrButtons]);
 ```
 
@@ -119,14 +119,14 @@ If passed a function in the `callbackOrButtons` param, it will be called when th
 
 ### `prompt()`
 
-```javascript
+```jsx
 AlertIOS.prompt(
   title,
   [message],
   [callbackOrButtons],
   [type],
   [defaultValue],
-  [keyboardType]
+  [keyboardType],
 );
 ```
 

@@ -4,11 +4,11 @@ title: Modal
 original_id: modal
 ---
 
-The Modal component is a simple way to present content above an enclosing view.
+The Modal component is a way to present content above an enclosing view.
 
 _Note: If you need more control over how to present modals over the rest of your app, then consider using a top-level Navigator._
 
-```javascript
+```jsx
 import React, {Component} from 'react';
 import {Modal, Text, TouchableHighlight, View} from 'react-native';
 
@@ -59,14 +59,14 @@ class ModalExample extends Component {
 
 ### Props
 
-* [`animationType`](modal.md#animationtype)
-* [`onRequestClose`](modal.md#onrequestclose)
-* [`onShow`](modal.md#onshow)
-* [`transparent`](modal.md#transparent)
-* [`visible`](modal.md#visible)
-* [`onOrientationChange`](modal.md#onorientationchange)
-* [`supportedOrientations`](modal.md#supportedorientations)
-* [`animated`](modal.md#animated)
+- [`animationType`](modal.md#animationtype)
+- [`onRequestClose`](modal.md#onrequestclose)
+- [`onShow`](modal.md#onshow)
+- [`transparent`](modal.md#transparent)
+- [`visible`](modal.md#visible)
+- [`onOrientationChange`](modal.md#onorientationchange)
+- [`supportedOrientations`](modal.md#supportedorientations)
+- [`animated`](modal.md#animated)
 
 ---
 
@@ -78,9 +78,9 @@ class ModalExample extends Component {
 
 The `animationType` prop controls how the modal animates.
 
-* `slide` slides in from the bottom
-* `fade` fades into view
-* `none` appears without an animation
+- `slide` slides in from the bottom
+- `fade` fades into view
+- `none` appears without an animation
 
 | Type                          | Required |
 | ----------------------------- | -------- |

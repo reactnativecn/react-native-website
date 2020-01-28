@@ -4,7 +4,7 @@ title: TouchableOpacity
 original_id: touchableopacity
 ---
 
-A wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it. This is done without actually changing the view hierarchy, and in general is easy to add to an app without weird side-effects.
+A wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it. This is done without actually changing the view hierarchy, and in general is quick to add to an app without weird side-effects.
 
 Example:
 
@@ -23,15 +23,15 @@ renderButton: function() {
 
 ### Props
 
-* [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
+- [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
 
-- [`activeOpacity`](touchableopacity.md#activeopacity)
-- [`focusedOpacity`](touchableopacity.md#focusedopacity)
-- [`tvParallaxProperties`](touchableopacity.md#tvparallaxproperties)
+* [`activeOpacity`](touchableopacity.md#activeopacity)
+* [`focusedOpacity`](touchableopacity.md#focusedopacity)
+* [`tvParallaxProperties`](touchableopacity.md#tvparallaxproperties)
 
 ### Methods
 
-* [`setOpacityTo`](touchableopacity.md#setopacityto)
+- [`setOpacityTo`](touchableopacity.md#setopacityto)
 
 ---
 
@@ -69,7 +69,7 @@ Apple TV parallax effects
 
 ### `setOpacityTo()`
 
-```javascript
+```jsx
 setOpacityTo((value: number), (duration: number));
 ```
 

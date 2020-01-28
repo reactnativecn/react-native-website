@@ -4,7 +4,7 @@ title: Native UI Components
 original_id: native-components-android
 ---
 
-There are tons of native UI widgets out there ready to be used in the latest apps - some of them are part of the platform, others are available as third-party libraries, and still more might be in use in your very own portfolio. React Native has several of the most critical platform components already wrapped, like `ScrollView` and `TextInput`, but not all of them, and certainly not ones you might have written yourself for a previous app. Fortunately, it's quite easy to wrap up these existing components for seamless integration with your React Native application.
+There are tons of native UI widgets out there ready to be used in the latest apps - some of them are part of the platform, others are available as third-party libraries, and still more might be in use in your very own portfolio. React Native has several of the most critical platform components already wrapped, like `ScrollView` and `TextInput`, but not all of them, and certainly not ones you might have written yourself for a previous app. Fortunately, we can wrap up these existing components for seamless integration with your React Native application.
 
 Like the native module guide, this too is a more advanced guide that assumes you are somewhat familiar with Android SDK programming. This guide will show you how to build a native UI component, walking you through the implementation of a subset of the existing `ImageView` component available in the core React Native library.
 
@@ -16,7 +16,7 @@ Native views are created and manipulated by extending `ViewManager` or more comm
 
 These subclasses are essentially singletons - only one instance of each is created by the bridge. They vend native views to the `NativeViewHierarchyManager`, which delegates back to them to set and update the properties of the views as necessary. The `ViewManagers` are also typically the delegates for the views, sending events back to JavaScript via the bridge.
 
-Vending a view is simple:
+To vend a view:
 
 1. Create the ViewManager subclass.
 2. Implement the `createViewInstance` method
@@ -58,9 +58,13 @@ Properties that are to be reflected in JavaScript needs to be exposed as setter 
 
 Annotation `@ReactProp` has one obligatory argument `name` of type `String`. Name assigned to the `@ReactProp` annotation linked to the setter method is used to reference the property on JS side.
 
-Except from `name`, `@ReactProp` annotation may take following optional arguments: `defaultBoolean`, `defaultInt`, `defaultFloat`. Those arguments should be of the corresponding primitive type (accordingly `boolean`, `int`, `float`) and the value provided will be passed to the setter method in case when the property that the setter is referencing has been removed from the component. Note that "default" values are only provided for primitive types, in case when setter is of some complex type, `null` will be provided as a default value in case when corresponding property gets removed.
+<!-- alex ignore primitive -->
+
+Except from `name`, `@ReactProp` annotation may take following optional arguments: `defaultBoolean`, `defaultInt`, `defaultFloat`. Those arguments should be of the corresponding type (accordingly `boolean`, `int`, `float`) and the value provided will be passed to the setter method in case when the property that the setter is referencing has been removed from the component. Note that "default" values are only provided for primitive types, in case when setter is of some complex type, `null` will be provided as a default value in case when corresponding property gets removed.
 
 Setter declaration requirements for methods annotated with `@ReactPropGroup` are different than for `@ReactProp`, please refer to the `@ReactPropGroup` annotation class docs for more information about it.
+
+<!-- alex ignore primitive -->
 
 **IMPORTANT!** in ReactJS updating the property value will result in setter method call. Note that one of the ways we can update component is by removing properties that have been set before. In that case setter method will be called as well to notify view manager that property has changed. In that case "default" value will be provided (for primitive types "default" can value can be specified using `defaultBoolean`, `defaultFloat`, etc. arguments of `@ReactProp` annotation, for complex types setter will be called with value set to `null`).
 
@@ -97,32 +101,28 @@ The final Java step is to register the ViewManager to the application, this happ
 
 ## 5. Implement the JavaScript module
 
-The very final step is to create the JavaScript module that defines the interface layer between Java and JavaScript for the users of your new view. Much of the effort is handled by internal React code in Java and JavaScript and all that is left for you is to describe the `propTypes`.
+The very final step is to create the JavaScript module that defines the interface layer between Java and JavaScript for the users of your new view. It is recommended for you to document the component interface in this module (e.g. using Flow, TypeScript, or plain old comments).
 
-```javascript
+```jsx
 // ImageView.js
 
-import PropTypes from 'prop-types';
-import {requireNativeComponent, ViewPropTypes} from 'react-native';
+import {requireNativeComponent} from 'react-native';
 
-var iface = {
-  name: 'ImageView',
-  propTypes: {
-    src: PropTypes.string,
-    borderRadius: PropTypes.number,
-    resizeMode: PropTypes.oneOf(['cover', 'contain', 'stretch']),
-    ...ViewPropTypes, // include the default view properties
-  },
-};
-
-module.exports = requireNativeComponent('RCTImageView', iface);
+/**
+ * Composes `View`.
+ *
+ * - src: string
+ * - borderRadius: number
+ * - resizeMode: 'cover' | 'contain' | 'stretch'
+ */
+module.exports = requireNativeComponent('RCTImageView');
 ```
 
-`requireNativeComponent` commonly takes two parameters, the first is the name of the native view and the second is an object that describes the component interface. The component interface should declare a friendly `name` for use in debug messages and must declare the `propTypes` reflected by the Native View. The `propTypes` are used for checking the validity of a user's use of the native view. Note that if you need your JavaScript component to do more than just specify a name and propTypes, like do custom event handling, you can wrap the native component in a normal react component. In that case, you want to pass in the wrapper component instead of `iface` to `requireNativeComponent`. This is illustrated in the `MyCustomView` example below.
+The `requireNativeComponent` function takes the name of the native view. Note that if your component needs to do anything more sophisticated (e.g. custom event handling), you should wrap the native component in another React component. This is illustrated in the `MyCustomView` example below.
 
 # Events
 
-So now we know how to expose native view components that we can control easily from JS, but how do we deal with events from the user, like pinch-zooms or panning? When a native event occurs the native code should issue an event to the JavaScript representation of the View, and the two views are linked with the value returned from the `getId()` method.
+So now we know how to expose native view components that we can control freely from JS, but how do we deal with events from the user, like pinch-zooms or panning? When a native event occurs the native code should issue an event to the JavaScript representation of the View, and the two views are linked with the value returned from the `getId()` method.
 
 ```java
 class MyCustomView extends View {
@@ -158,7 +158,7 @@ public class ReactImageManager extends SimpleViewManager<MyCustomView> {
 
 This callback is invoked with the raw event, which we typically process in the wrapper component to make a simpler API:
 
-```javascript
+```jsx
 // MyCustomView.js
 
 class MyCustomView extends React.Component {
@@ -184,9 +184,5 @@ MyCustomView.propTypes = {
   ...
 };
 
-var RCTMyCustomView = requireNativeComponent(`RCTMyCustomView`, MyCustomView, {
-  nativeOnly: {onChange: true}
-});
+var RCTMyCustomView = requireNativeComponent(`RCTMyCustomView`);
 ```
-
-Note the use of `nativeOnly` above. Sometimes you'll have some special properties that you need to expose for the native component, but don't actually want them as part of the API for the associated React component. For example, `Switch` has a custom `onChange` handler for the raw native event, and exposes an `onValueChange` handler property that is invoked with just the boolean value rather than the raw event (similar to `onChangeMessage` in the example above). Since you don't want these native only properties to be part of the API, you don't want to put them in `propTypes`, but if you don't you'll get an error. The solution is simply to call them out via the `nativeOnly` option.

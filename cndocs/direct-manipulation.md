@@ -13,7 +13,7 @@ title: 直接操作
 
 [TouchableOpacity](https://github.com/facebook/react-native/blob/master/Libraries/Components/Touchable/TouchableOpacity.js)这个组件就在内部使用了`setNativeProps`方法来更新其子组件的透明度：
 
-```javascript
+```jsx
 setOpacityTo(value) {
   // Redacted: animation related code
   this.refs[CHILD_REF].setNativeProps({
@@ -24,7 +24,7 @@ setOpacityTo(value) {
 
 由此我们可以写出下面这样的代码：子组件可以响应点击事件，更改自己的透明度。而子组件自身并不需要处理这件事情，也不需要在实现中做任何修改。
 
-```javascript
+```jsx
 <TouchableOpacity onPress={this._handlePress}>
   <View style={styles.button}>
     <Text>Press me!</Text>
@@ -34,7 +34,7 @@ setOpacityTo(value) {
 
 如果不使用`setNativeProps`来实现这一需求，那么一种可能的办法是把透明值保存到 state 中，然后在`onPress`事件触发时更新这个值：
 
-```javascript
+```jsx
 constructor(props) {
   super(props);
   this.state = { myButtonOpacity: 1, };
@@ -139,10 +139,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <TextInput
           ref={component => this._textInput = component}
-          style={{height: 50, flex: 1, marginHorizontal: 20, borderWidth: 1, borderColor: '#ccc'}}
+          style={{height: 50, width: 200, marginHorizontal: 20, borderWidth: 1, borderColor: '#ccc'}}
         />
         <TouchableOpacity onPress={this.clearText}>
           <Text>Clear text</Text>
@@ -169,12 +169,12 @@ The methods described here are available on most of the default components provi
 
 Determines the location on screen, width, and height of the given view and returns the values via an async callback. If successful, the callback will be called with the following arguments:
 
-* x
-* y
-* width
-* height
-* pageX
-* pageY
+- x
+- y
+- width
+- height
+- pageX
+- pageY
 
 Note that these measurements are not available until after the rendering has been completed in native. If you need the measurements as soon as possible, consider using the [`onLayout` prop](view.md#onlayout) instead.
 
@@ -182,16 +182,20 @@ Note that these measurements are not available until after the rendering has bee
 
 Determines the location of the given view in the window and returns the values via an async callback. If the React root view is embedded in another native view, this will give you the absolute coordinates. If successful, the callback will be called with the following arguments:
 
-* x
-* y
-* width
-* height
+- x
+- y
+- width
+- height
 
 ### measureLayout(relativeToNativeNode, onSuccess, onFail)
 
 Like `measure()`, but measures the view relative an ancestor, specified as `relativeToNativeNode`. This means that the returned x, y are relative to the origin x, y of the ancestor view.
 
-As always, to obtain a native node handle for a component, you can use `ReactNative.findNodeHandle(component)`.
+As always, to obtain a native node handle for a component, you can use `findNodeHandle(component)`.
+
+```jsx
+import {findNodeHandle} from 'react-native';
+```
 
 ### focus()
 

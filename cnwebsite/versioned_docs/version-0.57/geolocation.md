@@ -3,11 +3,14 @@ id: version-0.57-geolocation
 title: Geolocation
 original_id: geolocation
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 地理定位（Geolocation）API 遵循[web 标准](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)。
 
 正因为如此，此 API 和在浏览器上使用方法一致，都是直接访问全局的`navigator.geolocation`对象，并不需要额外`import`。
+
+On Android, this uses the [android.location API](https://developer.android.com/reference/android/location/package-summary). This API is not recommended by Google because it is less accurate and slower than the recommended [Google Location Services API](https://developer.android.com/training/location/). In order to use it with React Native, use the [react-native-geolocation-service](https://github.com/Agontuk/react-native-geolocation-service) module.
 
 > 译注 1：本 API 在安卓上需要谷歌框架支持，因而无法在国内使用，请在 github 上搜索百度或高德等国内第三方封装替代库。
 
@@ -63,7 +66,7 @@ In order to enable geolocation in the background, you need to include the 'NSLoc
 
 ### `setRNConfiguration()`
 
-```javascript
+```jsx
 geolocation.setRNConfiguration(config);
 ```
 
@@ -83,7 +86,7 @@ Supported options:
 
 ### `requestAuthorization()`
 
-```javascript
+```jsx
 geolocation.requestAuthorization();
 ```
 
@@ -93,7 +96,7 @@ Request suitable Location permission based on the key configured on pList. If NS
 
 ### `getCurrentPosition()`
 
-```javascript
+```jsx
 geolocation.getCurrentPosition(geo_success, [geo_error], [geo_options]);
 ```
 
@@ -117,7 +120,7 @@ geolocation.getCurrentPosition(geo_success, [geo_error], [geo_options]);
 
 ### `watchPosition()`
 
-```javascript
+```jsx
 geolocation.watchPosition(success, [error], [options]);
 ```
 
@@ -143,7 +146,7 @@ Supported options:
 
 ### `clearWatch()`
 
-```javascript
+```jsx
 geolocation.clearWatch(watchID);
 ```
 
@@ -157,7 +160,7 @@ geolocation.clearWatch(watchID);
 
 ### `stopObserving()`
 
-```javascript
+```jsx
 geolocation.stopObserving();
 ```
 

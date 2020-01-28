@@ -3,6 +3,7 @@ id: version-0.57-toastandroid
 title: ToastAndroid
 original_id: toastandroid
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 本模块将原生的 ToastAndroid 模块导出为一个 JS 模块，用于在 Android 设备上显示一个悬浮的提示信息。本模块包含一个`show`方法接受以下的参数：
@@ -16,7 +17,7 @@ The 'showWithGravityAndOffset' function adds on the ability to specify offset Th
 
 用法示例：
 
-```javascript
+```jsx
 import { ToastAndroid } from 'react-native'; 
 
 ToastAndroid.show("A pikachu appeared nearby !", ToastAndroid.SHORT);
@@ -38,7 +39,7 @@ ToastAndroid.showWithGravityAndOffset(
 
 The ToastAndroid API is imperative and this might present itself as an issue, but there is actually a way(hack) to expose a declarative component from it. See an example below:
 
-```javascript
+```jsx
 import React, { Component } from 'react';
 import {
   View,
@@ -116,7 +117,7 @@ class App extends Component {
 
 ### `show()`
 
-```javascript
+```jsx
 static show(message, duration)
 ```
 
@@ -124,7 +125,7 @@ static show(message, duration)
 
 ### `showWithGravity()`
 
-```javascript
+```jsx
 static showWithGravity(message, duration, gravity)
 ```
 
@@ -132,7 +133,7 @@ static showWithGravity(message, duration, gravity)
 
 ### `showWithGravityAndOffset()`
 
-```javascript
+```jsx
 static showWithGravityAndOffset(message, duration, gravity, xOffset, yOffset)
 ```
 
@@ -140,7 +141,7 @@ static showWithGravityAndOffset(message, duration, gravity, xOffset, yOffset)
 
 ### `SHORT`
 
-```javascript
+```jsx
 ToastAndroid.SHORT;
 ```
 
@@ -148,7 +149,7 @@ ToastAndroid.SHORT;
 
 ### `LONG`
 
-```javascript
+```jsx
 ToastAndroid.LONG;
 ```
 
@@ -156,7 +157,7 @@ ToastAndroid.LONG;
 
 ### `TOP`
 
-```javascript
+```jsx
 ToastAndroid.TOP;
 ```
 
@@ -164,7 +165,7 @@ ToastAndroid.TOP;
 
 ### `BOTTOM`
 
-```javascript
+```jsx
 ToastAndroid.BOTTOM;
 ```
 
@@ -172,6 +173,6 @@ ToastAndroid.BOTTOM;
 
 ### `CENTER`
 
-```javascript
+```jsx
 ToastAndroid.CENTER;
 ```

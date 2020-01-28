@@ -3,6 +3,7 @@ id: version-0.57-native-components-android
 title: 原生UI组件
 original_id: native-components-android
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 在如今的 App 中，已经有成千上万的原生 UI 部件了——其中的一些是平台的一部分，另一些可能来自于一些第三方库，而且可能你自己还收藏了很多。React Native 已经封装了大部分最常见的组件，譬如`ScrollView`和`TextInput`，但不可能封装全部组件。而且，说不定你曾经为自己以前的 App 还封装过一些组件，React Native 肯定没法包含它们。幸运的是，在 React Naitve 应用程序中封装和植入已有的组件非常简单。
@@ -102,7 +103,7 @@ public class ReactImageManager extends SimpleViewManager<ReactImageView> {
 
 整个过程的最后一步就是创建 JavaScript 模块并且定义 Java 和 JavaScript 之间的接口层。我们建议你使用 Flow 或是 TypeScript 来规范定义接口的具体结构，或者至少用注释说明清楚（老版本的 RN 使用`propTypes`来规范接口定义，这一做法已不再支持）。
 
-```javascript
+```jsx
 // ImageView.js
 
 import { requireNativeComponent } from "react-native";
@@ -157,7 +158,7 @@ public class ReactImageManager extends SimpleViewManager<MyCustomView> {
 
 这个回调会传递一个原生事件对象，一般来说我们会在封装组件里进行处理以便外部使用：
 
-```javascript
+```jsx
 // MyCustomView.js
 
 class MyCustomView extends React.Component {

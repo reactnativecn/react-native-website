@@ -6,30 +6,30 @@ original_id: webview
 
 ### Props
 
-* [`renderError`](webview.md#rendererror)
-* [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
-* [`contentInset`](webview.md#contentinset)
-* [`html`](webview.md#html)
-* [`javaScriptEnabledAndroid`](webview.md#javascriptenabledandroid)
-* [`onNavigationStateChange`](webview.md#onnavigationstatechange)
-* [`bounces`](webview.md#bounces)
-* [`renderLoading`](webview.md#renderloading)
-* [`scrollEnabled`](webview.md#scrollenabled)
-* [`shouldInjectAJAXHandler`](webview.md#shouldinjectajaxhandler)
-* [`startInLoadingState`](webview.md#startinloadingstate)
-* [`style`](webview.md#style)
-* [`url`](webview.md#url)
+- [`renderError`](webview.md#rendererror)
+- [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
+- [`contentInset`](webview.md#contentinset)
+- [`html`](webview.md#html)
+- [`javaScriptEnabledAndroid`](webview.md#javascriptenabledandroid)
+- [`onNavigationStateChange`](webview.md#onnavigationstatechange)
+- [`bounces`](webview.md#bounces)
+- [`renderLoading`](webview.md#renderloading)
+- [`scrollEnabled`](webview.md#scrollenabled)
+- [`shouldInjectAJAXHandler`](webview.md#shouldinjectajaxhandler)
+- [`startInLoadingState`](webview.md#startinloadingstate)
+- [`style`](webview.md#style)
+- [`url`](webview.md#url)
 
 ### Methods
 
-* [`goForward`](webview.md#goforward)
-* [`goBack`](webview.md#goback)
-* [`reload`](webview.md#reload)
-* [`updateNavigationState`](webview.md#updatenavigationstate)
-* [`getWebWiewHandle`](webview.md#getwebwiewhandle)
-* [`onLoadingStart`](webview.md#onloadingstart)
-* [`onLoadingError`](webview.md#onloadingerror)
-* [`onLoadingFinish`](webview.md#onloadingfinish)
+- [`goForward`](webview.md#goforward)
+- [`goBack`](webview.md#goback)
+- [`reload`](webview.md#reload)
+- [`updateNavigationState`](webview.md#updatenavigationstate)
+- [`getWebWiewHandle`](webview.md#getwebwiewhandle)
+- [`onLoadingStart`](webview.md#onloadingstart)
+- [`onLoadingError`](webview.md#onloadingerror)
+- [`onLoadingFinish`](webview.md#onloadingfinish)
 
 ---
 
@@ -145,7 +145,7 @@ Used for android only, JS is enabled by default for WebView on iOS
 
 ### `goForward()`
 
-```javascript
+```jsx
 goForward();
 ```
 
@@ -153,7 +153,7 @@ goForward();
 
 ### `goBack()`
 
-```javascript
+```jsx
 goBack();
 ```
 
@@ -161,7 +161,7 @@ goBack();
 
 ### `reload()`
 
-```javascript
+```jsx
 reload();
 ```
 
@@ -169,7 +169,7 @@ reload();
 
 ### `updateNavigationState()`
 
-```javascript
+```jsx
 updateNavigationState((event: Event));
 ```
 
@@ -179,7 +179,7 @@ We return an event with a bunch of fields including: url, title, loading, canGoB
 
 ### `getWebWiewHandle()`
 
-```javascript
+```jsx
 getWebWiewHandle():
 ```
 
@@ -187,7 +187,7 @@ getWebWiewHandle():
 
 ### `onLoadingStart()`
 
-```javascript
+```jsx
 onLoadingStart((event: Event));
 ```
 
@@ -195,7 +195,7 @@ onLoadingStart((event: Event));
 
 ### `onLoadingError()`
 
-```javascript
+```jsx
 onLoadingError((event: Event));
 ```
 
@@ -203,6 +203,6 @@ onLoadingError((event: Event));
 
 ### `onLoadingFinish()`
 
-```javascript
+```jsx
 onLoadingFinish((event: Event));
 ```

@@ -8,9 +8,9 @@ Deprecated. Use `StatusBar` instead.
 
 ### Methods
 
-* [`setStyle`](statusbarios.md#setstyle)
-* [`setHidden`](statusbarios.md#sethidden)
-* [`setNetworkActivityIndicatorVisible`](statusbarios.md#setnetworkactivityindicatorvisible)
+- [`setStyle`](statusbarios.md#setstyle)
+- [`setHidden`](statusbarios.md#sethidden)
+- [`setNetworkActivityIndicatorVisible`](statusbarios.md#setnetworkactivityindicatorvisible)
 
 ---
 
@@ -20,7 +20,7 @@ Deprecated. Use `StatusBar` instead.
 
 ### `setStyle()`
 
-```javascript
+```jsx
 setStyle(style, animated?)
 ```
 
@@ -28,7 +28,7 @@ setStyle(style, animated?)
 
 ### `setHidden()`
 
-```javascript
+```jsx
 setHidden(hidden, animation?)
 ```
 
@@ -36,6 +36,6 @@ setHidden(hidden, animation?)
 
 ### `setNetworkActivityIndicatorVisible()`
 
-```javascript
+```jsx
 setNetworkActivityIndicatorVisible(visible);
 ```

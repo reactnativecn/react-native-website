@@ -3,6 +3,7 @@ id: version-0.57-switch
 title: Switch
 original_id: switch
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 跨平台通用的“开关”组件。  
@@ -43,9 +44,9 @@ original_id: switch
 
 ### `trackColor`
 
-开启状态时的背景颜色。`onTintColor` is now deprecated.
+开启状态时的背景颜色。
 
-iOS: when the switch value is false, the track shrinks into the border. If you want to change the color of the background exposed by the shrunken track, use [`ios_backgroundColor`](switch.md#ios_backgroundColor).
+_iOS_: when the switch value is false, the track shrinks into the border. If you want to change the color of the background exposed by the shrunken track, use [`ios_backgroundColor`](switch.md#ios_backgroundColor).
 
 | 类型   | 必填 |
 | ------------------------------------------------------------- | -------- |
@@ -94,6 +95,8 @@ On iOS, custom color for the background. This background color can be seen eithe
 ---
 
 ### `tintColor`
+
+`tintColor` is deprecated, use `trackColor` instead.
 
 关闭状态时的边框颜色(iOS)或背景颜色(Android)。
 

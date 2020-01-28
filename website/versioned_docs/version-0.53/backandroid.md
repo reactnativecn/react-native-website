@@ -8,9 +8,9 @@ Deprecated. Use BackHandler instead.
 
 ### Methods
 
-* [`exitApp`](backandroid.md#exitapp)
-* [`addEventListener`](backandroid.md#addeventlistener)
-* [`removeEventListener`](backandroid.md#removeeventlistener)
+- [`exitApp`](backandroid.md#exitapp)
+- [`addEventListener`](backandroid.md#addeventlistener)
+- [`removeEventListener`](backandroid.md#removeeventlistener)
 
 ---
 
@@ -20,7 +20,7 @@ Deprecated. Use BackHandler instead.
 
 ### `exitApp()`
 
-```javascript
+```jsx
 static exitApp()
 ```
 
@@ -28,7 +28,7 @@ static exitApp()
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 static addEventListener(eventName, handler)
 ```
 
@@ -36,6 +36,6 @@ static addEventListener(eventName, handler)
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(eventName, handler)
 ```

@@ -3,6 +3,8 @@ id: asyncstorage
 title: AsyncStorage
 ---
 
+ **Deprecated.** Use [react-native-community/react-native-async-storage](https://github.com/react-native-community/react-native-async-storage) instead.
+
 `AsyncStorage`是一个简单的、异步的、持久化的 Key-Value 存储系统，它对于 App 来说是全局性的。可用来代替 LocalStorage。
 
 我们推荐您在 AsyncStorage 的基础上做一层抽象封装，而不是直接使用 AsyncStorage。
@@ -35,7 +37,7 @@ _storeData = async () => {
 ```
 _retrieveData = async () => {
   try {
-    const value = await AsyncStorage.getItem('TASKS');
+    const value = await AsyncStorage.getItem('@MySuperStore:key');
     if (value !== null) {
       // We have data!!
       console.log(value);
@@ -46,20 +48,6 @@ _retrieveData = async () => {
 }
 ```
 
-### 查看方法
-
-* [`getItem`](asyncstorage.md#getitem)
-* [`setItem`](asyncstorage.md#setitem)
-* [`removeItem`](asyncstorage.md#removeitem)
-* [`mergeItem`](asyncstorage.md#mergeitem)
-* [`clear`](asyncstorage.md#clear)
-* [`getAllKeys`](asyncstorage.md#getallkeys)
-* [`flushGetRequests`](asyncstorage.md#flushgetrequests)
-* [`multiGet`](asyncstorage.md#multiget)
-* [`multiSet`](asyncstorage.md#multiset)
-* [`multiRemove`](asyncstorage.md#multiremove)
-* [`multiMerge`](asyncstorage.md#multimerge)
-
 ---
 
 # 文档
@@ -68,7 +56,7 @@ _retrieveData = async () => {
 
 ### `getItem()`
 
-```javascript
+```jsx
 static getItem(key: string, [callback]: ?(error: ?Error, result: ?string) => void)
 ```
 
@@ -85,7 +73,7 @@ static getItem(key: string, [callback]: ?(error: ?Error, result: ?string) => voi
 
 ### `setItem()`
 
-```javascript
+```jsx
 static setItem(key: string, value: string, [callback]: ?(error: ?Error) => void)
 ```
 
@@ -103,7 +91,7 @@ static setItem(key: string, value: string, [callback]: ?(error: ?Error) => void)
 
 ### `removeItem()`
 
-```javascript
+```jsx
 static removeItem(key: string, [callback]: ?(error: ?Error) => void)
 ```
 
@@ -120,7 +108,7 @@ static removeItem(key: string, [callback]: ?(error: ?Error) => void)
 
 ### `mergeItem()`
 
-```javascript
+```jsx
 static mergeItem(key: string, value: string, [callback]: ?(error: ?Error) => void)
 ```
 
@@ -138,7 +126,7 @@ static mergeItem(key: string, value: string, [callback]: ?(error: ?Error) => voi
 
 示例：
 
-```javascript
+```jsx
 let UID123_object = {
   name: "Chris",
   age: 30,
@@ -167,7 +155,7 @@ AsyncStorage.setItem("UID123", JSON.stringify(UID123_object), () => {
 
 ### `clear()`
 
-```javascript
+```jsx
 static clear([callback]: ?(error: ?Error) => void)
 ```
 
@@ -183,7 +171,7 @@ static clear([callback]: ?(error: ?Error) => void)
 
 ### `getAllKeys()`
 
-```javascript
+```jsx
 static getAllKeys([callback]: ?(error: ?Error, keys: ?Array<string>) => void)
 ```
 
@@ -199,7 +187,7 @@ static getAllKeys([callback]: ?(error: ?Error, keys: ?Array<string>) => void)
 
 ### `flushGetRequests()`
 
-```javascript
+```jsx
 static flushGetRequests(): [object Object]
 ```
 
@@ -209,7 +197,7 @@ static flushGetRequests(): [object Object]
 
 ### `multiGet()`
 
-```javascript
+```jsx
 static multiGet(keys: Array<string>, [callback]: ?(errors: ?Array<Error>, result: ?Array<Array<string>>) => void)
 ```
 
@@ -230,7 +218,7 @@ multiGet(['k1', 'k2'], cb) -> cb([['k1', 'val1'], ['k2', 'val2']])
 
 示例：
 
-```javascript
+```jsx
 AsyncStorage.getAllKeys((err, keys) => {
   AsyncStorage.multiGet(keys, (err, stores) => {
     stores.map((result, i, store) => {
@@ -246,7 +234,7 @@ AsyncStorage.getAllKeys((err, keys) => {
 
 ### `multiSet()`
 
-```javascript
+```jsx
 static multiSet(keyValuePairs: Array<Array<string>>, [callback]: ?(errors: ?Array<Error>) => void)
 ```
 
@@ -269,7 +257,7 @@ multiSet([['k1', 'val1'], ['k2', 'val2']], cb);
 
 ### `multiRemove()`
 
-```javascript
+```jsx
 static multiRemove(keys: Array<string>, [callback]: ?(errors: ?Array<Error>) => void)
 ```
 
@@ -284,7 +272,7 @@ static multiRemove(keys: Array<string>, [callback]: ?(errors: ?Array<Error>) => 
 
 示例：
 
-```javascript
+```jsx
 let keys = ["k1", "k2"];
 AsyncStorage.multiRemove(keys, err => {
   // 如果k1,k2字段值存在的话就会被删除
@@ -295,7 +283,7 @@ AsyncStorage.multiRemove(keys, err => {
 
 ### `multiMerge()`
 
-```javascript
+```jsx
 static multiMerge(keyValuePairs: Array<Array<string>>, [callback]: ?(errors: ?Array<Error>) => void)
 ```
 
@@ -312,7 +300,7 @@ static multiMerge(keyValuePairs: Array<Array<string>>, [callback]: ?(errors: ?Ar
 
 示例：
 
-```javascript
+```jsx
 // 第一个用户的初始数据
 let UID234_object = {
   name: "Chris",

@@ -12,7 +12,7 @@ At Facebook, we often need to access deeply nested values in data structures fet
 
 Unfortunately, accessing these deeply nested values is currently tedious and verbose.
 
-```javascript
+```jsx
 props.user &&
   props.user.friends &&
   props.user.friends[0] &&
@@ -23,27 +23,27 @@ There is [an ECMAScript proposal to introduce the existential operator](https://
 
 We came up with an existential _function_ we call `idx`.
 
-```javascript
+```jsx
 idx(props, (_) => _.user.friends[0].friends);
 ```
 
 The invocation in this code snippet behaves similarly to the boolean expression in the code snippet above, except with significantly less repetition. The `idx` function takes exactly two arguments:
 
-* Any value, typically an object or array into which you want to access a nested value.
-* A function that receives the first argument and accesses a nested value on it.
+- Any value, typically an object or array into which you want to access a nested value.
+- A function that receives the first argument and accesses a nested value on it.
 
 In theory, the `idx` function will try-catch errors that are the result of accessing properties on null or undefined. If such an error is caught, it will return either null or undefined. (And you can see how this might be implemented in [idx.js](https://github.com/facebookincubator/idx/blob/master/packages/idx/src/idx.js).)
 
 In practice, try-catching every nested property access is slow, and differentiating between specific kinds of TypeErrors is fragile. To deal with these shortcomings, we created a Babel plugin that transforms the above `idx` invocation into the following expression:
 
-```javascript
+```jsx
 props.user == null
   ? props.user
   : props.user.friends == null
-    ? props.user.friends
-    : props.user.friends[0] == null
-      ? props.user.friends[0]
-      : props.user.friends[0].friends;
+  ? props.user.friends
+  : props.user.friends[0] == null
+  ? props.user.friends[0]
+  : props.user.friends[0].friends;
 ```
 
 Finally, we added a custom Flow type declaration for `idx` that allows the traversal in the second argument to be properly type-checked while permitting nested access on nullable properties.

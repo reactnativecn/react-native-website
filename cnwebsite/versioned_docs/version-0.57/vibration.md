@@ -3,6 +3,7 @@ id: version-0.57-vibration
 title: Vibration
 original_id: vibration
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 本模块导出函数`Vibration.vibrate()`用于控制设备震动。震动触发是异步的，也就是说这个函数会立即返回而非等待震动结束。
@@ -53,7 +54,7 @@ Vibration.cancel()
 
 ### `vibrate()`
 
-```javascript
+```jsx
 Vibration.vibrate(pattern: number, Array<number>, repeat: boolean)
 ```
 
@@ -70,7 +71,7 @@ Trigger a vibration with specified `pattern`.
 
 ### `cancel()`
 
-```javascript
+```jsx
 Vibration.cancel();
 ```
 

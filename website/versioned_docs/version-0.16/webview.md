@@ -10,35 +10,35 @@ Note that WebView is only supported on iOS for now, see https://facebook.github.
 
 ### Props
 
-* [View props...](view.md#props)
+- [View props...](view.md#props)
 
-- [`scrollEnabled`](webview.md#scrollenabled)
-- [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
-- [`contentInset`](webview.md#contentinset)
-- [`html`](webview.md#html)
-- [`injectedJavaScript`](webview.md#injectedjavascript)
-- [`onNavigationStateChange`](webview.md#onnavigationstatechange)
-- [`renderError`](webview.md#rendererror)
-- [`renderLoading`](webview.md#renderloading)
-- [`bounces`](webview.md#bounces)
-- [`startInLoadingState`](webview.md#startinloadingstate)
-- [`style`](webview.md#style)
-- [`url`](webview.md#url)
-- [`javaScriptEnabledAndroid`](webview.md#javascriptenabledandroid)
-- [`allowsInlineMediaPlayback`](webview.md#allowsinlinemediaplayback)
-- [`onShouldStartLoadWithRequest`](webview.md#onshouldstartloadwithrequest)
-- [`scalesPageToFit`](webview.md#scalespagetofit)
+* [`scrollEnabled`](webview.md#scrollenabled)
+* [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
+* [`contentInset`](webview.md#contentinset)
+* [`html`](webview.md#html)
+* [`injectedJavaScript`](webview.md#injectedjavascript)
+* [`onNavigationStateChange`](webview.md#onnavigationstatechange)
+* [`renderError`](webview.md#rendererror)
+* [`renderLoading`](webview.md#renderloading)
+* [`bounces`](webview.md#bounces)
+* [`startInLoadingState`](webview.md#startinloadingstate)
+* [`style`](webview.md#style)
+* [`url`](webview.md#url)
+* [`javaScriptEnabledAndroid`](webview.md#javascriptenabledandroid)
+* [`allowsInlineMediaPlayback`](webview.md#allowsinlinemediaplayback)
+* [`onShouldStartLoadWithRequest`](webview.md#onshouldstartloadwithrequest)
+* [`scalesPageToFit`](webview.md#scalespagetofit)
 
 ### Methods
 
-* [`goForward`](webview.md#goforward)
-* [`goBack`](webview.md#goback)
-* [`reload`](webview.md#reload)
-* [`updateNavigationState`](webview.md#updatenavigationstate)
-* [`getWebViewHandle`](webview.md#getwebviewhandle)
-* [`onLoadingStart`](webview.md#onloadingstart)
-* [`onLoadingError`](webview.md#onloadingerror)
-* [`onLoadingFinish`](webview.md#onloadingfinish)
+- [`goForward`](webview.md#goforward)
+- [`goBack`](webview.md#goback)
+- [`reload`](webview.md#reload)
+- [`updateNavigationState`](webview.md#updatenavigationstate)
+- [`getWebViewHandle`](webview.md#getwebviewhandle)
+- [`onLoadingStart`](webview.md#onloadingstart)
+- [`onLoadingError`](webview.md#onloadingerror)
+- [`onLoadingFinish`](webview.md#onloadingfinish)
 
 ---
 
@@ -186,7 +186,7 @@ Sets whether the webpage scales to fit the view and the user can change the scal
 
 ### `goForward()`
 
-```javascript
+```jsx
 goForward();
 ```
 
@@ -194,7 +194,7 @@ goForward();
 
 ### `goBack()`
 
-```javascript
+```jsx
 goBack();
 ```
 
@@ -202,7 +202,7 @@ goBack();
 
 ### `reload()`
 
-```javascript
+```jsx
 reload();
 ```
 
@@ -210,7 +210,7 @@ reload();
 
 ### `updateNavigationState()`
 
-```javascript
+```jsx
 updateNavigationState((event: Event));
 ```
 
@@ -220,7 +220,7 @@ We return an event with a bunch of fields including: url, title, loading, canGoB
 
 ### `getWebViewHandle()`
 
-```javascript
+```jsx
 getWebViewHandle():
 ```
 
@@ -228,7 +228,7 @@ getWebViewHandle():
 
 ### `onLoadingStart()`
 
-```javascript
+```jsx
 onLoadingStart((event: Event));
 ```
 
@@ -236,7 +236,7 @@ onLoadingStart((event: Event));
 
 ### `onLoadingError()`
 
-```javascript
+```jsx
 onLoadingError((event: Event));
 ```
 
@@ -244,6 +244,6 @@ onLoadingError((event: Event));
 
 ### `onLoadingFinish()`
 
-```javascript
+```jsx
 onLoadingFinish((event: Event));
 ```

@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-const React = require("react");
+const React = require('react');
 
 class Footer extends React.Component {
   render() {
@@ -112,16 +112,18 @@ class Footer extends React.Component {
           </div>
         </section> */}
         <section className="copyright">
-          <p>
+          <p style={{color: 'inherit'}}>
             React Native中文网 &copy; {currentYear} 杭州欧石南网络科技有限公司
           </p>
-          <p>
-            浙ICP备15023664号-3
+          <p style={{color: 'inherit'}}>
+            <a href="http://beian.miit.gov.cn/">浙ICP备15023664号-3</a>
             <img
               src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png"
               alt="浙公网安备 33010602005511号"
             />
-            浙公网安备 33010602005511号
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602005511">
+              浙公网安备 33010602005511号
+            </a>
           </p>
         </section>
         <script
@@ -135,7 +137,7 @@ class Footer extends React.Component {
           var container = document.querySelector(".mainContainer")
           container && container.appendChild(c);
         })()
-        `
+        `,
           }}
         />
         <script src="https://cdn-city.livere.com/js/embed.dist.js" />

@@ -8,40 +8,40 @@ Renders a native WebView.
 
 ### Props
 
-* [View props...](view.md#props)
+- [View props...](view.md#props)
 
-- [`renderLoading`](webview.md#renderloading)
-- [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
-- [`html`](webview.md#html)
-- [`injectedJavaScript`](webview.md#injectedjavascript)
-- [`onError`](webview.md#onerror)
-- [`onLoad`](webview.md#onload)
-- [`onLoadEnd`](webview.md#onloadend)
-- [`onLoadStart`](webview.md#onloadstart)
-- [`onNavigationStateChange`](webview.md#onnavigationstatechange)
-- [`renderError`](webview.md#rendererror)
-- [`contentInset`](webview.md#contentinset)
-- [`startInLoadingState`](webview.md#startinloadingstate)
-- [`style`](webview.md#style)
-- [`url`](webview.md#url)
-- [`domStorageEnabled`](webview.md#domstorageenabled)
-- [`javaScriptEnabled`](webview.md#javascriptenabled)
-- [`allowsInlineMediaPlayback`](webview.md#allowsinlinemediaplayback)
-- [`bounces`](webview.md#bounces)
-- [`onShouldStartLoadWithRequest`](webview.md#onshouldstartloadwithrequest)
-- [`scalesPageToFit`](webview.md#scalespagetofit)
-- [`scrollEnabled`](webview.md#scrollenabled)
+* [`renderLoading`](webview.md#renderloading)
+* [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
+* [`html`](webview.md#html)
+* [`injectedJavaScript`](webview.md#injectedjavascript)
+* [`onError`](webview.md#onerror)
+* [`onLoad`](webview.md#onload)
+* [`onLoadEnd`](webview.md#onloadend)
+* [`onLoadStart`](webview.md#onloadstart)
+* [`onNavigationStateChange`](webview.md#onnavigationstatechange)
+* [`renderError`](webview.md#rendererror)
+* [`contentInset`](webview.md#contentinset)
+* [`startInLoadingState`](webview.md#startinloadingstate)
+* [`style`](webview.md#style)
+* [`url`](webview.md#url)
+* [`domStorageEnabled`](webview.md#domstorageenabled)
+* [`javaScriptEnabled`](webview.md#javascriptenabled)
+* [`allowsInlineMediaPlayback`](webview.md#allowsinlinemediaplayback)
+* [`bounces`](webview.md#bounces)
+* [`onShouldStartLoadWithRequest`](webview.md#onshouldstartloadwithrequest)
+* [`scalesPageToFit`](webview.md#scalespagetofit)
+* [`scrollEnabled`](webview.md#scrollenabled)
 
 ### Methods
 
-* [`goForward`](webview.md#goforward)
-* [`goBack`](webview.md#goback)
-* [`reload`](webview.md#reload)
-* [`updateNavigationState`](webview.md#updatenavigationstate)
-* [`getWebViewHandle`](webview.md#getwebviewhandle)
-* [`onLoadingStart`](webview.md#onloadingstart)
-* [`onLoadingError`](webview.md#onloadingerror)
-* [`onLoadingFinish`](webview.md#onloadingfinish)
+- [`goForward`](webview.md#goforward)
+- [`goBack`](webview.md#goback)
+- [`reload`](webview.md#reload)
+- [`updateNavigationState`](webview.md#updatenavigationstate)
+- [`getWebViewHandle`](webview.md#getwebviewhandle)
+- [`onLoadingStart`](webview.md#onloadingstart)
+- [`onLoadingError`](webview.md#onloadingerror)
+- [`onLoadingFinish`](webview.md#onloadingfinish)
 
 ---
 
@@ -243,7 +243,7 @@ Sets whether the webpage scales to fit the view and the user can change the scal
 
 ### `goForward()`
 
-```javascript
+```jsx
 goForward();
 ```
 
@@ -251,7 +251,7 @@ goForward();
 
 ### `goBack()`
 
-```javascript
+```jsx
 goBack();
 ```
 
@@ -259,7 +259,7 @@ goBack();
 
 ### `reload()`
 
-```javascript
+```jsx
 reload();
 ```
 
@@ -267,7 +267,7 @@ reload();
 
 ### `updateNavigationState()`
 
-```javascript
+```jsx
 updateNavigationState((event: Event));
 ```
 
@@ -277,7 +277,7 @@ We return an event with a bunch of fields including: url, title, loading, canGoB
 
 ### `getWebViewHandle()`
 
-```javascript
+```jsx
 getWebViewHandle():
 ```
 
@@ -285,7 +285,7 @@ getWebViewHandle():
 
 ### `onLoadingStart()`
 
-```javascript
+```jsx
 onLoadingStart((event: Event));
 ```
 
@@ -293,7 +293,7 @@ onLoadingStart((event: Event));
 
 ### `onLoadingError()`
 
-```javascript
+```jsx
 onLoadingError((event: Event));
 ```
 
@@ -301,6 +301,6 @@ onLoadingError((event: Event));
 
 ### `onLoadingFinish()`
 
-```javascript
+```jsx
 onLoadingFinish((event: Event));
 ```

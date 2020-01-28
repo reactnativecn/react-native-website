@@ -3,6 +3,7 @@ id: version-0.57-safeareaview
 title: SafeAreaView
 original_id: safeareaview
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 `SafeAreaView`的目的是在一个“安全”的可视区域内渲染内容。具体来说就是因为目前有 iPhone X 这样的带有“刘海”的全面屏设备，所以需要避免内容渲染到不可见的“刘海”范围内。本组件目前仅支持 iOS 设备以及 iOS 11 或更高版本。
@@ -13,7 +14,7 @@ original_id: safeareaview
 
 只需简单地把你原有的视图用`SafeAreaView`包起来，同时设置一个`flex: 1`的样式。当然可能还需要一些和你的设计相匹配的背景色。
 
-```javascript
+```jsx
 SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
   <View style={{ flex: 1 }}>
     <Text>Hello World!</Text>

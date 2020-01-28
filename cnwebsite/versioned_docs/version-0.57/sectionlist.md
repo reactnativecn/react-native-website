@@ -3,6 +3,7 @@ id: version-0.57-sectionlist
 title: SectionList
 original_id: sectionlist
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 高性能的分组(section)列表组件，支持下面这些常用的功能：
@@ -22,7 +23,7 @@ original_id: sectionlist
 
 简单的例子：
 
-```javascript
+```jsx
 // Example 1 (Homogeneous Rendering)
 <SectionList
   renderItem={({ item, index, section }) => <Text key={index}>{item}</Text>}
@@ -38,7 +39,7 @@ original_id: sectionlist
 />
 ```
 
-```javascript
+```jsx
 // Example 2 (Heterogeneous Rendering / No Section Headers)
 const overrideRenderItem = ({ item, index, section: { title, data } }) => <Text key={index}>Override{item}</Text>
 
@@ -66,12 +67,12 @@ const overrideRenderItem = ({ item, index, section: { title, data } }) => <Text 
 必须的props:
 
 * [`sections`](sectionlist.md#sections)
+* [`renderItem`](sectionlist.md#renderitem)
 
 可选的props:
 
 * [`initialNumToRender`](sectionlist.md#initialnumtorender)
 * [`keyExtractor`](sectionlist.md#keyextractor)
-* [`renderItem`](sectionlist.md#renderitem)
 * [`onEndReached`](sectionlist.md#onendreached)
 * [`extraData`](sectionlist.md#extradata)
 * [`ItemSeparatorComponent`](sectionlist.md#itemseparatorcomponent)
@@ -345,7 +346,7 @@ This may improve scroll performance for large lists.
 
 ### `scrollToLocation()`
 
-```javascript
+```jsx
 scrollToLocation(params);
 ```
 
@@ -371,7 +372,7 @@ Valid `params` keys are:
 
 ### `recordInteraction()`
 
-```javascript
+```jsx
 recordInteraction();
 ```
 
@@ -381,7 +382,7 @@ recordInteraction();
 
 ### `flashScrollIndicators()`
 
-```javascript
+```jsx
 flashScrollIndicators();
 ```
 

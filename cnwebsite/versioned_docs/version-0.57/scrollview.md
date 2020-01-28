@@ -3,6 +3,7 @@ id: version-0.57-scrollview
 title: ScrollView
 original_id: scrollview
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 一个封装了平台的ScrollView（滚动视图）的组件，同时还集成了触摸锁定的“响应者”系统。
@@ -503,7 +504,7 @@ This property specifies how the safe area insets are used to modify the content 
 
 ### `scrollEventThrottle`
 
-这个属性控制在滚动过程中，scroll事件被调用的频率（单位是每秒事件数量）。更大的数值能够更及时的跟踪滚动位置，不过可能会带来性能问题，因为更多的信息会通过bridge传递。由于JS事件循环需要和屏幕刷新率同步，因此设置1-16之间的数值不会有实质区别。默认值为0，意味着每次视图被滚动，scroll事件只会被调用一次。
+这个属性控制在滚动过程中，scroll事件被调用的频率（单位是每秒事件数量）。更小的数值能够更及时的跟踪滚动位置，不过可能会带来性能问题，因为更多的信息会通过bridge传递。由于JS事件循环需要和屏幕刷新率同步，因此设置1-16之间的数值不会有实质区别。默认值为0，意味着每次视图被滚动，scroll事件只会被调用一次。
 
 | 类型   | 必填 | 平台 |
 | ------ | ---- | ---- |
@@ -607,7 +608,7 @@ Use in conjuction with `snapToOffsets`. By default, the end of the list counts a
 
 ### `scrollTo()`
 
-```javascript
+```jsx
 scrollTo(([y]: number), object, ([x]: number), ([animated]: boolean));
 ```
 
@@ -621,7 +622,7 @@ scrollTo(([y]: number), object, ([x]: number), ([animated]: boolean));
 
 ### `scrollToEnd()`
 
-```javascript
+```jsx
 scrollToEnd(([options]: object));
 ```
 
@@ -633,7 +634,7 @@ scrollToEnd(([options]: object));
 
 ### `scrollWithoutAnimationTo()`
 
-```javascript
+```jsx
 scrollWithoutAnimationTo(y, x);
 ```
 
@@ -643,7 +644,7 @@ Deprecated, use `scrollTo` instead.
 
 ### `flashScrollIndicators()`
 
-```javascript
+```jsx
 flashScrollIndicators();
 ```
 

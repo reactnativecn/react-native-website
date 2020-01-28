@@ -10,9 +10,9 @@ The purpose of `SafeAreaView` is to render content within the safe area boundari
 
 ### Usage Example
 
-Simply wrap your top level view with a `SafeAreaView` with a `flex: 1` style applied to it. You may also want to use a background color that matches your application's design.
+Wrap your top level view with a `SafeAreaView` with a `flex: 1` style applied to it. You may also want to use a background color that matches your application's design.
 
-```javascript
+```jsx
 <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
   <View style={{flex: 1}}>
     <Text>Hello World!</Text>
@@ -22,4 +22,4 @@ Simply wrap your top level view with a `SafeAreaView` with a `flex: 1` style app
 
 ### Props
 
-* [View props...](view.md#props)
+- [View props...](view.md#props)

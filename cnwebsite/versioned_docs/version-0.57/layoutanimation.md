@@ -3,6 +3,7 @@ id: version-0.57-layoutanimation
 title: LayoutAnimation
 original_id: layoutanimation
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 当布局变化时，自动将视图运动到它们新的位置上。
@@ -42,7 +43,7 @@ UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationE
 
 ### `configureNext()`
 
-```javascript
+```jsx
 static configureNext(config, onAnimationDidEnd?)
 ```
 
@@ -65,7 +66,7 @@ static configureNext(config, onAnimationDidEnd?)
 
 ### `create()`
 
-```javascript
+```jsx
 static create(duration, type, creationProp)
 ```
 
@@ -75,18 +76,47 @@ static create(duration, type, creationProp)
 
 ### `checkConfig()`
 
-```javascript
+```jsx
 static checkConfig(config, location, name)
 ```
 
 ## 属性
 
----
+An enumerate of object property to be animated, used in [`create`](layoutanimation.md#create) method.
+
+| Properties |
+| ---------- |
+| opacity    |
+| scaleX     |
+| scaleY     |
+| scaleXY    |
 
 ---
 
----
+### Presets
+
+A set of predefined animation config.
+
+| Presets       | Value                                                                                                                                                                 |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| easeInEaseOut | `create(300, 'easeInEaseOut', 'opacity')`                                                                                                                             |
+| linear        | `create(500, 'linear', 'opacity')`                                                                                                                                    |
+| spring        | `{ duration: 700, create: { type: 'linear', property: 'opacity' }, update: { type: 'spring', springDamping: 0.4 }, delete: { type: 'linear', property: 'opacity' } }` |
 
 ---
 
+### easeInEaseOut
+
+Shortcut to bind `configureNext()` methods with `Presets.easeInEaseOut`.
+
 ---
+
+### linear
+
+Shortcut to bind `configureNext()` methods with `Presets.linear`.
+
+---
+
+### spring
+
+Shortcut to bind `configureNext()` methods with `Presets.spring`.

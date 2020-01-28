@@ -6,9 +6,9 @@ original_id: textinput
 
 A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad.
 
-The simplest use case is to plop down a `TextInput` and subscribe to the `onChangeText` events to read the user input. There are also other events, such as `onSubmitEditing` and `onFocus` that can be subscribed to. A simple example:
+One use case is to plop down a `TextInput` and subscribe to the `onChangeText` events to read the user input. There are also other events, such as `onSubmitEditing` and `onFocus` that can be subscribed to. A minimal example:
 
-```ReactNativeWebPlayer
+```SnackPlayer
 import React, { Component } from 'react';
 import { AppRegistry, TextInput } from 'react-native';
 
@@ -35,7 +35,7 @@ AppRegistry.registerComponent('AwesomeProject', () => UselessTextInput);
 
 Note that some props are only available with `multiline={true/false}`. Additionally, border styles that apply to only one side of the element (e.g., `borderBottomColor`, `borderLeftWidth`, etc.) will not be applied if `multiline=false`. To achieve the same effect, you can wrap your `TextInput` in a `View`:
 
-```ReactNativeWebPlayer
+```SnackPlayer
 import React, { Component } from 'react';
 import { AppRegistry, View, TextInput } from 'react-native';
 
@@ -90,50 +90,50 @@ AppRegistry.registerComponent(
 
 ### Props
 
-* [View props...](view.md#props)
+- [View props...](view.md#props)
 
-- [`placeholder`](textinput.md#placeholder)
-- [`autoCapitalize`](textinput.md#autocapitalize)
-- [`autoFocus`](textinput.md#autofocus)
-- [`blurOnSubmit`](textinput.md#bluronsubmit)
-- [`defaultValue`](textinput.md#defaultvalue)
-- [`editable`](textinput.md#editable)
-- [`keyboardType`](textinput.md#keyboardtype)
-- [`maxLength`](textinput.md#maxlength)
-- [`multiline`](textinput.md#multiline)
-- [`onBlur`](textinput.md#onblur)
-- [`onChange`](textinput.md#onchange)
-- [`onChangeText`](textinput.md#onchangetext)
-- [`onContentSizeChange`](textinput.md#oncontentsizechange)
-- [`onEndEditing`](textinput.md#onendediting)
-- [`onFocus`](textinput.md#onfocus)
-- [`onLayout`](textinput.md#onlayout)
-- [`onSelectionChange`](textinput.md#onselectionchange)
-- [`onSubmitEditing`](textinput.md#onsubmitediting)
-- [`autoCorrect`](textinput.md#autocorrect)
-- [`placeholderTextColor`](textinput.md#placeholdertextcolor)
-- [`returnKeyType`](textinput.md#returnkeytype)
-- [`secureTextEntry`](textinput.md#securetextentry)
-- [`selectTextOnFocus`](textinput.md#selecttextonfocus)
-- [`selectionColor`](textinput.md#selectioncolor)
-- [`style`](textinput.md#style)
-- [`value`](textinput.md#value)
-- [`inlineImageLeft`](textinput.md#inlineimageleft)
-- [`inlineImagePadding`](textinput.md#inlineimagepadding)
-- [`numberOfLines`](textinput.md#numberoflines)
-- [`returnKeyLabel`](textinput.md#returnkeylabel)
-- [`underlineColorAndroid`](textinput.md#underlinecolorandroid)
-- [`clearButtonMode`](textinput.md#clearbuttonmode)
-- [`clearTextOnFocus`](textinput.md#cleartextonfocus)
-- [`enablesReturnKeyAutomatically`](textinput.md#enablesreturnkeyautomatically)
-- [`keyboardAppearance`](textinput.md#keyboardappearance)
-- [`onKeyPress`](textinput.md#onkeypress)
-- [`selectionState`](textinput.md#selectionstate)
+* [`placeholder`](textinput.md#placeholder)
+* [`autoCapitalize`](textinput.md#autocapitalize)
+* [`autoFocus`](textinput.md#autofocus)
+* [`blurOnSubmit`](textinput.md#bluronsubmit)
+* [`defaultValue`](textinput.md#defaultvalue)
+* [`editable`](textinput.md#editable)
+* [`keyboardType`](textinput.md#keyboardtype)
+* [`maxLength`](textinput.md#maxlength)
+* [`multiline`](textinput.md#multiline)
+* [`onBlur`](textinput.md#onblur)
+* [`onChange`](textinput.md#onchange)
+* [`onChangeText`](textinput.md#onchangetext)
+* [`onContentSizeChange`](textinput.md#oncontentsizechange)
+* [`onEndEditing`](textinput.md#onendediting)
+* [`onFocus`](textinput.md#onfocus)
+* [`onLayout`](textinput.md#onlayout)
+* [`onSelectionChange`](textinput.md#onselectionchange)
+* [`onSubmitEditing`](textinput.md#onsubmitediting)
+* [`autoCorrect`](textinput.md#autocorrect)
+* [`placeholderTextColor`](textinput.md#placeholdertextcolor)
+* [`returnKeyType`](textinput.md#returnkeytype)
+* [`secureTextEntry`](textinput.md#securetextentry)
+* [`selectTextOnFocus`](textinput.md#selecttextonfocus)
+* [`selectionColor`](textinput.md#selectioncolor)
+* [`style`](textinput.md#style)
+* [`value`](textinput.md#value)
+* [`inlineImageLeft`](textinput.md#inlineimageleft)
+* [`inlineImagePadding`](textinput.md#inlineimagepadding)
+* [`numberOfLines`](textinput.md#numberoflines)
+* [`returnKeyLabel`](textinput.md#returnkeylabel)
+* [`underlineColorAndroid`](textinput.md#underlinecolorandroid)
+* [`clearButtonMode`](textinput.md#clearbuttonmode)
+* [`clearTextOnFocus`](textinput.md#cleartextonfocus)
+* [`enablesReturnKeyAutomatically`](textinput.md#enablesreturnkeyautomatically)
+* [`keyboardAppearance`](textinput.md#keyboardappearance)
+* [`onKeyPress`](textinput.md#onkeypress)
+* [`selectionState`](textinput.md#selectionstate)
 
 ### Methods
 
-* [`isFocused`](textinput.md#isfocused)
-* [`clear`](textinput.md#clear)
+- [`isFocused`](textinput.md#isfocused)
+- [`clear`](textinput.md#clear)
 
 ---
 
@@ -155,10 +155,10 @@ The string that will be rendered before text input has been entered.
 
 Can tell `TextInput` to automatically capitalize certain characters.
 
-* `characters`: all characters.
-* `words`: first letter of each word.
-* `sentences`: first letter of each sentence (_default_).
-* `none`: don't auto capitalize anything.
+- `characters`: all characters.
+- `words`: first letter of each word.
+- `sentences`: first letter of each sentence (_default_).
+- `none`: don't auto capitalize anything.
 
 | Type | Required |
 | ---- | -------- |
@@ -190,7 +190,7 @@ If `true`, the text field will blur when submitted. The default value is true fo
 
 ### `defaultValue`
 
-Provides an initial value that will change when the user starts typing. Useful for simple use-cases where you do not want to deal with listening to events and updating the value prop to keep the controlled state in sync.
+Provides an initial value that will change when the user starts typing. Useful for use-cases where you do not want to deal with listening to events and updating the value prop to keep the controlled state in sync.
 
 | Type             | Required |
 | ---------------- | -------- |
@@ -214,10 +214,10 @@ Determines which keyboard to open, e.g.`numeric`.
 
 The following values work across platforms:
 
-* `default`
-* `numeric`
-* `email-address`
-* `phone-pad`
+- `default`
+- `numeric`
+- `email-address`
+- `phone-pad`
 
 | Type | Required |
 | ---- | -------- |
@@ -367,29 +367,29 @@ _Cross platform_
 
 The following values work across platforms:
 
-* `done`
-* `go`
-* `next`
-* `search`
-* `send`
+- `done`
+- `go`
+- `next`
+- `search`
+- `send`
 
 _Android Only_
 
 The following values work on Android only:
 
-* `none`
-* `previous`
+- `none`
+- `previous`
 
 _iOS Only_
 
 The following values work on iOS only:
 
-* `default`
-* `emergency-call`
-* `google`
-* `join`
-* `route`
-* `yahoo`
+- `default`
+- `emergency-call`
+- `google`
+- `join`
+- `route`
+- `yahoo`
 
 | Type | Required |
 | ---- | -------- |
@@ -441,7 +441,7 @@ The highlight (and cursor on iOS) color of the text input.
 
 ### `value`
 
-The value to show for the text input. `TextInput` is a controlled component, which means the native value will be forced to match this value prop if provided. For most uses, this works great, but in some cases this may cause flickering - one common cause is preventing edits by keeping value the same. In addition to simply setting the same value, either set `editable={false}`, or set/update `maxLength` to prevent unwanted edits without flicker.
+The value to show for the text input. `TextInput` is a controlled component, which means the native value will be forced to match this value prop if provided. For most uses, this works great, but in some cases this may cause flickering - one common cause is preventing edits by keeping value the same. In addition to setting the same value, either set `editable={false}`, or set/update `maxLength` to prevent unwanted edits without flicker.
 
 | Type             | Required |
 | ---------------- | -------- |
@@ -559,9 +559,9 @@ An instance of `DocumentSelectionState`, this is some state that is responsible 
 
 Some functionality that can be performed with this instance is:
 
-* `blur()`
-* `focus()`
-* `update()`
+- `blur()`
+- `focus()`
+- `update()`
 
 > You can reference `DocumentSelectionState` in [`vendor/document/selection/DocumentSelectionState.js`](https://github.com/facebook/react-native/blob/master/Libraries/vendor/document/selection/DocumentSelectionState.js)
 
@@ -573,7 +573,7 @@ Some functionality that can be performed with this instance is:
 
 ### `isFocused()`
 
-```javascript
+```jsx
 isFocused():
 ```
 
@@ -583,7 +583,7 @@ Returns `true` if the input is currently focused; `false` otherwise.
 
 ### `clear()`
 
-```javascript
+```jsx
 clear();
 ```
 

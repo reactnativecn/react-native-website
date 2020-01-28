@@ -6,7 +6,7 @@ original_id: navigatorios
 
 `NavigatorIOS` is a wrapper around [`UINavigationController`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationController_Class/), enabling you to implement a navigation stack. It works exactly the same as it would on a native app using `UINavigationController`, providing the same animations and behavior from UIKIt.
 
-As the name implies, it is only available on iOS. Take a look at [`Navigator`](navigator.md) for a similar solution for your cross-platform needs, or check out [react-native-navigation](https://github.com/wix/react-native-navigation), a component that aims to provide native navigation on both iOS and Android.
+As the name implies, it is only available on iOS. Take a look at [`Navigator`](navigator.md) for a similar solution for your cross-platform needs, or check out [react-native-navigation](https://github.com/wix/react-native-navigation), a component that aims to provide native navigation on both Android and iOS.
 
 To set up the navigator, provide the `initialRoute` prop with a route object. A route object is used to describe each scene that your app navigates to. `initialRoute` represents the first route in your navigator.
 
@@ -158,28 +158,28 @@ In the example above the navigation bar color is changed when the new route is p
 
 ### Props
 
-* [`initialRoute`](navigatorios.md#initialroute)
-* [`barTintColor`](navigatorios.md#bartintcolor)
-* [`interactivePopGestureEnabled`](navigatorios.md#interactivepopgestureenabled)
-* [`itemWrapperStyle`](navigatorios.md#itemwrapperstyle)
-* [`navigationBarHidden`](navigatorios.md#navigationbarhidden)
-* [`shadowHidden`](navigatorios.md#shadowhidden)
-* [`tintColor`](navigatorios.md#tintcolor)
-* [`titleTextColor`](navigatorios.md#titletextcolor)
-* [`translucent`](navigatorios.md#translucent)
+- [`initialRoute`](navigatorios.md#initialroute)
+- [`barTintColor`](navigatorios.md#bartintcolor)
+- [`interactivePopGestureEnabled`](navigatorios.md#interactivepopgestureenabled)
+- [`itemWrapperStyle`](navigatorios.md#itemwrapperstyle)
+- [`navigationBarHidden`](navigatorios.md#navigationbarhidden)
+- [`shadowHidden`](navigatorios.md#shadowhidden)
+- [`tintColor`](navigatorios.md#tintcolor)
+- [`titleTextColor`](navigatorios.md#titletextcolor)
+- [`translucent`](navigatorios.md#translucent)
 
 ### Methods
 
-* [`push`](navigatorios.md#push)
-* [`popN`](navigatorios.md#popn)
-* [`pop`](navigatorios.md#pop)
-* [`replaceAtIndex`](navigatorios.md#replaceatindex)
-* [`replace`](navigatorios.md#replace)
-* [`replacePrevious`](navigatorios.md#replaceprevious)
-* [`popToTop`](navigatorios.md#poptotop)
-* [`popToRoute`](navigatorios.md#poptoroute)
-* [`replacePreviousAndPop`](navigatorios.md#replacepreviousandpop)
-* [`resetTo`](navigatorios.md#resetto)
+- [`push`](navigatorios.md#push)
+- [`popN`](navigatorios.md#popn)
+- [`pop`](navigatorios.md#pop)
+- [`replaceAtIndex`](navigatorios.md#replaceatindex)
+- [`replace`](navigatorios.md#replace)
+- [`replacePrevious`](navigatorios.md#replaceprevious)
+- [`popToTop`](navigatorios.md#poptotop)
+- [`popToRoute`](navigatorios.md#poptoroute)
+- [`replacePreviousAndPop`](navigatorios.md#replacepreviousandpop)
+- [`resetTo`](navigatorios.md#resetto)
 
 ---
 
@@ -208,6 +208,8 @@ The default background color of the navigation bar.
 ---
 
 ### `interactivePopGestureEnabled`
+
+<!-- alex ignore dad-mom -->
 
 Boolean value that indicates whether the interactive pop gesture is enabled. This is useful for enabling/disabling the back swipe navigation gesture.
 
@@ -281,7 +283,7 @@ Boolean value that indicates whether the navigation bar is translucent by defaul
 
 ### `push()`
 
-```javascript
+```jsx
 push((route: object));
 ```
 
@@ -297,7 +299,7 @@ Navigate forward to a new route.
 
 ### `popN()`
 
-```javascript
+```jsx
 popN((n: number));
 ```
 
@@ -313,9 +315,11 @@ Go back N scenes at once. When N=1, behavior matches `pop()`.
 
 ### `pop()`
 
-```javascript
+```jsx
 pop();
 ```
+
+<!-- alex ignore dad-mom -->
 
 Pop back to the previous scene.
 
@@ -323,7 +327,7 @@ Pop back to the previous scene.
 
 ### `replaceAtIndex()`
 
-```javascript
+```jsx
 replaceAtIndex((route: object), (index: number));
 ```
 
@@ -340,7 +344,7 @@ Replace a route in the navigation stack.
 
 ### `replace()`
 
-```javascript
+```jsx
 replace((route: object));
 ```
 
@@ -356,7 +360,7 @@ Replace the route for the current scene and immediately load the view for the ne
 
 ### `replacePrevious()`
 
-```javascript
+```jsx
 replacePrevious((route: object));
 ```
 
@@ -372,7 +376,7 @@ Replace the route/view for the previous scene.
 
 ### `popToTop()`
 
-```javascript
+```jsx
 popToTop();
 ```
 
@@ -382,7 +386,7 @@ Go back to the topmost item in the navigation stack.
 
 ### `popToRoute()`
 
-```javascript
+```jsx
 popToRoute((route: object));
 ```
 
@@ -398,7 +402,7 @@ Go back to the item for a particular route object.
 
 ### `replacePreviousAndPop()`
 
-```javascript
+```jsx
 replacePreviousAndPop((route: object));
 ```
 
@@ -414,9 +418,11 @@ Replaces the previous route/view and transitions back to it.
 
 ### `resetTo()`
 
-```javascript
+```jsx
 resetTo((route: object));
 ```
+
+<!-- alex ignore dad-mom -->
 
 Replaces the top item and pop to it.
 

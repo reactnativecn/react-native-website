@@ -9,11 +9,11 @@ In [Integrating with Existing Apps guide](integration-with-existing-apps.md) and
 
 React Native is inspired by React, so the basic idea of the information flow is similar. The flow in React is one-directional. We maintain a hierarchy of components, in which each component depends only on its parent and its own internal state. We do this with properties: data is passed from a parent to its children in a top-down manner. If an ancestor component relies on the state of its descendant, one should pass down a callback to be used by the descendant to update the ancestor.
 
-The same concept applies to React Native. As long as we are building our application purely within the framework, we can drive our app with properties and callbacks. But, when we mix React Native and native components, we need some special, cross-language mechanisms that would allow us to pass information between them.
+The same concept applies to React Native. As long as we are building our application purely within the framework, we can drive our app with properties and callbacks. But, when we mix React Native and native components, we need some specific, cross-language mechanisms that would allow us to pass information between them.
 
 ## Properties
 
-Properties are the simplest way of cross-component communication. So we need a way to pass properties both from native to React Native, and from React Native to native.
+Properties are the most straightforward way of cross-component communication. So we need a way to pass properties both from native to React Native, and from React Native to native.
 
 ### Passing properties from native to React Native
 
@@ -21,7 +21,7 @@ In order to embed a React Native view in a native component, we use `RCTRootView
 
 `RCTRootView` has an initializer that allows you to pass arbitrary properties down to the React Native app. The `initialProperties` parameter has to be an instance of `NSDictionary`. The dictionary is internally converted into a JSON object that the top-level JS component can reference.
 
-```
+```objectivec
 NSArray *imageList = @[@"http://foo.com/bar1.png",
                        @"http://foo.com/bar2.png"];
 
@@ -32,35 +32,23 @@ RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                           initialProperties:props];
 ```
 
-```
+```jsx
 import React from 'react';
-import {
-  AppRegistry,
-  View,
-  Image
-} from 'react-native';
+import {View, Image} from 'react-native';
 
-class ImageBrowserApp extends React.Component {
+export default class ImageBrowserApp extends React.Component {
   renderImage(imgURI) {
-    return (
-      <Image source={{uri: imgURI}} />
-    );
+    return <Image source={{uri: imgURI}} />;
   }
   render() {
-    return (
-      <View>
-        {this.props.images.map(this.renderImage)}
-      </View>
-    );
+    return <View>{this.props.images.map(this.renderImage)}</View>;
   }
 }
-
-AppRegistry.registerComponent('AwesomeProject', () => ImageBrowserApp);
 ```
 
 `RCTRootView` also provides a read-write property `appProperties`. After `appProperties` is set, the React Native app is re-rendered with new properties. The update is only performed when the new updated properties differ from the previous ones.
 
-```
+```objectivec
 NSArray *imageList = @[@"http://foo.com/bar3.png",
                        @"http://foo.com/bar4.png"];
 
@@ -69,13 +57,15 @@ rootView.appProperties = @{@"images" : imageList};
 
 It is fine to update properties anytime. However, updates have to be performed on the main thread. You use the getter on any thread.
 
+> **_Note:_** Currently, there is a known issue where setting appProperties during the bridge startup, the change can be lost. See https://github.com/facebook/react-native/issues/20115 for more information.
+
 There is no way to update only a few properties at a time. We suggest that you build it into your own wrapper instead.
 
-> **_Note:_** Currently, JS functions `componentWillReceiveProps` and `componentWillUpdateProps` of the top level RN component will not be called after a prop update. However, you can access the new props in `componentWillMount` function.
+> **_Note:_** Currently, JS function `componentWillUpdateProps` of the top level RN component will not be called after a prop update. However, you can access the new props in `componentDidMount` function.
 
 ### Passing properties from React Native to native
 
-The problem exposing properties of native components is covered in detail in [this article](native-components-ios.md#properties). In short, export properties with `RCT_CUSTOM_VIEW_PROPERTY` macro in your custom native component, then just use them in React Native as if the component was an ordinary React Native component.
+The problem exposing properties of native components is covered in detail in [this article](native-components-ios.md#properties). In short, export properties with `RCT_CUSTOM_VIEW_PROPERTY` macro in your custom native component, then use them in React Native as if the component was an ordinary React Native component.
 
 ### Limits of properties
 
@@ -95,9 +85,9 @@ Events are described in detail in [this article](native-components-ios.md#events
 
 Events are powerful, because they allow us to change React Native components without needing a reference to them. However, there are some pitfalls that you can fall into while using them:
 
-* As events can be sent from anywhere, they can introduce spaghetti-style dependencies into your project.
-* Events share namespace, which means that you may encounter some name collisions. Collisions will not be detected statically, which makes them hard to debug.
-* If you use several instances of the same React Native component and you want to distinguish them from the perspective of your event, you'll likely need to introduce identifiers and pass them along with events (you can use the native view's `reactTag` as an identifier).
+- As events can be sent from anywhere, they can introduce spaghetti-style dependencies into your project.
+- Events share namespace, which means that you may encounter some name collisions. Collisions will not be detected statically, which makes them hard to debug.
+- If you use several instances of the same React Native component and you want to distinguish them from the perspective of your event, you'll likely need to introduce identifiers and pass them along with events (you can use the native view's `reactTag` as an identifier).
 
 The common pattern we use when embedding native in React Native is to make the native component's RCTViewManager a delegate for the views, sending events back to JavaScript via the bridge. This keeps related event calls in one place.
 
@@ -119,17 +109,17 @@ When integrating native and React Native, we also need a way to consolidate two 
 
 ### Layout of a native component embedded in React Native
 
-This case is covered in [this article](native-components-ios.md#styles). Basically, as all our native react views are subclasses of `UIView`, most style and size attributes will work like you would expect out of the box.
+This case is covered in [this article](native-components-ios.md#styles). To summarize, since all our native react views are subclasses of `UIView`, most style and size attributes will work like you would expect out of the box.
 
 ### Layout of a React Native component embedded in native
 
 #### React Native content with fixed size
 
-The simplest scenario is when we have a React Native app with a fixed size, which is known to the native side. In particular, a full-screen React Native view falls into this case. If we want a smaller root view, we can explicitly set RCTRootView's frame.
+The general scenario is when we have a React Native app with a fixed size, which is known to the native side. In particular, a full-screen React Native view falls into this case. If we want a smaller root view, we can explicitly set RCTRootView's frame.
 
 For instance, to make an RN app 200 (logical) pixels high, and the hosting view's width wide, we could do:
 
-```
+```objectivec
 // SomeViewController.m
 
 - (void)viewDidLoad
@@ -143,7 +133,7 @@ For instance, to make an RN app 200 (logical) pixels high, and the hosting view'
 }
 ```
 
-When we have a fixed size root view, we need to respect its bounds on the JS side. In other words, we need to ensure that the React Native content can be contained within the fixed-size root view. The easiest way to ensure this is to use flexbox layout. If you use absolute positioning, and React components are visible outside the root view's bounds, you'll get overlap with native views, causing some features to behave unexpectedly. For instance, 'TouchableHighlight' will not highlight your touches outside the root view's bounds.
+When we have a fixed size root view, we need to respect its bounds on the JS side. In other words, we need to ensure that the React Native content can be contained within the fixed-size root view. The easiest way to ensure this is to use Flexbox layout. If you use absolute positioning, and React components are visible outside the root view's bounds, you'll get overlap with native views, causing some features to behave unexpectedly. For instance, 'TouchableHighlight' will not highlight your touches outside the root view's bounds.
 
 It's totally fine to update root view's size dynamically by re-setting its frame property. React Native will take care of the content's layout.
 
@@ -156,7 +146,7 @@ In some cases we'd like to render content of initially unknown size. Let's say t
 
 `RCTRootView` supports 4 different size flexibility modes:
 
-```
+```objectivec
 // RCTRootView.h
 
 typedef NS_ENUM(NSInteger, RCTRootViewSizeFlexibility) {
@@ -173,7 +163,7 @@ typedef NS_ENUM(NSInteger, RCTRootViewSizeFlexibility) {
 
 Let's look at an example.
 
-```
+```objectivec
 // FlexibleSizeExampleView.m
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -205,6 +195,6 @@ You can checkout full source code of the example [here](https://github.com/faceb
 
 It's fine to change root view's size flexibility mode dynamically. Changing flexibility mode of a root view will schedule a layout recalculation and the delegate `rootViewDidChangeIntrinsicSize:` method will be called once the content size is known.
 
-> **_Note:_** React Native layout calculation is performed on a special thread, while native UI view updates are done on the main thread. This may cause temporary UI inconsistencies between native and React Native. This is a known problem and our team is working on synchronizing UI updates coming from different sources.
+> **_Note:_** React Native layout calculation is performed on a separate thread, while native UI view updates are done on the main thread. This may cause temporary UI inconsistencies between native and React Native. This is a known problem and our team is working on synchronizing UI updates coming from different sources.
 
 > **_Note:_** React Native does not perform any layout calculations until the root view becomes a subview of some other views. If you want to hide React Native view until its dimensions are known, add the root view as a subview and make it initially hidden (use `UIView`'s `hidden` property). Then change its visibility in the delegate method.

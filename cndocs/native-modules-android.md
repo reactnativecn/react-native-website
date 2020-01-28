@@ -40,12 +40,14 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class ToastModule extends ReactContextBaseJavaModule {
+  private static ReactApplicationContext reactContext;
 
   private static final String DURATION_SHORT_KEY = "SHORT";
   private static final String DURATION_LONG_KEY = "LONG";
 
   public ToastModule(ReactApplicationContext reactContext) {
     super(reactContext);
+    reactContext = context;
   }
 }
 ```
@@ -84,7 +86,7 @@ public class ToastModule extends ReactContextBaseJavaModule {
 
 下面的参数类型在`@ReactMethod`注明的方法中，会被直接映射到它们对应的 JavaScript 类型。
 
-```
+```text
 Boolean -> Bool
 Integer -> Number
 Double -> Number
@@ -145,15 +147,18 @@ public class CustomToastPackage implements ReactPackage {
 import com.your-app-name.CustomToastPackage; // <-- 引入你自己的包
 ...
 protected List<ReactPackage> getPackages() {
-    return Arrays.<ReactPackage>asList(
-            new MainReactPackage(),
-            new CustomToastPackage()); // <-- 添加这一行，类名替换成你的Package类的名字.
+  @SuppressWarnings("UnnecessaryLocalVariable")
+  List<ReactPackage> packages = new PackageList(this).getPackages();
+  // Packages that cannot be autolinked yet can be added manually here, for example:
+  // packages.add(new MyReactNativePackage());
+  packages.add(new CustomToastPackage()); // <-- 添加这一行，类名替换成你的Package类的名字 name.
+  return packages;
 }
 ```
 
 为了让你的功能从 JavaScript 端访问起来更为方便，通常我们都会把原生模块封装成一个 JavaScript 模块。这不是必须的，但省下了每次都从`NativeModules`中获取对应模块的步骤。这个 JS 文件也可以用于添加一些其他 JavaScript 端实现的功能。
 
-```javascript
+```jsx
 // ToastExample.js
 /**
  * This exposes the native ToastExample module as a JS module. This has a
@@ -166,12 +171,12 @@ protected List<ReactPackage> getPackages() {
 import { NativeModules } from "react-native";
 // 下一句中的ToastExample即对应上文
 // public String getName()中返回的字符串
-module.exports = NativeModules.ToastExample;
+export default NativeModules.ToastExample;
 ```
 
 现在，在别处的 JavaScript 代码中可以这样调用你的方法：
 
-```javascript
+```jsx
 import ToastExample from "./ToastExample";
 
 ToastExample.show("Awesome", ToastExample.SHORT);
@@ -213,7 +218,7 @@ public class UIManagerModule extends ReactContextBaseJavaModule {
 
 这个函数可以在 JavaScript 里这样使用：
 
-```javascript
+```jsx
 UIManager.measureLayout(
   100,
   100,
@@ -273,10 +278,10 @@ public class UIManagerModule extends ReactContextBaseJavaModule {
 
 现在 JavaScript 端的方法会返回一个 Promise。这样你就可以在一个声明了`async`的异步函数内使用`await`关键字来调用，并等待其结果返回。（虽然这样写着看起来像同步操作，但实际仍然是异步的，并不会阻塞执行来等待）。
 
-```javascript
+```jsx
 async function measureLayout() {
   try {
-    var { relativeX, relativeY, width, height } = await UIManager.measureLayout(
+    const { relativeX, relativeY, width, height } = await UIManager.measureLayout(
       100,
       100
     );
@@ -300,6 +305,10 @@ measureLayout();
 
 ```java
 ...
+import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Arguments;
+...
 private void sendEvent(ReactContext reactContext,
                        String eventName,
                        @Nullable WritableMap params) {
@@ -309,21 +318,28 @@ private void sendEvent(ReactContext reactContext,
 }
 ...
 WritableMap params = Arguments.createMap();
+params.putString("eventProperty", "someValue");
 ...
-sendEvent(reactContext, "keyboardWillShow", params);
+sendEvent(reactContext, "EventReminder", params);
 ```
 
-JavaScript 模块可以通过使用`DeviceEventEmitter`模块来监听事件：
+JavaScript 模块可以通过使用`NativeEventEmitter`模块来监听事件：
 
-```javascript
-import { DeviceEventEmitter } from 'react-native';
-
+```jsx
+import { NativeEventEmitter, NativeModules } from 'react-native';
 // ...
-componentWillMount() {
-  DeviceEventEmitter.addListener('keyboardWillShow', (e: Event) => {
-    // handle event.
-  });
-}
+
+  componentDidMount() {
+    // ...
+    const eventEmitter = new NativeEventEmitter(NativeModules.ToastExample);
+    this.eventEmitter = eventEmitter.addListener('EventReminder', (event) => {
+       console.log(event.eventProperty) // "someValue"
+    };
+    // ...
+  }
+  componentWillUnmount() {
+    this.eventListener.remove(); // Removes the listener
+  }
 ```
 
 ### 从`startActivityForResult`中获取结果
@@ -384,7 +400,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule {
     }
   };
 
-  public ImagePickerModule(ReactApplicationContext reactContext) {
+  ImagePickerModule(ReactApplicationContext reactContext) {
     super(reactContext);
 
     // Add the listener for `onActivityResult`

@@ -3,6 +3,7 @@ id: version-0.57-native-components-ios
 title: 原生UI组件
 original_id: native-components-ios
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 在如今的 App 中，已经有成千上万的原生 UI 部件了——其中的一些是平台的一部分，另一些可能来自于一些第三方库，而且可能你自己还收藏了很多。React Native 已经封装了大部分最常见的组件，譬如`ScrollView`和`TextInput`，但不可能封装全部组件。而且，说不定你曾经为自己以前的 App 还封装过一些组件，React Native 肯定没法包含它们。幸运的是，在 React Naitve 应用程序中封装和植入已有的组件非常简单。
@@ -17,9 +18,9 @@ original_id: native-components-ios
 
 提供原生视图很简单：
 
-* 首先创建一个`RCTViewManager`的子类。
-* 添加`RCT_EXPORT_MODULE()`宏标记。
-* 实现`-(UIView *)view`方法。
+- 首先创建一个`RCTViewManager`的子类。
+- 添加`RCT_EXPORT_MODULE()`宏标记。
+- 实现`-(UIView *)view`方法。
 
 ```objectivec
 // RNTMapManager.m
@@ -48,7 +49,7 @@ RCT_EXPORT_MODULE()
 
 接下来你需要一些 Javascript 代码来让这个视图变成一个可用的 React 组件：
 
-```javascript
+```jsx
 // MapView.js
 
 import { requireNativeComponent } from 'react-native';
@@ -71,7 +72,7 @@ Make sure to use `RNTMap` here. We want to require the manager here, which will 
 
 **Note:** When rendering, don't forget to stretch the view, otherwise you'll be staring at a blank screen.
 
-```javascript
+```jsx
   render() {
     return <MapView style={{flex: 1}} />;
   }
@@ -92,18 +93,18 @@ RCT_EXPORT_VIEW_PROPERTY(zoomEnabled, BOOL)
 
 现在要想禁用捏放操作，我们只需要在 JS 里设置对应的属性：
 
-```javascript
+```jsx
 // MyApp.js
-<MapView zoomEnabled={false} style={{ flex: 1 }} />
+<MapView zoomEnabled={false} style={{flex: 1}} />
 ```
 
 但这样并不能很好的说明这个组件的用法——用户要想知道我们的组件有哪些属性可以用，以及可以取什么样的值，他不得不一路翻到 Objective-C 的代码。要解决这个问题，我们可以创建一个封装组件，并且通过`PropTypes`来说明这个组件的接口。
 
-```javascript
+```jsx
 // MapView.js
-import PropTypes from "prop-types";
-import React from "react";
-import { requireNativeComponent } from "react-native";
+import PropTypes from 'prop-types';
+import React from 'react';
+import {requireNativeComponent} from 'react-native';
 
 class MapView extends React.Component {
   render() {
@@ -116,10 +117,10 @@ MapView.propTypes = {
    * A Boolean value that determines whether the user may use pinch
    * gestures to zoom in and out of the map.
    */
-  zoomEnabled: PropTypes.bool
+  zoomEnabled: PropTypes.bool,
 };
 
-var RNTMap = requireNativeComponent("RNTMap", MapView);
+var RNTMap = requireNativeComponent('RNTMap', MapView);
 
 export default MapView;
 ```
@@ -185,7 +186,7 @@ RCT_CUSTOM_VIEW_PROPERTY(region, MKCoordinateRegion, MKMapView)
 
 为了完成`region`属性的支持，我们还需要在`propTypes`里添加相应的说明（否则我们会立刻收到一个错误提示），然后就可以像使用其他属性一样使用了：
 
-```javascript
+```jsx
 // MapView.js
 
 MapView.propTypes = {
@@ -240,9 +241,9 @@ render() {
 
 有时候你的原生组件有一些特殊的属性希望导出，但并不希望它成为公开的接口。举个例子，`Switch`组件可能会有一个`onChange`属性用来传递原始的原生事件，然后导出一个`onValueChange`属性，这个属性在调用的时候会带上`Switch`的状态作为参数之一。这样的话你可能不希望原生专用的属性出现在 API 之中，也就不希望把它放到`propTypes`里。可是如果你不放的话，又会出现一个报错。解决方案就是带上额外的`nativeOnly`参数，像这样：
 
-```javascript
-var RCTSwitch = requireNativeComponent("RCTSwitch", Switch, {
-  nativeOnly: { onChange: true }
+```jsx
+var RCTSwitch = requireNativeComponent('RCTSwitch', Switch, {
+  nativeOnly: {onChange: true},
 });
 ```
 
@@ -276,7 +277,7 @@ Until now we've just returned a `MKMapView` instance from our manager's `-(UIVie
 @end
 ```
 
-然后在`RNTMapManager`上声明一个事件处理函数属性，make it a delegate for all the views it exposes, and forward events to JS by calling the event handler block from the native view.
+Note that all `RCTBubblingEventBlock` must be prefixed with `on`。然后在`RNTMapManager`上声明一个事件处理函数属性，make it a delegate for all the views it exposes, and forward events to JS by calling the event handler block from the native view.
 
 ```objectivec{9,17,31-48}
 // RNTMapManager.m
@@ -332,7 +333,7 @@ RCT_CUSTOM_VIEW_PROPERTY(region, MKCoordinateRegion, MKMapView)
 
 在委托方法`-mapView:regionDidChangeAnimated:`中，根据对应的视图调用事件处理函数并传递区域数据。调用`onRegionChange`事件会触发 JavaScript 端的同名回调函数。这个回调会传递原生事件对象，然后我们通常都会在封装组件里来处理这个对象，以使 API 更简明：
 
-```javascript
+```jsx
 // MapView.js
 
 class MapView extends React.Component {
@@ -382,7 +383,7 @@ class MyApp extends React.Component {
         onRegionChange={this.onRegionChange}
       />
     );
-  }  
+  }
 }
 ```
 
@@ -390,7 +391,7 @@ class MyApp extends React.Component {
 
 因为我们所有的视图都是`UIView`的子类，大部分的样式属性应该直接就可以生效。但有一部分组件会希望使用自己定义的默认样式，例如`UIDatePicker`希望自己的大小是固定的。这个默认属性对于布局算法的正常工作来说很重要，但我们也希望在使用这个组件的时候可以覆盖这些默认的样式。`DatePickerIOS`实现这个功能的办法是通过封装一个拥有弹性样式的额外视图，然后在内层的视图上应用一个固定样式（通过原生传递来的常数生成）：
 
-```javascript
+```jsx
 // DatePickerIOS.ios.js
 
 import { UIManager } from 'react-native';

@@ -3,7 +3,7 @@ id: keyboardavoidingview
 title: KeyboardAvoidingView
 ---
 
-本组件用于解决一个常见的尴尬问题：手机上弹出的键盘常常会挡住当前的视图。本组件可以自动根据键盘的位置，调整自身的 position 或底部的 padding，以避免被遮挡。
+本组件用于解决一个常见的尴尬问题：手机上弹出的键盘常常会挡住当前的视图。本组件可以自动根据键盘的位置，调整自身的 height 或底部的 padding，以避免被遮挡。
 
 用法：
 
@@ -18,21 +18,6 @@ import { KeyboardAvoidingView } from 'react-native';
 ### 示例
 
 ![](assets/KeyboardAvoidingView/example.gif)
-
-### 查看 Props
-
-* [View props...](view.md#props)
-
-- [`keyboardVerticalOffset`](keyboardavoidingview.md#keyboardverticaloffset)
-- [`behavior`](keyboardavoidingview.md#behavior)
-- [`contentContainerStyle`](keyboardavoidingview.md#contentcontainerstyle)
-- [`enabled`](keyboardavoidingview.md#enabled)
-
-### 查看方法
-
-* [`relativeKeyboardHeight`](keyboardavoidingview.md#relativekeyboardheight)
-* [`onKeyboardChange`](keyboardavoidingview.md#onkeyboardchange)
-* [`onLayout`](keyboardavoidingview.md#onlayout)
 
 ---
 
@@ -51,6 +36,8 @@ import { KeyboardAvoidingView } from 'react-native';
 ---
 
 ### `behavior`
+
+Specify how to react to the presence of the keyboard.
 
 _注意：Android 和 iOS 在此属性上表现并不一致。_ _Android 可能不指定此属性更好，而 iOS 可能相反。_
 
@@ -75,27 +62,3 @@ _注意：Android 和 iOS 在此属性上表现并不一致。_ _Android 可能�
 | 类型    | 必填 |
 | ------- | ---- |
 | boolean | 否   |
-
-## 方法
-
-### `relativeKeyboardHeight()`
-
-```javascript
-relativeKeyboardHeight(keyboardFrame: object):
-```
-
----
-
-### `onKeyboardChange()`
-
-```javascript
-onKeyboardChange((event: object));
-```
-
----
-
-### `onLayout()`
-
-```javascript
-onLayout((event: ViewLayoutEvent));
-```

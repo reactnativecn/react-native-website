@@ -6,8 +6,8 @@ original_id: statusbarios
 
 ### Methods
 
-* [`setStyle`](statusbarios.md#setstyle)
-* [`setHidden`](statusbarios.md#sethidden)
+- [`setStyle`](statusbarios.md#setstyle)
+- [`setHidden`](statusbarios.md#sethidden)
 
 ---
 
@@ -17,7 +17,7 @@ original_id: statusbarios
 
 ### `setStyle()`
 
-```javascript
+```jsx
 static setStyle(style, animated?)
 ```
 
@@ -25,6 +25,6 @@ static setStyle(style, animated?)
 
 ### `setHidden()`
 
-```javascript
+```jsx
 static setHidden(hidden, animation?)
 ```

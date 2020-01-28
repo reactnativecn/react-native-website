@@ -18,17 +18,20 @@
     ],
     "进阶指南": [
       "components-and-apis",
+      "fast-refresh",
       "platform-specific-code",
       "navigation",
       "images",
       "animations",
       "accessibility",
       "improvingux",
+      "optimizing-flatlist-configuration",
       "timers",
       "debugging",
       "performance",
       "gesture-responder-system",
       "javascript-environment",
+      "typescript",
       "direct-manipulation",
       "colors",
       "integration-with-existing-apps",
@@ -38,7 +41,8 @@
       "native-modules-setup",
       "out-of-tree-platforms",
       "building-from-source",
-      "understanding-cli"
+      "publishing-forks",
+      "testing"
     ],
     "使用指南(iOS)": [
       "native-modules-ios",
@@ -53,8 +57,11 @@
       "native-components-android",
       "headless-js-android",
       "signed-apk-android",
-      "removing-default-permissions"
-    ],
+      "removing-default-permissions",
+      "hermes"
+    ]
+  },
+  "api": {
     "组件": [
       "activityindicator",
       "button",
@@ -62,24 +69,22 @@
       "drawerlayoutandroid",
       "flatlist",
       "image",
+      "imagebackground",
       "keyboardavoidingview",
       "maskedviewios",
       "modal",
-      "navigatorios",
       "picker",
       "pickerios",
       "progressbarandroid",
       "progressviewios",
       "refreshcontrol",
+      "safeareaview",
       "scrollview",
       "sectionlist",
       "segmentedcontrolios",
       "slider",
-      "snapshotviewios",
       "statusbar",
       "switch",
-      "tabbarios",
-      "tabbarios-item",
       "text",
       "textinput",
       "toolbarandroid",
@@ -92,7 +97,7 @@
       "virtualizedlist",
       "webview"
     ],
-    "API": [
+    "APIs": [
       "accessibilityinfo",
       "actionsheetios",
       "alert",
@@ -101,7 +106,6 @@
       "appregistry",
       "appstate",
       "asyncstorage",
-      "backandroid",
       "backhandler",
       "cameraroll",
       "clipboard",
@@ -111,14 +115,12 @@
       "geolocation",
       "imageeditor",
       "imagepickerios",
-      "imagestore",
       "image-style-props",
       "interactionmanager",
       "keyboard",
       "layout-props",
       "layoutanimation",
       "linking",
-      "netinfo",
       "panresponder",
       "permissionsandroid",
       "pixelratio",
@@ -133,7 +135,6 @@
       "toastandroid",
       "transforms",
       "vibration",
-      "vibrationios",
       "view-style-props"
     ]
   }

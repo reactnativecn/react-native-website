@@ -7,14 +7,9 @@ Android-only React component used to indicate that the app is loading or there i
 
 Example:
 
-```
-import React, { Component } from "react";
-import {
-  ProgressBarAndroid,
-  AppRegistry,
-  StyleSheet,
-  View
-} from "react-native";
+```jsx
+import React, {Component} from 'react';
+import {ProgressBarAndroid, StyleSheet, View} from 'react-native';
 
 export default class App extends Component {
   render() {
@@ -36,30 +31,19 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "space-evenly",
-    padding: 10
-  }
+    justifyContent: 'space-evenly',
+    padding: 10,
+  },
 });
-
-AppRegistry.registerComponent("App", () => App);
 ```
-
-### Props
-
-* [View props...](view.md#props)
-
-- [`animating`](progressbarandroid.md#animating)
-- [`color`](progressbarandroid.md#color)
-- [`indeterminate`](progressbarandroid.md#indeterminate)
-- [`progress`](progressbarandroid.md#progress)
-- [`styleAttr`](progressbarandroid.md#styleattr)
-- [`testID`](progressbarandroid.md#testid)
 
 ---
 
 # Reference
 
 ## Props
+
+Inherits [View Props](view.md#props).
 
 ### `animating`
 
@@ -83,7 +67,7 @@ Color of the progress bar.
 
 ### `indeterminate`
 
-If the progress bar will show indeterminate progress. Note that this can only be false if styleAttr is Horizontal.
+If the progress bar will show indeterminate progress. Note that this can only be false if styleAttr is Horizontal, and requires a `progress` value.
 
 | Type              | Required |
 | ----------------- | -------- |
@@ -105,13 +89,13 @@ The progress value (between 0 and 1).
 
 Style of the ProgressBar. One of:
 
-* Horizontal
-* Normal (default)
-* Small
-* Large
-* Inverse
-* SmallInverse
-* LargeInverse
+- Horizontal
+- Normal (default)
+- Small
+- Large
+- Inverse
+- SmallInverse
+- LargeInverse
 
 | Type                                                                                      | Required |
 | ----------------------------------------------------------------------------------------- | -------- |

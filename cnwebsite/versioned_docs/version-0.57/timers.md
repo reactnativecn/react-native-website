@@ -3,6 +3,7 @@ id: version-0.57-timers
 title: 定时器
 original_id: timers
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 定时器是一个应用中非常重要的部分。React Native 实现了和浏览器一致的[定时器 Timer](https://developer.mozilla.org/en-US/Add-ons/Code_snippets/Timers)。
@@ -26,7 +27,7 @@ original_id: timers
 
 应用可以通过以下代码来安排一个任务，使其在交互结束之后执行：
 
-```javascript
+```jsx
 InteractionManager.runAfterInteractions(() => {
   // ...需要长时间同步执行的任务...
 });
@@ -42,7 +43,7 @@ InteractionManager.runAfterInteractions(() => {
 
 InteractionManager 还允许应用注册动画，在动画开始时创建一个交互“句柄”，然后在结束的时候清除它。
 
-```javascript
+```jsx
 var handle = InteractionManager.createInteractionHandle();
 // 执行动画... (`runAfterInteractions`中的任务现在开始排队等候)
 // 在动画完成之后

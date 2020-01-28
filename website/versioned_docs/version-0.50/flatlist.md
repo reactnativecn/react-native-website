@@ -4,17 +4,17 @@ title: FlatList
 original_id: flatlist
 ---
 
-A performant interface for rendering simple, flat lists, supporting the most handy features:
+A performant interface for rendering, flat lists, supporting the most handy features:
 
-* Fully cross-platform.
-* Optional horizontal mode.
-* Configurable viewability callbacks.
-* Header support.
-* Footer support.
-* Separator support.
-* Pull to Refresh.
-* Scroll loading.
-* ScrollToIndex support.
+- Fully cross-platform.
+- Optional horizontal mode.
+- Configurable viewability callbacks.
+- Header support.
+- Footer support.
+- Separator support.
+- Pull to Refresh.
+- Scroll loading.
+- ScrollToIndex support.
 
 If you need section support, use [`<SectionList>`](sectionlist.md).
 
@@ -27,9 +27,9 @@ Minimal Example:
 
 More complex, multi-select example demonstrating `PureComponent` usage for perf optimization and avoiding bugs.
 
-* By binding the `onPressItem` handler, the props will remain `===` and `PureComponent` will prevent wasteful re-renders unless the actual `id`, `selected`, or `title` props change, even if the components rendered in `MyListItem` did not have such optimizations.
-* By passing `extraData={this.state}` to `FlatList` we make sure `FlatList` itself will re-render when the `state.selected` changes. Without setting this prop, `FlatList` would not know it needs to re-render any items because it is also a `PureComponent` and the prop comparison will not show any changes.
-* `keyExtractor` tells the list to use the `id`s for the react keys instead of the default `key` property.
+- By binding the `onPressItem` handler, the props will remain `===` and `PureComponent` will prevent wasteful re-renders unless the actual `id`, `selected`, or `title` props change, even if the components rendered in `MyListItem` did not have such optimizations.
+- By passing `extraData={this.state}` to `FlatList` we make sure `FlatList` itself will re-render when the `state.selected` changes. Without setting this prop, `FlatList` would not know it needs to re-render any items because it is also a `PureComponent` and the prop comparison will not show any changes.
+- `keyExtractor` tells the list to use the `id`s for the react keys instead of the default `key` property.
 
 
     class MyListItem extends React.PureComponent {
@@ -89,30 +89,30 @@ More complex, multi-select example demonstrating `PureComponent` usage for perf 
 
 This is a convenience wrapper around [`<VirtualizedList>`](virtualizedlist.md), and thus inherits its props (as well as those of `ScrollView`) that aren't explicitly listed here, along with the following caveats:
 
-* Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
-* This is a `PureComponent` which means that it will not re-render if `props` remain shallow- equal. Make sure that everything your `renderItem` function depends on is passed as a prop (e.g. `extraData`) that is not `===` after updates, otherwise your UI may not update on changes. This includes the `data` prop and parent component state.
-* In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate ands momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
-* By default, the list looks for a `key` prop on each item and uses that for the React key. Alternatively, you can provide a custom `keyExtractor` prop.
+- Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
+- This is a `PureComponent` which means that it will not re-render if `props` remain shallow-equal. Make sure that everything your `renderItem` function depends on is passed as a prop (e.g. `extraData`) that is not `===` after updates, otherwise your UI may not update on changes. This includes the `data` prop and parent component state.
+- In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate ands momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
+- By default, the list looks for a `key` prop on each item and uses that for the React key. Alternatively, you can provide a custom `keyExtractor` prop.
 
 Also inherits [ScrollView Props](scrollview.md#props), unless it is nested in another FlatList of same orientation.
 
 ### Props
 
-* [`numColumns`](flatlist.md#numcolumns)
+- [`numColumns`](flatlist.md#numcolumns)
 
 ### Methods
 
-* [`scrollToEnd`](flatlist.md#scrolltoend)
-* [`scrollToIndex`](flatlist.md#scrolltoindex)
-* [`scrollToItem`](flatlist.md#scrolltoitem)
-* [`scrollToOffset`](flatlist.md#scrolltooffset)
-* [`recordInteraction`](flatlist.md#recordinteraction)
-* [`flashScrollIndicators`](flatlist.md#flashscrollindicators)
+- [`scrollToEnd`](flatlist.md#scrolltoend)
+- [`scrollToIndex`](flatlist.md#scrolltoindex)
+- [`scrollToItem`](flatlist.md#scrolltoitem)
+- [`scrollToOffset`](flatlist.md#scrolltooffset)
+- [`recordInteraction`](flatlist.md#recordinteraction)
+- [`flashScrollIndicators`](flatlist.md#flashscrollindicators)
 
 ### Type Definitions
 
-* [`Props`](flatlist.md#props)
-* [`DefaultProps`](flatlist.md#defaultprops)
+- [`Props`](flatlist.md#props)
+- [`DefaultProps`](flatlist.md#defaultprops)
 
 ---
 
@@ -130,7 +130,7 @@ Also inherits [ScrollView Props](scrollview.md#props), unless it is nested in an
 
 ### `scrollToEnd()`
 
-```javascript
+```jsx
 scrollToEnd(([params]: object));
 ```
 
@@ -140,7 +140,7 @@ Scrolls to the end of the content. May be janky without `getItemLayout` prop.
 
 ### `scrollToIndex()`
 
-```javascript
+```jsx
 scrollToIndex((params: object));
 ```
 
@@ -152,7 +152,7 @@ Note: cannot scroll to locations outside the render window without specifying th
 
 ### `scrollToItem()`
 
-```javascript
+```jsx
 scrollToItem((params: object));
 ```
 
@@ -164,7 +164,7 @@ Note: cannot scroll to locations outside the render window without specifying th
 
 ### `scrollToOffset()`
 
-```javascript
+```jsx
 scrollToOffset((params: object));
 ```
 
@@ -176,7 +176,7 @@ Check out [scrollToOffset](virtualizedlist.md#scrolltooffset) of VirtualizedList
 
 ### `recordInteraction()`
 
-```javascript
+```jsx
 recordInteraction();
 ```
 
@@ -186,7 +186,7 @@ Tells the list an interaction has occured, which should trigger viewability calc
 
 ### `flashScrollIndicators()`
 
-```javascript
+```jsx
 flashScrollIndicators();
 ```
 

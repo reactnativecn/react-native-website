@@ -3,6 +3,7 @@ id: version-0.57-imagestore
 title: ImageStore
 original_id: imagestore
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 ### 方法
@@ -20,7 +21,7 @@ original_id: imagestore
 
 ### `hasImageForTag()`
 
-```javascript
+```jsx
 static hasImageForTag(uri, callback)
 ```
 
@@ -30,7 +31,7 @@ static hasImageForTag(uri, callback)
 
 ### `removeImageForTag()`
 
-```javascript
+```jsx
 static removeImageForTag(uri)
 ```
 
@@ -40,7 +41,7 @@ static removeImageForTag(uri)
 
 ### `addImageFromBase64()`
 
-```javascript
+```jsx
 static addImageFromBase64(base64ImageData, success, failure)
 ```
 
@@ -52,7 +53,7 @@ static addImageFromBase64(base64ImageData, success, failure)
 
 ### `getBase64ForTag()`
 
-```javascript
+```jsx
 static getBase64ForTag(uri, success, failure)
 ```
 

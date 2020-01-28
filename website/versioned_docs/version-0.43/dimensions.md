@@ -6,10 +6,10 @@ original_id: dimensions
 
 ### Methods
 
-* [`set`](dimensions.md#set)
-* [`get`](dimensions.md#get)
-* [`addEventListener`](dimensions.md#addeventlistener)
-* [`removeEventListener`](dimensions.md#removeeventlistener)
+- [`set`](dimensions.md#set)
+- [`get`](dimensions.md#get)
+- [`addEventListener`](dimensions.md#addeventlistener)
+- [`removeEventListener`](dimensions.md#removeeventlistener)
 
 ---
 
@@ -19,19 +19,19 @@ original_id: dimensions
 
 ### `set()`
 
-```javascript
+```jsx
 static set(dims)
 ```
 
 This should only be called from native code by sending the didUpdateDimensions event.
 
-@param {object} dims Simple string-keyed object of dimensions to set
+@param {object} dims string-keyed object of dimensions to set
 
 ---
 
 ### `get()`
 
-```javascript
+```jsx
 static get(dim)
 ```
 
@@ -47,19 +47,19 @@ Example: `var {height, width} = Dimensions.get('window');`
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 static addEventListener(type, handler)
 ```
 
 Add an event handler. Supported events:
 
-* `change`: Fires when a property within the `Dimensions` object changes. The argument to the event handler is an object with `window` and `screen` properties whose values are the same as the return values of `Dimensions.get('window')` and `Dimensions.get('screen')`, respectively.
+- `change`: Fires when a property within the `Dimensions` object changes. The argument to the event handler is an object with `window` and `screen` properties whose values are the same as the return values of `Dimensions.get('window')` and `Dimensions.get('screen')`, respectively.
 
 ---
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(type, handler)
 ```
 

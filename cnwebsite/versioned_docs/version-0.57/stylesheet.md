@@ -3,6 +3,7 @@ id: version-0.57-stylesheet
 title: StyleSheet
 original_id: stylesheet
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 StyleSheet 提供了一种类似 CSS 样式表的抽象。
@@ -39,11 +40,6 @@ const styles = StyleSheet.create({
 - 从 render 函数中移除具体的样式内容，可以使代码更清晰易懂。
 - 给样式命名也可以对 render 函数中的组件增加语义化的描述。
 
-从性能角度：
-
-- 创建一个样式表，就可以使得我们后续更容易通过 ID 来引用样式，而不是每次都创建一个新的对象。
-- 它还使得样式只会在 JavaScript 和原生之间传递一次，随后的过程都可以只传递一个 ID（这个优化还未实现）。
-
 ### 查看方法
 
 - [`setStyleAttributePreprocessor`](stylesheet.md#setstyleattributepreprocessor)
@@ -64,7 +60,7 @@ const styles = StyleSheet.create({
 
 ### `setStyleAttributePreprocessor()`
 
-```javascript
+```jsx
 static setStyleAttributePreprocessor(property, process)
 ```
 
@@ -76,7 +72,7 @@ Sets a function to use to pre-process a style property value. This is used inter
 
 ### `create()`
 
-```javascript
+```jsx
 static create(obj)
 ```
 
@@ -86,7 +82,7 @@ Creates a StyleSheet style reference from the given object.
 
 ### `flatten`
 
-```javascript
+```jsx
 static flatten(style)
 ```
 
@@ -96,39 +92,39 @@ Flattens an array of style objects, into one aggregated style object. Alternativ
 
 Example:
 
-```javascript
+```jsx
 var styles = StyleSheet.create({
   listItem: {
     flex: 1,
     fontSize: 16,
-    color: "white"
+    color: 'white',
   },
   selectedListItem: {
-    color: "green"
-  }
+    color: 'green',
+  },
 });
 
 StyleSheet.flatten([styles.listItem, styles.selectedListItem]);
-// returns { flex: 1, fontSize: 16, color: 'green' }
+// 返回值为 { flex: 1, fontSize: 16, color: 'green' }
 ```
 
 Alternative use:
 
-```javascript
+```jsx
 var styles = StyleSheet.create({
   listItem: {
     flex: 1,
     fontSize: 16,
-    color: "white"
+    color: 'white',
   },
   selectedListItem: {
-    color: "green"
-  }
+    color: 'green',
+  },
 });
 
 StyleSheet.flatten(styles.listItem);
-// return { flex: 1, fontSize: 16, color: 'white' }
-// Simply styles.listItem would return its ID (number)
+// 返回值为 { flex: 1, fontSize: 16, color: 'white' }
+// 如果直接打印 styles.listItem，则返回值是一个整数型的ID
 ```
 
 This method internally uses `StyleSheetRegistry.getStyleByID(style)` to resolve style objects represented by IDs. Thus, an array of style objects (instances of `StyleSheet.create()`), are individually resolved to, their respective objects, merged as one and then returned. This also explains the alternative use.
@@ -137,12 +133,12 @@ This method internally uses `StyleSheetRegistry.getStyleByID(style)` to resolve 
 
 ### `hairlineWidth`
 
-```javascript
+```jsx
 var styles = StyleSheet.create({
   separator: {
-    borderBottomColor: "#bbb",
-    borderBottomWidth: StyleSheet.hairlineWidth
-  }
+    borderBottomColor: '#bbb',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
 });
 ```
 
@@ -154,7 +150,7 @@ var styles = StyleSheet.create({
 
 ### `absoluteFill`
 
-A very common pattern is to create overlays with position absolute and zero positioning, so `absoluteFill` can be used for convenience and to reduce duplication of these repeated styles.
+A very common pattern is to create overlays with position absolute and zero positioning (`position: 'absolute', left: 0, right: 0, top: 0, bottom: 0`), so `absoluteFill` can be used for convenience and to reduce duplication of these repeated styles.
 
 ---
 
@@ -162,13 +158,13 @@ A very common pattern is to create overlays with position absolute and zero posi
 
 Sometimes you may want absoluteFill but with a couple tweaks - absoluteFillObject can be used to create a customized entry in a StyleSheet, e.g.:
 
-```javascript
+```jsx
 const styles = StyleSheet.create({
   wrapper: {
     ...StyleSheet.absoluteFillObject,
     top: 10,
-    backgroundColor: "transparent"
-  }
+    backgroundColor: 'transparent',
+  },
 });
 ```
 

@@ -3,6 +3,7 @@ id: version-0.57-statusbar
 title: StatusBar
 original_id: statusbar
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 控制应用状态栏的组件。
@@ -120,7 +121,7 @@ original_id: statusbar
 
 ### `setHidden()`
 
-```javascript
+```jsx
 static setHidden(hidden: boolean, [animation]: StatusBarAnimation)
 ```
 
@@ -137,7 +138,7 @@ static setHidden(hidden: boolean, [animation]: StatusBarAnimation)
 
 ### `setBarStyle()`
 
-```javascript
+```jsx
 static setBarStyle(style: StatusBarStyle, [animated]: boolean)
 ```
 
@@ -154,7 +155,7 @@ static setBarStyle(style: StatusBarStyle, [animated]: boolean)
 
 ### `setNetworkActivityIndicatorVisible()`
 
-```javascript
+```jsx
 static setNetworkActivityIndicatorVisible(visible: boolean)
 ```
 
@@ -170,7 +171,7 @@ static setNetworkActivityIndicatorVisible(visible: boolean)
 
 ### `setBackgroundColor()`
 
-```javascript
+```jsx
 static setBackgroundColor(color: string, [animated]: boolean)
 ```
 
@@ -187,7 +188,7 @@ static setBackgroundColor(color: string, [animated]: boolean)
 
 ### `setTranslucent()`
 
-```javascript
+```jsx
 static setTranslucent(translucent: boolean)
 ```
 

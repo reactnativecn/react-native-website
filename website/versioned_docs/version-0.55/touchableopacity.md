@@ -25,7 +25,7 @@ renderButton: function() {
 
 ### Example
 
-```ReactNativeWebPlayer
+```SnackPlayer
 import React, { Component } from 'react'
 import {
   AppRegistry,
@@ -91,15 +91,15 @@ AppRegistry.registerComponent('App', () => App)
 
 ### Props
 
-* [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
+- [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
 
-- [`activeOpacity`](touchableopacity.md#activeopacity)
-- [`tvParallaxProperties`](touchableopacity.md#tvparallaxproperties)
-- [`hasTVPreferredFocus`](touchableopacity.md#hastvpreferredfocus)
+* [`activeOpacity`](touchableopacity.md#activeopacity)
+* [`tvParallaxProperties`](touchableopacity.md#tvparallaxproperties)
+* [`hasTVPreferredFocus`](touchableopacity.md#hastvpreferredfocus)
 
 ### Methods
 
-* [`setOpacityTo`](touchableopacity.md#setopacityto)
+- [`setOpacityTo`](touchableopacity.md#setopacityto)
 
 ---
 
@@ -141,7 +141,7 @@ _(Apple TV only)_ TV preferred focus (see documentation for the View component).
 
 ### `setOpacityTo()`
 
-```javascript
+```jsx
 setOpacityTo((value: number), (duration: number));
 ```
 

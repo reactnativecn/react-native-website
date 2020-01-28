@@ -6,8 +6,8 @@ original_id: dimensions
 
 ### Methods
 
-* [`set`](dimensions.md#set)
-* [`get`](dimensions.md#get)
+- [`set`](dimensions.md#set)
+- [`get`](dimensions.md#get)
 
 ---
 
@@ -17,19 +17,19 @@ original_id: dimensions
 
 ### `set()`
 
-```javascript
+```jsx
 static set(dims)
 ```
 
 This should only be called from native code.
 
-@param {object} dims Simple string-keyed object of dimensions to set
+@param {object} dims string-keyed object of dimensions to set
 
 ---
 
 ### `get()`
 
-```javascript
+```jsx
 static get(dim)
 ```
 

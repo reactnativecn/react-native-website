@@ -4,6 +4,8 @@ title: WebView
 original_id: webview
 ---
 
+> **Warning** Please use the [react-native-community/react-native-webview](https://github.com/react-native-community/react-native-webview) fork of this component instead. To reduce the surface area of React Native, `<WebView/>` is going to be removed from the React Native core. For more information, please read [The Slimmening proposal](https://github.com/react-native-community/discussions-and-proposals/issues/6).
+
 `WebView` renders web content in a native view.
 
 ```
@@ -48,51 +50,51 @@ On iOS, the `useWebKit` prop can be used to opt into a WKWebView-backed implemen
 
 ### Props
 
-* [View props...](view.md#props)
+- [View props...](view.md#props)
 
-- [`source`](webview.md#source)
-- [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
-- [`injectJavaScript`](webview.md#injectjavascript)
-- [`injectedJavaScript`](webview.md#injectedjavascript)
-- [`mediaPlaybackRequiresUserAction`](webview.md#mediaplaybackrequiresuseraction)
-- [`nativeConfig`](webview.md#nativeconfig)
-- [`onError`](webview.md#onerror)
-- [`onLoad`](webview.md#onload)
-- [`onLoadEnd`](webview.md#onloadend)
-- [`onLoadStart`](webview.md#onloadstart)
-- [`onMessage`](webview.md#onmessage)
-- [`onNavigationStateChange`](webview.md#onnavigationstatechange)
-- [`originWhitelist`](webview.md#originwhitelist)
-- [`renderError`](webview.md#rendererror)
-- [`renderLoading`](webview.md#renderloading)
-- [`scalesPageToFit`](webview.md#scalespagetofit)
-- [`onShouldStartLoadWithRequest`](webview.md#onshouldstartloadwithrequest)
-- [`startInLoadingState`](webview.md#startinloadingstate)
-- [`style`](webview.md#style)
-- [`decelerationRate`](webview.md#decelerationrate)
-- [`domStorageEnabled`](webview.md#domstorageenabled)
-- [`javaScriptEnabled`](webview.md#javascriptenabled)
-- [`mixedContentMode`](webview.md#mixedcontentmode)
-- [`thirdPartyCookiesEnabled`](webview.md#thirdpartycookiesenabled)
-- [`userAgent`](webview.md#useragent)
-- [`allowsInlineMediaPlayback`](webview.md#allowsinlinemediaplayback)
-- [`bounces`](webview.md#bounces)
-- [`contentInset`](webview.md#contentinset)
-- [`dataDetectorTypes`](webview.md#datadetectortypes)
-- [`scrollEnabled`](webview.md#scrollenabled)
-- [`geolocationEnabled`](webview.md#geolocationenabled)
-- [`allowUniversalAccessFromFileURLs`](webview.md#allowUniversalAccessFromFileURLs)
-- [`useWebKit`](webview.md#usewebkit)
-- [`url`](webview.md#url)
-- [`html`](webview.md#html)
+* [`source`](webview.md#source)
+* [`automaticallyAdjustContentInsets`](webview.md#automaticallyadjustcontentinsets)
+* [`injectJavaScript`](webview.md#injectjavascript)
+* [`injectedJavaScript`](webview.md#injectedjavascript)
+* [`mediaPlaybackRequiresUserAction`](webview.md#mediaplaybackrequiresuseraction)
+* [`nativeConfig`](webview.md#nativeconfig)
+* [`onError`](webview.md#onerror)
+* [`onLoad`](webview.md#onload)
+* [`onLoadEnd`](webview.md#onloadend)
+* [`onLoadStart`](webview.md#onloadstart)
+* [`onMessage`](webview.md#onmessage)
+* [`onNavigationStateChange`](webview.md#onnavigationstatechange)
+* [`originWhitelist`](webview.md#originwhitelist)
+* [`renderError`](webview.md#rendererror)
+* [`renderLoading`](webview.md#renderloading)
+* [`scalesPageToFit`](webview.md#scalespagetofit)
+* [`onShouldStartLoadWithRequest`](webview.md#onshouldstartloadwithrequest)
+* [`startInLoadingState`](webview.md#startinloadingstate)
+* [`style`](webview.md#style)
+* [`decelerationRate`](webview.md#decelerationrate)
+* [`domStorageEnabled`](webview.md#domstorageenabled)
+* [`javaScriptEnabled`](webview.md#javascriptenabled)
+* [`mixedContentMode`](webview.md#mixedcontentmode)
+* [`thirdPartyCookiesEnabled`](webview.md#thirdpartycookiesenabled)
+* [`userAgent`](webview.md#useragent)
+* [`allowsInlineMediaPlayback`](webview.md#allowsinlinemediaplayback)
+* [`bounces`](webview.md#bounces)
+* [`contentInset`](webview.md#contentinset)
+* [`dataDetectorTypes`](webview.md#datadetectortypes)
+* [`scrollEnabled`](webview.md#scrollenabled)
+* [`geolocationEnabled`](webview.md#geolocationenabled)
+* [`allowUniversalAccessFromFileURLs`](webview.md#allowUniversalAccessFromFileURLs)
+* [`useWebKit`](webview.md#usewebkit)
+* [`url`](webview.md#url)
+* [`html`](webview.md#html)
 
 ### Methods
 
-* [`extraNativeComponentConfig`](webview.md#extranativecomponentconfig)
-* [`goForward`](webview.md#goforward)
-* [`goBack`](webview.md#goback)
-* [`reload`](webview.md#reload)
-* [`stopLoading`](webview.md#stoploading)
+- [`extraNativeComponentConfig`](webview.md#extranativecomponentconfig)
+- [`goForward`](webview.md#goforward)
+- [`goBack`](webview.md#goback)
+- [`reload`](webview.md#reload)
+- [`stopLoading`](webview.md#stoploading)
 
 ---
 
@@ -108,15 +110,15 @@ The object passed to `source` can have either of the following shapes:
 
 **Load uri**
 
-* `uri` (string) - The URI to load in the `WebView`. Can be a local or remote file.
-* `method` (string) - The HTTP Method to use. Defaults to GET if not specified. On Android, the only supported methods are GET and POST.
-* `headers` (object) - Additional HTTP headers to send with the request. On Android, this can only be used with GET requests.
-* `body` (string) - The HTTP body to send with the request. This must be a valid UTF-8 string, and will be sent exactly as specified, with no additional encoding (e.g. URL-escaping or base64) applied. On Android, this can only be used with POST requests.
+- `uri` (string) - The URI to load in the `WebView`. Can be a local or remote file.
+- `method` (string) - The HTTP Method to use. Defaults to GET if not specified. On Android, the only supported methods are GET and POST.
+- `headers` (object) - Additional HTTP headers to send with the request. On Android, this can only be used with GET requests.
+- `body` (string) - The HTTP body to send with the request. This must be a valid UTF-8 string, and will be sent exactly as specified, with no additional encoding (e.g. URL-escaping or base64) applied. On Android, this can only be used with POST requests.
 
 **Static HTML**
 
-* `html` (string) - A static HTML page to display in the WebView.
-* `baseUrl` (string) - The base URL to be used for any relative links in the HTML.
+- `html` (string) - A static HTML page to display in the WebView.
+- `baseUrl` (string) - The base URL to be used for any relative links in the HTML.
 
 | Type   | Required |
 | ------ | -------- |
@@ -170,9 +172,9 @@ Override the native component used to render the WebView. Enables a custom nativ
 
 The `nativeConfig` prop expects an object with the following keys:
 
-* `component` (any)
-* `props` (object)
-* `viewManager` (object)
+- `component` (any)
+- `props` (object)
+- `viewManager` (object)
 
 | Type   | Required |
 | ------ | -------- |
@@ -244,7 +246,7 @@ Function that is invoked when the `WebView` loading starts or ends.
 
 ### `originWhitelist`
 
-List of origin strings to allow being navigated to. The strings allow wildcards and get matched against _just_ the origin (not the full URL). If the user taps to navigate to a new page but the new page is not in this whitelist, the URL will be handled by the OS. The default whitelisted origins are "http://*" and "https://*".
+List of origin strings to allow being navigated to. The strings allow wildcards and get matched only against the origin (not the full URL). If the user taps to navigate to a new page but the new page is not in this `whitelist`, the URL will be handled by the OS. The default whitelisted origins are "http://*" and "https://*".
 
 | Type             | Required |
 | ---------------- | -------- |
@@ -308,8 +310,8 @@ Boolean value that forces the `WebView` to show the loading view on the first lo
 
 A floating-point number that determines how quickly the scroll view decelerates after the user lifts their finger. You may also use the string shortcuts `"normal"` and `"fast"` which match the underlying iOS settings for `UIScrollViewDecelerationRateNormal` and `UIScrollViewDecelerationRateFast` respectively:
 
-* normal: 0.998
-* fast: 0.99 (the default for iOS web view)
+- normal: 0.998
+- fast: 0.99 (the default for iOS web view)
 
 | Type   | Required | Platform |
 | ------ | -------- | -------- |
@@ -343,9 +345,9 @@ Specifies the mixed content mode. i.e WebView will allow a secure origin to load
 
 Possible values for `mixedContentMode` are:
 
-* `never` (default) - WebView will not allow a secure origin to load content from an insecure origin.
-* `always` - WebView will allow a secure origin to load content from any other origin, even if that origin is insecure.
-* `compatibility` - WebView will attempt to be compatible with the approach of a modern web browser with regard to mixed content.
+- `never` (default) - WebView will not allow a secure origin to load content from an insecure origin.
+- `always` - WebView will allow a secure origin to load content from any other origin, even if that origin is insecure.
+- `compatibility` - WebView will attempt to be compatible with the approach of a modern web browser with regard to mixed content.
 
 | Type   | Required | Platform |
 | ------ | -------- | -------- |
@@ -415,18 +417,18 @@ You can provide one type or an array of many types.
 
 Possible values for `dataDetectorTypes` are:
 
-* `phoneNumber`
-* `link`
-* `address`
-* `calendarEvent`
-* `none`
-* `all`
+- `phoneNumber`
+- `link`
+- `address`
+- `calendarEvent`
+- `none`
+- `all`
 
 With the [new WebKit](webview.md#usewebkit) implementation, we have three new values:
 
-* `trackingNumber`
-* `flightNumber`
-* `lookupSuggestion`
+- `trackingNumber`
+- `flightNumber`
+- `lookupSuggestion`
 
 | Type             | Required | Platform |
 | ---------------- | -------- | -------- |
@@ -496,13 +498,13 @@ If true, use WKWebView instead of UIWebView.
 
 ### `extraNativeComponentConfig()`
 
-```javascript
+```jsx
 static extraNativeComponentConfig()
 ```
 
 ### `goForward()`
 
-```javascript
+```jsx
 goForward();
 ```
 
@@ -510,7 +512,7 @@ Go forward one page in the web view's history.
 
 ### `goBack()`
 
-```javascript
+```jsx
 goBack();
 ```
 
@@ -518,7 +520,7 @@ Go back one page in the web view's history.
 
 ### `reload()`
 
-```javascript
+```jsx
 reload();
 ```
 
@@ -526,7 +528,7 @@ Reloads the current page.
 
 ### `stopLoading()`
 
-```javascript
+```jsx
 stopLoading();
 ```
 

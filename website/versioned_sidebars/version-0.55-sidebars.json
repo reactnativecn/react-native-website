@@ -52,13 +52,6 @@
       "version-0.55-signed-apk-android",
       "version-0.55-removing-default-permissions"
     ],
-    "Contributing": [
-      "version-0.55-contributing",
-      "version-0.55-maintainers",
-      "version-0.55-building-from-source",
-      "version-0.55-testing",
-      "version-0.55-understanding-cli"
-    ],
     "Components": [
       "version-0.55-activityindicator",
       "version-0.55-button",
@@ -66,6 +59,7 @@
       "version-0.55-drawerlayoutandroid",
       "version-0.55-flatlist",
       "version-0.55-image",
+      "version-0.55-imagebackground",
       "version-0.55-inputaccessoryview",
       "version-0.55-keyboardavoidingview",
       "version-0.55-listview",

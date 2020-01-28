@@ -42,13 +42,6 @@ class Example extends Component {
 }
 ```
 
-### 查看方法
-
-* [`addListener`](keyboard.md#addlistener)
-* [`removeListener`](keyboard.md#removelistener)
-* [`removeAllListeners`](keyboard.md#removealllisteners)
-* [`dismiss`](keyboard.md#dismiss)
-
 ---
 
 # 文档
@@ -57,7 +50,7 @@ class Example extends Component {
 
 ### `addListener()`
 
-```javascript
+```jsx
 static addListener(eventName, callback)
 ```
 
@@ -65,7 +58,16 @@ static addListener(eventName, callback)
 
 此方法会返回监听函数的引用。
 
-@param {string} eventName `nativeEvent`参数用来指明要监听的事件，具体有以下几种:
+**Parameters:**
+
+| Name      | Type     | Required | Description                                            |
+| --------- | -------- | -------- | ------------------------------------------------------ |
+| eventName | string   | Yes      | `nativeEvent`参数用来指明要监听的事件，具体有以下几种: |
+| callback  | function | Yes      | 事件触发时调用的 js 函数                               |
+
+**nativeEvent**
+
+This can be any of the following
 
 * `keyboardWillShow`
 * `keyboardDidShow`
@@ -74,40 +76,40 @@ static addListener(eventName, callback)
 * `keyboardWillChangeFrame`
 * `keyboardDidChangeFrame`
 
-注意如果你把`android:windowSoftInputMode`设置为`adjustResize`或是`adjustNothing`，则在 Android 上只有`keyboardDidShow`和`keyboardDidHide`事件有效。
-
-@param {function} callback 事件触发时调用的 js 函数。
+注意如果你把`android:windowSoftInputMode`设置为`adjustResize`，则在 Android 上只有`keyboardDidShow`和`keyboardDidHide`事件有效。如果`android:windowSoftInputMode`设置为`adjustNothing`，则没有任何事件有效。`keyboardWillShow` as well as `keyboardWillHide` are generally not available on Android since there is no native corresponding event.
 
 ---
 
 ### `removeListener()`
 
-```javascript
+```jsx
 static removeListener(eventName, callback)
 ```
 
 移除某个类型事件的监听函数。
 
-@param {string} eventName `nativeEvent`即要移除的原生事件类型。
-@param {function} callback 要移除的监听函数。
+**Parameters:**
+
+| Name      | Type     | Required | Description                      |
+| --------- | -------- | -------- | -------------------------------- |
+| eventName | string   | Yes      | 要移除监听函数的原生事件类型名称 |
+| callback  | function | Yes      | 要移除的监听函数                 |
 
 ---
 
 ### `removeAllListeners()`
 
-```javascript
+```jsx
 static removeAllListeners(eventName)
 ```
 
 移除某个类型事件的所有监听函数。
 
-@param {string} eventType 要移除所有监听函数的原生事件类型。
-
 ---
 
 ### `dismiss()`
 
-```javascript
+```jsx
 static dismiss()
 ```
 

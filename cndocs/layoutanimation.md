@@ -17,21 +17,6 @@ UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationE
 
 上面这段代码应该写在任何组件加载之前，比如可以写到 index.js 的开头。
 
-### 查看方法
-
-* [`configureNext`](layoutanimation.md#configurenext)
-* [`create`](layoutanimation.md#create)
-* [`checkConfig`](layoutanimation.md#checkconfig)
-
-### 查看属性
-
-* [`Types`](layoutanimation.md#types)
-* [`Properties`](layoutanimation.md#properties)
-* [`Presets`](layoutanimation.md#presets)
-* [`easeInEaseOut`](layoutanimation.md#easeineaseout)
-* [`linear`](layoutanimation.md#linear)
-* [`spring`](layoutanimation.md#spring)
-
 ---
 
 # 文档
@@ -40,7 +25,7 @@ UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationE
 
 ### `configureNext()`
 
-```javascript
+```jsx
 static configureNext(config, onAnimationDidEnd?)
 ```
 
@@ -63,7 +48,7 @@ static configureNext(config, onAnimationDidEnd?)
 
 ### `create()`
 
-```javascript
+```jsx
 static create(duration, type, creationProp)
 ```
 
@@ -71,20 +56,43 @@ static create(duration, type, creationProp)
 
 ---
 
-### `checkConfig()`
-
-```javascript
-static checkConfig(config, location, name)
-```
-
 ## 属性
 
----
+An enumerate of object property to be animated, used in [`create`](layoutanimation.md#create) method.
+
+| Properties |
+| ---------- |
+| opacity    |
+| scaleX     |
+| scaleY     |
+| scaleXY    |
 
 ---
 
----
+### Presets
+
+A set of predefined animation config.
+
+| Presets       | Value                                                                                                                                                                 |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| easeInEaseOut | `create(300, 'easeInEaseOut', 'opacity')`                                                                                                                             |
+| linear        | `create(500, 'linear', 'opacity')`                                                                                                                                    |
+| spring        | `{ duration: 700, create: { type: 'linear', property: 'opacity' }, update: { type: 'spring', springDamping: 0.4 }, delete: { type: 'linear', property: 'opacity' } }` |
 
 ---
 
+### easeInEaseOut
+
+Shortcut to bind `configureNext()` methods with `Presets.easeInEaseOut`.
+
 ---
+
+### linear
+
+Shortcut to bind `configureNext()` methods with `Presets.linear`.
+
+---
+
+### spring
+
+Shortcut to bind `configureNext()` methods with `Presets.spring`.

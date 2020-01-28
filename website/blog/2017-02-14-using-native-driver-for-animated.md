@@ -26,11 +26,11 @@ First, let's check out how animations currently work using Animated with the JS 
 
 Here's a breakdown of the steps for an animation and where it happens:
 
-* JS: The animation driver uses `requestAnimationFrame` to execute on every frame and update the value it drives using the new value it calculates based on the animation curve.
-* JS: Intermediate values are calculated and passed to a props node that is attached to a `View`.
-* JS: The `View` is updated using `setNativeProps`.
-* JS to Native bridge.
-* Native: The `UIView` or `android.View` is updated.
+- JS: The animation driver uses `requestAnimationFrame` to execute on every frame and update the value it drives using the new value it calculates based on the animation curve.
+- JS: Intermediate values are calculated and passed to a props node that is attached to a `View`.
+- JS: The `View` is updated using `setNativeProps`.
+- JS to Native bridge.
+- Native: The `UIView` or `android.View` is updated.
 
 As you can see, most of the work happens on the JS thread. If it is blocked the animation will skip frames. It also needs to go through the JS to Native bridge on every frame to update native views.
 
@@ -97,9 +97,9 @@ NativeAnimatedModule.startAnimation({
 
 And now here's the breakdown of what happens when the animation runs:
 
-* Native: The native animation driver uses `CADisplayLink` or `android.view.Choreographer` to execute on every frame and update the value it drives using the new value it calculates based on the animation curve.
-* Native: Intermediate values are calculated and passed to a props node that is attached to a native view.
-* Native: The `UIView` or `android.View` is updated.
+- Native: The native animation driver uses `CADisplayLink` or `android.view.Choreographer` to execute on every frame and update the value it drives using the new value it calculates based on the animation curve.
+- Native: Intermediate values are calculated and passed to a props node that is attached to a native view.
+- Native: The `UIView` or `android.View` is updated.
 
 As you can see, no more JS thread and no more bridge which means faster animations! 🎉🎉
 
@@ -159,7 +159,7 @@ After:
 
 ## Caveats
 
-Not everything you can do with Animated is currently supported in Native Animated. The main limitation is that you can only animate non-layout properties, things like `transform` and `opacity` will work but flexbox and position properties won't. Another one is with `Animated.event`, it will only work with direct events and not bubbling events. This means it does not work with `PanResponder` but does work with things like `ScrollView#onScroll`.
+Not everything you can do with Animated is currently supported in Native Animated. The main limitation is that you can only animate non-layout properties, things like `transform` and `opacity` will work but Flexbox and position properties won't. Another one is with `Animated.event`, it will only work with direct events and not bubbling events. This means it does not work with `PanResponder` but does work with things like `ScrollView#onScroll`.
 
 Native Animated has also been part of React Native for quite a while but has never been documented because it was considered experimental. Because of that make sure you are using a recent version (0.40+) of React Native if you want to use this feature.
 

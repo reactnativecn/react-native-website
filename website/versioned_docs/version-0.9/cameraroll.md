@@ -8,8 +8,8 @@ original_id: cameraroll
 
 ### Methods
 
-* [`saveImageWithTag`](cameraroll.md#saveimagewithtag)
-* [`getPhotos`](cameraroll.md#getphotos)
+- [`saveImageWithTag`](cameraroll.md#saveimagewithtag)
+- [`getPhotos`](cameraroll.md#getphotos)
 
 ---
 
@@ -19,7 +19,7 @@ original_id: cameraroll
 
 ### `saveImageWithTag()`
 
-```javascript
+```jsx
 static saveImageWithTag(tag, successCallback, errorCallback)
 ```
 
@@ -29,9 +29,9 @@ Saves the image to the camera roll / gallery.
 
 On iOS, the tag can be one of the following:
 
-* local URI
-* assets-library tag
-* a tag not maching any of the above, which means the image data will be stored in memory (and consume memory as long as the process is alive)
+- local URI
+- assets-library tag
+- a tag not maching any of the above, which means the image data will be stored in memory (and consume memory as long as the process is alive)
 
 @param successCallback Invoked with the value of `tag` on success. @param errorCallback Invoked with error message on error.
 
@@ -39,7 +39,7 @@ On iOS, the tag can be one of the following:
 
 ### `getPhotos()`
 
-```javascript
+```jsx
 static getPhotos(params, callback, errorCallback)
 ```
 

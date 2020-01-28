@@ -26,17 +26,6 @@ AlertIOS.prompt(
 
 其他情况下，尤其是仅仅显示一个静态的提示框时，应该使用跨平台的[`Alert`](alert.md)。
 
-### 查看方法
-
-* [`alert`](alertios.md#alert)
-* [`prompt`](alertios.md#prompt)
-
-### 查看类型定义
-
-* [`AlertType`](alertios.md#alerttype)
-* [`AlertButtonStyle`](alertios.md#alertbuttonstyle)
-* [`ButtonsArray`](alertios.md#buttonsarray)
-
 ---
 
 # 文档
@@ -45,7 +34,7 @@ AlertIOS.prompt(
 
 ### `alert()`
 
-```javascript
+```jsx
 static alert(title: string, [message]: string, [callbackOrButtons]: ?(() => void), ButtonsArray, [type]: AlertType): [object Object]
 ```
 
@@ -62,7 +51,7 @@ static alert(title: string, [message]: string, [callbackOrButtons]: ?(() => void
 
 Example with custom buttons:
 
-```javascript
+```jsx
 AlertIOS.alert(
   "Update available",
   "Keep your app up to date to enjoy the latest features",
@@ -84,7 +73,7 @@ AlertIOS.alert(
 
 ### `prompt()`
 
-```javascript
+```jsx
 static prompt(title: string, [message]: string, [callbackOrButtons]: ?((text: string) => void), ButtonsArray, [type]: AlertType, [defaultValue]: string, [keyboardType]: string): [object Object]
 ```
 
@@ -103,7 +92,7 @@ Create and display a prompt to enter some text.
 
 Example with custom buttons:
 
-```javascript
+```jsx
 AlertIOS.prompt(
   "Enter password",
   "Enter your password to claim your $1.5B in lottery winnings",
@@ -126,7 +115,7 @@ AlertIOS.prompt(
 
 Example with the default button and a custom callback:
 
-```javascript
+```jsx
 AlertIOS.prompt(
   "Update username",
   null,

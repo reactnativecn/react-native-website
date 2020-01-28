@@ -3,30 +3,6 @@ id: text-style-props
 title: Text样式属性
 ---
 
-### Props
-
-* [`textShadowOffset`](text-style-props.md#textshadowoffset)
-* [`color`](text-style-props.md#color)
-* [`fontSize`](text-style-props.md#fontsize)
-* [`fontStyle`](text-style-props.md#fontstyle)
-* [`fontWeight`](text-style-props.md#fontweight)
-* [`lineHeight`](text-style-props.md#lineheight)
-* [`textAlign`](text-style-props.md#textalign)
-* [`textDecorationLine`](text-style-props.md#textdecorationline)
-* [`textShadowColor`](text-style-props.md#textshadowcolor)
-* [`fontFamily`](text-style-props.md#fontfamily)
-* [`textShadowRadius`](text-style-props.md#textshadowradius)
-* [`includeFontPadding`](text-style-props.md#includefontpadding)
-* [`textAlignVertical`](text-style-props.md#textalignvertical)
-* [`fontVariant`](text-style-props.md#fontvariant)
-* [`letterSpacing`](text-style-props.md#letterspacing)
-* [`textDecorationColor`](text-style-props.md#textdecorationcolor)
-* [`textDecorationStyle`](text-style-props.md#textdecorationstyle)
-* [`textTransform`](text-style-props.md#texttransform)
-* [`writingDirection`](text-style-props.md#writingdirection)
-
----
-
 # 文档
 
 ## Props
@@ -145,15 +121,15 @@ Set to `false` to remove extra font padding intended to make space for certain a
 
 | 类型                                                                                             | 必填 | 平台 |
 | ------------------------------------------------------------------------------------------------ | -------- | -------- |
-| array of enum('small-caps', 'oldstyle-nums', 'lining-nums', 'tabular-nums', 'proportional-nums') | 否       | iOS      |
+| array of enum('small-caps', 'oldstyle-nums', 'lining-nums', 'tabular-nums', 'proportional-nums') | 否       | iOS, Android >= 5.0      |
 
 ---
 
 ### `letterSpacing`
 
 | 类型   | 必填 | 平台 |
-| ------ | -------- | -------- |
-| number | 否       | iOS      |
+| ------ | -------- | ------------------- |
+| number | 否       | iOS, Android >= 5.0 |
 
 ---
 

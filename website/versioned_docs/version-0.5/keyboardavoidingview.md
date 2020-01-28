@@ -8,16 +8,16 @@ It is a component to solve the common problem of views that need to move out of 
 
 ### Props
 
-* [View props...](view.md#props)
-* [`keyboardVerticalOffset`](keyboardavoidingview.md#keyboardverticaloffset)
-* [`behavior`](keyboardavoidingview.md#behavior)
-* [`contentContainerStyle`](keyboardavoidingview.md#contentcontainerstyle)
+- [View props...](view.md#props)
+- [`keyboardVerticalOffset`](keyboardavoidingview.md#keyboardverticaloffset)
+- [`behavior`](keyboardavoidingview.md#behavior)
+- [`contentContainerStyle`](keyboardavoidingview.md#contentcontainerstyle)
 
 ### Methods
 
-* [`relativeKeyboardHeight`](keyboardavoidingview.md#relativekeyboardheight)
-* [`onKeyboardChange`](keyboardavoidingview.md#onkeyboardchange)
-* [`onLayout`](keyboardavoidingview.md#onlayout)
+- [`relativeKeyboardHeight`](keyboardavoidingview.md#relativekeyboardheight)
+- [`onKeyboardChange`](keyboardavoidingview.md#onkeyboardchange)
+- [`onLayout`](keyboardavoidingview.md#onlayout)
 
 ---
 
@@ -55,7 +55,7 @@ The style of the content container(View) when behavior is 'position'.
 
 ### `relativeKeyboardHeight()`
 
-```javascript
+```jsx
 relativeKeyboardHeight(keyboardFrame: object):
 ```
 
@@ -63,7 +63,7 @@ relativeKeyboardHeight(keyboardFrame: object):
 
 ### `onKeyboardChange()`
 
-```javascript
+```jsx
 onKeyboardChange((event: object));
 ```
 
@@ -71,6 +71,6 @@ onKeyboardChange((event: object));
 
 ### `onLayout()`
 
-```javascript
+```jsx
 onLayout((event: ViewLayoutEvent));
 ```

@@ -27,14 +27,13 @@ renderButton: function() {
 ```ReactNativeWebPlayer
 import React, { Component } from 'react'
 import {
-  AppRegistry,
   StyleSheet,
   TouchableOpacity,
   Text,
   View,
 } from 'react-native'
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = { count: 0 }
@@ -84,27 +83,23 @@ const styles = StyleSheet.create({
     color: '#FF00FF'
   }
 })
-
-AppRegistry.registerComponent('App', () => App)
 ```
-
-### 查看Props
-
-* [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
-
-- [`activeOpacity`](touchableopacity.md#activeopacity)
-- [`tvParallaxProperties`](touchableopacity.md#tvparallaxproperties)
-- [`hasTVPreferredFocus`](touchableopacity.md#hastvpreferredfocus)
-
-### 查看方法
-
-* [`setOpacityTo`](touchableopacity.md#setopacityto)
 
 ---
 
 # 文档
 
 ## Props
+
+Inherits [TouchableWithoutFeedback Props](touchablewithoutfeedback.md#props).
+
+### `style`
+
+| 类型       | 必填 |
+| ---------- | ---- |
+| View.style | 否   |
+
+---
 
 ### `activeOpacity`
 
@@ -140,7 +135,7 @@ _(Apple TV only)_ TV preferred focus (see documentation for the View component).
 
 ### `setOpacityTo()`
 
-```javascript
+```jsx
 setOpacityTo((value: number), (duration: number));
 ```
 

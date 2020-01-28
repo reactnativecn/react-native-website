@@ -26,15 +26,15 @@ renderButton: function() {
 
 ### Props
 
-* [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
+- [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
 
-- [`background`](touchablenativefeedback.md#background)
+* [`background`](touchablenativefeedback.md#background)
 
 ### Methods
 
-* [`SelectableBackground`](touchablenativefeedback.md#selectablebackground)
-* [`SelectableBackgroundBorderless`](touchablenativefeedback.md#selectablebackgroundborderless)
-* [`Ripple`](touchablenativefeedback.md#ripple)
+- [`SelectableBackground`](touchablenativefeedback.md#selectablebackground)
+- [`SelectableBackgroundBorderless`](touchablenativefeedback.md#selectablebackgroundborderless)
+- [`Ripple`](touchablenativefeedback.md#ripple)
 
 ---
 
@@ -60,7 +60,7 @@ Determines the type of background drawable that's going to be used to display fe
 
 ### `SelectableBackground()`
 
-```javascript
+```jsx
 static SelectableBackground()
 ```
 
@@ -68,7 +68,7 @@ static SelectableBackground()
 
 ### `SelectableBackgroundBorderless()`
 
-```javascript
+```jsx
 static SelectableBackgroundBorderless()
 ```
 
@@ -76,6 +76,6 @@ static SelectableBackgroundBorderless()
 
 ### `Ripple()`
 
-```javascript
+```jsx
 static Ripple(color, borderless)
 ```

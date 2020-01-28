@@ -11,12 +11,12 @@ title: 从源代码编译React Native
 
 在 Android Studio 的 SDK Manager 中安装以下组件：
 
-- Android SDK version 26 (编译 SDK 版本号在[build.gradle](https://github.com/facebook/react-native/blob/master/ReactAndroid/build.gradle)中可以找到)
-- SDK build tools version 26.0.3(编译工具版本号在[build.gradle](https://github.com/facebook/react-native/blob/master/ReactAndroid/build.gradle)中可以找到)
-- Android Support Repository >= 26
+- Android SDK version 28 (编译 SDK 版本号在[build.gradle](https://github.com/facebook/react-native/blob/master/ReactAndroid/build.gradle)中可以找到)
+- SDK build tools version 28.0.3(编译工具版本号在[build.gradle](https://github.com/facebook/react-native/blob/master/ReactAndroid/build.gradle)中可以找到)
+- Android Support Repository >= 28
 - Android NDK(下载及安装指南请看后文)
 
-#### 将 Gradle 指向你的安卓 SDK：
+#### [将 Gradle 指向你的安卓 SDK](#gradle-android-sdk)：
 
 **第一步：** 在命令行配置文件中设置环境变量。
 
@@ -26,11 +26,11 @@ title: 从源代码编译React Native
 - zsh: `.zprofile` 或 `.zshrc`
 - ksh: `.profile` 或 `$ENV`
 
-在配置文件中加入：
+在配置文件中加入（请填写自己的实际路径）：
 
 ```
 export ANDROID_SDK=/Users/your_unix_name/android-sdk-macosx
-export ANDROID_NDK=/Users/your_unix_name/android-ndk/android-ndk-r17b
+export ANDROID_NDK=/Users/your_unix_name/android-ndk/android-ndk-r17c
 ```
 
 **第二步：** 在项目目录的 android 目录下创建`local.properties`文件。添加以下内容：（注意：windows 下路径需要使用反双斜杠）
@@ -39,12 +39,12 @@ export ANDROID_NDK=/Users/your_unix_name/android-ndk/android-ndk-r17b
 ndk.dir=指向android ndk目录的绝对路径
 ```
 
-#### Android NDK r17b 的下载链接（0.57 之前使用 r10e 版本）
+#### Android NDK 的下载链接（0.57 之前使用 r10e 版本）
 
-1.  Mac OS (64-bit) - http://dl.google.com/android/repository/android-ndk-r17b-darwin-x86_64.zip
-2.  Linux (64-bit) - http://dl.google.com/android/repository/android-ndk-r17b-linux-x86_64.zip
-3.  Windows (64-bit) - http://dl.google.com/android/repository/android-ndk-r17b-windows-x86_64.zip
-4.  Windows (32-bit) - http://dl.google.com/android/repository/android-ndk-r17b-windows-x86.zip
+1.  Mac OS (64-bit) - http://dl.google.com/android/repository/android-ndk-r17c-darwin-x86_64.zip
+2.  Linux (64-bit) - http://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
+3.  Windows (64-bit) - http://dl.google.com/android/repository/android-ndk-r17c-windows-x86_64.zip
+4.  Windows (32-bit) - http://dl.google.com/android/repository/android-ndk-r17c-windows-x86.zip
 
 安装说明请参考[官方文档](https://developer.android.com/ndk/index.html)。
 
@@ -67,8 +67,8 @@ npm install --save github:facebook/react-native#master
 ```gradle
 ...
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'de.undercouch:gradle-download-task:3.1.2'
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'de.undercouch:gradle-download-task:3.4.3'
 
         // 注意：不要把你的应用的依赖放在这里；
         // 它们应该放在各自模块的build.gradle文件中
@@ -89,15 +89,15 @@ project(':ReactAndroid').projectDir = new File(
 ...
 ```
 
-修改你的`android/app/build.gradle`文件，使用`:ReactAndroid`替换预编译库。例如用`compile project(':ReactAndroid')`替换`compile 'com.facebook.react:react-native:+'`
+修改你的`android/app/build.gradle`文件，使用`:ReactAndroid`替换预编译库。例如用`implementation project(':ReactAndroid')`替换`implementation 'com.facebook.react:react-native:+'`
 
 ```gradle
 ...
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:26.0.2'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}'
 
-    compile project(':ReactAndroid')
+    implementation project(':ReactAndroid')
 
     ...
 }
@@ -134,18 +134,6 @@ gradle.projectsLoaded {
 }
 ```
 
-### 针对 Maven/Nexus 部署的编译
-
-If you find that you need to push up a locally compiled React Native .aar and related files to a remote Nexus repository, you can.
-
-Start by following the `Point Gradle to your Android SDK` section of this page. Once you do this, assuming you have Gradle configured properly, you can then run the following command from the root of your React Native checkout to build and package all required files:
-
-```
-./gradlew ReactAndroid:installArchives
-```
-
-This will package everything that would typically be included in the `android` directory of your `node_modules/react-native/` installation in the root directory of your React Native checkout.
-
 ### Troubleshooting
 
 Gradle build fails in `ndk-build`. See the section about `local.properties` file above.
@@ -153,3 +141,7 @@ Gradle build fails in `ndk-build`. See the section about `local.properties` file
 ## Testing your Changes
 
 If you made changes to React Native and submit a pull request, all tests will run on your pull request automatically. To run the tests locally, see [Running Tests](testing.md).
+
+## Making your changes available
+
+See the [Publishing your own version of react native](publishing.md) for several options to make your changes available for your and other app projects.

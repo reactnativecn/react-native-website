@@ -4,11 +4,11 @@ title: Navigator
 original_id: navigator
 ---
 
-`Navigator` handles the transition between different scenes in your app. It is implemented in JavaScript and is available on both iOS and Android. If you are targeting iOS only, you may also want to consider using `NavigatorIOS` as it leverages native UIKit navigation.
+`Navigator` handles the transition between different scenes in your app. It is implemented in JavaScript and is available on both Android and iOS. If you are targeting iOS only, you may also want to consider using `NavigatorIOS` as it leverages native UIKit navigation.
 
 To set up the `Navigator` you provide one or more objects called routes, to identify each scene. You also provide a `renderScene` function that renders the scene for each route object.
 
-```javascript
+```jsx
 import React, {Component} from 'react';
 import {Text, Navigator, TouchableHighlight} from 'react-native';
 
@@ -31,7 +31,7 @@ In the above example, `initialRoute` is used to specify the first route. It cont
 
 The first example demonstrated one scene. To set up multiple scenes, you pass the `initialRouteStack` prop to `Navigator`:
 
-```javascript
+```jsx
 render() {
   const routes = [
     {title: 'First Scene', index: 0},
@@ -58,7 +58,7 @@ render() {
 }
 ```
 
-In the above example, a routes variable is defined with two route objects representing two scenes. Each route has an index property that is used to manage the scene being rendered. The `renderScene` method is changed to either push or pop the navigator depending on the current route's index. Finally, the `Text` component in the scene is now wrapped in a `TouchableHighlight` component to help trigger the navigator transitions.
+In the above example, a routes variable is defined with two route objects representing two scenes. Each route has an index property that is used to manage the scene being rendered. The `renderScene` method is changed to either `push` or `pop` the navigator depending on the current route's index. Finally, the `Text` component in the scene is now wrapped in a `TouchableHighlight` component to help trigger the navigator transitions.
 
 ## Navigation Bar
 
@@ -126,33 +126,33 @@ In the above example, the newly pushed scene will float up from the bottom. See 
 
 ### Props
 
-* [`configureScene`](navigator.md#configurescene)
-* [`initialRoute`](navigator.md#initialroute)
-* [`initialRouteStack`](navigator.md#initialroutestack)
-* [`navigationBar`](navigator.md#navigationbar)
-* [`navigator`](navigator.md#navigator)
-* [`onDidFocus`](navigator.md#ondidfocus)
-* [`onWillFocus`](navigator.md#onwillfocus)
-* [`renderScene`](navigator.md#renderscene)
-* [`sceneStyle`](navigator.md#scenestyle)
+- [`configureScene`](navigator.md#configurescene)
+- [`initialRoute`](navigator.md#initialroute)
+- [`initialRouteStack`](navigator.md#initialroutestack)
+- [`navigationBar`](navigator.md#navigationbar)
+- [`navigator`](navigator.md#navigator)
+- [`onDidFocus`](navigator.md#ondidfocus)
+- [`onWillFocus`](navigator.md#onwillfocus)
+- [`renderScene`](navigator.md#renderscene)
+- [`sceneStyle`](navigator.md#scenestyle)
 
 ### Methods
 
-* [`immediatelyResetRouteStack`](navigator.md#immediatelyresetroutestack)
-* [`jumpTo`](navigator.md#jumpto)
-* [`jumpForward`](navigator.md#jumpforward)
-* [`jumpBack`](navigator.md#jumpback)
-* [`push`](navigator.md#push)
-* [`popN`](navigator.md#popn)
-* [`pop`](navigator.md#pop)
-* [`replaceAtIndex`](navigator.md#replaceatindex)
-* [`replace`](navigator.md#replace)
-* [`replacePrevious`](navigator.md#replaceprevious)
-* [`popToTop`](navigator.md#poptotop)
-* [`popToRoute`](navigator.md#poptoroute)
-* [`replacePreviousAndPop`](navigator.md#replacepreviousandpop)
-* [`resetTo`](navigator.md#resetto)
-* [`getCurrentRoutes`](navigator.md#getcurrentroutes)
+- [`immediatelyResetRouteStack`](navigator.md#immediatelyresetroutestack)
+- [`jumpTo`](navigator.md#jumpto)
+- [`jumpForward`](navigator.md#jumpforward)
+- [`jumpBack`](navigator.md#jumpback)
+- [`push`](navigator.md#push)
+- [`popN`](navigator.md#popn)
+- [`pop`](navigator.md#pop)
+- [`replaceAtIndex`](navigator.md#replaceatindex)
+- [`replace`](navigator.md#replace)
+- [`replacePrevious`](navigator.md#replaceprevious)
+- [`popToTop`](navigator.md#poptotop)
+- [`popToRoute`](navigator.md#poptoroute)
+- [`replacePreviousAndPop`](navigator.md#replacepreviousandpop)
+- [`resetTo`](navigator.md#resetto)
+- [`getCurrentRoutes`](navigator.md#getcurrentroutes)
 
 ---
 
@@ -166,24 +166,24 @@ Optional function where you can configure scene animations and gestures. Will be
 
 The function should return a scene configuration object.
 
-```javascript
+```jsx
 (route, routeStack) => Navigator.SceneConfigs.FloatFromRight;
 ```
 
 Available scene configuration options are:
 
-* Navigator.SceneConfigs.PushFromRight (default)
-* Navigator.SceneConfigs.FloatFromRight
-* Navigator.SceneConfigs.FloatFromLeft
-* Navigator.SceneConfigs.FloatFromBottom
-* Navigator.SceneConfigs.FloatFromBottomAndroid
-* Navigator.SceneConfigs.FadeAndroid
-* Navigator.SceneConfigs.SwipeFromLeft
-* Navigator.SceneConfigs.HorizontalSwipeJump
-* Navigator.SceneConfigs.HorizontalSwipeJumpFromRight
-* Navigator.SceneConfigs.HorizontalSwipeJumpFromLeft
-* Navigator.SceneConfigs.VerticalUpSwipeJump
-* Navigator.SceneConfigs.VerticalDownSwipeJump
+- Navigator.SceneConfigs.PushFromRight (default)
+- Navigator.SceneConfigs.FloatFromRight
+- Navigator.SceneConfigs.FloatFromLeft
+- Navigator.SceneConfigs.FloatFromBottom
+- Navigator.SceneConfigs.FloatFromBottomAndroid
+- Navigator.SceneConfigs.FadeAndroid
+- Navigator.SceneConfigs.SwipeFromLeft
+- Navigator.SceneConfigs.HorizontalSwipeJump
+- Navigator.SceneConfigs.HorizontalSwipeJumpFromRight
+- Navigator.SceneConfigs.HorizontalSwipeJumpFromLeft
+- Navigator.SceneConfigs.VerticalUpSwipeJump
+- Navigator.SceneConfigs.VerticalDownSwipeJump
 
 | Type     | Required |
 | -------- | -------- |
@@ -257,7 +257,7 @@ Pass in a function to get notified with the target route when the navigator comp
 
 Required function which renders the scene for a given route. Will be invoked with the route and the navigator object.
 
-```javascript
+```jsx
 (route, navigator) => (
   <MySceneComponent title={route.title} navigator={navigator} />
 );
@@ -283,7 +283,7 @@ Styles to apply to the container of each scene.
 
 ### `immediatelyResetRouteStack()`
 
-```javascript
+```jsx
 immediatelyResetRouteStack((nextRouteStack: RouteStack));
 ```
 
@@ -299,7 +299,7 @@ Reset every scene with an array of routes. All existing route stacks are destroy
 
 ### `jumpTo()`
 
-```javascript
+```jsx
 jumpTo((route: object));
 ```
 
@@ -317,7 +317,7 @@ The specified route must be in the currently mounted set of routes defined in `r
 
 ### `jumpForward()`
 
-```javascript
+```jsx
 jumpForward();
 ```
 
@@ -327,7 +327,7 @@ Jump forward to the next scene in the route stack.
 
 ### `jumpBack()`
 
-```javascript
+```jsx
 jumpBack();
 ```
 
@@ -335,9 +335,9 @@ Jump backward without unmounting the current scene.
 
 ---
 
-### `XXXX()`
+### `push()`
 
-```javascript
+```jsx
 push((route: object));
 ```
 
@@ -351,13 +351,13 @@ Navigate forward to a new scene, squashing any scenes that you could jump forwar
 
 ---
 
-### `pop()`
+### `popN()`
 
-```javascript
+```jsx
 popN((n: number));
 ```
 
-Go back N scenes at once. When N=1, behavior matches pop(). When N is invalid (negative or bigger than current routes count), do nothing.
+Go back N scenes at once. When N=1, behavior matches `pop()`. When N is invalid (negative or bigger than current routes count), do nothing.
 
 **Parameters:**
 
@@ -369,7 +369,7 @@ Go back N scenes at once. When N=1, behavior matches pop(). When N is invalid (n
 
 ### `pop()`
 
-```javascript
+```jsx
 pop();
 ```
 
@@ -379,7 +379,7 @@ Transition back and unmount the current scene.
 
 ### `replaceAtIndex()`
 
-```javascript
+```jsx
 replaceAtIndex((route: object), (index: number), (cb: Function));
 ```
 
@@ -397,7 +397,7 @@ Replace a scene as specified by an index.
 
 ### `replace()`
 
-```javascript
+```jsx
 replace((route: object));
 ```
 
@@ -413,7 +413,7 @@ Replace the current scene with a new route.
 
 ### `replacePrevious()`
 
-```javascript
+```jsx
 replacePrevious((route: object));
 ```
 
@@ -429,21 +429,21 @@ Replace the previous scene.
 
 ### `popToTop()`
 
-```javascript
+```jsx
 popToTop();
 ```
 
-Pop to the first scene in the stack, unmounting every other scene.
+Get the first scene in the stack, unmounting every other scene.
 
 ---
 
 ### `popToRoute()`
 
-```javascript
+```jsx
 popToRoute((route: object));
 ```
 
-Pop to a particular scene, as specified by its route. All scenes after it will be unmounted.
+Get a particular scene, as specified by its route. All scenes after it will be unmounted.
 
 **Parameters:**
 
@@ -453,13 +453,13 @@ Pop to a particular scene, as specified by its route. All scenes after it will b
 
 ---
 
-### `replacePreviousAndPopXXXX()`
+### `replacePreviousAndPop()`
 
-```javascript
+```jsx
 replacePreviousAndPop((route: object));
 ```
 
-Replace the previous scene and pop to it.
+Replace the previous scene and get to it.
 
 **Parameters:**
 
@@ -471,7 +471,7 @@ Replace the previous scene and pop to it.
 
 ### `resetTo()`
 
-```javascript
+```jsx
 resetTo((route: object));
 ```
 
@@ -487,7 +487,7 @@ Navigate to a new scene and reset route stack.
 
 ### `getCurrentRoutes()`
 
-```javascript
+```jsx
 getCurrentRoutes();
 ```
 

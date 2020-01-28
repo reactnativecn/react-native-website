@@ -8,7 +8,7 @@ Sometimes it's useful to know whether or not the device has a screen reader that
 
 Here's a small example illustrating how to use `AccessibilityInfo`:
 
-```javascript
+```jsx
 class ScreenReaderStatusExample extends React.Component {
   state = {
     screenReaderEnabled: false,
@@ -17,7 +17,7 @@ class ScreenReaderStatusExample extends React.Component {
   componentDidMount() {
     AccessibilityInfo.addEventListener(
       'change',
-      this._handleScreenReaderToggled
+      this._handleScreenReaderToggled,
     );
     AccessibilityInfo.fetch().done((isEnabled) => {
       this.setState({
@@ -29,7 +29,7 @@ class ScreenReaderStatusExample extends React.Component {
   componentWillUnmount() {
     AccessibilityInfo.removeEventListener(
       'change',
-      this._handleScreenReaderToggled
+      this._handleScreenReaderToggled,
     );
   }
 
@@ -54,9 +54,9 @@ class ScreenReaderStatusExample extends React.Component {
 
 ### Methods
 
-* [`fetch`](accessibilityinfo.md#fetch)
-* [`addEventListener`](accessibilityinfo.md#addeventlistener)
-* [`removeEventListener`](accessibilityinfo.md#removeeventlistener)
+- [`fetch`](accessibilityinfo.md#fetch)
+- [`addEventListener`](accessibilityinfo.md#addeventlistener)
+- [`removeEventListener`](accessibilityinfo.md#removeeventlistener)
 
 ---
 
@@ -66,7 +66,7 @@ class ScreenReaderStatusExample extends React.Component {
 
 ### `fetch()`
 
-```javascript
+```jsx
 static fetch()
 ```
 
@@ -76,19 +76,19 @@ Query whether a screen reader is currently enabled. Returns a promise which reso
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 static addEventListener(eventName, handler)
 ```
 
 Add an event handler. Supported events:
 
-* `change`: Fires when the state of the screen reader changes. The argument to the event handler is a boolean. The boolean is `true` when a screen reader is enabled and `false` otherwise.
+- `change`: Fires when the state of the screen reader changes. The argument to the event handler is a boolean. The boolean is `true` when a screen reader is enabled and `false` otherwise.
 
 ---
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(eventName, handler)
 ```
 

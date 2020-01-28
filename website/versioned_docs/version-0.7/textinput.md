@@ -6,7 +6,7 @@ original_id: textinput
 
 A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad.
 
-The simplest use case is to plop down a `TextInput` and subscribe to the `onChangeText` events to read the user input. There are also other events, such as `onSubmitEditing` and `onFocus` that can be subscribed to. A simple example:
+The most basic use case is to plop down a `TextInput` and subscribe to the `onChangeText` events to read the user input. There are also other events, such as `onSubmitEditing` and `onFocus` that can be subscribed to. A minimal example:
 
 ```
 <View>
@@ -24,40 +24,40 @@ The `multiline` prop is not supported in all releases, and some props are multil
 
 ### Props
 
-* [`onFocus`](textinput.md#onfocus)
-* [`autoCapitalize`](textinput.md#autocapitalize)
-* [`autoFocus`](textinput.md#autofocus)
-* [`bufferDelay`](textinput.md#bufferdelay)
-* [`clearButtonMode`](textinput.md#clearbuttonmode)
-* [`clearTextOnFocus`](textinput.md#cleartextonfocus)
-* [`controlled`](textinput.md#controlled)
-* [`editable`](textinput.md#editable)
-* [`enablesReturnKeyAutomatically`](textinput.md#enablesreturnkeyautomatically)
-* [`keyboardType`](textinput.md#keyboardtype)
-* [`multiline`](textinput.md#multiline)
-* [`onBlur`](textinput.md#onblur)
-* [`onChange`](textinput.md#onchange)
-* [`onChangeText`](textinput.md#onchangetext)
-* [`onEndEditing`](textinput.md#onendediting)
-* [`autoCorrect`](textinput.md#autocorrect)
-* [`onLayout`](textinput.md#onlayout)
-* [`onSubmitEditing`](textinput.md#onsubmitediting)
-* [`password`](textinput.md#password)
-* [`placeholder`](textinput.md#placeholder)
-* [`placeholderTextColor`](textinput.md#placeholdertextcolor)
-* [`returnKeyType`](textinput.md#returnkeytype)
-* [`selectTextOnFocus`](textinput.md#selecttextonfocus)
-* [`selectionState`](textinput.md#selectionstate)
-* [`style`](textinput.md#style)
-* [`testID`](textinput.md#testid)
-* [`textAlign`](textinput.md#textalign)
-* [`textAlignVertical`](textinput.md#textalignvertical)
-* [`underlineColorAndroid`](textinput.md#underlinecolorandroid)
-* [`value`](textinput.md#value)
+- [`onFocus`](textinput.md#onfocus)
+- [`autoCapitalize`](textinput.md#autocapitalize)
+- [`autoFocus`](textinput.md#autofocus)
+- [`bufferDelay`](textinput.md#bufferdelay)
+- [`clearButtonMode`](textinput.md#clearbuttonmode)
+- [`clearTextOnFocus`](textinput.md#cleartextonfocus)
+- [`controlled`](textinput.md#controlled)
+- [`editable`](textinput.md#editable)
+- [`enablesReturnKeyAutomatically`](textinput.md#enablesreturnkeyautomatically)
+- [`keyboardType`](textinput.md#keyboardtype)
+- [`multiline`](textinput.md#multiline)
+- [`onBlur`](textinput.md#onblur)
+- [`onChange`](textinput.md#onchange)
+- [`onChangeText`](textinput.md#onchangetext)
+- [`onEndEditing`](textinput.md#onendediting)
+- [`autoCorrect`](textinput.md#autocorrect)
+- [`onLayout`](textinput.md#onlayout)
+- [`onSubmitEditing`](textinput.md#onsubmitediting)
+- [`password`](textinput.md#password)
+- [`placeholder`](textinput.md#placeholder)
+- [`placeholderTextColor`](textinput.md#placeholdertextcolor)
+- [`returnKeyType`](textinput.md#returnkeytype)
+- [`selectTextOnFocus`](textinput.md#selecttextonfocus)
+- [`selectionState`](textinput.md#selectionstate)
+- [`style`](textinput.md#style)
+- [`testID`](textinput.md#testid)
+- [`textAlign`](textinput.md#textalign)
+- [`textAlignVertical`](textinput.md#textalignvertical)
+- [`underlineColorAndroid`](textinput.md#underlinecolorandroid)
+- [`value`](textinput.md#value)
 
 ### Methods
 
-* [`isFocused`](textinput.md#isfocused)
+- [`isFocused`](textinput.md#isfocused)
 
 ---
 
@@ -79,10 +79,10 @@ Callback that is called when the text input is focused
 
 Can tell TextInput to automatically capitalize certain characters.
 
-* characters: all characters,
-* words: first letter of each word
-* sentences: first letter of each sentence (default)
-* none: don't auto capitalize anything
+- characters: all characters,
+- words: first letter of each word
+- sentences: first letter of each sentence (default)
+- none: don't auto capitalize anything
 
 | Type                                             | Required |
 | ------------------------------------------------ | -------- |
@@ -370,6 +370,6 @@ The default value for the text input
 
 ### `isFocused()`
 
-```javascript
+```jsx
 isFocused():
 ```

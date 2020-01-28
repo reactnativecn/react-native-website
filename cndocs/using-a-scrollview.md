@@ -9,7 +9,7 @@ title: 使用滚动视图
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
-import { AppRegistry, ScrollView, Image, Text } from 'react-native';
+import { ScrollView, Image, Text } from 'react-native';
 
 export default class IScrolledDownAndWhatHappenedNextShockedMe extends Component {
   render() {
@@ -52,8 +52,8 @@ export default class IScrolledDownAndWhatHappenedNextShockedMe extends Component
 }
 ```
 
-ScrollViews can be configured to allow paging through views using swiping gestures by using the `pagingEnabled` props. Swiping horizontally between views can also be implemented on Android using the [ViewPagerAndroid](viewpagerandroid.md) component.
+ScrollViews can be configured to allow paging through views using swiping gestures by using the `pagingEnabled` props. Swiping horizontally between views can also be implemented on Android using the [ViewPager](https://github.com/react-native-community/react-native-viewpager) component.
 
-A ScrollView with a single item can be used to allow the user to zoom content. Set up the `maximumZoomScale` and `minimumZoomScale` props and your user will be able to use pinch and expand gestures to zoom in and out.
+在iOS上A ScrollView with a single item can be used to allow the user to zoom content. Set up the `maximumZoomScale` and `minimumZoomScale` props and your user will be able to use pinch and expand gestures to zoom in and out.
 
-`ScrollView`适合用来显示数量不多的滚动元素。放置在`ScollView`中的所有组件都会被渲染，哪怕有些组件因为内容太长被挤出了屏幕外。如果你需要显示较长的滚动列表，那么应该使用功能差不多但性能更好的`FlatList`组件。下面我们来看看[如何使用长列表](using-a-listview.md)。
+`ScrollView`适合用来显示数量不多的滚动元素。放置在`ScrollView`中的所有组件都会被渲染，哪怕有些组件因为内容太长被挤出了屏幕外。如果你需要显示较长的滚动列表，那么应该使用功能差不多但性能更好的`FlatList`组件。下面我们来看看[如何使用长列表](using-a-listview.md)。

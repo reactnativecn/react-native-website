@@ -14,36 +14,31 @@ The 'showWithGravityAndOffset' function adds on the ability to specify offset Th
 
 Basic usage:
 
-```javascript
-import { ToastAndroid } from 'react-native'; 
+```jsx
+import {ToastAndroid} from 'react-native';
 
 ToastAndroid.show('A pikachu appeared nearby !', ToastAndroid.SHORT);
 ToastAndroid.showWithGravity(
   'All Your Base Are Belong To Us',
   ToastAndroid.SHORT,
-  ToastAndroid.CENTER
+  ToastAndroid.CENTER,
 );
 ToastAndroid.showWithGravityAndOffset(
   'A wild toast appeared!',
   ToastAndroid.LONG,
   ToastAndroid.BOTTOM,
   25,
-  50
+  50,
 );
 ```
 
 ### Advanced usage:
 
-The ToastAndroid API is imperative and this might present itself as an issue, but there is actually a way(hack)
-to expose a declarative component from it. See an example below:
+The ToastAndroid API is imperative and this might present itself as an issue, but there is actually a way(hack) to expose a declarative component from it. See an example below:
 
-```javascript
-import React, { Component } from 'react';
-import {
-  View,
-  Button,
-  ToastAndroid,
-} from 'react-native';
+```jsx
+import React, {Component} from 'react';
+import {View, Button, ToastAndroid} from 'react-native';
 
 // a component that calls the imperative ToastAndroid API
 const Toast = (props) => {
@@ -53,7 +48,7 @@ const Toast = (props) => {
       ToastAndroid.LONG,
       ToastAndroid.BOTTOM,
       25,
-      50
+      50,
     );
     return null;
   }
@@ -69,46 +64,32 @@ class App extends Component {
   }
 
   handleButtonPress = () => {
-    this.setState({
+    this.setState(
+      {
         visible: true,
-    }, () => {
-      this.hideToast();
-    });
+      },
+      () => {
+        this.hideToast();
+      },
+    );
   };
 
   hideToast = () => {
     this.setState({
-      visible: false
-    })
-  }
+      visible: false,
+    });
+  };
 
   render() {
     return (
       <View style={styles.container}>
-        <Toast
-          visible={this.state.visible}
-          message="Example"
-        />
+        <Toast visible={this.state.visible} message="Example" />
         <Button title="Toggle Modal" onPress={this.handleButtonPress} />
       </View>
     );
   }
 }
 ```
-
-### Methods
-
-* [`show`](toastandroid.md#show)
-* [`showWithGravity`](toastandroid.md#showwithgravity)
-* [`showWithGravityAndOffset`](toastandroid.md#showwithgravityandoffset)
-
-### Properties
-
-* [`SHORT`](toastandroid.md#short)
-* [`LONG`](toastandroid.md#long)
-* [`TOP`](toastandroid.md#top)
-* [`BOTTOM`](toastandroid.md#bottom)
-* [`CENTER`](toastandroid.md#center)
 
 ---
 
@@ -118,7 +99,7 @@ class App extends Component {
 
 ### `show()`
 
-```javascript
+```jsx
 static show(message, duration)
 ```
 
@@ -126,7 +107,7 @@ static show(message, duration)
 
 ### `showWithGravity()`
 
-```javascript
+```jsx
 static showWithGravity(message, duration, gravity)
 ```
 
@@ -134,7 +115,7 @@ static showWithGravity(message, duration, gravity)
 
 ### `showWithGravityAndOffset()`
 
-```javascript
+```jsx
 static showWithGravityAndOffset(message, duration, gravity, xOffset, yOffset)
 ```
 
@@ -142,7 +123,9 @@ static showWithGravityAndOffset(message, duration, gravity, xOffset, yOffset)
 
 ### `SHORT`
 
-```javascript
+Indicates the duration on the screen.
+
+```jsx
 ToastAndroid.SHORT;
 ```
 
@@ -150,7 +133,9 @@ ToastAndroid.SHORT;
 
 ### `LONG`
 
-```javascript
+Indicates the duration on the screen.
+
+```jsx
 ToastAndroid.LONG;
 ```
 
@@ -158,7 +143,9 @@ ToastAndroid.LONG;
 
 ### `TOP`
 
-```javascript
+Indicates the position on the screen.
+
+```jsx
 ToastAndroid.TOP;
 ```
 
@@ -166,7 +153,9 @@ ToastAndroid.TOP;
 
 ### `BOTTOM`
 
-```javascript
+Indicates the position on the screen.
+
+```jsx
 ToastAndroid.BOTTOM;
 ```
 
@@ -174,6 +163,8 @@ ToastAndroid.BOTTOM;
 
 ### `CENTER`
 
-```javascript
+Indicates the position on the screen.
+
+```jsx
 ToastAndroid.CENTER;
 ```

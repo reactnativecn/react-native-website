@@ -3,6 +3,7 @@ id: version-0.57-touchablewithoutfeedback
 title: TouchableWithoutFeedback
 original_id: touchablewithoutfeedback
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 除非你有一个很好的理由，否则不要用这个组件。所有能够响应触屏操作的元素在触屏后都应该有一个视觉上的反馈（然而本组件没有任何视觉反馈），这也是为什么一个"web"应用总是显得不够"原生"的主要原因之一。
@@ -13,7 +14,6 @@ original_id: touchablewithoutfeedback
 
 ### 查看Props
 
-* [`hitSlop`](touchablewithoutfeedback.md#hitslop)
 * [`accessibilityComponentType`](touchablewithoutfeedback.md#accessibilitycomponenttype)
 * [`accessibilityHint`](touchablewithoutfeedback.md#accessibilityhint)
 * [`accessibilityLabel`](touchablewithoutfeedback.md#accessibilitylabel)
@@ -25,12 +25,16 @@ original_id: touchablewithoutfeedback
 * [`delayPressIn`](touchablewithoutfeedback.md#delaypressin)
 * [`delayPressOut`](touchablewithoutfeedback.md#delaypressout)
 * [`disabled`](touchablewithoutfeedback.md#disabled)
+* [`hitSlop`](touchablewithoutfeedback.md#hitslop)
+* [`onBlur`](touchablewithoutfeedback.md#onblur)
+* [`onFocus`](touchablewithoutfeedback.md#onfocus)
 * [`onLayout`](touchablewithoutfeedback.md#onlayout)
 * [`onLongPress`](touchablewithoutfeedback.md#onlongpress)
 * [`onPress`](touchablewithoutfeedback.md#onpress)
 * [`onPressIn`](touchablewithoutfeedback.md#onpressin)
 * [`onPressOut`](touchablewithoutfeedback.md#onpressout)
 * [`pressRetentionOffset`](touchablewithoutfeedback.md#pressretentionoffset)
+* [`testID`](touchablewithoutfeedback.md#testid)
 
 ### 查看类型定义
 
@@ -41,17 +45,6 @@ original_id: touchablewithoutfeedback
 # 文档
 
 ## Props
-
-### `hitSlop`
-
-这一属性定义了按钮的外延范围。这一范围也会使`pressRetentionOffset`变得更大。
-**注意：** 触摸范围不会超过父视图的边界，也不会影响原先和本组件层叠的视图（保留原先的触摸优先级）。
-
-| 类型                                                               | 必填 |
-| ------------------------------------------------------------------ | -------- |
-| object: {top: number, left: number, bottom: number, right: number} | 否       |
-
----
 
 ### `accessibilityComponentType`
 
@@ -155,6 +148,37 @@ Overrides the text that's read by the screen reader when the user interacts with
 
 ---
 
+### `hitSlop`
+
+这一属性定义了按钮的外延范围。这一范围也会使`pressRetentionOffset`变得更大。
+**注意：** 触摸范围不会超过父视图的边界，也不会影响原先和本组件层叠的视图（保留原先的触摸优先级）。
+
+| 类型                                                               | 必填 |
+| ------------------------------------------------------------------ | -------- |
+| object: {top: number, left: number, bottom: number, right: number} | 否       |
+
+---
+
+### `onBlur`
+
+Invoked when the item loses focus.
+
+| Type     | Required |
+| -------- | -------- |
+| function | No       |
+
+---
+
+### `onFocus`
+
+Invoked when the item receives focus.
+
+| Type     | Required |
+| -------- | -------- |
+| function | No       |
+
+---
+
 ### `onLayout`
 
 当加载或者布局改变的时候被调用，参数为：
@@ -212,6 +236,18 @@ Called as soon as the touch is released even before onPress.
 | 类型                                                               | 必填 |
 | ------------------------------------------------------------------ | -------- |
 | object: {top: number, left: number, bottom: number, right: number} | 否       |
+
+---
+
+### `testID`
+
+Used to locate this view in end-to-end tests.
+
+| Type   | Required |
+| ------ | -------- |
+| string | No       |
+
+---
 
 ## 类型定义
 

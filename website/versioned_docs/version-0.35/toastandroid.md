@@ -13,27 +13,27 @@ There is also a function `showWithGravity` to specify the layout gravity. May be
 
 Basic usage:
 
-```javascript
+```jsx
 ToastAndroid.show('A pikachu appeared nearby !', ToastAndroid.SHORT);
 ToastAndroid.showWithGravity(
   'All Your Base Are Belong To Us',
   ToastAndroid.SHORT,
-  ToastAndroid.CENTER
+  ToastAndroid.CENTER,
 );
 ```
 
 ### Methods
 
-* [`show`](toastandroid.md#show)
-* [`showWithGravity`](toastandroid.md#showwithgravity)
+- [`show`](toastandroid.md#show)
+- [`showWithGravity`](toastandroid.md#showwithgravity)
 
 ### Properties
 
-* [`SHORT`](toastandroid.md#short)
-* [`LONG`](toastandroid.md#long)
-* [`TOP`](toastandroid.md#top)
-* [`BOTTOM`](toastandroid.md#bottom)
-* [`CENTER`](toastandroid.md#center)
+- [`SHORT`](toastandroid.md#short)
+- [`LONG`](toastandroid.md#long)
+- [`TOP`](toastandroid.md#top)
+- [`BOTTOM`](toastandroid.md#bottom)
+- [`CENTER`](toastandroid.md#center)
 
 ---
 
@@ -43,7 +43,7 @@ ToastAndroid.showWithGravity(
 
 ### `show()`
 
-```javascript
+```jsx
 static show(message, duration)
 ```
 
@@ -51,7 +51,7 @@ static show(message, duration)
 
 ### `showWithGravity()`
 
-```javascript
+```jsx
 static showWithGravity(message, duration, gravity)
 ```
 

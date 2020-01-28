@@ -3,11 +3,43 @@ id: share
 title: Share
 ---
 
-### 查看方法
+## Basic Example
 
-- [`share`](share.md#share)
-- [`sharedAction`](share.md#sharedaction)
-- [`dismissedAction`](share.md#dismissedaction)
+```jsx
+import React, {Component} from 'react'
+import {Share, Button} from 'react-native'
+
+class ShareExample extends Component {
+
+  async onShare = () => {
+    try {
+      const result = await Share.share({
+        message:
+          'React Native | A framework for building native apps using React',
+      })
+
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  render() {
+    return (
+      <Button onPress={this.onShare}>Share</Button>
+    );
+  }
+
+}
+```
 
 ---
 
@@ -17,13 +49,13 @@ title: Share
 
 ### `share()`
 
-```javascript
+```jsx
 static share(content, options)
 ```
 
 打开一个对话框来共享文本内容。
 
-在 iOS 中，返回一个 Promise，最终会解析为一个对象，包含有`action`和`activityType`两个属性。如果用户取消对话框，则 Promise 仍将被解析，最终返回的`action`属性会是`Share.dismissedAction`，而其他属性为 undefined。</p>
+在 iOS 中，返回一个 Promise，最终会解析为一个对象，包含有`action`和`activityType`两个属性。如果用户取消对话框，则 Promise 仍将被解析，最终返回的`action`属性会是`Share.dismissedAction`，而其他属性为 undefined。Note that some share options will not appear or work on the iOS simulator.
 
 在 Android 中同样返回一个 Promise，但返回的`action`始终为`Share.sharedAction`。
 
@@ -38,6 +70,10 @@ static share(content, options)
 
 至少需要一个 URL 和消息。
 
+#### Android
+
+- `title` - title of the message
+  
 ### Options
 
 #### iOS
@@ -54,7 +90,7 @@ static share(content, options)
 
 ### `sharedAction()`
 
-```javascript
+```jsx
 static sharedAction()
 ```
 
@@ -64,7 +100,7 @@ static sharedAction()
 
 ### `dismissedAction()`
 
-```javascript
+```jsx
 static dismissedAction()
 ```
 

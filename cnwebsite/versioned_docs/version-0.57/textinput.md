@@ -3,6 +3,7 @@ id: version-0.57-textinput
 title: TextInput
 original_id: textinput
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 TextInput是一个允许用户在应用中通过键盘输入文本的基本组件。本组件的属性提供了多种特性的配置，譬如自动完成、自动大小写、占位文字，以及多种不同的键盘类型（如纯数字键盘）等等。
@@ -93,6 +94,7 @@ export default class UselessTextInputMultiline extends Component {
 
 - [`allowFontScaling`](textinput.md#allowfontscaling)
 - [`autoCapitalize`](textinput.md#autocapitalize)
+- [`autoComplete`](textinput.md#autocomplete)
 - [`autoCorrect`](textinput.md#autocorrect)
 - [`autoFocus`](textinput.md#autofocus)
 - [`blurOnSubmit`](textinput.md#bluronsubmit)
@@ -163,7 +165,7 @@ export default class UselessTextInputMultiline extends Component {
 
 ### `autoCapitalize`
 
-控制TextInput是否要自动将特定字符切换为大写：
+控制TextInput是否要自动将特定字符切换为大写，This property is not supported by some keyboard types such as `name-phone-pad`.
 
 * `characters`: 所有的字符。
 * `words`: 每个单词的第一个字符。
@@ -175,6 +177,32 @@ export default class UselessTextInputMultiline extends Component {
 | enum('none', 'sentences', 'words', 'characters') | No   |
 
 ---
+
+### `autoComplete`
+
+Specifies autocomplete hints for the system, so it can provide autofill.
+On Android, the system will aways attempt to offer autofill by using heuristics to identify the type of content. To disable autocomplete, set `autoComplete` to `off`.
+ 
+ Possible values for `autoComplete` are:
+ * `off`
+ * `username`
+ * `password`
+ * `email`
+ * `name`
+ * `tel`
+ * `street-address`
+ * `postal-code`
+ * `cc-number`
+ * `cc-csc`
+ * `cc-exp`
+ * `cc-exp-month`
+ * `cc-exp-year`
+
+ | 类型                                                                                                                                                         | 必填 | 平台    |
+ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- | ------- |
+ | enum('off', 'username', 'password', 'email', 'name', 'tel', 'street-address', 'postal-code', 'cc-number', 'cc-csc', 'cc-exp', 'cc-exp-month', 'cc-exp-year') | 否   | Android |
+ 
+ ---
 
 ### `autoCorrect`
 
@@ -218,7 +246,7 @@ export default class UselessTextInputMultiline extends Component {
 
 ### `clearButtonMode`
 
-是否要在文本框右侧显示“清除”按钮。仅在单行模式下可用。
+是否要在文本框右侧显示“清除”按钮。仅在单行模式下可用。默认值为`never`。
 
 | 类型                                                       | 必填 | 平台 |
 | ---------------------------------------------------------- | ---- | ---- |
@@ -417,7 +445,7 @@ If `true`, context menu is hidden. The default value is `false`.
 
 ### `onChange`
 
-当文本框内容变化时调用此回调函数。
+当文本框内容变化时调用此回调函数。回调参数为`{ nativeEvent: { eventCount, target, text} }`。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -459,7 +487,7 @@ Only called for multiline text inputs.
 
 ### `onFocus`
 
-当文本框获得焦点的时候调用此回调函数。
+当文本框获得焦点的时候调用此回调函数。回调参数为`{ nativeEvent: { target } }`。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -479,7 +507,7 @@ Only called for multiline text inputs.
 
 ### `onLayout`
 
-当组件加载或者布局变化的时候调用，参数为`{x, y, width, height}`。
+当组件加载或者布局变化的时候调用，回调参数为`{ nativeEvent: {layout: {x, y, width, height}, target } }`。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -758,7 +786,7 @@ TextInput是一个受约束的(Controlled)的组件，意味着如果提供了va
 
 ### `clear()`
 
-```javascript
+```jsx
 clear();
 ```
 
@@ -768,8 +796,8 @@ clear();
 
 ### `isFocused()`
 
-```javascript
-isFocused():
+```jsx
+isFocused();
 ```
 
 返回值表明当前输入框是否获得了焦点。

@@ -14,51 +14,6 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 * 为了优化内存占用同时保持滑动的流畅，列表内容会在屏幕外异步绘制。这意味着如果用户滑动的速度超过渲染的速度，则会先看到空白的内容。这是为了优化不得不作出的妥协，而我们也在设法持续改进。
 * 默认情况下每行都需要提供一个不重复的 key 属性。你也可以提供一个 keyExtractor 函数来生成 key。
 
-### 查看 Props
-
-* [`ScrollView` props...](scrollview.md#props)
-* [`renderItem`](virtualizedlist.md#renderitem)
-* [`data`](virtualizedlist.md#data)
-* [`getItem`](virtualizedlist.md#getitem)
-* [`getItemCount`](virtualizedlist.md#getitemcount)
-* [`debug`](virtualizedlist.md#debug)
-* [`extraData`](virtualizedlist.md#extradata)
-* [`getItemLayout`](virtualizedlist.md#getitemlayout)
-* [`initialScrollIndex`](virtualizedlist.md#initialscrollindex)
-* [`inverted`](virtualizedlist.md#inverted)
-* [`CellRendererComponent`](virtualizedlist.md#cellrenderercomponent)
-* [`ListEmptyComponent`](virtualizedlist.md#listemptycomponent)
-* [`ListFooterComponent`](virtualizedlist.md#listfootercomponent)
-* [`ListHeaderComponent`](virtualizedlist.md#listheadercomponent)
-* [`onEndReached`](virtualizedlist.md#onendreached)
-* [`onLayout`](virtualizedlist.md#onlayout)
-* [`onRefresh`](virtualizedlist.md#onrefresh)
-* [`onScrollToIndexFailed`](virtualizedlist.md#onscrolltoindexfailed)
-* [`onViewableItemsChanged`](virtualizedlist.md#onviewableitemschanged)
-* [`refreshing`](virtualizedlist.md#refreshing)
-* [`removeClippedSubviews`](virtualizedlist.md#removeclippedsubviews)
-* [`renderScrollComponent`](virtualizedlist.md#renderscrollcomponent)
-* [`viewabilityConfig`](virtualizedlist.md#viewabilityconfig)
-* [`viewabilityConfigCallbackPairs`](virtualizedlist.md#viewabilityconfigcallbackpairs)
-* [`horizontal`](virtualizedlist.md#horizontal)
-* [`initialNumToRender`](virtualizedlist.md#initialnumtorender)
-* [`keyExtractor`](virtualizedlist.md#keyextractor)
-* [`maxToRenderPerBatch`](virtualizedlist.md#maxtorenderperbatch)
-* [`onEndReachedThreshold`](virtualizedlist.md#onendreachedthreshold)
-* [`updateCellsBatchingPeriod`](virtualizedlist.md#updatecellsbatchingperiod)
-* [`windowSize`](virtualizedlist.md#windowsize)
-* [`disableVirtualization`](virtualizedlist.md#disablevirtualization)
-* [`progressViewOffset`](virtualizedlist.md#progressviewoffset)
-
-### 查看方法
-
-* [`scrollToEnd`](virtualizedlist.md#scrolltoend)
-* [`scrollToIndex`](virtualizedlist.md#scrolltoindex)
-* [`scrollToItem`](virtualizedlist.md#scrolltoitem)
-* [`scrollToOffset`](virtualizedlist.md#scrolltooffset)
-* [`recordInteraction`](virtualizedlist.md#recordinteraction)
-* [`flashScrollIndicators`](virtualizedlist.md#flashscrollindicators)
-
 ---
 
 # 文档
@@ -67,7 +22,7 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 
 ### `renderItem`
 
-```javascript
+```jsx
 (info: any) => ?React.Element<any>
 ```
 
@@ -91,7 +46,7 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 
 ### `getItem`
 
-```javascript
+```jsx
 (data: any, index: number) => object;
 ```
 
@@ -105,7 +60,7 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 
 ### `getItemCount`
 
-```javascript
+```jsx
 (data: any) => number;
 ```
 
@@ -139,7 +94,7 @@ Vritualization 通过维护一个有限的渲染窗口（其中包含可见的�
 
 ### `getItemLayout`
 
-```javascript
+```jsx
 (
     data: any,
     index: number,
@@ -224,7 +179,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `onRefresh`
 
-```javascript
+```jsx
 () => void
 ```
 
@@ -238,7 +193,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `onScrollToIndexFailed`
 
-```javascript
+```jsx
 (info: {
     index: number,
     highestMeasuredFrameIndex: number,
@@ -256,7 +211,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `onViewableItemsChanged`
 
-```javascript
+```jsx
 (info: {
     viewableItems: array,
     changed: array,
@@ -297,7 +252,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `renderScrollComponent`
 
-```javascript
+```jsx
 (props: object) => element;
 ```
 
@@ -349,7 +304,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `keyExtractor`
 
-```javascript
+```jsx
 (item: object, index: number) => string;
 ```
 
@@ -373,7 +328,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `onEndReached`
 
-```javascript
+```jsx
 (info: {distanceFromEnd: number}) => void
 ```
 
@@ -437,7 +392,7 @@ getItemLayout 是一个可选的优化，用于避免动态测量内容尺寸的
 
 ### `scrollToEnd()`
 
-```javascript
+```jsx
 scrollToEnd(([params]: object));
 ```
 
@@ -445,7 +400,7 @@ scrollToEnd(([params]: object));
 
 ### `scrollToIndex()`
 
-```javascript
+```jsx
 scrollToIndex((params: object));
 ```
 
@@ -453,7 +408,7 @@ scrollToIndex((params: object));
 
 ### `scrollToItem()`
 
-```javascript
+```jsx
 scrollToItem((params: object));
 ```
 
@@ -461,7 +416,7 @@ scrollToItem((params: object));
 
 ### `scrollToOffset()`
 
-```javascript
+```jsx
 scrollToOffset((params: object));
 ```
 
@@ -475,7 +430,7 @@ scrollToOffset((params: object));
 
 ### `recordInteraction()`
 
-```javascript
+```jsx
 recordInteraction();
 ```
 
@@ -483,6 +438,6 @@ recordInteraction();
 
 ### `flashScrollIndicators()`
 
-```javascript
+```jsx
 flashScrollIndicators();
 ```

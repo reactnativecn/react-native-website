@@ -6,7 +6,7 @@ original_id: imageeditor
 
 ### Methods
 
-* [`cropImage`](imageeditor.md#cropimage)
+- [`cropImage`](imageeditor.md#cropimage)
 
 ---
 
@@ -16,7 +16,7 @@ original_id: imageeditor
 
 ### `cropImage()`
 
-```javascript
+```jsx
 static cropImage(uri, cropData, success, failure)
 ```
 

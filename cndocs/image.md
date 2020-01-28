@@ -11,7 +11,7 @@ title: Image
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
-import { AppRegistry, View, Image } from 'react-native';
+import { View, Image } from 'react-native';
 
 export default class DisplayAnImage extends Component {
   render() {
@@ -22,7 +22,7 @@ export default class DisplayAnImage extends Component {
         />
         <Image
           style={{width: 50, height: 50}}
-          source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+          source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}}
         />
         <Image
           style={{width: 66, height: 58}}
@@ -38,7 +38,7 @@ export default class DisplayAnImage extends Component {
 
 ```ReactNativeWebPlayer
 import React, { Component } from 'react';
-import { AppRegistry, View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   stretch: {
@@ -68,49 +68,19 @@ export default class DisplayAnImageWithStyle extends Component {
 ```
 dependencies {
   // 如果你需要支持Android4.0(API level 14)之前的版本
-  compile 'com.facebook.fresco:animated-base-support:1.10.0'
+  implementation 'com.facebook.fresco:animated-base-support:1.3.0'
 
   // 如果你需要支持GIF动图
-  compile 'com.facebook.fresco:animated-gif:1.10.0'
+  implementation 'com.facebook.fresco:animated-gif:2.0.0'
 
   // 如果你需要支持WebP格式，包括WebP动图
-  compile 'com.facebook.fresco:animated-webp:1.10.0'
-  compile 'com.facebook.fresco:webpsupport:1.10.0'
+  implementation 'com.facebook.fresco:animated-webp:2.1.0'
+  implementation 'com.facebook.fresco:webpsupport:2.0.0'
 
   // 如果只需要支持WebP格式而不需要动图
-  compile 'com.facebook.fresco:webpsupport:1.10.0'
+  implementation 'com.facebook.fresco:webpsupport:2.0.0'
 }
 ```
-
-### 查看 Props
-
-* [`style`](image.md#style)
-* [`blurRadius`](image.md#blurradius)
-* [`onLayout`](image.md#onlayout)
-* [`onLoad`](image.md#onload)
-* [`onLoadEnd`](image.md#onloadend)
-* [`onLoadStart`](image.md#onloadstart)
-* [`resizeMode`](image.md#resizemode)
-* [`source`](image.md#source)
-* [`loadingIndicatorSource`](image.md#loadingindicatorsource)
-* [`onError`](image.md#onerror)
-* [`testID`](image.md#testid)
-* [`resizeMethod`](image.md#resizemethod)
-* [`accessibilityLabel`](image.md#accessibilitylabel)
-* [`accessible`](image.md#accessible)
-* [`capInsets`](image.md#capinsets)
-* [`defaultSource`](image.md#defaultsource)
-* [`onPartialLoad`](image.md#onpartialload)
-* [`onProgress`](image.md#onprogress)
-* [`fadeDuration`](image.md#fadeduration)
-
-### 查看方法
-
-* [`getSize`](image.md#getsize)
-* [`prefetch`](image.md#prefetch)
-* [`abortPrefetch`](image.md#abortprefetch)
-* [`queryCache`](image.md#querycache)
-* [`resolveAssetSource`](image.md#resolveassetsource)
 
 ---
 
@@ -227,7 +197,7 @@ blurRadius(模糊半径)：为图片添加一个指定半径的模糊滤镜。
 
 ### `resizeMode`
 
-决定当组件尺寸和图片尺寸不成比例的时候如何调整图片的大小。
+决定当组件尺寸和图片尺寸不成比例的时候如何调整图片的大小。默认值为`cover`。
 
 * `cover`: 在保持图片宽高比的前提下缩放图片，直到宽度和高度都大于等于容器视图的尺寸（如果容器有 padding 内衬的话，则相应减去）。**译注**：这样图片完全覆盖甚至超出容器，容器中不留任何空白。
 
@@ -249,9 +219,9 @@ blurRadius(模糊半径)：为图片添加一个指定半径的模糊滤镜。
 
 图片源数据（远程 URL 地址或本地数据）。
 
-This prop can also contain several remote URLs, specified together with their width and height and potentially with scale/other URI arguments. The native side will then choose the best `uri` to display based on the measured size of the image container. A `cache` property can be added to control how networked request interacts with the local cache.
+This prop can also contain several remote URLs, specified together with their width and height and potentially with scale/other URI arguments. The native side will then choose the best `uri` to display based on the measured size of the image container. A `cache` property can be added to control how networked request interacts with the local cache. (For more information see [Cache Control for Images](images#cache-control-ios-only)).
 
-目前原生支持的图片格式有`png`、`jpg`、`jpeg`、`bmp`、`gif`、`webp` (仅 Android)、`psd` (仅 iOS)。
+目前原生支持的图片格式有`png`、`jpg`、`jpeg`、`bmp`、`gif`、`webp` (仅 Android)、`psd` (仅 iOS)。In addition, iOS supports several RAW image formats. Refer to Apple's documentation for the current list of supported camera models (for iOS 12, see https://support.apple.com/en-ca/HT208967).
 
 | 类型                | 必填 |
 | ------------------- | ---- |
@@ -315,7 +285,7 @@ Similarly to `source`, this property represents the resource used to render the 
 
 | 类型 | 必填 | 平台 |
 | ---- | ---- | ---- |
-| node | 否   | iOS  |
+| string | 否   | iOS  |
 
 ---
 
@@ -341,7 +311,7 @@ Similarly to `source`, this property represents the resource used to render the 
 
 ### `defaultSource`
 
-在读取图片时默认显示的图片。仅限 iOS 使用。
+在读取图片时默认显示的图片。
 
 | 类型           | 必填 | 平台    |
 | -------------- | ---- | ------- |
@@ -378,19 +348,32 @@ If passing an object, the general shape is `{uri: string, width: number, height:
 | -------- | ---- | ---- |
 | function | 否   | iOS  |
 
+---
+
 ### `fadeDuration`
 
 Android only. By default, it is 300ms.
 
-| Type   | Required | Platform |
-| ------ | -------- | -------- |
-| number | No       | Android  |
+| 类型   | 必填 | 平台    |
+| ------ | ---- | ------- |
+| number | 否   | Android |
+
+---
+
+### `progressiveRenderingEnabled`
+
+Android only. When true, enables progressive jpeg streaming. https://frescolib.org/docs/progressive-jpegs.html
+
+| 类型 | 必填 | 平台    |
+| ---- | ---- | ------- |
+| bool | 否   | Android |
+
 
 ## 方法
 
 ### `getSize()`
 
-```javascript
+```jsx
 Image.getSize(uri, success, [failure]);
 ```
 
@@ -410,9 +393,30 @@ Image.getSize(uri, success, [failure]);
 
 ---
 
+### `getSizeWithHeaders()`
+
+```jsx
+Image.getSizeWithHeaders(uri, headers, success, [failure]);
+```
+
+Retrieve the width and height (in pixels) of an image prior to displaying it with the ability to provide the headers for the request. This method can fail if the image cannot be found, or fails to download.
+
+In order to retrieve the image dimensions, the image may first need to be loaded or downloaded, after which it will be cached. This means that in principle you could use this method to preload images, however it is not optimized for that purpose, and may in future be implemented in a way that does not fully load/download the image data. A proper, supported way to preload images will be provided as a separate API.
+
+**Parameters:**
+
+| Name    | Type     | Required | Description                                                                                          |
+| ------- | -------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| uri     | string   | Yes      | The location of the image.                                                                           |
+| headers | object   | Yes      | The headers for the request.                                                                         |
+| success | function | Yes      | The function that will be called if the image was successfully found and width and height retrieved. |
+| failure | function | No       | The function that will be called if there was an error, such as failing toto retrieve the image.     |
+
+---
+
 ### `prefetch()`
 
-```javascript
+```jsx
 Image.prefetch(url);
 ```
 
@@ -428,7 +432,7 @@ Image.prefetch(url);
 
 ### `abortPrefetch()`
 
-```javascript
+```jsx
 Image.abortPrefetch(requestId);
 ```
 
@@ -444,7 +448,7 @@ Image.abortPrefetch(requestId);
 
 ### `queryCache()`
 
-```javascript
+```jsx
 Image.queryCache(urls);
 ```
 
@@ -460,7 +464,7 @@ Image.queryCache(urls);
 
 ### `resolveAssetSource()`
 
-```javascript
+```jsx
 Image.resolveAssetSource(source);
 ```
 

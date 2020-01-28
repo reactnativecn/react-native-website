@@ -56,18 +56,12 @@ Alert.alert(
 )
 ```
 
-### 查看方法
-
-* [`alert`](alert.md#alert)
-
----
-
 # 文档
 
 ## 方法
 
 ### `alert()`
 
-```javascript
-static alert(title, message?, buttons?, options?, type?)
+```jsx
+static alert(title, message?, buttons?, options?)
 ```

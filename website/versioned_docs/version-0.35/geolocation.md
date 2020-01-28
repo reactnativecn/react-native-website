@@ -22,10 +22,10 @@ Android API >= 18 Positions will also contain a `mocked` boolean to indicate if 
 
 ### Methods
 
-* [`getCurrentPosition`](geolocation.md#getcurrentposition)
-* [`watchPosition`](geolocation.md#watchposition)
-* [`clearWatch`](geolocation.md#clearwatch)
-* [`stopObserving`](geolocation.md#stopobserving)
+- [`getCurrentPosition`](geolocation.md#getcurrentposition)
+- [`watchPosition`](geolocation.md#watchposition)
+- [`clearWatch`](geolocation.md#clearwatch)
+- [`stopObserving`](geolocation.md#stopobserving)
 
 ---
 
@@ -35,7 +35,7 @@ Android API >= 18 Positions will also contain a `mocked` boolean to indicate if 
 
 ### `getCurrentPosition()`
 
-```javascript
+```jsx
 static getCurrentPosition(geo_success, geo_error?, geo_options?)
 ```
 
@@ -45,7 +45,7 @@ Invokes the success callback once with the latest location info. Supported optio
 
 ### `watchPosition()`
 
-```javascript
+```jsx
 static watchPosition(success, error?, options?)
 ```
 
@@ -55,7 +55,7 @@ Invokes the success callback whenever the location changes. Supported options: t
 
 ### `clearWatch()`
 
-```javascript
+```jsx
 static clearWatch(watchID)
 ```
 
@@ -63,7 +63,7 @@ static clearWatch(watchID)
 
 ### `stopObserving()`
 
-```javascript
+```jsx
 static stopObserving()
 ```
 

@@ -11,14 +11,22 @@ title: SafeAreaView
 
 只需简单地把你原有的视图用`SafeAreaView`包起来，同时设置一个`flex: 1`的样式。当然可能还需要一些和你的设计相匹配的背景色。
 
-```javascript
-SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+```jsx
+<SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
   <View style={{ flex: 1 }}>
     <Text>Hello World!</Text>
   </View>
 </SafeAreaView>
 ```
 
-### Props
+---
 
-- [View props...](view.md#props)
+# 文档
+
+## Props
+
+### `emulateUnlessSupported`
+
+| Type | Required | Default |
+| ---- | -------- | ------- |
+| bool | No       | true    |

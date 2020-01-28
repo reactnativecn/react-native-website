@@ -3,6 +3,7 @@ id: version-0.57-navigatorios
 title: NavigatorIOS
 original_id: navigatorios
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 `NavigatorIOS` is a wrapper around [`UINavigationController`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UINavigationController_Class/), enabling you to implement a navigation stack. It works exactly the same as it would on a native app using `UINavigationController`, providing the same animations and behavior from UIKit.
@@ -294,7 +295,7 @@ Boolean value that indicates whether the navigation bar is translucent by defaul
 
 ### `push()`
 
-```javascript
+```jsx
 push((route: object));
 ```
 
@@ -310,7 +311,7 @@ Navigate forward to a new route.
 
 ### `popN()`
 
-```javascript
+```jsx
 popN((n: number));
 ```
 
@@ -326,7 +327,7 @@ Go back N scenes at once. When N=1, behavior matches `pop()`.
 
 ### `pop()`
 
-```javascript
+```jsx
 pop();
 ```
 
@@ -336,7 +337,7 @@ Pop back to the previous scene.
 
 ### `replaceAtIndex()`
 
-```javascript
+```jsx
 replaceAtIndex((route: object), (index: number));
 ```
 
@@ -353,7 +354,7 @@ Replace a route in the navigation stack.
 
 ### `replace()`
 
-```javascript
+```jsx
 replace((route: object));
 ```
 
@@ -369,7 +370,7 @@ Replace the route for the current scene and immediately load the view for the ne
 
 ### `replacePrevious()`
 
-```javascript
+```jsx
 replacePrevious((route: object));
 ```
 
@@ -385,7 +386,7 @@ Replace the route/view for the previous scene.
 
 ### `popToTop()`
 
-```javascript
+```jsx
 popToTop();
 ```
 
@@ -395,7 +396,7 @@ Go back to the topmost item in the navigation stack.
 
 ### `popToRoute()`
 
-```javascript
+```jsx
 popToRoute((route: object));
 ```
 
@@ -411,7 +412,7 @@ Go back to the item for a particular route object.
 
 ### `replacePreviousAndPop()`
 
-```javascript
+```jsx
 replacePreviousAndPop((route: object));
 ```
 
@@ -427,7 +428,7 @@ Replaces the previous route/view and transitions back to it.
 
 ### `resetTo()`
 
-```javascript
+```jsx
 resetTo((route: object));
 ```
 

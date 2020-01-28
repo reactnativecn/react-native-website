@@ -70,7 +70,7 @@ export default class BoldAndBeautiful extends Component {
 
 而实际上在框架内部，这会生成一个扁平结构的`NSAttributedString`或是`SpannableString`，包含以下信息：
 
-```javascript
+```jsx
 "I am bold and red"
 0-9: bold
 9-17: bold, red
@@ -103,12 +103,15 @@ export default class BlueIsCool extends Component {
 
 `<Text>`元素在布局上不同于其它组件：在Text内部的元素不再使用flexbox布局，而是采用文本布局。这意味着`<Text>`内部的元素不再是一个个矩形，而可能会在行末进行折叠。
 
-```javascript
+```jsx
 <Text>
   <Text>First part and </Text>
   <Text>second part</Text>
 </Text>
-// Text container: all the text flows as if it was one
+// Text container: the text will be inline if the space allowed it
+// |First part and second part|
+
+// otherwise, the text will flow as if it was one
 // |First part |
 // |and second |
 // |part       |
@@ -118,6 +121,10 @@ export default class BlueIsCool extends Component {
   <Text>second part</Text>
 </View>
 // View container: each text is its own block
+// |First part and|
+// |second part   |
+
+// the text will flow in its own block
 // |First part |
 // |and        |
 // |second part|
@@ -140,7 +147,7 @@ html {
 
 在React Native中，我们把这个问题设计的更加严谨：**你必须把你的文本节点放在`<Text>`组件内**。你不能直接在`<View>`下放置一段文本。
 
-```javascript
+```jsx
 // 错误的做法：会导致一个错误。<View>下不能直接放一段文本。
 <View>
   一些文本
@@ -154,9 +161,9 @@ html {
 </View>
 ```
 
-并且你也不能直接设置一整颗子树的默认样式。使用一个一致的文本和尺寸的推荐方式是创建一个包含相关样式的组件`MyAppText`，然后在你的App中反复使用它。你还可以创建更多特殊的组件譬如`MyAppHeaderText`来表达不同样式的文本。
+并且你也不能直接设置一整颗子树的默认样式。此外，`fontFamily`样式只接受一种字体名称，这一点和CSS也不一样。使用一个一致的文本和尺寸的推荐方式是创建一个包含相关样式的组件`MyAppText`，然后在你的App中反复使用它。你还可以创建更多特殊的组件譬如`MyAppHeaderText`来表达不同样式的文本。
 
-```javascript
+```jsx
 <View>
   <MyAppText>这个组件包含了一个默认的字体样式，用于整个应用的文本</MyAppText>
   <MyAppHeaderText>这个组件包含了用于标题的样式</MyAppHeaderText>
@@ -165,7 +172,7 @@ html {
 
 Assuming that `MyAppText` is a component that simply renders out its children into a `Text` component with styling, then `MyAppHeaderText` can be defined as follows:
 
-```javascript
+```jsx
 class MyAppHeaderText extends Component {
   render() {
     return (
@@ -181,7 +188,7 @@ Composing `MyAppText` in this way ensures that we get the styles from a top-leve
 
 React Native实际上还是有一部分样式继承的实现，不过仅限于文本标签的子树。在下面的代码里，第二部分会在加粗的同时又显示为红色：
 
-```javascript
+```jsx
 <Text style={{ fontWeight: "bold" }}>
   I am bold
   <Text style={{ color: "red" }}>and red</Text>
@@ -193,29 +200,6 @@ React Native实际上还是有一部分样式继承的实现，不过仅限于�
 - (对开发者来说) React组件在概念上被设计为强隔离性的：你应当可以在应用的任何位置放置一个组件，而且只要属性相同，其外观和表现都将完全相同。文本如果能够继承外面的样式属性，将会打破这种隔离性。
 
 - (对实现者来说) React Native的实现也被简化了。我们不需要在每个元素上都添加一个`fontFamily`字段，并且我们也不需要隐含地在显示文本的时候向上遍历树。唯一的样式继承在原生Text组件中编码，也不会影响到其它组件或者系统本身。
-
-### 查看Props
-
-* [`selectable`](text.md#selectable)
-* [`accessibilityHint`](text.md#accessibilityhint)
-* [`accessibilityLabel`](text.md#accessibilitylabel)
-* [`accessible`](text.md#accessible)
-* [`ellipsizeMode`](text.md#ellipsizemode)
-* [`nativeID`](text.md#nativeid)
-* [`numberOfLines`](text.md#numberoflines)
-* [`onLayout`](text.md#onlayout)
-* [`onLongPress`](text.md#onlongpress)
-* [`onPress`](text.md#onpress)
-* [`pressRetentionOffset`](text.md#pressretentionoffset)
-* [`allowFontScaling`](text.md#allowfontscaling)
-* [`style`](text.md#style)
-* [`testID`](text.md#testid)
-* [`disabled`](text.md#disabled)
-* [`selectionColor`](text.md#selectioncolor)
-* [`textBreakStrategy`](text.md#textbreakstrategy)
-* [`adjustsFontSizeToFit`](text.md#adjustsfontsizetofit)
-* [`minimumFontScale`](text.md#minimumfontscale)
-* [`suppressHighlighting`](text.md#suppresshighlighting)
 
 ---
 
@@ -249,7 +233,7 @@ Overrides the text that's read by the screen reader when the user interacts with
 
 | 类型 | 必填 |
 | ---- | ---- |
-| node | 否   |
+| string | 否   |
 
 ---
 
@@ -387,7 +371,7 @@ When the scroll view is disabled, this defines how far your touch may move off o
 
 * **`textAlign`**: enum('auto', 'left', 'right', 'center', 'justify')
 
-  指定文本的对齐方式。其中'justify'值仅iOS支持，在Android上会变为`left`。
+  指定文本的对齐方式。其中'justify'值仅iOS和Android>=8.0支持，在Android8.0以下会变为`left`。
 
 * **`textDecorationLine`**: enum('none', 'underline', 'line-through', 'underline line-through')
 
@@ -490,3 +474,29 @@ Set text break strategy on Android API Level 23+, possible values are `simple`, 
 | 类型 | 必填 | 平台 |
 | ---- | ---- | ---- |
 | bool | 否   | iOS  |
+
+---
+
+### `dataDetectorType`
+
+Determines the types of data converted to clickable URLs in the text element. By default no data types are detected.
+
+You can provide only one type.
+
+Possible values for `dataDetectorType` are:
+
+- `'phoneNumber'`
+- `'link'`
+- `'email'`
+- `'none'`
+- `'all'`
+
+| Type                                                | Required | Platform |
+| --------------------------------------------------- | -------- | -------- |
+| enum('phoneNumber', 'link', 'email', 'none', 'all') | No       | Android  |
+
+---
+
+# Known issues
+
+- [react-native#22811](https://github.com/facebook/react-native/issues/22811): Nested Text elements do not support `numberOfLines` attribute

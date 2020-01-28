@@ -3,6 +3,7 @@ id: version-0.57-touchableopacity
 title: TouchableOpacity
 original_id: touchableopacity
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 本组件用于封装视图，使其可以正确响应触摸操作。当按下的时候，封装的视图的不透明度会降低。
@@ -93,7 +94,7 @@ AppRegistry.registerComponent('App', () => App)
 ### 查看Props
 
 * [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
-
+- [`style`](touchableopacity.md#style)
 - [`activeOpacity`](touchableopacity.md#activeopacity)
 - [`tvParallaxProperties`](touchableopacity.md#tvparallaxproperties)
 - [`hasTVPreferredFocus`](touchableopacity.md#hastvpreferredfocus)
@@ -107,6 +108,14 @@ AppRegistry.registerComponent('App', () => App)
 # 文档
 
 ## Props
+
+### `style`
+
+| 类型       | 必填 |
+| ---------- | ---- |
+| View.style | 否   |
+
+---
 
 ### `activeOpacity`
 
@@ -142,7 +151,7 @@ _(Apple TV only)_ TV preferred focus (see documentation for the View component).
 
 ### `setOpacityTo()`
 
-```javascript
+```jsx
 setOpacityTo((value: number), (duration: number));
 ```
 

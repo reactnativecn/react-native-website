@@ -58,14 +58,16 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
 {
   RCTLogInfo(@"Pretending to create an event %@ at %@", name, location);
 }
+
+@end
 ```
 
 现在从 Javascript 里可以这样调用这个方法：
 
-```javascript
-import { NativeModules } from "react-native";
+```jsx
+import {NativeModules} from 'react-native';
 const CalendarManager = NativeModules.CalendarManager;
-CalendarManager.addEvent("Birthday Party", "4 Privet Drive, Surrey");
+CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
 ```
 
 > **NOTE**: JavaScript method names
@@ -122,21 +124,21 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location date:(
 
 对应 JavaScript 端既可以这样：
 
-```javascript
+```jsx
 CalendarManager.addEvent(
-  "Birthday Party",
-  "4 Privet Drive, Surrey",
-  date.getTime()
+  'Birthday Party',
+  '4 Privet Drive, Surrey',
+  date.getTime(),
 ); // 把日期以unix时间戳形式传递
 ```
 
 也可以这样：
 
-```javascript
+```jsx
 CalendarManager.addEvent(
-  "Birthday Party",
-  "4 Privet Drive, Surrey",
-  date.toISOString()
+  'Birthday Party',
+  '4 Privet Drive, Surrey',
+  date.toISOString(),
 ); // 把日期以ISO-8601的字符串形式传递
 ```
 
@@ -157,11 +159,11 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSDictionary *)details)
 
 然后在 JS 里这样调用：
 
-```javascript
-CalendarManager.addEvent("Birthday Party", {
-  location: "4 Privet Drive, Surrey",
+```jsx
+CalendarManager.addEvent('Birthday Party', {
+  location: '4 Privet Drive, Surrey',
   time: date.getTime(),
-  description: "..."
+  description: '...',
 });
 ```
 
@@ -187,12 +189,12 @@ RCT_EXPORT_METHOD(findEvents:(RCTResponseSenderBlock)callback)
 
 `RCTResponseSenderBlock`只接受一个参数——传递给 JavaScript 回调函数的参数数组。在上面这个例子里我们用 Node.js 的常用习惯：第一个参数是一个错误对象（没有发生错误的时候为 null），而剩下的部分是函数的返回值。
 
-```javascript
+```jsx
 CalendarManager.findEvents((error, events) => {
   if (error) {
     console.error(error);
   } else {
-    this.setState({ events: events });
+    this.setState({events: events});
   }
 });
 ```
@@ -210,7 +212,7 @@ CalendarManager.findEvents((error, events) => {
 我们把上面的代码用 promise 来代替回调进行重构：
 
 ```objectivec
-RCT_REMAP_METHOD(findEvents
+RCT_REMAP_METHOD(findEvents,
                  findEventsWithResolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
@@ -226,12 +228,12 @@ RCT_REMAP_METHOD(findEvents
 
 现在 JavaScript 端的方法会返回一个 Promise。这样你就可以在一个声明了`async`的异步函数内使用`await`关键字来调用，并等待其结果返回。（虽然这样写着看起来像同步操作，但实际仍然是异步的，并不会阻塞执行来等待）。
 
-```javascript
+```jsx
 async function updateEvents() {
   try {
-    var events = await CalendarManager.findEvents();
+    const events = await CalendarManager.findEvents();
 
-    this.setState({ events });
+    this.setState({events});
   } catch (e) {
     console.error(e);
   }
@@ -308,11 +310,24 @@ RCTRootView *rootView = [[RCTRootView alloc]
 
 JavaScript 端可以随时同步地访问这个数据：
 
-```javascript
+```jsx
 console.log(CalendarManager.firstDayOfTheWeek);
 ```
 
 但是注意这个常量仅仅在初始化的时候导出了一次，所以即使你在运行期间改变`constantToExport`返回的值，也不会影响到 JavaScript 环境下所得到的结果。
+
+### Implementing `+ requiresMainQueueSetup`
+
+If you override `- constantsToExport` then you should also implement `+ requiresMainQueueSetup` to let React Native know if your module needs to be initialized on the main thread. Otherwise you will see a warning that in the future your module may be initialized on a background thread unless you explicitly opt out with `+ requiresMainQueueSetup`:
+
+```objectivec
++ (BOOL)requiresMainQueueSetup
+{
+  return YES;  // only do this if your module initialization relies on calling UIKit!
+}
+```
+
+If your module does not require access to UIKit, then you should respond to `+ requiresMainQueueSetup` with `NO`.
 
 ### 枚举常量
 
@@ -393,7 +408,7 @@ RCT_EXPORT_MODULE();
 
 JavaScript 端的代码可以创建一个包含你的模块的`NativeEventEmitter`实例来订阅这些事件。
 
-```javascript
+```jsx
 import { NativeEventEmitter, NativeModules } from 'react-native';
 const { CalendarManager } = NativeModules;
 

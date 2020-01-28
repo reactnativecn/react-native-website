@@ -3,7 +3,8 @@ id: version-0.57-performance
 title: 性能
 original_id: performance
 ---
-##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
+
+##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(99.35%), [280215110](https://github.com/search?q=280215110%40qq.com+in%3Aemail&type=Users)(0.65%)
 
 使用 React Native 替代基于 WebView 的框架来开发 App 的一个强有力的理由，就是为了使 App 可以达到每秒 60 帧（足够流畅），并且能有类似原生 App 的外观和手感。因此我们也尽可能地优化 React Native 去实现这一目标，使开发者能集中精力处理 App 的业务逻辑，而不用费心考虑性能。但是，总还是有一些地方有所欠缺，以及在某些场合 React Native 还不能够替你决定如何进行优化（用原生代码写也无法避免），因此人工的干预依然是必要的。
 
@@ -71,11 +72,11 @@ if (!__DEV__) {
 
 这样在打包发布时，所有的控制台语句就会被自动移除，而在调试时它们仍然会被正常调用。
 
-### `ListView` initial rendering is too slow or scroll performance is bad for large lists
+### `ListView` 首次渲染缓慢或者由于列表很大导致滑动很慢
 
-Use the new [`FlatList`](flatlist.md) or [`SectionList`](sectionlist.md) component instead. Besides simplifying the API, the new list components also have significant performance enhancements, the main one being nearly constant memory usage for any number of rows.
+用新的[`FlatList`](flatlist.md)或者[`SectionList`](sectionlist.md)组件替代。除了简化了API，这些新的列表组件在性能方面都有了极大的提升, 其中最主要的一个是无论列表有多少行，它的内存使用都是常数级的。
 
-If your [`FlatList`](flatlist.md) is rendering slow, be sure that you've implemented [`getItemLayout`](https://facebook.github.io/react-native/flatlist.md#getitemlayout) to optimize rendering speed by skipping measurement of the rendered items.
+如果你的[`FlatList`](flatlist.md)渲染得很慢, 请确保你使用了[`getItemLayout`](flatlist.md#getitemlayout)，它通过跳过对items的处理来优化你的渲染速度。
 
 ### 在重绘一个几乎没有什么变化的页面时，JS 帧率严重降低
 
@@ -94,7 +95,7 @@ If your [`FlatList`](flatlist.md) is rendering slow, be sure that you've impleme
 
 有些时候，如果我们有一项操作与点击事件所带来的透明度改变或者高亮效果发生在同一帧中，那么有可能在`onPress`函数结束之前我们都看不到这些效果。比如在`onPress`执行了一个`setState`的操作，这个操作需要大量计算工作并且导致了掉帧。对此的一个解决方案是将`onPress`处理函数中的操作封装到`requestAnimationFrame`中：
 
-```javascript
+```jsx
 handleOnPress() {
   // 谨记在使用requestAnimationFrame、setTimeout以及setInterval时
   // 要使用TimerMixin（其作用是在组件unmount时，清除所有定时器）
@@ -437,7 +438,7 @@ const resolve = require('path').resolve;
 const fs = require('fs');
 
 // Update the following line if the root folder of your app is somewhere else.
-const ROOT_FOLDER = path.resolve(__dirname, '..');
+const ROOT_FOLDER = resolve(__dirname, '..');
 
 const config = {
   transformer: {
@@ -454,6 +455,7 @@ const config = {
       };
     },
   },
+  projectRoot: ROOT_FOLDER,
 };
 
 module.exports = config;

@@ -9,7 +9,7 @@ Opacity is controlled by wrapping the children in an Animated.View, which is add
 
 Example:
 
-```
+```jsx
 renderButton: function() {
   return (
     <TouchableOpacity onPress={this._onPressButton}>
@@ -24,17 +24,16 @@ renderButton: function() {
 
 ### Example
 
-```ReactNativeWebPlayer
+```SnackPlayer name=TouchableOpacity
 import React, { Component } from 'react'
 import {
-  AppRegistry,
   StyleSheet,
   TouchableOpacity,
   Text,
   View,
 } from 'react-native'
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = { count: 0 }
@@ -84,27 +83,23 @@ const styles = StyleSheet.create({
     color: '#FF00FF'
   }
 })
-
-AppRegistry.registerComponent('App', () => App)
 ```
-
-### Props
-
-* [TouchableWithoutFeedback props...](touchablewithoutfeedback.md#props)
-
-- [`activeOpacity`](touchableopacity.md#activeopacity)
-- [`tvParallaxProperties`](touchableopacity.md#tvparallaxproperties)
-- [`hasTVPreferredFocus`](touchableopacity.md#hastvpreferredfocus)
-
-### Methods
-
-* [`setOpacityTo`](touchableopacity.md#setopacityto)
 
 ---
 
 # Reference
 
 ## Props
+
+Inherits [TouchableWithoutFeedback Props](touchablewithoutfeedback.md#props).
+
+### `style`
+
+| Type       | Required |
+| ---------- | -------- |
+| View.style | No       |
+
+---
 
 ### `activeOpacity`
 
@@ -136,11 +131,61 @@ _(Apple TV only)_ TV preferred focus (see documentation for the View component).
 | ---- | -------- | -------- |
 | bool | No       | iOS      |
 
+---
+
+### `nextFocusDown`
+
+TV next focus down (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `nextFocusForward`
+
+TV next focus forward (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `nextFocusLeft`
+
+TV next focus left (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `nextFocusRight`
+
+TV next focus right (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | Android  |
+
+---
+
+### `nextFocusUp`
+
+TV next focus up (see documentation for the View component).
+
+| Type | Required | Platform |
+| ---- | -------- | -------- |
+| bool | No       | iOS      |
+
 ## Methods
 
 ### `setOpacityTo()`
 
-```javascript
+```jsx
 setOpacityTo((value: number), (duration: number));
 ```
 

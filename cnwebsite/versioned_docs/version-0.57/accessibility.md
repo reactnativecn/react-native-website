@@ -3,7 +3,8 @@ id: version-0.57-accessibility
 title: 无障碍功能
 original_id: accessibility
 ---
-##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(96.43%), [not.committed.yet](https://github.com/search?q=not.committed.yet+in%3Aemail&type=Users)(3.57%)
+
+##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 ## iOS 与 Android 原生 App 的无障碍功能(accessibility)
 
@@ -23,7 +24,7 @@ iOS 和 Android 都提供了便于残障人士无障碍使用 App 的 API。此�
 
 在 Android 上，React Native 视图的`accessible={true}`属性会被转译为原生视图对应的`focusable={true}`属性。
 
-```javascript
+```jsx
 <View accessible={true}>
   <Text>text one</Text>
   <Text>text two</Text>
@@ -38,12 +39,11 @@ iOS 和 Android 都提供了便于残障人士无障碍使用 App 的 API。此�
 
 设定`accessibilityLabel`属性并赋予一个字符串内容即可在 View、Text 或是 Touchable 中启用无障碍标签：
 
-```javascript
+```jsx
 <TouchableOpacity
   accessible={true}
   accessibilityLabel="Tap me!"
-  onPress={this._onPress}
->
+  onPress={this._onPress}>
   <View style={styles.button}>
     <Text style={styles.buttonText}>Press me!</Text>
   </View>
@@ -58,13 +58,12 @@ iOS 和 Android 都提供了便于残障人士无障碍使用 App 的 API。此�
 
 要启用无障碍提示只需在需要设置的元素上设置`accessibilityHint`属性，并赋予用于解释的文本：
 
-```javascript
+```jsx
 <TouchableOpacity
   accessible={true}
   accessibilityLabel="返回"
   accessibilityHint="返回到上一个页面"
-  onPress={this._onPress}
->
+  onPress={this._onPress}>
   <View style={styles.button}>
     <Text style={styles.buttonText}>Back</Text>
   </View>
@@ -77,8 +76,7 @@ iOS 和 Android 都提供了便于残障人士无障碍使用 App 的 API。此�
 
 #### accessibilityIgnoresInvertColors(iOS)
 
-Inverting screen colors is an Accessibility feature that makes the iPhone and iPad easier on the eyes for some people with a sensitivity to brightness, easier to distinguish for some people with color blindness, and easier to make out for some people with low vision.
-However, sometimes you have views such as photos that you don't want to be inverted. In this case, you can set this property to be false so that these specific views won't have their colors inverted.
+Inverting screen colors is an Accessibility feature that makes the iPhone and iPad easier on the eyes for some people with a sensitivity to brightness, easier to distinguish for some people with color blindness, and easier to make out for some people with low vision. However, sometimes you have views such as photos that you don't want to be inverted. In this case, you can set this property to be false so that these specific views won't have their colors inverted.
 
 #### 无障碍角色 accessibilityRole (iOS, Android)
 
@@ -98,7 +96,7 @@ Accessibility Role tells a person using either VoiceOver on iOS or TalkBack on A
 - **header** Used when an element acts as a header for a content section (e.g. the title of a navigation bar).
 - **summary** Used when an element can be used to provide a quick summary of current conditions in the app when the app first launches.
 
-#### 无障碍状态 accessibilityState (iOS, Android)
+#### 无障碍状态 accessibilityStates (iOS, Android)
 
 > **Note:** > `accessibilityRole` and `accessibilityStates` are meant to be a cross-platform solution to replace `accessibilityTraits` and `accessibilityComponentType`, which will soon be deprecated. When possible, use `accessibilityRole` and `accessibilityStates` instead of `accessibilityTraits` and `accessibilityComponentType`.
 
@@ -107,7 +105,7 @@ Accessibility State tells a person using either VoiceOver on iOS or TalkBack on 
 - **selected** Used when the element is in a selected state. For example, a button is selected.
 - **disabled** Used when the element is disabled and cannot be interacted with.
 
-To use, set the `accessibilityState` to an array containing either `selected`, `disabled`, or both.
+To use, set the `accessibilityStates` to an array containing either `selected`, `disabled`, or both.
 
 #### 无障碍元素特性 accessibilityTraits (iOS)
 
@@ -161,7 +159,7 @@ For example, in a window that contains sibling views `A` and `B`, setting `acces
 
 在某些情况下，我们也希望告知用户他选中的组件的类型（比如是个按钮）。如果我们使用的是原生按钮，这一行为会自动进行。但既然我们主要是使用 javascript，则还需要为 Android 的 TalkBack 技术提供更多信息。要实现这一点，就必须为所有 UI 组件指定`accessibilityComponentType`属性。比如可以指定`button`，`radiobutton_checked`以及`radiobutton_unchecked`等值。
 
-```javascript
+```jsx
 <TouchableWithoutFeedback accessibilityComponentType=”button”
   onPress={this._onPress}>
   <View style={styles.button}>
@@ -180,7 +178,7 @@ For example, in a window that contains sibling views `A` and `B`, setting `acces
 - **polite** 辅助服务应该提醒用户当前视图的变化。
 - **assertive** 辅助服务应该立即打断当前的语音会话，提醒用户当前视图的变化。
 
-```javascript
+```jsx
 <TouchableWithoutFeedback onPress={this._addOne}>
   <View style={styles.embedded}>
     <Text>Click me</Text>
@@ -197,7 +195,7 @@ For example, in a window that contains sibling views `A` and `B`, setting `acces
 
 如果有两个 UI 组件同时层叠覆盖在父视图之上，那么默认的无障碍功能的焦点位置就可能难以预料。`importantForAccessibility`属性解决了这一问题，它可以控制某个视图是否触发无障碍功能事件，以及是否将其报告给辅助服务。具体值可以设置为`auto`，`yes`，`no`和`no-hide-descendants`（最后一个值会强制辅助服务忽略当前组件及其所有子组件）。
 
-```javascript
+```jsx
 <View style={styles.container}>
   <View style={{position: 'absolute', left: 10, top: 10, right: 10, height: 100,
     backgroundColor: 'green'}} importantForAccessibility=”yes”>
@@ -220,7 +218,7 @@ For example, in a window that contains sibling views `A` and `B`, setting `acces
 
 有时候需要在 UI 组件上主动触发一个无障碍功能的事件（比如当某个自定义的视图出现在屏幕上或是某个自定义的单选框被选中）。为此 UIManager 模块提供了一个`sendAccessibilityEvent`方法。它接受两个参数：view 标签和事件类型。
 
-```javascript
+```jsx
 import { UIManager, findNodeHandle } from 'react-native';
 
 _onPress: function() {

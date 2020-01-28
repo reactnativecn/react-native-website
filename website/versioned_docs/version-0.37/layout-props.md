@@ -6,47 +6,47 @@ original_id: layout-props
 
 ### Props
 
-* [`marginLeft`](layout-props.md#marginleft)
-* [`alignItems`](layout-props.md#alignitems)
-* [`borderBottomWidth`](layout-props.md#borderbottomwidth)
-* [`borderLeftWidth`](layout-props.md#borderleftwidth)
-* [`borderRightWidth`](layout-props.md#borderrightwidth)
-* [`borderTopWidth`](layout-props.md#bordertopwidth)
-* [`borderWidth`](layout-props.md#borderwidth)
-* [`bottom`](layout-props.md#bottom)
-* [`flex`](layout-props.md#flex)
-* [`flexBasis`](layout-props.md#flexbasis)
-* [`flexDirection`](layout-props.md#flexdirection)
-* [`flexGrow`](layout-props.md#flexgrow)
-* [`flexShrink`](layout-props.md#flexshrink)
-* [`flexWrap`](layout-props.md#flexwrap)
-* [`height`](layout-props.md#height)
-* [`justifyContent`](layout-props.md#justifycontent)
-* [`left`](layout-props.md#left)
-* [`margin`](layout-props.md#margin)
-* [`marginBottom`](layout-props.md#marginbottom)
-* [`marginHorizontal`](layout-props.md#marginhorizontal)
-* [`alignSelf`](layout-props.md#alignself)
-* [`marginRight`](layout-props.md#marginright)
-* [`marginTop`](layout-props.md#margintop)
-* [`marginVertical`](layout-props.md#marginvertical)
-* [`maxHeight`](layout-props.md#maxheight)
-* [`maxWidth`](layout-props.md#maxwidth)
-* [`minHeight`](layout-props.md#minheight)
-* [`minWidth`](layout-props.md#minwidth)
-* [`overflow`](layout-props.md#overflow)
-* [`padding`](layout-props.md#padding)
-* [`paddingBottom`](layout-props.md#paddingbottom)
-* [`paddingHorizontal`](layout-props.md#paddinghorizontal)
-* [`paddingLeft`](layout-props.md#paddingleft)
-* [`paddingRight`](layout-props.md#paddingright)
-* [`paddingTop`](layout-props.md#paddingtop)
-* [`paddingVertical`](layout-props.md#paddingvertical)
-* [`position`](layout-props.md#position)
-* [`right`](layout-props.md#right)
-* [`top`](layout-props.md#top)
-* [`width`](layout-props.md#width)
-* [`zIndex`](layout-props.md#zindex)
+- [`marginLeft`](layout-props.md#marginleft)
+- [`alignItems`](layout-props.md#alignitems)
+- [`borderBottomWidth`](layout-props.md#borderbottomwidth)
+- [`borderLeftWidth`](layout-props.md#borderleftwidth)
+- [`borderRightWidth`](layout-props.md#borderrightwidth)
+- [`borderTopWidth`](layout-props.md#bordertopwidth)
+- [`borderWidth`](layout-props.md#borderwidth)
+- [`bottom`](layout-props.md#bottom)
+- [`flex`](layout-props.md#flex)
+- [`flexBasis`](layout-props.md#flexbasis)
+- [`flexDirection`](layout-props.md#flexdirection)
+- [`flexGrow`](layout-props.md#flexgrow)
+- [`flexShrink`](layout-props.md#flexshrink)
+- [`flexWrap`](layout-props.md#flexwrap)
+- [`height`](layout-props.md#height)
+- [`justifyContent`](layout-props.md#justifycontent)
+- [`left`](layout-props.md#left)
+- [`margin`](layout-props.md#margin)
+- [`marginBottom`](layout-props.md#marginbottom)
+- [`marginHorizontal`](layout-props.md#marginhorizontal)
+- [`alignSelf`](layout-props.md#alignself)
+- [`marginRight`](layout-props.md#marginright)
+- [`marginTop`](layout-props.md#margintop)
+- [`marginVertical`](layout-props.md#marginvertical)
+- [`maxHeight`](layout-props.md#maxheight)
+- [`maxWidth`](layout-props.md#maxwidth)
+- [`minHeight`](layout-props.md#minheight)
+- [`minWidth`](layout-props.md#minwidth)
+- [`overflow`](layout-props.md#overflow)
+- [`padding`](layout-props.md#padding)
+- [`paddingBottom`](layout-props.md#paddingbottom)
+- [`paddingHorizontal`](layout-props.md#paddinghorizontal)
+- [`paddingLeft`](layout-props.md#paddingleft)
+- [`paddingRight`](layout-props.md#paddingright)
+- [`paddingTop`](layout-props.md#paddingtop)
+- [`paddingVertical`](layout-props.md#paddingvertical)
+- [`position`](layout-props.md#position)
+- [`right`](layout-props.md#right)
+- [`top`](layout-props.md#top)
+- [`width`](layout-props.md#width)
+- [`zIndex`](layout-props.md#zindex)
 
 ---
 
@@ -444,11 +444,11 @@ Setting `paddingVertical` is like setting both of `paddingTop` and `paddingBotto
 
 ### `position`
 
-`position` in React Native is similar to regular CSS, but everything is set to `relative` by default, so `absolute` positioning is always just relative to the parent.
+`position` in React Native is similar to regular CSS, but everything is set to `relative` by default, so `absolute` positioning is always relative to the parent.
 
 If you want to position a child using specific numbers of logical pixels relative to its parent, set the child to have `absolute` position.
 
-If you want to position a child relative to something that is not its parent, just don't use styles for that. Use the component tree.
+If you want to position a child relative to something that is not its parent, don't use styles for that. Use the component tree.
 
 See https://github.com/facebook/css-layout for more details on how `position` differs between React Native and CSS.
 

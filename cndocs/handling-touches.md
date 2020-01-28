@@ -3,13 +3,14 @@ id: handling-touches
 title: 处理触摸事件
 ---
 
-移动应用上的用户交互基本靠“摸”。当然，“摸”也是有各种姿势的：在一个按钮上点击，在一个列表上滑动，或是在一个地图上缩放。React Native 提供了可以处理常见触摸手势（例如点击或滑动）的组件， 以及可用于识别更复杂的手势的完整的[手势响应系统](gesturerespondersystem.md)。
+移动应用上的用户交互基本靠“摸”。当然，“摸”也是有各种姿势的：在一个按钮上点击，在一个列表上滑动，或是在一个地图上缩放。React Native 提供了可以处理常见触摸手势（例如点击或滑动）的组件， 以及可用于识别更复杂的手势的完整的[手势响应系统](gesture-responder-system.md)。
+
 
 ## 显示一个简单的按钮
 
 [Button](button.md)是一个简单的跨平台的按钮组件。下面是一个最简示例：
 
-```javascript
+```jsx
 <Button
   onPress={() => {
     Alert.alert("你点击了按钮！");
@@ -26,7 +27,7 @@ title: 处理触摸事件
 
 ```SnackPlayer name=Button%20Basics
 import React, { Component } from 'react';
-import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
+import { Alert, Button, StyleSheet, View } from 'react-native';
 
 export default class ButtonBasics extends Component {
   _onPressButton() {
@@ -80,8 +81,6 @@ const styles = StyleSheet.create({
   }
 })
 
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);
 ```
 
 ## Touchable 系列组件
@@ -104,7 +103,7 @@ AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);
 
 ```SnackPlayer platform=android&name=Touchables
 import React, { Component } from 'react';
-import { Alert, AppRegistry, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
+import { Alert, Platform, StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback, View } from 'react-native';
 
 export default class Touchables extends Component {
   _onPressButton() {
@@ -165,6 +164,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2196F3'
   },
   buttonText: {
+    textAlign: 'center',
     padding: 20,
     color: 'white'
   }

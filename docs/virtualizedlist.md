@@ -3,61 +3,16 @@ id: virtualizedlist
 title: VirtualizedList
 ---
 
-Base implementation for the more convenient [`<FlatList>`](flatlist.md) and [`<SectionList>`](sectionlist.md) components, which are also better documented. In general, this should only really be used if you need more flexibility than `FlatList` provides, e.g. for use with immutable data instead of plain arrays.
+Base implementation for the more convenient [`<FlatList>`](flatlist.md) and [`<SectionList>`](sectionlist.md) components, which are also better documented. In general, this should only really be used if you need more flexibility than [`FlatList`](flatlist.md) provides, e.g. for use with immutable data instead of plain arrays.
 
 Virtualization massively improves memory consumption and performance of large lists by maintaining a finite render window of active items and replacing all items outside of the render window with appropriately sized blank space. The window adapts to scrolling behavior, and items are rendered incrementally with low-pri (after any running interactions) if they are far from the visible area, or with hi-pri otherwise to minimize the potential of seeing blank space.
 
 Some caveats:
 
-* Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
-* This is a `PureComponent` which means that it will not re-render if `props` remain shallow- equal. Make sure that everything your `renderItem` function depends on is passed as a prop (e.g. `extraData`) that is not `===` after updates, otherwise your UI may not update on changes. This includes the `data` prop and parent component state.
-* In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
-* By default, the list looks for a `key` prop on each item and uses that for the React key. Alternatively, you can provide a custom `keyExtractor` prop.
-
-### Props
-
-* [`ScrollView` props...](scrollview.md#props)
-* [`renderItem`](virtualizedlist.md#renderitem)
-* [`data`](virtualizedlist.md#data)
-* [`getItem`](virtualizedlist.md#getitem)
-* [`getItemCount`](virtualizedlist.md#getitemcount)
-* [`debug`](virtualizedlist.md#debug)
-* [`extraData`](virtualizedlist.md#extradata)
-* [`getItemLayout`](virtualizedlist.md#getitemlayout)
-* [`initialScrollIndex`](virtualizedlist.md#initialscrollindex)
-* [`inverted`](virtualizedlist.md#inverted)
-* [`CellRendererComponent`](virtualizedlist.md#cellrenderercomponent)
-* [`ListEmptyComponent`](virtualizedlist.md#listemptycomponent)
-* [`ListFooterComponent`](virtualizedlist.md#listfootercomponent)
-* [`ListHeaderComponent`](virtualizedlist.md#listheadercomponent)
-* [`onEndReached`](virtualizedlist.md#onendreached)
-* [`onLayout`](virtualizedlist.md#onlayout)
-* [`onRefresh`](virtualizedlist.md#onrefresh)
-* [`onScrollToIndexFailed`](virtualizedlist.md#onscrolltoindexfailed)
-* [`onViewableItemsChanged`](virtualizedlist.md#onviewableitemschanged)
-* [`refreshing`](virtualizedlist.md#refreshing)
-* [`removeClippedSubviews`](virtualizedlist.md#removeclippedsubviews)
-* [`renderScrollComponent`](virtualizedlist.md#renderscrollcomponent)
-* [`viewabilityConfig`](virtualizedlist.md#viewabilityconfig)
-* [`viewabilityConfigCallbackPairs`](virtualizedlist.md#viewabilityconfigcallbackpairs)
-* [`horizontal`](virtualizedlist.md#horizontal)
-* [`initialNumToRender`](virtualizedlist.md#initialnumtorender)
-* [`keyExtractor`](virtualizedlist.md#keyextractor)
-* [`maxToRenderPerBatch`](virtualizedlist.md#maxtorenderperbatch)
-* [`onEndReachedThreshold`](virtualizedlist.md#onendreachedthreshold)
-* [`updateCellsBatchingPeriod`](virtualizedlist.md#updatecellsbatchingperiod)
-* [`windowSize`](virtualizedlist.md#windowsize)
-* [`disableVirtualization`](virtualizedlist.md#disablevirtualization)
-* [`progressViewOffset`](virtualizedlist.md#progressviewoffset)
-
-### Methods
-
-* [`scrollToEnd`](virtualizedlist.md#scrolltoend)
-* [`scrollToIndex`](virtualizedlist.md#scrolltoindex)
-* [`scrollToItem`](virtualizedlist.md#scrolltoitem)
-* [`scrollToOffset`](virtualizedlist.md#scrolltooffset)
-* [`recordInteraction`](virtualizedlist.md#recordinteraction)
-* [`flashScrollIndicators`](virtualizedlist.md#flashscrollindicators)
+- Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
+- This is a `PureComponent` which means that it will not re-render if `props` are shallow-equal. Make sure that everything your `renderItem` function depends on is passed as a prop (e.g. `extraData`) that is not `===` after updates, otherwise your UI may not update on changes. This includes the `data` prop and parent component state.
+- In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
+- By default, the list looks for a `key` prop on each item and uses that for the React key. Alternatively, you can provide a custom `keyExtractor` prop.
 
 ---
 
@@ -65,9 +20,11 @@ Some caveats:
 
 ## Props
 
+Inherits [ScrollView Props](scrollview.md#props).
+
 ### `renderItem`
 
-```javascript
+```jsx
 (info: any) => ?React.Element<any>
 ```
 
@@ -91,7 +48,7 @@ The default accessor functions assume this is an array of objects with shape `{k
 
 ### `getItem`
 
-```javascript
+```jsx
 (data: any, index: number) => object;
 ```
 
@@ -105,7 +62,7 @@ A generic accessor for extracting an item from any sort of data blob.
 
 ### `getItemCount`
 
-```javascript
+```jsx
 (data: any) => number;
 ```
 
@@ -139,7 +96,7 @@ A marker property for telling the list to re-render (since it implements `PureCo
 
 ### `getItemLayout`
 
-```javascript
+```jsx
 (
     data: any,
     index: number,
@@ -182,6 +139,16 @@ Each cell is rendered using this element. Can be a React Component Class,or a re
 
 ---
 
+### `listKey`
+
+A unique identifier for this list. If there are multiple VirtualizedLists at the same level of nesting within another VirtualizedList, this key is necessary for virtualization to work properly.
+
+| Type   | Required |
+| ------ | -------- |
+| string | True     |
+
+---
+
 ### `ListEmptyComponent`
 
 Rendered when the list is empty. Can be a React Component Class, a render function, or a rendered element.
@@ -189,6 +156,16 @@ Rendered when the list is empty. Can be a React Component Class, a render functi
 | Type                         | Required |
 | ---------------------------- | -------- |
 | component, function, element | No       |
+
+---
+
+### `ListItemComponent`
+
+Each data item is rendered using this element. Can be a React Component Class, or a render function
+
+| Type                | Required |
+| ------------------- | -------- |
+| component, function | No       |
 
 ---
 
@@ -202,6 +179,16 @@ Rendered at the bottom of all the items. Can be a React Component Class, a rende
 
 ---
 
+### `ListFooterComponentStyle`
+
+Styling for internal View for ListFooterComponent
+
+| Type          | Required |
+| ------------- | -------- |
+| ViewStyleProp | No       |
+
+---
+
 ### `ListHeaderComponent`
 
 Rendered at the top of all the items. Can be a React Component Class, a render function, or a rendered element.
@@ -209,6 +196,16 @@ Rendered at the top of all the items. Can be a React Component Class, a render f
 | Type                         | Required |
 | ---------------------------- | -------- |
 | component, function, element | No       |
+
+---
+
+### `ListHeaderComponentStyle`
+
+Styling for internal View for ListHeaderComponent
+
+| Type          | Required |
+| ------------- | -------- |
+| ViewStyleProp | No       |
 
 ---
 
@@ -222,7 +219,7 @@ Rendered at the top of all the items. Can be a React Component Class, a render f
 
 ### `onRefresh`
 
-```javascript
+```jsx
 () => void
 ```
 
@@ -236,7 +233,7 @@ If provided, a standard `RefreshControl` will be added for "Pull to Refresh" fun
 
 ### `onScrollToIndexFailed`
 
-```javascript
+```jsx
 (info: {
     index: number,
     highestMeasuredFrameIndex: number,
@@ -254,7 +251,7 @@ Used to handle failures when scrolling to an index that has not been measured ye
 
 ### `onViewableItemsChanged`
 
-```javascript
+```jsx
 (info: {
     viewableItems: array,
     changed: array,
@@ -279,6 +276,16 @@ Set this true while waiting for new data from a refresh.
 
 ---
 
+### `refreshControl`
+
+A custom refresh control element. When set, it overrides the default <RefreshControl> component built internally. The onRefresh and refreshing props are also ignored. Only works for vertical VirtualizedList.
+
+| Type    | Required |
+| ------- | -------- |
+| element | No       |
+
+---
+
 ### `removeClippedSubviews`
 
 This may improve scroll performance for large lists.
@@ -293,7 +300,7 @@ This may improve scroll performance for large lists.
 
 ### `renderScrollComponent`
 
-```javascript
+```jsx
 (props: object) => element;
 ```
 
@@ -345,7 +352,7 @@ How many items to render in the initial batch. This should be enough to fill the
 
 ### `keyExtractor`
 
-```javascript
+```jsx
 (item: object, index: number) => string;
 ```
 
@@ -369,7 +376,7 @@ The maximum number of items to render in each incremental render batch. The more
 
 ### `onEndReached`
 
-```javascript
+```jsx
 (info: {distanceFromEnd: number}) => void
 ```
 
@@ -413,11 +420,19 @@ Determines the maximum number of items rendered outside of the visible area, in 
 
 ### `disableVirtualization`
 
-**DEPRECATED.** Virtualization provides significant performance and memory optimizations, but fully unmounts react instances that are outside of the render window. You should only need to disable this for debugging purposes.
+> **Deprecated.** Virtualization provides significant performance and memory optimizations, but fully unmounts react instances that are outside of the render window. You should only need to disable this for debugging purposes.
 
 | Type | Required |
 | ---- | -------- |
 |      | No       |
+
+---
+
+### `persistentScrollbar`
+
+| Type | Required |
+| ---- | -------- |
+| bool | No       |
 
 ---
 
@@ -433,7 +448,7 @@ Set this when offset is needed for the loading indicator to show correctly.
 
 ### `scrollToEnd()`
 
-```javascript
+```jsx
 scrollToEnd(([params]: object));
 ```
 
@@ -441,7 +456,7 @@ scrollToEnd(([params]: object));
 
 ### `scrollToIndex()`
 
-```javascript
+```jsx
 scrollToIndex((params: object));
 ```
 
@@ -449,7 +464,7 @@ scrollToIndex((params: object));
 
 ### `scrollToItem()`
 
-```javascript
+```jsx
 scrollToItem((params: object));
 ```
 
@@ -457,7 +472,7 @@ scrollToItem((params: object));
 
 ### `scrollToOffset()`
 
-```javascript
+```jsx
 scrollToOffset((params: object));
 ```
 
@@ -471,7 +486,7 @@ Param `animated` (`true` by default) defines whether the list should do an anima
 
 ### `recordInteraction()`
 
-```javascript
+```jsx
 recordInteraction();
 ```
 
@@ -479,6 +494,6 @@ recordInteraction();
 
 ### `flashScrollIndicators()`
 
-```javascript
+```jsx
 flashScrollIndicators();
 ```

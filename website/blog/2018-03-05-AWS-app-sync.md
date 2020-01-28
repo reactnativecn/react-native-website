@@ -12,8 +12,8 @@ AWS is well known in the technology industry as a provider of cloud services. Th
 
 This blog post talks about some interesting things for React and React Native developers:
 
-* [**AWS Amplify**](https://github.com/aws/aws-amplify), a declarative library for JavaScript applications using cloud services
-* [**AWS AppSync**](https://aws.amazon.com/appsync/), a fully managed GraphQL service with offline and real-time features
+- [**AWS Amplify**](https://github.com/aws/aws-amplify), a declarative library for JavaScript applications using cloud services
+- [**AWS AppSync**](https://aws.amazon.com/appsync/), a fully managed GraphQL service with offline and real-time features
 
 ## AWS Amplify
 
@@ -35,12 +35,12 @@ Auth.confirmSignIn(user, code)
 
 In the code above, you can see an example of some of the common tasks that Amplify helps you with, such as using multi-factor authentication (MFA) codes with either email or SMS. The supported categories today are:
 
-* **Auth**: Provides credential automation. Out-of-the-box implementation uses AWS credentials for signing, and OIDC JWT tokens from [Amazon Cognito](https://aws.amazon.com/cognito/). Common functionality, such as MFA features, is supported.
-* **Analytics**: With a single line of code, get tracking for authenticated or unauthenticated users in [Amazon Pinpoint](https://aws.amazon.com/pinpoint/). Extend this for custom metrics or attributes, as you prefer.
-* **API**: Provides interaction with RESTful APIs in a secure manner, leveraging [AWS Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html). The API module is great on serverless infrastructures with [Amazon API Gateway](https://aws.amazon.com/api-gateway/).
-* **Storage**: Simplified commands to upload, download, and list content in [Amazon S3](https://aws.amazon.com/s3/). You can also easily group data into public or private content on a per-user basis.
-* **Caching**: An LRU cache interface across web apps and React Native that uses implementation-specific persistence.
-* **i18n and Logging**: Provides internationalization and localization capabilities, as well as debugging and logging capabilities.
+- **Auth**: Provides credential automation. Out-of-the-box implementation uses AWS credentials for signing, and OIDC JWT tokens from [Amazon Cognito](https://aws.amazon.com/cognito/). Common functionality, such as MFA features, is supported.
+- **Analytics**: With a single line of code, get tracking for authenticated or unauthenticated users in [Amazon Pinpoint](https://aws.amazon.com/pinpoint/). Extend this for custom metrics or attributes, as you prefer.
+- **API**: Provides interaction with RESTful APIs in a secure manner, leveraging [AWS Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html). The API module is great on serverless infrastructures with [Amazon API Gateway](https://aws.amazon.com/api-gateway/).
+- **Storage**: Simplified commands to upload, download, and list content in [Amazon S3](https://aws.amazon.com/s3/). You can also easily group data into public or private content on a per-user basis.
+- **Caching**: An LRU cache interface across web apps and React Native that uses implementation-specific persistence.
+- **i18n and Logging**: Provides internationalization and localization capabilities, as well as debugging and logging capabilities.
 
 One of the nice things about Amplify is that it encodes "best practices" in the design for your specific programming environment. For example, one thing we found working with customers and React Native developers is that shortcuts taken during development to get things working quickly would make it through to production stacks. These can compromise either scalability or security, and force infrastructure rearchitecture and code refactoring.
 
@@ -98,7 +98,7 @@ For a deep dive into the philosophy and to see a full demo, check out the video 
 
 ## AWS AppSync
 
-Shortly after the launch of AWS Amplify, we also released [AWS AppSync](https://aws.amazon.com/appsync/). This is a fully managed GraphQL service that has both offline and real-time capabilities. Although you can use GraphQL in different client programming languages (including native iOS and Android), it's quite popular among React Native developers. This is because the data model fits nicely into a unidirectional data flow and component hierarchy.
+Shortly after the launch of AWS Amplify, we also released [AWS AppSync](https://aws.amazon.com/appsync/). This is a fully managed GraphQL service that has both offline and real-time capabilities. Although you can use GraphQL in different client programming languages (including native Android and iOS), it's quite popular among React Native developers. This is because the data model fits nicely into a unidirectional data flow and component hierarchy.
 
 AWS AppSync enables you to connect to resources in your own AWS account, meaning you own and control your data. This is done by using data sources, and the service supports [Amazon DynamoDB](https://aws.amazon.com/dynamodb/), [Amazon Elasticsearch](https://aws.amazon.com/elasticsearch-service/), and [AWS Lambda](https://aws.amazon.com/lambda/). This enables you to combine functionality (such as NoSQL and full-text search) in a single GraphQL API as a schema. This enables you to mix and match data sources. The AppSync service can also [provision from a schema](https://docs.aws.amazon.com/appsync/latest/devguide/provision-from-schema.html), so if you aren't familair with AWS services, you can write GraphQL SDL, click a button, and you're automatically up and running.
 

@@ -3,6 +3,7 @@ id: version-0.57-backandroid
 title: BackAndroid
 original_id: backandroid
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 已弃用。请使用[`BackHandler`](backhandler.md)代替。
@@ -21,7 +22,7 @@ original_id: backandroid
 
 ### `exitApp()`
 
-```javascript
+```jsx
 static exitApp()
 ```
 
@@ -29,7 +30,7 @@ static exitApp()
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 static addEventListener(eventName, handler)
 ```
 
@@ -37,6 +38,6 @@ static addEventListener(eventName, handler)
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(eventName, handler)
 ```

@@ -45,10 +45,10 @@ class Example extends Component {
 
 ### Methods
 
-* [`addListener`](keyboard.md#addlistener)
-* [`removeListener`](keyboard.md#removelistener)
-* [`removeAllListeners`](keyboard.md#removealllisteners)
-* [`dismiss`](keyboard.md#dismiss)
+- [`addListener`](keyboard.md#addlistener)
+- [`removeListener`](keyboard.md#removelistener)
+- [`removeAllListeners`](keyboard.md#removealllisteners)
+- [`dismiss`](keyboard.md#dismiss)
 
 ---
 
@@ -58,7 +58,7 @@ class Example extends Component {
 
 ### `addListener()`
 
-```javascript
+```jsx
 static addListener(eventName, callback)
 ```
 
@@ -68,12 +68,12 @@ This function then returns the reference to the listener.
 
 @param {string} eventName The `nativeEvent` is the string that identifies the event you're listening for. This can be any of the following:
 
-* `keyboardWillShow`
-* `keyboardDidShow`
-* `keyboardWillHide`
-* `keyboardDidHide`
-* `keyboardWillChangeFrame`
-* `keyboardDidChangeFrame`
+- `keyboardWillShow`
+- `keyboardDidShow`
+- `keyboardWillHide`
+- `keyboardDidHide`
+- `keyboardWillChangeFrame`
+- `keyboardDidChangeFrame`
 
 @param {function} callback function to be called when the event fires.
 
@@ -81,7 +81,7 @@ This function then returns the reference to the listener.
 
 ### `removeListener()`
 
-```javascript
+```jsx
 static removeListener(eventName, callback)
 ```
 
@@ -93,7 +93,7 @@ Removes a specific listener.
 
 ### `removeAllListeners()`
 
-```javascript
+```jsx
 static removeAllListeners(eventName)
 ```
 
@@ -105,7 +105,7 @@ Removes all listeners for a specific event type.
 
 ### `dismiss()`
 
-```javascript
+```jsx
 static dismiss()
 ```
 

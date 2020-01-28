@@ -44,12 +44,12 @@ Android API >= 18 Positions will also contain a `mocked` boolean to indicate if 
 
 ### Methods
 
-* [`setRNConfiguration`](geolocation.md#setrnconfiguration)
-* [`requestAuthorization`](geolocation.md#requestauthorization)
-* [`getCurrentPosition`](geolocation.md#getcurrentposition)
-* [`watchPosition`](geolocation.md#watchposition)
-* [`clearWatch`](geolocation.md#clearwatch)
-* [`stopObserving`](geolocation.md#stopobserving)
+- [`setRNConfiguration`](geolocation.md#setrnconfiguration)
+- [`requestAuthorization`](geolocation.md#requestauthorization)
+- [`getCurrentPosition`](geolocation.md#getcurrentposition)
+- [`watchPosition`](geolocation.md#watchposition)
+- [`clearWatch`](geolocation.md#clearwatch)
+- [`stopObserving`](geolocation.md#stopobserving)
 
 ---
 
@@ -59,7 +59,7 @@ Android API >= 18 Positions will also contain a `mocked` boolean to indicate if 
 
 ### `setRNConfiguration()`
 
-```javascript
+```jsx
 Geolocation.setRNConfiguration(config);
 ```
 
@@ -73,13 +73,13 @@ Sets configuration options that will be used in all location requests.
 
 Supported options:
 
-* `skipPermissionRequests` (boolean, iOS-only) - Defaults to `false`. If `true`, you must request permissions before using Geolocation APIs.
+- `skipPermissionRequests` (boolean, iOS-only) - Defaults to `false`. If `true`, you must request permissions before using Geolocation APIs.
 
 ---
 
 ### `requestAuthorization()`
 
-```javascript
+```jsx
 Geolocation.requestAuthorization();
 ```
 
@@ -89,7 +89,7 @@ Request suitable Location permission based on the key configured on pList. If NS
 
 ### `getCurrentPosition()`
 
-```javascript
+```jsx
 Geolocation.getCurrentPosition(geo_success, [geo_error], [geo_options]);
 ```
 
@@ -105,15 +105,15 @@ Invokes the success callback once with the latest location info.
 
 Supported options:
 
-* `timeout` (ms)
-* `maximumAge` (ms) - Defaults to INFINITY.
-* `enableHighAccuracy` (bool) - On Android, if the location is cached this can return almost immediately, or it will request an update which might take a while.
+- `timeout` (ms)
+- `maximumAge` (ms) - Defaults to INFINITY.
+- `enableHighAccuracy` (bool) - On Android, if the location is cached this can return almost immediately, or it will request an update which might take a while.
 
 ---
 
 ### `watchPosition()`
 
-```javascript
+```jsx
 Geolocation.watchPosition(success, [error], [options]);
 ```
 
@@ -129,17 +129,17 @@ Invokes the success callback whenever the location changes. Returns a `watchId` 
 
 Supported options:
 
-* `timeout` (ms)
-* `maximumAge` (ms) - Defaults to INFINITY.
-* `enableHighAccuracy` (bool)
-* `distanceFilter` (m)
-* `useSignificantChanges` (bool)
+- `timeout` (ms)
+- `maximumAge` (ms) - Defaults to INFINITY.
+- `enableHighAccuracy` (bool)
+- `distanceFilter` (m)
+- `useSignificantChanges` (bool)
 
 ---
 
 ### `clearWatch()`
 
-```javascript
+```jsx
 Geolocation.clearWatch(watchID);
 ```
 
@@ -153,7 +153,7 @@ Geolocation.clearWatch(watchID);
 
 ### `stopObserving()`
 
-```javascript
+```jsx
 Geolocation.stopObserving();
 ```
 

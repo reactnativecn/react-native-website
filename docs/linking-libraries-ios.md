@@ -3,11 +3,11 @@ id: linking-libraries-ios
 title: Linking Libraries
 ---
 
-Not every app uses all the native capabilities, and including the code to support all those features would impact the binary size... But we still want to make it easy to add these features whenever you need them.
+Not every app uses all the native capabilities, and including the code to support all those features would impact the binary size... But we still want to support adding these features whenever you need them.
 
 With that in mind we exposed many of these features as independent static libraries.
 
-For most of the libs it will be as simple as dragging two files, sometimes a third step will be necessary, but no more than that.
+For most of the libs it will be as quick as dragging two files, sometimes a third step will be necessary, but no more than that.
 
 _All the libraries we ship with React Native live on the `Libraries` folder in the root of the repository. Some of them are pure JavaScript, and you only need to `require` it. Other libraries also rely on some native code, in that case you'll have to add these files to your app, otherwise the app will throw an error as soon as you try to use the library._
 
@@ -41,7 +41,7 @@ Done! All libraries with native dependencies should be successfully linked to yo
 
 #### Step 1
 
-If the library has native code, there must be a `.xcodeproj` file inside it's folder. Drag this file to your project on Xcode (usually under the `Libraries` group on Xcode);
+If the library has native code, there must be an `.xcodeproj` file inside its folder. Drag this file to your project on Xcode (usually under the `Libraries` group on Xcode);
 
 ![](/react-native/docs/assets/AddToLibraries.png)
 

@@ -3,6 +3,7 @@ id: version-0.57-cameraroll
 title: CameraRoll
 original_id: cameraroll
 ---
+
 ##### 本文档贡献者：[sunnylqm](https://github.com/search?q=sunnylqm%40qq.com+in%3Aemail&type=Users)(100.00%)
 
 `CameraRoll`模块提供了访问本地相册的功能。在 iOS 上使用这个模块之前，你需要先链接`RCTCameraRoll`库，具体做法请参考[链接原生库](linking-libraries-ios.md)文档。
@@ -28,7 +29,7 @@ original_id: cameraroll
 
 ### `saveToCameraRoll()`
 
-```javascript
+```jsx
 CameraRoll.saveToCameraRoll(tag, [type]);
 ```
 
@@ -53,7 +54,7 @@ If the tag has a file extension of .mov or .mp4, it will be inferred as a video.
 
 ### `getPhotos()`
 
-```javascript
+```jsx
 CameraRoll.getPhotos(params);
 ```
 

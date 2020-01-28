@@ -10,7 +10,7 @@ A React component for displaying text.
 
 In the following example, the nested title and body text will inherit the `fontFamily` from `styles.baseText`, but the title provides its own additional styles. The title and body will stack on top of each other on account of the literal newlines:
 
-```ReactNativeWebPlayer
+```SnackPlayer
 import React, { Component } from 'react';
 import { AppRegistry, Text, StyleSheet } from 'react-native';
 
@@ -53,9 +53,9 @@ AppRegistry.registerComponent('TextInANest', () => TextInANest);
 
 ## Nested text
 
-Both iOS and Android allow you to display formatted text by annotating ranges of a string with specific formatting like bold or colored text (`NSAttributedString` on iOS, `SpannableString` on Android). In practice, this is very tedious. For React Native, we decided to use web paradigm for this where you can nest text to achieve the same effect.
+Both Android and iOS allow you to display formatted text by annotating ranges of a string with specific formatting like bold or colored text (`NSAttributedString` on iOS, `SpannableString` on Android). In practice, this is very tedious. For React Native, we decided to use web paradigm for this where you can nest text to achieve the same effect.
 
-```ReactNativeWebPlayer
+```SnackPlayer
 import React, { Component } from 'react';
 import { AppRegistry, Text } from 'react-native';
 
@@ -78,43 +78,17 @@ AppRegistry.registerComponent('AwesomeProject', () => BoldAndBeautiful);
 
 Behind the scenes, React Native converts this to a flat `NSAttributedString` or `SpannableString` that contains the following information:
 
-```javascript
+```jsx
 "I am bold and red"
 0-9: bold
 9-17: bold, red
 ```
 
-## Nested views (iOS only)
-
-On iOS, you can nest views within your Text component. Here's an example:
-
-```ReactNativeWebPlayer
-import React, { Component } from 'react';
-import { AppRegistry, Text, View } from 'react-native';
-
-export default class BlueIsCool extends Component {
-  render() {
-    return (
-      <Text>
-        There is a blue square
-        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
-        in between my text.
-      </Text>
-    );
-  }
-}
-
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => BlueIsCool);
-```
-
-> In order to use this feature, you must give the view a `width` and a `height`.
-
 ## Containers
 
-The `<Text>` element is special relative to layout: everything inside is no longer using the flexbox layout but using text layout. This means that elements inside of a `<Text>` are no longer rectangles, but wrap when they see the end of the line.
+The `<Text>` element is unique relative to layout: everything inside is no longer using the flexbox layout but using text layout. This means that elements inside of a `<Text>` are no longer rectangles, but wrap when they see the end of the line.
 
-```javascript
+```jsx
 <Text>
   <Text>First part and </Text>
   <Text>second part</Text>
@@ -150,7 +124,7 @@ All elements in the document will inherit this font unless they or one of their 
 
 In React Native, we are more strict about it: **you must wrap all the text nodes inside of a `<Text>` component**. You cannot have a text node directly under a `<View>`.
 
-```javascript
+```jsx
 // BAD: will raise exception, can't have a text node as child of a <View>
 <View>
   Some text
@@ -166,7 +140,7 @@ In React Native, we are more strict about it: **you must wrap all the text nodes
 
 You also lose the ability to set up a default font for an entire subtree. The recommended way to use consistent fonts and sizes across your application is to create a component `MyAppText` that includes them and use this component across your app. You can also use this component to make more specific components like `MyAppHeaderText` for other kinds of text.
 
-```javascript
+```jsx
 <View>
   <MyAppText>
     Text styled with the default font for the entire application
@@ -175,9 +149,9 @@ You also lose the ability to set up a default font for an entire subtree. The re
 </View>
 ```
 
-Assuming that `MyAppText` is a component that simply renders out its children into a `Text` component with styling, then `MyAppHeaderText` can be defined as follows:
+Assuming that `MyAppText` is a component that only renders out its children into a `Text` component with styling, then `MyAppHeaderText` can be defined as follows:
 
-```javascript
+```jsx
 class MyAppHeaderText extends Component {
   render() {
     return (
@@ -193,7 +167,7 @@ Composing `MyAppText` in this way ensures that we get the styles from a top-leve
 
 React Native still has the concept of style inheritance, but limited to text subtrees. In this case, the second part will be both bold and red.
 
-```javascript
+```jsx
 <Text style={{fontWeight: 'bold'}}>
   I am bold
   <Text style={{color: 'red'}}>and red</Text>
@@ -202,32 +176,32 @@ React Native still has the concept of style inheritance, but limited to text sub
 
 We believe that this more constrained way to style text will yield better apps:
 
-* (Developer) React components are designed with strong isolation in mind: You should be able to drop a component anywhere in your application, trusting that as long as the props are the same, it will look and behave the same way. Text properties that could inherit from outside of the props would break this isolation.
+- (Developer) React components are designed with strong isolation in mind: You should be able to drop a component anywhere in your application, trusting that as long as the props are the same, it will look and behave the same way. Text properties that could inherit from outside of the props would break this isolation.
 
-* (Implementor) The implementation of React Native is also simplified. We do not need to have a `fontFamily` field on every single element, and we do not need to potentially traverse the tree up to the root every time we display a text node. The style inheritance is only encoded inside of the native Text component and doesn't leak to other components or the system itself.
+- (Implementor) The implementation of React Native is also simplified. We do not need to have a `fontFamily` field on every single element, and we do not need to potentially traverse the tree up to the root every time we display a text node. The style inheritance is only encoded inside of the native Text component and doesn't leak to other components or the system itself.
 
 ### Props
 
-* [`selectable`](text.md#selectable)
-* [`accessibilityHint`](text.md#accessibilityhint)
-* [`accessibilityLabel`](text.md#accessibilitylabel)
-* [`accessible`](text.md#accessible)
-* [`ellipsizeMode`](text.md#ellipsizemode)
-* [`nativeID`](text.md#nativeid)
-* [`numberOfLines`](text.md#numberoflines)
-* [`onLayout`](text.md#onlayout)
-* [`onLongPress`](text.md#onlongpress)
-* [`onPress`](text.md#onpress)
-* [`pressRetentionOffset`](text.md#pressretentionoffset)
-* [`allowFontScaling`](text.md#allowfontscaling)
-* [`style`](text.md#style)
-* [`testID`](text.md#testid)
-* [`disabled`](text.md#disabled)
-* [`selectionColor`](text.md#selectioncolor)
-* [`textBreakStrategy`](text.md#textbreakstrategy)
-* [`adjustsFontSizeToFit`](text.md#adjustsfontsizetofit)
-* [`minimumFontScale`](text.md#minimumfontscale)
-* [`suppressHighlighting`](text.md#suppresshighlighting)
+- [`selectable`](text.md#selectable)
+- [`accessibilityHint`](text.md#accessibilityhint)
+- [`accessibilityLabel`](text.md#accessibilitylabel)
+- [`accessible`](text.md#accessible)
+- [`ellipsizeMode`](text.md#ellipsizemode)
+- [`nativeID`](text.md#nativeid)
+- [`numberOfLines`](text.md#numberoflines)
+- [`onLayout`](text.md#onlayout)
+- [`onLongPress`](text.md#onlongpress)
+- [`onPress`](text.md#onpress)
+- [`pressRetentionOffset`](text.md#pressretentionoffset)
+- [`allowFontScaling`](text.md#allowfontscaling)
+- [`style`](text.md#style)
+- [`testID`](text.md#testid)
+- [`disabled`](text.md#disabled)
+- [`selectionColor`](text.md#selectioncolor)
+- [`textBreakStrategy`](text.md#textbreakstrategy)
+- [`adjustsFontSizeToFit`](text.md#adjustsfontsizetofit)
+- [`minimumFontScale`](text.md#minimumfontscale)
+- [`suppressHighlighting`](text.md#suppresshighlighting)
 
 ---
 
@@ -247,7 +221,7 @@ Lets the user select text, to use the native copy and paste functionality.
 
 ### `accessibilityHint`
 
-An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not obvious from the accessibility label.
+An accessibility hint helps users understand what will happen when they perform an action on the accessibility element when that result is not clear from the accessibility label.
 
 | Type   | Required |
 | ------ | -------- |
@@ -283,10 +257,10 @@ When `numberOfLines` is set, this prop defines how text will be truncated. `numb
 
 This can be one of the following values:
 
-* `head` - The line is displayed so that the end fits in the container and the missing text at the beginning of the line is indicated by an ellipsis glyph. e.g., "...wxyz"
-* `middle` - The line is displayed so that the beginning and end fit in the container and the missing text in the middle is indicated by an ellipsis glyph. "ab...yz"
-* `tail` - The line is displayed so that the beginning fits in the container and the missing text at the end of the line is indicated by an ellipsis glyph. e.g., "abcd..."
-* `clip` - Lines are not drawn past the edge of the text container.
+- `head` - The line is displayed so that the end fits in the container and the missing text at the beginning of the line is indicated by an ellipsis glyph. e.g., "...wxyz"
+- `middle` - The line is displayed so that the beginning and end fit in the container and the missing text in the middle is indicated by an ellipsis glyph. "ab...yz"
+- `tail` - The line is displayed so that the beginning fits in the container and the missing text at the end of the line is indicated by an ellipsis glyph. e.g., "abcd..."
+- `clip` - Lines are not drawn past the edge of the text container.
 
 The default is `tail`.
 
@@ -380,43 +354,43 @@ Specifies whether fonts should scale to respect Text Size accessibility settings
 | ----- | -------- |
 | style | No       |
 
-* [View Style Props...](view-style-props.md#style)
+- [View Style Props...](view-style-props.md#style)
 
-* **`textShadowOffset`**: object: {width: number,height: number}
+- **`textShadowOffset`**: object: {width: number,height: number}
 
-* **`color`**: [color](colors.md)
+- **`color`**: [color](colors.md)
 
-* **`fontSize`**: number
+- **`fontSize`**: number
 
-* **`fontStyle`**: enum('normal', 'italic')
+- **`fontStyle`**: enum('normal', 'italic')
 
-* **`fontWeight`**: enum('normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900')
+- **`fontWeight`**: enum('normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900')
 
   Specifies font weight. The values 'normal' and 'bold' are supported for most fonts. Not all fonts have a variant for each of the numeric values, in that case the closest one is chosen.
 
-* **`lineHeight`**: number
+- **`lineHeight`**: number
 
-* **`textAlign`**: enum('auto', 'left', 'right', 'center', 'justify')
+- **`textAlign`**: enum('auto', 'left', 'right', 'center', 'justify')
 
   Specifies text alignment. The value 'justify' is only supported on iOS and fallbacks to `left` on Android.
 
-* **`textDecorationLine`**: enum('none', 'underline', 'line-through', 'underline line-through')
+- **`textDecorationLine`**: enum('none', 'underline', 'line-through', 'underline line-through')
 
-* **`textShadowColor`**: [color](colors.md)
+- **`textShadowColor`**: [color](colors.md)
 
-* **`fontFamily`**: string
+- **`fontFamily`**: string
 
-* **`textShadowRadius`**: number
+- **`textShadowRadius`**: number
 
-* **`includeFontPadding`**: bool (_Android_)
+- **`includeFontPadding`**: bool (_Android_)
 
   Set to `false` to remove extra font padding intended to make space for certain ascenders / descenders. With some fonts, this padding can make text look slightly misaligned when centered vertically. For best results also set `textAlignVertical` to `center`. Default is true.
 
-- **`textAlignVertical`**: enum('auto', 'top', 'bottom', 'center') (_Android_)
+* **`textAlignVertical`**: enum('auto', 'top', 'bottom', 'center') (_Android_)
 
-- **`fontVariant`**: array of enum('small-caps', 'oldstyle-nums', 'lining-nums', 'tabular-nums', 'proportional-nums') (_iOS_)
+* **`fontVariant`**: array of enum('small-caps', 'oldstyle-nums', 'lining-nums', 'tabular-nums', 'proportional-nums') (_iOS_)
 
-- **`letterSpacing`**: number
+* **`letterSpacing`**: number
 
   Increase or decrease the spacing between characters. The default is 0, for no extra letter spacing.
 
@@ -424,13 +398,13 @@ Specifies whether fonts should scale to respect Text Size accessibility settings
 
   Android: Only supported since Android 5.0 - older versions will ignore this attribute. Please note that additional space will be added _around_ the glyphs (half on each side), which differs from the iOS rendering. It is possible to emulate the iOS rendering by using layout attributes, e.g. negative margins, as appropriate for your situation.
 
-- **`textDecorationColor`**: [color](colors.md) (_iOS_)
+* **`textDecorationColor`**: [color](colors.md) (_iOS_)
 
-- **`textDecorationStyle`**: enum('solid', 'double', 'dotted', 'dashed') (_iOS_)
+* **`textDecorationStyle`**: enum('solid', 'double', 'dotted', 'dashed') (_iOS_)
 
-- **`textTransform`**: enum('none', 'uppercase', 'lowercase', 'capitalize')
+* **`textTransform`**: enum('none', 'uppercase', 'lowercase', 'capitalize')
 
-- **`writingDirection`**: enum('auto', 'ltr', 'rtl') (_iOS_)
+* **`writingDirection`**: enum('auto', 'ltr', 'rtl') (_iOS_)
 
 ---
 

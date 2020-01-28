@@ -10,55 +10,55 @@ Virtualization massively improves memory consumption and performance of large li
 
 Some caveats:
 
-* Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
-* This is a `PureComponent` which means that it will not re-render if `props` remain shallow- equal. Make sure that everything your `renderItem` function depends on is passed as a prop (e.g. `extraData`) that is not `===` after updates, otherwise your UI may not update on changes. This includes the `data` prop and parent component state.
-* In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate ands momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
-* By default, the list looks for a `key` prop on each item and uses that for the React key. Alternatively, you can provide a custom `keyExtractor` prop.
+- Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
+- This is a `PureComponent` which means that it will not re-render if `props` remain shallow-equal. Make sure that everything your `renderItem` function depends on is passed as a prop (e.g. `extraData`) that is not `===` after updates, otherwise your UI may not update on changes. This includes the `data` prop and parent component state.
+- In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate ands momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
+- By default, the list looks for a `key` prop on each item and uses that for the React key. Alternatively, you can provide a custom `keyExtractor` prop.
 
 ### Props
 
-* [`ScrollView` props...](scrollview.md#props)
-* [`renderItem`](virtualizedlist.md#renderitem)
-* [`data`](virtualizedlist.md#data)
-* [`getItem`](virtualizedlist.md#getitem)
-* [`getItemCount`](virtualizedlist.md#getitemcount)
-* [`debug`](virtualizedlist.md#debug)
-* [`extraData`](virtualizedlist.md#extradata)
-* [`getItemLayout`](virtualizedlist.md#getitemlayout)
-* [`initialScrollIndex`](virtualizedlist.md#initialscrollindex)
-* [`inverted`](virtualizedlist.md#inverted)
-* [`CellRendererComponent`](virtualizedlist.md#cellrenderercomponent)
-* [`ListEmptyComponent`](virtualizedlist.md#listemptycomponent)
-* [`ListFooterComponent`](virtualizedlist.md#listfootercomponent)
-* [`ListHeaderComponent`](virtualizedlist.md#listheadercomponent)
-* [`onEndReached`](virtualizedlist.md#onendreached)
-* [`onLayout`](virtualizedlist.md#onlayout)
-* [`onRefresh`](virtualizedlist.md#onrefresh)
-* [`onScrollToIndexFailed`](virtualizedlist.md#onscrolltoindexfailed)
-* [`onViewableItemsChanged`](virtualizedlist.md#onviewableitemschanged)
-* [`refreshing`](virtualizedlist.md#refreshing)
-* [`removeClippedSubviews`](virtualizedlist.md#removeclippedsubviews)
-* [`renderScrollComponent`](virtualizedlist.md#renderscrollcomponent)
-* [`viewabilityConfig`](virtualizedlist.md#viewabilityconfig)
-* [`viewabilityConfigCallbackPairs`](virtualizedlist.md#viewabilityconfigcallbackpairs)
-* [`horizontal`](virtualizedlist.md#horizontal)
-* [`initialNumToRender`](virtualizedlist.md#initialnumtorender)
-* [`keyExtractor`](virtualizedlist.md#keyextractor)
-* [`maxToRenderPerBatch`](virtualizedlist.md#maxtorenderperbatch)
-* [`onEndReachedThreshold`](virtualizedlist.md#onendreachedthreshold)
-* [`updateCellsBatchingPeriod`](virtualizedlist.md#updatecellsbatchingperiod)
-* [`windowSize`](virtualizedlist.md#windowsize)
-* [`disableVirtualization`](virtualizedlist.md#disablevirtualization)
-* [`progressViewOffset`](virtualizedlist.md#progressviewoffset)
+- [`ScrollView` props...](scrollview.md#props)
+- [`renderItem`](virtualizedlist.md#renderitem)
+- [`data`](virtualizedlist.md#data)
+- [`getItem`](virtualizedlist.md#getitem)
+- [`getItemCount`](virtualizedlist.md#getitemcount)
+- [`debug`](virtualizedlist.md#debug)
+- [`extraData`](virtualizedlist.md#extradata)
+- [`getItemLayout`](virtualizedlist.md#getitemlayout)
+- [`initialScrollIndex`](virtualizedlist.md#initialscrollindex)
+- [`inverted`](virtualizedlist.md#inverted)
+- [`CellRendererComponent`](virtualizedlist.md#cellrenderercomponent)
+- [`ListEmptyComponent`](virtualizedlist.md#listemptycomponent)
+- [`ListFooterComponent`](virtualizedlist.md#listfootercomponent)
+- [`ListHeaderComponent`](virtualizedlist.md#listheadercomponent)
+- [`onEndReached`](virtualizedlist.md#onendreached)
+- [`onLayout`](virtualizedlist.md#onlayout)
+- [`onRefresh`](virtualizedlist.md#onrefresh)
+- [`onScrollToIndexFailed`](virtualizedlist.md#onscrolltoindexfailed)
+- [`onViewableItemsChanged`](virtualizedlist.md#onviewableitemschanged)
+- [`refreshing`](virtualizedlist.md#refreshing)
+- [`removeClippedSubviews`](virtualizedlist.md#removeclippedsubviews)
+- [`renderScrollComponent`](virtualizedlist.md#renderscrollcomponent)
+- [`viewabilityConfig`](virtualizedlist.md#viewabilityconfig)
+- [`viewabilityConfigCallbackPairs`](virtualizedlist.md#viewabilityconfigcallbackpairs)
+- [`horizontal`](virtualizedlist.md#horizontal)
+- [`initialNumToRender`](virtualizedlist.md#initialnumtorender)
+- [`keyExtractor`](virtualizedlist.md#keyextractor)
+- [`maxToRenderPerBatch`](virtualizedlist.md#maxtorenderperbatch)
+- [`onEndReachedThreshold`](virtualizedlist.md#onendreachedthreshold)
+- [`updateCellsBatchingPeriod`](virtualizedlist.md#updatecellsbatchingperiod)
+- [`windowSize`](virtualizedlist.md#windowsize)
+- [`disableVirtualization`](virtualizedlist.md#disablevirtualization)
+- [`progressViewOffset`](virtualizedlist.md#progressviewoffset)
 
 ### Methods
 
-* [`scrollToEnd`](virtualizedlist.md#scrolltoend)
-* [`scrollToIndex`](virtualizedlist.md#scrolltoindex)
-* [`scrollToItem`](virtualizedlist.md#scrolltoitem)
-* [`scrollToOffset`](virtualizedlist.md#scrolltooffset)
-* [`recordInteraction`](virtualizedlist.md#recordinteraction)
-* [`flashScrollIndicators`](virtualizedlist.md#flashscrollindicators)
+- [`scrollToEnd`](virtualizedlist.md#scrolltoend)
+- [`scrollToIndex`](virtualizedlist.md#scrolltoindex)
+- [`scrollToItem`](virtualizedlist.md#scrolltoitem)
+- [`scrollToOffset`](virtualizedlist.md#scrolltooffset)
+- [`recordInteraction`](virtualizedlist.md#recordinteraction)
+- [`flashScrollIndicators`](virtualizedlist.md#flashscrollindicators)
 
 ---
 
@@ -68,7 +68,7 @@ Some caveats:
 
 ### `renderItem`
 
-```javascript
+```jsx
 (info: any) => ?React.Element<any>
 ```
 
@@ -92,7 +92,7 @@ The default accessor functions assume this is an array of objects with shape `{k
 
 ### `getItem`
 
-```javascript
+```jsx
 (data: any, index: number) => object;
 ```
 
@@ -106,7 +106,7 @@ A generic accessor for extracting an item from any sort of data blob.
 
 ### `getItemCount`
 
-```javascript
+```jsx
 (data: any) => number;
 ```
 
@@ -140,7 +140,7 @@ A marker property for telling the list to re-render (since it implements `PureCo
 
 ### `getItemLayout`
 
-```javascript
+```jsx
 (
     data: any,
     index: number,
@@ -223,7 +223,7 @@ Rendered at the top of all the items. Can be a React Component Class, a render f
 
 ### `onRefresh`
 
-```javascript
+```jsx
 () => void
 ```
 
@@ -237,7 +237,7 @@ If provided, a standard `RefreshControl` will be added for "Pull to Refresh" fun
 
 ### `onScrollToIndexFailed`
 
-```javascript
+```jsx
 (info: {
     index: number,
     highestMeasuredFrameIndex: number,
@@ -255,7 +255,7 @@ Used to handle failures when scrolling to an index that has not been measured ye
 
 ### `onViewableItemsChanged`
 
-```javascript
+```jsx
 (info: {
     viewableItems: array,
     changed: array,
@@ -294,7 +294,7 @@ This may improve scroll performance for large lists.
 
 ### `renderScrollComponent`
 
-```javascript
+```jsx
 (props: object) => element;
 ```
 
@@ -346,7 +346,7 @@ How many items to render in the initial batch. This should be enough to fill the
 
 ### `keyExtractor`
 
-```javascript
+```jsx
 (item: object, index: number) => string;
 ```
 
@@ -370,7 +370,7 @@ The maximum number of items to render in each incremental render batch. The more
 
 ### `onEndReached`
 
-```javascript
+```jsx
 (info: {distanceFromEnd: number}) => void
 ```
 
@@ -434,7 +434,7 @@ Set this when offset is needed for the loading indicator to show correctly.
 
 ### `scrollToEnd()`
 
-```javascript
+```jsx
 scrollToEnd(([params]: object));
 ```
 
@@ -442,7 +442,7 @@ scrollToEnd(([params]: object));
 
 ### `scrollToIndex()`
 
-```javascript
+```jsx
 scrollToIndex((params: object));
 ```
 
@@ -450,7 +450,7 @@ scrollToIndex((params: object));
 
 ### `scrollToItem()`
 
-```javascript
+```jsx
 scrollToItem((params: object));
 ```
 
@@ -458,7 +458,7 @@ scrollToItem((params: object));
 
 ### `scrollToOffset()`
 
-```javascript
+```jsx
 scrollToOffset((params: object));
 ```
 
@@ -472,7 +472,7 @@ Param `animated` (`true` by default) defines whether the list should do an anima
 
 ### `recordInteraction()`
 
-```javascript
+```jsx
 recordInteraction();
 ```
 
@@ -480,6 +480,6 @@ recordInteraction();
 
 ### `flashScrollIndicators()`
 
-```javascript
+```jsx
 flashScrollIndicators();
 ```

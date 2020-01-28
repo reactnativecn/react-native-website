@@ -9,20 +9,6 @@ title: Switch
 
 @keyword checkbox @keyword toggle @keyword 单选 @keyword 多选
 
-### 查看Props
-
-* [View props...](view.md#props)
-
-- [`disabled`](switch.md#disabled)
-- [`trackColor`](switch.md#trackcolor)
-- [`onValueChange`](switch.md#onvaluechange)	
-- [`ios_backgroundColor`](switch.md#ios_backgroundcolor)
-- [`onValueChange`](switch.md#onvaluechange)
-- [`testID`](switch.md#testid)
-- [`thumbColor`](switch.md#thumbcolor)
-- [`tintColor`](switch.md#tintcolor)
-- [`value`](switch.md#value)
-
 ---
 
 # 文档
@@ -41,9 +27,9 @@ title: Switch
 
 ### `trackColor`
 
-开启状态时的背景颜色。`onTintColor` is now deprecated.
+开启状态时的背景颜色。
 
-iOS: when the switch value is false, the track shrinks into the border. If you want to change the color of the background exposed by the shrunken track, use [`ios_backgroundColor`](switch.md#ios_backgroundColor).
+_iOS_: when the switch value is false, the track shrinks into the border. If you want to change the color of the background exposed by the shrunken track, use [`ios_backgroundColor`](switch.md#ios_backgroundColor).
 
 | 类型   | 必填 |
 | ------------------------------------------------------------- | -------- |
@@ -92,6 +78,8 @@ On iOS, custom color for the background. This background color can be seen eithe
 ---
 
 ### `tintColor`
+
+`tintColor` is deprecated, use `trackColor` instead.
 
 关闭状态时的边框颜色(iOS)或背景颜色(Android)。
 

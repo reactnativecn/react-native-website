@@ -38,26 +38,26 @@ For cases where using a component is not ideal, there is also an imperative API 
 
 ### Props
 
-* [`animated`](statusbar.md#animated)
-* [`barStyle`](statusbar.md#barstyle)
-* [`hidden`](statusbar.md#hidden)
-* [`backgroundColor`](statusbar.md#backgroundcolor)
-* [`translucent`](statusbar.md#translucent)
-* [`networkActivityIndicatorVisible`](statusbar.md#networkactivityindicatorvisible)
-* [`showHideTransition`](statusbar.md#showhidetransition)
+- [`animated`](statusbar.md#animated)
+- [`barStyle`](statusbar.md#barstyle)
+- [`hidden`](statusbar.md#hidden)
+- [`backgroundColor`](statusbar.md#backgroundcolor)
+- [`translucent`](statusbar.md#translucent)
+- [`networkActivityIndicatorVisible`](statusbar.md#networkactivityindicatorvisible)
+- [`showHideTransition`](statusbar.md#showhidetransition)
 
 ### Methods
 
-* [`setHidden`](statusbar.md#sethidden)
-* [`setBarStyle`](statusbar.md#setbarstyle)
-* [`setNetworkActivityIndicatorVisible`](statusbar.md#setnetworkactivityindicatorvisible)
-* [`setBackgroundColor`](statusbar.md#setbackgroundcolor)
-* [`setTranslucent`](statusbar.md#settranslucent)
+- [`setHidden`](statusbar.md#sethidden)
+- [`setBarStyle`](statusbar.md#setbarstyle)
+- [`setNetworkActivityIndicatorVisible`](statusbar.md#setnetworkactivityindicatorvisible)
+- [`setBackgroundColor`](statusbar.md#setbackgroundcolor)
+- [`setTranslucent`](statusbar.md#settranslucent)
 
 ### Type Definitions
 
-* [`StatusBarStyle`](statusbar.md#statusbarstyle)
-* [`StatusBarAnimation`](statusbar.md#statusbaranimation)
+- [`StatusBarStyle`](statusbar.md#statusbarstyle)
+- [`StatusBarAnimation`](statusbar.md#statusbaranimation)
 
 ---
 
@@ -99,9 +99,9 @@ If the status bar is hidden.
 
 The background color of the status bar.
 
-| Type       | Required | Platform |
-| ---------- | -------- | -------- |
-| $FlowFixMe | No       | Android  |
+| Type        | Required | Platform |
+| ----------- | -------- | -------- |
+| \$FlowFixMe | No       | Android  |
 
 ---
 
@@ -137,7 +137,7 @@ The transition effect when showing and hiding the status bar using the `hidden` 
 
 ### `setHidden()`
 
-```javascript
+```jsx
 static setHidden(hidden: boolean, [animation]: StatusBarAnimation)
 ```
 
@@ -154,7 +154,7 @@ Show or hide the status bar
 
 ### `setBarStyle()`
 
-```javascript
+```jsx
 static setBarStyle(style: StatusBarStyle, [animated]: boolean)
 ```
 
@@ -171,7 +171,7 @@ Set the status bar style
 
 ### `setNetworkActivityIndicatorVisible()`
 
-```javascript
+```jsx
 static setNetworkActivityIndicatorVisible(visible: boolean)
 ```
 
@@ -187,7 +187,7 @@ Control the visibility of the network activity indicator
 
 ### `setBackgroundColor()`
 
-```javascript
+```jsx
 static setBackgroundColor(color: string, [animated]: boolean)
 ```
 
@@ -204,7 +204,7 @@ Set the background color for the status bar
 
 ### `setTranslucent()`
 
-```javascript
+```jsx
 static setTranslucent(translucent: boolean)
 ```
 
@@ -222,9 +222,9 @@ Control the translucency of the status bar
 
 Status bar style
 
-| Type  |
-| ----- |
-| $Enum |
+| Type   |
+| ------ |
+| \$Enum |
 
 **Constants:**
 
@@ -240,9 +240,9 @@ Status bar style
 
 Status bar animation
 
-| Type  |
-| ----- |
-| $Enum |
+| Type   |
+| ------ |
+| \$Enum |
 
 **Constants:**
 

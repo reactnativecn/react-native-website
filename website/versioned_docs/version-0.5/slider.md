@@ -10,7 +10,7 @@ A component used to select a single value from a range of values.
 
 The example below shows how to use `Slider` to change a value used by `Text`. The value is stored using the state of the root component (`App`). The same component subscribes to the `onValueChange` of `Slider` and changes the value using `setState`.
 
-```javascript
+```jsx
 import React from 'react';
 import {StyleSheet, Text, View, Slider} from 'react-native';
 
@@ -61,23 +61,23 @@ const styles = StyleSheet.create({
 
 ### Props
 
-* [View props...](view.md#props)
-* [`style`](slider.md#style)
-* [`disabled`](slider.md#disabled)
-* [`maximumValue`](slider.md#maximumvalue)
-* [`minimumTrackTintColor`](slider.md#minimumtracktintcolor)
-* [`minimumValue`](slider.md#minimumvalue)
-* [`onSlidingComplete`](slider.md#onslidingcomplete)
-* [`onValueChange`](slider.md#onvaluechange)
-* [`step`](slider.md#step)
-* [`maximumTrackTintColor`](slider.md#maximumtracktintcolor)
-* [`testID`](slider.md#testid)
-* [`value`](slider.md#value)
-* [`thumbTintColor`](slider.md#thumbtintcolor)
-* [`maximumTrackImage`](slider.md#maximumtrackimage)
-* [`minimumTrackImage`](slider.md#minimumtrackimage)
-* [`thumbImage`](slider.md#thumbimage)
-* [`trackImage`](slider.md#trackimage)
+- [View props...](view.md#props)
+- [`style`](slider.md#style)
+- [`disabled`](slider.md#disabled)
+- [`maximumValue`](slider.md#maximumvalue)
+- [`minimumTrackTintColor`](slider.md#minimumtracktintcolor)
+- [`minimumValue`](slider.md#minimumvalue)
+- [`onSlidingComplete`](slider.md#onslidingcomplete)
+- [`onValueChange`](slider.md#onvaluechange)
+- [`step`](slider.md#step)
+- [`maximumTrackTintColor`](slider.md#maximumtracktintcolor)
+- [`testID`](slider.md#testid)
+- [`value`](slider.md#value)
+- [`thumbTintColor`](slider.md#thumbtintcolor)
+- [`maximumTrackImage`](slider.md#maximumtrackimage)
+- [`minimumTrackImage`](slider.md#minimumtrackimage)
+- [`thumbImage`](slider.md#thumbimage)
+- [`trackImage`](slider.md#trackimage)
 
 ---
 

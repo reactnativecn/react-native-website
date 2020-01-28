@@ -4,76 +4,12 @@ title: Integration with Existing Apps
 original_id: integration-with-existing-apps
 ---
 
-<style>
-  .toggler li {
-    display: inline-block;
-    position: relative;
-    top: 1px;
-    padding: 10px;
-    margin: 0px 2px 0px 2px;
-    border: 1px solid #05A5D1;
-    border-bottom-color: transparent;
-    border-radius: 3px 3px 0px 0px;
-    color: #05A5D1;
-    background-color: transparent;
-    font-size: 0.99em;
-    cursor: pointer;
-  }
-  .toggler li:first-child {
-    margin-left: 0;
-  }
-  .toggler li:last-child {
-    margin-right: 0;
-  }
-  .toggler ul {
-    width: 100%;
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-    border-bottom: 1px solid #05A5D1;
-    cursor: default;
-  }
-  @media screen and (max-width: 960px) {
-    .toggler li,
-    .toggler li:first-child,
-    .toggler li:last-child {
-      display: block;
-      border-bottom-color: #05A5D1;
-      border-radius: 3px;
-      margin: 2px 0px 2px 0px;
-    }
-    .toggler ul {
-      border-bottom: 0;
-    }
-  }
-  .toggler a {
-    display: inline-block;
-    padding: 10px 5px;
-    margin: 2px;
-    border: 1px solid #05A5D1;
-    border-radius: 3px;
-    text-decoration: none !important;
-  }
-  .display-language-objc .toggler .button-objc,
-  .display-language-swift .toggler .button-swift,
-  .display-language-android .toggler .button-android {
-    background-color: #05A5D1;
-    color: white;
-  }
-  block { display: none; }
-  .display-language-objc .objc,
-  .display-language-swift .swift,
-  .display-language-android .android {
-    display: block;
-  }
-</style>
-
 React Native is great when you are starting a new mobile app from scratch. However, it also works well for adding a single view or user flow to existing native applications. With a few steps, you can add new React Native based features, screens, views, etc.
 
 The specific steps are different depending on what platform you're targeting.
 
 <div class="toggler">
-  <ul role="tablist" >
+  <ul role="tablist" id="toggle-language" >
     <li id="objc" class="button-objc" aria-selected="false" role="tab" tabindex="0" aria-controls="objctab" onclick="displayTab('language', 'objc')">
       iOS (Objective-C)
     </li>
@@ -144,7 +80,7 @@ Go to the root directory for your project and create a new `package.json` file w
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "yarn react-native start"
   }
 }
 ```
@@ -229,24 +165,30 @@ target 'NumberTileGame' do
 
   # Your 'node_modules' directory is probably in the root of your project,
   # but if not, adjust the `:path` accordingly
-  pod 'React', :path => '../node_modules/react-native', :subspecs => [
-    'Core',
-    'CxxBridge', # Include this for RN >= 0.47
-    'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
-    'RCTText',
-    'RCTNetwork',
-    'RCTWebSocket', # Needed for debugging
-    'RCTAnimation', # Needed for FlatList and animations running on native UI thread
-    # Add any other subspecs you want to use in your project
-  ]
-  # Explicitly include Yoga if you are using RN >= 0.42.0
+  pod 'React', :path => '../node_modules/react-native/'
+  pod 'React-Core', :path => '../node_modules/react-native/React'
+  pod 'React-DevSupport', :path => '../node_modules/react-native/React'
+  pod 'React-fishhook', :path => '../node_modules/react-native/Libraries/fishhook'
+  pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS'
+  pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation'
+  pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob'
+  pod 'React-RCTImage', :path => '../node_modules/react-native/Libraries/Image'
+  pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS'
+  pod 'React-RCTNetwork', :path => '../node_modules/react-native/Libraries/Network'
+  pod 'React-RCTSettings', :path => '../node_modules/react-native/Libraries/Settings'
+  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text'
+  pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration'
+  pod 'React-RCTWebSocket', :path => '../node_modules/react-native/Libraries/WebSocket'
+
+  pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
+  pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
+  pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
+  pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
 
-  # Third party deps podspec link
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-
 end
 ```
 
@@ -325,13 +267,13 @@ The first bit of code we will write is the actual React Native code for the new 
 
 First, create an empty `index.js` file in the root of your React Native project.
 
-`index.js` is the starting point for React Native applications, and it is always required. It can be a small file that `require`s other file that are part of your React Native component or application, or it can contain all the code that is needed for it. In our case, we will just put everything in `index.js`.
+`index.js` is the starting point for React Native applications, and it is always required. It can be a small file that `require`s other file that are part of your React Native component or application, or it can contain all the code that is needed for it. In our case, we will put everything in `index.js`.
 
 ##### 2. Add your React Native code
 
-In your `index.js`, create your component. In our sample here, we will add simple `<Text>` component within a styled `<View>`
+In your `index.js`, create your component. In our sample here, we will add a `<Text>` component within a styled `<View>`
 
-```javascript
+```jsx
 import React from 'react';
 import {AppRegistry, StyleSheet, Text, View} from 'react-native';
 
@@ -381,7 +323,7 @@ AppRegistry.registerComponent('RNHighScores', () => RNHighScores);
 
 Now that your React Native component is created via `index.js`, you need to add that component to a new or existing `ViewController`. The easiest path to take is to optionally create an event path to your component and then add that component to an existing `ViewController`.
 
-We will tie our React Native component with a new native view in the `ViewController` that will actually host it called `RCTRootView` .
+We will tie our React Native component with a new native view in the `ViewController` that will actually contain it called `RCTRootView` .
 
 ##### 1. Create an Event Path
 
@@ -441,7 +383,7 @@ First `import` the `RCTRootView` header.
 
 First `import` the `React` library.
 
-```javascript
+```jsx
 import React
 ```
 
@@ -516,7 +458,7 @@ Apple has blocked implicit cleartext HTTP resource loading. So we need to add th
 
 ##### 2. Run the packager
 
-To run your app, you need to first start the development server. To do this, simply run the following command in the root directory of your React Native project:
+To run your app, you need to first start the development server. To do this, run the following command in the root directory of your React Native project:
 
 ```
 $ npm start
@@ -561,11 +503,11 @@ You can examine the code that added the React Native screen to our sample app on
 
 Add the React Native dependency to your app's `build.gradle` file:
 
-```
+```gradle
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.0.1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     ...
-    compile "com.facebook.react:react-native:+" // From node_modules
+    implementation "com.facebook.react:react-native:+" // From node_modules
 }
 ```
 
@@ -573,7 +515,7 @@ dependencies {
 
 Add an entry for the local React Native maven directory to `build.gradle`. Be sure to add it to the "allprojects" block, above other maven repositories:
 
-```
+```gradle
 allprojects {
     repositories {
         maven {
@@ -600,6 +542,25 @@ If you need to access to the `DevSettingsActivity` add to your `AndroidManifest.
 
 This is only used in dev mode when reloading JavaScript from the development server, so you can strip this in release builds if you need to.
 
+### Cleartext Traffic (API level 28+)
+
+> Starting with Android 9 (API level 28), cleartext traffic is disabled by default; this prevents your application from connecting to the React Native packager. The changes below allow cleartext traffic in debug builds.
+
+#### 1. Apply the `usesCleartextTraffic` option to your Debug `AndroidManifest.xml`
+
+```xml
+<!-- ... -->
+<application
+  android:usesCleartextTraffic="true" tools:targetApi="28" >
+  <!-- ... -->
+</application>
+<!-- ... -->
+```
+
+This is not required for Release builds.
+
+To learn more about Network Security Config and the cleartext traffic policy [see this link](https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted).
+
 ### Code integration
 
 Now we will actually modify the native Android application to integrate React Native.
@@ -612,13 +573,13 @@ The first bit of code we will write is the actual React Native code for the new 
 
 First, create an empty `index.js` file in the root of your React Native project.
 
-`index.js` is the starting point for React Native applications, and it is always required. It can be a small file that `require`s other file that are part of your React Native component or application, or it can contain all the code that is needed for it. In our case, we will just put everything in `index.js`.
+`index.js` is the starting point for React Native applications, and it is always required. It can be a small file that `require`s other file that are part of your React Native component or application, or it can contain all the code that is needed for it. In our case, we will put everything in `index.js`.
 
 ##### 2. Add your React Native code
 
-In your `index.js`, create your component. In our sample here, we will add simple `<Text>` component within a styled `<View>`:
+In your `index.js`, create your component. In our sample here, we will add a `<Text>` component within a styled `<View>`:
 
-```javascript
+```jsx
 import React from 'react';
 import {AppRegistry, StyleSheet, Text, View} from 'react-native';
 
@@ -664,7 +625,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 }
 ```
 
-Finally, the `onActivityResult()` method (as shown in the code below) has to be overridden to handle the permission Accepted or Denied cases for consistent UX.
+Finally, the `onActivityResult()` method (as shown in the code below) has to be overridden to handle the permission Accepted or Denied cases for consistent UX. Also, for integrating Native Modules which use `startActivityForResult`, we need to pass the result to the `onActivityResult` method of our `ReactInstanceManager` instance.
 
 ```java
 @Override
@@ -676,6 +637,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             }
         }
     }
+    mReactInstanceManager.onActivityResult( this, requestCode, resultCode, data );
 }
 ```
 
@@ -697,6 +659,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
+                .setCurrentActivity(this)
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
                 .addPackage(new MainReactPackage())
@@ -780,7 +743,7 @@ We also need to pass back button events to React Native:
 }
 ```
 
-This allows JavaScript to control what happens when the user presses the hardware back button (e.g. to implement navigation). When JavaScript doesn't handle the back button press, your `invokeDefaultOnBackPressed` method will be called. By default this simply finishes your `Activity`.
+This allows JavaScript to control what happens when the user presses the hardware back button (e.g. to implement navigation). When JavaScript doesn't handle the back button press, your `invokeDefaultOnBackPressed` method will be called. By default this finishes your `Activity`.
 
 Finally, we need to hook up the dev menu. By default, this is activated by (rage) shaking the device, but this is not very useful in emulators. So we make it show when you press the hardware menu button (use `Ctrl + M` if you're using Android Studio emulator):
 
@@ -803,7 +766,7 @@ You have now done all the basic steps to integrate React Native with your curren
 
 ##### 1. Run the packager
 
-To run your app, you need to first start the development server. To do this, simply run the following command in the root directory of your React Native project:
+To run your app, you need to first start the development server. To do this, run the following command in the root directory of your React Native project:
 
 ```
 $ yarn start
@@ -819,7 +782,7 @@ Once you reach your React-powered activity inside the app, it should load the Ja
 
 ### Creating a release build in Android Studio
 
-You can use Android Studio to create your release builds too! It’s as easy as creating release builds of your previously-existing native Android app. There’s just one additional step, which you’ll have to do before every release build. You need to execute the following to create a React Native bundle, which will be included with your native Android app:
+You can use Android Studio to create your release builds too! It’s as quick as creating release builds of your previously-existing native Android app. There’s one additional step, which you’ll have to do before every release build. You need to execute the following to create a React Native bundle, which will be included with your native Android app:
 
 ```
 $ react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/com/your-company-name/app-package-name/src/main/assets/index.android.bundle --assets-dest android/com/your-company-name/app-package-name/src/main/res/
@@ -827,131 +790,10 @@ $ react-native bundle --platform android --dev false --entry-file index.js --bun
 
 > Don’t forget to replace the paths with correct ones and create the assets folder if it doesn’t exist.
 
-Now just create a release build of your native app from within Android Studio as usual and you should be good to go!
+Now, create a release build of your native app from within Android Studio as usual and you should be good to go!
 
 <block class="objc swift android" />
 
 ### Now what?
 
 At this point you can continue developing your app as usual. Refer to our [debugging](debugging.md) and [deployment](running-on-device.md) docs to learn more about working with React Native.
-
-<script>
-  function displayTab(type, value) {
-    var container = document.getElementsByTagName('block')[0].parentNode;
-    container.className = 'display-' + type + '-' + value + ' ' +
-      container.className.replace(RegExp('display-' + type + '-[a-z]+ ?'), '');
-  }
-  function convertBlocks() {
-    // Convert <div>...<span><block /></span>...</div>
-    // Into <div>...<block />...</div>
-    var blocks = document.querySelectorAll('block');
-    for (var i = 0; i < blocks.length; ++i) {
-      var block = blocks[i];
-      var span = blocks[i].parentNode;
-      var container = span.parentNode;
-      container.insertBefore(block, span);
-      container.removeChild(span);
-    }
-    // Convert <div>...<block />content<block />...</div>
-    // Into <div>...<block>content</block><block />...</div>
-    blocks = document.querySelectorAll('block');
-    for (var i = 0; i < blocks.length; ++i) {
-      var block = blocks[i];
-      while (
-        block.nextSibling &&
-        block.nextSibling.tagName !== 'BLOCK'
-      ) {
-        block.appendChild(block.nextSibling);
-      }
-    }
-  }
-  function guessPlatformAndOS() {
-    if (!document.querySelector('block')) {
-      return;
-    }
-    // If we are coming to the page with a hash in it (i.e. from a search, for example), try to get
-    // us as close as possible to the correct platform and dev os using the hashtag and block walk up.
-    var foundHash = false;
-    if (
-      window.location.hash !== '' &&
-      window.location.hash !== 'content'
-    ) {
-      // content is default
-      var hashLinks = document.querySelectorAll(
-        'a.hash-link'
-      );
-      for (
-        var i = 0;
-        i < hashLinks.length && !foundHash;
-        ++i
-      ) {
-        if (hashLinks[i].hash === window.location.hash) {
-          var parent = hashLinks[i].parentElement;
-          while (parent) {
-            if (parent.tagName === 'BLOCK') {
-              // Could be more than one target os and dev platform, but just choose some sort of order
-              // of priority here.
-              // Dev OS
-              if (parent.className.indexOf('mac') > -1) {
-                displayTab('os', 'mac');
-                foundHash = true;
-              } else if (
-                parent.className.indexOf('linux') > -1
-              ) {
-                displayTab('os', 'linux');
-                foundHash = true;
-              } else if (
-                parent.className.indexOf('windows') > -1
-              ) {
-                displayTab('os', 'windows');
-                foundHash = true;
-              } else {
-                break;
-              }
-              // Target Platform
-              if (parent.className.indexOf('ios') > -1) {
-                displayTab('platform', 'ios');
-                foundHash = true;
-              } else if (
-                parent.className.indexOf('android') > -1
-              ) {
-                displayTab('platform', 'android');
-                foundHash = true;
-              } else {
-                break;
-              }
-              // Guide
-              if (parent.className.indexOf('native') > -1) {
-                displayTab('guide', 'native');
-                foundHash = true;
-              } else if (
-                parent.className.indexOf('quickstart') > -1
-              ) {
-                displayTab('guide', 'quickstart');
-                foundHash = true;
-              } else {
-                break;
-              }
-              break;
-            }
-            parent = parent.parentElement;
-          }
-        }
-      }
-    }
-    // Do the default if there is no matching hash
-    if (!foundHash) {
-      var isMac = navigator.platform === 'MacIntel';
-      var isWindows = navigator.platform === 'Win32';
-      displayTab('platform', isMac ? 'ios' : 'android');
-      displayTab(
-        'os',
-        isMac ? 'mac' : isWindows ? 'windows' : 'linux'
-      );
-      displayTab('guide', 'quickstart');
-      displayTab('language', 'objc');
-    }
-  }
-  convertBlocks();
-  guessPlatformAndOS();
-</script>

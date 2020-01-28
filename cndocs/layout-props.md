@@ -3,64 +3,6 @@ id: layout-props
 title: 布局属性
 ---
 
-### 查看属性
-
-* [`alignContent`](layout-props.md#aligncontent)
-* [`alignItems`](layout-props.md#alignitems)
-* [`alignSelf`](layout-props.md#alignself)
-* [`aspectRatio`](layout-props.md#aspectratio)
-* [`borderBottomWidth`](layout-props.md#borderbottomwidth)
-* [`borderEndWidth`](layout-props.md#borderendwidth)
-* [`borderLeftWidth`](layout-props.md#borderleftwidth)
-* [`borderRightWidth`](layout-props.md#borderrightwidth)
-* [`borderStartWidth`](layout-props.md#borderstartwidth)
-* [`borderTopWidth`](layout-props.md#bordertopwidth)
-* [`borderWidth`](layout-props.md#borderwidth)
-* [`bottom`](layout-props.md#bottom)
-* [`direction`](layout-props.md#direction)
-* [`display`](layout-props.md#display)
-* [`end`](layout-props.md#end)
-* [`flex`](layout-props.md#flex)
-* [`flexBasis`](layout-props.md#flexbasis)
-* [`flexDirection`](layout-props.md#flexdirection)
-* [`flexGrow`](layout-props.md#flexgrow)
-* [`flexShrink`](layout-props.md#flexshrink)
-* [`flexWrap`](layout-props.md#flexwrap)
-* [`height`](layout-props.md#height)
-* [`justifyContent`](layout-props.md#justifycontent)
-* [`left`](layout-props.md#left)
-* [`margin`](layout-props.md#margin)
-* [`marginBottom`](layout-props.md#marginbottom)
-* [`marginEnd`](layout-props.md#marginend)
-* [`marginHorizontal`](layout-props.md#marginhorizontal)
-* [`marginLeft`](layout-props.md#marginleft)
-* [`marginRight`](layout-props.md#marginright)
-* [`marginStart`](layout-props.md#marginstart)
-* [`marginTop`](layout-props.md#margintop)
-* [`marginVertical`](layout-props.md#marginvertical)
-* [`maxHeight`](layout-props.md#maxheight)
-* [`maxWidth`](layout-props.md#maxwidth)
-* [`minHeight`](layout-props.md#minheight)
-* [`minWidth`](layout-props.md#minwidth)
-* [`overflow`](layout-props.md#overflow)
-* [`padding`](layout-props.md#padding)
-* [`paddingBottom`](layout-props.md#paddingbottom)
-* [`paddingEnd`](layout-props.md#paddingend)
-* [`paddingHorizontal`](layout-props.md#paddinghorizontal)
-* [`paddingLeft`](layout-props.md#paddingleft)
-* [`paddingRight`](layout-props.md#paddingright)
-* [`paddingStart`](layout-props.md#paddingstart)
-* [`paddingTop`](layout-props.md#paddingtop)
-* [`paddingVertical`](layout-props.md#paddingvertical)
-* [`position`](layout-props.md#position)
-* [`right`](layout-props.md#right)
-* [`start`](layout-props.md#start)
-* [`top`](layout-props.md#top)
-* [`width`](layout-props.md#width)
-* [`zIndex`](layout-props.md#zindex)
-
----
-
 # 文档
 
 ## 属性
@@ -197,7 +139,7 @@ When direction is `ltr`, `borderStartWidth` is equivalent to `borderLeftWidth`. 
 
 ### `direction`
 
-`direction`指定了用户界面的阅读顺序。`ltr`表示 left to right，即从左往右阅读。反之`rtl`为从右往左阅读。。默认值为`inherit`，但根节点的值会根据用户所在地的不同而不同。访问<https://facebook.github.io/yoga/docs/rtl/>来进一步了解。
+`direction`指定了用户界面的阅读顺序。`ltr`表示 left to right，即从左往右阅读。反之`rtl`为从右往左阅读。。默认值为`inherit`，但根节点的值会根据用户所在地的不同而不同。访问<https://yogalayout.com/docs/layout-direction>来进一步了解。
 
 | 类型                          | 必填 | 平台 |
 | ----------------------------- | ---- | ---- |
@@ -233,7 +175,7 @@ When direction is `ltr`, `borderStartWidth` is equivalent to `borderLeftWidth`. 
 
 在 React Native 中`flex`的表现和 CSS 有些区别。`flex`在 RN 中只能为整数值，其具体表现请参考`yoga`布局引擎的文档，其地址为<https://github.com/facebook/yoga>。
 
-当`flex`为一个正整数时，组件尺寸会具有弹性，并根据具体的 flex 值来按比例分配。比如两个组件在同一个父容器中，一个`flex`为 2，另一个`flex`为 1，则两者的尺寸比为 2：1。
+当`flex`为一个正整数时，组件尺寸会具有弹性，并根据具体的 flex 值来按比例分配。比如两个组件在同一个父容器中，一个`flex`为 2，另一个`flex`为 1，则两者的尺寸比为 2：1。 `flex: <positive number>` equates to `flexGrow: <positive number>, flexShrink: 1, flexBasis: 0`.
 
 当`flex`为 0 时，组件尺寸由`width`和`height`决定，此时不再具有弹性。
 
@@ -475,7 +417,7 @@ When direction is `ltr`, `marginStart` is equivalent to `marginLeft`. When direc
 
 ### `overflow`
 
-`overflow` controls how children are measured and displayed. `overflow: hidden` causes views to be clipped while `overflow: scroll` causes views to be measured independently of their parents main axis. It works like `overflow` in CSS (default: visible). 访问<https://developer.mozilla.org/en/docs/Web/CSS/overflow>来进一步了解。 `overflow: visible` only works on iOS. On Android, all views will clip their children.
+`overflow` controls how children are measured and displayed. `overflow: hidden` causes views to be clipped while `overflow: scroll` causes views to be measured independently of their parents main axis. It works like `overflow` in CSS (default: visible). 访问<https://developer.mozilla.org/en/docs/Web/CSS/overflow>来进一步了解。
 
 | 类型                                | 必填 |
 | ----------------------------------- | ---- |

@@ -67,8 +67,8 @@ componentDidMount() {
 如果你的 app 用了 [Universal Links](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/UniversalLinks.html)，需要正确的把下述代码添加进去：
 
 ```
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
- restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+- (BOOL)application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity
+  restorationHandler:(nonnull void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
 {
  return [RCTLinkingManager application:application
                   continueUserActivity:userActivity
@@ -81,10 +81,10 @@ componentDidMount() {
 ```
 componentDidMount() {
   Linking.addEventListener('url', this._handleOpenURL);
-},
+}
 componentWillUnmount() {
   Linking.removeEventListener('url', this._handleOpenURL);
-},
+}
 _handleOpenURL(event) {
   console.log(event.url);
 }
@@ -110,15 +110,6 @@ Linking.canOpenURL(url).then(supported => {
 }).catch(err => console.error('An error occurred', err));
 ```
 
-### 查看方法
-
-* [`constructor`](linking.md#constructor)
-* [`addEventListener`](linking.md#addeventlistener)
-* [`removeEventListener`](linking.md#removeeventlistener)
-* [`openURL`](linking.md#openurl)
-* [`canOpenURL`](linking.md#canopenurl)
-* [`getInitialURL`](linking.md#getinitialurl)
-
 ---
 
 # 文档
@@ -127,7 +118,7 @@ Linking.canOpenURL(url).then(supported => {
 
 ### `constructor()`
 
-```javascript
+```jsx
 constructor();
 ```
 
@@ -135,7 +126,7 @@ constructor();
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 addEventListener(type, handler);
 ```
 
@@ -145,7 +136,7 @@ addEventListener(type, handler);
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 removeEventListener(type, handler);
 ```
 
@@ -155,7 +146,7 @@ removeEventListener(type, handler);
 
 ### `openURL()`
 
-```javascript
+```jsx
 openURL(url);
 ```
 
@@ -179,13 +170,15 @@ openURL(url);
 
 ### `canOpenURL()`
 
-```javascript
+```jsx
 canOpenURL(url);
 ```
 
 判断设备上是否有已经安装的应用可以处理指定的 URL。
 
 本方法会返回一个`Promise`对象。当确定传入的 URL 可以被处理时，promise 就会返回，值的第一个参数是表示是否可以打开 URL。
+
+The `Promise` will reject on Android if it was impossible to check if the URL can be opened, and on iOS if you didn't add the specific scheme in the `LSApplicationQueriesSchemes` key inside `Info.plist` (see bellow).
 
 **参数：**
 
@@ -197,14 +190,39 @@ canOpenURL(url);
 
 > 对于 iOS 9 来说，你需要在`Info.plist`中添加`LSApplicationQueriesSchemes`字段，否则`canOpenURL`可能一直返回 false。
 
+> This method has limitations on iOS 9+. From [the official Apple documentation](https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl):
+
+> If your app is linked against an earlier version of iOS but is running in iOS 9.0 or later, you can call this method up to 50 times. After reaching that limit, subsequent calls always return false. If the user reinstalls or upgrades the app, iOS resets the limit.
+
+---
+
+### `openSettings()`
+
+ ```jsx
+openSettings();
+```
+
+Open the Settings app and displays the app’s custom settings, if it has any.
+
 ---
 
 ### `getInitialURL()`
 
-```javascript
+```jsx
 getInitialURL();
 ```
 
 如果应用是被一个链接调起的，则会返回相应的链接地址。否则它会返回`null`。
 
 > 如果要在 Android 上支持深度链接，请参阅<http://developer.android.com/training/app-indexing/deep-linking.html#handling-intents>
+
+---
+
+### `sendIntent()`
+
+```jsx
+sendIntent(action: string, extras?: Array<{key: string, value: string | number | boolean}>)
+```
+
+> @platform android
+**Android-Only.** Launch an Android intent with extras (optional)

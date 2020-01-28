@@ -20,11 +20,11 @@ var image = getImage({
 
 ### Methods
 
-* [`get`](pixelratio.md#get)
-* [`getFontScale`](pixelratio.md#getfontscale)
-* [`getPixelSizeForLayoutSize`](pixelratio.md#getpixelsizeforlayoutsize)
-* [`roundToNearestPixel`](pixelratio.md#roundtonearestpixel)
-* [`startDetecting`](pixelratio.md#startdetecting)
+- [`get`](pixelratio.md#get)
+- [`getFontScale`](pixelratio.md#getfontscale)
+- [`getPixelSizeForLayoutSize`](pixelratio.md#getpixelsizeforlayoutsize)
+- [`roundToNearestPixel`](pixelratio.md#roundtonearestpixel)
+- [`startDetecting`](pixelratio.md#startdetecting)
 
 ---
 
@@ -34,36 +34,36 @@ var image = getImage({
 
 ### `get()`
 
-```javascript
+```jsx
 static get()
 ```
 
 Returns the device pixel density. Some examples:
 
-* PixelRatio.get() === 1
-  * [mdpi Android devices](https://material.io/tools/devices/)
-* PixelRatio.get() === 1.5
-  * [hdpi Android devices](https://material.io/tools/devices/)
-* PixelRatio.get() === 2
-  * iPhone 4, 4S
-  * iPhone 5, 5c, 5s
-  * iPhone 6, 7, 8
-  * [xhdpi Android devices](https://material.io/tools/devices/)
-* PixelRatio.get() === 3
-  * iPhone 6 Plus, 7 Plus, 8 Plus
-  * iPhone X
-  * Pixel, Pixel 2
-  * [xxhdpi Android devices](https://material.io/tools/devices/)
-* PixelRatio.get() === 3.5
-  * Nexus 6
-  * Pixel XL, Pixel 2 XL
-  * [xxxhdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 1
+  - [mdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 1.5
+  - [hdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 2
+  - iPhone 4, 4S
+  - iPhone 5, 5c, 5s
+  - iPhone 6, 7, 8
+  - [xhdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 3
+  - iPhone 6 Plus, 7 Plus, 8 Plus
+  - iPhone X
+  - Pixel, Pixel 2
+  - [xxhdpi Android devices](https://material.io/tools/devices/)
+- PixelRatio.get() === 3.5
+  - Nexus 6
+  - Pixel XL, Pixel 2 XL
+  - [xxxhdpi Android devices](https://material.io/tools/devices/)
 
 ---
 
 ### `getFontScale()`
 
-```javascript
+```jsx
 static getFontScale()
 ```
 
@@ -77,7 +77,7 @@ Currently this is only implemented on Android and reflects the user preference s
 
 ### `getPixelSizeForLayoutSize()`
 
-```javascript
+```jsx
 static getPixelSizeForLayoutSize(layoutSize)
 ```
 
@@ -89,7 +89,7 @@ Guaranteed to return an integer number.
 
 ### `roundToNearestPixel()`
 
-```javascript
+```jsx
 static roundToNearestPixel(layoutSize)
 ```
 
@@ -99,7 +99,7 @@ Rounds a layout size (dp) to the nearest layout size that corresponds to an inte
 
 ### `startDetecting()`
 
-```javascript
+```jsx
 static startDetecting()
 ```
 

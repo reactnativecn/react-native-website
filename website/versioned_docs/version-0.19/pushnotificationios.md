@@ -10,8 +10,8 @@ To get up and running, [configure your notifications with Apple](https://develop
 
 [Manually link](linking-libraries-ios.md#manual-linking) the PushNotificationIOS library
 
-* Be sure to add the following to your `Header Search Paths`: `$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS`
-* Set the search to `recursive`
+- Be sure to add the following to your `Header Search Paths`: `$(SRCROOT)/../node_modules/react-native/Libraries/PushNotificationIOS`
+- Set the search to `recursive`
 
 Finally, to enable support for `notification` and `register` events you need to augment your AppDelegate.
 
@@ -41,23 +41,23 @@ And then in your AppDelegate implementation add the following:
 
 ### Methods
 
-* [`presentLocalNotification`](pushnotificationios.md#presentlocalnotification)
-* [`scheduleLocalNotification`](pushnotificationios.md#schedulelocalnotification)
-* [`cancelAllLocalNotifications`](pushnotificationios.md#cancelalllocalnotifications)
-* [`setApplicationIconBadgeNumber`](pushnotificationios.md#setapplicationiconbadgenumber)
-* [`getApplicationIconBadgeNumber`](pushnotificationios.md#getapplicationiconbadgenumber)
-* [`addEventListener`](pushnotificationios.md#addeventlistener)
-* [`requestPermissions`](pushnotificationios.md#requestpermissions)
-* [`abandonPermissions`](pushnotificationios.md#abandonpermissions)
-* [`checkPermissions`](pushnotificationios.md#checkpermissions)
-* [`removeEventListener`](pushnotificationios.md#removeeventlistener)
-* [`popInitialNotification`](pushnotificationios.md#popinitialnotification)
-* [`constructor`](pushnotificationios.md#constructor)
-* [`getMessage`](pushnotificationios.md#getmessage)
-* [`getSound`](pushnotificationios.md#getsound)
-* [`getAlert`](pushnotificationios.md#getalert)
-* [`getBadgeCount`](pushnotificationios.md#getbadgecount)
-* [`getData`](pushnotificationios.md#getdata)
+- [`presentLocalNotification`](pushnotificationios.md#presentlocalnotification)
+- [`scheduleLocalNotification`](pushnotificationios.md#schedulelocalnotification)
+- [`cancelAllLocalNotifications`](pushnotificationios.md#cancelalllocalnotifications)
+- [`setApplicationIconBadgeNumber`](pushnotificationios.md#setapplicationiconbadgenumber)
+- [`getApplicationIconBadgeNumber`](pushnotificationios.md#getapplicationiconbadgenumber)
+- [`addEventListener`](pushnotificationios.md#addeventlistener)
+- [`requestPermissions`](pushnotificationios.md#requestpermissions)
+- [`abandonPermissions`](pushnotificationios.md#abandonpermissions)
+- [`checkPermissions`](pushnotificationios.md#checkpermissions)
+- [`removeEventListener`](pushnotificationios.md#removeeventlistener)
+- [`popInitialNotification`](pushnotificationios.md#popinitialnotification)
+- [`constructor`](pushnotificationios.md#constructor)
+- [`getMessage`](pushnotificationios.md#getmessage)
+- [`getSound`](pushnotificationios.md#getsound)
+- [`getAlert`](pushnotificationios.md#getalert)
+- [`getBadgeCount`](pushnotificationios.md#getbadgecount)
+- [`getData`](pushnotificationios.md#getdata)
 
 ---
 
@@ -67,7 +67,7 @@ And then in your AppDelegate implementation add the following:
 
 ### `presentLocalNotification()`
 
-```javascript
+```jsx
 static presentLocalNotification(details)
 ```
 
@@ -75,14 +75,14 @@ Schedules the localNotification for immediate presentation.
 
 details is an object containing:
 
-* `alertBody` : The message displayed in the notification alert.
-* `soundName` : The sound played when the notification is fired (optional).
+- `alertBody` : The message displayed in the notification alert.
+- `soundName` : The sound played when the notification is fired (optional).
 
 ---
 
 ### `scheduleLocalNotification()`
 
-```javascript
+```jsx
 static scheduleLocalNotification(details)
 ```
 
@@ -90,15 +90,15 @@ Schedules the localNotification for future presentation.
 
 details is an object containing:
 
-* `fireDate` : The date and time when the system should deliver the notification.
-* `alertBody` : The message displayed in the notification alert.
-* `soundName` : The sound played when the notification is fired (optional).
+- `fireDate` : The date and time when the system should deliver the notification.
+- `alertBody` : The message displayed in the notification alert.
+- `soundName` : The sound played when the notification is fired (optional).
 
 ---
 
 ### `cancelAllLocalNotifications()`
 
-```javascript
+```jsx
 static cancelAllLocalNotifications()
 ```
 
@@ -108,7 +108,7 @@ Cancels all scheduled localNotifications
 
 ### `setApplicationIconBadgeNumber()`
 
-```javascript
+```jsx
 static setApplicationIconBadgeNumber(number)
 ```
 
@@ -118,7 +118,7 @@ Sets the badge number for the app icon on the home screen
 
 ### `getApplicationIconBadgeNumber()`
 
-```javascript
+```jsx
 static getApplicationIconBadgeNumber(callback)
 ```
 
@@ -128,7 +128,7 @@ Gets the current badge number for the app icon on the home screen
 
 ### `addEventListener()`
 
-```javascript
+```jsx
 static addEventListener(type, handler)
 ```
 
@@ -136,22 +136,22 @@ Attaches a listener to remote notification events while the app is running in th
 
 Valid events are:
 
-* `notification` : Fired when a remote notification is received. The handler will be invoked with an instance of `PushNotificationIOS`.
-* `register`: Fired when the user registers for remote notifications. The handler will be invoked with a hex string representing the deviceToken.
+- `notification` : Fired when a remote notification is received. The handler will be invoked with an instance of `PushNotificationIOS`.
+- `register`: Fired when the user registers for remote notifications. The handler will be invoked with a hex string representing the deviceToken.
 
 ---
 
 ### `requestPermissions()`
 
-```javascript
+```jsx
 static requestPermissions(permissions?)
 ```
 
 Requests notification permissions from iOS, prompting the user's dialog box. By default, it will request all notification permissions, but a subset of these can be requested by passing a map of requested permissions. The following permissions are supported:
 
-* `alert`
-* `badge`
-* `sound`
+- `alert`
+- `badge`
+- `sound`
 
 If a map is provided to the method, only the permissions with truthy values will be requested.
 
@@ -159,7 +159,7 @@ If a map is provided to the method, only the permissions with truthy values will
 
 ### `abandonPermissions()`
 
-```javascript
+```jsx
 static abandonPermissions()
 ```
 
@@ -171,21 +171,21 @@ You should call this method in rare circumstances only, such as when a new versi
 
 ### `checkPermissions()`
 
-```javascript
+```jsx
 static checkPermissions(callback)
 ```
 
 See what push permissions are currently enabled. `callback` will be invoked with a `permissions` object:
 
-* `alert` :boolean
-* `badge` :boolean
-* `sound` :boolean
+- `alert` :boolean
+- `badge` :boolean
+- `sound` :boolean
 
 ---
 
 ### `removeEventListener()`
 
-```javascript
+```jsx
 static removeEventListener(type, handler)
 ```
 
@@ -195,7 +195,7 @@ Removes the event listener. Do this in `componentWillUnmount` to prevent memory 
 
 ### `popInitialNotification()`
 
-```javascript
+```jsx
 static popInitialNotification()
 ```
 
@@ -207,7 +207,7 @@ The first caller of `popInitialNotification` will get the initial notification o
 
 ### `constructor()`
 
-```javascript
+```jsx
 constructor(nativeNotif);
 ```
 
@@ -217,7 +217,7 @@ You will never need to instantiate `PushNotificationIOS` yourself. Listening to 
 
 ### `getMessage()`
 
-```javascript
+```jsx
 getMessage();
 ```
 
@@ -227,7 +227,7 @@ An alias for `getAlert` to get the notification's main message string
 
 ### `getSound()`
 
-```javascript
+```jsx
 getSound();
 ```
 
@@ -237,7 +237,7 @@ Gets the sound string from the `aps` object
 
 ### `getAlert()`
 
-```javascript
+```jsx
 getAlert();
 ```
 
@@ -247,7 +247,7 @@ Gets the notification's main message from the `aps` object
 
 ### `getBadgeCount()`
 
-```javascript
+```jsx
 getBadgeCount();
 ```
 
@@ -257,7 +257,7 @@ Gets the badge count number from the `aps` object
 
 ### `getData()`
 
-```javascript
+```jsx
 getData();
 ```
 
