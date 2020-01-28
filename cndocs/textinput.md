@@ -7,66 +7,140 @@ TextInput是一个允许用户在应用中通过键盘输入文本的基本组�
 
 最简单的用法就是丢一个`TextInput`到应用里，然后订阅它的`onChangeText`事件来读取用户的输入。注意，从TextInput里取值这就是目前唯一的做法！也就是使用在`onChangeText`中用`setState`把用户的输入写入到state中，然后在需要取值的地方从this.state中取出值。它还有一些其它的事件，譬如`onSubmitEditing`和`onFocus`。一个简单的例子如下：
 
-```SnackPlayer name=TextInput
+```ReactNativeWebPlayer
 import React, { Component } from 'react';
 import { TextInput } from 'react-native';
 
-export default function UselessTextInput() {
-  const [value, onChangeText] = React.useState('Useless Placeholder');
+export default class UselessTextInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: 'Useless Placeholder' };
+  }
 
-  return (
-    <TextInput
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-      onChangeText={text => onChangeText(text)}
-      value={value}
-    />
-  );
+  render() {
+    return (
+      <TextInput
+        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        onChangeText={(text) => this.setState({text})}
+        value={this.state.text}
+      />
+    );
+  }
 }
+
 ```
 
 Two methods exposed via the native element are .focus() and .blur() that will focus or blur the TextInput programmatically.
 
 注意有些属性仅在`multiline`为true或者为false的时候有效。此外，当`multiline=false`时，为元素的某一个边添加边框样式（例如：`borderBottomColor`，`borderLeftWidth`等）将不会生效。为了能够实现效果你可以使用一个`View`来包裹`TextInput`：
 
-```SnackPlayer name=TextInput
-import React from 'react';
+```ReactNativeWebPlayer
+import React, { Component } from 'react';
 import { View, TextInput } from 'react-native';
 
-function UselessTextInput(props) {
-  return (
-    <TextInput
-      {...props} // 将父组件传递来的所有props传递给TextInput;比如下面的multiline和numberOfLines
-      editable
-      maxLength={40}
-    />
-  );
+class UselessTextInput extends Component {
+  render() {
+    return (
+      <TextInput
+        {...this.props} // 将父组件传递来的所有props传递给TextInput;比如下面的multiline和numberOfLines
+        editable = {true}
+        maxLength = {40}
+      />
+    );
+  }
 }
 
-export default function UselessTextInputMultiline() {
-  const [value, onChangeText] = React.useState('Useless Multiline Placeholder');
+export default class UselessTextInputMultiline extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: 'Useless Multiline Placeholder',
+    };
+  }
 
   // 你可以试着输入一种颜色，比如red，那么这个red就会作用到View的背景色样式上
-  return (
-    <View
-      style={{
-        backgroundColor: value,
-        borderBottomColor: '#000000',
-        borderBottomWidth: 1,
-      }}>
-      <UselessTextInput
-        multiline
-        numberOfLines={4}
-        onChangeText={text => onChangeText(text)}
-        value={value}
-      />
-    </View>
-  );
+  render() {
+    return (
+     <View style={{
+       backgroundColor: this.state.text,
+       borderBottomColor: '#000000',
+       borderBottomWidth: 1 }}
+     >
+       <UselessTextInput
+         multiline = {true}
+         numberOfLines = {4}
+         onChangeText={(text) => this.setState({text})}
+         value={this.state.text}
+       />
+     </View>
+    );
+  }
 }
+
 ```
 
-`TextInput`在安卓上默认有一个底边框，同时会有一些padding。如果要想使其看起来和iOS上尽量一致，则需要设置`padding: 0`。
+`TextInput`在安卓上默认有一个底边框，同时会有一些padding。如果要想使其看起来和iOS上尽量一致，则需要设置`padding: 0`，同时设置`underlineColorAndroid="transparent"`来去掉底边框。
+
+又，在安卓上如果设置`multiline = {true}`，文本默认会垂直居中，可设置`textAlignVertical: 'top'`样式来使其居顶显示。
 
 又又，在安卓上长按选择文本会导致`windowSoftInputMode`设置变为`adjustResize`，这样可能导致绝对定位的元素被键盘给顶起来。要解决这一问题你需要在AndroidManifest.xml中明确指定合适的`windowSoftInputMode`( <https://developer.android.com/guide/topics/manifest/activity-element.html> )值，或是自己监听事件来处理布局变化。
+
+### 查看Props
+
+* [View props...](view.md#props)
+
+- [`allowFontScaling`](textinput.md#allowfontscaling)
+- [`autoCapitalize`](textinput.md#autocapitalize)
+- [`autoCorrect`](textinput.md#autocorrect)
+- [`autoFocus`](textinput.md#autofocus)
+- [`blurOnSubmit`](textinput.md#bluronsubmit)
+- [`caretHidden`](textinput.md#carethidden)
+- [`clearButtonMode`](textinput.md#clearbuttonmode)
+- [`clearTextOnFocus`](textinput.md#cleartextonfocus)
+- [`contextMenuHidden`](textinput.md#contextMenuHidden)
+- [`dataDetectorTypes`](textinput.md#datadetectortypes)
+- [`defaultValue`](textinput.md#defaultvalue)
+- [`disableFullscreenUI`](textinput.md#disablefullscreenui)
+- [`editable`](textinput.md#editable)
+- [`enablesReturnKeyAutomatically`](textinput.md#enablesreturnkeyautomatically)
+- [`inlineImageLeft`](textinput.md#inlineimageleft)
+- [`inlineImagePadding`](textinput.md#inlineimagepadding)
+- [`keyboardAppearance`](textinput.md#keyboardappearance)
+- [`keyboardType`](textinput.md#keyboardtype)
+- [`maxLength`](textinput.md#maxlength)
+- [`multiline`](textinput.md#multiline)
+- [`numberOfLines`](textinput.md#numberoflines)
+- [`onBlur`](textinput.md#onblur)
+- [`onChange`](textinput.md#onchange)
+- [`onChangeText`](textinput.md#onchangetext)
+- [`onContentSizeChange`](textinput.md#oncontentsizechange)
+- [`onEndEditing`](textinput.md#onendediting)
+- [`onFocus`](textinput.md#onfocus)
+- [`onKeyPress`](textinput.md#onkeypress)
+- [`onLayout`](textinput.md#onlayout)
+- [`onScroll`](textinput.md#onscroll)
+- [`onSelectionChange`](textinput.md#onselectionchange)
+- [`onSubmitEditing`](textinput.md#onsubmitediting)
+- [`placeholder`](textinput.md#placeholder)
+- [`placeholderTextColor`](textinput.md#placeholdertextcolor)
+- [`returnKeyLabel`](textinput.md#returnkeylabel)
+- [`returnKeyType`](textinput.md#returnkeytype)
+- [`secureTextEntry`](textinput.md#securetextentry)
+- [`selection`](textinput.md#selection)
+- [`selectionColor`](textinput.md#selectioncolor)
+- [`selectionState`](textinput.md#selectionstate)
+- [`selectTextOnFocus`](textinput.md#selecttextonfocus)
+- [`spellCheck`](textinput.md#spellcheck)
+- [`style`](textinput.md#style)
+- [`textContentType`](textinput.md#textcontenttype)
+- [`textBreakStrategy`](textinput.md#textbreakstrategy)
+- [`underlineColorAndroid`](textinput.md#underlinecolorandroid)
+- [`value`](textinput.md#value)
+
+### 查看方法
+
+* [`clear`](textinput.md#clear)
+* [`isFocused`](textinput.md#isfocused)
 
 ---
 
@@ -86,7 +160,7 @@ export default function UselessTextInputMultiline() {
 
 ### `autoCapitalize`
 
-控制TextInput是否要自动将特定字符切换为大写，This property is not supported by some keyboard types such as `name-phone-pad`.
+控制TextInput是否要自动将特定字符切换为大写：
 
 * `characters`: 所有的字符。
 * `words`: 每个单词的第一个字符。
@@ -98,32 +172,6 @@ export default function UselessTextInputMultiline() {
 | enum('none', 'sentences', 'words', 'characters') | No   |
 
 ---
-
-### `autoComplete`
-
-Specifies autocomplete hints for the system, so it can provide autofill.
-On Android, the system will aways attempt to offer autofill by using heuristics to identify the type of content. To disable autocomplete, set `autoComplete` to `off`.
- 
- Possible values for `autoComplete` are:
- * `off`
- * `username`
- * `password`
- * `email`
- * `name`
- * `tel`
- * `street-address`
- * `postal-code`
- * `cc-number`
- * `cc-csc`
- * `cc-exp`
- * `cc-exp-month`
- * `cc-exp-year`
-
- | 类型                                                                                                                                                         | 必填 | 平台    |
- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- | ------- |
- | enum('off', 'username', 'password', 'email', 'name', 'tel', 'street-address', 'postal-code', 'cc-number', 'cc-csc', 'cc-exp', 'cc-exp-month', 'cc-exp-year') | 否   | Android |
- 
- ---
 
 ### `autoCorrect`
 
@@ -167,7 +215,7 @@ On Android, the system will aways attempt to offer autofill by using heuristics 
 
 ### `clearButtonMode`
 
-是否要在文本框右侧显示“清除”按钮。仅在单行模式下可用。默认值为`never`。
+是否要在文本框右侧显示“清除”按钮。仅在单行模式下可用。
 
 | 类型                                                       | 必填 | 平台 |
 | ---------------------------------------------------------- | ---- | ---- |
@@ -177,7 +225,7 @@ On Android, the system will aways attempt to offer autofill by using heuristics 
 
 ### `clearTextOnFocus`
 
-如果为true，每次开始输入的时候都会清除文本框的内容。
+如果为 `true`，每次开始输入的时候都会清除文本框的内容。
 
 | 类型 | 必填 | 平台 |
 | ---- | ---- | ---- |
@@ -187,7 +235,7 @@ On Android, the system will aways attempt to offer autofill by using heuristics 
 
 ### `contextMenuHidden`
 
-If `true`, context menu is hidden. The default value is `false`.
+如果为 `true`，上下文菜单将被隐藏。默认值为 `false`。
 
 | 类型 | 必填 |
 | ---- | ---- |
@@ -256,22 +304,6 @@ If `true`, context menu is hidden. The default value is `false`.
 
 ---
 
-### `importantForAutofill`
-
-Say the system whether the individual fields in your app should be included in a view structure for autofill purposes on Android API Level 26+, possible values are `auto`, `no`, `noExcludeDescendants`, `yes`, `yesExcludeDescendants`. The default value is `auto`.
-
-* `auto`: Let the Android System use its heuristics to determine if the view is important for autofill.
-* `no`: This view isn't important for autofill.
-* `noExcludeDescendants`: This view and its children aren't important for autofill.
-* `yes`: This view is important for autofill.
-* `yesExcludeDescendants`: This view is important for autofill, but its children aren't important for autofill.
-
-| Type                                                                       | Required | Platform |
-| -------------------------------------------------------------------------- | -------- | -------- |
-| enum('auto', 'no', 'noExcludeDescendants', 'yes', 'yesExcludeDescendants') | No       | Android  |
-
----
-
 ### `inlineImageLeft`
 
 指定一个图片放置在左侧。图片必须放置在`/android/app/src/main/res/drawable`目录下，经过编译后按如下形式引用（无路径无后缀）：
@@ -310,9 +342,7 @@ Say the system whether the individual fields in your app should be included in a
 
 ### `keyboardType`
 
-决定弹出何种软键盘类型，譬如`numeric`（纯数字键盘）。
-
-See screenshots of all the types [here](http://lefkowitz.me/2018/04/30/visual-guide-to-react-native-textinput-keyboardtype-options/).
+决定弹出的何种软键盘的，譬如`numeric`（纯数字键盘）。
 
 这些值在所有平台都可用：
 
@@ -384,7 +414,7 @@ See screenshots of all the types [here](http://lefkowitz.me/2018/04/30/visual-gu
 
 ### `onChange`
 
-当文本框内容变化时调用此回调函数。回调参数为`{ nativeEvent: { eventCount, target, text} }`。
+当文本框内容变化时调用此回调函数。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -404,9 +434,9 @@ See screenshots of all the types [here](http://lefkowitz.me/2018/04/30/visual-gu
 
 ### `onContentSizeChange`
 
-Callback that is called when the text input's content size changes. This will be called with `{ nativeEvent: { contentSize: { width, height } } }`.
+当输入的内容尺寸发生改变时调用此回调函数。格式： `{ nativeEvent: { contentSize: { width, height } } }`.
 
-Only called for multiline text inputs.
+仅用于多行文本输入。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -426,7 +456,7 @@ Only called for multiline text inputs.
 
 ### `onFocus`
 
-当文本框获得焦点的时候调用此回调函数。回调参数为`{ nativeEvent: { target } }`。
+当文本框获得焦点的时候调用此回调函数。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -446,7 +476,7 @@ Only called for multiline text inputs.
 
 ### `onLayout`
 
-当组件加载或者布局变化的时候调用，回调参数为`{ nativeEvent: {layout: {x, y, width, height}, target } }`。
+当组件加载或者布局变化的时候调用，参数为`{x, y, width, height}`。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -466,7 +496,7 @@ Only called for multiline text inputs.
 
 ### `onSelectionChange`
 
-长按选择文本时，选择范围变化时调用此函数，传回参数的格式形如`{ nativeEvent: { selection: { start, end } } }`。需要设置`multiline={true}`。
+长按选择文本时，选择范围变化时调用此函数，传回参数的格式形如`{ nativeEvent: { selection: { start, end } } }`。
 
 | 类型     | 必填 |
 | -------- | ---- |
@@ -476,21 +506,11 @@ Only called for multiline text inputs.
 
 ### `onSubmitEditing`
 
-此回调函数当软键盘的`确定`/`提交`按钮被按下的时候调用此函数，所传参数为`{nativeEvent: {text, eventCount, target}}`。如果`multiline={true}`，此属性不可用。
+此回调函数当软键盘的`确定`/`提交`按钮被按下的时候调用此函数。如果`multiline={true}`，此属性不可用。
 
 | 类型     | 必填 |
 | -------- | ---- |
 | function | No   |
-
----
-
-### `onTextInput`
-
-Callback that is called on new text input with the argument `{ nativeEvent: { text, previousText, range: { start, end } } }`. This prop requires `multiline={true}` to be set.
-
-| Type     | Required |
-| -------- | -------- |
-| function | No       |
 
 ---
 
@@ -516,7 +536,7 @@ Callback that is called on new text input with the argument `{ nativeEvent: { te
 
 ### `returnKeyLabel`
 
-Sets the return key to the label. Use it instead of `returnKeyType`.
+将返回键设置为标签。取代 `returnKeyType`。
 
 | 类型   | 必填 | 平台    |
 | ------ | ---- | ------- |
@@ -556,30 +576,6 @@ Sets the return key to the label. Use it instead of `returnKeyType`.
 
 ---
 
-### `rejectResponderTermination`
-
-Determines how the return key should look. On Android you can also use `returnKeyLabel`.
-
-_iOS Only_
-
-If `true`, allows TextInput to pass touch events to the parent component. This allows components such as SwipeableListView to be swipeable from the TextInput on iOS, as is the case on Android by default.
-
-| Type | Required | Platform |
-| ---- | -------- | -------- |
-| bool | No       | iOS      |
-
----
-
-### `scrollEnabled`
-
-If `false`, scrolling of the text view will be disabled. The default value is `true`. Only works with `multiline={true}`.
-
-| 类型 | 必填 | 平台 |
-| ---- | ---- | ---- |
-| bool | 否   | iOS  |
-
----
-
 ### `secureTextEntry`
 
 如果为true，文本框会遮住之前输入的文字，这样类似密码之类的敏感文字可以更加安全。默认值为false。`multiline={true}`时不可用。
@@ -612,9 +608,9 @@ If `false`, scrolling of the text view will be disabled. The default value is `t
 
 ### `selectionState`
 
-An instance of `DocumentSelectionState`，可以控制一个文档中哪段文字被选中的状态。
+`DocumentSelectionState` 的实例，可以控制一个文档中哪段文字被选中的状态。
 
-Some functionality that can be performed with this instance is:
+此实例可以使用的一些方法：
 
 * `blur()`
 * `focus()`
@@ -650,15 +646,13 @@ Some functionality that can be performed with this instance is:
 
 ### `textContentType`
 
-Give the keyboard and the system information about the expected semantic meaning for the content that users enter.
+为键盘和系统提供用户输入内容的类型。
 
-For iOS 11+ you can set `textContentType` to `username` or `password` to enable autofill of login details from the device keychain.
+对于 iOS 11+，你可以设置 `textContentType` 为 `username` 或 `password` 来启用自动填充，从设备的密钥库种自动填写登录凭据。
 
-For iOS 12+ `newPassword` can be used to indicate a new password input the user may want to save in the keychain, and `oneTimeCode` can be used to indicate that a field can be autofilled by a code arriving in an SMS.
+如需禁用自动填充，请设置 `textContentType` 为 `none`。
 
-To disable autofill, set `textContentType` to `none`.
-
-Possible values for `textContentType` are:
+`textContentType` 的可选值有：
 
 * `none`
 * `URL`
@@ -686,8 +680,6 @@ Possible values for `textContentType` are:
 * `telephoneNumber`
 * `username`
 * `password`
-* `newPassword`
-* `oneTimeCode`
 
 | 类型                                                                                                                                                                                                                                                                                                                                                                                                       | 必填 | 平台 |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ---- |
@@ -695,7 +687,7 @@ Possible values for `textContentType` are:
 
 ### `style`
 
-Note that not all Text styles are supported, an incomplete list of what is not supported includes:
+请注意，并非所有文本样式都受支持，不支持的样式的不完整列表包括：
 
 * `borderLeftWidth`
 * `borderTopWidth`
@@ -706,7 +698,7 @@ Note that not all Text styles are supported, an incomplete list of what is not s
 * `borderBottomRightRadius`
 * `borderBottomLeftRadius`
 
-see [Issue#7070](https://github.com/facebook/react-native/issues/7070) for more detail.
+查阅 [Issue#7070](https://github.com/facebook/react-native/issues/7070) 获取更多信息。
 
 [Styles](style.md)
 
@@ -747,29 +739,9 @@ TextInput是一个受约束的(Controlled)的组件，意味着如果提供了va
 
 ## 方法
 
-### `.focus()`
-
-```jsx
-focus();
-```
-
-Makes the native input request focus.
-
----
-
-### `.blur()`
-
-```jsx
-blur();
-```
-
-Makes the native input lose focus.
-
----
-
 ### `clear()`
 
-```jsx
+```javascript
 clear();
 ```
 
@@ -779,8 +751,8 @@ clear();
 
 ### `isFocused()`
 
-```jsx
-isFocused();
+```javascript
+isFocused():
 ```
 
 返回值表明当前输入框是否获得了焦点。
