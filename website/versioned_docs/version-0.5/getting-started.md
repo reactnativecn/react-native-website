@@ -1,35 +1,37 @@
 ---
 id: version-0.5-getting-started
-title: Getting Started
+title: 入门引导
 original_id: getting-started
 ---
 
-This page will help you install and build your first React Native app. If you already have React Native installed, you can skip ahead to the [Tutorial](tutorial.md).
+本文档将帮助您安装并构建您的第一个<strong>React Native应用程序</strong>。 如果您已经安装了React Native，则可以跳过本章节进入[Tutorial](tutorial.md)。
 
-<strong>If you are new to mobile development</strong>, the easiest way to get started is with Expo CLI. Expo is a set of tools built around React Native and, while it has many [features](https://expo.io/features), the most relevant feature for us right now is that it can get you writing a React Native app within minutes. You will only need a recent version of Node.js and a phone or emulator. If you'd like to try out React Native directly in your web browser before installing any tools, you can try out [Snack](https://snack.expo.io/).
+<strong>如果您并不熟悉移动开发</strong>, 最简单的入门方法则是使用 Expo CLI。 Expo 是构建 React Native 的开发工具之一，尽管其[功能](https://expo.io/features)众多，但其简单易上手的特性能帮助您通过最新版本的 Node.js 与手机或手机模拟器在极短的时间内轻松编写 React Native 移动应用。如果您并不想先行安装任何依赖与开发工具，想直接试用 React Native，则可以尝试 [Snack](https://snack.expo.io/).
 
-<strong>If you are already familiar with mobile development</strong>, you may want to use React Native CLI. It requires Xcode or Android Studio to get started. If you already have one of these tools installed, you should be able to get up and running within a few minutes. If they are not installed, you should expect to spend about an hour installing and configuring them.
+> 译者注：Expo CLI 或 Snack（沙盒环境）均大量依赖于国外网络环境，亦无法完整发布应用，只是用于学习、演示、试验等目的。并不建议国内用户使用。
+
+<strong>如果您对移动开发有所了解</strong>，则可使用 React Native CLI。其依赖 Xcode 以及 Android Studio 进行开发。如果您已经安装了这些工具之一，则应该可以在数分钟准备就绪。如果尚未安装，则应该要花费大约一个小时来安装和配置它们。
 
 <div class="toggler">
   <ul role="tablist" id="toggle-guide">
     <li id="quickstart" class="button-quickstart" aria-selected="false" role="tab" tabindex="0" aria-controls="quickstarttab" onclick="displayTab('guide', 'quickstart')">
-      Expo CLI Quickstart
+      快速开始
     </li>
     <li id="native" class="button-native" aria-selected="false" role="tab" tabindex="0" aria-controls="nativetab" onclick="displayTab('guide', 'native')">
-      React Native CLI Quickstart
+      构建本地开发环境
     </li>
   </ul>
 </div>
 
 <block class="quickstart mac windows linux ios android" />
 
-Assuming that you have [Node 10 LTS](https://nodejs.org/en/download/) or greater installed, you can use npm to install the Expo CLI command line utility:
+假设您已安装 [Node 10 LTS](https://nodejs.org/en/download/) 或更高版本，则可以使用 npm 安装 Expo CLI 命令行程序：
 
 ```sh
 npm install -g expo-cli
 ```
 
-Then run the following commands to create a new React Native project called "AwesomeProject":
+接下来运行下列命令来创建一个名为 “AwesomeProject” 的新 React Native 项目：
 
 ```sh
 expo init AwesomeProject
@@ -38,59 +40,60 @@ cd AwesomeProject
 npm start # you can also use: expo start
 ```
 
-This will start a development server for you.
+上述命令将为您启动开发服务器。
 
-<h2>Running your React Native application</h2>
+<h2>运行您的 React Native 应用</h2>
 
-Install the [Expo](https://expo.io) client app on your iOS or Android phone and connect to the same wireless network as your computer. On Android, use the Expo app to scan the QR code from your terminal to open your project. On iOS, follow on-screen instructions to get a link.
+在您的 ios 或 android 手机上安装 [Expo](https://expo.io) 客户端，并使其与你的开发服务器处于同一局域网(能互相通信)内，在Android上，使用Expo应用程序从终端扫描命令行终端打印的二维码即可打开您的项目。而在iOS上，请按照命令行上的说明获取链接。
 
-<h3>Modifying your app</h3>
 
-Now that you have successfully run the app, let's modify it. Open `App.js` in your text editor of choice and edit some lines. The application should reload automatically once you save your changes.
+<h3>修改您的APP</h3>
 
-<h3>That's it!</h3>
+现在您已经成功运行该应用程序，如果需要修改它。在您选择的文本编辑器中打开 `App.js` 进行一些修改。保存更改后，手机上的应用程序会自动重新加载。
 
-Congratulations! You've successfully run and modified your first React Native app.
+<h3>恭喜您！</h3>
+
+你已经成功运行并修改了您的第一个React Native APP。
 
 <center><img src="/react-native/docs/assets/GettingStartedCongratulations.png" width="150"></img></center>
 
-<h2>Now what?</h3>
+<h2>接下来？</h3>
 
-Expo also has [docs](https://docs.expo.io) you can reference if you have questions specific to the tool. You can also ask for help at [Expo forums](https://forums.expo.io).
+如果您任对工具有疑问，Expo还提供了一些 [文档](https://docs.expo.io) 供您参考。 您也可在 [Expo forums](https://forums.expo.io) 上寻求帮助。
 
-These tools help you get started quickly, but before committing to building your app with Expo CLI, [read about the limitations](https://docs.expo.io/versions/latest/introduction/why-not-expo/).
+这些工具可帮助您快速入门，但是在深入使用 Expo CLI 构建应用程序之前，[请阅读有关限制的信息](https://docs.expo.io/versions/latest/introduction/why-not-expo/)。
 
-If you have a problem with Expo, before creating a new issue, please see if there's an existing issue about it:
+如果您在 Expo 的使用方面有所疑问，在发布一个新的 issue 之前，请先浏览检查已发布的 issue清单：
 
-- in the [Expo CLI issues](https://github.com/expo/expo-cli/issues) (for issues related to Expo CLI), or
-- in the [Expo issues](https://github.com/expo/expo/issues) (for issues about the Expo client or SDK).
+- 在 [Expo CLI issues](https://github.com/expo/expo-cli/issues) (有关 Expo CLI 相关的问题)。
+- 在 [Expo issues](https://github.com/expo/expo/issues) (有关 Expo客户端 或 SDK 的问题).
 
-If you're curious to learn more about React Native, continue on to the [Tutorial](tutorial.md).
+如果您想了解有关React Native的更多信息，请继续学习本 [教程](tutorial.md).
 
-<h3>Running your app on a simulator or virtual device</h3>
+<h3>在模拟器或是虚拟机上运行你的应用程序</h3>
 
-Expo CLI allows you to run your React Native app on a physical device without setting up a development environment. If you want to run your app on the iOS Simulator or an Android Virtual Device, please refer to the instructions for "React Native CLI Quickstart" to learn how to install Xcode or set up your Android development environment.
+`Create React Native App` 使您可以轻松地在物理设备上运行您的 React Native APP，而无需设置开发环境。如果您想在 iOS 模拟器或 Android 虚拟设备上运行应用程序，请参阅有关使用 native 代码构建项目的说明，以了解如何安装 Xcode 以及设置 Android开发环境。
 
-Once you've set these up, you can launch your app on an Android Virtual Device by running `npm run android`, or on the iOS Simulator by running `npm run ios` (macOS only).
+一旦设置完毕，你就可以通过运行 `npm run android` 在Android虚拟设备上启动你的应用，或者通过运行 `npm run ios`（仅适用于macOS）在iOS模拟器上启动你的应用。
 
-<h3>Caveats</h3>
+<h3>注意事项</h3>
 
-Because you don't build any native code when using Expo to create a project, it's not possible to include custom native modules beyond the React Native APIs and components that are available in the Expo client app.
+由于使用 Expo 创建项目时不会生成任何原生代码，因此除了可以在Expo客户端应用程序中使用的React Native API和组件之外，但无法使用自定义的原生模块。
 
-If you know that you'll eventually need to include your own native code, Expo is still a good way to get started. In that case you'll need to "[eject](https://docs.expo.io/versions/latest/workflow/customizing/)" eventually to create your own native builds. If you do eject, the "React Native CLI Quickstart" instructions will be required to continue working on your project.
+如果您必须嵌入原生开发代码，那么 Expo 仍然是入门的好方法。在这种情况下，你只需要使用"[eject](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md#ejecting-from-create-react-native-app)"来构建本地项目。如果您使用`eject`，则需要 “React Native CLI Quickstart” 继续处理项目。
 
-Expo CLI configures your project to use the most recent React Native version that is supported by the Expo client app. The Expo client app usually gains support for a given React Native version about a week after the React Native version is released as stable. You can check [this document](https://docs.expo.io/versions/latest/sdk/overview/#sdk-version) to find out what versions are supported.
+Expo CLI 将为您的项目配置并使用`EXPO客户端`所支持的最新 React-Native 版本。当React Native版本稳定发布后的一周左右，Expo客户端通常会获得最新的React Native版本的支持。您可以[查看此文档](https://github.com/react-community/create-react-native-app/blob/master/VERSIONS.md)以了解哪些版本受支持。
 
-If you're integrating React Native into an existing project, you'll want to skip Expo CLI and go directly to setting up the native build environment. Select "React Native CLI Quickstart" above for instructions on configuring a native build environment for React Native.
+如果您将React Native集成到现有项目中，则您需要跳过 Expo CLI 并学习如何设置本地开发环境。 有关为React Native配置本机开发环境的说明，请选择上面的 “构建本地开发环境”。
 
 <block class="native mac windows linux ios android" />
 
-<p>Follow these instructions if you need to build native code in your project. For example, if you are integrating React Native into an existing application, or if you "ejected" from <a href="getting-started" onclick="displayTab('guide', 'quickstart')">Expo</a>, you'll need this section.</p>
+<p>如果您需要在您的项目中构建原生代码，请按下列的说明操作。 例如，如果您要将 React Native 集成到现有的程序中，又不想使用<a href="getting-started.html" onclick="displayTab('guide', 'quickstart')"> Create React Native App </a>，请仔细阅读本教程</p>
 
-The instructions are a bit different depending on your development operating system, and whether you want to start developing for iOS or Android. If you want to develop for both Android and iOS, that's fine - you can pick one to start with, since the setup is a bit different.
+根据你所使用的操作系统、针对的目标平台不同，具体步骤有所不同。如果想同时开发iOS和Android也没问题，你只需要先选一个平台开始，另一个平台的环境搭建只是稍有不同。
 
 <div class="toggler">
-  <span>Development OS:</span>
+  <span>开发系统 :</span>
   <span role="tablist" id="toggle-os">
     <button role="tab" class="button-mac" onclick="displayTab('os', 'mac')">macOS</button>
     <button role="tab" class="button-windows" onclick="displayTab('os', 'windows')">Windows</button>
@@ -99,7 +102,7 @@ The instructions are a bit different depending on your development operating sys
 </div>
 
 <div class="toggler">
-  <span>Target OS:</span>
+  <span>目标系统 :</span>
   <span role="tablist" id="toggle-platform">
     <button role="tab" class="button-ios" onclick="displayTab('platform', 'ios')">iOS</button>
     <button role="tab" class="button-android" onclick="displayTab('platform', 'android')">Android</button>
@@ -108,45 +111,46 @@ The instructions are a bit different depending on your development operating sys
 
 <block class="native linux windows ios" />
 
-<h2>Unsupported</h2>
+<h2>暂不支持</h2>
 
-<blockquote><p>A Mac is required to build projects with native code for iOS. You can follow the <a href="getting-started" onclick="displayTab('guide', 'quickstart')">Quick Start</a> to learn how to build your app using Expo instead.</p></blockquote>
+<blockquote><p>需要 Mac 才能使用适用于 iOS 的原生代码构建项目。 你可以学习 <a href="getting-started" onclick="displayTab('guide', 'quickstart')">快速开始</a> 选项中的 Expo 来构建应用。</p></blockquote>
 
 <block class="native mac ios" />
 
-<h2>Installing dependencies</h2>
+<h2>安装依赖</h2>
 
-You will need Node, Watchman, the React Native command line interface, and Xcode.
+你需要安装 Node、Watchman、react-native命令行工具与 xcode。
 
-While you can use any editor of your choice to develop your app, you will need to install Xcode in order to set up the necessary tooling to build your React Native app for iOS.
+虽然你可以使用任意编辑器（IDE）来开发你的App，但你必须要安装 xcode 才能完整构建适用于iOS的React Native应用程序。
 
 <block class="native mac android" />
 
-<h2>Installing dependencies</h2>
+<h2>安装依赖</h2>
 
-You will need Node, Watchman, the React Native command line interface, a JDK, and Android Studio.
+你需要安装 Node、Watchman、react-native命令行工具以及JDK和Android Studio。
 
 <block class="native linux android" />
 
-<h2>Installing dependencies</h2>
+<h2>安装依赖</h2>
 
-You will need Node, the React Native command line interface, a JDK, and Android Studio.
+你需要安装 Node、react-native命令行工具以及JDK和Android Studio。
 
 <block class="native windows android" />
 
-<h2>Installing dependencies</h2>
+<h2>安装依赖</h2>
 
-You will need Node, the React Native command line interface, Python2, a JDK, and Android Studio.
+你需要安装 Node、react-native命令行工具、python2以及JDK和Android Studio。
 
 <block class="native mac windows linux android" />
 
-While you can use any editor of your choice to develop your app, you will need to install Android Studio in order to set up the necessary tooling to build your React Native app for Android.
+虽然您可以使用任意编辑器来开发应用程序，但您依旧需要安装 Android Studio 才能完整的安装诸多依赖以构建适用于 Android 的 React Native 应用程序。
 
 <block class="native mac ios android" />
 
 <h3>Node, Watchman, JDK</h3>
 
-We recommend installing Node, Watchman, and JDK using [Homebrew](http://brew.sh/). Run the following commands in a Terminal after installing Homebrew:
+我们推荐使用 [Homebrew](http://brew.sh/) 来安装 Node 和 Watchman 与 JDK,在安装好 Homebrew 之后你可以通过下列命令安装：
+
 
 ```
 brew install yarn
@@ -156,101 +160,101 @@ brew tap AdoptOpenJDK/openjdk
 brew cask install adoptopenjdk8
 ```
 
-If you have already installed Node on your system, make sure it is Node 8.3 or newer.
+如果你已经安装了 Node 环境，请确认其版本 >= 8.3。
 
-[Watchman](https://facebook.github.io/watchman) is a tool by Facebook for watching changes in the filesystem. It is highly recommended you install it for better performance.
+[Watchman](https://facebook.github.io/watchman) 是一个由 Facebook 开发的实时监控开发文件变更的工具，我们强烈建议你安装此工具以获得更好的开发体验。
 
-If you have already installed JDK on your system, make sure it is JDK 8 or newer.
+如果你已经安装了 JDK，请确认其版本 >= 8.0
 
 <block class="native linux android" />
 
 <h3>Node</h3>
 
-Follow the [installation instructions for your Linux distribution](https://nodejs.org/en/download/package-manager/) to install Node 8.3 or newer.
+请按照您的 [Linux发行版的安装说明](https://nodejs.org/en/download/package-manager/) 进行操作，以安装Node 8.3或更高版本。
 
 <block class='native windows android' />
 
 <h3>Node, Python2, JDK</h3>
 
-We recommend installing Node and Python2 via [Chocolatey](https://chocolatey.org), a popular package manager for Windows.
+我们推荐使用 [Chocolatey](https://chocolatey.org) 来安装 Node 和 Python2,这是一个倍受欢迎的windows包管理工具。
 
-React Native also requires a recent version of the [Java SE Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), as well as Python 2. Both can be installed using Chocolatey.
+React Native 仍然需要安装新版本的[Java SE Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html),当然，你也可以通过 Chocolatey 进行安装。
 
-Open an Administrator Command Prompt (right click Command Prompt and select "Run as Administrator"), then run the following command:
+请使用管理员权限运行 windows命令行 (右键点击CMD快捷方式选择“使用管理员权限运行”)，再运行以下命令：
 
 ```powershell
 choco install -y nodejs.install python2 jdk8
 ```
 
-If you have already installed Node on your system, make sure it is Node 8.3 or newer. If you already have a JDK on your system, make sure it is version 8 or newer.
+如果你已经安装了 Node 环境，请确认其版本 >= 8.3，如果你已经安装了 JDK 环境，请确认其版本 >= 8.0
 
-> You can find additional installation options on [Node's Downloads page](https://nodejs.org/en/download/).
+> 当然您也可以在 [Node下载页面](https://nodejs.org/en/download/) 上找到其他版本。
 
 <block class="native mac ios android" />
 
-<h3>The React Native CLI</h3>
+<h3>React Native CLI</h3>
 
-Node comes with npm, which lets you install the React Native command line interface.
+Node包含了NPM(包管理器),你可以使用此工具安装 `React Native CLI`
 
-Run the following command in a Terminal:
+在命令行里运行下列命令进行安装：
 
 ```
 npm install -g react-native-cli
 ```
 
-> If you get an error like `Cannot find module 'npmlog'`, try installing npm directly: `curl -0 -L https://npmjs.org/install.sh | sudo sh`.
+> 如果遇到`Cannot find module 'npmlog'`的错误，请尝试直接安装 npm：`curl -0 -L https://npmjs.org/install.sh | sudo sh`。
 
 <block class="native windows linux android" />
 
 <h3>The React Native CLI</h3>
 
-Node comes with npm, which lets you install the React Native command line interface.
+Node包含了NPM(包管理器),你可以使用此工具安装 `React Native CLI`
 
-Run the following command in a Command Prompt or shell:
+在命令行里运行下列命令进行安装：
 
 ```powershell
 npm install -g react-native-cli
 ```
 
-> If you get an error like `Cannot find module 'npmlog'`, try installing npm directly: `curl -0 -L https://npmjs.org/install.sh | sudo sh`.
+> 如果遇到`Cannot find module 'npmlog'`的错误，请尝试直接安装 npm：`curl -0 -L https://npmjs.org/install.sh | sudo sh`。
 
 <block class="native mac ios" />
 
 <h3>Xcode</h3>
 
-The easiest way to install Xcode is via the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12). Installing Xcode will also install the iOS Simulator and all the necessary tools to build your iOS app.
+安装 Xcode 的最简单方法是通过 [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。 安装 Xcode 的同时还将安装 iOS Simulator 和其他依赖来帮助您迅速构建iOS应用。
 
-If you have already installed Xcode on your system, make sure it is version 9.4 or newer.
+如果您已经在系统上安装了Xcode，请确保版本>=9.4。
 
-<h4>Command Line Tools</h4>
+<h4>命令行工具 Command Line Tools</h4>
 
-You will also need to install the Xcode Command Line Tools. Open Xcode, then choose "Preferences..." from the Xcode menu. Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.
+您还需要安装Xcode命令行工具。 打开Xcode，然后从Xcode菜单中选择 “Preferences（首选项）...” 。 转到 “Locations ” 选项卡并通过在“命令行工具”下拉列表中选择最新版本来安装工具。
 
 ![Xcode Command Line Tools](/react-native/docs/assets/GettingStartedXcodeCommandLineTools.png)
 
 <block class="native linux android" />
 
-<h3>Java Development Kit</h3>
+<h3>Java开发工具包 Java Development Kit（jdk）</h3>
 
-React Native requires version 8 of the Java SE Development Kit (JDK). You may download and install [OpenJDK](http://openjdk.java.net) from [AdoptOpenJDK](https://adoptopenjdk.net/) or your system packager. You may also [Download and install Oracle JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) if desired.
+React Native需要最新版本的Java SE开发工具包（JDK）。 如果需要，请下载并安装[JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新的版本。如需要，您也可以下载并安装 [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)。
 
 <block class="native mac linux windows android" />
 
-<h3>Android development environment</h3>
+<h3>Android 开发环境</h3>
 
-Setting up your development environment can be somewhat tedious if you're new to Android development. If you're already familiar with Android development, there are a few things you may need to configure. In either case, please make sure to carefully follow the next few steps.
+如果您不熟悉Android开发，那么请严格按照步骤进行设置。如果您已经熟悉Android开发，则只需要增加几项配置即可。但无论哪种情况，请仔细阅读下列几个步骤的操作。
 
 <block class="native mac windows linux android" />
 
-<h4>1. Install Android Studio</h4>
+<h4>1. 安装 Android Studio</h4>
 
-[Download and install Android Studio](https://developer.android.com/studio/index.html). Choose a "Custom" setup when prompted to select an installation type. Make sure the boxes next to all of the following are checked:
+[下载并安装 Android Studio](https://developer.android.com/studio/index.html)。当安装程序提示您选择安装类型时，请选择“Custom”选项。 确保勾选下列选项：
 
 <block class="native mac windows android" />
 
 - `Android SDK`
 - `Android SDK Platform`
-- `Performance (Intel ® HAXM)` ([See here for AMD](https://android-developers.googleblog.com/2018/07/android-emulator-amd-processor-hyper-v.html))
+- `Performance (Intel ® HAXM)` ([关于 AMD](https://android-developers.googleblog.com/2018/07/android-emulator-amd-processor-hyper-v.html))
 - `Android Virtual Device`
 
 <block class="native linux android" />
@@ -261,17 +265,17 @@ Setting up your development environment can be somewhat tedious if you're new to
 
 <block class="native mac windows linux android" />
 
-Then, click "Next" to install all of these components.
+接下来，点击 "Next" 以完成所有组件的安装。
 
-> If the checkboxes are grayed out, you will have a chance to install these components later on.
+> 如果组件勾选框为灰色（无法勾选），你也可以选择稍后安装这些组件。（译者注：勾选框为灰色一般是由于未完整下载安装配置安卓基础SDK，请确保网络连接，中国大陆用户可能需要使用科学上网）
 
-Once setup has finalized and you're presented with the Welcome screen, proceed to the next step.
+安装完成后，您将看到“欢迎”屏幕，请继续下一步。
 
-<h4>2. Install the Android SDK</h4>
+<h4>2. 安装 Android SDK</h4>
 
-Android Studio installs the latest Android SDK by default. Building a React Native app with native code, however, requires the `Android 9 (Pie)` SDK in particular. Additional Android SDKs can be installed through the SDK Manager in Android Studio.
+Android Studio 默认情况下会安装最新的 Android SDK。但是，使用原生代码构建 React Native 应用程序尤其需要 `Android 9（Pie）`SDK。其他的Android SDK请通过Android Studio 中的 SDK Manager 安装。
 
-The SDK Manager can be accessed from the "Welcome to Android Studio" screen. Click on "Configure", then select "SDK Manager".
+你可以通过 Android Studio 的启动欢迎屏幕访问 `SDK Manager`：点击 "Configure",选择 "SDK Manager"。
 
 <block class="native mac android" />
 
@@ -283,24 +287,24 @@ The SDK Manager can be accessed from the "Welcome to Android Studio" screen. Cli
 
 <block class="native mac windows linux android" />
 
-> The SDK Manager can also be found within the Android Studio "Preferences" dialog, under **Appearance & Behavior** → **System Settings** → **Android SDK**.
+> SDK Manager 也可以通过 Android Studio 的 "Preferences" 选项卡中找到:**Appearance & Behavior** → **System Settings** → **Android SDK**.
 
-Select the "SDK Platforms" tab from within the SDK Manager, then check the box next to "Show Package Details" in the bottom right corner. Look for and expand the `Android 9 (Pie)` entry, then make sure the following items are checked:
+从 SDK Manager 中选择 “SDK Platforms” 选项卡，然后选中右下角 “Show Package Details” 旁边的框。 查找并展开“ Android 9（Pie）”条目，然后确保勾选以下各项：
 
 - `Android SDK Platform 28`
 - `Intel x86 Atom_64 System Image` or `Google APIs Intel x86 Atom System Image`
 
-Next, select the "SDK Tools" tab and check the box next to "Show Package Details" here as well. Look for and expand the "Android SDK Build-Tools" entry, then make sure that `28.0.3` is selected.
+接下来，选择 “SDK Tools” 选项卡，并在此处选中 “Show Package Details” 旁边的框。 查找并展开 “Android SDK Build-Tools” 条目，确保选择 `28.0.3`。
 
-Finally, click "Apply" to download and install the Android SDK and related build tools.
+最后，单击 “Apply” 以下载并安装 Android SDK 和相关的依赖工具。
 
-<h4>3. Configure the ANDROID_HOME environment variable</h4>
+<h4>3. 配置 ANDROID_HOME 环境变量</h4>
 
-The React Native tools require some environment variables to be set up in order to build apps with native code.
+React Native 工具需要配置环境变量才能正常构建APP程序。
 
 <block class="native mac linux android" />
 
-Add the following lines to your `$HOME/.bash_profile` or `$HOME/.bashrc` config file:
+将下列配置加入 `$HOME/.bash_profile` 或 `$HOME/.bashrc` 配置文件:
 
 <block class="native mac android" />
 
@@ -324,33 +328,33 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 <block class="native mac linux android" />
 
-> `.bash_profile` is specific to `bash`. If you're using another shell, you will need to edit the appropriate shell-specific config file.
+> `.bash_profile` 仅仅是 `bash` 的特有配置文件，如果你使用的是其它的shell，请编辑其对应的配置文件。
 
-Type `source $HOME/.bash_profile` to load the config into your current shell. Verify that ANDROID_HOME has been added to your path by running `echo $PATH`.
+使用命令 `source $HOME/.bash_profile` 以加载新的配置文件到shell之中，可以使用 `echo $PATH` 来验证 ANDROID_HOME 环境变量是否被成功配置
 
-> Please make sure you use the correct Android SDK path. You can find the actual location of the SDK in the Android Studio "Preferences" dialog, under **Appearance & Behavior** → **System Settings** → **Android SDK**.
+> 请确认你Android SDK的本地路径，你可以从Android Studio 的 “Preferences” 菜单项中找到并确认：  **Appearance & Behavior** → **System Settings** → **Android SDK**。
 
 <block class="native windows android" />
 
-Open the System pane under **System and Security** in the Windows Control Panel, then click on **Change settings...**. Open the **Advanced** tab and click on **Environment Variables...**. Click on **New...** to create a new `ANDROID_HOME` user variable that points to the path to your Android SDK:
+在 Windows控制面板中的 **System and Security** 下，打开“系统”窗格，然后单击 **Change settings...**。打开 **Advanced** 选项卡，然后单击 **Environment Variables...**。单击 **New...** 以创建一个新的 `ANDROID_HOME` 用户变量， 指向您的Android SDK的路径：
 
 ![ANDROID_HOME Environment Variable](/react-native/docs/assets/GettingStartedAndroidEnvironmentVariableANDROID_HOME.png)
 
-The SDK is installed, by default, at the following location:
+若 Java SDK 已经以默认配置安装完成, 则其默认地址为:
 
 ```powershell
 c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk
 ```
 
-You can find the actual location of the SDK in the Android Studio "Preferences" dialog, under **Appearance & Behavior** → **System Settings** → **Android SDK**.
+您可以在Android Studio “Preferences” 对话框中找到SDK的实际位置：**Appearance & Behavior** → **System Settings** → **Android SDK**。
 
-Open a new Command Prompt window to ensure the new environment variable is loaded before proceeding to the next step.
+在进行下一步之前，请打开一个新的命令提示窗以确保其加载了新的环境变量。
 
-<h4>4. Add platform-tools to Path</h4>
+<h4>4. 添加 platform-tools 至系统Path</h4>
 
-Open the System pane under **System and Security** in the Windows Control Panel, then click on **Change settings...**. Open the **Advanced** tab and click on **Environment Variables...**. Select the **Path** variable, then click **Edit**. Click **New** and add the path to platform-tools to the list.
+在 Windows控制面板中的 **System and Security** 下，打开“系统”窗格，然后单击 **Change settings...**。打开 **Advanced** 选项卡，然后单击 **Environment Variables...**。选择 **Path** 变量, 再单击 **Edit**。选择 **New** 将 platform-tools 添加进去.
 
-The default location for this folder is:
+其默认地址为:
 
 ```powershell
 c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools
@@ -360,25 +364,29 @@ c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools
 
 <h3>Watchman</h3>
 
-Follow the [Watchman installation guide](https://facebook.github.io/watchman/docs/install.html#buildinstall) to compile and install Watchman from source.
+请根据 [Watchman 安装指南](https://facebook.github.io/watchman/docs/install.html#buildinstall)从源码编译并安装。
 
-> [Watchman](https://facebook.github.io/watchman/docs/install.html) is a tool by Facebook for watching changes in the filesystem. It is highly recommended you install it for better performance and increased compatibility in certain edge cases (translation: you may be able to get by without installing this, but your mileage may vary; installing this now may save you from a headache later).
+> [Watchman](https://facebook.github.io/watchman/docs/install.html)是一个由Facebook开发为了监控文件系统是否发生改变的工具，我们强烈建议您安装它以获得更好的性能。(解释：您可能无需安装它也可正常编写应用程序，但是您的工作量可能会有所不同；现在安装它可能会让您以后免于头痛。).
 
 <block class="native mac ios" />
 
-<h2>Creating a new application</h2>
+<h2>构建一个新项目</h2>
 
-Use the React Native command line interface to generate a new React Native project called "AwesomeProject":
+使用 React Native 命令行工具搭建一个名为 "AwesomeProject" 的新项目：
+
+> 译者注-1：0.45 及以上版本需要依赖 boost 等几个很难下载成功的第三方库编译（需要合理的外网访问环境）可前往此[github仓库](https://)下载
+
+> 译者注-2：切勿单独使用常见的关键字作为项目名（如class, native, new, package等等）。切勿使用与核心模块同名的项目名（如react, react-native等）。**切勿在目录、文件名中使用中文、空格等特殊符号**。
 
 ```
 react-native init AwesomeProject
 ```
 
-This is not necessary if you are integrating React Native into an existing application, if you "ejected" from Expo (or Create React Native App), or if you're adding iOS support to an existing React Native project (see [Platform Specific Code](platform-specific-code.md)). You can also use a third-party CLI to init your React Native app, such as [Ignite CLI](https://github.com/infinitered/ignite).
+如果要将React Native集成到现有应用程序中，从 Expo 中移植出（或创建 React Native App），或者要将 iOS 支持添加到现有 React Native 项目中，则不需要此操作（请参阅[Platform Specific Code](platform-specific-code.md)） 您还可以使用第三方 CLI 来启动您的 React Native 应用程序，例如 [Ignite CLI](https://github.com/infinitered/ignite)。
 
-<h3>[Optional] Using a specific version</h3>
+<h3>[可选] 使用指定版本的项目</h3>
 
-If you want to start a new project with a specific React Native version, you can use the `--version` argument:
+您可以指定 React Native 版本创建一个新项目，使用： `--version` 参数(注：版本号必须精确到两个小数点)：
 
 ```
 react-native init AwesomeProject --version X.XX.X
@@ -390,19 +398,23 @@ react-native init AwesomeProject --version react-native@next
 
 <block class="native mac windows linux android" />
 
-<h2>Creating a new application</h2>
+<h2>构建一个新项目</h2>
 
-Use the React Native command line interface to generate a new React Native project called "AwesomeProject":
+使用 React Native 命令行工具搭建一个名为 "AwesomeProject" 的新项目：
+
+> 译者注-1：0.45 及以上版本需要依赖 boost 等几个很难下载成功的第三方库编译（需要合理的外网访问环境）可前往此[github仓库](https://)下载
+
+> 译者注-2：切勿单独使用常见的关键字作为项目名（如class, native, new, package等等）。切勿使用与核心模块同名的项目名（如react, react-native等）。**切勿在目录、文件名中使用中文、空格等特殊符号**。
 
 ```
 react-native init AwesomeProject
 ```
 
-This is not necessary if you are integrating React Native into an existing application, if you "ejected" from Create React Native App, or if you're adding Android support to an existing React Native project (see [Platform Specific Code](platform-specific-code.md)). You can also use a third-party CLI to init your React Native app, such as [Ignite CLI](https://github.com/infinitered/ignite).
+如果要将React Native集成到现有应用程序中，从 Expo 中移植出（或创建 React Native App），或者要将 iOS 支持添加到现有 React Native 项目中，则不需要此操作（请参阅[Platform Specific Code](platform-specific-code.md)） 您还可以使用第三方 CLI 来启动您的 React Native 应用程序，例如 [Ignite CLI](https://github.com/infinitered/ignite)。
 
-<h3>[Optional] Using a specific version</h3>
+<h3>[可选] 使用指定版本的项目</h3>
 
-If you want to start a new project with a specific React Native version, you can use the `--version` argument:
+您可以指定 React Native 版本创建一个新项目，使用： `--version` 参数(注：版本号必须精确到两个小数点)：
 
 ```
 react-native init AwesomeProject --version X.XX.X
@@ -414,23 +426,21 @@ react-native init AwesomeProject --version react-native@next
 
 <block class="native mac windows linux android" />
 
-<h2>Preparing the Android device</h2>
+<h2>为 Android 设备进行前期准备</h2>
 
-You will need an Android device to run your React Native Android app. This can be either a physical Android device, or more commonly, you can use an Android Virtual Device which allows you to emulate an Android device on your computer.
+你需要准备一台 Android 设备来运行 React Native Android 应用。这里所指的设备既可以是真机，也可以是模拟器。但无论您使用哪种方式，下列的准备步骤都是必须的。（译者注：Android 官方提供了名为 Android Virtual Device（简称 AVD）的模拟器。此外还有很多第三方提供的模拟器如Genymotion、BlueStack 等。一般来说官方模拟器免费、功能完整，但性能较差。第三方模拟器性能较好，但可能需要付费，或带有广告）。
 
-Either way, you will need to prepare the device to run Android apps for development.
+<h3>使用 Android 物理设备</h3>
 
-<h3>Using a physical device</h3>
+你也可以使用 Android 物理设备来代替模拟器（虚拟机）进行开发，只需用 usb 数据线连接到电脑，然后遵照此篇[文档](running-on-device.md)的说明操作即可。
 
-If you have a physical Android device, you can use it for development in place of an AVD by plugging it in to your computer using a USB cable and following the instructions [here](running-on-device.md).
+<h3>使用 Android 模拟器</h3>
 
-<h3>Using a virtual device</h3>
-
-If you use Android Studio to open `./AwesomeProject/android`, you can see the list of available Android Virtual Devices (AVDs) by opening the "AVD Manager" from within Android Studio. Look for an icon that looks like this:
+你可以使用 Android Studio 打开项目中的 `android` 目录，然后可以使用 "AVD Manager" 来查看可用的虚拟设备，它的图标看起来像下面这样：
 
 ![Android Studio AVD Manager](/react-native/docs/assets/GettingStartedAndroidStudioAVD.png)
 
-If you have recently installed Android Studio, you will likely need to [create a new AVD](https://developer.android.com/studio/run/managing-avds.html). Select "Create Virtual Device...", then pick any Phone from the list and click "Next", then select the **Pie** API Level 28 image.
+如果你刚刚才安装 Android Studio，那么可能需要先 [创建一个虚拟设备](https://developer.android.com/studio/run/managing-avds.html)。点击 "Create Virtual Device..." ，然后选择所需的设备类型并点击 "Next"，然后选择**Pie** API Level 28 图像。
 
 <block class="native linux android" />
 
@@ -438,19 +448,19 @@ If you have recently installed Android Studio, you will likely need to [create a
 
 <block class="native windows android" />
 
-> If you don't have HAXM installed, click on "Install HAXM" or follow [these instructions](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows) to set it up, then go back to the AVD Manager.
+> 如果你还没有安装 HAXM（Intel 虚拟硬件加速驱动），则先点击 "Install HAXM" 或是根据此篇[文档说明](https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows)来进行安装。
 
 <block class="native mac android" />
 
-> If you don't have HAXM installed, follow [these instructions](https://github.com/intel/haxm/wiki/Installation-Instructions-on-macOS) to set it up, then go back to the AVD Manager.
+> 如果你还没有安装 HAXM（Intel 虚拟硬件加速驱动），则先根据此篇[文档说明](https://github.com/intel/haxm/wiki/Installation-Instructions-on-macOS)来进行安装。
 
 <block class="native mac windows linux android" />
 
-Click "Next" then "Finish" to create your AVD. At this point you should be able to click on the green triangle button next to your AVD to launch it, then proceed to the next step.
+点击 "Next" 和 "Finish" 来完成虚拟设备的创建。现在你应该可以点击虚拟设备旁的绿色三角按钮来启动它了，启动完后我们可以尝试运行应用。
 
 <block class="native mac ios" />
 
-<h2>Running your React Native application</h2>
+<h2>编译及运行 React Native 应用</h2>
 
 Run `react-native run-ios` inside your React Native project folder:
 
@@ -459,30 +469,30 @@ cd AwesomeProject
 react-native run-ios
 ```
 
-You should see your new app running in the iOS Simulator shortly.
+您将很快就能看到 iOS 模拟器启动并自动运行您的新项目。
 
 ![AwesomeProject on iOS](/react-native/docs/assets/GettingStartediOSSuccess.png)
 
-`react-native run-ios` is one way to run your app. You can also run it directly from within Xcode.
+`react-native run-ios` 命令仅是运行应用的方式之一。 您亦可直接于 Xcode 中直接运行本项目。
 
-> If you can't get this to work, see the [Troubleshooting](troubleshooting.md#content) page.
+> 如果您无法正常运行项目, 请前往 [故障修复](troubleshooting.md#content) 页面寻找解决方案。
 
-<h3>Running on a device</h3>
+<h3>在真机上运行</h3>
 
-The above command will automatically run your app on the iOS Simulator by default. If you want to run the app on an actual physical iOS device, please follow the instructions [here](running-on-device.md).
+上面的命令默认情况下会自动在iOS模拟器上运行您的应用。 如果要在真正的iOS设备上运行该应用，请按照[此处](running-on-device.md)的说明进行操作。
 
 <block class="native mac windows linux android" />
 
-<h2>Running your React Native application</h2>
+<h2>编译及运行 React Native 应用</h2>
 
-Run `react-native run-android` inside your React Native project folder:
+在您的 React Native 项目文件夹中运行命令 `react-native run-android` :
 
 ```
 cd AwesomeProject
 react-native run-android
 ```
 
-If everything is set up correctly, you should see your new app running in your Android emulator shortly.
+如果所有设置都已完成, 您将很快就能看到 Android 模拟器启动并自动运行您的新项目。
 
 <block class="native mac android" />
 
@@ -494,67 +504,67 @@ If everything is set up correctly, you should see your new app running in your A
 
 <block class="native mac windows linux android" />
 
-`react-native run-android` is one way to run your app - you can also run it directly from within Android Studio.
+`react-native run-android` 命令仅是运行应用的方式之一。 您亦可直接于 Android Studio 中直接运行本项目。
 
-> If you can't get this to work, see the [Troubleshooting](troubleshooting.md#content) page.
+> 如果您无法正常运行项目, 请前往 [故障修复](troubleshooting.md#content) 页面寻找解决方案。
 
 <block class="native mac ios android" />
 
-<h3>Modifying your app</h3>
+<h3>修改您的项目</h3>
 
-Now that you have successfully run the app, let's modify it.
+现在你已经成功运行了项目，我们可以开始尝试动手进行一些改动：
 
 <block class="native mac ios" />
 
-- Open `App.js` in your text editor of choice and edit some lines.
-- Hit `⌘R` in your iOS Simulator to reload the app and see your changes!
+- 使用你的编辑器打开 `App.js` 并进行一些修改。
+- 在 iOS 模拟器中按下 `⌘R` 就可以刷新 APP 并看到你的修改。
 
 <block class="native mac android" />
 
-- Open `App.js` in your text editor of choice and edit some lines.
-- Press the `R` key twice or select `Reload` from the Developer Menu (`⌘M`) to see your changes!
+- 使用你的编辑器打开 `App.js` 并进行一些修改。
+- 按两下 R 键，或是用 Menu 键（通常是 F2，在 Genymotion 模拟器中是⌘+M）打开开发者菜单，然后选择 Reload JS 就可以看到你的最新修改。
 
 <block class="native windows linux android" />
 
 <h3>Modifying your app</h3>
 
-Now that you have successfully run the app, let's modify it.
+现在你已经成功运行了项目，我们可以开始尝试动手进行一些改动：
 
-- Open `App.js` in your text editor of choice and edit some lines.
-- Press the `R` key twice or select `Reload` from the Developer Menu (`Ctrl + M`) to see your changes!
+- 使用你的编辑器打开 `App.js` 并进行一些修改。
+- 按两下 R 键，或是用 Menu 键（通常是 F2，在 Genymotion 模拟器中是⌘+M）打开开发者菜单，然后选择 Reload JS 就可以看到你的最新修改。
 
 <block class="native mac ios android" />
 
-<h3>That's it!</h3>
+<h3>已经完成了！</h3>
 
-Congratulations! You've successfully run and modified your first React Native app.
+恭喜！你已经成功运行并修改了你的第一个 React Native 应用。
 
 <center><img src="/react-native/docs/assets/GettingStartedCongratulations.png" width="150"></img></center>
 
 <block class="native windows linux android" />
 
-<h3>That's it!</h3>
+<h3>已经完成了！</h3>
 
-Congratulations! You've successfully run and modified your first React Native app.
+恭喜！你已经成功运行并修改了你的第一个 React Native 应用。
 
 <center><img src="/react-native/docs/assets/GettingStartedCongratulations.png" width="150"></img></center>
 
 <block class="native mac ios" />
 
-<h2>Now what?</h2>
+<h2>接下来？</h2>
 
-- Turn on [Live Reload](debugging.md#reloading-javascript) in the Developer Menu. Your app will now reload automatically whenever you save any changes!
+- 在 `Developer Menu` 菜单中打开 [Live Reload](debugging.md#reloading-javascript)。现在，只要保存任意更改，您的应用程序将会自动重新加载！
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](integration-with-existing-apps.md).
+- 如果你想把 React Native 集成到现有的原生项目中，则请参考 [集成到现有原生应用](integration-with-existing-apps.md)。
 
-If you're curious to learn more about React Native, continue on to the [Tutorial](tutorial.md).
+如果您想了解有关 React Native 的更多信息，请继续本[教程](tutorial.md).
 
 <block class="native windows linux mac android" />
 
-<h2>Now what?</h2>
+<h2>接下来？</h2>
 
-- Turn on [Live Reload](debugging.md#reloading-javascript) in the Developer Menu. Your app will now reload automatically whenever you save any changes!
+- 在 `Developer Menu` 菜单中打开 [Live Reload](debugging.md#reloading-javascript)。现在，只要保存任意更改，您的应用程序将会自动重新加载！
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](integration-with-existing-apps.md).
+- 如果你想把 React Native 集成到现有的原生项目中，则请参考 [集成到现有原生应用](integration-with-existing-apps.md)。
 
-If you're curious to learn more about React Native, continue on to the [Tutorial](tutorial.md).
+如果您想了解有关 React Native 的更多信息，请继续本[教程](tutorial.md).
