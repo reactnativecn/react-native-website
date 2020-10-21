@@ -45,7 +45,7 @@ public class ToastModule extends ReactContextBaseJavaModule {
   private static final String DURATION_SHORT_KEY = "SHORT";
   private static final String DURATION_LONG_KEY = "LONG";
 
-  public ToastModule(ReactApplicationContext reactContext) {
+  public ToastModule(ReactApplicationContext context) {
     super(reactContext);
     reactContext = context;
   }
