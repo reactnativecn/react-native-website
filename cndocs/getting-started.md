@@ -403,6 +403,10 @@ c:\Users\你的用户名\AppData\Local\Android\Sdk
 ```sh
 npx react-native init AwesomeProject
 ```
+> 如果你想使用 typescript
+```sh
+ npx react-native init automation --template react-native-template-typescript
+```
 
 > 提示：你可以使用`--version`参数（注意是`两`个杠）创建指定版本的项目。例如`npx react-native init MyApp --version 0.44.3`。注意版本号必须精确到两个小数点。
 
