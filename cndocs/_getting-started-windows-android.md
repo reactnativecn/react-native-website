@@ -8,7 +8,7 @@
 
 我们建议直接使用搜索引擎搜索下载 Node 和[Java SE Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-注意 Node 的版本应大于等于 12，而 JDK 的版本必须是 1.8（目前不支持 1.9 及更高版本，注意 1.8 版本官方也直接称 8 版本）。安装完 Node 后建议设置 npm 镜像（淘宝源）以加速后面的过程（或使用科学上网工具）。
+注意 Node 的版本应大于等于 12，而 JDK 的版本必须大于等于 1.8（1.8 版本官方也直接称 8 版本）。安装完 Node 后建议设置 npm 镜像（淘宝源）以加速后面的过程（或使用科学上网工具）。
 
 > 注意：不要使用 cnpm！cnpm 安装的模块路径比较奇怪，packager 不能正常识别！
 
@@ -43,6 +43,7 @@ npm install -g yarn
 - `Android SDK`
 - `Android SDK Platform`
 - `Android Virtual Device`
+- 如果还未使用过 Hyper-V: Performance (Intel ® HAXM) ([Hyper-V或AMD查看这里](https://android-developers.googleblog.com/2018/07/android-emulator-amd-processor-hyper-v.html))
 
 然后点击"Next"来安装选中的组件。
 
@@ -63,7 +64,7 @@ Android Studio 默认会安装最新版本的 Android SDK。目前编译 React N
 在 SDK Manager 中选择"SDK Platforms"选项卡，然后在右下角勾选"Show Package Details"。展开`Android 10 (Q)`选项，确保勾选了下面这些组件（重申你必须使用稳定的代理软件，否则可能都看不到这个界面）：
 
 - `Android SDK Platform 29`
-- `Intel x86 Atom_64 System Image`（官方模拟器镜像文件，使用非官方模拟器不需要安装此组件
+- `Intel x86 Atom_64 System Image` 或 `Google APIs Intel x86 Atom System Image`（模拟器镜像文件
 
 然后点击"SDK Tools"选项卡，同样勾中右下角的"Show Package Details"。展开"Android SDK Build-Tools"选项，确保选中了 React Native 所必须的`29.0.2`版本。你可以同时安装多个其他版本。
 
