@@ -346,7 +346,7 @@ import { NativeEventEmitter, NativeModules } from 'react-native';
     const eventEmitter = new NativeEventEmitter(NativeModules.ToastExample);
     this.eventListener = eventEmitter.addListener('EventReminder', (event) => {
        console.log(event.eventProperty) // "someValue"
-    };
+    });
     // ...
   }
   componentWillUnmount() {
