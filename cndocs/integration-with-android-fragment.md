@@ -5,19 +5,19 @@ title: 集成到 Android Fragment
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
-The guide for [Integration with Existing Apps](https://reactnative.dev/docs/integration-with-existing-apps) details how to integrate a full-screen React Native app into an existing Android app as an Activity. To use React Native components within Fragments in an existing app requires some additional setup. The benefit of this is that it allows for a native app to integrate React Native components alongside native fragments in an Activity.
+[与现有应用程序集成](https://reactnative.dev/docs/integration-with-existing-apps)指南中详细介绍了如何将全屏 React Native 应用程序作为 Activity 集成到现有 Android 应用程序中。要在现有应用程序的 Fragments 中使用 React Native 组件，需要进行一些额外的设置。这样做的好处是它允许原生应用程序将 React Native 组件与 Activity 中的原生 Fragments 集成在一起。
 
-### 1. Add React Native to your app
+### 1. 将 React Native 添加到你的应用程序
 
-Follow the guide for [Integration with Existing Apps](https://reactnative.dev/docs/integration-with-existing-apps) until the Code integration section. Continue to follow Step 1. Create an `index.android.js` file and Step 2. Add your React Native code from this section.
+按照[与现有应用程序集成](https://reactnative.dev/docs/integration-with-existing-apps)的指南，直到代码集成部分。继续执行第 1 步：创建一个`index.android.js`文件；第 2 步：添加本节中的 React Native 代码。
 
-### 2. Integrating your App with a React Native Fragment
+### 2. 将你的应用程序与 React Native Fragment 集成
 
-You can render your React Native component into a Fragment instead of a full screen React Native Activity. The component may be termed a "screen" or "fragment" and it will function in the same manner as an Android fragment, likely containing child components. These components can be placed in a `/fragments` folder and the child components used to compose the fragment can be placed in a `/components` folder.
+你可以将你的 React Native 组件渲染成一个 Fragment，而不是一个全屏的 React Native Activity。该组件可以称为"screen"或"fragment"，它的功能与 Android Fragment 相同，可能包含子组件。这些组件可以放在`/fragments`文件夹中，用于组成 Fragment 的子组件可以放在`/components`文件夹中。
 
-You will need to implement the `ReactApplication` interface in your main Application Java/Kotlin class. If you have created a new project from Android Studio with a default activity, you will need to create a new class (e.g. `MyReactApplication.java` or `MyReactApplication.kt`). If it is an existing class you can find this main class in your `AndroidManifest.xml` file. Under the `<application />` tag you should see a property `android:name` e.g. `android:name=".MyReactApplication"`. This value is the class you want to implement and provide the required methods to.
+你需要在主应用程序 Java/Kotlin 类中实现`ReactApplication`接口。如果你使用默认活动从 Android Studio 创建了一个新项目，则需要创建一个新类（例如`MyReactApplication.java`或`MyReactApplication.kt`）。如果它是一个现有类，你可以在`AndroidManifest.xml`文件中找到这个主类。在`<application />`标签下，你应该能看到属性`android:name`，例如`android:name=".MyReactApplication"`。此值是要实现的类，并为其提供所需的方法。
 
-Ensure your main Application class implements ReactApplication:
+确保主应用程序类实现ReactApplication：
 
 <Tabs groupId="android-language" defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="kotlin">
@@ -36,7 +36,7 @@ public class MyReactApplication extends Application implements ReactApplication 
 </TabItem>
 </Tabs>
 
-Override the required methods `getUseDeveloperSupport`, `getPackages` and `getReactNativeHost`:
+重写所需的方法`getUseDeveloperSupport`, `getPackages`以及`getReactNativeHost`:
 
 <Tabs groupId="android-language" defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="kotlin">
@@ -94,7 +94,7 @@ public class MyReactApplication extends Application implements ReactApplication 
 </TabItem>
 </Tabs>
 
-If you are using Android Studio, use Alt + Enter to add all missing imports in your class. Alternatively these are the required imports to include manually:
+如果你使用的是Android Studio，请使用 Alt+Enter 在类中添加所有缺失的导入，或者手动导入：
 
 <Tabs groupId="android-language" defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="kotlin">
@@ -127,15 +127,15 @@ import java.util.List;
 </TabItem>
 </Tabs>
 
-Perform a "Sync Project files with Gradle" operation.
+执行"Sync Project files with Gradle"操作。
 
-### Step 3. Add a FrameLayout for the React Native Fragment
+### Step 3. 为 React Native Fragment 添加 FrameLayout
 
-You will now add your React Native Fragment to an Activity. For a new project this Activity will be `MainActivity` but it could be any Activity and more fragments can be added to additional Activities as you integrate more React Native components into your app.
+现在可以把 React Native Fragment 添加到一个 Activity 中。对于一个新项目来说，这个 Activity 将是`MainActivity`，但它可以是任何 Activity，并且随着将更多 React Native 组件集成到应用程序中，你可以将更多 Fragments 添加到其他 Activity 中。
 
-First add the React Native Fragment to your Activity's layout. For example `main_activity.xml` in the `res/layouts` folder.
+首先将 React Native Fragment 添加到 Activity 的布局中，例如`res/layouts`文件夹中的`main_activity.xml`。
 
-Add a `<FrameLayout>` with an id, width and height. This is the layout you will find and render your React Native Fragment into.
+添加具有 id、宽度和高度的`<FrameLayout>`，React Native Fragment 会被渲染到此布局中。
 
 ```xml
 <FrameLayout
@@ -144,11 +144,11 @@ Add a `<FrameLayout>` with an id, width and height. This is the layout you will 
     android:layout_height="match_parent" />
 ```
 
-### Step 4. Add a React Native Fragment to the FrameLayout
+### Step 4. 将 React Native Fragment 添加到 FrameLayout
 
-To add your React Native Fragment to your layout you need to have an Activity. As mentioned in a new project this will be `MainActivity`. In this Activity add a button and an event listener. On button click you will render your React Native Fragment.
+要将 React Native Fragment 添加到布局中，你需要有一个 Activity。正如在一个新项目中提到的那样，它就是 MainActivity。在这个 Activity 中添加一个按钮和一个事件监听器，单击按钮时，将会渲染 React Native Fragment。
 
-Modify your Activity layout to add the button:
+修改 Activity 布局以添加按钮：
 
 ```xml
 <Button
@@ -159,9 +159,9 @@ Modify your Activity layout to add the button:
     android:text="Show react fragment" />
 ```
 
-Now in your Activity class (e.g. `MainActivity.java` or `MainActivity.kt`) you need to add an `OnClickListener` for the button, instantiate your `ReactFragment` and add it to the frame layout.
+现在在 Activity 类（例如`MainActivity.java`或`MainActivity.kt`）中，你需要为按钮添加一个`OnClickListener`，实例化`ReactFragment`并将其添加到框架布局中。
 
-Add the button field to the top of your Activity:
+将按钮字段添加到 Activity 的顶部：
 
 <Tabs groupId="android-language" defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="kotlin">
@@ -180,7 +180,7 @@ private Button mButton;
 </TabItem>
 </Tabs>
 
-Update your Activity's `onCreate` method as follows:
+更新 Activity 的`onCreate`方法，如下所示：
 
 <Tabs groupId="android-language" defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="kotlin">
@@ -233,11 +233,11 @@ protected void onCreate(Bundle savedInstanceState) {
 </TabItem>
 </Tabs>
 
-In the code above `Fragment reactNativeFragment = new ReactFragment.Builder()` creates the ReactFragment and `getSupportFragmentManager().beginTransaction().add()` adds the Fragment to the Frame Layout.
+在上面的代码中，`Fragment reactNativeFragment = new ReactFragment.Builder()`创建了ReactFragment，`getSupportFragmentManager().beginTransaction().add()`将 Fragment 添加到框架布局中。
 
-If you are using a starter kit for React Native, replace the "HelloWorld" string with the one in your `index.js` or `index.android.js` file (it’s the first argument to the AppRegistry.registerComponent() method).
+如果你使用了 React Native 的入门工具包，请将"HelloWorld"字符串替换为`index.js`或`index.android.js`文件中的字符串（它是 `AppRegistry.registerComponent()`方法的第一个参数）。
 
-Add the `getLaunchOptions` method which will allow you to pass props through to your component. This is optional and you can remove `setLaunchOptions` if you don't need to pass any props.
+添加`getLaunchOptions`方法，该方法允许你将属性传递到组件。这是可选的，如果不需要传递任何属性，可以删除`setLaunchOptions`。
 
 <Tabs groupId="android-language" defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="kotlin">
@@ -263,7 +263,7 @@ private Bundle getLaunchOptions(String message) {
 </TabItem>
 </Tabs>
 
-Add all missing imports in your Activity class. Be careful to use your package’s BuildConfig and not the one from the facebook package! Alternatively these are the required imports to include manually:
+在 Activity 类中添加所有缺少的导入。谨慎使用你自己的包中的 BuildConfig 而不是 facebook 包！或者手动导入：
 
 <Tabs groupId="android-language" defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="kotlin">
@@ -295,12 +295,12 @@ import com.facebook.soloader.SoLoader;
 </TabItem>
 </Tabs>
 
-Perform a "Sync Project files with Gradle" operation.
+执行"Sync Project files with Gradle"操作.
 
-### Step 5. Test your integration
+### Step 5. 测试你的集成
 
-Make sure you run `yarn` to install your react-native dependencies and run `yarn native` to start the metro bundler. Run your android app in Android Studio and it should load the JavaScript code from the development server and display it in your React Native Fragment in the Activity.
+确保运行`yarn`来安装你的 react-native 依赖项并运行`yarn native`来启动 Metro 打包器。在 Android Studio 中运行你的 android 应用程序，它应该从开发服务器加载 JavaScript 代码并将其显示在 Activity 的 React Native Fragment 中。
 
-### Step 6. Additional setup - Native modules
+### Step 6. 附加设置 - 原生模块
 
-You may need to call out to existing Java/Kotlin code from your react component. Native modules allow you to call out to native code and run methods in your native app. Follow the setup here [native-modules-android](/docs/native-modules-android)
+你可能需要从你的 react 组件调用现有的 Java/Kotlin 代码。原生模块允许你调用原生代码并在原生应用中运行方法。按照[此处](/docs/native-modules-android)进行设置。
