@@ -25,20 +25,18 @@ title: 其他参考资源
 
 [Expo](https://docs.expo.io)是一套沙盒开发环境，还带有一个已上架的空应用容器。这样你可以在没有原生开发平台（Xcode 或是 Android Studio）的情况下直接编写 React Native 应用（当然这样你只能写 js 部分代码而没法写原生代码）。
 
-[Yoga](https://yogalayout.com/) is a stand-alone layout engine that extends beyond React Native and allows product engineers to build layouts quickly for multiple platforms with a highly optimized open source layout engine designed with speed, size, and ease of use in mind.
+[Yoga](https://yogalayout.com/)是一个独立的布局引擎。它并不局限于 React Native，高度优化的开源布局引擎能让产品工程师为多个平台快速构建布局。该引擎在设计时考虑了速度、大小和易用性。
 
-[Bugsnag](https://www.bugsnag.com/), [Microsoft App Center](https://appcenter.ms/), and [Sentry](https://sentry.io/welcome/) all provide excellent crash and error monitoring services for React and React Native apps. These services allow you to proactively monitor crashes and issues occuring on your apps in real time so you can fix them quickly and improve user experience.
+[Bugsnag](https://www.bugsnag.com/), [Microsoft App Center](https://appcenter.ms/), 以及[Sentry](https://sentry.io/welcome/)都为 React 和  React Native 应用程序提供了出色的崩溃和错误监控服务。通过这些服务，你可以实时主动监控应用程序上发生的崩溃和问题，以便快速修复它们并改善用户体验。
 
 ## React Native 的交流社区
 
-以下这些都是英文的交流区，我也就不翻译了……
+React Native 社区 Facebook[群组](https://www.facebook.com/groups/react.native.community)拥有数千名开发人员，而且非常活跃。来这里展示你的项目，或者询问其他人是如何解决类似问题的。
 
-The [React Native Community](https://www.facebook.com/groups/react.native.community) Facebook group has thousands of developers, and it's pretty active. Come there to show off your project, or ask how other people solved similar problems.
+[Reactiflux](https://discord.gg/0ZcbPKXt5bZjGY5n)是一个 Discord 聊天，有着很多与 React 相关的讨论，包括 React Native。Discord 就和 Slack 一样，只是它更适用于拥有无数贡献者的开源项目。请查看#react-native 频道。
 
-[Reactiflux](https://discord.gg/0ZcbPKXt5bZjGY5n) is a Discord chat where a lot of React-related discussion happens, including React Native. Discord is just like Slack except it works better for open source projects with a zillion contributors. Check out the #react-native channel.
+React[推特账户](https://twitter.com/reactjs)涵盖 React 和 React Native。关注 React Native[推特账户](https://twitter.com/reactnative)和[博客](/react-native/blog/)，聚焦 React Native 的当下。
 
-The [React Twitter account](https://twitter.com/reactjs) covers both React and React Native. Follow the React Native [Twitter account](https://twitter.com/reactnative) and [blog](/react-native/blog/) to find out what's happening in the world of React Native.
+世界各地有很多React Native[聚会](http://www.meetup.com/topics/react-native/)。在 React 聚会中通常也有 React Native 内容。
 
-There are a lot of [React Native Meetups](http://www.meetup.com/topics/react-native/) that happen around the world. Often there is React Native content in React meetups as well.
-
-Sometimes we have React conferences. We posted the [videos from React.js Conf 2017](https://www.youtube.com/playlist?list=PLb0IAmt7-GS3fZ46IGFirdqKTIxlws7e0) and [React.js Conf 2016](https://www.youtube.com/playlist?list=PLb0IAmt7-GS0M8Q95RIc2lOM6nc77q1IY), and we'll probably have more conferences in the future, too. Stay tuned. You can also find a list of dedicated React Native conferences [here](http://www.awesome-react-native.com/#conferences).
+有时我们会有 React 会议。我们发布了[React.js Conf 2017](https://www.youtube.com/playlist?list=PLb0IAmt7-GS3fZ46IGFirdqKTIxlws7e0)和[React.js Conf 2016](https://www.youtube.com/playlist?list=PLb0IAmt7-GS0M8Q95RIc2lOM6nc77q1IY)的视频，未来我们可能还会举办更多会议, 敬请关注。您还可以在[此处](http://www.awesome-react-native.com/#conferences)找到专门的 React Native 会议列表。
