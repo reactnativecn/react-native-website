@@ -97,13 +97,13 @@ allprojects {
 
 ### 启用原生模块的自动链接
 
-To use the power of [autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md), we have to apply it a few places. First add the following entry to `settings.gradle`:
+要使用[自动链接](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md)的功能，我们必须将其应用于几个地方。首先，将以下内容添加到`settings.gradle`:
 
 ```gradle
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 ```
 
-Next add the following entry at the very bottom of the `app/build.gradle`:
+接下来，在`app/build.gradle`的最底部添加以下内容:
 
 ```gradle
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
@@ -123,7 +123,7 @@ apply from: file("../../node_modules/@react-native-community/cli-platform-androi
 
 ### 允许明文传输（http 接口） (API level 28+)
 
-> 从 Android 9 (API level 28)开始，默认情况下明文传输（http 接口）是禁用的，只能访问 https 接口。 this prevents your application from connecting to the [Metro bundler][metro]. The changes below allow cleartext traffic in debug builds.
+> 从 Android 9 (API level 28)开始，默认情况下明文传输（http 接口）是禁用的，只能访问 https 接口。这将阻止应用程序连接到[Metro bundler](https://facebook.github.io/metro)。下面的更改允许调试版本中的明文通信。
 
 #### 1. 为 debug 版本启用 `usesCleartextTraffic`选项
 
@@ -140,11 +140,11 @@ apply from: file("../../node_modules/@react-native-community/cli-platform-androi
 
 如果希望在正式打包后也能继续访问 http 接口，则需要在`src/main/AndroidManifest.xml`中也添加这一选项。
 
-To learn more about Network Security Config and the cleartext traffic policy [see this link](https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted).
+要了解有关网络安全配置和明文通信策略的更多信息，请参阅[此链接](https://developer.android.com/training/articles/security-config#CleartextTrafficPermitted)。
 
 ### 代码集成
 
-Now we will actually modify the native Android application to integrate React Native.
+现在我们将修改原生 Android 应用程序以集成 React Native。
 
 #### React Native 组件
 
@@ -214,7 +214,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 }
 ```
 
-Finally, the `onActivityResult()` method (as shown in the code below) has to be overridden to handle the permission Accepted or Denied cases for consistent UX. Also, for integrating Native Modules which use `startActivityForResult`, we need to pass the result to the `onActivityResult` method of our `ReactInstanceManager` instance.
+最后，必须重写`onActivityResult()`方法（如下面的代码所示）来处理权限接受或拒绝情况以实现一致的用户体验。此外，为了集成使用 startActivityForResult 的原生模块，我们需要将结果传递给 ReactInstanceManager 实例的 onActivityResult 方法。
 
 ```java
 @Override
@@ -275,7 +275,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
 }
 ```
 
-Perform a “Sync Project files with Gradle” operation.
+执行"Sync Project files with Gradle"操作。
 
 如果你使用的是 Android Studio , 可以使用`Alt + Enter`快捷键来自动为 MyReactActivity 类补上缺失的 import 语句。注意`BuildConfig`应该是在你自己的包中自动生成，无需额外引入。千万不要从`com.facebook...`的包中引入！
 
@@ -289,7 +289,7 @@ Perform a “Sync Project files with Gradle” operation.
 </activity>
 ```
 
-> 一个`ReactInstanceManager`可以在多个 activities 或 fragments 间共享。 You will want to make your own `ReactFragment` or `ReactActivity` and have a singleton _holder_ that holds a `ReactInstanceManager`. When you need the `ReactInstanceManager` (e.g., to hook up the `ReactInstanceManager` to the lifecycle of those Activities or Fragments) use the one provided by the singleton.
+> 一个`ReactInstanceManager`可以在多个 activities 或 fragments 间共享。你将需要创建自己的`ReactFragment`或`ReactActivity`，并拥有一个保存`ReactInstanceManager`的单例持有者。当你需要`ReactInstanceManager`（例如，将`ReactInstanceManager`连接到这些 Activities 或 Fragments 的生命周期）时，请使用单例提供的那个。
 
 下一步我们需要把一些 activity 的生命周期回调传递给`ReactInstanceManager`：
 
@@ -338,9 +338,9 @@ protected void onDestroy() {
 }
 ```
 
-This allows JavaScript to control what happens when the user presses the hardware back button (e.g. to implement navigation). When JavaScript doesn't handle the back button press, your `invokeDefaultOnBackPressed` method will be called. By default this finishes your `Activity`.
+这允许JavaScript控制用户按下设备后退按钮时发生的情况（例如，执行导航时）。当JavaScript不处理后退按钮按下的情况时，将调用`invokeDefaultOnBackPressed`方法。默认情况下，这将完成你的`Activity`。
 
-Finally, we need to hook up the dev menu. By default, this is activated by (rage) shaking the device, but this is not very useful in emulators. So we make it show when you press the hardware menu button (use `Ctrl + M` if you're using Android Studio emulator):
+最后，我们需要连接开发菜单。默认情况下通过（狂）摇晃设备来激活，但这在模拟器中不是很有用，只有当你按下设备菜单按钮时才显示（如果你使用的是 Android Studio 模拟器，请使用`Ctrl + M`）:
 
 ```java
 @Override
@@ -357,7 +357,7 @@ public boolean onKeyUp(int keyCode, KeyEvent event) {
 
 ### 测试集成结果
 
-You have now done all the basic steps to integrate React Native with your current application. Now we will start the [Metro bundler][metro] to build the `index.bundle` package and the server running on localhost to serve it.
+你已经完成了将 React Native 与当前应用程序集成的所有基本步骤。现在我们将启动[Metro bundler](https://facebook.github.io/metro)来构建`index.bundle`包，并通过本地主机提供服务。
 
 ##### 1. 运行 Metro 服务
 
