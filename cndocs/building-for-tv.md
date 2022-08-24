@@ -41,13 +41,13 @@ const running_on_tv = Platform.isTV;
 
 ## 代码修改
 
-- _访问可点击的控件_: When running on Android TV the Android framework will automatically apply a directional navigation scheme based on relative position of focusable elements in your views. The `Touchable` mixin has code added to detect focus changes and use existing methods to style the components properly and initiate the proper actions when the view is selected using the TV remote, so `TouchableWithoutFeedback`, `TouchableHighlight`, `TouchableOpacity` and `TouchableNativeFeedback` will work as expected. In particular:
+- _访问可点击的控件_：在Android TV上运行时，Android 框架将根据视图中可聚焦元素的相对位置自动应用定向导航方案。`Touchable`系列组件添加了检测焦点变化的代码，并使用现有方法正确设置组件的样式，以及在使用电视遥控器选择视图时启动正确的操作，因此`TouchableWithoutFeedback`、`TouchableHighlight`、`TouchableOpacity`和`TouchableNativeFeedback`将按预期工作。特别地：
 
-  - `onFocus` will be executed when the touchable view goes into focus
-  - `onBlur` will be executed when the touchable view goes out of focus
-  - `onPress` will be executed when the touchable view is actually selected by pressing the "select" button on the TV remote.
+  - `onFocus`会在可触摸视图成为焦点时执行
+  - `onBlur`会在可触摸视图失去焦点时执行
+  - `onPress`会在按下电视遥控器上的“选择”按钮实际选择可触摸视图时执行。
 
-- _TV remote/keyboard input_: A new native class, `ReactAndroidTVRootViewHelper`, sets up key events handlers for TV remote events. When TV remote events occur, this class fires a JS event. This event will be picked up by instances of the `TVEventHandler` JavaScript object. Application code that needs to implement custom handling of TV remote events can create an instance of `TVEventHandler` and listen for these events, as in the following code:
+- _电视遥控器/键盘输入_：一个新的原生类`ReactAndroidTVRootViewHelper`为电视遥控器事件设置按键事件处理程序。 当电视遥控器事件发生时，该类会触发一个 JS 事件。此事件将由`TVEventHandler` JavaScript 对象的实例获取。需要实现自定义处理电视遥控器事件的应用程序代码可以创建一个`TVEventHandler`的实例并监听这些事件，如下代码所示：
 
 ```jsx
 const TVEventHandler = require('TVEventHandler');
@@ -88,7 +88,7 @@ class Game2048 extends React.Component {
   }
 ```
 
-- _Dev Menu support_: On the emulator, cmd-M will bring up the developer menu, similar to Android. To bring it up on a real Android TV device, press the menu button or long press the fast-forward button on the remote. (Please do not shake the Android TV device, that will not work :) )
+- _开发者菜单支持_：在模拟器上，cmd-M 会调出开发者菜单，类似于安卓。要在实际的 Android TV 设备上启动它，请按菜单按钮或长按遥控器上的快进按钮。（请不要摇晃 Android TV 设备，这将不起作用 :) ）
 
 - _已知问题_:
 
