@@ -129,7 +129,7 @@ import java.util.List;
 
 执行"Sync Project files with Gradle"操作。
 
-### Step 3. 为 React Native Fragment 添加 FrameLayout
+### 3. 为 React Native Fragment 添加 FrameLayout
 
 现在可以把 React Native Fragment 添加到一个 Activity 中。对于一个新项目来说，这个 Activity 将是`MainActivity`，但它可以是任何 Activity，并且随着将更多 React Native 组件集成到应用程序中，你可以将更多 Fragments 添加到其他 Activity 中。
 
@@ -144,7 +144,7 @@ import java.util.List;
     android:layout_height="match_parent" />
 ```
 
-### Step 4. 将 React Native Fragment 添加到 FrameLayout
+### 4. 将 React Native Fragment 添加到 FrameLayout
 
 要将 React Native Fragment 添加到布局中，你需要有一个 Activity。正如在一个新项目中提到的那样，它就是 MainActivity。在这个 Activity 中添加一个按钮和一个事件监听器，单击按钮时，将会渲染 React Native Fragment。
 
@@ -297,10 +297,10 @@ import com.facebook.soloader.SoLoader;
 
 执行"Sync Project files with Gradle"操作.
 
-### Step 5. 测试你的集成
+### 5. 测试你的集成
 
 确保运行`yarn`来安装你的 react-native 依赖项并运行`yarn native`来启动 Metro 打包器。在 Android Studio 中运行你的 android 应用程序，它应该从开发服务器加载 JavaScript 代码并将其显示在 Activity 的 React Native Fragment 中。
 
-### Step 6. 附加设置 - 原生模块
+### 6. 附加设置 - 原生模块
 
 你可能需要从你的 react 组件调用现有的 Java/Kotlin 代码。原生模块允许你调用原生代码并在原生应用中运行方法。按照[此处](/docs/native-modules-android)进行设置。
