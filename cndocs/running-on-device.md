@@ -32,7 +32,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 
 ### 2. 通过 USB 数据线连接设备
 
-Let's now set up an Android device to run our React Native projects. Go ahead and plug in your device via USB to your development machine.
+现在我们设置一个 Android 设备来运行我们的 React Native 项目，通过 USB 将你的设备插入开发机器以继续。
 
 下面检查你的设备是否能正确连接到 ADB（Android Debug Bridge），使用`adb devices`命令：
 
@@ -55,7 +55,7 @@ emulator-5554 offline   # Google emulator
 $ npx react-native run-android
 ```
 
-> If you get a "bridge configuration isn't available" error, see [Using adb reverse](running-on-device.md#method-1-using-adb-reverse-recommended).
+> 如果你收到"bridge configuration isn't available"错误，请参阅[使用adb reverse](running-on-device.md#android-50-及以上使用-adb-reverse-命令-1)。
 
 > 提示：你还可以运行`npx react-native run-android --variant=release`来安装 release 版的应用。当然你需要[先配置好签名](signed-apk-android)，且此时无法再开启开发者菜单。注意在 debug 和 release 版本间来回切换安装时可能会报错签名不匹配，此时需要先卸载前一个版本再尝试安装。
 
@@ -76,9 +76,9 @@ $ npx react-native run-android
 
 ### (Android 5.0 以下)通过 Wi-Fi 连接你的本地开发服务器
 
-You can also connect to the development server over Wi-Fi. You'll first need to install the app on your device using a USB cable, but once that has been done you can debug wirelessly by following these instructions. You'll need your development machine's current IP address before proceeding.
+你还可以通过 Wi-Fi 连接到开发服务器。你首先需要使用 USB 在你的设备上安装该应用程序，完成之后便可以按照这些说明进行无线调试。在继续之前，你需要知道开发机器的当前 IP 地址。
 
-You can find the IP address in **System Preferences** → **Network**.
+你可以在**System Preferences** → **Network**中找到 IP 地址。
 
 <!-- alex ignore host -->
 
@@ -90,11 +90,11 @@ You can find the IP address in **System Preferences** → **Network**.
 6.  输入你电脑的 IP 地址和端口号（譬如 10.0.1.1:8081）。**在 Mac 上**，你可以在系统设置/网络里找查询你的 IP 地址。**在 Windows 上**，打开命令提示符并输入`ipconfig`来查询你的 IP 地址。**在 Linux 上**你可以在终端中输入`ifconfig`来查询你的 IP 地址。
 7.  回到**开发者菜单**然后选择`Reload JS`。
 
-You can now enable Live reloading from the [Developer menu](debugging.md#accessing-the-in-app-developer-menu). Your app will reload whenever your JavaScript code has changed.
+你现在可以从[开发者菜单](debugging.md#accessing-the-in-app-developer-menu)启用实时重新加载。只要你的 JavaScript 代码发生更改，应用就会重新加载。
 
 ## 为生产编译 app
 
-You have built a great app using React Native, and you are now itching to release it in the Play Store. The process is the same as any other native Android app, with some additional considerations to take into account. Follow the guide for [generating a signed APK](signed-apk-android.md) to learn more.
+你已经使用 React Native 构建了一个很棒的应用程序，现在你渴望在 Play Store 中发布它。该过程与任何其他原生 Android 应用程序相同，但需要考虑一些其他注意事项。按照[生成签名 APK](signed-apk-android.md)的指南了解更多信息。
 
 </TabItem>
 <TabItem value="windows">
@@ -109,7 +109,7 @@ You have built a great app using React Native, and you are now itching to releas
 
 ### 2. 通过 USB 数据线连接设备
 
-Let's now set up an Android device to run our React Native projects. Go ahead and plug in your device via USB to your development machine.
+现在我们设置一个 Android 设备来运行我们的 React Native 项目，通过 USB 将你的设备插入开发机器以继续。
 
 下面检查你的设备是否能正确连接到 ADB（Android Debug Bridge），使用`adb devices`命令：
 
@@ -132,7 +132,7 @@ emulator-5554 offline   # Google emulator
 $ npx react-native run-android
 ```
 
-> If you get a "bridge configuration isn't available" error, see [Using adb reverse](running-on-device.md#method-1-using-adb-reverse-recommended).
+> 如果你收到"bridge configuration isn't available"错误，请参阅[使用adb reverse](running-on-device.md#android-50-及以上使用-adb-reverse-命令-1)。
 
 > 提示：你还可以运行`npx react-native run-android --variant=release`来安装 release 版的应用。当然你需要[先配置好签名](signed-apk-android)，且此时无法再开启开发者菜单。注意在 debug 和 release 版本间来回切换安装时可能会报错签名不匹配，此时需要先卸载前一个版本再尝试安装。
 
@@ -153,9 +153,9 @@ $ npx react-native run-android
 
 ### (Android 5.0 以下)通过 Wi-Fi 连接你的本地开发服务器
 
-You can also connect to the development server over Wi-Fi. You'll first need to install the app on your device using a USB cable, but once that has been done you can debug wirelessly by following these instructions. You'll need your development machine's current IP address before proceeding.
+你还可以通过 Wi-Fi 连接到开发服务器。你首先需要使用 USB 在你的设备上安装该应用程序，完成之后便可以按照这些说明进行无线调试。在继续之前，你需要知道开发机器的当前 IP 地址。
 
-You can find the IP address in **System Preferences** → **Network**.
+你可以在**System Preferences** → **Network**中找到 IP 地址。
 
 <!-- alex ignore host -->
 
@@ -167,11 +167,11 @@ You can find the IP address in **System Preferences** → **Network**.
 6.  输入你电脑的 IP 地址和端口号（譬如 10.0.1.1:8081）。**在 Mac 上**，你可以在系统设置/网络里找查询你的 IP 地址。**在 Windows 上**，打开命令提示符并输入`ipconfig`来查询你的 IP 地址。**在 Linux 上**你可以在终端中输入`ifconfig`来查询你的 IP 地址。
 7.  回到**开发者菜单**然后选择`Reload JS`。
 
-You can now enable Live reloading from the [Developer menu](debugging.md#accessing-the-in-app-developer-menu). Your app will reload whenever your JavaScript code has changed.
+你现在可以从[开发者菜单](debugging.md#accessing-the-in-app-developer-menu)启用实时重新加载。只要你的 JavaScript 代码发生更改，应用就会重新加载。
 
 ## 为生产编译 app
 
-You have built a great app using React Native, and you are now itching to release it in the Play Store. The process is the same as any other native Android app, with some additional considerations to take into account. Follow the guide for [generating a signed APK](signed-apk-android.md) to learn more.
+你已经使用 React Native 构建了一个很棒的应用程序，现在你渴望在 Play Store 中发布它。该过程与任何其他原生 Android 应用程序相同，但需要考虑一些其他注意事项。按照[生成签名 APK](signed-apk-android.md)的指南了解更多信息。
 
 </TabItem>
 <TabItem value="linux">
@@ -186,7 +186,7 @@ You have built a great app using React Native, and you are now itching to releas
 
 ### 2. 通过 USB 数据线连接设备
 
-Let's now set up an Android device to run our React Native projects. Go ahead and plug in your device via USB to your development machine.
+现在我们设置一个 Android 设备来运行我们的 React Native 项目，通过 USB 将你的设备插入开发机器以继续。
 
 下面检查你的设备是否能正确连接到 ADB（Android Debug Bridge），使用`adb devices`命令：
 
@@ -209,7 +209,7 @@ emulator-5554 offline   # Google emulator
 $ npx react-native run-android
 ```
 
-> If you get a "bridge configuration isn't available" error, see [Using adb reverse](running-on-device.md#method-1-using-adb-reverse-recommended).
+> 如果你收到"bridge configuration isn't available"错误，请参阅[使用adb reverse](running-on-device.md#android-50-及以上使用-adb-reverse-命令-1)。
 
 > 提示：你还可以运行`npx react-native run-android --variant=release`来安装 release 版的应用。当然你需要[先配置好签名](signed-apk-android)，且此时无法再开启开发者菜单。注意在 debug 和 release 版本间来回切换安装时可能会报错签名不匹配，此时需要先卸载前一个版本再尝试安装。
 
@@ -230,9 +230,9 @@ $ npx react-native run-android
 
 ### (Android 5.0 以下)通过 Wi-Fi 连接你的本地开发服务器
 
-You can also connect to the development server over Wi-Fi. You'll first need to install the app on your device using a USB cable, but once that has been done you can debug wirelessly by following these instructions. You'll need your development machine's current IP address before proceeding.
+你还可以通过 Wi-Fi 连接到开发服务器。你首先需要使用 USB 在你的设备上安装该应用程序，完成之后便可以按照这些说明进行无线调试。在继续之前，你需要知道开发机器的当前 IP 地址。
 
-You can find the IP address in **System Preferences** → **Network**.
+你可以在**System Preferences** → **Network**中找到 IP 地址。
 
 <!-- alex ignore host -->
 
@@ -244,11 +244,11 @@ You can find the IP address in **System Preferences** → **Network**.
 6.  输入你电脑的 IP 地址和端口号（譬如 10.0.1.1:8081）。**在 Mac 上**，你可以在系统设置/网络里找查询你的 IP 地址。**在 Windows 上**，打开命令提示符并输入`ipconfig`来查询你的 IP 地址。**在 Linux 上**你可以在终端中输入`ifconfig`来查询你的 IP 地址。
 7.  回到**开发者菜单**然后选择`Reload JS`。
 
-You can now enable Live reloading from the [Developer menu](debugging.md#accessing-the-in-app-developer-menu). Your app will reload whenever your JavaScript code has changed.
+你现在可以从[开发者菜单](debugging.md#accessing-the-in-app-developer-menu)启用实时重新加载。只要你的 JavaScript 代码发生更改，应用就会重新加载。
 
 ## 为生产编译 app
 
-You have built a great app using React Native, and you are now itching to release it in the Play Store. The process is the same as any other native Android app, with some additional considerations to take into account. Follow the guide for [generating a signed APK](signed-apk-android.md) to learn more.
+你已经使用 React Native 构建了一个很棒的应用程序，现在你渴望在 Play Store 中发布它。该过程与任何其他原生 Android 应用程序相同，但需要考虑一些其他注意事项。按照[生成签名 APK](signed-apk-android.md)的指南了解更多信息。
 
 </TabItem>
 </Tabs>
