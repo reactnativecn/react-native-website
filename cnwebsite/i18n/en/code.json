@@ -1,0 +1,32 @@
+{
+  "theme.common.editThisPage": { "message": "改进此文档" },
+  "theme.common.headingLinkTitle": { "message": "标题的直接链接" },
+  "theme.common.skipToMainContent": { "message": "跳到主要内容" },
+  "theme.docs.paginator.navAriaLabel": { "message": "文档分页导航" },
+  "theme.docs.paginator.next": { "message": "下一页" },
+  "theme.docs.paginator.previous": { "message": "上一页" },
+  "theme.docs.sidebar.collapseButtonAriaLabel": { "message": "收起侧边栏" },
+  "theme.docs.sidebar.collapseButtonTitle": { "message": "收起侧边栏" },
+  "theme.docs.sidebar.expandButtonAriaLabel": { "message": "展开侧边栏" },
+  "theme.docs.sidebar.expandButtonTitle": { "message": "展开侧边栏" },
+  "theme.docs.sidebar.responsiveCloseButtonLabel": { "message": "关闭菜单" },
+  "theme.docs.sidebar.responsiveOpenButtonLabel": { "message": "打开菜单" },
+  "theme.docs.versions.latestVersionLinkLabel": { "message": "最新版本" },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "最新的文档请参阅 {latestVersionLink} ({versionLabel})。"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "此为 {siteTitle} {versionLabel} 版的文档，现已不再积极维护。"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。"
+  },
+  "theme.lastUpdated.atDate": { "message": "于 {date} " },
+  "theme.lastUpdated.byUser": { "message": "由 {user} " },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "最后{byUser}{atDate}更新"
+  },
+  "theme.tags.tagsListLabel": { "message": "标签：" },
+  "theme.tags.tagsPageLink": { "message": "查看所有标签" },
+  "theme.tags.tagsPageTitle": { "message": "标签" }
+}

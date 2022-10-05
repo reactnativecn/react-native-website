@@ -1,0 +1,224 @@
+{
+  "docs": {
+    "入门基础": [
+      "getting-started",
+      "intro-react-native-components",
+      "intro-react",
+      "handling-text-input",
+      "using-a-scrollview",
+      "using-a-listview",
+      "platform-specific-code",
+      "more-resources"
+    ],
+    "环境搭建": [
+      "environment-setup",
+      "integration-with-existing-apps",
+      "integration-with-android-fragment",
+      "building-for-tv",
+      "out-of-tree-platforms"
+    ],
+    "开发流程": [
+      "running-on-device",
+      "fast-refresh",
+      "debugging",
+      "symbolication",
+      "testing-overview",
+      "libraries",
+      "typescript",
+      "upgrading"
+    ],
+    "设计": [
+      "style",
+      "height-and-width",
+      "flexbox",
+      "images",
+      "colors"
+    ],
+    "交互": [
+      "handling-touches",
+      "navigation",
+      "animations",
+      "gesture-responder-system"
+    ],
+    "包容性": [
+      "accessibility"
+    ],
+    "性能调优": [
+      "performance",
+      "optimizing-flatlist-configuration",
+      "ram-bundles-inline-requires",
+      "profiling",
+      "profile-hermes"
+    ],
+    "JavaScript 运行环境": [
+      "javascript-environment",
+      "timers",
+      "hermes"
+    ],
+    "网络连接": [
+      "network",
+      "security"
+    ],
+    "原生模块": [
+      "native-modules-intro",
+      "native-modules-android",
+      "native-modules-ios",
+      "native-modules-setup"
+    ],
+    "原生UI组件": [
+      "native-components-android",
+      "native-components-ios",
+      "direct-manipulation"
+    ],
+    "Android 指南": [
+      "headless-js-android",
+      "signed-apk-android"
+    ],
+    "iOS 指南": [
+      "linking-libraries-ios",
+      "running-on-simulator-ios",
+      "communication-ios",
+      "app-extensions",
+      "publishing-to-app-store"
+    ]
+  },
+  "api": {
+    "APIs": [
+      "accessibilityinfo",
+      "alert",
+      "animated",
+      "animatedvalue",
+      "animatedvaluexy",
+      "appearance",
+      "appregistry",
+      "appstate",
+      "devsettings",
+      "dimensions",
+      "easing",
+      "interactionmanager",
+      "keyboard",
+      "layoutanimation",
+      "linking",
+      "panresponder",
+      "pixelratio",
+      "platform",
+      "platformcolor",
+      "roottag",
+      "share",
+      "stylesheet",
+      "systrace",
+      "transforms",
+      "vibration",
+      {
+        "type": "category",
+        "label": "Hooks",
+        "collapsed": false,
+        "items": [
+          "usecolorscheme",
+          "usewindowdimensions"
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Android APIs",
+        "collapsed": false,
+        "items": [
+          "backhandler",
+          "permissionsandroid",
+          "toastandroid"
+        ]
+      },
+      {
+        "type": "category",
+        "label": "iOS APIs",
+        "collapsed": false,
+        "items": [
+          "actionsheetios",
+          "dynamiccolorios",
+          "settings"
+        ]
+      }
+    ]
+  },
+  "组件": {
+    "核心组件": [
+      "components-and-apis",
+      "activityindicator",
+      "button",
+      "flatlist",
+      "image",
+      "imagebackground",
+      "keyboardavoidingview",
+      "modal",
+      "pressable",
+      "refreshcontrol",
+      "scrollview",
+      "sectionlist",
+      "statusbar",
+      "switch",
+      "text",
+      "textinput",
+      "touchablehighlight",
+      "touchableopacity",
+      "touchablewithoutfeedback",
+      "view",
+      "virtualizedlist",
+      {
+        "type": "category",
+        "label": "Android 组件",
+        "collapsed": false,
+        "items": [
+          "drawerlayoutandroid",
+          "touchablenativefeedback"
+        ]
+      },
+      {
+        "type": "category",
+        "label": "iOS 组件",
+        "collapsed": false,
+        "items": [
+          "inputaccessoryview",
+          "safeareaview"
+        ]
+      }
+    ],
+    "Props": [
+      "image-style-props",
+      "layout-props",
+      "shadow-props",
+      "text-style-props",
+      "view-style-props"
+    ],
+    "内部对象类型": [
+      "layoutevent",
+      "pressevent",
+      "react-node",
+      "rect",
+      "viewtoken"
+    ]
+  },
+  "架构": [
+    {
+      "type": "category",
+      "label": "架构",
+      "collapsed": false,
+      "collapsible": false,
+      "items": [
+        "architecture-overview",
+        {
+          "type": "category",
+          "label": "渲染",
+          "collapsed": false,
+          "items": [
+            "fabric-renderer",
+            "render-pipeline",
+            "xplat-implementation",
+            "view-flattening",
+            "threading-model"
+          ]
+        },
+        "glossary"
+      ]
+    }
+  ]
+}

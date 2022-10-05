@@ -2,20 +2,20 @@
 title: Using TypeScript with React Native
 author: Ash Furrow
 authorTitle: Software Engineer at Artsy
-authorURL: https://github.com/ashfurrow
-authorImageURL: https://avatars2.githubusercontent.com/u/498212?s=460&v=4
+authorURL: 'https://github.com/ashfurrow'
+authorImageURL: 'https://avatars2.githubusercontent.com/u/498212?s=460&v=4'
 authorTwitter: ashfurrow
-category: engineering
+tags: [engineering]
 ---
 
 JavaScript! We all love it. But some of us also love [types](https://en.wikipedia.org/wiki/Data_type). Luckily, options exist to add stronger types to JavaScript. My favourite is [TypeScript](https://www.typescriptlang.org), but React Native supports [Flow](https://flow.org) out of the box. Which you prefer is a matter of preference, they each have their own approach on how to add the magic of types to JavaScript. Today, we're going to look at how to use TypeScript in React Native apps.
 
 This post uses Microsoft's [TypeScript-React-Native-Starter](https://github.com/Microsoft/TypeScript-React-Native-Starter) repo as a guide.
 
-**Update**: Since this blog post was written, [Babel 7 was released with integrated TypeScript support](https://blogs.msdn.microsoft.com/typescript/2018/08/27/typescript-and-babel-7/). Babel 7 replaces all the set up described in this blog post with just one command:
+**Update**: Since this blog post was written, things have gotten even easier. You can replace all the set up described in this blog post by running just one command:
 
 ```sh
-react-native init MyAwesomeProject --template typescript
+npx react-native init MyAwesomeProject --template react-native-template-typescript
 ```
 
 However, there _are_ some limitations to Babel's TypeScript support, which the blog post above goes into in detail. The steps outlined in _this_ post still work, and Artsy is still using [react-native-typescript-transformer](https://github.com/ds300/react-native-typescript-transformer) in production, but the fastest way to get up and running with React Native and TypeScript is using the above command. You can always switch later if you have to.
@@ -24,7 +24,7 @@ In any case, have fun! The original blog post continues below.
 
 ## Prerequisites
 
-Because you might be developing on one of several different platforms, targeting several different types of devices, basic setup can be involved. You should first ensure that you can run a plain React Native app without TypeScript. Follow [the instructions on the React Native website to get started](https://facebook.github.io/react-native/docs/getting-started.html). When you've managed to deploy to a device or emulator, you'll be ready to start a TypeScript React Native app.
+Because you might be developing on one of several different platforms, targeting several different types of devices, basic setup can be involved. You should first ensure that you can run a plain React Native app without TypeScript. Follow [the instructions on the React Native website to get started](/docs/getting-started). When you've managed to deploy to a device or emulator, you'll be ready to start a TypeScript React Native app.
 
 You will also need [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com), and [Yarn](https://yarnpkg.com/lang/en).
 
@@ -41,11 +41,11 @@ cd MyAwesomeProject
 
 The next step is to add TypeScript to your project. The following commands will:
 
-* add TypeScript to your project
-* add [React Native TypeScript Transformer](https://github.com/ds300/react-native-typescript-transformer) to your project
-* initialize an empty TypeScript config file, which we'll configure next
-* add an empty React Native TypeScript Transformer config file, which we'll configure next
-* adds [typings](https://github.com/DefinitelyTyped/DefinitelyTyped) for React and React Native
+- add TypeScript to your project
+- add [React Native TypeScript Transformer](https://github.com/ds300/react-native-typescript-transformer) to your project
+- initialize an empty TypeScript config file, which we'll configure next
+- add an empty React Native TypeScript Transformer config file, which we'll configure next
+- adds [typings](https://github.com/DefinitelyTyped/DefinitelyTyped) for React and React Native
 
 Okay, let's go ahead and run these.
 
@@ -75,7 +75,7 @@ module.exports = {
   },
   getSourceExts() {
     return ['ts', 'tsx'];
-  },
+  }
 };
 ```
 
@@ -172,7 +172,7 @@ Create a `components` directory and add the following example.
 ```ts
 // components/Hello.tsx
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export interface Props {
   name: string;
@@ -188,19 +188,26 @@ export class Hello extends React.Component<Props, State> {
     super(props);
 
     if ((props.enthusiasmLevel || 0) <= 0) {
-      throw new Error('You could be a little more enthusiastic. :D');
+      throw new Error(
+        'You could be a little more enthusiastic. :D'
+      );
     }
 
     this.state = {
-      enthusiasmLevel: props.enthusiasmLevel || 1,
+      enthusiasmLevel: props.enthusiasmLevel || 1
     };
   }
 
   onIncrement = () =>
-    this.setState({enthusiasmLevel: this.state.enthusiasmLevel + 1});
+    this.setState({
+      enthusiasmLevel: this.state.enthusiasmLevel + 1
+    });
   onDecrement = () =>
-    this.setState({enthusiasmLevel: this.state.enthusiasmLevel - 1});
-  getExclamationMarks = (numChars: number) => Array(numChars + 1).join('!');
+    this.setState({
+      enthusiasmLevel: this.state.enthusiasmLevel - 1
+    });
+  getExclamationMarks = (numChars: number) =>
+    Array(numChars + 1).join('!');
 
   render() {
     return (
@@ -239,30 +246,30 @@ export class Hello extends React.Component<Props, State> {
 const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
-    alignSelf: 'center',
+    alignSelf: 'center'
   },
   buttons: {
     flexDirection: 'row',
     minHeight: 70,
     alignItems: 'stretch',
     alignSelf: 'center',
-    borderWidth: 5,
+    borderWidth: 5
   },
   button: {
     flex: 1,
-    paddingVertical: 0,
+    paddingVertical: 0
   },
   greeting: {
     color: '#999',
-    fontWeight: 'bold',
-  },
+    fontWeight: 'bold'
+  }
 });
 ```
 
 Whoa! That's a lot, but let's break it down:
 
-* Instead of rendering HTML elements like `div`, `span`, `h1`, etc., we're rendering components like `View` and `Button`. These are native components that work across different platforms.
-* Styling is specified using the `StyleSheet.create` function that React Native gives us. React's stylesheets allow us to control our layout using Flexbox, and style using other constructs similar to those in CSS.
+- Instead of rendering HTML elements like `div`, `span`, `h1`, etc., we're rendering components like `View` and `Button`. These are native components that work across different platforms.
+- Styling is specified using the `StyleSheet.create` function that React Native gives us. React's stylesheets allow us to control our layout using Flexbox, and style using other constructs similar to those in CSS.
 
 ## Adding a Component Test
 
@@ -281,7 +288,7 @@ Now let's create a `__tests__` folder in the `components` directory and add a te
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import {Hello} from '../Hello';
+import { Hello } from '../Hello';
 
 it('renders correctly with defaults', () => {
   const button = renderer

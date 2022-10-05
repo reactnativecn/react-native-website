@@ -3,6 +3,10 @@ id: direct-manipulation
 title: 直接操作
 ---
 
+import NativeDeprecated from './the-new-architecture/\_markdown_native_deprecation.mdx'
+
+<NativeDeprecated />
+
 有时候我们需要直接改动组件并触发局部的刷新，但不使用 state 或是 props。譬如在浏览器中使用 React 库，有时候会需要直接修改一个 DOM 节点，而在手机 App 中操作 View 时也会碰到同样的情况。在 React Native 中，`setNativeProps`就是等价于直接操作 DOM 节点的方法。
 
 > 什么时候使用 setNativeProps 呢？在（不得不）频繁刷新而又遇到了性能瓶颈的时候。
@@ -13,7 +17,7 @@ title: 直接操作
 
 [TouchableOpacity](https://github.com/facebook/react-native/blob/master/Libraries/Components/Touchable/TouchableOpacity.js)这个组件就在内部使用了`setNativeProps`方法来更新其子组件的透明度：
 
-```javascript
+```jsx
 setOpacityTo(value) {
   // Redacted: animation related code
   this.refs[CHILD_REF].setNativeProps({
@@ -24,7 +28,7 @@ setOpacityTo(value) {
 
 由此我们可以写出下面这样的代码：子组件可以响应点击事件，更改自己的透明度。而子组件自身并不需要处理这件事情，也不需要在实现中做任何修改。
 
-```javascript
+```jsx
 <TouchableOpacity onPress={this._handlePress}>
   <View style={styles.button}>
     <Text>Press me!</Text>
@@ -34,7 +38,7 @@ setOpacityTo(value) {
 
 如果不使用`setNativeProps`来实现这一需求，那么一种可能的办法是把透明值保存到 state 中，然后在`onPress`事件触发时更新这个值：
 
-```javascript
+```jsx
 constructor(props) {
   super(props);
   this.state = { myButtonOpacity: 1, };
@@ -64,24 +68,20 @@ render() {
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
-class MyButton extends React.Component {
-  render() {
+const MyButton = (props) => {
     return (
-      <View>
-        <Text>{this.props.label}</Text>
+      <View style={{marginTop: 50}}>
+        <Text>{props.label}</Text>
       </View>
     )
-  }
 }
 
-export default class App extends React.Component {
-  render() {
+export default App = () => {
     return (
       <TouchableOpacity>
         <MyButton label="Press me!" />
       </TouchableOpacity>
     )
-  }
 }
 ```
 
@@ -95,34 +95,30 @@ export default class App extends React.Component {
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
-class MyButton extends React.Component {
+const MyButton = (props) => {
   setNativeProps = (nativeProps) => {
-    this._root.setNativeProps(nativeProps);
+    _root.setNativeProps(nativeProps);
   }
 
-  render() {
     return (
-      <View ref={component => this._root = component} {...this.props}>
-        <Text>{this.props.label}</Text>
+      <View style={{marginTop: 50}} ref={component => _root = component} {...props}>
+        <Text>{props.label}</Text>
       </View>
     )
-  }
 }
 
-export default class App extends React.Component {
-  render() {
+export default App = () => {
     return (
       <TouchableOpacity>
         <MyButton label="Press me!" />
       </TouchableOpacity>
     )
-  }
 }
 ```
 
 现在你可以用`MyButton`来代替`TouchableOpacity`了！有一点需要特别说明：这里我们使用了[ref 回调](https://doc.react-china.org/docs/refs-and-the-dom.html)语法，而不是传统的字符串型 ref 引用。
 
-你可能还会注意到我们在向下传递 props 时使用了`{...this.props}`语法（这一用法的说明请参考[对象的扩展运算符](http://es6.ruanyifeng.com/#docs/object)）。这是因为`TouchableOpacity`本身其实也是个复合组件， 它除了要求在子组件上执行`setNativeProps` 以外，还要求子组件对触摸事件进行处理。因此，它会传递多个 props，其中包含了[onmoveshouldsetresponder](view.html#onmoveshouldsetresponder) 函数，这个函数需要回调给`TouchableOpacity`组件，以完成触摸事件的处理。与之相对的是`TouchableHighlight`组件，它本身是由原生视图构成，因而只需要我们实现`setNativeProps`。
+你可能还会注意到我们在向下传递 props 时使用了`{...this.props}`语法（这一用法的说明请参考[对象的扩展运算符](http://es6.ruanyifeng.com/#docs/object)）。这是因为`TouchableOpacity`本身其实也是个复合组件， 它除了要求在子组件上执行`setNativeProps` 以外，还要求子组件对触摸事件进行处理。因此，它会传递多个 props，其中包含了[onmoveshouldsetresponder](view#onmoveshouldsetresponder) 函数，这个函数需要回调给`TouchableOpacity`组件，以完成触摸事件的处理。与之相对的是`TouchableHighlight`组件，它本身是由原生视图构成，因而只需要我们实现`setNativeProps`。
 
 ## setNativeProps to clear TextInput value
 
@@ -132,24 +128,22 @@ export default class App extends React.Component {
 import React from 'react';
 import { TextInput, Text, TouchableOpacity, View } from 'react-native';
 
-export default class App extends React.Component {
+export default App = () => {
   clearText = () => {
-    this._textInput.setNativeProps({text: ''});
+     _textInput.setNativeProps({text: ''});
   }
 
-  render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <TextInput
-          ref={component => this._textInput = component}
-          style={{height: 50, flex: 1, marginHorizontal: 20, borderWidth: 1, borderColor: '#ccc'}}
+          ref={component => _textInput = component}
+          style={{height: 50, width: 200, marginHorizontal: 20, borderWidth: 1, borderColor: '#ccc'}}
         />
-        <TouchableOpacity onPress={this.clearText}>
+        <TouchableOpacity onPress={clearText}>
           <Text>Clear text</Text>
         </TouchableOpacity>
       </View>
     );
-  }
 }
 ```
 
@@ -161,13 +155,14 @@ export default class App extends React.Component {
 
 通过[巧妙运用`shouldComponentUpdate`方法](https://facebook.github.io/react/docs/advanced-performance.html#avoiding-reconciling-the-dom)，可以避免重新渲染那些实际没有变化的子组件所带来的额外开销，此时使用`setState`的性能已经可以与`setNativeProps`相媲美了。
 
-## 其他的原生操作
 
-此处描述的方法大多数React Native 已经提供。但是 这些在组合组件是不支持的，因为原生的视图不提供支持，包含你自己的应用中你自定的绝大多数组件
+## 其他原生方法
+
+此处描述的方法大多数React Native 已经提供。但是这些在组合组件是不支持的，因为原生的视图不提供支持，包含你自己的应用中你自定的绝大多数组件
 
 ### measure(callback)
 
-测量视图在屏幕上的坐标、宽度、高度，异步回调这些参数。如果量测成功，回调如下参数：
+测量视图在屏幕上的坐标、宽度、高度，异步回调这些参数。如果测量成功则回调如下参数：
 
 - x
 - y
@@ -176,7 +171,9 @@ export default class App extends React.Component {
 - pageX
 - pageY
 
-注意，这些参数必须在视图组件在本地渲染完成后才能返回视图视图测量值。若你想尽快的获取视图组件的测量值，可考虑使用[`onLayout` prop](view.md#onlayout) 来实现。
+注意，这些参数必须在组件原生端渲染完成后才能返回视图测量值。若你想尽快的获取视图组件的测量值（且不需要`pageX`和`pageY`），可考虑使用[`onLayout` prop](view.md#onlayout) 来实现。
+
+Also the width and height returned by `measure()` are the width and height of the component in the viewport. If you need the actual size of the component, consider using the [`onLayout`](view.md#onlayout) property instead.
 
 ### measureInWindow(callback)
 
@@ -187,14 +184,69 @@ export default class App extends React.Component {
 - width
 - height
 
-### measureLayout(relativeToNativeNode, onSuccess, onFail)
+### measureLayout(relativeToNativeComponentRef, onSuccess, onFail)
 
-例如 `measure()`方法，量测相对于祖视图的位置关系，特别的是 `relativeToNativeNode`。意味着返回的是相对于租视图原点的x、y。
+类似`measure()`方法，测量相对于祖视图（通过`relativeToNativeComponentRef`来指定）的位置关系。返回的是相对于祖视图原点的`x`、`y`。
 
- 通常我们使用 `findNodeHandle(component)`方法获取组件中原生的节点。
+:::note
+This method can also be called with a `relativeToNativeNode` handler (instead of reference), but this variant is deprecated.
+:::
 
-```javascript
-import {findNodeHandle} from 'react-native';
+```SnackPlayer name=measureLayout%20example&supportedPlatforms=android,ios
+import React, { useEffect, useRef, useState } from "react";
+import { Text, View, StyleSheet } from "react-native";
+
+const App = () => {
+  const textContainerRef = useRef(null);
+  const textRef = useRef(null);
+  const [measure, setMeasure] = useState(null);
+
+  useEffect(() => {
+    if (textRef.current && textContainerRef.current) {
+      textRef.current.measureLayout(
+        textContainerRef.current,
+        (left, top, width, height) => {
+          setMeasure({ left, top, width, height });
+        }
+      );
+    }
+  }, [measure]);
+
+  return (
+    <View style={styles.container}>
+      <View
+        ref={textContainerRef}
+        style={styles.textContainer}
+      >
+        <Text ref={textRef}>
+          Where am I? (relative to the text container)
+        </Text>
+      </View>
+      <Text style={styles.measure}>
+        {JSON.stringify(measure)}
+      </Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  textContainer: {
+    backgroundColor: "#61dafb",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 12,
+  },
+  measure: {
+    textAlign: "center",
+    padding: 12,
+  },
+});
+
+export default App;
 ```
 
 ### focus()

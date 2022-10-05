@@ -2,9 +2,9 @@
 title: Accessibility API Updates
 author: Ziqi Chen
 authorTitle: Student at UC Berkeley
-authorURL: https://ziqichen.com/
-authorImageURL: https://avatars2.githubusercontent.com/u/13990087?s=400&u=5841da1b6064341d52ecab70a586b6701d9f6978&v=4
-category: engineering
+authorURL: 'https://ziqichen.com/'
+authorImageURL: 'https://avatars2.githubusercontent.com/u/13990087?s=400&u=5841da1b6064341d52ecab70a586b6701d9f6978&v=4'
+tags: [engineering]
 ---
 
 ## Motivation
@@ -54,17 +54,17 @@ The values UIAccessibilityTraits were set to generally took on one of two purpos
 
 The new property, `accessibilityRole`, is used to tell Talkback or Voiceover the role of a UI Element. This new property can take on one of the following values:
 
-* `none`
-* `button`
-* `link`
-* `search`
-* `image`
-* `keyboardkey`
-* `text`
-* `adjustable`
-* `header`
-* `summary`
-* `imagebutton`
+- `none`
+- `button`
+- `link`
+- `search`
+- `image`
+- `keyboardkey`
+- `text`
+- `adjustable`
+- `header`
+- `summary`
+- `imagebutton`
 
 This property only allows one value to be passed in because UI elements generally don't logically take on more than one of these. The exception is image and button, so we've added a role imagebutton that is a combination of both.
 
@@ -72,8 +72,8 @@ This property only allows one value to be passed in because UI elements generall
 
 The new property, `accessibilityStates`, is used to tell Talkback or Voiceover the state a UI Element is in. This property takes on an Array containing one or both of the following values:
 
-* `selected`
-* `disabled`
+- `selected`
+- `disabled`
 
 ### Solution Two: Adding Accessibility Hints
 

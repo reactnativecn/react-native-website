@@ -13,15 +13,6 @@
   box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-.vip {
-  margin: 20px auto;
-  max-width: 900px;
-}
-
-.vip img {
-  display: block;
-}
-
 .button:hover {
   text-decoration: none;
 }
@@ -66,10 +57,6 @@
   .hero .minitext {
     font-size: 18px;
     text-align: center;
-  }
-
-  .vip {
-    margin: 0;
   }
 }
 

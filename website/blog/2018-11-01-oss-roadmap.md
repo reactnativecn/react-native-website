@@ -2,27 +2,27 @@
 title: Open Source Roadmap
 author: Héctor Ramos
 authorTitle: Engineer at Facebook
-authorURL: https://hectorramos.com/about
-authorImageURL: https://s.gravatar.com/avatar/f2223874e66e884c99087e452501f2da?s=128
+authorURL: 'https://hectorramos.com/about'
+authorImageURL: 'https://s.gravatar.com/avatar/f2223874e66e884c99087e452501f2da?s=128'
 authorTwitter: hectorramos
-category: announcements
+tags: [announcement]
 ---
 
-![](/react-native/blog/assets/oss-roadmap-hero.jpg)
+![](/blog/assets/oss-roadmap-hero.jpg)
 
-This year, the React Native team has focused on a large scale [re-architecture of React Native](https://github.com/react-native-community/discussions-and-proposals/issues/4). As Sophie mentioned in her [State of React Native post,](http://facebook.github.io/react-native/blog/2018/06/14/state-of-react-native-2018) we've sketched out a plan to better support the thriving population of React Native users and collaborators outside of Facebook. It's now time to share more details about what we've been working on. Before I do so, I'd like to lay out our long-term vision for React Native in open source.
+This year, the React Native team has focused on a large scale [re-architecture of React Native](https://github.com/react-native-community/discussions-and-proposals/issues/4). As Sophie mentioned in her [State of React Native post,](/blog/2018/06/14/state-of-react-native-2018) we've sketched out a plan to better support the thriving population of React Native users and collaborators outside of Facebook. It's now time to share more details about what we've been working on. Before I do so, I'd like to lay out our long-term vision for React Native in open source.
 
 Our vision for React Native is...
 
-* **A healthy GitHub repository.** Issues and pull requests get handled within a reasonable period of time.
-  * Increased test coverage.
-  * Commits that sync out from the Facebook code repository should not break open source tests.
-  * A higher scale of meaningful community contributions.
-* **Stable APIs,** making it easier to interface with open source dependencies.
-  * Facebook uses the same public API as open source
-  * React Native releases that follow semantic versioning.
-* **A vibrant eco-system.** High quality ViewManagers, native modules, and multiple platform support maintained by the community.
-* **Excellent documentation.** Focus on helping users create high quality experiences, and up-to-date API reference docs.
+- **A healthy GitHub repository.** Issues and pull requests get handled within a reasonable period of time.
+  - Increased test coverage.
+  - Commits that sync out from the Facebook code repository should not break open source tests.
+  - A higher scale of meaningful community contributions.
+- **Stable APIs,** making it easier to interface with open source dependencies.
+  - Facebook uses the same public API as open source
+  - React Native releases that follow semantic versioning.
+- **A vibrant eco-system.** High quality ViewManagers, native modules, and multiple platform support maintained by the community.
+- **Excellent documentation.** Focus on helping users create high quality experiences, and up-to-date API reference docs.
 
 We have identified the following focus areas to help us achieve this vision.
 
@@ -38,10 +38,10 @@ The React Native development experience for product teams at Facebook can be qui
 
 We'll work on releasing some of these internal tools. We'll also improve support for tools popular with the open source community. Here's a non-exhaustive list of projects we'll tackle:
 
-* Open source JSI and enable the community to bring their own JavaScript VMs, replacing the existing JavaScriptCore from RN's initial release. We'll be covering what JSI is in a future post, in the meantime you can learn more about JSI from [Parashuram's talk at React Conf](https://www.youtube.com/watch?v=UcqRXTriUVI).
-* Support 64-bit libraries on Android.
-* Enable debugging under the new architecture.
-* Improve support for CocoaPods, Gradle, Maven, and new Xcode build system.
+- Open source JSI and enable the community to bring their own JavaScript VMs, replacing the existing JavaScriptCore from RN's initial release. We'll be covering what JSI is in a future post, in the meantime you can learn more about JSI from [Parashuram's talk at React Conf](https://www.youtube.com/watch?v=UcqRXTriUVI).
+- Support 64-bit libraries on Android.
+- Enable debugging under the new architecture.
+- Improve support for CocoaPods, Gradle, Maven, and new Xcode build system.
 
 ## ✅ Testing Infrastructure
 
@@ -57,7 +57,7 @@ Facebook will consume React Native via the public API, the same way open source 
 
 ## 📣 Communication
 
-React Native is one of the [top open source projects on GitHub](https://octoverse.github.com/projects) by contributor count. That makes us really happy, and we'd like to keep it going. We'll continue working on initiatives that lead to involved contributors, such as increased transparency and open discussion. The documentation is one of the first things someone new to React Native will encounter, yet it has not been a priority. We'd like to fix that, starting with bringing back auto-generated API reference docs, creating additional content focused on creating [quality user experiences](http://facebook.github.io/react-native/docs/improvingux), and improving our [release notes](https://github.com/react-native-community/react-native-releases/issues/47).
+React Native is one of the [top open source projects on GitHub](https://octoverse.github.com/#top-and-trending-projects) by contributor count. That makes us really happy, and we'd like to keep it going. We'll continue working on initiatives that lead to involved contributors, such as increased transparency and open discussion. The documentation is one of the first things someone new to React Native will encounter, yet it has not been a priority. We'd like to fix that, starting with bringing back auto-generated API reference docs, creating additional content focused on creating [quality user experiences](/docs/improvingux), and improving our [release notes](https://github.com/react-native-community/react-native-releases/issues/47).
 
 ## Timeline
 

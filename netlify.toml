@@ -1,4 +1,34 @@
 [build]
-  base    = "website"
-  publish = "website/build/react-native"
-  command = "sed -i -e \"s|const baseUrl .*|const baseUrl = '/';|g\" siteConfig.js && yarn install && yarn build"
+  base    = ""
+  publish = "cnwebsite/build"
+  command = "yarn && cd cnwebsite && yarn build"
+
+[context.production.environment]
+  NODE_VERSION = "16.15.0"
+  NODE_OPTIONS = "--max_old_space_size=4096"
+
+[context.deploy-preview.environment]
+  NODE_VERSION = "16.15.0"
+  NODE_OPTIONS = "--max_old_space_size=4096"
+  PREVIEW_DEPLOY = "true"
+
+[[plugins]]
+  package = "netlify-plugin-cache"
+  [plugins.inputs]
+    paths = [
+      "cnwebsite/node_modules/.cache",
+    ]
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    cache-control = '''
+    public, 
+    max-age=604800, 
+    s-maxage=43200'''
+
+[[headers]]
+  for = "/movies.json"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+

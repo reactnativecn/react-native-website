@@ -2,10 +2,10 @@
 title: Introducing Create React Native App
 author: Adam Perry
 authorTitle: Software Engineer at Expo
-authorURL: https://github.com/dikaiosune
-authorImageURL: https://avatars2.githubusercontent.com/u/6812281
+authorURL: 'https://github.com/dikaiosune'
+authorImageURL: 'https://avatars2.githubusercontent.com/u/6812281'
 authorTwitter: dika10sune
-category: engineering
+tags: [engineering]
 youtubeVideoId: 9baaVjGdBqs
 ---
 
@@ -15,18 +15,18 @@ Many developers struggle with installing and configuring React Native’s curren
 
 Try creating a new project (replace with suitable yarn commands if you have it installed):
 
-```
+```sh
 $ npm i -g create-react-native-app
 $ create-react-native-app my-project
 $ cd my-project
 $ npm start
 ```
 
-This will start the React Native packager and print a QR code. Open it in the [Expo app](https://expo.io) to load your JavaScript. Calls to `console.log` are forwarded to your terminal. You can make use of any standard React Native APIs as well as the [Expo SDK](https://docs.expo.io/versions/latest/sdk/index.html).
+This will start the React Native packager and print a QR code. Open it in the [Expo app](https://expo.io) to load your JavaScript. Calls to `console.log` are forwarded to your terminal. You can make use of any standard React Native APIs as well as the [Expo SDK](https://docs.expo.dev/versions/latest/).
 
 ## What about native code?
 
-Many React Native projects have Java or Objective-C/Swift dependencies that need to be compiled. The Expo app does include APIs for camera, video, contacts, and more, and bundles popular libraries like [Airbnb’s react-native-maps](https://docs.expo.io/versions/v14.0.0/sdk/map-view.html), or [Facebook authentication](https://docs.expo.io/versions/latest/sdk/facebook.html). However if you need a native code dependency that Expo doesn’t bundle then you’ll probably need to have your own build configuration for it. Just like Create React App, “ejecting” is supported by CRNA.
+Many React Native projects have Java or Objective-C/Swift dependencies that need to be compiled. The Expo app does include APIs for camera, video, contacts, and more, and bundles popular libraries like [Airbnb’s react-native-maps](https://docs.expo.dev/versions/latest/sdk/map-view/), or [Facebook authentication](https://docs.expo.dev/versions/latest/sdk/facebook/). However if you need a native code dependency that Expo doesn’t bundle then you’ll probably need to have your own build configuration for it. Just like Create React App, “ejecting” is supported by CRNA.
 
 You can run `npm run eject` to get a project very similar to what `react-native init` would generate. At that point you’ll need Xcode and/or Android Studio just as you would if you started with `react-native init` , adding libraries with `react-native link` will work, and you’ll have full control over the native code compilation process.
 

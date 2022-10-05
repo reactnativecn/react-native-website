@@ -1,0 +1,33 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - production
+    paths:
+      - "cnwebsite/**"
+      - "cndocs/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: "yarn"
+
+      - name: Build
+        run: |
+          yarn
+          cd cnwebsite
+          yarn build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cnwebsite/build
