@@ -193,11 +193,11 @@ class MyCustomView extends React.Component {
 const RCTMyCustomView = requireNativeComponent(`RCTMyCustomView`);
 ```
 
-# Integration with an Android Fragment Example
+# 与 Android Fragment 的整合实例
 
-In order to integrate existing Native UI elements to your React Native app, you might need to use Android Fragments to give you a more granular control over your native component than returning a `View` from your `ViewManager`. You will need this if you want to add custom logic that is tied to your view with the help of [lifecycle methods](https://developer.android.com/guide/fragments/lifecycle), such as `onViewCreated`, `onPause`, `onResume`. The following steps will show you how to do it:
+为了将现有的原生 UI 元素整合到你的 React Native 应用中，你可能需要使用 Android Fragments 来让你对你的本地组件进行更精细的控制，而不是从你的 `ViewManager` 返回一个 `View`。如果你想在[生命周期方法](https://developer.android.com/guide/fragments/lifecycle)的帮助下添加与你的视图绑定的自定义逻辑，如`onViewCreated`、`onPause`、`onResume`，你会用得到它。下面的步骤将告诉你如何做到这一点：
 
-## 1. Create a `Fragment`
+## 1. 创建一个 `Fragment`
 
 `MyFragment.java`
 
@@ -246,7 +246,7 @@ public class MyFragment extends Fragment {
 }
 ```
 
-## 2. Create the `ViewManager` subclass
+## 2. 创建 `ViewManager` 子类
 
 `MyViewManager.java`
 
@@ -345,7 +345,7 @@ public class MyViewManager extends ViewGroupManager<FrameLayout> {
   }
 ```
 
-## 3. Register the `ViewManager`
+## 3. 注册 `ViewManager`
 
 `MyPackage.java`
 
@@ -367,7 +367,7 @@ public class MyPackage implements ReactPackage {
 }
 ```
 
-## 4. Register the `Package`
+## 4. 注册 `Package`
 
 `MainApplication.java`
 
@@ -381,7 +381,7 @@ public class MyPackage implements ReactPackage {
     }
 ```
 
-## 5. Implement the JavaScript module
+## 5. 执行 JavaScript 模块
 
 I. `MyViewManager.jsx`
 
@@ -391,7 +391,7 @@ export const MyViewManager =
   requireNativeComponent('MyViewManager');
 ```
 
-II. ` MyView.jsx` calling the `create` method
+II. ` MyView.jsx` 调用 `create` 方法
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
@@ -422,4 +422,4 @@ export const MyView = ({ style }) => {
 };
 ```
 
-If you want to expose property setters using `@ReactProp` (or `@ReactPropGroup`) annotation: _see ImageView example above_
+如果您想使用公开属性设置器 `@ReactProp` (or `@ReactPropGroup`) 详见上面的 ImageView 示例
