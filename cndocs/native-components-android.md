@@ -195,7 +195,7 @@ const RCTMyCustomView = requireNativeComponent(`RCTMyCustomView`);
 
 # 与 Android Fragment 的整合实例
 
-为了将现有的原生 UI 元素整合到你的 React Native 应用中，你可能需要使用 Android Fragments 来让你对你的本地组件进行更精细的控制，而不是从你的 `ViewManager` 返回一个 `View`。如果你想在[生命周期方法](https://developer.android.com/guide/fragments/lifecycle)的帮助下添加与你的视图绑定的自定义逻辑，如`onViewCreated`、`onPause`、`onResume`，你会用得到它。下面的步骤将告诉你如何做到这一点：
+为了将现有的原生 UI 元素整合到 React Native 应用中，你可能需要使用 Android Fragments 来对本地组件进行更精细的控制，而不是从 `ViewManager` 返回一个 `View`。如果你想在[生命周期方法](https://developer.android.com/guide/fragments/lifecycle)的帮助下添加与视图绑定的自定义逻辑，如`onViewCreated`、`onPause`、`onResume`，你会用得到它。下面的步骤将告诉你如何做到这一点：
 
 ## 1. 创建一个 `Fragment`
 
