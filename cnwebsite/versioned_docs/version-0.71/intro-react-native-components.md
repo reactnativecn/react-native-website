@@ -27,13 +27,13 @@ React Native 还包括一组基本的，随时可用的原生组件，您可以�
 
 React Native 具有许多核心组件，从表单控件到活动指示器，应有尽有。你可以在[API 章节](components-and-apis)找到它们。您将主要使用以下核心组件：
 
-| React Native UI Component | Android View | iOS View | Web Analog | 说明 |
+| React Native UI 组件 | Android 原生视图 | iOS 原生视图 | Web 标签 | 说明 |
 | --- | --- | --- | --- | --- |
-| `<View>` | `<ViewGroup>` | `<UIView>` | A non-scrollling `<div>` | A container that supports layout with flexbox, style, some touch handling, and accessibility controls |
-| `<Text>` | `<TextView>` | `<UITextView>` | `<p>` | Displays, styles, and nests strings of text and even handles touch events |
-| `<Image>` | `<ImageView>` | `<UIImageView>` | `<img>` | Displays different types of images |
-| `<ScrollView>` | `<ScrollView>` | `<UIScrollView>` | `<div>` | A generic scrolling container that can contain multiple components and views |
-| `<TextInput>` | `<EditText>` | `<UITextField>` | `<input type="text">` | Allows the user to enter text |
+| `<View>` | `<ViewGroup>` | `<UIView>` | A non-scrolling `<div>` | 一个支持使用flexbox布局、样式、一些触摸处理和无障碍性控件的容器 |
+| `<Text>` | `<TextView>` | `<UITextView>` | `<p>` | 显示、样式和嵌套文本字符串，甚至处理触摸事件 |
+| `<Image>` | `<ImageView>` | `<UIImageView>` | `<img>` | 显示不同类型的图片 |
+| `<ScrollView>` | `<ScrollView>` | `<UIScrollView>` | `<div>` | 一个通用的滚动容器，可以包含多个组件和视图 |
+| `<TextInput>` | `<EditText>` | `<UITextField>` | `<input type="text">` | 使用户可以输入文本 |
 
 在接下来的章节，您将开始组合这些核心组件，来了解 React 的工作方式。先做一些热身吧！
 
