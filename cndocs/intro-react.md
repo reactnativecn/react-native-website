@@ -21,7 +21,7 @@ React Native 的基础是[React](https://zh-hans.reactjs.org/)， 是在 web 端
 
 本文档会用“Cat”这种有个名字和咖啡馆就能开始工作的人畜无害的生物来作为例子。下面是我们的第一个 Cat 组件:
 
-<Tabs groupId="syntax" defaultValue={constants.defaultSyntax} values={constants.syntax}>
+<Tab groupId="syntax" defaultValue={constants.defaultSyntax} values={constants.syntax}>
 <TabItem value="functional">
 
 ```SnackPlayer name=Your%20Cat
@@ -147,7 +147,6 @@ const Cat = () => {
 export default Cat;
 ```
 
-``
 
 括号中可以使用任意 JavaScript 表达式，包括调用函数，例如`{getFullName("Rum", Tum", "Tugger")}`：
 
