@@ -17,7 +17,7 @@
 
 <script src="//snack.expo.dev/embed.js" defer="defer"></script>
 <script src="//cdn.wwads.cn/js/makemoney.js" defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.d5201bd3.css">
-<script src="/assets/js/runtime~main.3c42a975.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.2b1b79a4.js" defer="defer"></script>
 <script src="/assets/js/main.7c718f52.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -190,7 +190,7 @@
 <div class="language-shell codeBlockContainer_mQmQ theme-code-block" style="--prism-color:#FFFFFF;--prism-background-color:#282C34"><div class="codeBlockContent_D5yF"><pre tabindex="0" class="prism-code language-shell codeBlock_RMoD thin-scrollbar" style="color:#FFFFFF;background-color:#282C34"><code class="codeBlockLines_AclH"><span class="token-line" style="color:#FFFFFF"><span class="token plain">npm uninstall -g react-native-cli @react-native-community/cli</span><br></span></code></pre><div class="buttonGroup_aaMX"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_z5j7" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_FoOz"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_L0B6"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 </blockquote>
 <p>使用 React Native 内建的命令行工具来创建一个名为&quot;AwesomeProject&quot;的新项目。这个命令行工具不需要安装，可以直接用 node 自带的<code>npx</code>命令来使用（注意 init 命令默认会创建最新的版本）：</p>
-<div class="language-shell codeBlockContainer_mQmQ theme-code-block" style="--prism-color:#FFFFFF;--prism-background-color:#282C34"><div class="codeBlockContent_D5yF"><pre tabindex="0" class="prism-code language-shell codeBlock_RMoD thin-scrollbar" style="color:#FFFFFF;background-color:#282C34"><code class="codeBlockLines_AclH"><span class="token-line" style="color:#FFFFFF"><span class="token plain">npx @react-native-community/clilatest init AwesomeProject</span><br></span></code></pre><div class="buttonGroup_aaMX"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_z5j7" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_FoOz"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_L0B6"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="language-shell codeBlockContainer_mQmQ theme-code-block" style="--prism-color:#FFFFFF;--prism-background-color:#282C34"><div class="codeBlockContent_D5yF"><pre tabindex="0" class="prism-code language-shell codeBlock_RMoD thin-scrollbar" style="color:#FFFFFF;background-color:#282C34"><code class="codeBlockLines_AclH"><span class="token-line" style="color:#FFFFFF"><span class="token plain">npx @react-native-community/cli@latest init AwesomeProject</span><br></span></code></pre><div class="buttonGroup_aaMX"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_z5j7" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_FoOz"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_L0B6"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <blockquote>
 <p><strong>注意一</strong>：请<code>不要</code>在目录、文件名中使用中文、空格等特殊符号。请<code>不要</code>单独使用常见的关键字作为项目名（如 class, native, new, package 等等）。请<code>不要</code>使用与核心模块同名的项目名（如 react, react-native 等）。</p>
 </blockquote>
@@ -204,7 +204,7 @@
 <p>还可以使用<code>--template</code>来使用一些社区提供的模板。</p>
 <h3 class="anchor anchorWithStickyNavbar_JmGV" id="可选文件-xcode-的环境配置文件">[可选文件] Xcode 的环境配置文件<a href="#可选文件-xcode-的环境配置文件" class="hash-link" aria-label="标题的直接链接" title="标题的直接链接">​</a></h3>
 <p>从 React Native 版本 0.69 开始，可以使用模板提供的 <code>.xcode.env</code> 文件来配置 Xcode 环境。</p>
-<p><code>.xcode.env</code> 文件中包含一个环境变量示例，用于在 <code>NODE_BINARY</code> 变量中导出 <code>node</code> 执行文件的路径。这是将构建基础结构与<code>node</code>系统版本解耦的<strong>推荐做法</strong>。如果与默认值不同，则应使用您自己的路径或您自己的<code>node</code>版本管理器来自定义此变量。</p>
+<p><code>.xcode.env</code> 文件  中包含一个环境变量示例，用于在 <code>NODE_BINARY</code> 变量中导出 <code>node</code> 执行文件的路径。这是将构建基础结构与<code>node</code>系统版本解耦的<strong>推荐做法</strong>。如果与默认值不同，则应使用您自己的路径或您自己的<code>node</code>版本管理器来自定义此变量。</p>
 <p>此外，您还可以在构建脚本阶段中添加任何其他环境变量并导入 <code>.xcode.env</code> 文件。如果您需要运行需要特定环境的脚本，这也是将构建阶段与特定环境解耦的<strong>推荐做法</strong>。</p>
 <h2 class="anchor anchorWithStickyNavbar_JmGV" id="编译并运行-react-native-应用">编译并运行 React Native 应用<a href="#编译并运行-react-native-应用" class="hash-link" aria-label="标题的直接链接" title="标题的直接链接">​</a></h2>
 <p>在你的项目目录中运行<code>yarn ios</code>或者<code>yarn react-native run-ios</code>：</p>
@@ -220,7 +220,7 @@
 <blockquote>
 <p>如果你无法正常运行，先回头<code>仔细对照文档检查</code>，然后可以看看<a href="https://github.com/reactnativecn/react-native-website/issues" target="_blank" rel="noopener noreferrer">讨论区</a>。</p>
 </blockquote>
-<h3 class="anchor anchorWithStickyNavbar_JmGV" id="在真机上运行">在真 机上运行<a href="#在真机上运行" class="hash-link" aria-label="标题的直接链接" title="标题的直接链接">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_JmGV" id="在真机上运行">在 真机上运行<a href="#在真机上运行" class="hash-link" aria-label="标题的直接链接" title="标题的直接链接">​</a></h3>
 <p>上面的命令会自动在 iOS 模拟器上运行应用，如果你想在真机上运行，则请阅读<a href="/docs/running-on-device">在设备上运行</a>这篇文档。</p>
 <h3 class="anchor anchorWithStickyNavbar_JmGV" id="修改项目">修改项目<a href="#修改项目" class="hash-link" aria-label="标题的直接链接" title="标题的直接链接">​</a></h3>
 <p>现在你已经成功运行了项目，我们可以开始尝试动手改一改了：</p>
