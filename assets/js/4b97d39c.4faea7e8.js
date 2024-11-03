@@ -1,9 +1,9 @@
 "use strict";
-exports.id = 84846;
-exports.ids = [84846];
+exports.id = 56970;
+exports.ids = [56970];
 exports.modules = {
 
-/***/ 29364:
+/***/ 99792:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -25,24 +25,24 @@ const metadata = {
   "id": "the-new-architecture/create-module-library",
   "title": "创建模块库",
   "description": "React Native 有一个丰富的生态系统库来解决常见问题。我们在 reactnative.directory 网站上收集 React Native 库，这是一个很好的资源，值得每个 React Native 开发者收藏。",
-  "source": "@site/versioned_docs/version-0.76/the-new-architecture/create-module-library.md",
+  "source": "@site/../cndocs/the-new-architecture/create-module-library.md",
   "sourceDirName": "the-new-architecture",
   "slug": "/the-new-architecture/create-module-library",
-  "permalink": "/docs/the-new-architecture/create-module-library",
+  "permalink": "/docs/next/the-new-architecture/create-module-library",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/reactnativecn/react-native-website/blob/production/cnwebsite/../cndocs/the-new-architecture/create-module-library.md",
   "tags": [],
-  "version": "0.76",
+  "version": "current",
   "frontMatter": {},
   "sidebar": "docs",
   "previous": {
-    "title": "appendix",
-    "permalink": "/docs/appendix"
+    "title": "附录",
+    "permalink": "/docs/next/appendix"
   },
   "next": {
     "title": "Headless JS（后台任务）",
-    "permalink": "/docs/headless-js-android"
+    "permalink": "/docs/next/headless-js-android"
   }
 };
 const assets = {

@@ -1,8 +1,8 @@
-exports.id = 94952;
-exports.ids = [94952];
+exports.id = 14739;
+exports.ids = [14739];
 exports.modules = {
 
-/***/ 74690:
+/***/ 82902:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33,16 +33,16 @@ const contentTitle = undefined;
 const metadata = {
   "id": "debugging-native-code",
   "title": "调试原生代码",
-  "description": "Projects with Native Code Only",
-  "source": "@site/../cndocs/debugging-native-code.md",
+  "description": "仅限包含原生代码的项目",
+  "source": "@site/versioned_docs/version-0.76/debugging-native-code.md",
   "sourceDirName": ".",
   "slug": "/debugging-native-code",
-  "permalink": "/docs/next/debugging-native-code",
+  "permalink": "/docs/debugging-native-code",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/reactnativecn/react-native-website/blob/production/cnwebsite/../cndocs/debugging-native-code.md",
   "tags": [],
-  "version": "current",
+  "version": "0.76",
   "frontMatter": {
     "id": "debugging-native-code",
     "title": "调试原生代码"
@@ -50,11 +50,11 @@ const metadata = {
   "sidebar": "docs",
   "previous": {
     "title": "React Native 开发者工具",
-    "permalink": "/docs/next/react-native-devtools"
+    "permalink": "/docs/react-native-devtools"
   },
   "next": {
     "title": "调试发行版本",
-    "permalink": "/docs/next/debugging-release-builds"
+    "permalink": "/docs/debugging-release-builds"
   }
 };
 const assets = {
@@ -67,12 +67,12 @@ const assets = {
 
 
 const toc = [{
-  "value": "Accessing Logs",
-  "id": "accessing-logs",
+  "value": "打印日志",
+  "id": "打印日志",
   "level": 2
 }, {
-  "value": "Debugging in a Native IDE",
-  "id": "debugging-in-a-native-ide",
+  "value": "在原生 IDE 中调试",
+  "id": "在原生-ide-中调试",
   "level": 2
 }, {
   "value": "Android Studio",
@@ -97,45 +97,45 @@ function _createMdxContent(props) {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "banner-native-code-required",
       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
-        children: "Projects with Native Code Only"
+        children: "仅限包含原生代码的项目"
       }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-        children: ["The following section only applies to projects with native code exposed. If you are using the managed Expo workflow, see the guide on ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+        children: ["以下部分仅适用于包含原生代码的项目。如果你使用的是托管型 Expo 工作流，请参阅 ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
           href: "https://docs.expo.dev/workflow/prebuild/",
           target: "_blank",
           children: "prebuild"
-        }), " to use this API."]
+        }), " 指南以使用此 API。"]
       })]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
-      id: "accessing-logs",
-      children: "Accessing Logs"
+      id: "打印日志",
+      children: "打印日志"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-      children: "You can display the native logs for an iOS or Android app by using the following commands in a terminal while the app is running:"
+      children: "当应用正在运行时，你可以在终端中使用以下命令打印 iOS 或 Android 应用的日志："
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         className: "language-shell",
         children: "# For Android:\nnpx react-native log-android\n# Or, for iOS:\nnpx react-native log-ios\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["You may also access these through Debug > Open System Log… in the iOS Simulator or by running ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
+      children: ["你也可以通过 iOS 模拟器中的 \"Debug > Open System Log...\" 菜单，或者在运行 Android 应用的设备或模拟器中运行 ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         children: "adb logcat \"*:S\" ReactNative:V ReactNativeJS:V"
-      }), " in a terminal while an Android app is running on a device or emulator."]
+      }), " 来访问这些日志。"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
-      id: "debugging-in-a-native-ide",
-      children: "Debugging in a Native IDE"
+      id: "在原生-ide-中调试",
+      children: "在原生 IDE 中调试"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-      children: "When working with native code, such as when writing native modules, you can launch the app from Android Studio or Xcode and take advantage of the native debugging features (setting up breakpoints, etc.) as you would in case of building a standard native app."
+      children: "当你编写原生模块时，你可以使用 Android Studio 或 Xcode 来启动应用，并使用其原生调试功能（设置断点等），就像在构建标准原生应用时一样。"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-      children: "Another option is to run your application using the React Native CLI and attach the native debugger of the native IDE (Android Studio or Xcode) to the process."
+      children: "另一种选择是使用 React Native CLI 运行应用，并从原生 IDE（Android Studio 或 Xcode）中附加到进程。"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
       id: "android-studio",
       children: "Android Studio"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-      children: "On Android Studio you can do this by going on the \"Run\" option on the menu bar, clicking on \"Attach to Process...\" and selecting the running React Native app."
+      children: "在 Android Studio 中，你可以通过点击菜单栏中的 \"Run\" 选项，然后选择 \"Attach to Process...\"，并选择正在运行的 React Native 应用。"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h3, {
       id: "xcode",
       children: "Xcode"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-      children: "On Xcode click on \"Debug\" on the top menu bar, select the \"Attach to process\" option, and select the application in the list of \"Likely Targets\"."
+      children: "在 Xcode 中，点击菜单栏中的 \"Debug\"，选择 \"Attach to Process...\"，然后从 \"Likely Targets\" 列表中选择正在运行的应用。"
     })]
   });
 }

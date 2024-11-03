@@ -820,7 +820,7 @@ const metadata = {
     "permalink": "/docs/the-new-architecture/custom-cxx-types"
   },
   "next": {
-    "title": "appendix",
+    "title": "附录",
     "permalink": "/docs/appendix"
   }
 };

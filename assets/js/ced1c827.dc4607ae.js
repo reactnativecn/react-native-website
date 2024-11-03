@@ -1,9 +1,9 @@
 "use strict";
-exports.id = 71698;
-exports.ids = [71698];
+exports.id = 23282;
+exports.ids = [23282];
 exports.modules = {
 
-/***/ 4523:
+/***/ 79367:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20,29 +20,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const frontMatter = {};
-const contentTitle = undefined;
+const contentTitle = '附录';
 const metadata = {
   "id": "appendix",
-  "title": "appendix",
+  "title": "附录",
   "description": "一、术语",
-  "source": "@site/versioned_docs/version-0.76/appendix.md",
+  "source": "@site/../cndocs/appendix.md",
   "sourceDirName": ".",
   "slug": "/appendix",
-  "permalink": "/docs/appendix",
+  "permalink": "/docs/next/appendix",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/reactnativecn/react-native-website/blob/production/cnwebsite/../cndocs/appendix.md",
   "tags": [],
-  "version": "0.76",
+  "version": "current",
   "frontMatter": {},
   "sidebar": "docs",
   "previous": {
     "title": "Fabric Native Components Introduction",
-    "permalink": "/docs/fabric-native-components-introduction"
+    "permalink": "/docs/next/fabric-native-components-introduction"
   },
   "next": {
     "title": "创建模块库",
-    "permalink": "/docs/the-new-architecture/create-module-library"
+    "permalink": "/docs/next/the-new-architecture/create-module-library"
   }
 };
 const assets = {
@@ -69,8 +69,10 @@ function _createMdxContent(props) {
     a: "a",
     admonition: "admonition",
     code: "code",
+    h1: "h1",
     h2: "h2",
     h3: "h3",
+    header: "header",
     li: "li",
     p: "p",
     strong: "strong",
@@ -85,7 +87,12 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
+    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.header, {
+      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h1, {
+        id: "附录",
+        children: "附录"
+      })
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "一术语",
       children: "一、术语"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
@@ -97,9 +104,9 @@ function _createMdxContent(props) {
         children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.strong, {
             children: "Spec"
-          }), " - TypeScript or Flow code that describes the API for a Turbo Native Module or Fabric Native component. Used by ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.strong, {
+          }), " - TypeScript 或 Flow 形式的代码，用于描述 Turbo Native 模块或 Fabric 原生组件的 API。 ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.strong, {
             children: "Codegen"
-          }), " to generate boilerplate code."]
+          }), " 根据它来生成样板代码。"]
         }), "\n"]
       }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.li, {
         children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
@@ -121,13 +128,13 @@ function _createMdxContent(props) {
         children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.strong, {
             children: "传统原生组件"
-          }), " - 指运行在旧版 React Native 架构上的组件。"]
+          }), " - 指运行在 React Native 旧架构上的组件。"]
         }), "\n"]
       }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.li, {
         children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.strong, {
             children: "传统原生模块"
-          }), " - 指运行在旧版 React Native 架构上的模块。"]
+          }), " - 指运行在 React Native 旧架构上的模块。"]
         }), "\n"]
       }), "\n"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {

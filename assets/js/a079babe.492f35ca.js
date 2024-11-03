@@ -91,21 +91,21 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.admonition, {
       type: "note",
       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-        children: "你可能以前熟悉："
+        children: "你可能曾经用过："
       }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.ul, {
         children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.li, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
             href: "./legacy/native-modules-intro",
-            children: "Legacy Native Modules"
+            children: "传统原生模块"
           }), ";"]
         }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.li, {
           children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
             href: "./legacy/native-components-android",
-            children: "Legacy Native Components"
+            children: "传统原生 UI 组件"
           }), ";"]
         }), "\n"]
       }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-        children: "这些是我们弃用的原生模块和组件 API。你可以继续使用许多这些遗留库，感谢我们的互操作层。你应该考虑："
+        children: "这些是我们即将弃用的原生模块和组件 API。由于我们引入了向后兼容的互操作层，所以你仍然可以继续使用许多这些遗留库。但即便如此，你还是应该考虑："
       }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.ul, {
         children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.li, {
           children: "使用替代库，"
