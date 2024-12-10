@@ -403,7 +403,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cli@latest init AwesomeProject\n"
+        children: "npx @react-native-community/cli init AwesomeProject\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["如果你是想把 React Native 集成到现有的原生项目中，则步骤完全不同，请参考", (0,jsx_runtime.jsx)(_components.a, {
@@ -422,7 +422,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cliX.XX.X init AwesomeProject --version X.XX.X\n"
+        children: "npx @react-native-community/cli init AwesomeProject --version X.XX.X\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["还可以使用", (0,jsx_runtime.jsx)(_components.code, {
@@ -926,7 +926,7 @@ function _getting_started_macos_android_createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cli@latest init AwesomeProject\n"
+        children: "npx @react-native-community/cli init AwesomeProject\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["如果你是想把 React Native 集成到现有的原生项目中，则步骤完全不同，请参考", (0,jsx_runtime.jsx)(_components.a, {
@@ -944,7 +944,7 @@ function _getting_started_macos_android_createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cliX.XX.X init AwesomeProject --version X.XX.X\n"
+        children: "npx @react-native-community/cli init AwesomeProject --version X.XX.X\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["还可以使用", (0,jsx_runtime.jsx)(_components.code, {
@@ -1473,7 +1473,7 @@ function _getting_started_windows_android_createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cli@latest init AwesomeProject\n"
+        children: "npx @react-native-community/cli init AwesomeProject\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["如果你是想把 React Native 集成到现有的原生项目中，则步骤完全不同，请参考", (0,jsx_runtime.jsx)(_components.a, {
@@ -1492,7 +1492,7 @@ function _getting_started_windows_android_createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cliX.XX.X init AwesomeProject --version X.XX.X\n"
+        children: "npx @react-native-community/cli init AwesomeProject --version X.XX.X\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["还可以使用", (0,jsx_runtime.jsx)(_components.code, {
@@ -1872,7 +1872,7 @@ function _getting_started_macos_ios_createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cli@latest init AwesomeProject\n"
+        children: "npx @react-native-community/cli init AwesomeProject\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.blockquote, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {

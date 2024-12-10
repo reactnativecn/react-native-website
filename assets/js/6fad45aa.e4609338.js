@@ -918,7 +918,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         className: "language-bash",
-        children: "npx @react-native-community/cli@latest init Demo --install-pods false\n"
+        children: "npx @react-native-community/cli init Demo --install-pods false\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "创建一个-webview-组件",

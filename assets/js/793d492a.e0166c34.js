@@ -165,7 +165,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cli@latest init SampleApp --version 0.76.0\n"
+        children: "npx @react-native-community/cli init SampleApp --version 0.76.0\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "1-创建-js-规范",

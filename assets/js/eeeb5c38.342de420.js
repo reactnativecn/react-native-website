@@ -647,7 +647,7 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         className: "language-shell",
-        children: "npx @react-native-community/cli@latest init TurboModuleExample --version 0.76.0\n"
+        children: "npx @react-native-community/cli init TurboModuleExample --version 0.76.0\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "本地持久存储",
