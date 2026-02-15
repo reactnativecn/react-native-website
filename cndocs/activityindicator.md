@@ -3,82 +3,91 @@ id: activityindicator
 title: ActivityIndicator
 ---
 
-显示一个圆形的 loading 提示符号。
+显示圆形加载指示器。
 
-## 示例
+＃＃ 例子
 
 ```SnackPlayer name=ActivityIndicator%20Example
-import React from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import {ActivityIndicator, StyleSheet} from 'react-native';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 const App = () => (
-  <View style={[styles.container, styles.horizontal]}>
-    <ActivityIndicator />
-    <ActivityIndicator size="large" />
-    <ActivityIndicator size="small" color="#0000ff" />
-    <ActivityIndicator size="large" color="#00ff00" />
-  </View>
+  <SafeAreaProvider>
+    <SafeAreaView style={[styles.container, styles.horizontal]}>
+      <ActivityIndicator />
+      <ActivityIndicator size="large" />
+      <ActivityIndicator size="small" color="#0000ff" />
+      <ActivityIndicator size="large" color="#00ff00" />
+    </SafeAreaView>
+  </SafeAreaProvider>
 );
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: 'center',
   },
   horizontal: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    padding: 10
-  }
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
+  },
 });
 
 export default App;
 ```
 
-# 文档
+＃ 参考
 
-## Props
+## 道具
 
-### [View Props](view.md#props)
+### [查看道具](view#props)
 
-继承了所有的[View Props](view.md#props).
-
----
-
-### `animating`
-
-是否要显示指示器动画，默认为 true 表示显示，false 则隐藏。
-
-| 类型 | 默认值 |
-| ---- | ------ |
-| bool | `true` |
+继承[视图道具](view#props)。
 
 ---
 
-### `color`
+### `动画`
 
-滚轮的前景颜色。
+是否显示指示器（“true”）或隐藏指示器（“false”）。
 
-| 类型            | 默认值                                                                                                                                                                           |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [color](colors) | `null` (系统默认的强调色)<div class="label android">Android</div><hr/><ins style={{background: '#999'}} className="color-box" />`'#999999'` <div className="label ios">iOS</div> |
-
----
-
-### `hidesWhenStopped` <div class="label ios">iOS</div>
-
-在`animating`为 false 的时候，是否要隐藏指示器（默认为 true）。如果`animating`和`hidesWhenStopped`都为 false，则显示一个静止的指示器。
-
-| 类型 | 默认值 |
-| ---- | ------ |
-| bool | `true` |
+|类型 |默认|
+| ---- | -------- |
+|布尔 | `真实` |
 
 ---
 
-### `size`
+### `颜色`
 
-指示器的大小，默认为'small'。目前只能在 Android 上设定具体的数值。
+微调器的前景色。
 
-| 类型                                                                           | 默认值    |
-| ------------------------------------------------------------------------------ | --------- |
-| enum(`'small'`, `'large'`)<hr/>number <div class="label android">Android</div> | `'small'` |
+|类型 |默认|
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [颜色]（颜色）| `null`（系统重音默认颜色）<div className="label android">Android</div><hr/><ins style={{background: '#999'}} className="color-box" />`'#999999'` <div className="label ios">iOS</div> |
+
+---
+
+### `hidesWhenStopped` <div className="label ios">iOS</div>
+
+指示器在不设置动画时是否应隐藏。
+
+|类型 |默认|
+| ---- | -------- |
+|布尔 | `真实` |
+
+---
+
+### `参考`
+
+一个引用设置器，在安装时将被分配一个[元素节点]（元素节点）。
+
+---
+
+### `尺寸`
+
+指标的大小。
+
+|类型 |默认|
+| -------------------------------------------------------------------------------------------------- | ---------|
+| enum(`'small'`, ''large'`)<hr/>number <div className="label android">Android</div> | ``小'` |
