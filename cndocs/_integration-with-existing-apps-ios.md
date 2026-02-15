@@ -1,73 +1,78 @@
-import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
+从“@theme/Tabs”导入选项卡；
+从“@theme/TabItem”导入 TabItem；
+从“@site/core/TabsConstants”导入常量；
+从“@theme/CodeBlock”导入CodeBlock；
+从“@site/core/RNTemplateRepoLink”导入 RNTemplateRepoLink；
+从 '@site/src/getTemplateBranchNameForCurrentVersion' 导入 {getTemplateBranchNameForCurrentVersion}；
 
 ## 关键概念
 
-将 React Native 组件集成到 iOS 应用程序中的关键步骤是：
+将 React Native 组件集成到 iOS 应用程序中的关键是：
 
 1. 设置正确的目录结构。
 2. 安装必要的 NPM 依赖项。
-3. 在 Podfile 配置中添加 React Native。
-4. 为你的第一个 React Native 屏幕编写 TypeScript 代码。
-5. 使用`RCTRootView`将 React Native 与你的 iOS 代码集成。
-6. 通过运行打包器并查看应用程序运行情况来测试你的集成。
+3. 将 React Native 添加到 Podfile 配置中。
+4. 为您的第一个 React Native 屏幕编写 TypeScript 代码。
+5. 使用“RCTRootView”将 React Native 与您的 iOS 代码集成。
+6. 通过运行捆绑程序并查看应用程序的运行情况来测试您的集成。
 
 ## 使用社区模板
 
-在您遵循本指南时，我们建议您参考[React Native 社区模板](https://github.com/react-native-community/template/)。该模板包含一个**最小化的 iOS 应用**，将帮助您理解如何将 React Native 集成到现有的 iOS 应用中。
+当您遵循本指南时，我们建议您使用 [React Native 社区模板](https://github.com/react-native-community/template/) 作为参考。该模板包含一个**最小的 iOS 应用程序**，并将帮助您了解如何将 React Native 集成到现有的 iOS 应用程序中。
 
-## 准备工作
+## 先决条件
 
-请按照[设置开发环境](getting-started)指南指南来配置您的开发环境，以便构建 iOS 平台的 React Native 应用。
-本指南还假设您熟悉 iOS 开发的基础知识，如创建`UIViewController`和编辑`Podfile`文件。
+按照[设置您的开发环境](set-up-your-environment) 和使用[无框架的 React Native](getting-started-without-a-framework) 指南来配置您的开发环境，以构建适用于 iOS 的 React Native 应用程序。
+本指南还假设您熟悉 iOS 开发的基础知识，例如创建“UIViewController”和编辑“Podfile”文件。
 
-### 1. 设置目录结构
+### 1.设置目录结构
 
-为确保顺利体验，请为您的集成 React Native 项目创建一个新文件夹，然后**将现有的 iOS 项目移动到** `/ios` 子文件夹中。
+为了确保流畅的体验，请为集成的 React Native 项目创建一个新文件夹，然后**将现有的 iOS 项目**移动到“/ios”子文件夹。
 
-## 2. 安装 NPM 依赖
+## 2.安装NPM依赖
 
 进入根目录并运行以下命令：
 
-```
-curl -O https://raw.githubusercontent.com/react-native-community/template/refs/heads/0.78-stable/template/package.json
-```
+<CodeBlock 语言=“bash”标题=“shell”>
+{`curl -O https://raw.githubusercontent.com/react-native-community/template/refs/heads/${getTemplateBranchNameForCurrentVersion()}/template/package.json`}
+</代码块>
 
-这将从[社区模板](https://github.com/react-native-community/template/blob/0.78-stable/template/package.json) 复制 `package.json` 文件到您的项目中。
+这会将“package.json”<RNTemplateRepoLink href="template/package.json">文件从社区模板</RNTemplateRepoLink>复制到您的项目。
 
-接下来，运行以下命令安装 NPM 包：
+接下来，通过运行以下命令安装 NPM 软件包：
 
-<Tabs groupId="package-manager" queryString defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
-<TabItem value="npm">
+<选项卡groupId =“package-manager”queryString defaultValue = {constants.defaultPackageManager}values = {constants.packageManagers}>
+<TabItem值=“npm”>
 
 ```shell
 npm install
 ```
 
-</TabItem>
-<TabItem value="yarn">
+</标签项>
+<TabItem value="纱线">
 
 ```shell
 yarn install
 ```
 
-</TabItem>
-</Tabs>
+</标签项>
+</标签>
 
-安装过程创建了一个新的 `node_modules` 文件夹。该文件夹存储了构建项目所需的 JavaScript 依赖项。
+安装过程创建了一个新的“node_modules”文件夹。此文件夹存储构建项目所需的所有 JavaScript 依赖项。
 
-将 `node_modules/` 添加到您的 `.gitignore` 文件中（[社区默认文件](https://github.com/react-native-community/template/blob/0.78-stable/template/_gitignore)）。
+将 `node_modules/` 添加到您的 `.gitignore` 文件（此处为 <RNTemplateRepoLink href="template/_gitignore">社区默认文件</RNTemplateRepoLink>）。
 
-### 3. 安装开发工具
+### 3.安装开发工具
 
 ### Xcode 命令行工具
 
-安装命令行工具。选择 Xcode 菜单中的 **Settings...（或 Preferences...）**。转到位置面板，并安装工具，方法是选择命令行工具下拉菜单中最新的版本。
+安装命令行工具。在 Xcode 菜单中选择 **设置...（或首选项...）**。转到“位置”面板并通过在“命令行工具”下拉列表中选择最新版本来安装工具。
 
-![Xcode Command Line Tools](/docs/assets/GettingStartedXcodeCommandLineTools.png)
+![Xcode 命令行工具](/docs/assets/GettingStartedXcodeCommandLineTools.png)
 
 ### CocoaPods
 
-[CocoaPods](https://cocoapods.org) 是 iOS 和 macOS 开发的包管理工具。我们使用它将实际的 React Native 框架代码添加到您的当前项目中。
+[CocoaPods](https://cocoapods.org) 是一个用于 iOS 和 macOS 开发的包管理工具。我们使用它来将实际的 React Native 框架代码本地添加到您当前的项目中。
 
 我们建议使用 [Homebrew](https://brew.sh/) 安装 CocoaPods：
 
@@ -75,57 +80,72 @@ yarn install
 brew install cocoapods
 ```
 
-## 4. 将 React Native 添加到您的应用
+## 4. 将 React Native 添加到您的应用程序
 
 ### 配置 CocoaPods
 
 要配置 CocoaPods，我们需要两个文件：
 
-- 一个 **Gemfile** 文件，定义了我们需要的 Ruby 依赖项。
-- 一个 **Podfile** 文件，定义了如何正确安装我们的依赖项。
+- **Gemfile** 定义我们需要哪些 Ruby 依赖项。
+- **Podfile** 定义如何正确安装我们的依赖项。
 
-对于 **Gemfile**，请进入您的项目根目录并运行以下命令：
+对于 **Gemfile**，请转到项目的根目录并运行此命令
 
-```sh
-curl -O https://raw.githubusercontent.com/react-native-community/template/refs/heads/0.78-stable/template/Gemfile
+<CodeBlock 语言=“bash”标题=“shell”>
+{`curl -O https://raw.githubusercontent.com/react-native-community/template/refs/heads/${getTemplateBranchNameForCurrentVersion()}/template/Gemfile`}
+</代码块>
+
+这将从模板下载 Gemfile。
+
+:::注意
+如果您使用 Xcode 16 创建项目，则需要更新 Gemfile，如下所示：
+
+```diff
+-gem 'cocoapods', '>= 1.13', '!= 1.15.0', '!= 1.15.1'
++gem 'cocoapods', '1.16.2'
+gem 'activesupport', '>= 6.1.7.5', '!= 7.1.0'
+-gem 'xcodeproj', '< 1.26.0'
++gem 'xcodeproj', '1.27.0'
 ```
 
-这将下载 Gemfile 文件。
-对于 **Podfile**，请进入您的项目 `ios` 文件夹并运行以下命令：
-
-```sh
-curl -O https://raw.githubusercontent.com/react-native-community/template/refs/heads/0.78-stable/template/ios/Podfile
-```
-
-请使用社区模板 作为 [Gemfile](https://github.com/react-native-community/template/blob/0.78-stable/template/Gemfile) 和 [Podfile](https://github.com/react-native-community/template/blob/0.78-stable/template/ios/Podfile) 的参考。
-
-:::note
-请记住更改 [Podfile](https://github.com/react-native-community/template/blob/0.78-stable/template/ios/Podfile#L17) 中的这行，以匹配您的应用名称。
+Xcode 16 生成项目的方式与以前版本的 Xcode 略有不同，您需要最新的 CocoaPods 和 Xcodeproj gems 才能使其正常工作。
 :::
 
-现在，我们需要运行一些额外的命令来安装 Ruby Gem 和 Pods。
-进入 `ios` 文件夹并运行以下命令：
+同样，对于 **Podfile**，转到项目的“ios”文件夹并运行
+
+<CodeBlock 语言=“bash”标题=“shell”>
+{`curl -O https://raw.githubusercontent.com/react-native-community/template/refs/heads/${getTemplateBranchNameForCurrentVersion()}/template/ios/Podfile`}
+</代码块>
+
+请使用社区模板作为 <RNTemplateRepoLink href="template/Gemfile">Gemfile</RNTemplateRepoLink> 和 <RNTemplateRepoLink href="template/ios/Podfile">Podfile</RNTemplateRepoLink> 的参考点。
+
+:::注意
+请记住更改<RNTemplateRepoLink href="template/ios/Podfile#L17">此行</RNTemplateRepoLink>。
+:::
+
+现在，我们需要运行一些额外的命令来安装 Ruby gems 和 Pod。
+导航到“ios”文件夹并运行以下命令：
 
 ```sh
 bundle install
 bundle exec pod install
 ```
 
-第一个命令将安装 Ruby 依赖项，第二个命令将实际将 React Native 代码集成到您的应用程序中，以便您的 iOS 文件可以导入 React Native 头文件。
+第一个命令将安装 Ruby 依赖项，第二个命令将实际将 React Native 代码集成到您的应用程序中，以便您的 iOS 文件可以导入 React Native 标头。
 
 ## 5. 编写 TypeScript 代码
 
-现在我们将修改原生 iOS 应用程序以集成 React Native。
+现在我们将实际修改原生 iOS 应用程序以集成 React Native。
 
-我们将编写的第一个代码片段是实际的 React Native 代码，该代码将集成到我们的应用程序中。
+我们将编写的第一段代码是将新屏幕集成到我们的应用程序中的实际 React Native 代码。
 
 ### 创建一个 `index.js` 文件
 
-首先，在 React Native 项目的根目录中创建一个空的 `index.js` 文件。
+首先，在 React Native 项目的根目录中创建一个空的“index.js”文件。
 
-`index.js` 是 React Native 应用程序的起点，并且总是需要。它可以是一个小文件，该文件 `import` 其他文件，这些文件是您的 React Native 组件或应用程序的一部分，或者它可以包含所有需要的代码。
+`index.js` 是 React Native 应用程序的起点，并且始终是必需的。它可以是一个小文件，用于“导入”React Native 组件或应用程序中的其他文件，也可以包含其所需的所有代码。
 
-我们的 `index.js` 文件应如下所示（[社区模板文件](https://github.com/react-native-community/template/blob/0.78-stable/template/index.js) 作为参考）：
+我们的“index.js”应如下所示（此处为<RNTemplateRepoLink href="template/index.js">社区模板文件作为参考</RNTemplateRepoLink>）：
 
 ```js
 import {AppRegistry} from 'react-native';
@@ -136,7 +156,7 @@ AppRegistry.registerComponent('HelloWorld', () => App);
 
 ### 创建一个 `App.tsx` 文件
 
-让我们创建一个 `App.tsx` 文件。这是一个 [TypeScript](https://www.typescriptlang.org/) 文件，可以包含 [JSX](<https://en.wikipedia.org/wiki/JSX_(JavaScript)>) 表达式。它包含我们要集成到 iOS 应用程序中的根 React Native 组件（[链接](https://github.com/react-native-community/template/blob/0.78-stable/template/App.tsx)）：
+让我们创建一个“App.tsx”文件。这是一个 [TypeScript](https://www.typescriptlang.org/) 文件，可以包含 [JSX](<https://en.wikipedia.org/wiki/JSX_(JavaScript)>) 表达式。它包含我们将集成到 iOS 应用程序中的根 React Native 组件（<RNTemplateRepoLink href="template/App.tsx">链接</RNTemplateRepoLink>）：
 
 ```tsx
 import React from 'react';
@@ -209,32 +229,32 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-[社区模板文件](https://github.com/react-native-community/template/blob/0.78-stable/template/App.tsx) 作为参考
+这是<RNTemplateRepoLink href="template/App.tsx">社区模板文件作为参考</RNTemplateRepoLink>。
 
-## 5. 与 iOS 代码集成
+## 5. 与您的 iOS 代码集成
 
-我们现在需要添加一些原生代码，以便启动 React Native 运行时并告诉它渲染我们的 React 组件。
+我们现在需要添加一些本机代码以启动 React Native 运行时并告诉它渲染我们的 React 组件。
 
-### 准备工作
+＃＃＃ 要求
 
-React Native 的初始化与 iOS 应用的其他部分无关。
+React Native 初始化现在不再绑定到 iOS 应用程序的任何特定部分。
 
-React Native 可以通过一个名为 `RCTReactNativeFactory` 的类来初始化，该类负责处理 React Native 的生命周期。
+React Native 可以使用名为“RCTReactNativeFactory”的类进行初始化，该类负责为您处理 React Native 生命周期。
 
-一旦类被初始化，您可以启动一个 React Native 视图，提供一个 `UIWindow` 对象，或者您可以要求工厂生成一个 `UIView`，您可以在任何 `UIViewController` 中加载它。
+类初始化后，您可以启动一个提供“UIWindow”对象的 React Native 视图，也可以要求工厂生成一个“UIView”，您可以将其加载到任何“UIViewController”中。
 
-在以下示例中，我们将创建一个可以加载 React Native 视图的 ViewController。
+在下面的示例中，我们将创建一个 ViewController，它可以加载 React Native 视图，因为它是“view”。
 
-#### 创建一个 ReactViewController
+#### 创建 ReactViewController
 
-从模板创建一个新文件 (<kbd>⌘</kbd>+<kbd>N</kbd>) 并选择 Cocoa Touch Class 模板。
+从模板 (<kbd>⌘</kbd>+<kbd>N</kbd>) 创建一个新文件，然后选择 Cocoa Touch Class 模板。
 
-确保选择 `UIViewController` 作为 "Subclass of" 字段。
+确保选择“UIViewController”作为“子类”字段。
 
-<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
-<TabItem value="objc">
+<选项卡groupId =“ios语言”queryString defaultValue = {constants.defaultAppleLanguage}值= {constants.appleLanguages}>
+<TabItem值=“objc”>
 
-现在打开 `ReactViewController.m` 文件并应用以下更改
+现在打开“ReactViewController.m”文件并应用以下更改
 
 ```diff title="ReactViewController.m"
 #import "ReactViewController.h"
@@ -288,10 +308,10 @@ React Native 可以通过一个名为 `RCTReactNativeFactory` 的类来初始化
 
 ```
 
-</TabItem>
-<TabItem value="swift">
+</标签项>
+<TabItem值=“迅速”>
 
-现在打开 `ReactViewController.swift` 文件并应用以下更改
+现在打开“ReactViewController.swift”文件并应用以下更改
 
 ```diff title="ReactViewController.swift"
 import UIKit
@@ -329,18 +349,16 @@ class ReactViewController: UIViewController {
 +}
 ```
 
-</TabItem>
-</Tabs>
+</标签项>
+</标签>
 
-#### 在 rootViewController 中展示 React Native 视图
+#### 在 rootViewController 中呈现 React Native 视图
 
-最后，我们可以展示我们的 React Native 视图。为此，我们需要一个可以承载视图的新视图控制器，我们可以在其中加载 JS 内容。
+最后，我们可以展示我们的 React Native 视图。为此，我们需要一个新的视图控制器来托管一个视图，我们可以在其中加载 JS 内容。
+我们已经有了初始的“ViewController”，我们可以让它呈现“ReactViewController”。有多种方法可以实现此目的，具体取决于您的应用程序。对于此示例，我们假设您有一个以模式方式呈现 React Native 的按钮。
 
-1. 从 Xcode 中，创建一个新 `UIViewController`（我们称之为 `ReactViewController`）。
-2. 让初始 `ViewController` 展示 `ReactViewController`。有几种方法可以做到这一点，具体取决于您的应用程序。对于此示例，我们假设您有一个按钮，用于模态展示 React Native。
-
-<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
-<TabItem value="objc">
+<选项卡groupId =“ios语言”queryString defaultValue = {constants.defaultAppleLanguage}值= {constants.appleLanguages}>
+<TabItem值=“objc”>
 
 ```diff title="ViewController.m"
 #import "ViewController.h"
@@ -380,14 +398,14 @@ class ReactViewController: UIViewController {
 +  if (reactViewController == NULL) {
 +    reactViewController = [ReactViewController new];
 +  }
-+  [self presentViewController:reactViewController animated:YES completion:nil];
++  [self presentViewController:reactViewController animated:YES];
 +}
 
 @end
 ```
 
-</TabItem>
-<TabItem value="swift">
+</标签项>
+<TabItem值=“迅速”>
 
 ```diff title="ViewController.swift"
 import UIKit
@@ -425,69 +443,69 @@ class ViewController: UIViewController {
 }
 ```
 
-</TabItem>
-</Tabs>
+</标签项>
+</标签>
 
-确保禁用沙盒脚本。为此，在 Xcode 中，点击您的应用，然后点击构建设置。过滤脚本并设置 `User Script Sandboxing` 为 `NO`。这一步是为了在调试和发布版本之间正确切换 [Hermes 引擎](https://github.com/facebook/hermes/blob/main/README.md)。
+确保禁用沙盒脚本。要实现此目的，请在 Xcode 中单击您的应用程序，然后单击构建设置。过滤脚本并将“用户脚本沙箱”设置为“否”。需要执行此步骤才能在我们随 React Native 附带的 [Hermes 引擎](https://github.com/facebook/hermes/blob/main/README.md) 的调试版本和发布版本之间正确切换。
 
-![Disable Sandboxing](/docs/assets/disable-sandboxing.png);
+![禁用沙盒](/docs/assets/disable-sandboxing.png)
 
-最后，确保在您的 `Info.plist` 文件中添加 `UIViewControllerBasedStatusBarAppearance` 键，值为 `NO`。
+最后，确保将“UIViewControllerBasedStatusBarAppearance”键添加到“Info.plist”文件中，值为“NO”。
 
-![Disable UIViewControllerBasedStatusBarAppearance](/docs/assets/disable-UIViewControllerBasedStatusBarAppearance.png)
+![禁用 UIViewControllerBasedStatusBarAppearance](/docs/assets/disable-UIViewControllerBasedStatusBarAppearance.png)
 
 ## 6. 测试您的集成
 
-您已经完成了将 React Native 与您的应用程序集成所需的所有基本步骤。现在我们将启动 [Metro bundler](https://metrobundler.dev/) 来构建您的 TypeScript 应用程序代码。Metro 的 HTTP 服务器从您的开发环境共享 bundle 到模拟器或设备。这允许 [热重载](https://reactnative.dev/blog/2016/03/24/introducing-hot-reloading)。
+您已完成将 React Native 与应用程序集成的所有基本步骤。现在我们将启动 [Metro 捆绑程序](https://metrobundler.dev/) 将 TypeScript 应用程序代码构建到捆绑包中。 Metro 的 HTTP 服务器将开发环境中的“localhost”包共享到模拟器或设备。这允许[热重载](https://reactnative.dev/blog/2016/03/24/introducing-hot-reloading)。
 
-首先，您需要在项目根目录中创建一个 `metro.config.js` 文件，如下所示：
+首先，您需要在项目的根目录中创建一个“metro.config.js”文件，如下所示：
 
 ```js
 const {getDefaultConfig} = require('@react-native/metro-config');
 module.exports = getDefaultConfig(__dirname);
 ```
 
-您可以查看[社区模板文件](https://github.com/react-native-community/template/blob/0.78-stable/template/metro.config.js) 作为参考。
+您可以从社区模板文件中查看 <RNTemplateRepoLink href="template/metro.config.js">`metro.config.js` 文件</RNTemplateRepoLink> 作为参考。
 
-Then, you need to create a `.watchmanconfig` file in the root of your project. The file must contain an empty json object:
+然后，您需要在项目的根目录中创建一个“.watchmanconfig”文件。该文件必须包含一个空的 json 对象：
 
 ```sh
 echo {} > .watchmanconfig
 ```
 
-一旦您有了配置文件，您可以运行 bundler。在项目根目录下运行以下命令：
+一旦配置文件到位，您就可以运行捆绑程序。在项目的根目录中运行以下命令：
 
-<Tabs groupId="package-manager" queryString defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
-<TabItem value="npm">
+<选项卡groupId =“package-manager”queryString defaultValue = {constants.defaultPackageManager}values = {constants.packageManagers}>
+<TabItem值=“npm”>
 
 ```shell
 npm start
 ```
 
-</TabItem>
-<TabItem value="yarn">
+</标签项>
+<TabItem value="纱线">
 
 ```shell
 yarn start
 ```
 
-</TabItem>
-</Tabs>
+</标签项>
+</标签>
 
-现在，像往常一样构建和运行您的 iOS 应用。
+现在正常构建并运行您的 iOS 应用程序。
 
-一旦您到达您的 React 驱动的 Activity 中，它应该从开发服务器加载 JavaScript 代码并显示：
+一旦您到达应用程序内由 React 驱动的 Activity，它应该从开发服务器加载 JavaScript 代码并显示：
 
-<center><img src="/docs/assets/EmbeddedAppIOSVideo.gif" width="300" /></center>
+<center><img src="/docs/assets/EmbeddedAppIOS078.gif" width="300" /></center>
 
 ### 在 Xcode 中创建发布版本
 
-您可以使用 Xcode 创建您的发布版本！唯一的额外步骤是添加一个脚本，当应用程序构建时，将您的 JS 和图像打包到 iOS 应用程序中。
+您也可以使用 Xcode 创建您的发布版本！唯一的额外步骤是添加一个在构建应用程序时执行的脚本，以将 JS 和图像打包到 iOS 应用程序中。
 
-1. 在 Xcode 中，选择您的应用
-2. 点击 `Build Phases`
-3. 点击左上角的 `+` 并选择 `New Run Script Phase`
-4. 点击 `Run Script` 行并重命名脚本为 `Bundle React Native code and images`
+1. 在 Xcode 中，选择您的应用程序
+2. 单击“构建阶段”
+3. 单击左上角的“+”，然后选择“新建运行脚本阶段”
+4. 单击“Run Script”行并将脚本重命名为“Bundle React Native code and images”
 5. 在文本框中粘贴以下脚本
 
 ```sh title="Build React Native code and image"
@@ -499,19 +517,19 @@ REACT_NATIVE_XCODE="$REACT_NATIVE_PATH/scripts/react-native-xcode.sh"
 /bin/sh -c "$WITH_ENVIRONMENT $REACT_NATIVE_XCODE"
 ```
 
-6. 将脚本拖放到名为 `[CP] Embed Pods Frameworks` 的脚本之前。
+6. 将脚本拖放到名为“[CP] Embed Pods Frameworks”的脚本之前。
 
-现在，如果您为发布版本构建您的应用，它将按预期工作。
+现在，如果您构建用于发布的应用程序，它将按预期工作。
 
-## 7. 将初始属性传递给 React Native 视图
+## 7. 将初始 props 传递给 React Native 视图
 
-在某些情况下，您可能希望从原生应用传递一些信息到 JavaScript。例如，您可能希望传递当前登录用户的用户 ID 和令牌，以便从数据库中检索信息。
+在某些情况下，您希望将一些信息从本机应用程序传递到 JavaScript。例如，您可能希望将当前登录用户的用户 ID 以及可用于从数据库检索信息的令牌传递给 React Native。
 
-这可以通过使用 `RCTReactNativeFactory` 类的 `view(withModuleName:initialProperty)` 重载的 `initialProperties` 参数来实现。以下步骤展示了如何实现。
+这可以通过使用“RCTReactNativeFactory”类的“view(withModuleName:initialProperty)”重载的“initialProperties”参数来实现。以下步骤向您展示如何执行此操作。
 
-### 更新 App.tsx 文件以读取初始属性
+### 更新 App.tsx 文件以读取初始属性。
 
-打开 `App.tsx` 文件并添加以下代码：
+打开“App.tsx”文件并添加以下代码：
 
 ```diff title="App.tsx"
 import {
@@ -577,14 +595,14 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-这些更改将告诉 React Native 您的 App 组件现在接受一些属性。`RCTreactNativeFactory` 将负责在组件渲染时将它们传递给它。
+这些更改将告诉 React Native 您的 App 组件现在正在接受某些属性。 “RCTreactNativeFactory”将在渲染时将它们传递给组件。
 
-### 更新原生代码以将初始属性传递给 JavaScript
+### 更新本机代码以将初始属性传递给 JavaScript。
 
-<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
-<TabItem value="objc">
+<选项卡groupId =“ios语言”queryString defaultValue = {constants.defaultAppleLanguage}值= {constants.appleLanguages}>
+<TabItem值=“objc”>
 
-修改 `ReactViewController.mm` 以将初始属性传递给 JavaScript。
+修改“ReactViewController.mm”以将初始属性传递给 JavaScript。
 
 ```diff title="ReactViewController.mm"
  - (void)viewDidLoad {
@@ -602,10 +620,10 @@ export default App;
 }
 ```
 
-</TabItem>
-<TabItem value="swift">
+</标签项>
+<TabItem值=“迅速”>
 
-修改 `ReactViewController.swift` 以将初始属性传递给 React Native 视图。
+修改“ReactViewController.swift”以将初始属性传递给 React Native 视图。
 
 ```diff title="ReactViewController.swift"
   override func viewDidLoad() {
@@ -623,15 +641,15 @@ export default App;
 }
 ```
 
-</TabItem>
-</Tabs>
+</标签项>
+</标签>
 
-3. 再次运行您的应用。您应该在展示 `ReactViewController` 后看到以下屏幕：
+3. 再次运行您的应用程序。呈现“ReactViewController”后，您应该会看到以下屏幕：
 
-<center>
+<中心>
   <img src="/docs/assets/brownfield-with-initial-props.png" width="30%" height="30%"/>
-</center>
+</中心>
 
-### 现在呢？
+## 现在怎么办？
 
-此时，您可以继续像往常一样开发您的应用。请参阅我们的[调试](debugging)和[部署](running-on-device)文档，了解更多关于使用 React Native 的信息。
+此时，您可以像往常一样继续开发您的应用程序。请参阅我们的[调试]（调试）和[部署]（在设备上运行）文档，了解有关使用 React Native 的更多信息。
