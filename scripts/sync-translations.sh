@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Print candidate cndocs files that need translation sync.
+# Single source of truth for translation sync.
+# Default output: candidate cndocs files that need resync.
+# --report: print a human-readable timing report.
 # Rule: if the upstream docs file is newer than the translated cndocs file,
 # it must be resynced and cannot be skipped.
 
@@ -9,6 +11,10 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO_ROOT"
 
 PROGRESS_FILE="$REPO_ROOT/scripts/translate-progress.json"
+MODE="list"
+if [ "${1:-}" = "--report" ]; then
+  MODE="report"
+fi
 
 # Ensure upstream exists
 if ! git remote get-url upstream >/dev/null 2>&1; then
@@ -19,6 +25,7 @@ fi
 git fetch upstream --quiet
 
 candidates=()
+report_rows=()
 
 collect_targets() {
   # Existing translated docs in the repo.
@@ -51,8 +58,7 @@ for item in data.get('merged', []):
 while IFS= read -r target; do
   [ -z "$target" ] && continue
 
-  name="${target#cndocs/}"
-  source="docs/${name}"
+  source="docs/${target#cndocs/}"
 
   upstream_epoch=$(git log -1 --format="%ct" upstream/main -- "$source" 2>/dev/null || echo 0)
   translation_epoch=$(git log -1 --format="%ct" production -- "$target" 2>/dev/null || echo 0)
@@ -62,10 +68,33 @@ while IFS= read -r target; do
     translation_epoch=$(git log -1 --format="%ct" -- "$target" 2>/dev/null || echo 0)
   fi
 
+  if [ "$MODE" = "report" ]; then
+    upstream_date=$(git log -1 --format="%cd" upstream/main -- "$source" 2>/dev/null || echo "N/A")
+    translation_date=$(git log -1 --format="%cd" production -- "$target" 2>/dev/null || echo "N/A")
+    if [ "$translation_date" = "N/A" ]; then
+      translation_date=$(git log -1 --format="%cd" -- "$target" 2>/dev/null || echo "N/A")
+    fi
+    if [ "$upstream_epoch" -gt "$translation_epoch" ] 2>/dev/null; then
+      status="⚠️ Needs update"
+    else
+      status="✅ Up to date"
+    fi
+    report_rows+=("$target | $upstream_date | $translation_date | $status")
+  fi
+
   if [ "$upstream_epoch" -gt "$translation_epoch" ] 2>/dev/null; then
     candidates+=("$target")
   fi
 done < <(collect_targets | sort -u)
+
+if [ "$MODE" = "report" ]; then
+  echo "File | Upstream Update | Translation Update | Status"
+  echo "--- | --- | --- | ---"
+  if [ ${#report_rows[@]} -gt 0 ]; then
+    printf '%s\n' "${report_rows[@]}"
+  fi
+  exit 0
+fi
 
 # Deduplicate and sort
 if [ ${#candidates[@]} -gt 0 ]; then
