@@ -44,4 +44,4 @@ React Native 拥有一个由成千上万像你一样的开发者组成的社区�
 本文档引用的是一套旧版 API，目前需要更新以反映新架构（New Architecture）。
 :::
 
-想自己创建 Native Component 或 Module 吗？为自己的使用场景编写模块，并通过 NPM 和 GitHub 与他人分享，有助于壮大 React Native 的生态与社区！可以阅读以下指南来创建你自己的 Native Modules（[Android](legacy/native-modules-android.md)、[iOS](legacy/native-modules-ios.md)）以及 Native Components（[Android](legacy/native-components-android.md)、[iOS](legacy/native-components-ios.md)）。
+想自己创建 Native Component 或 Module 吗？为自己的使用场景编写模块，并通过 NPM 和 GitHub 与他人分享，有助于壮大 React Native 的生态与社区！可以阅读以下指南来创建你自己的 Native Modules（[Android](legacy/native-modules-android)、[iOS](legacy/native-modules-ios)）以及 Native Components（[Android](legacy/native-components-android)、[iOS](legacy/native-components-ios)）。
