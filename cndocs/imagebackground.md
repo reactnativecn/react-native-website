@@ -11,7 +11,7 @@ title: ImageBackground
 
 ## 示例
 
-```SnackPlayer name=ImageBackground
+```SnackPlayer name=ImageBackground&dependencies=react-native-safe-area-context
 import React from 'react';
 import {ImageBackground, StyleSheet, Text} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
