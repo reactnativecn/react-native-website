@@ -1,49 +1,190 @@
 ---
 id: environment-setup
-title: React Native 入门指南
+title: 搭建开发环境
 hide_table_of_contents: true
 ---
 
-import PlatformSupport from '@site/src/theme/PlatformSupport';
-import BoxLink from '@site/src/theme/BoxLink';
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
-**React Native 允许了解 React 的开发者创建原生应用。** 同时，原生开发者可以使用 React Native 通过一次编写通用功能来实现跨原生平台的一致性。
+import GuideLinuxAndroid from './\_getting-started-linux-android.md'; import GuideMacOSAndroid from './\_getting-started-macos-android.md'; import GuideWindowsAndroid from './\_getting-started-windows-android.md'; import GuideMacOSIOS from './\_getting-started-macos-ios.md';
 
-我们相信，体验 React Native 的最佳方式是通过**框架（Framework）**——一个包含所有必要 API 的工具箱，让你构建生产就绪的应用。
+欢迎使用 React Native！这篇文档会帮助你搭建基本的 React Native 开发环境。
 
-你也可以不使用框架直接使用 React Native，但我们发现大多数开发者受益于使用像 [Expo](https://expo.dev) 这样的 React Native 框架。Expo 提供了基于文件的路由、高质量的通用库，以及无需管理原生文件即可编写修改原生代码的插件等功能。
+<Tabs groupId="guide" defaultValue={constants.defaultGuide} values={constants.guides}>
+<TabItem value="quickstart">
 
-<details>
-<summary>我可以不使用框架直接使用 React Native 吗？</summary>
+> 译注：沙盒环境大量依赖于国外网络环境，也不能直接安装第三方原生组件。不建议国内用户使用
 
-可以。你可以不使用框架直接使用 React Native。**但是，如果你正在用 React Native 构建新应用，我们建议使用框架。**
+Assuming that you have [Node 12 LTS](https://nodejs.org/en/download/) or greater installed, you can use npm to install the Expo CLI command line utility:
 
-简而言之，你将能够把时间花在编写应用上，而不是在编写应用的同时还要自己编写整个框架。
-
-React Native 社区花费了多年时间来完善导航、访问原生 API、处理原生依赖等方面的方法。大多数应用都需要这些核心功能。React Native 框架从应用一开始就提供了这些功能。
-
-如果没有框架，你要么需要自己编写解决方案来实现核心功能，要么需要将一系列现有库组合在一起创建框架的骨架。这需要大量实际工作，无论是在启动应用时还是后来维护它时都是如此。
-
-如果你的应用有不适用于框架的特殊约束，或者你更喜欢自己解决这些问题，你可以使用 Android Studio、Xcode 在没有框架的情况下创建 React Native 应用。如果你对这条路径感兴趣，请学习如何[设置你的环境](set-up-your-environment)以及如何[在没有框架的情况下入门](getting-started-without-a-framework)。
-
-</details>
-
-## 使用 Expo 开始一个新的 React Native 项目
-
-<PlatformSupport platforms={['android', 'ios', 'tv', 'web']} />
-
-Expo 是一个生产级的 React Native 框架。Expo 提供了使开发应用更容易的开发工具，例如基于文件的路由、原生模块标准库等等。
-
-Expo 的框架是免费且开源的，在 [GitHub](https://github.com/expo) 和 [Discord](https://chat.expo.dev) 上拥有活跃的社区。Expo 团队与 Meta 的 React Native 团队密切合作，将最新的 React Native 功能引入 Expo SDK。
-
-Expo 团队还提供 Expo Application Services (EAS)，这是一组可选的服务，在开发过程的每一步都补充了 Expo 框架。
-
-要创建一个新的 Expo 项目，请在终端中运行以下命令：
+<Tabs groupId="package-manager" defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
+<TabItem value="npm">
 
 ```shell
-npx create-expo-app@latest
+npm install -g expo-cli
 ```
 
-创建应用后，请查看 Expo 入门指南的其余部分，开始开发你的应用。
+</TabItem>
+<TabItem value="yarn">
 
-<BoxLink href="https://docs.expo.dev/get-started/set-up-your-environment">继续使用 Expo</BoxLink>
+```shell
+yarn global add expo-cli
+```
+
+</TabItem>
+</Tabs>
+
+Then run the following commands to create a new React Native project called "AwesomeProject":
+
+<Tabs groupId="package-manager" defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
+<TabItem value="npm">
+
+```shell
+expo init AwesomeProject
+
+cd AwesomeProject
+npm start # you can also use: expo start
+```
+
+</TabItem>
+<TabItem value="yarn">
+
+```shell
+expo init AwesomeProject
+
+cd AwesomeProject
+yarn start # you can also use: expo start
+```
+
+</TabItem>
+</Tabs>
+
+This will start a development server for you.
+
+<h2>Running your React Native application</h2>
+
+Install the [Expo](https://expo.io) client app on your iOS or Android phone and connect to the same wireless network as your computer. On Android, use the Expo app to scan the QR code from your terminal to open your project. On iOS, use the built-in QR code scanner of the Camera app.
+
+<h3>Modifying your app</h3>
+
+Now that you have successfully run the app, let's modify it. Open `App.js` in your text editor of choice and edit some lines. The application should reload automatically once you save your changes.
+
+<h3>That's it!</h3>
+
+Congratulations! You've successfully run and modified your first React Native app.
+
+<center><img src="https://cdn.jsdelivr.net/gh/reactnativecn/react-native-website@gh-pages/docs/assets/GettingStartedCongratulations.png" width="150"></img></center>
+
+<h2>Now what?</h2>
+
+Expo also has [docs](https://docs.expo.io) you can reference if you have questions specific to the tool. You can also ask for help at [Expo forums](https://forums.expo.io).
+
+These tools help you get started quickly, but before committing to building your app with Expo CLI, [read about the limitations](https://docs.expo.io/versions/latest/introduction/why-not-expo/).
+
+If you have a problem with Expo, before creating a new issue, please see if there's an existing issue about it:
+
+- in the [Expo CLI issues](https://github.com/expo/expo-cli/issues) (for issues related to Expo CLI), or
+- in the [Expo issues](https://github.com/expo/expo/issues) (for issues about the Expo client or SDK).
+
+If you're curious to learn more about React Native, check out the [Introduction to React Native](getting-started).
+
+<h3>Running your app on a simulator or virtual device</h3>
+
+Expo CLI allows you to run your React Native app on a physical device without setting up a development environment. If you want to run your app on the iOS Simulator or an Android Virtual Device, please refer to the instructions for "React Native CLI Quickstart" to learn how to install Xcode or set up your Android development environment.
+
+Once you've set these up, you can launch your app on an Android Virtual Device by running `npm run android`, or on the iOS Simulator by running `npm run ios` (macOS only).
+
+<h3>Caveats</h3>
+
+Because you don't build any native code when using Expo to create a project, it's not possible to include custom native modules beyond the React Native APIs and components that are available in the Expo client app.
+
+If you know that you'll eventually need to include your own native code, Expo is still a good way to get started. In that case you'll need to "[eject](https://docs.expo.io/versions/latest/workflow/customizing/)" eventually to create your own native builds. If you do eject, the "React Native CLI Quickstart" instructions will be required to continue working on your project.
+
+Expo CLI configures your project to use the most recent React Native version that is supported by the Expo client app. The Expo client app usually gains support for a given React Native version about a week after the React Native version is released as stable. You can check [this document](https://docs.expo.io/versions/latest/sdk/overview/#sdk-version) to find out what versions are supported.
+
+If you're integrating React Native into an existing project, you'll want to skip Expo CLI and go directly to setting up the native build environment. Select "React Native CLI Quickstart" above for instructions on configuring a native build environment for React Native.
+
+</TabItem>
+<TabItem value="native">
+
+根据你所使用的操作系统、针对的目标平台不同，具体步骤有所不同。如果想同时开发 iOS 和 Android 也没问题，你只需要先选一个平台开始，另一个平台的环境搭建只是稍有不同。
+
+如果`阅读完本文档`后还碰到很多环境搭建的问题，我们建议你还可以再看看[求助讨论区](https://github.com/reactnativecn/react-native-website/issues)。注意！视频教程或者其他网络上的博客和文章可能和本文档有所出入，请以最新版本的本文档所述为准！
+
+#### 开发平台
+
+<Tabs groupId="os" defaultValue={constants.defaultOs} values={constants.oses} className="pill-tabs">
+<TabItem value="macos">
+
+#### 目标平台
+
+<Tabs groupId="platform" defaultValue={constants.defaultPlatform} values={constants.platforms} className="pill-tabs">
+<TabItem value="android">
+
+[//]: # 'macOS, Android'
+
+<GuideMacOSAndroid/>
+
+</TabItem>
+<TabItem value="ios">
+
+[//]: # 'macOS, iOS'
+
+<GuideMacOSIOS/>
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+<TabItem value="windows">
+
+#### 目标平台
+
+<Tabs groupId="platform" defaultValue={constants.defaultPlatform} values={constants.platforms} className="pill-tabs">
+<TabItem value="android">
+
+[//]: # 'Windows, Android'
+
+<GuideWindowsAndroid/>
+
+</TabItem>
+<TabItem value="ios">
+
+[//]: # 'Windows, iOS'
+
+## 暂不支持
+
+> 苹果公司目前只允许在 Mac 电脑上开发 iOS 应用。如果你没有 Mac 电脑，那么只能考虑使用`沙盒环境`，或者先开发 Android 应用了。
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+<TabItem value="linux">
+
+#### 目标平台
+
+<Tabs groupId="platform" defaultValue={constants.defaultPlatform} values={constants.platforms} className="pill-tabs">
+<TabItem value="android">
+
+[//]: # 'Linux, Android'
+
+<GuideLinuxAndroid/>
+
+</TabItem>
+<TabItem value="ios">
+
+[//]: # 'Linux, iOS'
+
+## 暂不支持
+
+> 苹果公司目前只允许在 Mac 电脑上开发 iOS 应用。如果你没有 Mac 电脑，那么只能考虑使用`沙盒环境`，或者先开发 Android 应用了。
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+</Tabs>
