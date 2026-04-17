@@ -3,31 +3,35 @@ id: out-of-tree-platforms
 title: 多平台支持
 ---
 
-React Native不仅适用于 Android 和 iOS - 还有社区支持的项目将其应用于其他平台，例如：
+React Native 不仅适用于 Android 和 iOS 设备——我们的合作伙伴和社区还维护着一些将 React Native 带到其他平台的项目，例如：
 
-- [React Native Windows](https://github.com/Microsoft/react-native-windows) - React Native 支持 Microsoft Universal Windows Platform (UWP) 和 Windows Presentation Foundation (WPF)
-- [React Native DOM](https://github.com/vincentriemer/react-native-dom) - 一个实验性的、全面的 React Native 到 web 的端口。（不要与[React Native Web](https://github.com/necolas/react-native-web)混淆，两者目标不同）
-- [React Native Desktop](https://github.com/status-im/react-native-desktop) - 一个旨在通过 Qt 的 QML 将 React Native 带到桌面的项目。[React Native Ubuntu](https://github.com/CanonicalLtd/react-native/)的一个分支，已不再维护。
-- [React Native macOS](https://github.com/ptmt/react-native-macos) - 针对 macOS 和 Cocoa 的实验性 React Native 分支
-- [React Native tvOS](https://github.com/react-native-community/react-native-tvos) - 为 Apple tvOS 适配 React Native
-- [alita](https://github.com/areslabs/alita) - 一个实验性的、综合性的 React Native 到微信小程序的端口
-- [Proton Native](https://github.com/kusti8/proton-native) - React Native 的封装器，使用 Qt 面向 Linux、MacOS 和 Windows
+**合作伙伴项目**
+
+- [React Native macOS](https://github.com/microsoft/react-native-macos) - 面向 macOS 和 Cocoa 的 React Native。
+- [React Native Windows](https://github.com/microsoft/react-native-windows) - 面向 Microsoft Universal Windows Platform (UWP) 的 React Native。
+- [React Native visionOS](https://github.com/callstack/react-native-visionos) - 面向 Apple visionOS 的 React Native。
+
+**社区项目**
+
+- [React Native tvOS](https://github.com/react-native-tvos/react-native-tvos) - 面向 Apple TV 和 Android TV 设备的 React Native。
+- [React Native Web](https://github.com/necolas/react-native-web) - 基于 React DOM 在 Web 上运行 React Native。
+- [React Native Skia](https://github.com/react-native-skia/react-native-skia) - 使用 [Skia](https://skia.org/) 作为渲染器的 React Native。目前支持 Linux 和 macOS。
 
 ## 创建你自己的 React Native 平台
 
-目前，从头开始创建 React Native 平台的过程并没有很好的记录——即将到来的全新架构（[Fabric](https://facebook.github.io/react-native/blog/2018/06/14/state-of-react-native-2018)）的目标之一是使平台的维护更容易。
+目前，从零开始创建一个 React Native 平台的过程还没有非常完善的文档——即将到来的重新架构（[Fabric](/blog/2018/06/14/state-of-react-native-2018)）的目标之一，就是让平台维护变得更容易。
 
 ### 打包
 
-从 React Native 0.57 开始，你现在可以使用 React Native 的 JavaScript 打包器[Metro](https://facebook.github.io/metro/)注册你的 React Native 平台。这意味着你可以将`--platform example`传递给`npx react-native bundle`，它会查找带有`.example.js`后缀的 JavaScript 文件。
+从 React Native 0.57 开始，你现在可以通过 React Native 的 JavaScript 打包器 [Metro](https://metrobundler.dev/) 注册你的 React Native 平台。这意味着你可以向 `npx react-native bundle` 传递 `--platform example`，它就会查找带有 `.example.js` 后缀的 JavaScript 文件。
 
-要将你的平台注册到 RNPM，模块名称必须与以下模式之一匹配：
+要将你的平台注册到 RNPM，模块名称必须匹配以下模式之一：
 
-- `react-native-example` - 它会搜索所有以`react-native-`开头的顶级模块
-- `@org/react-native-example` - 它会在所有范围内搜索以`react-native-`开头的模块
-- `@react-native-example/module` - 它会在名称以`@react-native-`开头的范围内搜索所有模块
+- `react-native-example` - 它会搜索所有以 `react-native-` 开头的顶级模块
+- `@org/react-native-example` - 它会搜索任意 scope 下以 `react-native-` 开头的模块
+- `@react-native-example/module` - 它会搜索所有位于名称以 `@react-native-` 开头的 scope 下的模块
 
-你还必须在`package.json`中设置一些内容，如下所示：
+你还需要在 `package.json` 中添加如下配置：
 
 ```json
 {
@@ -40,4 +44,4 @@ React Native不仅适用于 Android 和 iOS - 还有社区支持的项目将其�
 }
 ```
 
-`"providesModuleNodeModules"`是一组将被添加到 Haste 模块搜索路径的模块，`"platforms"`则是一组将作为有效平台添加的平台后缀。
+`"providesModuleNodeModules"` 是一个数组，其中的模块会被加入 Haste 模块搜索路径；`"platforms"` 也是一个数组，其中的平台后缀会被添加为有效平台。
