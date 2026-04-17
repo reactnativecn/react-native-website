@@ -1,6 +1,6 @@
 ---
 id: fabric-native-components-android
-title: 'Fabric 原生模块：Android'
+title: 'Fabric 原生组件：Android'
 ---
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';

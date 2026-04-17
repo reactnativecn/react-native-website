@@ -292,6 +292,7 @@ public class ReactImageManager extends SimpleViewManager<MyCustomView> {
 
 ```tsx title="MyCustomView.tsx"
 import React, {useCallback} from 'react';
+import {requireNativeComponent} from 'react-native';
 
 const MyCustomView = ({onChangeMessage, ...props}) => {
   const onChange = useCallback(

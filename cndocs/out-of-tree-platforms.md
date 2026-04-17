@@ -19,11 +19,11 @@ React Native 不仅适用于 Android 和 iOS 设备——我们的合作伙伴�
 
 ## 创建你自己的 React Native 平台
 
-目前，从零开始创建一个 React Native 平台的过程还没有非常完善的文档——即将到来的重新架构（[Fabric](/blog/2018/06/14/state-of-react-native-2018)）的目标之一，就是让平台维护变得更容易。
+目前，从零开始创建一个 React Native 平台的过程还没有非常完善的文档——新的架构（[Fabric](/blog/2018/06/14/state-of-react-native-2018)）旨在让平台维护更容易。
 
 ### 打包
 
-从 React Native 0.57 开始，你现在可以通过 React Native 的 JavaScript 打包器 [Metro](https://metrobundler.dev/) 注册你的 React Native 平台。这意味着你可以向 `npx react-native bundle` 传递 `--platform example`，它就会查找带有 `.example.js` 后缀的 JavaScript 文件。
+自 React Native 0.57 起已支持通过 [Metro](https://metrobundler.dev/) 注册自定义平台。这意味着你可以向 `npx react-native bundle` 传递 `--platform example`，它就会查找带有 `.example.js` 后缀的 JavaScript 文件。
 
 要将你的平台注册到 RNPM，模块名称必须匹配以下模式之一：
 
