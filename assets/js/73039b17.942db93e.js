@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_native_website=self.webpackChunkreact_native_website||[]).push([["97364"],{64263(e){e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"architecture"}')}}]);
