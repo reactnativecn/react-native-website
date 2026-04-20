@@ -3,23 +3,23 @@ id: colors
 title: 颜色参考
 ---
 
-React Native 中的组件[使用 JavaScript 来设置样式](style)。颜色属性通常与 [CSS 在 Web 上的工作方式](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)相匹配。各平台的颜色使用指南如下：
+React Native 中的组件[使用 JavaScript 来设置样式](style)。颜色属性通常与 [CSS 在 Web 上的工作方式](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)一致。下面列出各平台的通用用色指南：
 
 - [Android](https://material.io/design/color/color-usage.html)
 - [iOS](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/)
 
-## 颜色相关 API
+## 颜色 API
 
-React Native 提供了多个颜色 API，让你可以充分利用平台的设计系统和用户偏好。
+React Native 提供了多个颜色 API，让你可以充分利用平台的设计系统和用户偏好设置。
 
-- [PlatformColor](platformcolor) 允许你引用平台的颜色系统。
-- [DynamicColorIOS](dynamiccolorios) 是 iOS 特有的，可以让你指定在浅色或深色模式下使用哪些颜色。
+- [PlatformColor](platformcolor) 允许你引用平台自身的颜色系统。
+- [DynamicColorIOS](dynamiccolorios) 是 iOS 专属 API，可让你指定浅色模式或深色模式下应使用的颜色。
 
-## 颜色表示形式
+## 颜色表示方式
 
-### 红-绿-蓝（RGB）
+### 红绿蓝（RGB）
 
-React Native 支持十六进制和函数表示法的 `rgb()` 与 `rgba()`：
+React Native 同时支持十六进制写法和函数写法的 `rgb()` 与 `rgba()`：
 
 - `'#f0f'` (#rgb)
 - `'#ff00ff'` (#rrggbb)
@@ -30,18 +30,18 @@ React Native 支持十六进制和函数表示法的 `rgb()` 与 `rgba()`：
 - `'rgba(255, 0, 255, 1.0)'`
 - `'rgba(255 0 255 / 1.0)'`
 
-### 色调-饱和度-亮度（HSL）
+### 色相 饱和度 亮度（HSL）
 
-React Native 支持函数表示法的 `hsl()` 与 `hsla()`：
+React Native 支持函数写法的 `hsl()` 与 `hsla()`：
 
 - `'hsl(360, 100%, 100%)'`
 - `'hsl(360 100% 100%)'`
 - `'hsla(360, 100%, 100%, 1.0)'`
 - `'hsla(360 100% 100% / 1.0)'`
 
-### 色调-白度-黑度（HWB）
+### 色相 白度 黑度（HWB）
 
-React Native 支持函数表示法的 `hwb()`：
+React Native 支持函数写法的 `hwb()`：
 
 - `'hwb(0, 0%, 100%)'`
 - `'hwb(360, 100%, 100%)'`
@@ -50,29 +50,29 @@ React Native 支持函数表示法的 `hwb()`：
 
 ### 颜色整数值
 
-React Native 还支持将颜色表示为 `int` 值（以 RGB 颜色模式）：
+React Native 还支持使用 `int` 值来表示颜色（采用 RGB 颜色模式）：
 
 - `0xff00ff00` (0xrrggbbaa)
 
-:::caution 注意
-这看起来可能与 Android [Color](https://developer.android.com/reference/android/graphics/Color) 的整数表示类似，但在 Android 上值是以 SRGB 颜色模式（0xaarrggbb）存储的。
+:::caution
+这看起来可能和 Android [Color](https://developer.android.com/reference/android/graphics/Color) 的整数表示相似，但在 Android 上，值是以 SRGB 颜色模式（0xaarrggbb）存储的。
 :::
 
-### 颜色名称
+### 命名颜色
 
-在 React Native 中你也可以使用颜色名称字符串作为值。
+在 React Native 中，你也可以使用颜色名称字符串作为值。
 
-:::info 提示
-React Native 仅支持小写的颜色名称。不支持大写颜色名称。
+:::info
+React Native 仅支持小写颜色名称，不支持大写颜色名称。
 :::
 
 #### `transparent`
 
-这是 `rgba(0,0,0,0)` 的简写，与 [CSS3](https://www.w3.org/TR/css-color-3/#transparent) 一致。
+这是 `rgba(0,0,0,0)` 的简写，与 [CSS3](https://www.w3.org/TR/css-color-3/#transparent) 中的含义一致。
 
 #### 颜色关键字
 
-颜色名称的实现遵循 [CSS3/SVG 规范](https://www.w3.org/TR/css-color-3/#svg-color)：
+命名颜色的实现遵循 [CSS3/SVG specification](https://www.w3.org/TR/css-color-3/#svg-color)：
 
 - <ins style={{background: '#f0f8ff'}} className="color-box" /> aliceblue (<code>#f0f8ff</code>)
 - <ins style={{background: '#faebd7'}} className="color-box" /> antiquewhite (<code>#faebd7</code>)

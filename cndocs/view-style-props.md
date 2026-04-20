@@ -1,6 +1,6 @@
 ---
 id: view-style-props
-title: View Style Props
+title: View 样式属性
 ---
 
 ### 示例
@@ -53,7 +53,7 @@ export default App;
 
 # 参考文档
 
-## Props
+## 属性
 
 ### `backfaceVisibility`
 
@@ -105,64 +105,64 @@ export default App;
 
 ### `borderBottomEndRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderBottomLeftRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderBottomRightRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderBottomStartRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderStartEndRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderStartStartRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderEndEndRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderEndStartRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
@@ -221,8 +221,8 @@ export default App;
 
 如果圆角边框不可见，可以尝试同时添加 `overflow: 'hidden'`。
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
@@ -269,40 +269,40 @@ export default App;
 
 ### `borderTopEndRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderTopLeftRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderTopRightRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderTopStartRadius`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
 
 ### `borderTopWidth`
 
-| 类型                              |
-| --------------------------------- |
+| 类型                      |
+| ------------------------- |
 | number, string (百分比值) |
 
 ---
@@ -325,8 +325,8 @@ export default App;
 
 `boxShadow` 接受模仿 [web 语法](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow#syntax)的字符串或 [BoxShadowValue](./boxshadowvalue) 对象数组。
 
-| 类型 |
-| --------------------------- |
+| 类型                                      |
+| ----------------------------------------- |
 | array of BoxShadowValue objects \| string |
 
 ### `cursor` <div className="label ios">iOS</div>
@@ -385,16 +385,16 @@ export default App;
 
 `filter` 接受由上述滤镜函数组成的对象数组，或模仿 [web 语法](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#syntax)的字符串。
 
-| 类型 |
-| ------ |
-| array of objects: `{brightness: number\|string}`, `{opacity: number\|string}`, `{blur: number\|string}`, `{contrast: number\|string}`, `{dropShadow: DropShadowValue\|string}`, `{grayscale: number\|string}`, `{hueRotate: number\|string}`, `{invert: number\|string}`, `{sepia: number\|string}`, `{saturate: number\|string}` or string|
+| 类型                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| array of objects: `{brightness: number\|string}`, `{opacity: number\|string}`, `{blur: number\|string}`, `{contrast: number\|string}`, `{dropShadow: DropShadowValue\|string}`, `{grayscale: number\|string}`, `{hueRotate: number\|string}`, `{invert: number\|string}`, `{sepia: number\|string}`, `{saturate: number\|string}` or string |
 
 ---
 
 ### `mixBlendMode`
 
 :::note
-`mixBlendMode` 仅在[新架构](/architecture/landing-page)下可用。
+`mixBlendMode` 仅在[新架构](/architecture/landing-page)下可用，并且仅支持 **Android 10+**。
 :::
 
 控制 `View` 如何与其**层叠上下文**中的其他元素进行颜色混合。有关每种混合函数的完整概述，请查阅 [MDN 文档](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode)。

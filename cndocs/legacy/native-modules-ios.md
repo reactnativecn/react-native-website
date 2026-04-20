@@ -429,9 +429,9 @@ const onPress = () => {
 
 如果你想向 JavaScript 传递类似错误的对象，请使用 [`RCTUtils.h`](https://github.com/facebook/react-native/blob/main/packages/react-native/React/Base/RCTUtils.h) 中的 `RCTMakeError`。目前它只是向 JavaScript 传递一个 Error 形状的字典，但 React Native 的目标是在将来自动生成真正的 JavaScript Error 对象。你还可以提供一个 `RCTResponseErrorBlock` 参数，用于错误回调并接受一个 `NSError \* object`。请注意，此参数类型在 TurboModules 中将不被支持。
 
-### Promises
+### Promise
 
-原生模块还可以实现 Promise，这可以简化你的 JavaScript 代码，尤其是在使用 ES2016 的 `async/await` 语法时。当原生模块方法的最后一个参数是 `RCTPromiseResolveBlock` 和 `RCTPromiseRejectBlock` 时，其对应的 JS 方法将返回一个 JS Promise 对象。
+原生模块也可以兑现 Promise，这能简化你的 JavaScript 代码，尤其是在使用 ES2016 的 `async/await` 语法时。当原生模块方法的最后两个参数是 `RCTPromiseResolveBlock` 和 `RCTPromiseRejectBlock` 时，对应的 JS 方法会返回一个 JS Promise 对象。
 
 将上面的代码重构为使用 Promise 而不是回调，如下所示：
 
@@ -612,7 +612,7 @@ RCT_EXTERN_METHOD(addEvent:(NSString *)name location:(NSString *)location date:(
 @end
 ```
 
-如果你不熟悉 Swift 和 Objective-C，当你[在 iOS 项目中混合使用两种语言](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html)时，你还需要一个额外的桥接头文件，称为 bridging header，用于将 Objective-C 文件暴露给 Swift。如果你通过 Xcode 菜单中的 `File>New File` 添加 Swift 文件，Xcode 会自动为你创建这个头文件。你需要在这个头文件中导入 `RCTBridgeModule.h`。
+如果你刚接触 Swift 和 Objective-C，那么当你[在 iOS 项目中混合使用这两种语言](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html)时，还需要一个额外的桥接文件，也就是 bridging header，用来把 Objective-C 文件暴露给 Swift。如果你通过 Xcode 的 `File>New File` 菜单把 Swift 文件添加到应用中，Xcode 会提示你创建这个头文件。你需要在这个头文件中导入 `RCTBridgeModule.h`。
 
 ```objectivec
 // CalendarModule-Bridging-Header.h

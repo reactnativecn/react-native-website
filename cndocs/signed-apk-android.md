@@ -5,77 +5,77 @@ title: 发布到 Google Play Store
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
-Android 要求所有应用都有一个数字签名才会被允许安装在用户手机上。要通过 [Google Play 商店](https://play.google.com/store)发布你的 Android 应用，需要使用一个发布密钥对其进行签名，此后所有的更新也需要使用同一个密钥。自 2017 年起，借助 [Google Play 应用签名](https://developer.android.com/studio/publish/app-signing#app-signing-google-play)功能，Google Play 可以自动管理签名发布。但在将应用二进制文件上传到 Google Play 之前，仍需要使用上传密钥进行签名。Android 开发者官网上的[应用签名](https://developer.android.com/tools/publishing/app-signing.html)文档描述了签名的细节。本指南旨在提供一个简化的签名和打包流程，以及打包 JavaScript 代码所需的步骤。
+Android 要求所有应用在安装前都必须使用证书进行数字签名。要通过 [Google Play 商店](https://play.google.com/store)分发你的 Android 应用，它必须使用一个 release key 进行签名，并且未来的所有更新都需要继续使用这个 key。自 2017 年起，借助 [App Signing by Google Play](https://developer.android.com/studio/publish/app-signing#app-signing-google-play) 功能，Google Play 可以自动管理发布签名。不过，在将应用二进制文件上传到 Google Play 之前，它仍然需要先使用 upload key 进行签名。Android Developers 文档中的 [Signing Your Applications](https://developer.android.com/tools/publishing/app-signing.html) 页面对这个主题有更详细的说明。本指南会简要介绍这一流程，并列出打包 JavaScript bundle 所需的步骤。
 
 :::info
-如果你使用的是 Expo，请阅读 Expo 的[发布到应用商店](https://docs.expo.dev/distribution/app-stores/)指南来构建和提交应用到 Google Play 商店。此指南适用于任何 React Native 应用，可以自动化部署流程。
+如果你使用的是 Expo，请阅读 Expo 关于[发布到应用商店](https://docs.expo.dev/distribution/app-stores/)的指南，以构建并提交应用到 Google Play Store。该指南适用于任何 React Native 应用，也可以帮助自动化部署流程。
 :::
 
-## 生成上传密钥
+## 生成 upload key
 
-你可以用`keytool`命令生成一个私有签名密钥。
+你可以使用 `keytool` 来生成私有签名密钥。
 
 ### Windows
 
-在 Windows 上`keytool`命令需要在`C:\Program Files\Java\jdkx.x.x_x\bin`目录下以管理员身份运行。
+在 Windows 上，必须以管理员身份在 `C:\Program Files\Java\jdkx.x.x_x\bin` 目录中运行 `keytool`。
 
 ```shell
 keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-这条命令会要求你输入密钥库（keystore）和对应密钥的密码，然后设置一些发行相关的信息。最后它会生成一个叫做`my-upload-key.keystore`的密钥库文件。
+这个命令会提示你输入 keystore 和 key 的密码，以及 key 的 Distinguished Name 字段。随后它会生成一个名为 `my-upload-key.keystore` 的 keystore 文件。
 
-在运行上面这条语句之后，密钥库里应该已经生成了一个单独的密钥，有效期为 10000 天。--alias 参数后面的别名是你将来为应用签名时所需要用到的，所以记得记录这个别名。
+该 keystore 中包含一个有效期为 10000 天的密钥。别名（alias）是之后给应用签名时会用到的名称，请务必记下。
 
 ### macOS
 
-在 macOS 上，如果你不确定 JDK bin 目录的位置，可以执行以下命令来查找：
+在 macOS 上，如果你不确定 JDK 的 bin 文件夹在哪里，可以先执行以下命令查找：
 
 ```shell
 /usr/libexec/java_home
 ```
 
-它会输出 JDK 的目录，类似这样：
+它会输出 JDK 的目录，类似下面这样：
 
 ```shell
 /Library/Java/JavaVirtualMachines/jdkX.X.X_XXX.jdk/Contents/Home
 ```
 
-使用 `cd /your/jdk/path` 命令进入该目录，然后使用 sudo 权限执行 keytool 命令：
+使用 `cd /your/jdk/path` 进入该目录，然后像下面这样使用 sudo 权限运行 keytool 命令。
 
 ```shell
 sudo keytool -genkey -v -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 
 :::caution
-请记得妥善保管好你的密钥库文件，不要上传到版本库或其他公开的地方。如果你丢失了上传密钥或密钥被泄露，请[按照这些说明操作](https://support.google.com/googleplay/android-developer/answer/7384423#reset)。
+请记得妥善保管 keystore 文件。如果你丢失了 upload key，或者它已经泄露，请[按照这些说明操作](https://support.google.com/googleplay/android-developer/answer/7384423#reset)。
 :::
 
 ## 设置 Gradle 变量
 
-1. 把`my-upload-key.keystore`文件放到你工程中的`android/app`文件夹下。
-2. 编辑`~/.gradle/gradle.properties`（全局配置，对所有项目有效）或是`android/gradle.properties`（项目配置，只对所在项目有效），添加如下的代码（注意把其中的`*****`替换为相应密码）：
+1. 将 `my-upload-key.keystore` 文件放到项目目录中的 `android/app` 下。
+2. 编辑 `~/.gradle/gradle.properties` 或 `android/gradle.properties`，并添加以下内容（将 `*****` 替换为正确的 keystore 密码、别名和 key 密码）：
 
 ```
 MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
 MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
-MYAPP_UPLOAD_STORE_PASSWORD=*****
-MYAPP_UPLOAD_KEY_PASSWORD=*****
+MYAPP_UPLOAD_STORE_PASSWORD=***
+MYAPP_UPLOAD_KEY_PASSWORD=***
 ```
 
-上面的这些会作为全局 Gradle 变量，在后面的步骤中可以用来给应用签名。
+这些会成为全局的 Gradle 变量，之后我们可以在 Gradle 配置中用它们为应用签名。
 
-:::note 关于使用 git 的说明
-将上述 Gradle 变量保存在 `~/.gradle/gradle.properties` 而非 `android/gradle.properties` 中，可以防止它们被提交到 git。你可能需要先在用户主目录下创建 `~/.gradle/gradle.properties` 文件。
+:::note Note about using git
+将这些 Gradle 变量保存在 `~/.gradle/gradle.properties` 而不是 `android/gradle.properties` 中，可以避免它们被提交到 git。你可能需要先在用户主目录中创建 `~/.gradle/gradle.properties` 文件，之后才能添加这些变量。
 :::
 
-:::note 关于安全性的说明
-如果你不想以明文方式保存密码，且你使用的是 macOS 系统，你也可以把密码[保存到钥匙串（Keychain）中](https://pilloxa.gitlab.io/posts/safer-passwords-in-gradle/)。这样一来你就可以省略掉 `~/.gradle/gradle.properties` 中的后两行。
+:::note Note about security
+如果你不希望以明文形式存储密码，并且你使用的是 macOS，也可以将凭据[保存在 Keychain Access 应用中](https://pilloxa.gitlab.io/posts/safer-passwords-in-gradle/)。这样你就可以省略 `~/.gradle/gradle.properties` 中最后两行。
 :::
 
 ## 在应用的 Gradle 配置中添加签名配置
 
-最后一步是配置 release 构建使用上传密钥进行签名。编辑你项目目录下的`android/app/build.gradle`，添加签名配置：
+最后一个需要完成的配置步骤，是让 release 构建使用 upload key 进行签名。编辑项目目录中的 `android/app/build.gradle` 文件，并添加如下 signing config：
 
 ```groovy
 ...
@@ -102,7 +102,7 @@ android {
 ...
 ```
 
-## 生成发行 AAB 包
+## 生成 release AAB
 
 在终端中运行以下命令：
 
@@ -110,19 +110,19 @@ android {
 npx react-native build-android --mode=release
 ```
 
-此命令底层使用 Gradle 的`bundleRelease`任务，会把所有用到的 JavaScript 代码都打包到 AAB（[Android App Bundle](https://developer.android.com/guide/app-bundle)）中。如果你需要调整 JavaScript 代码包和/或 drawable 资源的打包方式（比如修改了默认的文件/文件夹名称或项目的整体结构），请查看`android/app/build.gradle`来了解如何更新配置。
+这个命令底层会调用 Gradle 的 `bundleRelease`，把运行应用所需的全部 JavaScript 打包进 AAB（[Android App Bundle](https://developer.android.com/guide/app-bundle)）中。如果你需要修改 JavaScript bundle 和/或 drawable 资源的打包方式（例如你更改了默认的文件/目录名称，或项目的整体结构），可以查看 `android/app/build.gradle`，了解如何更新配置以反映这些变更。
 
 :::note
-请确保 gradle.properties 中**没有**包含`org.gradle.configureondemand=true`，否则会跳过 JS 打包的步骤，导致最终生成的是一个无法运行的空壳。
+请确保 `gradle.properties` 中不包含 `org.gradle.configureondemand=true`，否则 release 构建会跳过将 JS 和资源打包进应用二进制文件。
 :::
 
-生成的 AAB 文件位于`android/app/build/outputs/bundle/release/app-release.aab`，可以直接上传到 Google Play。
+生成的 AAB 位于 `android/app/build/outputs/bundle/release/app-release.aab`，可以直接上传到 Google Play。
 
-要让 Google Play 接受 AAB 格式，需要在 Google Play Console 中为应用配置 Google Play 应用签名。如果你正在更新一个尚未使用 Google Play 应用签名的现有应用，请查看[迁移指南](#迁移旧版-android-react-native-应用到-google-play-应用签名)了解如何进行配置更改。
+Google Play 要接受 AAB 格式，你的应用必须先在 Google Play Console 中启用 App Signing by Google Play。如果你正在更新一个尚未使用 App Signing by Google Play 的现有应用，请查看我们的[迁移章节](#migrating-old-android-react-native-apps-to-use-app-signing-by-google-play)，了解如何完成这项配置变更。
 
-## 测试应用的发行版本
+## 测试应用的 release 构建
 
-在将发行版本上传到 Play Store 之前，请确保彻底测试。首先卸载已安装的所有该应用的旧版本，然后在项目根目录下使用以下命令安装到设备：
+在将 release 构建上传到 Play Store 之前，请务必充分测试。首先卸载设备上已经安装的旧版本应用。然后在项目根目录使用下面的命令安装它：
 
 <Tabs groupId="package-manager" queryString defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
 <TabItem value="npm">
@@ -141,15 +141,15 @@ yarn android --mode release
 </TabItem>
 </Tabs>
 
-注意`--mode release`参数只能在你完成了上面的签名配置之后才可以使用。
+请注意，只有在按照上文完成签名配置之后，`--mode release` 才可用。
 
-你现在可以关掉运行中的 bundler 了，因为你所有的框架和 JavaScript 代码已经都被打包到 APK 的 assets 中了。
+你可以终止所有正在运行的 bundler 实例，因为框架代码和 JavaScript 代码都已经被打包进 APK 的 assets 中。
 
 ## 发布到其他商店
 
-默认情况下，生成的 APK 会同时包含 `x86`、`x86_64`、`ARMv7a` 和 `ARM64-v8a` CPU 架构的原生代码。这使得分享可以在几乎所有 Android 设备上运行的 APK 更加方便。但是，这意味着在任何设备上都会有一些未使用的原生代码，导致 APK 不必要地变大。
+默认情况下，生成的 APK 同时包含 `x86`、`x86_64`、`ARMv7a` 和 `ARM64-v8a` 这些 CPU 架构的原生代码。这使得你更容易分发几乎可以在所有 Android 设备上运行的 APK。但缺点是，对于每台设备来说，总会有一部分原生代码是未使用的，从而导致 APK 体积变大。
 
-你可以在`android/app/build.gradle`中添加如下代码来为每种 CPU 架构生成单独的 APK：
+你可以通过在 `android/app/build.gradle` 中添加下面这段配置，为每种 CPU 单独生成 APK：
 
 ```diff
 android {
@@ -166,19 +166,19 @@ android {
 }
 ```
 
-你可以把这些文件上传到支持设备定位的商店，如 [Amazon AppStore](https://developer.amazon.com/docs/app-submission/device-filtering-and-compatibility.html) 或 [F-Droid](https://f-droid.org/en/)，用户将自动获得适当的 APK。如果你想上传到其他不支持单个应用多个 APK 的商店（如 [APKFiles](https://www.apkfiles.com/)），请将 `universalApk false` 改为 `true`，以生成包含所有 CPU 架构的通用 APK。
+将这些文件上传到支持设备定向分发的应用市场，例如 [Amazon AppStore](https://developer.amazon.com/docs/app-submission/device-filtering-and-compatibility.html) 或 [F-Droid](https://f-droid.org/en/)，用户就会自动获得适合其设备的 APK。如果你要上传到其他不支持单个应用对应多个 APK 的市场，例如 [APKFiles](https://www.apkfiles.com/)，请将 `universalApk false` 改为 `true`，以生成默认的通用 APK，其中包含两种 CPU 的二进制文件。
 
-请注意，你还需要配置不同的版本代码，如官方 Android 文档[此页面](https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)所建议的。
+请注意，你还必须像 Android 官方文档[此页面](https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)中建议的那样，为不同 APK 配置不同的 version code。
 
-## 启用 Proguard 来减少 APK 的大小（可选）
+## 启用 Proguard 以减小 APK 体积（可选）
 
-Proguard 是一个 Java 字节码混淆压缩工具，它可以移除掉 React Native Java（和它的依赖库中）未被使用到的部分，从而有效地减少 APK 的大小。
+Proguard 是一个可以略微减小 APK 体积的工具。它通过移除应用未使用的 React Native Java 字节码（以及其依赖）来实现这一点。
 
-:::caution 重要
-启用 Proguard 之后，你必须再次全面地测试你的应用。Proguard 有时候需要为你引入的每个原生库做一些额外的配置。参见`app/proguard-rules.pro`文件。
+:::caution Important
+如果你启用了 Proguard，请务必充分测试应用。Proguard 往往需要针对你所使用的每个原生库做特定配置。请参阅 `app/proguard-rules.pro`。
 :::
 
-要启用 Proguard，修改`android/app/build.gradle`文件：
+要启用 Proguard，请编辑 `android/app/build.gradle`：
 
 ```groovy
 /**
@@ -187,10 +187,10 @@ Proguard 是一个 Java 字节码混淆压缩工具，它可以移除掉 React N
 def enableProguardInReleaseBuilds = true
 ```
 
-## 迁移旧版 Android React Native 应用到 Google Play 应用签名
+## 将旧版 Android React Native 应用迁移到 App Signing by Google Play
 
-如果你是从旧版 React Native 迁移过来的，你的应用很可能还没有使用 Google Play 应用签名功能。我们建议你启用该功能以利用自动应用拆分等优势。要从旧的签名方式迁移，你需要先[生成新的上传密钥](#生成上传密钥)，然后将 `android/app/build.gradle` 中的发布签名配置替换为使用上传密钥（参见[添加签名配置到 Gradle](#在应用的-gradle-配置中添加签名配置)）。完成后，请按照 [Google Play 帮助网站的说明](https://support.google.com/googleplay/android-developer/answer/7384423)将你的原始发布密钥发送给 Google Play。
+如果你是从较早版本的 React Native 迁移而来，那么你的应用很可能尚未启用 App Signing by Google Play。我们建议你启用它，以便利用自动按设备拆分应用等能力。要从旧的签名方式迁移，首先需要[生成一个新的 upload key](#generating-an-upload-key)，然后将 `android/app/build.gradle` 中的 release signing config 改为使用 upload key，而不是 release key（参见上文关于[在 Gradle 中添加签名配置](#adding-signing-config-to-your-apps-gradle-config)的章节）。完成后，你还需要按照 [Google Play Help 网站上的说明](https://support.google.com/googleplay/android-developer/answer/7384423)，将你原先的 release key 发送给 Google Play。
 
 ## 默认权限
 
-默认情况下，`INTERNET` 权限会被添加到你的 Android 应用中，因为几乎所有应用都需要使用它。`SYSTEM_ALERT_WINDOW` 权限在 debug 模式下会添加到 APK 中，但在 production 构建中会被移除。
+默认情况下，`INTERNET` 权限会被添加到 Android 应用中，因为几乎所有应用都会使用它。`SYSTEM_ALERT_WINDOW` 权限会在 debug 模式下被加入 Android APK 中，但在生产环境中会被移除。

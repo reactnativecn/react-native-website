@@ -1,37 +1,37 @@
 ---
 id: headless-js-android
-title: Headless JS（后台任务）
+title: Headless JS
 ---
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 import constants from '@site/core/TabsConstants';
 
-Headless JS 是一种使用 js 在后台执行任务的方法。它可以用来在后台同步数据、处理推送通知或是播放音乐等等。
+Headless JS 是一种在应用位于后台时仍能运行 JavaScript 任务的方式。例如，它可以用于同步最新数据、处理推送通知或播放音乐。
 
-## JS 端的 API
+## JS API
 
-首先我们要通过`AppRegistry`来注册一个异步函数，这个函数我们称之为“任务”。注册方式类似在 index.js 中注册 RN 应用：
+任务是一个异步函数，你需要像注册 React 应用一样，把它注册到 `AppRegistry` 上：
 
-```jsx
-import { AppRegistry } from 'react-native';
+```tsx
+import {AppRegistry} from 'react-native';
 AppRegistry.registerHeadlessTask('SomeTaskName', () =>
-  require('SomeTaskName')
+  require('SomeTaskName'),
 );
 ```
 
-然后创建 require 中引用的`SomeTaskName.js`文件:
+然后，在 `SomeTaskName.js` 中：
 
-```jsx
+```tsx
 module.exports = async taskData => {
-  // 要做的任务
+  // do stuff
 };
 ```
 
-你可以在任务中处理任何事情（网络请求、定时器等等），但唯独**不要涉及用户界面**！在任务完成后（例如在 promise 中调用 resolve），RN 会进入一个“暂停”模式，直到有新任务需要执行或者是应用回到前台。
+你可以在任务中执行任何事情，例如网络请求、计时器等等，只要它不触碰 UI。任务完成后（也就是 promise 被 resolve 之后），React Native 会进入“paused”模式（除非仍有其他任务在运行，或者当前有前台应用）。
 
-## 原生端的 API
+## 平台 API
 
-没错，我们还需要一些原生代码，但是请放心并不麻烦。首先需要像下面这样继承`HeadlessJsTaskService`，然后覆盖`getTaskConfig`方法的实现：
+是的，这仍然需要少量原生代码，不过代码非常薄。你需要继承 `HeadlessJsTaskService` 并重写 `getTaskConfig`，例如：
 
 <Tabs groupId="android-language" queryString defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="java">
@@ -76,7 +76,7 @@ import com.facebook.react.bridge.Arguments
 import com.facebook.react.jstasks.HeadlessJsTaskConfig
 
 class MyTaskService : HeadlessJsTaskService() {
-    override fun getTaskConfig(intent: Intent): HeadlessJsTaskConfig? {
+    override fun getTaskConfig(intent: Intent?): HeadlessJsTaskConfig? {
         return intent.extras?.let {
             HeadlessJsTaskConfig(
                 "SomeTaskName",
@@ -94,13 +94,15 @@ class MyTaskService : HeadlessJsTaskService() {
 </TabItem>
 </Tabs>
 
-然后记得把服务添加到`AndroidManifest`文件里：
+然后把这个 service 添加到 `AndroidManifest.xml` 文件的 `application` 标签内：
 
-```
+```xml
 <service android:name="com.example.MyTaskService" />
 ```
 
-好了，现在当你[启动服务时][0]（例如一个周期性的任务或是响应一些系统事件/广播），JS 任务就会开始执行。例如：
+现在，只要你[启动这个 service][0]——例如作为周期性任务，或响应某个系统事件 / 广播——JS 就会被拉起、执行任务，然后再退出。
+
+示例：
 
 <Tabs groupId="android-language" queryString defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="java">
@@ -134,9 +136,9 @@ applicationContext.startForegroundService(service)
 
 ## 重试
 
-默认情况下，无头 JS 任务不会执行任何重试。要想进行重试，您需要创建一个`HeadlessJsRetryPolicy`并抛出特定的`Error`。
+默认情况下，Headless JS 任务不会执行任何重试。要启用重试，你需要创建一个 `HeadlessJsRetryPolicy`，并抛出特定的 `Error`。
 
-`LinearCountingRetryPolicy`是`HeadlessJsRetryPolicy`的一种实现，它允许您指定最大重试次数，并在每次尝试之间设置固定的延迟。如果您的需求不适合此策略，那么您可以轻松地实现自己的`HeadlessJsRetryPolicy`。这些策略只需作为额外的参数传递给`HeadlessJsTaskConfig`构造函数，例如，
+`LinearCountingRetryPolicy` 是 `HeadlessJsRetryPolicy` 的一种实现，它允许你指定最大重试次数，以及每次尝试之间的固定延迟。如果它不能满足你的需求，你也可以自己实现 `HeadlessJsRetryPolicy`。这些策略可以作为额外参数传给 `HeadlessJsTaskConfig` 构造函数，例如：
 
 <Tabs groupId="android-language" queryString defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="java">
@@ -172,31 +174,33 @@ return HeadlessJsTaskConfig("SomeTaskName", Arguments.fromBundle(extras), 5000, 
 </TabItem>
 </Tabs>
 
-仅当抛出特定错误时，才会进行重试尝试。在无头JS任务中，您可以导入错误并在需要重试尝试时抛出。
+只有在抛出特定 `Error` 时，才会执行一次重试。在 Headless JS 任务内部，你可以导入这个错误，并在需要重试时抛出它。
 
-例如：
+示例：
 
-```jsx
+```tsx
 import {HeadlessJsTaskError} from 'HeadlessJsTask';
-module.exports = async (taskData) => {
-const condition = ...;
-if (!condition) {
-  throw new HeadlessJsTaskError();
-}
+
+module.exports = async taskData => {
+  const condition = ...;
+  if (!condition) {
+    throw new HeadlessJsTaskError();
+  }
 };
 ```
 
-如果你想让所有错误都导致重试尝试，你需要捕获它们并抛出上述错误。
+如果你希望所有错误都会触发重试，那么你需要先捕获这些错误，再抛出上面的错误。
 
 ## 注意事项
 
-- 默认情况下，如果您尝试在应用程序处于前台时运行任务，您的应用程序将崩溃。 这是为了防止开发人员在任务中进行大量工作并降低 UI 速度。 您可以通过传递第四个布尔参数来控制此行为。
-- 如果您从 `BroadcastReceiver` 启动服务，请确保在从 `onReceive()` 返回之前调用 `HeadlessJsTaskService.acquireWakeLockNow()`。
+- 默认情况下，如果应用位于前台时你尝试运行任务，应用会崩溃。这样做是为了防止开发者在任务里执行大量工作，拖慢 UI。你可以通过传入第四个 `boolean` 参数来控制这一行为。
+- 如果你从 `BroadcastReceiver` 启动 service，请务必在 `onReceive()` 返回之前调用 `HeadlessJsTaskService.acquireWakeLockNow()`。
 
-## 示例
+## 使用示例
 
-我们可以使用 Java API 来开启一个 service。首先你需要考虑好 Service 启动的时机，并据此实现相关逻辑。下面是一个使用 Service 来处理网络连接变化的简单范例。
-接下来的几行代码展示了如何在 Android Manifest 文件中注册一个Broadcast Receiver。
+Service 可以通过 Java API 启动。首先你需要决定在什么时机启动 service，并据此实现自己的方案。这里给出一个在网络连接变化时做出响应的示例。
+
+下面这些内容展示了 Android manifest 文件中注册 broadcast receiver 的一部分。
 
 ```xml
 <receiver android:name=".NetworkChangeReceiver" >
@@ -206,7 +210,7 @@ if (!condition) {
 </receiver>
 ```
 
-这个 Broadcast Receiver 主要在 onReceive 函数中处理广播 Intent 。这是一个让你确认 App 是否在前台工作的绝佳时机。如果 App 当前不在前台工作，那么我们就可以开始准备我们用来启动 Service 的 Intent 了。额外提及一点：如果有信息需要传递给Service，可以使用 putExtra 方法把信息打包成 bundle携带。当然也可以不传递任何信息（但是，始终谨记 bundle 只能够承载那些 parcelable 的值）。在最后，Service 将获取到 wakelock 并启动起来。
+随后，broadcast receiver 会在 `onReceive` 函数中处理收到的 intent。这里非常适合用来检查应用当前是否位于前台。如果应用不在前台，我们就可以准备一个待启动的 intent，可以不带信息，也可以通过 `putExtra` 额外附带一些信息（注意 bundle 只能处理 parcelable 值）。最后启动 service，并获取 wakelock。
 
 <Tabs groupId="android-language" queryString defaultValue={constants.defaultAndroidLanguage} values={constants.androidLanguages}>
 <TabItem value="java">
