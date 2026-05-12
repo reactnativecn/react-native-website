@@ -2,6 +2,7 @@ import type * as PluginContentDocs from '@docusaurus/plugin-content-docs';
 import type * as Preset from '@docusaurus/preset-classic';
 import type {Config} from '@docusaurus/types';
 import path from 'path';
+
 // const users = require('./showcase.json');
 const versions = require('./versions.json');
 const lastVersion = versions[0];
@@ -186,6 +187,12 @@ const config: Config = {
     // ],
   ],
   themeConfig: {
+    announcementBar: {
+      id: 'ai-cresc-dev',
+      content:
+        '<a href="https://ai.cresc.dev" target="_blank" rel="noopener noreferrer">AI 中转站</a>：纯正官方 GPT-5.5 与 Claude Opus 4.7 模型，价格实惠、服务稳定、绝不掺水、数据安全。',
+      isCloseable: true,
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
