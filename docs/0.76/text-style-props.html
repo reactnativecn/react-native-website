@@ -1,68 +1,329 @@
-<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-0.76 docs-doc-page docs-doc-id-text-style-props" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>Text 样式属性 · React Native 中文网</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:image content=https://reactnative.cn/img/logo-og.png /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true property=og:url content=https://reactnative.cn /><meta data-rh=true property=og:image content=img/logo-og.png /><meta data-rh=true name=docusaurus_version content=0.76 /><meta data-rh=true name=docusaurus_tag content=docs-default-0.76 /><meta data-rh=true name=docsearch:version content=0.76 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-0.76 /><meta data-rh=true property=og:title content="Text 样式属性 · React Native 中文网"/><meta data-rh=true name=description content=示例 /><meta data-rh=true property=og:description content=示例 /><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://reactnative.cn/docs/0.76/text-style-props /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.76/text-style-props hreflang=en /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.76/text-style-props hreflang=x-default /><link data-rh=true rel=preconnect href=https://GJGDC5L5HP-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://reactnative.cn/docs/0.76/text-style-props","name":"Text 样式属性","position":1}]}</script><link rel=preconnect href=https://www.google-analytics.com><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63485149-4","auto"),ga("send","pageview")</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63485149-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-63485149-4",{})</script><link rel=search type=application/opensearchdescription+xml title="React Native 中文网" href=/opensearch.xml><script src=//snack.expo.dev/embed.js defer></script><script src=//cdn.wwads.cn/js/makemoney.js defer></script><link rel=stylesheet href=/assets/css/styles.b2fcc659.css /><script src=/assets/js/runtime~main.b066c31d.js defer></script><script src=/assets/js/main.a749adce.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-0.76 docs-doc-page docs-doc-id-text-style-props" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.0"><title data-rh=true>Text 样式属性 · React Native 中文网</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:image content=https://reactnative.cn/img/logo-og.png /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true property=og:url content=https://reactnative.cn /><meta data-rh=true property=og:image content=img/logo-og.png /><meta data-rh=true name=docusaurus_version content=0.76 /><meta data-rh=true name=docusaurus_tag content=docs-default-0.76 /><meta data-rh=true name=docsearch:version content=0.76 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-0.76 /><meta data-rh=true property=og:title content="Text 样式属性 · React Native 中文网"/><meta data-rh=true name=description content=示例 /><meta data-rh=true property=og:description content=示例 /><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://reactnative.cn/docs/0.76/text-style-props /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.76/text-style-props hreflang=en /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.76/text-style-props hreflang=x-default /><link data-rh=true rel=preconnect href=https://GJGDC5L5HP-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://reactnative.cn/docs/0.76/text-style-props","name":"Text 样式属性","position":1}]}</script><link rel=preconnect href=https://www.google-analytics.com><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63485149-4","auto"),ga("send","pageview")</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63485149-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-63485149-4",{})</script><link rel=search type=application/opensearchdescription+xml title="React Native 中文网" href=/opensearch.xml><script src=//snack.expo.dev/embed.js defer></script><script src=//cdn.wwads.cn/js/makemoney.js defer></script><link rel=stylesheet href=/assets/css/styles.886f30de.css /><script src=/assets/js/runtime~main.a5cfaf41.js defer></script><script src=/assets/js/main.ba979f0f.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/header_logo.svg /><div role=region aria-label=跳到主要内容><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>跳到主要内容</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--dark_yETr"/></div><b class="navbar__title text--truncate">React Native 中文网</b></a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/docs/0.76/text-style-props>0.76</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/next/text-style-props>Next</a><li><a class=dropdown__link href=/docs/text-style-props>0.85</a><li><a class=dropdown__link href=/docs/0.84/text-style-props>0.84</a><li><a class=dropdown__link href=/docs/0.83/text-style-props>0.83</a><li><a class=dropdown__link href=/docs/0.82/text-style-props>0.82</a><li><a class=dropdown__link href=/docs/0.81/text-style-props>0.81</a><li><a class=dropdown__link href=/docs/0.80/text-style-props>0.80</a><li><a class=dropdown__link href=/docs/0.79/text-style-props>0.79</a><li><a class=dropdown__link href=/docs/0.78/text-style-props>0.78</a><li><a class=dropdown__link href=/docs/0.77/text-style-props>0.77</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.76/text-style-props>0.76</a><li><a class=dropdown__link href=/docs/0.75/text-style-props>0.75</a><li><a class=dropdown__link href=/docs/0.74/text-style-props>0.74</a><li><a class=dropdown__link href=/docs/0.73/text-style-props>0.73</a><li><a class=dropdown__link href=/docs/0.72/text-style-props>0.72</a><li><a class=dropdown__link href=/docs/0.71/text-style-props>0.71</a><li><a class=dropdown__link href=/docs/0.70/text-style-props>0.70</a><li><a class=dropdown__link href=/versions>所有版本</a></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>开发文档</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/0.76/getting-started>入门指南</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.76/components-and-apis>组件</a><li><a class=dropdown__link href=/docs/0.76/accessibilityinfo>API</a><li><a class=dropdown__link href=/architecture/overview>架构</a></ul></div><a href=//github.com/reactnativecn/react-native-website/issues target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">讨论<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a href=//pushy.reactnative.cn target=_blank rel="noopener noreferrer" class="navbar__item navbar__link hot-link">热更新<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a class="navbar__item navbar__link" href=/about>关于</a><a href=//github.com/facebook/react-native target=_blank rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link" aria-label="GitHub repository"></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m darkNavbarColorModeToggle_m8pZ" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.76/components-and-apis><span title=核心组件 class=categoryLinkLabel_ufhF>核心组件</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/0.76/image-style-props><span title=Props class=categoryLinkLabel_ufhF>Props</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.76/image-style-props><span title=图片样式属性 class=linkLabel_fEdy>图片样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.76/layout-props><span title=布局属性 class=linkLabel_fEdy>布局属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.76/shadow-props><span title=阴影样式属性 class=linkLabel_fEdy>阴影样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/0.76/text-style-props><span title="Text 样式属性" class=linkLabel_fEdy>Text 样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.76/view-style-props><span title="View 样式属性" class=linkLabel_fEdy>View 样式属性</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.76/layoutevent><span title=内部对象类型 class=categoryLinkLabel_ufhF>内部对象类型</span></a></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role=alert>此为 <!-- -->React Native 中文网<!-- --> <b>0.76</b> 版的文档，现已不再积极维护。<div class=margin-top--md>最新的文档请参阅 <b><a href=/docs/text-style-props>最新版本</a></b> (<!-- -->0.85<!-- -->)。</div></div><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Props</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>Text 样式属性</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 0.76</span><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Text 样式属性</h1></header><h3 class="anchor anchorTargetStickyNavbar_tleR" id=示例>示例<a href=#示例 class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-714")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss-714")}catch(t){}return!1}())</script><div id=__docusaurus><link rel=preload as=image href=/img/header_logo.svg /><div role=region aria-label=跳到主要内容><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>跳到主要内容</a></div><div class="theme-announcement-bar announcementBar_zJRd" role=banner><div class=announcementBarPlaceholder_NpUd></div><div class="content_bSb_ announcementBarContent_t7IR"><a href=https://ai.cresc.dev target=_blank rel="noopener noreferrer">AI 中转站</a>：纯正官方 GPT-5.5 与 Claude Opus 4.7 模型，价格实惠、服务稳定、绝不掺水、数据安全。</div><button type=button aria-label=Close class="clean-btn close closeButton_J5rP announcementBarClose_Jjdj"><svg viewBox="0 0 15 15" width=14 height=14><g stroke=currentColor stroke-width=3.1><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"/></g></svg></button></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--dark_yETr"/></div><b class="navbar__title text--truncate">React Native 中文网</b></a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/docs/0.76/text-style-props>0.76</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/next/text-style-props>Next</a><li><a class=dropdown__link href=/docs/text-style-props>0.85</a><li><a class=dropdown__link href=/docs/0.84/text-style-props>0.84</a><li><a class=dropdown__link href=/docs/0.83/text-style-props>0.83</a><li><a class=dropdown__link href=/docs/0.82/text-style-props>0.82</a><li><a class=dropdown__link href=/docs/0.81/text-style-props>0.81</a><li><a class=dropdown__link href=/docs/0.80/text-style-props>0.80</a><li><a class=dropdown__link href=/docs/0.79/text-style-props>0.79</a><li><a class=dropdown__link href=/docs/0.78/text-style-props>0.78</a><li><a class=dropdown__link href=/docs/0.77/text-style-props>0.77</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.76/text-style-props>0.76</a><li><a class=dropdown__link href=/docs/0.75/text-style-props>0.75</a><li><a class=dropdown__link href=/docs/0.74/text-style-props>0.74</a><li><a class=dropdown__link href=/docs/0.73/text-style-props>0.73</a><li><a class=dropdown__link href=/docs/0.72/text-style-props>0.72</a><li><a class=dropdown__link href=/docs/0.71/text-style-props>0.71</a><li><a class=dropdown__link href=/docs/0.70/text-style-props>0.70</a><li><a class=dropdown__link href=/versions>所有版本</a></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>开发文档</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/0.76/getting-started>入门指南</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.76/components-and-apis>组件</a><li><a class=dropdown__link href=/docs/0.76/accessibilityinfo>API</a><li><a class=dropdown__link href=/architecture/overview>架构</a></ul></div><a href=//github.com/reactnativecn/react-native-website/issues target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">讨论<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a href=//pushy.reactnative.cn target=_blank rel="noopener noreferrer" class="navbar__item navbar__link hot-link">热更新<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a class="navbar__item navbar__link" href=/about>关于</a><a href=//github.com/facebook/react-native target=_blank rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link" aria-label="GitHub repository"></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m darkNavbarColorModeToggle_m8pZ" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1 menuWithAnnouncementBar_YufC"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.76/components-and-apis><span title=核心组件 class=categoryLinkLabel_ufhF>核心组件</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/0.76/image-style-props><span title=Props class=categoryLinkLabel_ufhF>Props</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.76/image-style-props><span title=图片样式属性 class=linkLabel_fEdy>图片样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.76/layout-props><span title=布局属性 class=linkLabel_fEdy>布局属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.76/shadow-props><span title=阴影样式属性 class=linkLabel_fEdy>阴影样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/0.76/text-style-props><span title="Text 样式属性" class=linkLabel_fEdy>Text 样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.76/view-style-props><span title="View 样式属性" class=linkLabel_fEdy>View 样式属性</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.76/layoutevent><span title=内部对象类型 class=categoryLinkLabel_ufhF>内部对象类型</span></a></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role=alert>此为 <!-- -->React Native 中文网<!-- --> <b>0.76</b> 版的文档，现已不再积极维护。<div class=margin-top--md>最新的文档请参阅 <b><a href=/docs/text-style-props>最新版本</a></b> (<!-- -->0.85<!-- -->)。</div></div><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Props</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>Text 样式属性</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 0.76</span><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Text 样式属性</h1></header><h3 class="anchor anchorTargetStickyNavbar_tleR" id=示例>示例<a href=#示例 class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <div class=snack-player data-snack-name=TextStyleProps data-snack-description="Example usage" data-snack-files=%7B%22App.tsx%22%3A%7B%22type%22%3A%22CODE%22%2C%22contents%22%3A%22import%20React%2C%20%7B%20useState%20%7D%20from%20%5C%22react%5C%22%3B%5Cnimport%20%7B%20FlatList%2C%20Platform%2C%20ScrollView%2C%20StyleSheet%2C%20Switch%2C%20Text%2C%20TouchableWithoutFeedback%2C%20View%20%7D%20from%20%5C%22react-native%5C%22%3B%5Cn%5Cnconst%20fontStyles%20%3D%20%5B%5C%22normal%5C%22%2C%20%5C%22italic%5C%22%5D%3B%5Cnconst%20fontVariants%20%3D%20%5B%5Cn%20%20undefined%2C%5Cn%20%20%5C%22small-caps%5C%22%2C%5Cn%20%20%5C%22oldstyle-nums%5C%22%2C%5Cn%20%20%5C%22lining-nums%5C%22%2C%5Cn%20%20%5C%22tabular-nums%5C%22%2C%5Cn%20%20%5C%22proportional-nums%5C%22%5Cn%5D%3B%5Cnconst%20fontWeights%20%3D%20%5B%5Cn%20%20%5C%22normal%5C%22%2C%5Cn%20%20%5C%22bold%5C%22%2C%5Cn%20%20%5C%22100%5C%22%2C%5Cn%20%20%5C%22200%5C%22%2C%5Cn%20%20%5C%22300%5C%22%2C%5Cn%20%20%5C%22400%5C%22%2C%5Cn%20%20%5C%22500%5C%22%2C%5Cn%20%20%5C%22600%5C%22%2C%5Cn%20%20%5C%22700%5C%22%2C%5Cn%20%20%5C%22800%5C%22%2C%5Cn%20%20%5C%22900%5C%22%5Cn%5D%3B%5Cnconst%20textAlignments%20%3D%20%5B%5C%22auto%5C%22%2C%20%5C%22left%5C%22%2C%20%5C%22right%5C%22%2C%20%5C%22center%5C%22%2C%20%5C%22justify%5C%22%5D%3B%5Cnconst%20textDecorationLines%20%3D%20%5B%5Cn%20%20%5C%22none%5C%22%2C%5Cn%20%20%5C%22underline%5C%22%2C%5Cn%20%20%5C%22line-through%5C%22%2C%5Cn%20%20%5C%22underline%20line-through%5C%22%5Cn%5D%3B%5Cnconst%20textDecorationStyles%20%3D%20%5B%5C%22solid%5C%22%2C%20%5C%22double%5C%22%2C%20%5C%22dotted%5C%22%2C%20%5C%22dashed%5C%22%5D%3B%5Cnconst%20textTransformations%20%3D%20%5B%5C%22none%5C%22%2C%20%5C%22uppercase%5C%22%2C%20%5C%22lowercase%5C%22%2C%20%5C%22capitalize%5C%22%5D%3B%5Cnconst%20textAlignmentsVertical%20%3D%20%5B%5C%22auto%5C%22%2C%20%5C%22top%5C%22%2C%20%5C%22bottom%5C%22%2C%20%5C%22center%5C%22%5D%3B%5Cnconst%20writingDirections%20%3D%20%5B%5C%22auto%5C%22%2C%20%5C%22ltr%5C%22%2C%20%5C%22rtl%5C%22%5D%3B%5Cn%5Cnconst%20App%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20const%20%5BfontSize%2C%20setFontSize%5D%20%3D%20useState(10)%3B%5Cn%20%20const%20%5BfontStyleIdx%2C%20setFontStyleIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BfontWeightIdx%2C%20setFontWeightIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BlineHeight%2C%20setLineHeight%5D%20%3D%20useState(10)%3B%5Cn%20%20const%20%5BtextAlignIdx%2C%20setTextAlignIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BtextDecorationLineIdx%2C%20setTextDecorationLineIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BincludeFontPadding%2C%20setIncludeFontPadding%5D%20%3D%20useState(false)%3B%5Cn%20%20const%20%5BtextVerticalAlignIdx%2C%20setTextVerticalAlignIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BfontVariantIdx%2C%20setFontVariantIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BletterSpacing%2C%20setLetterSpacing%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BtextDecorationStyleIdx%2C%20setTextDecorationStyleIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BtextTransformIdx%2C%20setTextTransformIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BwritingDirectionIdx%2C%20setWritingDirectionIdx%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BtextShadowRadius%2C%20setTextShadowRadius%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BtextShadowOffset%2C%20setTextShadowOffset%5D%20%3D%20useState(%7B%5Cn%20%20%20%20height%3A%200%2C%5Cn%20%20%20%20width%3A%200%5Cn%20%20%7D)%3B%5Cn%5Cn%20%20return%20(%5Cn%20%20%20%20%3CView%20style%3D%7Bstyles.container%7D%3E%5Cn%20%20%20%20%20%20%3CText%5Cn%20%20%20%20%20%20%20%20style%3D%7B%5B%5Cn%20%20%20%20%20%20%20%20%20%20styles.paragraph%2C%5Cn%20%20%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20fontSize%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20fontStyle%3A%20fontStyles%5BfontStyleIdx%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20fontWeight%3A%20fontWeights%5BfontWeightIdx%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20lineHeight%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20textAlign%3A%20textAlignments%5BtextAlignIdx%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20textDecorationLine%3A%20textDecorationLines%5BtextDecorationLineIdx%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20textTransform%3A%20textTransformations%5BtextTransformIdx%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20textAlignVertical%3A%20textAlignmentsVertical%5BtextVerticalAlignIdx%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20fontVariant%3A%20%5BfontVariants%5BfontVariantIdx%5D%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20letterSpacing%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20includeFontPadding%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20textDecorationStyle%3A%20textDecorationStyles%5BtextDecorationStyleIdx%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20writingDirection%3A%20writingDirections%5BwritingDirectionIdx%5D%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20textShadowOffset%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20textShadowRadius%5Cn%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%5D%7D%5Cn%20%20%20%20%20%20%3E%5Cn%20%20%20%20%20%20%20%20Lorem%20Ipsum%20is%20simply%20dummy%20text%20of%20the%20printing%20and%20typesetting%5Cn%20%20%20%20%20%20%20%20industry.%20112%20Likes%5Cn%20%20%20%20%20%20%3C%2FText%3E%5Cn%20%20%20%20%20%20%3CScrollView%3E%5Cn%20%20%20%20%20%20%20%20%3CView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CText%3ECommon%20platform%20properties%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomSlider%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Text%20Shadow%20Offset%20-%20Height%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BtextShadowOffset.height%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20minimumValue%3D%7B-40%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20maximumValue%3D%7B40%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20handleValueChange%3D%7Bval%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20setTextShadowOffset(prev%20%3D%3E%20(%7B%20...prev%2C%20height%3A%20val%20%7D))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomSlider%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Text%20Shadow%20Offset%20-%20Width%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BtextShadowOffset.width%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20minimumValue%3D%7B-40%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20maximumValue%3D%7B40%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20handleValueChange%3D%7Bval%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20setTextShadowOffset(prev%20%3D%3E%20(%7B%20...prev%2C%20width%3A%20val%20%7D))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomSlider%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Font%20Size%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BfontSize%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20maximumValue%3D%7B40%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20handleValueChange%3D%7BsetFontSize%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Font%20Style%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BfontStyles%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BfontStyleIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetFontStyleIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Font%20Weight%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BfontWeights%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BfontWeightIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetFontWeightIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomSlider%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Line%20Height%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BlineHeight%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20minimumValue%3D%7B10%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20maximumValue%3D%7B50%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20handleValueChange%3D%7BsetLineHeight%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Text%20Align%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BtextAlignments%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BtextAlignIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetTextAlignIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Text%20Decoration%20Line%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BtextDecorationLines%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BtextDecorationLineIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetTextDecorationLineIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomSlider%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Text%20Shadow%20Radius%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BtextShadowRadius%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20handleValueChange%3D%7BsetTextShadowRadius%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Font%20Variant%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BfontVariants%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BfontVariantIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetFontVariantIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomSlider%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Letter%20Spacing%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20step%3D%7B0.1%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BletterSpacing%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20handleValueChange%3D%7BsetLetterSpacing%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Text%20Transform%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BtextTransformations%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BtextTransformIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetTextTransformIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%7BPlatform.OS%20%3D%3D%3D%20%5C%22android%5C%22%20%26%26%20(%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.platformContainer%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.platformContainerTitle%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20Android%20only%20properties%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Text%20Vertical%20Align%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BtextAlignmentsVertical%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BtextVerticalAlignIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetTextVerticalAlignIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CCustomSwitch%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Include%20Font%20Padding%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20handleValueChange%3D%7BsetIncludeFontPadding%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20value%3D%7BincludeFontPadding%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20)%7D%5Cn%20%20%20%20%20%20%20%20%7BPlatform.OS%20%3D%3D%3D%20%5C%22ios%5C%22%20%26%26%20(%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.platformContainer%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.platformContainerTitle%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20iOS%20only%20properties%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Text%20Decoration%20Style%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BtextDecorationStyles%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BtextDecorationStyleIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetTextDecorationStyleIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CCustomPicker%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%5C%22Writing%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20data%3D%7BwritingDirections%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20currentIndex%3D%7BwritingDirectionIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onSelected%3D%7BsetWritingDirectionIdx%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20)%7D%5Cn%20%20%20%20%20%20%3C%2FScrollView%3E%5Cn%20%20%20%20%3C%2FView%3E%5Cn%20%20)%3B%5Cn%7D%5Cn%5Cnconst%20CustomSwitch%20%3D%20(%7B%20label%2C%20handleValueChange%2C%20value%20%7D)%20%3D%3E%20%7B%5Cn%20%20return%20(%5Cn%20%20%20%20%3C%3E%5Cn%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%7Blabel%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%7B%20alignItems%3A%20%5C%22flex-start%5C%22%20%7D%7D%3E%5Cn%20%20%20%20%20%20%20%20%3CSwitch%5Cn%20%20%20%20%20%20%20%20%20%20trackColor%3D%7B%7B%20false%3A%20%5C%22%23767577%5C%22%2C%20true%3A%20%5C%22%23DAA520%5C%22%20%7D%7D%5Cn%20%20%20%20%20%20%20%20%20%20thumbColor%3D%7Bvalue%20%3F%20%5C%22%23DAA520%5C%22%20%3A%20%5C%22%23f4f3f4%5C%22%7D%5Cn%20%20%20%20%20%20%20%20%20%20onValueChange%3D%7BhandleValueChange%7D%5Cn%20%20%20%20%20%20%20%20%20%20value%3D%7Bvalue%7D%5Cn%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%3C%2F%3E%5Cn%20%20)%3B%5Cn%7D%5Cn%5Cnconst%20CustomSlider%20%3D%20(%7B%5Cn%20%20label%2C%5Cn%20%20handleValueChange%2C%5Cn%20%20step%20%3D%201%2C%5Cn%20%20minimumValue%20%3D%200%2C%5Cn%20%20maximumValue%20%3D%2010%2C%5Cn%20%20value%5Cn%7D)%20%3D%3E%20%7B%5Cn%20%20return%20(%5Cn%20%20%20%20%3C%3E%5Cn%20%20%20%20%20%20%7Blabel%20%26%26%20(%5Cn%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%7B%60%24%7Blabel%7D%20(%24%7Bvalue.toFixed(2)%7D)%60%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20)%7D%5Cn%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.wrapperHorizontal%7D%3E%5Cn%20%20%20%20%20%20%20%20%3CSlider%5Cn%20%20%20%20%20%20%20%20%20%20thumbTintColor%3D%5C%22%23DAA520%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20minimumTrackTintColor%3D%5C%22%23DAA520%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20minimumValue%3D%7BminimumValue%7D%5Cn%20%20%20%20%20%20%20%20%20%20maximumValue%3D%7BmaximumValue%7D%5Cn%20%20%20%20%20%20%20%20%20%20step%3D%7Bstep%7D%5Cn%20%20%20%20%20%20%20%20%20%20onValueChange%3D%7BhandleValueChange%7D%5Cn%20%20%20%20%20%20%20%20%20%20value%3D%7Bvalue%7D%5Cn%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%3C%2F%3E%5Cn%20%20)%3B%5Cn%7D%5Cn%5Cnconst%20CustomPicker%20%3D%20(%7B%20label%2C%20data%2C%20currentIndex%2C%20onSelected%20%7D)%20%3D%3E%20%7B%5Cn%20%20return%20(%5Cn%20%20%20%20%3C%3E%5Cn%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.title%7D%3E%7Blabel%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.wrapperHorizontal%7D%3E%5Cn%20%20%20%20%20%20%20%20%3CFlatList%5Cn%20%20%20%20%20%20%20%20%20%20bounces%5Cn%20%20%20%20%20%20%20%20%20%20horizontal%5Cn%20%20%20%20%20%20%20%20%20%20data%3D%7Bdata%7D%5Cn%20%20%20%20%20%20%20%20%20%20keyExtractor%3D%7B(item%2C%20idx)%20%3D%3E%20String(item)%7D%5Cn%20%20%20%20%20%20%20%20%20%20renderItem%3D%7B(%7B%20item%2C%20index%20%7D)%20%3D%3E%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20const%20selected%20%3D%20index%20%3D%3D%3D%20currentIndex%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20return%20(%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CTouchableWithoutFeedback%20onPress%3D%7B()%20%3D%3E%20onSelected(index)%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CView%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%7B%5B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20styles.itemStyleHorizontal%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20selected%20%26%26%20styles.itemSelectedStyleHorizontal%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5D%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CText%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%7B%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20textAlign%3A%20%5C%22center%5C%22%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20selected%20%3F%20%5C%22black%5C%22%20%3A%20%5C%22grey%5C%22%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20fontWeight%3A%20selected%20%3F%20%5C%22bold%5C%22%20%3A%20%5C%22normal%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7Bitem%20%2B%20%5C%22%5C%22%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2FTouchableWithoutFeedback%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%7D%7D%5Cn%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%3C%2F%3E%5Cn%20%20)%3B%5Cn%7D%5Cn%5Cnconst%20styles%20%3D%20StyleSheet.create(%7B%5Cn%20%20container%3A%20%7B%5Cn%20%20%20%20flex%3A%201%2C%5Cn%20%20%20%20paddingTop%3A%20StatusBar.currentHeight%2C%5Cn%20%20%20%20backgroundColor%3A%20%5C%22%23ecf0f1%5C%22%2C%5Cn%20%20%20%20padding%3A%208%5Cn%20%20%7D%2C%5Cn%20%20paragraph%3A%20%7B%5Cn%20%20%20%20color%3A%20%5C%22black%5C%22%2C%5Cn%20%20%20%20textDecorationColor%3A%20%5C%22yellow%5C%22%2C%5Cn%20%20%20%20textShadowColor%3A%20%5C%22red%5C%22%2C%5Cn%20%20%20%20textShadowRadius%3A%201%2C%5Cn%20%20%20%20margin%3A%2024%5Cn%20%20%7D%2C%5Cn%20%20wrapperHorizontal%3A%20%7B%5Cn%20%20%20%20height%3A%2054%2C%5Cn%20%20%20%20justifyContent%3A%20%5C%22center%5C%22%2C%5Cn%20%20%20%20color%3A%20%5C%22black%5C%22%2C%5Cn%20%20%20%20marginBottom%3A%2012%5Cn%20%20%7D%2C%5Cn%20%20itemStyleHorizontal%3A%20%7B%5Cn%20%20%20%20marginRight%3A%2010%2C%5Cn%20%20%20%20height%3A%2050%2C%5Cn%20%20%20%20padding%3A%208%2C%5Cn%20%20%20%20borderWidth%3A%201%2C%5Cn%20%20%20%20borderColor%3A%20%5C%22grey%5C%22%2C%5Cn%20%20%20%20borderRadius%3A%2025%2C%5Cn%20%20%20%20textAlign%3A%20%5C%22center%5C%22%2C%5Cn%20%20%20%20justifyContent%3A%20%5C%22center%5C%22%5Cn%20%20%7D%2C%5Cn%20%20itemSelectedStyleHorizontal%3A%20%7B%5Cn%20%20%20%20borderWidth%3A%202%2C%5Cn%20%20%20%20borderColor%3A%20%5C%22%23DAA520%5C%22%5Cn%20%20%7D%2C%5Cn%20%20platformContainer%3A%20%7B%5Cn%20%20%20%20marginTop%3A%208%2C%5Cn%20%20%20%20borderTopWidth%3A%201%5Cn%20%20%7D%2C%5Cn%20%20platformContainerTitle%3A%20%7B%5Cn%20%20%20%20marginTop%3A%208%5Cn%20%20%7D%2C%5Cn%20%20title%3A%20%7B%5Cn%20%20%20%20fontWeight%3A%20%5C%22bold%5C%22%2C%5Cn%20%20%20%20marginVertical%3A%204%5Cn%20%20%7D%5Cn%7D)%3B%5Cn%5Cnexport%20default%20App%3B%22%7D%7D data-snack-dependencies=react-native-safe-area-context data-snack-platform=web data-snack-supported-platforms=ios,android,web data-snack-theme=light data-snack-preview=true data-snack-loading=lazy data-snack-device-appearance=light data-snack-device-frame=false></div>
 <h1>文档</h1>
 <h2 class="anchor anchorTargetStickyNavbar_tleR" id=props>Props<a href=#props class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textshadowoffset><code>textShadowOffset</code><a href=#textshadowoffset class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>object: <code>{width: number,height: number}</code><td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=color><code>color</code><a href=#color class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td><a class="" href=/docs/0.76/colors>color</a><td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=fontsize><code>fontSize</code><a href=#fontsize class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=fontstyle><code>fontStyle</code><a href=#fontstyle class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('normal', 'italic')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=fontweight><code>fontWeight</code><a href=#fontweight class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>Specifies font weight. The values 'normal' and 'bold' are supported for most fonts. Not all fonts have a variant for each of the numeric values, in that case the closest one is chosen.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('normal', 'bold', '100', '200', '300', '400', '500', '600', '700', '800', '900')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=lineheight><code>lineHeight</code><a href=#lineheight class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textalign><code>textAlign</code><a href=#textalign class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>Specifies text alignment. The value 'justify' is only supported on iOS and fallbacks to <code>left</code> on Android.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('auto', 'left', 'right', 'center', 'justify')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textdecorationline><code>textDecorationLine</code><a href=#textdecorationline class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('none', 'underline', 'line-through', 'underline line-through')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textshadowcolor><code>textShadowColor</code><a href=#textshadowcolor class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td><a class="" href=/docs/0.76/colors>color</a><td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=fontfamily><code>fontFamily</code><a href=#fontfamily class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textshadowradius><code>textShadowRadius</code><a href=#textshadowradius class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=includefontpadding><code>includeFontPadding</code><a href=#includefontpadding class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>Set to <code>false</code> to remove extra font padding intended to make space for certain ascenders / descenders. With some fonts, this padding can make text look slightly misaligned when centered vertically. For best results also set <code>textAlignVertical</code> to <code>center</code>. Default is true.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>bool<td>否<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textalignvertical><code>textAlignVertical</code><a href=#textalignvertical class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('auto', 'top', 'bottom', 'center')<td>否<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=fontvariant><code>fontVariant</code><a href=#fontvariant class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>array of enum('small-caps', 'oldstyle-nums', 'lining-nums', 'tabular-nums', 'proportional-nums')<td>否<td>iOS, Android >= 5.0</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=letterspacing><code>letterSpacing</code><a href=#letterspacing class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>number<td>否<td>iOS, Android >= 5.0</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textdecorationcolor><code>textDecorationColor</code><a href=#textdecorationcolor class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td><a class="" href=/docs/0.76/colors>color</a><td>否<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textdecorationstyle><code>textDecorationStyle</code><a href=#textdecorationstyle class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('solid', 'double', 'dotted', 'dashed')<td>否<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=texttransform><code>textTransform</code><a href=#texttransform class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('none', 'uppercase', 'lowercase', 'capitalize')<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=writingdirection><code>writingDirection</code><a href=#writingdirection class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('auto', 'ltr', 'rtl')<td>否<td>iOS</table></div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_QeZL"><a href=https://github.com/reactnativecn/react-native-website/blob/production/cnwebsite/../cndocs/text-style-props.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_bHB7 aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>改进此文档</a></div><div class="col lastUpdated_ydrU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label=文档分页导航><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/0.76/shadow-props><div class=pagination-nav__sublabel>上一页</div><div class=pagination-nav__label>阴影样式属性</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/0.76/view-style-props><div class=pagination-nav__sublabel>下一页</div><div class=pagination-nav__label>View 样式属性</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_jeP5 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#示例 class="table-of-contents__link toc-highlight">示例</a><li><a href=#props class="table-of-contents__link toc-highlight">Props</a><ul><li><a href=#textshadowoffset class="table-of-contents__link toc-highlight"><code>textShadowOffset</code></a><li><a href=#color class="table-of-contents__link toc-highlight"><code>color</code></a><li><a href=#fontsize class="table-of-contents__link toc-highlight"><code>fontSize</code></a><li><a href=#fontstyle class="table-of-contents__link toc-highlight"><code>fontStyle</code></a><li><a href=#fontweight class="table-of-contents__link toc-highlight"><code>fontWeight</code></a><li><a href=#lineheight class="table-of-contents__link toc-highlight"><code>lineHeight</code></a><li><a href=#textalign class="table-of-contents__link toc-highlight"><code>textAlign</code></a><li><a href=#textdecorationline class="table-of-contents__link toc-highlight"><code>textDecorationLine</code></a><li><a href=#textshadowcolor class="table-of-contents__link toc-highlight"><code>textShadowColor</code></a><li><a href=#fontfamily class="table-of-contents__link toc-highlight"><code>fontFamily</code></a><li><a href=#textshadowradius class="table-of-contents__link toc-highlight"><code>textShadowRadius</code></a><li><a href=#includefontpadding class="table-of-contents__link toc-highlight"><code>includeFontPadding</code></a><li><a href=#textalignvertical class="table-of-contents__link toc-highlight"><code>textAlignVertical</code></a><li><a href=#fontvariant class="table-of-contents__link toc-highlight"><code>fontVariant</code></a><li><a href=#letterspacing class="table-of-contents__link toc-highlight"><code>letterSpacing</code></a><li><a href=#textdecorationcolor class="table-of-contents__link toc-highlight"><code>textDecorationColor</code></a><li><a href=#textdecorationstyle class="table-of-contents__link toc-highlight"><code>textDecorationStyle</code></a><li><a href=#texttransform class="table-of-contents__link toc-highlight"><code>textTransform</code></a><li><a href=#writingdirection class="table-of-contents__link toc-highlight"><code>writingDirection</code></a></ul></ul><div class="wwads-cn wwads-vertical" data-id=58 style=max-width:227px;margin-top:20px></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>React Native 中文网 © 2026 武汉青罗网络科技有限公司
       <a style=margin-left:10px href=http://beian.miit.gov.cn/>鄂ICP备20002031号-3</a>
       <img style=width:25px src=//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png alt="鄂公网安备 42011202001821号">

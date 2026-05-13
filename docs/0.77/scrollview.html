@@ -1,7 +1,7 @@
-<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-0.77 docs-doc-page docs-doc-id-scrollview" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>ScrollView · React Native 中文网</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:image content=https://reactnative.cn/img/logo-og.png /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true property=og:url content=https://reactnative.cn /><meta data-rh=true property=og:image content=img/logo-og.png /><meta data-rh=true name=docusaurus_version content=0.77 /><meta data-rh=true name=docusaurus_tag content=docs-default-0.77 /><meta data-rh=true name=docsearch:version content=0.77 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-0.77 /><meta data-rh=true property=og:title content="ScrollView · React Native 中文网"/><meta data-rh=true name=description content="一个封装了平台的 ScrollView（滚动视图）的组件，同时还集成了触摸锁定的“响应者”系统。"/><meta data-rh=true property=og:description content="一个封装了平台的 ScrollView（滚动视图）的组件，同时还集成了触摸锁定的“响应者”系统。"/><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://reactnative.cn/docs/0.77/scrollview /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.77/scrollview hreflang=en /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.77/scrollview hreflang=x-default /><link data-rh=true rel=preconnect href=https://GJGDC5L5HP-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://reactnative.cn/docs/0.77/scrollview","name":"ScrollView","position":1}]}</script><link rel=preconnect href=https://www.google-analytics.com><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63485149-4","auto"),ga("send","pageview")</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63485149-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-63485149-4",{})</script><link rel=search type=application/opensearchdescription+xml title="React Native 中文网" href=/opensearch.xml><script src=//snack.expo.dev/embed.js defer></script><script src=//cdn.wwads.cn/js/makemoney.js defer></script><link rel=stylesheet href=/assets/css/styles.b2fcc659.css /><script src=/assets/js/runtime~main.b066c31d.js defer></script><script src=/assets/js/main.a749adce.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-0.77 docs-doc-page docs-doc-id-scrollview" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.0"><title data-rh=true>ScrollView · React Native 中文网</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:image content=https://reactnative.cn/img/logo-og.png /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true property=og:url content=https://reactnative.cn /><meta data-rh=true property=og:image content=img/logo-og.png /><meta data-rh=true name=docusaurus_version content=0.77 /><meta data-rh=true name=docusaurus_tag content=docs-default-0.77 /><meta data-rh=true name=docsearch:version content=0.77 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-0.77 /><meta data-rh=true property=og:title content="ScrollView · React Native 中文网"/><meta data-rh=true name=description content="一个封装了平台的 ScrollView（滚动视图）的组件，同时还集成了触摸锁定的“响应者”系统。"/><meta data-rh=true property=og:description content="一个封装了平台的 ScrollView（滚动视图）的组件，同时还集成了触摸锁定的“响应者”系统。"/><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://reactnative.cn/docs/0.77/scrollview /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.77/scrollview hreflang=en /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.77/scrollview hreflang=x-default /><link data-rh=true rel=preconnect href=https://GJGDC5L5HP-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://reactnative.cn/docs/0.77/scrollview","name":"ScrollView","position":1}]}</script><link rel=preconnect href=https://www.google-analytics.com><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63485149-4","auto"),ga("send","pageview")</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63485149-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-63485149-4",{})</script><link rel=search type=application/opensearchdescription+xml title="React Native 中文网" href=/opensearch.xml><script src=//snack.expo.dev/embed.js defer></script><script src=//cdn.wwads.cn/js/makemoney.js defer></script><link rel=stylesheet href=/assets/css/styles.886f30de.css /><script src=/assets/js/runtime~main.a5cfaf41.js defer></script><script src=/assets/js/main.ba979f0f.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/header_logo.svg /><div role=region aria-label=跳到主要内容><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>跳到主要内容</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--dark_yETr"/></div><b class="navbar__title text--truncate">React Native 中文网</b></a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/docs/0.77/scrollview>0.77</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/next/scrollview>Next</a><li><a class=dropdown__link href=/docs/scrollview>0.85</a><li><a class=dropdown__link href=/docs/0.84/scrollview>0.84</a><li><a class=dropdown__link href=/docs/0.83/scrollview>0.83</a><li><a class=dropdown__link href=/docs/0.82/scrollview>0.82</a><li><a class=dropdown__link href=/docs/0.81/scrollview>0.81</a><li><a class=dropdown__link href=/docs/0.80/scrollview>0.80</a><li><a class=dropdown__link href=/docs/0.79/scrollview>0.79</a><li><a class=dropdown__link href=/docs/0.78/scrollview>0.78</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.77/scrollview>0.77</a><li><a class=dropdown__link href=/docs/0.76/scrollview>0.76</a><li><a class=dropdown__link href=/docs/0.75/scrollview>0.75</a><li><a class=dropdown__link href=/docs/0.74/scrollview>0.74</a><li><a class=dropdown__link href=/docs/0.73/scrollview>0.73</a><li><a class=dropdown__link href=/docs/0.72/scrollview>0.72</a><li><a class=dropdown__link href=/docs/0.71/scrollview>0.71</a><li><a class=dropdown__link href=/docs/0.70/scrollview>0.70</a><li><a class=dropdown__link href=/versions>所有版本</a></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>开发文档</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/0.77/getting-started>入门指南</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.77/components-and-apis>组件</a><li><a class=dropdown__link href=/docs/0.77/accessibilityinfo>API</a><li><a class=dropdown__link href=/architecture/overview>架构</a></ul></div><a href=//github.com/reactnativecn/react-native-website/issues target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">讨论<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a href=//pushy.reactnative.cn target=_blank rel="noopener noreferrer" class="navbar__item navbar__link hot-link">热更新<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a class="navbar__item navbar__link" href=/about>关于</a><a href=//github.com/facebook/react-native target=_blank rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link" aria-label="GitHub repository"></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m darkNavbarColorModeToggle_m8pZ" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/0.77/components-and-apis><span title=核心组件 class=categoryLinkLabel_ufhF>核心组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/components-and-apis><span title=核心组件和API class=linkLabel_fEdy>核心组件和API</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/activityindicator><span title=ActivityIndicator class=linkLabel_fEdy>ActivityIndicator</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/button><span title=Button class=linkLabel_fEdy>Button</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/flatlist><span title=FlatList class=linkLabel_fEdy>FlatList</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/image><span title=Image class=linkLabel_fEdy>Image</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/imagebackground><span title=ImageBackground class=linkLabel_fEdy>ImageBackground</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/keyboardavoidingview><span title=KeyboardAvoidingView class=linkLabel_fEdy>KeyboardAvoidingView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/modal><span title=Modal class=linkLabel_fEdy>Modal</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/pressable><span title=Pressable class=linkLabel_fEdy>Pressable</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/refreshcontrol><span title=RefreshControl class=linkLabel_fEdy>RefreshControl</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/0.77/scrollview><span title=ScrollView class=linkLabel_fEdy>ScrollView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/sectionlist><span title=SectionList class=linkLabel_fEdy>SectionList</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/statusbar><span title=StatusBar class=linkLabel_fEdy>StatusBar</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/switch><span title=Switch class=linkLabel_fEdy>Switch</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/text><span title=Text class=linkLabel_fEdy>Text</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/textinput><span title=TextInput class=linkLabel_fEdy>TextInput</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/touchablehighlight><span title=TouchableHighlight class=linkLabel_fEdy>TouchableHighlight</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/touchableopacity><span title=TouchableOpacity class=linkLabel_fEdy>TouchableOpacity</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/touchablewithoutfeedback><span title=TouchableWithoutFeedback class=linkLabel_fEdy>TouchableWithoutFeedback</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/view><span title=View class=linkLabel_fEdy>View</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/virtualizedlist><span title=VirtualizedList class=linkLabel_fEdy>VirtualizedList</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true tabindex=0 href=/docs/0.77/drawerlayoutandroid><span title="Android 组件" class=categoryLinkLabel_ufhF>Android 组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/drawerlayoutandroid><span title=DrawerLayoutAndroid class=linkLabel_fEdy>DrawerLayoutAndroid</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/touchablenativefeedback><span title=TouchableNativeFeedback class=linkLabel_fEdy>TouchableNativeFeedback</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true tabindex=0 href=/docs/0.77/inputaccessoryview><span title="iOS 组件" class=categoryLinkLabel_ufhF>iOS 组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/inputaccessoryview><span title=InputAccessoryView class=linkLabel_fEdy>InputAccessoryView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/safeareaview><span title=SafeAreaView class=linkLabel_fEdy>SafeAreaView</span></a></ul></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.77/image-style-props><span title=Props class=categoryLinkLabel_ufhF>Props</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.77/boxshadowvalue><span title=内部对象类型 class=categoryLinkLabel_ufhF>内部对象类型</span></a></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role=alert>此为 <!-- -->React Native 中文网<!-- --> <b>0.77</b> 版的文档，现已不再积极维护。<div class=margin-top--md>最新的文档请参阅 <b><a href=/docs/scrollview>最新版本</a></b> (<!-- -->0.85<!-- -->)。</div></div><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>核心组件</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>ScrollView</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 0.77</span><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>ScrollView</h1></header><p>一个封装了平台的 ScrollView（滚动视图）的组件，同时还集成了触摸锁定的“响应者”系统。</p>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-714")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss-714")}catch(t){}return!1}())</script><div id=__docusaurus><link rel=preload as=image href=/img/header_logo.svg /><div role=region aria-label=跳到主要内容><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>跳到主要内容</a></div><div class="theme-announcement-bar announcementBar_zJRd" role=banner><div class=announcementBarPlaceholder_NpUd></div><div class="content_bSb_ announcementBarContent_t7IR"><a href=https://ai.cresc.dev target=_blank rel="noopener noreferrer">AI 中转站</a>：纯正官方 GPT-5.5 与 Claude Opus 4.7 模型，价格实惠、服务稳定、绝不掺水、数据安全。</div><button type=button aria-label=Close class="clean-btn close closeButton_J5rP announcementBarClose_Jjdj"><svg viewBox="0 0 15 15" width=14 height=14><g stroke=currentColor stroke-width=3.1><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"/></g></svg></button></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--dark_yETr"/></div><b class="navbar__title text--truncate">React Native 中文网</b></a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/docs/0.77/scrollview>0.77</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/next/scrollview>Next</a><li><a class=dropdown__link href=/docs/scrollview>0.85</a><li><a class=dropdown__link href=/docs/0.84/scrollview>0.84</a><li><a class=dropdown__link href=/docs/0.83/scrollview>0.83</a><li><a class=dropdown__link href=/docs/0.82/scrollview>0.82</a><li><a class=dropdown__link href=/docs/0.81/scrollview>0.81</a><li><a class=dropdown__link href=/docs/0.80/scrollview>0.80</a><li><a class=dropdown__link href=/docs/0.79/scrollview>0.79</a><li><a class=dropdown__link href=/docs/0.78/scrollview>0.78</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.77/scrollview>0.77</a><li><a class=dropdown__link href=/docs/0.76/scrollview>0.76</a><li><a class=dropdown__link href=/docs/0.75/scrollview>0.75</a><li><a class=dropdown__link href=/docs/0.74/scrollview>0.74</a><li><a class=dropdown__link href=/docs/0.73/scrollview>0.73</a><li><a class=dropdown__link href=/docs/0.72/scrollview>0.72</a><li><a class=dropdown__link href=/docs/0.71/scrollview>0.71</a><li><a class=dropdown__link href=/docs/0.70/scrollview>0.70</a><li><a class=dropdown__link href=/versions>所有版本</a></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>开发文档</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/0.77/getting-started>入门指南</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.77/components-and-apis>组件</a><li><a class=dropdown__link href=/docs/0.77/accessibilityinfo>API</a><li><a class=dropdown__link href=/architecture/overview>架构</a></ul></div><a href=//github.com/reactnativecn/react-native-website/issues target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">讨论<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a href=//pushy.reactnative.cn target=_blank rel="noopener noreferrer" class="navbar__item navbar__link hot-link">热更新<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a class="navbar__item navbar__link" href=/about>关于</a><a href=//github.com/facebook/react-native target=_blank rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link" aria-label="GitHub repository"></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m darkNavbarColorModeToggle_m8pZ" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1 menuWithAnnouncementBar_YufC"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/0.77/components-and-apis><span title=核心组件 class=categoryLinkLabel_ufhF>核心组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/components-and-apis><span title=核心组件和API class=linkLabel_fEdy>核心组件和API</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/activityindicator><span title=ActivityIndicator class=linkLabel_fEdy>ActivityIndicator</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/button><span title=Button class=linkLabel_fEdy>Button</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/flatlist><span title=FlatList class=linkLabel_fEdy>FlatList</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/image><span title=Image class=linkLabel_fEdy>Image</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/imagebackground><span title=ImageBackground class=linkLabel_fEdy>ImageBackground</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/keyboardavoidingview><span title=KeyboardAvoidingView class=linkLabel_fEdy>KeyboardAvoidingView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/modal><span title=Modal class=linkLabel_fEdy>Modal</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/pressable><span title=Pressable class=linkLabel_fEdy>Pressable</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/refreshcontrol><span title=RefreshControl class=linkLabel_fEdy>RefreshControl</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/0.77/scrollview><span title=ScrollView class=linkLabel_fEdy>ScrollView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/sectionlist><span title=SectionList class=linkLabel_fEdy>SectionList</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/statusbar><span title=StatusBar class=linkLabel_fEdy>StatusBar</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/switch><span title=Switch class=linkLabel_fEdy>Switch</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/text><span title=Text class=linkLabel_fEdy>Text</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/textinput><span title=TextInput class=linkLabel_fEdy>TextInput</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/touchablehighlight><span title=TouchableHighlight class=linkLabel_fEdy>TouchableHighlight</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/touchableopacity><span title=TouchableOpacity class=linkLabel_fEdy>TouchableOpacity</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/touchablewithoutfeedback><span title=TouchableWithoutFeedback class=linkLabel_fEdy>TouchableWithoutFeedback</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/view><span title=View class=linkLabel_fEdy>View</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/virtualizedlist><span title=VirtualizedList class=linkLabel_fEdy>VirtualizedList</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true tabindex=0 href=/docs/0.77/drawerlayoutandroid><span title="Android 组件" class=categoryLinkLabel_ufhF>Android 组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/drawerlayoutandroid><span title=DrawerLayoutAndroid class=linkLabel_fEdy>DrawerLayoutAndroid</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/touchablenativefeedback><span title=TouchableNativeFeedback class=linkLabel_fEdy>TouchableNativeFeedback</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true tabindex=0 href=/docs/0.77/inputaccessoryview><span title="iOS 组件" class=categoryLinkLabel_ufhF>iOS 组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/inputaccessoryview><span title=InputAccessoryView class=linkLabel_fEdy>InputAccessoryView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.77/safeareaview><span title=SafeAreaView class=linkLabel_fEdy>SafeAreaView</span></a></ul></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.77/image-style-props><span title=Props class=categoryLinkLabel_ufhF>Props</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.77/boxshadowvalue><span title=内部对象类型 class=categoryLinkLabel_ufhF>内部对象类型</span></a></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role=alert>此为 <!-- -->React Native 中文网<!-- --> <b>0.77</b> 版的文档，现已不再积极维护。<div class=margin-top--md>最新的文档请参阅 <b><a href=/docs/scrollview>最新版本</a></b> (<!-- -->0.85<!-- -->)。</div></div><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>核心组件</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>ScrollView</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 0.77</span><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>ScrollView</h1></header><p>一个封装了平台的 ScrollView（滚动视图）的组件，同时还集成了触摸锁定的“响应者”系统。</p>
 <p>记住 ScrollView 必须有一个确定的高度才能正常工作，因为它实际上所做的就是将一系列不确定高度的子组件装进一个确定高度的容器（通过滚动操作）。要给 ScrollView 一个确定的高度的话，要么直接给它设置高度（不建议），要么确定所有的父容器都有确定的高度。一般来说我们会给 ScrollView 设置<code>flex: 1</code>以使其自动填充父容器的空余空间，但前提条件是所有的父容器本身也设置了 flex 或者指定了高度，否则就会导致无法正常滚动，你可以使用元素查看器来查找具体哪一层高度不正确。</p>
 <p>ScrollView 内部的其他响应者尚无法阻止 ScrollView 本身成为响应者。</p>
 <p><code>ScrollView</code>和<code>FlatList</code>应该如何选择？ScrollView 会简单粗暴地把所有子元素一次性全部渲染出来。其原理浅显易懂，使用上自然也最简单。然而这样简单的渲染逻辑自然带来了性能上的不足。想象一下你有一个特别长的列表需要显示，可能有好几屏的高度。创建和渲染那些屏幕以外的 JS 组件和原生视图，显然对于渲染性能和内存占用都是一种极大的拖累和浪费。</p>
@@ -17,55 +17,222 @@
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=alwaysbouncehorizontal-ios><code>alwaysBounceHorizontal</code> <div class="label ios">iOS</div><a href=#alwaysbouncehorizontal-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当此属性为 true 时，水平方向即使内容比滚动视图本身还要小，也可以弹性地拉动一截。当<code>horizontal={true}</code>时默认值为 true，否则为 false。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code> when <code>horizontal={true}</code><hr/><code>false</code> otherwise</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=alwaysbouncevertical-ios><code>alwaysBounceVertical</code> <div class="label ios">iOS</div><a href=#alwaysbouncevertical-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当此属性为 true 时，垂直方向即使内容比滚动视图本身还要小，也可以弹性地拉动一截。当<code>horizontal={true}</code>时默认值为 false，否则为 true。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code> when <code>vertical={true}</code><hr/><code>true</code> otherwise</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=automaticallyadjustcontentinsets-ios><code>automaticallyAdjustContentInsets</code> <div class="label ios">iOS</div><a href=#automaticallyadjustcontentinsets-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当滚动视图放在一个导航条或者工具条后面的时候，iOS 系统是否要自动调整内容的范围。默认值为 true。（译注：如果你的 ScrollView 或 FlatList 的头部出现莫名其妙的空白，尝试将此属性置为 false）</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=automaticallyadjustkeyboardinsets-ios><code>automaticallyAdjustKeyboardInsets</code> <div class="label ios">iOS</div><a href=#automaticallyadjustkeyboardinsets-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当键盘尺寸变化时，ScrollView 是否自动调整其 <code>contentInset</code> 和 <code>scrollViewInsets</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=automaticallyadjustsscrollindicatorinsets-ios><code>automaticallyAdjustsScrollIndicatorInsets</code> <div class="label ios">iOS</div><a href=#automaticallyadjustsscrollindicatorinsets-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>控制 iOS 是否自动调整滚动指示器内边距。请参阅 Apple 的<a href=https://developer.apple.com/documentation/uikit/uiscrollview/3198043-automaticallyadjustsscrollindica target=_blank rel="noopener noreferrer" class="">文档</a>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=bounces-ios><code>bounces</code> <div class="label ios">iOS</div><a href=#bounces-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 true 时，如果内容范围比滚动视图本身大，在到达内容末尾的时候，可以弹性地拉动一截。如果为 false，尾部的所有弹性都会被禁用，即使<code>alwaysBounce</code>属性为 true。默认值为 true。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=bounceszoom-ios><code>bouncesZoom</code> <div class="label ios">iOS</div><a href=#bounceszoom-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 true 时，使用手势缩放内容可以超过 min/max 的限制，然后在手指抬起之后弹回 min/max 的缩放比例。否则的话，缩放不能超过限制。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=cancancelcontenttouches-ios><code>canCancelContentTouches</code> <div class="label ios">iOS</div><a href=#cancancelcontenttouches-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 false 时，一旦有子节点响应触摸操作，即使手指开始移动也不会拖动滚动视图。默认值为 true（在以上情况下可以拖动滚动视图）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=centercontent-ios><code>centerContent</code> <div class="label ios">iOS</div><a href=#centercontent-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 true 时，如果滚动视图的内容比视图本身小，则会自动把内容居中放置。当内容比滚动视图大的时候，此属性没有作用。默认值为 false。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=contentcontainerstyle><code>contentContainerStyle</code><a href=#contentcontainerstyle class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>这些样式会应用到一个内层的内容容器上，所有的子视图都会包裹在内容容器内。示例：</p>
-<div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><span class=token-line style=color:#FFFFFF><span class="token keyword" style=color:#c5a5c5>return</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>(</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">  </span><span class="token tag punctuation" style=color:#657b83>&lt;</span><span class="token tag class-name" style=color:#fac863>ScrollView</span><span class="token tag" style=color:#fc929e> </span><span class="token tag attr-name" style=color:#c5a5c5>contentContainerStyle</span><span class="token tag script language-javascript script-punctuation punctuation" style=color:#657b83>=</span><span class="token tag script language-javascript punctuation" style=color:#657b83>{</span><span class="token tag script language-javascript" style=color:#fc929e>styles</span><span class="token tag script language-javascript punctuation" style=color:#657b83>.</span><span class="token tag script language-javascript property-access" style=color:#fc929e>contentContainer</span><span class="token tag script language-javascript punctuation" style=color:#657b83>}</span><span class="token tag punctuation" style=color:#657b83>></span><span class="token plain-text"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain-text">  </span><span class="token tag punctuation" style=color:#657b83>&lt;/</span><span class="token tag class-name" style=color:#fac863>ScrollView</span><span class="token tag punctuation" style=color:#657b83>></span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token spread operator" style=color:#fc929e>...</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token keyword" style=color:#c5a5c5>const</span><span class="token plain"> styles </span><span class="token operator" style=color:#fc929e>=</span><span class="token plain"> </span><span class="token maybe-class-name">StyleSheet</span><span class="token punctuation" style=color:#657b83>.</span><span class="token method function property-access" style=color:#79b6f2>create</span><span class="token punctuation" style=color:#657b83>(</span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">  contentContainer</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">    paddingVertical</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token number" style=color:#5a9bcf>20</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">  </span><span class="token punctuation" style=color:#657b83>}</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><br/></span></code></pre></div></div>
+<div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><div class=token-line style=color:#FFFFFF><span class="token keyword" style=color:#c5a5c5>return</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>(</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">  </span><span class="token tag punctuation" style=color:#657b83>&lt;</span><span class="token tag class-name" style=color:#fac863>ScrollView</span><span class="token tag" style=color:#fc929e> </span><span class="token tag attr-name" style=color:#c5a5c5>contentContainerStyle</span><span class="token tag script language-javascript script-punctuation punctuation" style=color:#657b83>=</span><span class="token tag script language-javascript punctuation" style=color:#657b83>{</span><span class="token tag script language-javascript" style=color:#fc929e>styles</span><span class="token tag script language-javascript punctuation" style=color:#657b83>.</span><span class="token tag script language-javascript property-access" style=color:#fc929e>contentContainer</span><span class="token tag script language-javascript punctuation" style=color:#657b83>}</span><span class="token tag punctuation" style=color:#657b83>></span><span class="token plain-text"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain-text">  </span><span class="token tag punctuation" style=color:#657b83>&lt;/</span><span class="token tag class-name" style=color:#fac863>ScrollView</span><span class="token tag punctuation" style=color:#657b83>></span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token spread operator" style=color:#fc929e>...</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token keyword" style=color:#c5a5c5>const</span><span class="token plain"> styles </span><span class="token operator" style=color:#fc929e>=</span><span class="token plain"> </span><span class="token maybe-class-name">StyleSheet</span><span class="token punctuation" style=color:#657b83>.</span><span class="token method function property-access" style=color:#79b6f2>create</span><span class="token punctuation" style=color:#657b83>(</span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">  contentContainer</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">    paddingVertical</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token number" style=color:#5a9bcf>20</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">  </span><span class="token punctuation" style=color:#657b83>}</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><br/></div></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td><a class="" href=/docs/0.77/view-style-props>View Style</a></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=contentinset-ios><code>contentInset</code> <div class="label ios">iOS</div><a href=#contentinset-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>内容范围相对滚动视图边缘的坐标。默认为<code>{top: 0, left: 0, bottom: 0, right: 0}</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>object: <code>{top: number, left: number, bottom: number, right: number}</code><td><code>{top: 0, left: 0, bottom: 0, right: 0}</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=contentinsetadjustmentbehavior-ios><code>contentInsetAdjustmentBehavior</code> <div class="label ios">iOS</div><a href=#contentinsetadjustmentbehavior-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>本属性用于指定安全区域内边距如何修改滚动视图的内容区域。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>enum(<code>'automatic'</code>, <code>'scrollableAxes'</code>, <code>'never'</code>, <code>'always'</code>)<td><code>'never'</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=contentoffset><code>contentOffset</code><a href=#contentoffset class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>用来手动设置初始的滚动坐标。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>Point<td><code>{x: 0, y: 0}</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=decelerationrate><code>decelerationRate</code><a href=#decelerationrate class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -74,31 +241,120 @@
 <li class=""><code>'normal'</code>: iOS 上是 0.998，Android 上是 0.985（默认值）</li>
 <li class=""><code>'fast'</code>: iOS 上是 0.99，Android 上是 0.9</li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>enum(<code>'fast'</code>, <code>'normal'</code>), number<td><code>'normal'</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=directionallockenabled-ios><code>directionalLockEnabled</code> <div class="label ios">iOS</div><a href=#directionallockenabled-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为真时，滚动视图在拖拽的时候会锁定只有垂直或水平方向可以滚动。默认值为 false</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=disableintervalmomentum><code>disableIntervalMomentum</code><a href=#disableintervalmomentum class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 true 时，滚动视图在拖拽的时候会停止在下一个索引（相对于释放时的滚动位置），无论手势有多快。这可以用于分页，当页面小于水平滚动视图的宽度或垂直滚动视图的高度时。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=disablescrollviewpanresponder><code>disableScrollViewPanResponder</code><a href=#disablescrollviewpanresponder class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 true 时，滚动视图的默认 JS 手势响应器会被禁用，并且滚动视图内部的触摸操作完全由其子组件控制。这在启用 <code>snapToInterval</code> 时特别有用，因为它不遵循典型的触摸模式。不要在常规的滚动视图使用场景中使用此属性，除非你启用了 <code>snapToInterval</code>，否则可能会导致意外的触摸操作。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=endfillcolor-android><code>endFillColor</code> <div class="label android">Android</div><a href=#endfillcolor-android class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>有时候滚动视图会占据比实际内容更多的空间。这种情况下可以使用此属性，指定以某种颜色来填充多余的空间，以避免设置背景和创建不必要的绘制开销。一般情况下并不需要这种高级优化技巧。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td><a class="" href=/docs/0.77/colors>color</a></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=fadingedgelength-android><code>fadingEdgeLength</code> <div class="label android">Android</div><a href=#fadingedgelength-android class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>滚动内容的边缘会逐渐淡出。</p>
 <p>如果值大于 <code>0</code>，则会根据当前的滚动方向和位置设置淡出边缘，指示是否有更多内容可显示。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>number<td><code>0</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=horizontal><code>horizontal</code><a href=#horizontal class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当此属性为 true 的时候，滚动视图的子视图会在水平方向上排成一行，而不是默认的在垂直方向上排成一列。默认值为 false。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=indicatorstyle-ios><code>indicatorStyle</code> <div class="label ios">iOS</div><a href=#indicatorstyle-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -108,10 +364,36 @@
 <li class=""><code>'black'</code>，黑色滚动条。</li>
 <li class=""><code>'white'</code>，白色滚动条。</li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>enum(<code>'default'</code>, <code>'black'</code>, <code>'white'</code>)<td><code>'default'</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=invertstickyheaders><code>invertStickyHeaders</code><a href=#invertstickyheaders class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果粘性头部应该固定在滚动视图的底部而不是顶部。通常用于反转的滚动视图中。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=keyboarddismissmode><code>keyboardDismissMode</code><a href=#keyboarddismissmode class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -125,6 +407,19 @@
 <ul>
 <li class=""><code>'interactive'</code>，软键盘伴随拖拽操作同步地消失，并且如果往上滑动会恢复键盘。安卓设备上不支持这个选项，会表现的和<code>none</code>一样。</li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>enum(<code>'none'</code>, <code>'on-drag'</code>) <div class="label android">Android</div><hr/>enum(<code>'none'</code>, <code>'on-drag'</code>, <code>'interactive'</code>) <div class="label ios">iOS</div><td><code>'none'</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=keyboardshouldpersisttaps><code>keyboardShouldPersistTaps</code><a href=#keyboardshouldpersisttaps class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -136,6 +431,19 @@
 <li class=""><code>false</code>，已过时，请使用<code>'never'</code>代替。</li>
 <li class=""><code>true</code>，已过时，请使用<code>'always'</code>代替。</li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>enum(<code>'always'</code>, <code>'never'</code>, <code>'handled'</code>, <code>false</code>, <code>true</code>)<td><code>'never'</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=maintainvisiblecontentposition><code>maintainVisibleContentPosition</code><a href=#maintainvisiblecontentposition class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -143,49 +451,176 @@
 <p>可选的 <code>autoscrollToTopThreshold</code> 可以用于在调整后自动将内容滚动到顶部，如果用户在调整之前位于顶部阈值内。这对于聊天应用程序非常有用，其中您希望看到新消息滚动到位，但不会在用户已经向上滚动一段距离并且滚动一堆内容会变得混乱的情况下。</p>
 <p>注意事项一: 在启用此功能时重新排序滚动视图中的元素可能会导致跳跃和卡顿。可以修复，但目前没有计划这样做。目前，不要重新排序任何使用此功能的 ScrollViews 或 Lists。</p>
 <p>注意事项二: 此功能使用 <code>contentOffset</code> 和 <code>frame.origin</code> 在原生代码中计算可见性。遮挡、变换和其他复杂性不会被考虑在内，以确定内容是否“可见”。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>object: <code>{minIndexForVisible: number, autoscrollToTopThreshold: number}</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=maximumzoomscale-ios><code>maximumZoomScale</code> <div class="label ios">iOS</div><a href=#maximumzoomscale-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>允许的最大缩放比例。默认值为 1.0。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>number<td><code>1.0</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=minimumzoomscale-ios><code>minimumZoomScale</code> <div class="label ios">iOS</div><a href=#minimumzoomscale-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>允许的最小缩放比例。默认值为 1.0。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>number<td><code>1.0</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=nestedscrollenabled-android><code>nestedScrollEnabled</code> <div class="label android">Android</div><a href=#nestedscrollenabled-android class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>在 Android API level 21（5.0）以上启用嵌套滚动。iOS 上默认支持嵌套滚动。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=oncontentsizechange><code>onContentSizeChange</code><a href=#oncontentsizechange class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>此函数会在 ScrollView 内部可滚动内容的视图发生变化时调用。</p>
 <p>调用参数为内容视图的宽和高: <code>(contentWidth, contentHeight)</code>。</p>
 <p>此方法是通过绑定在内容容器上的 onLayout 来实现的。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>function</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onmomentumscrollbegin><code>onMomentumScrollBegin</code><a href=#onmomentumscrollbegin class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>滚动动画开始时调用此函数。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>function</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onmomentumscrollend><code>onMomentumScrollEnd</code><a href=#onmomentumscrollend class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>滚动动画结束时调用此函数。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>function</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onscroll><code>onScroll</code><a href=#onscroll class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>在滚动的过程中，每帧最多调用一次此回调函数。调用的频率可以用<code>scrollEventThrottle</code>属性来控制。事件的构型如下（所有值都是数字）：</p>
-<div class="language-js codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockTitle_kY6l>js</div><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-js codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><span class=token-line style=color:#FFFFFF><span class="token punctuation" style=color:#657b83>{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">  </span><span class="token literal-property property" style=color:#2aa198>nativeEvent</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">    </span><span class="token literal-property property" style=color:#2aa198>contentInset</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">bottom</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> left</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> right</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> top</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">    </span><span class="token literal-property property" style=color:#2aa198>contentOffset</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">x</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> y</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">    </span><span class="token literal-property property" style=color:#2aa198>contentSize</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">height</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> width</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">    </span><span class="token literal-property property" style=color:#2aa198>layoutMeasurement</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">height</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> width</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">    zoomScale</span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">  </span><span class="token punctuation" style=color:#657b83>}</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token punctuation" style=color:#657b83>}</span><br/></span></code></pre></div></div>
+<div class="language-js codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockTitle_kY6l>js</div><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-js codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><div class=token-line style=color:#FFFFFF><span class="token punctuation" style=color:#657b83>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">  </span><span class="token literal-property property" style=color:#2aa198>nativeEvent</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">    </span><span class="token literal-property property" style=color:#2aa198>contentInset</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">bottom</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> left</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> right</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> top</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">    </span><span class="token literal-property property" style=color:#2aa198>contentOffset</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">x</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> y</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">    </span><span class="token literal-property property" style=color:#2aa198>contentSize</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">height</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> width</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">    </span><span class="token literal-property property" style=color:#2aa198>layoutMeasurement</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">height</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> width</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">    zoomScale</span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">  </span><span class="token punctuation" style=color:#657b83>}</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token punctuation" style=color:#657b83>}</span><br/></div></code></pre></div></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>function</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onscrollbegindrag><code>onScrollBeginDrag</code><a href=#onscrollbegindrag class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当用户开始拖动此视图时调用此函数。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>function</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onscrollenddrag><code>onScrollEndDrag</code><a href=#onscrollenddrag class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当用户停止拖动此视图时调用此函数。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>function</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onscrolltotop-ios><code>onScrollToTop</code> <div class="label ios">iOS</div><a href=#onscrolltotop-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当用户点击状态栏后，滚动视图滚动到顶部时调用此函数。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>function</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=overscrollmode><code>overScrollMode</code><a href=#overscrollmode class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -196,59 +631,237 @@
 <li class=""><code>'always'</code> - 无论内容尺寸，用户始终可以滚动视图。</li>
 <li class=""><code>'never'</code> - 始终不允许用户滚动视图。</li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>enum(<code>'auto'</code>, <code>'always'</code>, <code>'never'</code>)<td><code>'auto'</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=pagingenabled><code>pagingEnabled</code><a href=#pagingenabled class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 true 时，滚动条会停在滚动视图的尺寸的整数倍位置。这个可以用在水平分页上。默认值为 false。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=persistentscrollbar-android><code>persistentScrollbar</code> <div class="label android">Android</div><a href=#persistentscrollbar-android class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当滚动条不使用时，滚动条不会变透明。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=pinchgestureenabled-ios><code>pinchGestureEnabled</code> <div class="label ios">iOS</div><a href=#pinchgestureenabled-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置为 true 时，ScrollView 会允许用户使用双指缩放操作。默认值为 true。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=refreshcontrol><code>refreshControl</code><a href=#refreshcontrol class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>指定<a class="" href=/docs/0.77/refreshcontrol>RefreshControl</a>组件，用于为 ScrollView 提供下拉刷新功能。只能用于垂直视图，即<code>horizontal</code>不能为<code>true</code>。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>element</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=removeclippedsubviews><code>removeClippedSubviews</code><a href=#removeclippedsubviews class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>（实验特性）：当此属性为 true 时，屏幕之外的子视图（子视图的<code>overflow</code>样式需要设为<code>hidden</code>）会被移除。这个可以提升大列表的滚动性能。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrollenabled><code>scrollEnabled</code><a href=#scrollenabled class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 false 的时候，内容不能滚动，默认值为 true。</p>
 <p>注意即便禁止用户滚动，你也仍然可以调用<code>scrollTo</code>来滚动。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrolleventthrottle><code>scrollEventThrottle</code><a href=#scrolleventthrottle class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>限制滚动事件的触发频率，指定为毫秒时间间隔。这在响应滚动时执行昂贵操作时非常有用。值 ≤ <code>16</code> 将禁用节流，无论设备的刷新率如何。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>number<td><code>0</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrollindicatorinsets-ios><code>scrollIndicatorInsets</code> <div class="label ios">iOS</div><a href=#scrollindicatorinsets-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>滚动视图指示器距离视图边缘的距离。通常应设置为与 <code>contentInset</code> 相同的值。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>object: <code>{top: number, left: number, bottom: number, right: number}</code><td><code>{top: 0, left: 0, bottom: 0, right: 0}</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrollperftag-android><code>scrollPerfTag</code> <div class="label android">Android</div><a href=#scrollperftag-android class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>用于记录此滚动视图的滚动性能。会强制开启动量事件（见 sendMomentumEvents）。这不会在默认情况下做任何事情，你需要实现一个自定义的 native FpsListener 才能使其有用。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>string</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrolltooverflowenabled-ios><code>scrollToOverflowEnabled</code> <div class="label ios">iOS</div><a href=#scrolltooverflowenabled-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 true 时，滚动视图可以被编程地滚动超过其内容大小。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrollstotop-ios><code>scrollsToTop</code> <div class="label ios">iOS</div><a href=#scrollstotop-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 true 时，点击状态栏的时候视图会滚动到顶部。默认值为 true。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=showshorizontalscrollindicator><code>showsHorizontalScrollIndicator</code><a href=#showshorizontalscrollindicator class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当此属性为 <code>true</code> 的时候，显示一个水平方向的滚动条。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=showsverticalscrollindicator><code>showsVerticalScrollIndicator</code><a href=#showsverticalscrollindicator class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当此属性为 <code>true</code> 的时候，显示一个垂直方向的滚动条。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=snaptoalignment-ios><code>snapToAlignment</code> <div class="label ios">iOS</div><a href=#snaptoalignment-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -259,53 +872,162 @@
 <li class=""><code>'center'</code> 会将停驻点对齐到中间。</li>
 <li class=""><code>'end'</code> 会将停驻点对齐到右侧（水平）或底部（垂直）。</li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>enum(<code>'start'</code>, <code>'center'</code>, <code>'end'</code>)<td><code>'start'</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=snaptoend><code>snapToEnd</code><a href=#snaptoend class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当设置了 <code>snapToOffsets</code> 时，默认情况下，列表的末尾被视为一个停驻点。设置 <code>snapToEnd</code> 为 <code>false</code> 以禁用此行为并允许列表在它的末尾和最后一个 <code>snapToOffsets</code> 偏移量之间自由滚动。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=snaptointerval><code>snapToInterval</code><a href=#snaptointerval class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当设置时，会让滚动视图停止在 <code>snapToInterval</code> 的倍数的位置。这可以在一些子视图比滚动视图本身小的时候用于实现分页显示。需要与 <code>snapToAlignment</code> 组合使用。通常与 <code>decelerationRate="fast"</code> 一起使用。覆盖较不配置的 <code>pagingEnabled</code> 属性。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>number</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=snaptooffsets><code>snapToOffsets</code><a href=#snaptooffsets class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当设置时，会让滚动视图停止在定义的偏移量处。这可以在一些子视图比滚动视图本身小的时候用于实现分页显示。通常与 <code>decelerationRate="fast"</code> 一起使用。覆盖较不配置的 <code>pagingEnabled</code> 和 <code>snapToInterval</code> 属性。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>以数字为元素的数组</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=snaptostart><code>snapToStart</code><a href=#snaptostart class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当设置了 <code>snapToOffsets</code> 时，默认情况下，列表的开始被视为一个停驻点。设置 <code>snapToStart</code> 为 <code>false</code> 以禁用此行为并允许列表在它的开始和第一个 <code>snapToOffsets</code> 偏移量之间自由滚动。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>true</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=stickyheadercomponent><code>StickyHeaderComponent</code><a href=#stickyheadercomponent class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>一个 React 组件，用于渲染粘性头部，应与 <code>stickyHeaderIndices</code> 一起使用。如果粘性头部使用自定义变换，例如，当您希望列表具有可动画化和可隐藏的头部时，可能需要设置此组件。如果未提供组件，将使用默认的 <a href=https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js target=_blank rel="noopener noreferrer" class=""><code>ScrollViewStickyHeader</code></a> 组件。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>component, element</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=stickyheaderhiddenonscroll><code>stickyHeaderHiddenOnScroll</code><a href=#stickyheaderhiddenonscroll class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当设置为 <code>true</code> 时，粘性头部将在向下滚动列表时隐藏，当向上滚动时，它将固定在列表顶部。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>bool<td><code>false</code></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=stickyheaderindices><code>stickyHeaderIndices</code><a href=#stickyheaderindices class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>一个子视图下标的数组，用于决定哪些成员会在滚动之后固定在屏幕顶端。举个例子，传递<code>stickyHeaderIndices={[0]}</code>会让第一个成员固定在滚动视图顶端。这个属性不能和<code>horizontal={true}</code>一起使用。</p>
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td>以数字为元素的数组</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=zoomscale-ios><code>zoomScale</code> <div class="label ios">iOS</div><a href=#zoomscale-ios class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当前滚动视图内容的缩放比例。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class=table-wrapper><table><thead><tr><th>类型<th>默认值<tbody><tr><td>number<td><code>1.0</code></table></div>
 <hr/>
 <h2 class="anchor anchorTargetStickyNavbar_tleR" id=方法>方法<a href=#方法 class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=flashscrollindicators><code>flashScrollIndicators()</code><a href=#flashscrollindicators class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
-<div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockTitle_kY6l>tsx</div><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><span class=token-line style=color:#FFFFFF><span class="token function" style=color:#79b6f2>flashScrollIndicators</span><span class="token punctuation" style=color:#657b83>(</span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><br/></span></code></pre></div></div>
+<div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockTitle_kY6l>tsx</div><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><div class=token-line style=color:#FFFFFF><span class="token function" style=color:#79b6f2>flashScrollIndicators</span><span class="token punctuation" style=color:#657b83>(</span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><br/></div></code></pre></div></div>
 <p>短暂地显示滚动指示器。</p>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrollto><code>scrollTo()</code><a href=#scrollto class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
-<div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockTitle_kY6l>tsx</div><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><span class=token-line style=color:#FFFFFF><span class="token function" style=color:#79b6f2>scrollTo</span><span class="token punctuation" style=color:#657b83>(</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">  options</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">x</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>number</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> y</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>number</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> animated</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>boolean</span><span class="token punctuation" style=color:#657b83>}</span><span class="token plain"> </span><span class="token operator" style=color:#fc929e>|</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>number</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">  deprecatedX</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>number</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain">  deprecatedAnimated</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>boolean</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></span><span class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><br/></span></code></pre></div></div>
+<div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockTitle_kY6l>tsx</div><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><div class=token-line style=color:#FFFFFF><span class="token function" style=color:#79b6f2>scrollTo</span><span class="token punctuation" style=color:#657b83>(</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">  options</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">x</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>number</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> y</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>number</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"> animated</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>boolean</span><span class="token punctuation" style=color:#657b83>}</span><span class="token plain"> </span><span class="token operator" style=color:#fc929e>|</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>number</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">  deprecatedX</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>number</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain">  deprecatedAnimated</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>boolean</span><span class="token punctuation" style=color:#657b83>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token plain"></span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><br/></div></code></pre></div></div>
 <p>滚动到指定的 x, y 偏移处。第三个参数为是否启用平滑滚动动画。</p>
 <p>示例：</p>
 <p><code>scrollTo({x: 0, y: 0, animated: true})</code></p>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrolltoend><code>scrollToEnd()</code><a href=#scrolltoend class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
-<div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockTitle_kY6l>tsx</div><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><span class=token-line style=color:#FFFFFF><span class="token function" style=color:#79b6f2>scrollToEnd</span><span class="token punctuation" style=color:#657b83>(</span><span class="token plain">options</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">animated</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>boolean</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><br/></span></code></pre></div></div>
+<div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockTitle_kY6l>tsx</div><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><div class=token-line style=color:#FFFFFF><span class="token function" style=color:#79b6f2>scrollToEnd</span><span class="token punctuation" style=color:#657b83>(</span><span class="token plain">options</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token punctuation" style=color:#657b83>{</span><span class="token plain">animated</span><span class="token operator" style=color:#fc929e>?</span><span class="token operator" style=color:#fc929e>:</span><span class="token plain"> </span><span class="token builtin" style=color:#2aa198>boolean</span><span class="token punctuation" style=color:#657b83>}</span><span class="token punctuation" style=color:#657b83>)</span><span class="token punctuation" style=color:#657b83>;</span><br/></div></code></pre></div></div>
 <p>滚动到视图底部（水平方向的视图则滚动到最右边）。</p>
 <p>加上动画参数<code>scrollToEnd({animated: true})</code>则启用平滑滚动动画，或是调用<code>scrollToEnd({animated: false})</code>来立即跳转。如果不使用参数，则<code>animated</code>选项默认启用。</p>
 <hr/></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_QeZL"><a href=https://github.com/reactnativecn/react-native-website/blob/production/cnwebsite/../cndocs/scrollview.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_bHB7 aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>改进此文档</a></div><div class="col lastUpdated_ydrU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label=文档分页导航><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/0.77/refreshcontrol><div class=pagination-nav__sublabel>上一页</div><div class=pagination-nav__label>RefreshControl</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/0.77/sectionlist><div class=pagination-nav__sublabel>下一页</div><div class=pagination-nav__label>SectionList</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_jeP5 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#示例 class="table-of-contents__link toc-highlight">示例</a><li><a href=#props class="table-of-contents__link toc-highlight">Props</a><ul><li><a href=#view-props class="table-of-contents__link toc-highlight">View Props</a><li><a href=#alwaysbouncehorizontal-ios class="table-of-contents__link toc-highlight"><code>alwaysBounceHorizontal</code> <div class="label ios">iOS</div></a><li><a href=#alwaysbouncevertical-ios class="table-of-contents__link toc-highlight"><code>alwaysBounceVertical</code> <div class="label ios">iOS</div></a><li><a href=#automaticallyadjustcontentinsets-ios class="table-of-contents__link toc-highlight"><code>automaticallyAdjustContentInsets</code> <div class="label ios">iOS</div></a><li><a href=#automaticallyadjustkeyboardinsets-ios class="table-of-contents__link toc-highlight"><code>automaticallyAdjustKeyboardInsets</code> <div class="label ios">iOS</div></a><li><a href=#automaticallyadjustsscrollindicatorinsets-ios class="table-of-contents__link toc-highlight"><code>automaticallyAdjustsScrollIndicatorInsets</code> <div class="label ios">iOS</div></a><li><a href=#bounces-ios class="table-of-contents__link toc-highlight"><code>bounces</code> <div class="label ios">iOS</div></a><li><a href=#bounceszoom-ios class="table-of-contents__link toc-highlight"><code>bouncesZoom</code> <div class="label ios">iOS</div></a><li><a href=#cancancelcontenttouches-ios class="table-of-contents__link toc-highlight"><code>canCancelContentTouches</code> <div class="label ios">iOS</div></a><li><a href=#centercontent-ios class="table-of-contents__link toc-highlight"><code>centerContent</code> <div class="label ios">iOS</div></a><li><a href=#contentcontainerstyle class="table-of-contents__link toc-highlight"><code>contentContainerStyle</code></a><li><a href=#contentinset-ios class="table-of-contents__link toc-highlight"><code>contentInset</code> <div class="label ios">iOS</div></a><li><a href=#contentinsetadjustmentbehavior-ios class="table-of-contents__link toc-highlight"><code>contentInsetAdjustmentBehavior</code> <div class="label ios">iOS</div></a><li><a href=#contentoffset class="table-of-contents__link toc-highlight"><code>contentOffset</code></a><li><a href=#decelerationrate class="table-of-contents__link toc-highlight"><code>decelerationRate</code></a><li><a href=#directionallockenabled-ios class="table-of-contents__link toc-highlight"><code>directionalLockEnabled</code> <div class="label ios">iOS</div></a><li><a href=#disableintervalmomentum class="table-of-contents__link toc-highlight"><code>disableIntervalMomentum</code></a><li><a href=#disablescrollviewpanresponder class="table-of-contents__link toc-highlight"><code>disableScrollViewPanResponder</code></a><li><a href=#endfillcolor-android class="table-of-contents__link toc-highlight"><code>endFillColor</code> <div class="label android">Android</div></a><li><a href=#fadingedgelength-android class="table-of-contents__link toc-highlight"><code>fadingEdgeLength</code> <div class="label android">Android</div></a><li><a href=#horizontal class="table-of-contents__link toc-highlight"><code>horizontal</code></a><li><a href=#indicatorstyle-ios class="table-of-contents__link toc-highlight"><code>indicatorStyle</code> <div class="label ios">iOS</div></a><li><a href=#invertstickyheaders class="table-of-contents__link toc-highlight"><code>invertStickyHeaders</code></a><li><a href=#keyboarddismissmode class="table-of-contents__link toc-highlight"><code>keyboardDismissMode</code></a><li><a href=#keyboardshouldpersisttaps class="table-of-contents__link toc-highlight"><code>keyboardShouldPersistTaps</code></a><li><a href=#maintainvisiblecontentposition class="table-of-contents__link toc-highlight"><code>maintainVisibleContentPosition</code></a><li><a href=#maximumzoomscale-ios class="table-of-contents__link toc-highlight"><code>maximumZoomScale</code> <div class="label ios">iOS</div></a><li><a href=#minimumzoomscale-ios class="table-of-contents__link toc-highlight"><code>minimumZoomScale</code> <div class="label ios">iOS</div></a><li><a href=#nestedscrollenabled-android class="table-of-contents__link toc-highlight"><code>nestedScrollEnabled</code> <div class="label android">Android</div></a><li><a href=#oncontentsizechange class="table-of-contents__link toc-highlight"><code>onContentSizeChange</code></a><li><a href=#onmomentumscrollbegin class="table-of-contents__link toc-highlight"><code>onMomentumScrollBegin</code></a><li><a href=#onmomentumscrollend class="table-of-contents__link toc-highlight"><code>onMomentumScrollEnd</code></a><li><a href=#onscroll class="table-of-contents__link toc-highlight"><code>onScroll</code></a><li><a href=#onscrollbegindrag class="table-of-contents__link toc-highlight"><code>onScrollBeginDrag</code></a><li><a href=#onscrollenddrag class="table-of-contents__link toc-highlight"><code>onScrollEndDrag</code></a><li><a href=#onscrolltotop-ios class="table-of-contents__link toc-highlight"><code>onScrollToTop</code> <div class="label ios">iOS</div></a><li><a href=#overscrollmode class="table-of-contents__link toc-highlight"><code>overScrollMode</code></a><li><a href=#pagingenabled class="table-of-contents__link toc-highlight"><code>pagingEnabled</code></a><li><a href=#persistentscrollbar-android class="table-of-contents__link toc-highlight"><code>persistentScrollbar</code> <div class="label android">Android</div></a><li><a href=#pinchgestureenabled-ios class="table-of-contents__link toc-highlight"><code>pinchGestureEnabled</code> <div class="label ios">iOS</div></a><li><a href=#refreshcontrol class="table-of-contents__link toc-highlight"><code>refreshControl</code></a><li><a href=#removeclippedsubviews class="table-of-contents__link toc-highlight"><code>removeClippedSubviews</code></a><li><a href=#scrollenabled class="table-of-contents__link toc-highlight"><code>scrollEnabled</code></a><li><a href=#scrolleventthrottle class="table-of-contents__link toc-highlight"><code>scrollEventThrottle</code></a><li><a href=#scrollindicatorinsets-ios class="table-of-contents__link toc-highlight"><code>scrollIndicatorInsets</code> <div class="label ios">iOS</div></a><li><a href=#scrollperftag-android class="table-of-contents__link toc-highlight"><code>scrollPerfTag</code> <div class="label android">Android</div></a><li><a href=#scrolltooverflowenabled-ios class="table-of-contents__link toc-highlight"><code>scrollToOverflowEnabled</code> <div class="label ios">iOS</div></a><li><a href=#scrollstotop-ios class="table-of-contents__link toc-highlight"><code>scrollsToTop</code> <div class="label ios">iOS</div></a><li><a href=#showshorizontalscrollindicator class="table-of-contents__link toc-highlight"><code>showsHorizontalScrollIndicator</code></a><li><a href=#showsverticalscrollindicator class="table-of-contents__link toc-highlight"><code>showsVerticalScrollIndicator</code></a><li><a href=#snaptoalignment-ios class="table-of-contents__link toc-highlight"><code>snapToAlignment</code> <div class="label ios">iOS</div></a><li><a href=#snaptoend class="table-of-contents__link toc-highlight"><code>snapToEnd</code></a><li><a href=#snaptointerval class="table-of-contents__link toc-highlight"><code>snapToInterval</code></a><li><a href=#snaptooffsets class="table-of-contents__link toc-highlight"><code>snapToOffsets</code></a><li><a href=#snaptostart class="table-of-contents__link toc-highlight"><code>snapToStart</code></a><li><a href=#stickyheadercomponent class="table-of-contents__link toc-highlight"><code>StickyHeaderComponent</code></a><li><a href=#stickyheaderhiddenonscroll class="table-of-contents__link toc-highlight"><code>stickyHeaderHiddenOnScroll</code></a><li><a href=#stickyheaderindices class="table-of-contents__link toc-highlight"><code>stickyHeaderIndices</code></a><li><a href=#zoomscale-ios class="table-of-contents__link toc-highlight"><code>zoomScale</code> <div class="label ios">iOS</div></a></ul><li><a href=#方法 class="table-of-contents__link toc-highlight">方法</a><ul><li><a href=#flashscrollindicators class="table-of-contents__link toc-highlight"><code>flashScrollIndicators()</code></a><li><a href=#scrollto class="table-of-contents__link toc-highlight"><code>scrollTo()</code></a><li><a href=#scrolltoend class="table-of-contents__link toc-highlight"><code>scrollToEnd()</code></a></ul></ul><div class="wwads-cn wwads-vertical" data-id=58 style=max-width:227px;margin-top:20px></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>React Native 中文网 © 2026 武汉青罗网络科技有限公司
