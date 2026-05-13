@@ -6,7 +6,7 @@
     "node": ">=22"
   },
   "workspaces": [
-    "website",
+    "cnwebsite",
     "packages/*",
     "plugins/*"
   ],
