@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
 
 ---
 
-### `endFillColor` <div class="label android">Android</div>
+### `endFillColor` <div className="label android">Android</div>
 
 有时候滚动视图会占据比实际内容更多的空间。这种情况下可以使用此属性，指定以某种颜色来填充多余的空间，以避免设置背景和创建不必要的绘制开销。一般情况下并不需要这种高级优化技巧。
 
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
 
 ---
 
-### `fadingEdgeLength` <div class="label android">Android</div>
+### `fadingEdgeLength` <div className="label android">Android</div>
 
 滚动内容的边缘会逐渐淡出。
 
@@ -392,7 +392,7 @@ _仅 iOS 可用的值_
 
 ---
 
-### `nestedScrollEnabled` <div class="label android">Android</div>
+### `nestedScrollEnabled` <div className="label android">Android</div>
 
 在 Android API level 21（5.0）以上启用嵌套滚动。iOS 上默认支持嵌套滚动。
 
@@ -514,7 +514,7 @@ _仅 iOS 可用的值_
 
 ---
 
-### `persistentScrollbar` <div class="label android">Android</div>
+### `persistentScrollbar` <div className="label android">Android</div>
 
 当滚动条不使用时，滚动条不会变透明。
 
@@ -586,7 +586,7 @@ _仅 iOS 可用的值_
 
 ---
 
-### `scrollPerfTag` <div class="label android">Android</div>
+### `scrollPerfTag` <div className="label android">Android</div>
 
 用于记录此滚动视图的滚动性能。会强制开启动量事件（见 sendMomentumEvents）。这不会在默认情况下做任何事情，你需要实现一个自定义的 native FpsListener 才能使其有用。
 

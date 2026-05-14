@@ -15,6 +15,10 @@ Android 支持 10k+ 不同的手机，并被泛化以支持软件渲染：框架
 
 调试这种卡顿的第一步是回答一个基本问题：在每个 16ms 帧期间，您的时间花在哪里。为此，我们将使用 [Android Studio 中内置的系统跟踪分析器](https://developer.android.com/studio/profile)。
 
+:::note
+独立的 `systrace` 工具已从 Android platform-tools 中移除。请改用 Android Studio Profiler，它提供了相同的功能，但不是独立工具。
+:::
+
 ### 1. 收集跟踪
 
 首先，通过 USB 将表现出您想要调查的卡顿的设备连接到计算机。在 Android Studio 中打开项目的 `android` 文件夹，在右上方窗格中选择您的设备，然后[以可分析模式运行您的项目](https://developer.android.com/studio/profile#build-and-run)。
