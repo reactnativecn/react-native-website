@@ -1,72 +1,25 @@
-<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-0.74 docs-doc-page docs-doc-id-layout-props" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.1"><title data-rh=true>布局属性 · React Native 中文网</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:image content=https://reactnative.cn/img/logo-og.png /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true property=og:url content=https://reactnative.cn /><meta data-rh=true property=og:image content=img/logo-og.png /><meta data-rh=true name=docusaurus_version content=0.74 /><meta data-rh=true name=docusaurus_tag content=docs-default-0.74 /><meta data-rh=true name=docsearch:version content=0.74 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-0.74 /><meta data-rh=true property=og:title content="布局属性 · React Native 中文网"/><meta data-rh=true name=description content="更多关于这些属性的详细示例可以在Flexbox 布局页面上找到。"/><meta data-rh=true property=og:description content="更多关于这些属性的详细示例可以在Flexbox 布局页面上找到。"/><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://reactnative.cn/docs/0.74/layout-props /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.74/layout-props hreflang=en /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.74/layout-props hreflang=x-default /><link data-rh=true rel=preconnect href=https://GJGDC5L5HP-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://reactnative.cn/docs/0.74/layout-props","name":"布局属性","position":1}]}</script><link rel=preconnect href=https://www.google-analytics.com><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63485149-4","auto"),ga("send","pageview")</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63485149-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-63485149-4",{})</script><link rel=search type=application/opensearchdescription+xml title="React Native 中文网" href=/opensearch.xml><script src=//snack.expo.dev/embed.js defer></script><script src=//cdn.wwads.cn/js/makemoney.js defer></script><link rel=stylesheet href=/assets/css/styles.886f30de.css /><script src=/assets/js/runtime~main.7040f597.js defer></script><script src=/assets/js/main.a6a87529.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-0.74 docs-doc-page docs-doc-id-layout-props" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.1"><title data-rh=true>布局属性 · React Native 中文网</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:image content=https://reactnative.cn/img/logo-og.png /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true property=og:url content=https://reactnative.cn /><meta data-rh=true property=og:image content=img/logo-og.png /><meta data-rh=true name=docusaurus_version content=0.74 /><meta data-rh=true name=docusaurus_tag content=docs-default-0.74 /><meta data-rh=true name=docsearch:version content=0.74 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-0.74 /><meta data-rh=true property=og:title content="布局属性 · React Native 中文网"/><meta data-rh=true name=description content="更多关于这些属性的详细示例可以在Flexbox 布局页面上找到。"/><meta data-rh=true property=og:description content="更多关于这些属性的详细示例可以在Flexbox 布局页面上找到。"/><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://reactnative.cn/docs/0.74/layout-props /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.74/layout-props hreflang=en /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.74/layout-props hreflang=x-default /><link data-rh=true rel=preconnect href=https://GJGDC5L5HP-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://reactnative.cn/docs/0.74/layout-props","name":"布局属性","position":1}]}</script><link rel=preconnect href=https://www.google-analytics.com><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63485149-4","auto"),ga("send","pageview")</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63485149-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-63485149-4",{})</script><link rel=search type=application/opensearchdescription+xml title="React Native 中文网" href=/opensearch.xml><script src=//snack.expo.dev/embed.js defer></script><script src=//cdn.wwads.cn/js/makemoney.js defer></script><link rel=stylesheet href=/assets/css/styles.a8925702.css /><script src=/assets/js/runtime~main.8e05a5a1.js defer></script><script src=/assets/js/main.86489f66.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-714")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss-714")}catch(t){}return!1}())</script><div id=__docusaurus><link rel=preload as=image href=/img/header_logo.svg /><div role=region aria-label=跳到主要内容><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>跳到主要内容</a></div><div class="theme-announcement-bar announcementBar_zJRd" role=banner><div class=announcementBarPlaceholder_NpUd></div><div class="content_bSb_ announcementBarContent_t7IR"><a href=https://ai.cresc.dev target=_blank rel="noopener noreferrer">AI 中转站</a>：纯正官方 GPT-5.5 与 Claude Opus 4.7 模型，价格实惠、服务稳定、绝不掺水、数据安全。</div><button type=button aria-label=Close class="clean-btn close closeButton_J5rP announcementBarClose_Jjdj"><svg viewBox="0 0 15 15" width=14 height=14><g stroke=currentColor stroke-width=3.1><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"/></g></svg></button></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--dark_yETr"/></div><b class="navbar__title text--truncate">React Native 中文网</b></a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/docs/0.74/layout-props>0.74</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/next/layout-props>Next</a><li><a class=dropdown__link href=/docs/layout-props>0.85</a><li><a class=dropdown__link href=/docs/0.84/layout-props>0.84</a><li><a class=dropdown__link href=/docs/0.83/layout-props>0.83</a><li><a class=dropdown__link href=/docs/0.82/layout-props>0.82</a><li><a class=dropdown__link href=/docs/0.81/layout-props>0.81</a><li><a class=dropdown__link href=/docs/0.80/layout-props>0.80</a><li><a class=dropdown__link href=/docs/0.79/layout-props>0.79</a><li><a class=dropdown__link href=/docs/0.78/layout-props>0.78</a><li><a class=dropdown__link href=/docs/0.77/layout-props>0.77</a><li><a class=dropdown__link href=/docs/0.76/layout-props>0.76</a><li><a class=dropdown__link href=/docs/0.75/layout-props>0.75</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.74/layout-props>0.74</a><li><a class=dropdown__link href=/docs/0.73/layout-props>0.73</a><li><a class=dropdown__link href=/docs/0.72/layout-props>0.72</a><li><a class=dropdown__link href=/docs/0.71/layout-props>0.71</a><li><a class=dropdown__link href=/docs/0.70/layout-props>0.70</a><li><a class=dropdown__link href=/versions>所有版本</a></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>开发文档</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/0.74/getting-started>入门指南</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.74/components-and-apis>组件</a><li><a class=dropdown__link href=/docs/0.74/accessibilityinfo>API</a><li><a class=dropdown__link href=/architecture/overview>架构</a></ul></div><a href=//github.com/reactnativecn/react-native-website/issues target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">讨论<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a href=//pushy.reactnative.cn target=_blank rel="noopener noreferrer" class="navbar__item navbar__link hot-link">热更新<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a class="navbar__item navbar__link" href=/about>关于</a><a href=//github.com/facebook/react-native target=_blank rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link" aria-label="GitHub repository"></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m darkNavbarColorModeToggle_m8pZ" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1 menuWithAnnouncementBar_YufC"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.74/components-and-apis><span title=核心组件 class=categoryLinkLabel_ufhF>核心组件</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/0.74/image-style-props><span title=Props class=categoryLinkLabel_ufhF>Props</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.74/image-style-props><span title=图片样式属性 class=linkLabel_fEdy>图片样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/0.74/layout-props><span title=布局属性 class=linkLabel_fEdy>布局属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.74/shadow-props><span title=阴影样式属性 class=linkLabel_fEdy>阴影样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.74/text-style-props><span title="Text 样式属性" class=linkLabel_fEdy>Text 样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.74/view-style-props><span title="View 样式属性" class=linkLabel_fEdy>View 样式属性</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.74/layoutevent><span title=内部对象类型 class=categoryLinkLabel_ufhF>内部对象类型</span></a></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role=alert>此为 <!-- -->React Native 中文网<!-- --> <b>0.74</b> 版的文档，现已不再积极维护。<div class=margin-top--md>最新的文档请参阅 <b><a href=/docs/layout-props>最新版本</a></b> (<!-- -->0.85<!-- -->)。</div></div><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Props</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>布局属性</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 0.74</span><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>布局属性</h1></header><p>import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';</p>
-<blockquote>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-714")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss-714")}catch(t){}return!1}())</script><div id=__docusaurus><link rel=preload as=image href=/img/header_logo.svg /><div role=region aria-label=跳到主要内容><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>跳到主要内容</a></div><div class="theme-announcement-bar announcementBar_zJRd" role=banner><div class=announcementBarPlaceholder_NpUd></div><div class="content_bSb_ announcementBarContent_t7IR">自营<a href=https://ai.cresc.dev target=_blank rel="noopener noreferrer">AI 中转</a>：最先进的满血 GPT-5.5 与 Opus 4.7 直连，稳定安全绝不掺水，限时优惠低于一折，企业采购可开票</div><button type=button aria-label=Close class="clean-btn close closeButton_J5rP announcementBarClose_Jjdj"><svg viewBox="0 0 15 15" width=14 height=14><g stroke=currentColor stroke-width=3.1><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"/></g></svg></button></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--dark_yETr"/></div><b class="navbar__title text--truncate">React Native 中文网</b></a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/docs/0.74/layout-props>0.74</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/next/layout-props>Next</a><li><a class=dropdown__link href=/docs/layout-props>0.85</a><li><a class=dropdown__link href=/docs/0.84/layout-props>0.84</a><li><a class=dropdown__link href=/docs/0.83/layout-props>0.83</a><li><a class=dropdown__link href=/docs/0.82/layout-props>0.82</a><li><a class=dropdown__link href=/docs/0.81/layout-props>0.81</a><li><a class=dropdown__link href=/docs/0.80/layout-props>0.80</a><li><a class=dropdown__link href=/docs/0.79/layout-props>0.79</a><li><a class=dropdown__link href=/docs/0.78/layout-props>0.78</a><li><a class=dropdown__link href=/docs/0.77/layout-props>0.77</a><li><a class=dropdown__link href=/docs/0.76/layout-props>0.76</a><li><a class=dropdown__link href=/docs/0.75/layout-props>0.75</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.74/layout-props>0.74</a><li><a class=dropdown__link href=/docs/0.73/layout-props>0.73</a><li><a class=dropdown__link href=/docs/0.72/layout-props>0.72</a><li><a class=dropdown__link href=/docs/0.71/layout-props>0.71</a><li><a class=dropdown__link href=/docs/0.70/layout-props>0.70</a><li><a class=dropdown__link href=/versions>所有版本</a></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>开发文档</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/0.74/getting-started>入门指南</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.74/components-and-apis>组件</a><li><a class=dropdown__link href=/docs/0.74/accessibilityinfo>API</a><li><a class=dropdown__link href=/architecture/overview>架构</a></ul></div><a href=//github.com/reactnativecn/react-native-website/issues target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">讨论<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a href=//pushy.reactnative.cn target=_blank rel="noopener noreferrer" class="navbar__item navbar__link hot-link">热更新<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a class="navbar__item navbar__link" href=/about>关于</a><a href=//github.com/facebook/react-native target=_blank rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link" aria-label="GitHub repository"></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m darkNavbarColorModeToggle_m8pZ" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1 menuWithAnnouncementBar_YufC"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.74/components-and-apis><span title=核心组件 class=categoryLinkLabel_ufhF>核心组件</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/0.74/image-style-props><span title=Props class=categoryLinkLabel_ufhF>Props</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.74/image-style-props><span title=图片样式属性 class=linkLabel_fEdy>图片样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/0.74/layout-props><span title=布局属性 class=linkLabel_fEdy>布局属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.74/shadow-props><span title=阴影样式属性 class=linkLabel_fEdy>阴影样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.74/text-style-props><span title="Text 样式属性" class=linkLabel_fEdy>Text 样式属性</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.74/view-style-props><span title="View 样式属性" class=linkLabel_fEdy>View 样式属性</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.74/layoutevent><span title=内部对象类型 class=categoryLinkLabel_ufhF>内部对象类型</span></a></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role=alert>此为 <!-- -->React Native 中文网<!-- --> <b>0.74</b> 版的文档，现已不再积极维护。<div class=margin-top--md>最新的文档请参阅 <b><a href=/docs/layout-props>最新版本</a></b> (<!-- -->0.85<!-- -->)。</div></div><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Props</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>布局属性</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 0.74</span><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>布局属性</h1></header><blockquote>
 <p>更多关于这些属性的详细示例可以在<a class="" href=/docs/0.74/flexbox>Flexbox 布局</a>页面上找到。</p>
 </blockquote>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=示例>示例<a href=#示例 class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>以下示例展示了不同属性如何影响或塑造 React Native 布局。您可以尝试添加或删除 UI 中的正方形，同时更改属性<code>flexWrap</code>的值。</p>
-<tabs groupid=language querystring="" defaultvalue={constants.defaultSnackLanguage} values={constants.snackLanguages}>
-<tabitem value=javascript>
-<div class=snack-player data-snack-name="LayoutProps Example" data-snack-description="Example usage" data-snack-files="%7B%22App.js%22%3A%7B%22type%22%3A%22CODE%22%2C%22contents%22%3A%22import%20React%2C%20%7BuseState%7D%20from%20'react'%3B%5Cnimport%20%7B%5Cn%20%20Button%2C%5Cn%20%20ScrollView%2C%5Cn%20%20StatusBar%2C%5Cn%20%20StyleSheet%2C%5Cn%20%20Text%2C%5Cn%20%20View%2C%5Cn%7D%20from%20'react-native'%3B%5Cn%5Cnconst%20App%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20const%20flexDirections%20%3D%20%5B'row'%2C%20'row-reverse'%2C%20'column'%2C%20'column-reverse'%5D%3B%5Cn%20%20const%20justifyContents%20%3D%20%5B%5Cn%20%20%20%20'flex-start'%2C%5Cn%20%20%20%20'flex-end'%2C%5Cn%20%20%20%20'center'%2C%5Cn%20%20%20%20'space-between'%2C%5Cn%20%20%20%20'space-around'%2C%5Cn%20%20%20%20'space-evenly'%2C%5Cn%20%20%5D%3B%5Cn%20%20const%20alignItemsArr%20%3D%20%5B%5Cn%20%20%20%20'flex-start'%2C%5Cn%20%20%20%20'flex-end'%2C%5Cn%20%20%20%20'center'%2C%5Cn%20%20%20%20'stretch'%2C%5Cn%20%20%20%20'baseline'%2C%5Cn%20%20%5D%3B%5Cn%20%20const%20wraps%20%3D%20%5B'nowrap'%2C%20'wrap'%2C%20'wrap-reverse'%5D%3B%5Cn%20%20const%20directions%20%3D%20%5B'inherit'%2C%20'ltr'%2C%20'rtl'%5D%3B%5Cn%20%20const%20%5BflexDirection%2C%20setFlexDirection%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BjustifyContent%2C%20setJustifyContent%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BalignItems%2C%20setAlignItems%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5Bdirection%2C%20setDirection%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5Bwrap%2C%20setWrap%5D%20%3D%20useState(0)%3B%5Cn%5Cn%20%20const%20hookedStyles%20%3D%20%7B%5Cn%20%20%20%20flexDirection%3A%20flexDirections%5BflexDirection%5D%2C%5Cn%20%20%20%20justifyContent%3A%20justifyContents%5BjustifyContent%5D%2C%5Cn%20%20%20%20alignItems%3A%20alignItemsArr%5BalignItems%5D%2C%5Cn%20%20%20%20direction%3A%20directions%5Bdirection%5D%2C%5Cn%20%20%20%20flexWrap%3A%20wraps%5Bwrap%5D%2C%5Cn%20%20%7D%3B%5Cn%5Cn%20%20const%20changeSetting%20%3D%20(value%2C%20options%2C%20setterFunction)%20%3D%3E%20%7B%5Cn%20%20%20%20if%20(value%20%3D%3D%3D%20options.length%20-%201)%20%7B%5Cn%20%20%20%20%20%20setterFunction(0)%3B%5Cn%20%20%20%20%20%20return%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20setterFunction(value%20%2B%201)%3B%5Cn%20%20%7D%3B%5Cn%20%20const%20%5Bsquares%2C%20setSquares%5D%20%3D%20useState(%5B%3CSquare%20%2F%3E%2C%20%3CSquare%20%2F%3E%2C%20%3CSquare%20%2F%3E%5D)%3B%5Cn%20%20return%20(%5Cn%20%20%20%20%3C%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%7BpaddingTop%3A%20StatusBar.currentHeight%7D%7D%20%2F%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%5Bstyles.container%2C%20styles.playingSpace%2C%20hookedStyles%5D%7D%3E%5Cn%20%20%20%20%20%20%20%20%7Bsquares.map(elem%20%3D%3E%20elem)%7D%5Cn%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%3CScrollView%20style%3D%7Bstyles.container%7D%3E%5Cn%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.controlSpace%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Flex%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(flexDirection%2C%20flexDirections%2C%20setFlexDirection)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BflexDirections%5BflexDirection%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Justify%20Content%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20justifyContent%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20justifyContents%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setJustifyContent%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BjustifyContents%5BjustifyContent%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Align%20Items%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(alignItems%2C%20alignItemsArr%2C%20setAlignItems)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BalignItemsArr%5BalignItems%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20changeSetting(direction%2C%20directions%2C%20setDirection)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7Bdirections%5Bdirection%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Flex%20Wrap%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20changeSetting(wrap%2C%20wraps%2C%20setWrap)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7Bwraps%5Bwrap%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Add%20Square%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20setSquares(%5B...squares%2C%20%3CSquare%20%2F%3E%5D)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Delete%20Square%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setSquares(squares.filter((v%2C%20i)%20%3D%3E%20i%20!%3D%3D%20squares.length%20-%201))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%3C%2FScrollView%3E%5Cn%20%20%20%20%3C%2F%3E%5Cn%20%20)%3B%5Cn%7D%3B%5Cn%5Cnconst%20styles%20%3D%20StyleSheet.create(%7B%5Cn%20%20container%3A%20%7B%5Cn%20%20%20%20height%3A%20'50%25'%2C%5Cn%20%20%7D%2C%5Cn%20%20playingSpace%3A%20%7B%5Cn%20%20%20%20backgroundColor%3A%20'white'%2C%5Cn%20%20%20%20borderColor%3A%20'blue'%2C%5Cn%20%20%20%20borderWidth%3A%203%2C%5Cn%20%20%7D%2C%5Cn%20%20controlSpace%3A%20%7B%5Cn%20%20%20%20flexDirection%3A%20'row'%2C%5Cn%20%20%20%20flexWrap%3A%20'wrap'%2C%5Cn%20%20%20%20backgroundColor%3A%20'%23F5F5F5'%2C%5Cn%20%20%7D%2C%5Cn%20%20buttonView%3A%20%7B%5Cn%20%20%20%20width%3A%20'50%25'%2C%5Cn%20%20%20%20padding%3A%2010%2C%5Cn%20%20%7D%2C%5Cn%20%20text%3A%20%7BtextAlign%3A%20'center'%7D%2C%5Cn%7D)%3B%5Cn%5Cnconst%20Square%20%3D%20()%20%3D%3E%20(%5Cn%20%20%3CView%5Cn%20%20%20%20style%3D%7B%7B%5Cn%20%20%20%20%20%20width%3A%2050%2C%5Cn%20%20%20%20%20%20height%3A%2050%2C%5Cn%20%20%20%20%20%20backgroundColor%3A%20randomHexColor()%2C%5Cn%20%20%20%20%7D%7D%5Cn%20%20%2F%3E%5Cn)%3B%5Cn%5Cnconst%20randomHexColor%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20return%20'%23000000'.replace(%2F0%2Fg%2C%20()%20%3D%3E%20%7B%5Cn%20%20%20%20return%20Math.round(Math.random()%20*%2016).toString(16)%3B%5Cn%20%20%7D)%3B%5Cn%7D%3B%5Cn%5Cnexport%20default%20App%3B%22%7D%7D" data-snack-dependencies=react-native-safe-area-context data-snack-platform=web data-snack-supported-platforms=ios,android,web data-snack-theme=light data-snack-preview=true data-snack-loading=lazy data-snack-device-appearance=light data-snack-device-frame=false></div>
-</tabitem>
-<tabitem value=typescript>
-<div class=snack-player data-snack-name="LayoutProps Example" data-snack-description="Example usage" data-snack-files="%7B%22App.tsx%22%3A%7B%22type%22%3A%22CODE%22%2C%22contents%22%3A%22import%20React%2C%20%7BuseState%7D%20from%20'react'%3B%5Cnimport%20%7B%5Cn%20%20Button%2C%5Cn%20%20ScrollView%2C%5Cn%20%20StatusBar%2C%5Cn%20%20StyleSheet%2C%5Cn%20%20Text%2C%5Cn%20%20View%2C%5Cn%7D%20from%20'react-native'%3B%5Cn%5Cnconst%20App%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20const%20flexDirections%20%3D%20%5B%5Cn%20%20%20%20'row'%2C%5Cn%20%20%20%20'row-reverse'%2C%5Cn%20%20%20%20'column'%2C%5Cn%20%20%20%20'column-reverse'%2C%5Cn%20%20%5D%20as%20const%3B%5Cn%20%20const%20justifyContents%20%3D%20%5B%5Cn%20%20%20%20'flex-start'%2C%5Cn%20%20%20%20'flex-end'%2C%5Cn%20%20%20%20'center'%2C%5Cn%20%20%20%20'space-between'%2C%5Cn%20%20%20%20'space-around'%2C%5Cn%20%20%20%20'space-evenly'%2C%5Cn%20%20%5D%20as%20const%3B%5Cn%20%20const%20alignItemsArr%20%3D%20%5B%5Cn%20%20%20%20'flex-start'%2C%5Cn%20%20%20%20'flex-end'%2C%5Cn%20%20%20%20'center'%2C%5Cn%20%20%20%20'stretch'%2C%5Cn%20%20%20%20'baseline'%2C%5Cn%20%20%5D%20as%20const%3B%5Cn%20%20const%20wraps%20%3D%20%5B'nowrap'%2C%20'wrap'%2C%20'wrap-reverse'%5D%20as%20const%3B%5Cn%20%20const%20directions%20%3D%20%5B'inherit'%2C%20'ltr'%2C%20'rtl'%5D%20as%20const%3B%5Cn%20%20const%20%5BflexDirection%2C%20setFlexDirection%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BjustifyContent%2C%20setJustifyContent%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BalignItems%2C%20setAlignItems%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5Bdirection%2C%20setDirection%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5Bwrap%2C%20setWrap%5D%20%3D%20useState(0)%3B%5Cn%5Cn%20%20const%20hookedStyles%20%3D%20%7B%5Cn%20%20%20%20flexDirection%3A%20flexDirections%5BflexDirection%5D%2C%5Cn%20%20%20%20justifyContent%3A%20justifyContents%5BjustifyContent%5D%2C%5Cn%20%20%20%20alignItems%3A%20alignItemsArr%5BalignItems%5D%2C%5Cn%20%20%20%20direction%3A%20directions%5Bdirection%5D%2C%5Cn%20%20%20%20flexWrap%3A%20wraps%5Bwrap%5D%2C%5Cn%20%20%7D%3B%5Cn%5Cn%20%20const%20changeSetting%20%3D%20(%5Cn%20%20%20%20value%3A%20number%2C%5Cn%20%20%20%20options%3A%20readonly%20unknown%5B%5D%2C%5Cn%20%20%20%20setterFunction%3A%20(index%3A%20number)%20%3D%3E%20void%2C%5Cn%20%20)%20%3D%3E%20%7B%5Cn%20%20%20%20if%20(value%20%3D%3D%3D%20options.length%20-%201)%20%7B%5Cn%20%20%20%20%20%20setterFunction(0)%3B%5Cn%20%20%20%20%20%20return%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20setterFunction(value%20%2B%201)%3B%5Cn%20%20%7D%3B%5Cn%20%20const%20%5Bsquares%2C%20setSquares%5D%20%3D%20useState(%5B%3CSquare%20%2F%3E%2C%20%3CSquare%20%2F%3E%2C%20%3CSquare%20%2F%3E%5D)%3B%5Cn%20%20return%20(%5Cn%20%20%20%20%3C%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%7BpaddingTop%3A%20StatusBar.currentHeight%7D%7D%20%2F%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%5Bstyles.container%2C%20styles.playingSpace%2C%20hookedStyles%5D%7D%3E%5Cn%20%20%20%20%20%20%20%20%7Bsquares.map(elem%20%3D%3E%20elem)%7D%5Cn%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%3CScrollView%20style%3D%7Bstyles.container%7D%3E%5Cn%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.controlSpace%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Flex%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(flexDirection%2C%20flexDirections%2C%20setFlexDirection)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BflexDirections%5BflexDirection%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Justify%20Content%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20justifyContent%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20justifyContents%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setJustifyContent%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BjustifyContents%5BjustifyContent%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Align%20Items%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(alignItems%2C%20alignItemsArr%2C%20setAlignItems)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BalignItemsArr%5BalignItems%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20changeSetting(direction%2C%20directions%2C%20setDirection)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7Bdirections%5Bdirection%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Flex%20Wrap%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20changeSetting(wrap%2C%20wraps%2C%20setWrap)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7Bwraps%5Bwrap%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Add%20Square%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20setSquares(%5B...squares%2C%20%3CSquare%20%2F%3E%5D)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Delete%20Square%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setSquares(squares.filter((v%2C%20i)%20%3D%3E%20i%20!%3D%3D%20squares.length%20-%201))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%3C%2FScrollView%3E%5Cn%20%20%20%20%3C%2F%3E%5Cn%20%20)%3B%5Cn%7D%3B%5Cn%5Cnconst%20styles%20%3D%20StyleSheet.create(%7B%5Cn%20%20container%3A%20%7B%5Cn%20%20%20%20height%3A%20'50%25'%2C%5Cn%20%20%7D%2C%5Cn%20%20playingSpace%3A%20%7B%5Cn%20%20%20%20backgroundColor%3A%20'white'%2C%5Cn%20%20%20%20borderColor%3A%20'blue'%2C%5Cn%20%20%20%20borderWidth%3A%203%2C%5Cn%20%20%7D%2C%5Cn%20%20controlSpace%3A%20%7B%5Cn%20%20%20%20flexDirection%3A%20'row'%2C%5Cn%20%20%20%20flexWrap%3A%20'wrap'%2C%5Cn%20%20%20%20backgroundColor%3A%20'%23F5F5F5'%2C%5Cn%20%20%7D%2C%5Cn%20%20buttonView%3A%20%7B%5Cn%20%20%20%20width%3A%20'50%25'%2C%5Cn%20%20%20%20padding%3A%2010%2C%5Cn%20%20%7D%2C%5Cn%20%20text%3A%20%7BtextAlign%3A%20'center'%7D%2C%5Cn%7D)%3B%5Cn%5Cnconst%20Square%20%3D%20()%20%3D%3E%20(%5Cn%20%20%3CView%5Cn%20%20%20%20style%3D%7B%7B%5Cn%20%20%20%20%20%20width%3A%2050%2C%5Cn%20%20%20%20%20%20height%3A%2050%2C%5Cn%20%20%20%20%20%20backgroundColor%3A%20randomHexColor()%2C%5Cn%20%20%20%20%7D%7D%5Cn%20%20%2F%3E%5Cn)%3B%5Cn%5Cnconst%20randomHexColor%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20return%20'%23000000'.replace(%2F0%2Fg%2C%20()%20%3D%3E%20%7B%5Cn%20%20%20%20return%20Math.round(Math.random()%20*%2016).toString(16)%3B%5Cn%20%20%7D)%3B%5Cn%7D%3B%5Cn%5Cnexport%20default%20App%3B%22%7D%7D" data-snack-dependencies=react-native-safe-area-context data-snack-platform=web data-snack-supported-platforms=ios,android,web data-snack-theme=light data-snack-preview=true data-snack-loading=lazy data-snack-device-appearance=light data-snack-device-frame=false></div>
-</tabitem>
-</tabs>
+<div class="theme-tabs-container tabs-container tabList_J5MA"><ul role=tablist aria-orientation=horizontal class=tabs><li role=tab tabindex=0 aria-selected=true class="tabs__item tabItem_l0OV tabs__item--active">TypeScript<li role=tab tabindex=-1 aria-selected=false class="tabs__item tabItem_l0OV">JavaScript</ul><div class=margin-top--md><div role=tabpanel class=tabItem_wHwb hidden><div class=snack-player data-snack-name="LayoutProps Example" data-snack-description="Example usage" data-snack-files="%7B%22App.js%22%3A%7B%22type%22%3A%22CODE%22%2C%22contents%22%3A%22import%20React%2C%20%7BuseState%7D%20from%20'react'%3B%5Cnimport%20%7B%5Cn%20%20Button%2C%5Cn%20%20ScrollView%2C%5Cn%20%20StatusBar%2C%5Cn%20%20StyleSheet%2C%5Cn%20%20Text%2C%5Cn%20%20View%2C%5Cn%7D%20from%20'react-native'%3B%5Cn%5Cnconst%20App%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20const%20flexDirections%20%3D%20%5B'row'%2C%20'row-reverse'%2C%20'column'%2C%20'column-reverse'%5D%3B%5Cn%20%20const%20justifyContents%20%3D%20%5B%5Cn%20%20%20%20'flex-start'%2C%5Cn%20%20%20%20'flex-end'%2C%5Cn%20%20%20%20'center'%2C%5Cn%20%20%20%20'space-between'%2C%5Cn%20%20%20%20'space-around'%2C%5Cn%20%20%20%20'space-evenly'%2C%5Cn%20%20%5D%3B%5Cn%20%20const%20alignItemsArr%20%3D%20%5B%5Cn%20%20%20%20'flex-start'%2C%5Cn%20%20%20%20'flex-end'%2C%5Cn%20%20%20%20'center'%2C%5Cn%20%20%20%20'stretch'%2C%5Cn%20%20%20%20'baseline'%2C%5Cn%20%20%5D%3B%5Cn%20%20const%20wraps%20%3D%20%5B'nowrap'%2C%20'wrap'%2C%20'wrap-reverse'%5D%3B%5Cn%20%20const%20directions%20%3D%20%5B'inherit'%2C%20'ltr'%2C%20'rtl'%5D%3B%5Cn%20%20const%20%5BflexDirection%2C%20setFlexDirection%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BjustifyContent%2C%20setJustifyContent%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BalignItems%2C%20setAlignItems%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5Bdirection%2C%20setDirection%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5Bwrap%2C%20setWrap%5D%20%3D%20useState(0)%3B%5Cn%5Cn%20%20const%20hookedStyles%20%3D%20%7B%5Cn%20%20%20%20flexDirection%3A%20flexDirections%5BflexDirection%5D%2C%5Cn%20%20%20%20justifyContent%3A%20justifyContents%5BjustifyContent%5D%2C%5Cn%20%20%20%20alignItems%3A%20alignItemsArr%5BalignItems%5D%2C%5Cn%20%20%20%20direction%3A%20directions%5Bdirection%5D%2C%5Cn%20%20%20%20flexWrap%3A%20wraps%5Bwrap%5D%2C%5Cn%20%20%7D%3B%5Cn%5Cn%20%20const%20changeSetting%20%3D%20(value%2C%20options%2C%20setterFunction)%20%3D%3E%20%7B%5Cn%20%20%20%20if%20(value%20%3D%3D%3D%20options.length%20-%201)%20%7B%5Cn%20%20%20%20%20%20setterFunction(0)%3B%5Cn%20%20%20%20%20%20return%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20setterFunction(value%20%2B%201)%3B%5Cn%20%20%7D%3B%5Cn%20%20const%20%5Bsquares%2C%20setSquares%5D%20%3D%20useState(%5B%3CSquare%20%2F%3E%2C%20%3CSquare%20%2F%3E%2C%20%3CSquare%20%2F%3E%5D)%3B%5Cn%20%20return%20(%5Cn%20%20%20%20%3C%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%7BpaddingTop%3A%20StatusBar.currentHeight%7D%7D%20%2F%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%5Bstyles.container%2C%20styles.playingSpace%2C%20hookedStyles%5D%7D%3E%5Cn%20%20%20%20%20%20%20%20%7Bsquares.map(elem%20%3D%3E%20elem)%7D%5Cn%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%3CScrollView%20style%3D%7Bstyles.container%7D%3E%5Cn%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.controlSpace%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Flex%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(flexDirection%2C%20flexDirections%2C%20setFlexDirection)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BflexDirections%5BflexDirection%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Justify%20Content%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20justifyContent%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20justifyContents%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setJustifyContent%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BjustifyContents%5BjustifyContent%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Align%20Items%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(alignItems%2C%20alignItemsArr%2C%20setAlignItems)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BalignItemsArr%5BalignItems%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20changeSetting(direction%2C%20directions%2C%20setDirection)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7Bdirections%5Bdirection%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Flex%20Wrap%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20changeSetting(wrap%2C%20wraps%2C%20setWrap)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7Bwraps%5Bwrap%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Add%20Square%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20setSquares(%5B...squares%2C%20%3CSquare%20%2F%3E%5D)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Delete%20Square%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setSquares(squares.filter((v%2C%20i)%20%3D%3E%20i%20!%3D%3D%20squares.length%20-%201))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%3C%2FScrollView%3E%5Cn%20%20%20%20%3C%2F%3E%5Cn%20%20)%3B%5Cn%7D%3B%5Cn%5Cnconst%20styles%20%3D%20StyleSheet.create(%7B%5Cn%20%20container%3A%20%7B%5Cn%20%20%20%20height%3A%20'50%25'%2C%5Cn%20%20%7D%2C%5Cn%20%20playingSpace%3A%20%7B%5Cn%20%20%20%20backgroundColor%3A%20'white'%2C%5Cn%20%20%20%20borderColor%3A%20'blue'%2C%5Cn%20%20%20%20borderWidth%3A%203%2C%5Cn%20%20%7D%2C%5Cn%20%20controlSpace%3A%20%7B%5Cn%20%20%20%20flexDirection%3A%20'row'%2C%5Cn%20%20%20%20flexWrap%3A%20'wrap'%2C%5Cn%20%20%20%20backgroundColor%3A%20'%23F5F5F5'%2C%5Cn%20%20%7D%2C%5Cn%20%20buttonView%3A%20%7B%5Cn%20%20%20%20width%3A%20'50%25'%2C%5Cn%20%20%20%20padding%3A%2010%2C%5Cn%20%20%7D%2C%5Cn%20%20text%3A%20%7BtextAlign%3A%20'center'%7D%2C%5Cn%7D)%3B%5Cn%5Cnconst%20Square%20%3D%20()%20%3D%3E%20(%5Cn%20%20%3CView%5Cn%20%20%20%20style%3D%7B%7B%5Cn%20%20%20%20%20%20width%3A%2050%2C%5Cn%20%20%20%20%20%20height%3A%2050%2C%5Cn%20%20%20%20%20%20backgroundColor%3A%20randomHexColor()%2C%5Cn%20%20%20%20%7D%7D%5Cn%20%20%2F%3E%5Cn)%3B%5Cn%5Cnconst%20randomHexColor%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20return%20'%23000000'.replace(%2F0%2Fg%2C%20()%20%3D%3E%20%7B%5Cn%20%20%20%20return%20Math.round(Math.random()%20*%2016).toString(16)%3B%5Cn%20%20%7D)%3B%5Cn%7D%3B%5Cn%5Cnexport%20default%20App%3B%22%7D%7D" data-snack-dependencies=react-native-safe-area-context data-snack-platform=web data-snack-supported-platforms=ios,android,web data-snack-theme=light data-snack-preview=true data-snack-loading=lazy data-snack-device-appearance=light data-snack-device-frame=false></div></div><div role=tabpanel class=tabItem_wHwb><div class=snack-player data-snack-name="LayoutProps Example" data-snack-description="Example usage" data-snack-files="%7B%22App.tsx%22%3A%7B%22type%22%3A%22CODE%22%2C%22contents%22%3A%22import%20React%2C%20%7BuseState%7D%20from%20'react'%3B%5Cnimport%20%7B%5Cn%20%20Button%2C%5Cn%20%20ScrollView%2C%5Cn%20%20StatusBar%2C%5Cn%20%20StyleSheet%2C%5Cn%20%20Text%2C%5Cn%20%20View%2C%5Cn%7D%20from%20'react-native'%3B%5Cn%5Cnconst%20App%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20const%20flexDirections%20%3D%20%5B%5Cn%20%20%20%20'row'%2C%5Cn%20%20%20%20'row-reverse'%2C%5Cn%20%20%20%20'column'%2C%5Cn%20%20%20%20'column-reverse'%2C%5Cn%20%20%5D%20as%20const%3B%5Cn%20%20const%20justifyContents%20%3D%20%5B%5Cn%20%20%20%20'flex-start'%2C%5Cn%20%20%20%20'flex-end'%2C%5Cn%20%20%20%20'center'%2C%5Cn%20%20%20%20'space-between'%2C%5Cn%20%20%20%20'space-around'%2C%5Cn%20%20%20%20'space-evenly'%2C%5Cn%20%20%5D%20as%20const%3B%5Cn%20%20const%20alignItemsArr%20%3D%20%5B%5Cn%20%20%20%20'flex-start'%2C%5Cn%20%20%20%20'flex-end'%2C%5Cn%20%20%20%20'center'%2C%5Cn%20%20%20%20'stretch'%2C%5Cn%20%20%20%20'baseline'%2C%5Cn%20%20%5D%20as%20const%3B%5Cn%20%20const%20wraps%20%3D%20%5B'nowrap'%2C%20'wrap'%2C%20'wrap-reverse'%5D%20as%20const%3B%5Cn%20%20const%20directions%20%3D%20%5B'inherit'%2C%20'ltr'%2C%20'rtl'%5D%20as%20const%3B%5Cn%20%20const%20%5BflexDirection%2C%20setFlexDirection%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BjustifyContent%2C%20setJustifyContent%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5BalignItems%2C%20setAlignItems%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5Bdirection%2C%20setDirection%5D%20%3D%20useState(0)%3B%5Cn%20%20const%20%5Bwrap%2C%20setWrap%5D%20%3D%20useState(0)%3B%5Cn%5Cn%20%20const%20hookedStyles%20%3D%20%7B%5Cn%20%20%20%20flexDirection%3A%20flexDirections%5BflexDirection%5D%2C%5Cn%20%20%20%20justifyContent%3A%20justifyContents%5BjustifyContent%5D%2C%5Cn%20%20%20%20alignItems%3A%20alignItemsArr%5BalignItems%5D%2C%5Cn%20%20%20%20direction%3A%20directions%5Bdirection%5D%2C%5Cn%20%20%20%20flexWrap%3A%20wraps%5Bwrap%5D%2C%5Cn%20%20%7D%3B%5Cn%5Cn%20%20const%20changeSetting%20%3D%20(%5Cn%20%20%20%20value%3A%20number%2C%5Cn%20%20%20%20options%3A%20readonly%20unknown%5B%5D%2C%5Cn%20%20%20%20setterFunction%3A%20(index%3A%20number)%20%3D%3E%20void%2C%5Cn%20%20)%20%3D%3E%20%7B%5Cn%20%20%20%20if%20(value%20%3D%3D%3D%20options.length%20-%201)%20%7B%5Cn%20%20%20%20%20%20setterFunction(0)%3B%5Cn%20%20%20%20%20%20return%3B%5Cn%20%20%20%20%7D%5Cn%20%20%20%20setterFunction(value%20%2B%201)%3B%5Cn%20%20%7D%3B%5Cn%20%20const%20%5Bsquares%2C%20setSquares%5D%20%3D%20useState(%5B%3CSquare%20%2F%3E%2C%20%3CSquare%20%2F%3E%2C%20%3CSquare%20%2F%3E%5D)%3B%5Cn%20%20return%20(%5Cn%20%20%20%20%3C%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%7BpaddingTop%3A%20StatusBar.currentHeight%7D%7D%20%2F%3E%5Cn%20%20%20%20%20%20%3CView%20style%3D%7B%5Bstyles.container%2C%20styles.playingSpace%2C%20hookedStyles%5D%7D%3E%5Cn%20%20%20%20%20%20%20%20%7Bsquares.map(elem%20%3D%3E%20elem)%7D%5Cn%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%3CScrollView%20style%3D%7Bstyles.container%7D%3E%5Cn%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.controlSpace%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Flex%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(flexDirection%2C%20flexDirections%2C%20setFlexDirection)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BflexDirections%5BflexDirection%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Justify%20Content%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20justifyContent%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20justifyContents%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setJustifyContent%2C%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BjustifyContents%5BjustifyContent%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Align%20Items%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20changeSetting(alignItems%2C%20alignItemsArr%2C%20setAlignItems)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7BalignItemsArr%5BalignItems%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Direction%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20changeSetting(direction%2C%20directions%2C%20setDirection)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7Bdirections%5Bdirection%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Change%20Flex%20Wrap%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20changeSetting(wrap%2C%20wraps%2C%20setWrap)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CText%20style%3D%7Bstyles.text%7D%3E%7Bwraps%5Bwrap%5D%7D%3C%2FText%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Add%20Square%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%20setSquares(%5B...squares%2C%20%3CSquare%20%2F%3E%5D)%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3CView%20style%3D%7Bstyles.buttonView%7D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%3CButton%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20title%3D%5C%22Delete%20Square%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20onPress%3D%7B()%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setSquares(squares.filter((v%2C%20i)%20%3D%3E%20i%20!%3D%3D%20squares.length%20-%201))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%2F%3E%5Cn%20%20%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%20%20%3C%2FView%3E%5Cn%20%20%20%20%20%20%3C%2FScrollView%3E%5Cn%20%20%20%20%3C%2F%3E%5Cn%20%20)%3B%5Cn%7D%3B%5Cn%5Cnconst%20styles%20%3D%20StyleSheet.create(%7B%5Cn%20%20container%3A%20%7B%5Cn%20%20%20%20height%3A%20'50%25'%2C%5Cn%20%20%7D%2C%5Cn%20%20playingSpace%3A%20%7B%5Cn%20%20%20%20backgroundColor%3A%20'white'%2C%5Cn%20%20%20%20borderColor%3A%20'blue'%2C%5Cn%20%20%20%20borderWidth%3A%203%2C%5Cn%20%20%7D%2C%5Cn%20%20controlSpace%3A%20%7B%5Cn%20%20%20%20flexDirection%3A%20'row'%2C%5Cn%20%20%20%20flexWrap%3A%20'wrap'%2C%5Cn%20%20%20%20backgroundColor%3A%20'%23F5F5F5'%2C%5Cn%20%20%7D%2C%5Cn%20%20buttonView%3A%20%7B%5Cn%20%20%20%20width%3A%20'50%25'%2C%5Cn%20%20%20%20padding%3A%2010%2C%5Cn%20%20%7D%2C%5Cn%20%20text%3A%20%7BtextAlign%3A%20'center'%7D%2C%5Cn%7D)%3B%5Cn%5Cnconst%20Square%20%3D%20()%20%3D%3E%20(%5Cn%20%20%3CView%5Cn%20%20%20%20style%3D%7B%7B%5Cn%20%20%20%20%20%20width%3A%2050%2C%5Cn%20%20%20%20%20%20height%3A%2050%2C%5Cn%20%20%20%20%20%20backgroundColor%3A%20randomHexColor()%2C%5Cn%20%20%20%20%7D%7D%5Cn%20%20%2F%3E%5Cn)%3B%5Cn%5Cnconst%20randomHexColor%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20return%20'%23000000'.replace(%2F0%2Fg%2C%20()%20%3D%3E%20%7B%5Cn%20%20%20%20return%20Math.round(Math.random()%20*%2016).toString(16)%3B%5Cn%20%20%7D)%3B%5Cn%7D%3B%5Cn%5Cnexport%20default%20App%3B%22%7D%7D" data-snack-dependencies=react-native-safe-area-context data-snack-platform=web data-snack-supported-platforms=ios,android,web data-snack-theme=light data-snack-preview=true data-snack-loading=lazy data-snack-device-appearance=light data-snack-device-frame=false></div></div></div></div>
 <hr/>
 <h1>文档</h1>
 <h2 class="anchor anchorTargetStickyNavbar_tleR" id=属性>属性<a href=#属性 class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=aligncontent><code>alignContent</code><a href=#aligncontent class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>alignContent</code>控制行在交叉轴上的对齐方式,会覆盖父级元素设置的<code>alignContent</code>属性。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/align-content target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/align-content</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('flex-start', 'flex-end', 'center', 'stretch', 'space-between', 'space-around', 'space-evenly')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=alignitems><code>alignItems</code><a href=#alignitems class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>alignItems</code> 属性用于控制子元素在交叉轴上的对齐方式。举个例子，如果子元素垂直排列,那么 <code>alignItems</code> 就决定了它们在水平方向上的对齐方式。它的用法类似 CSS 中的<code>align-items</code>(默认值为 stretch)。详情请参阅 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/align-items target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/align-items</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('flex-start', 'flex-end', 'center', 'stretch', 'baseline')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=alignself><code>alignSelf</code><a href=#alignself class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
-<p><code>alignSelf</code> 控制子元素在纵向上的对齐方式，会覆盖父元素的 <code>alignItems</code> 属性。其作用类似于 CSS 中的<code>align-self</code>(默认值:auto)。详情请参阅 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p><code>alignSelf</code> 控制子元素在纵向上的对齐方式，会覆盖父元素的 <code>alignItems</code> 属性。其作用类似于 CSS 中的<code>align-self</code>(默认值<!-- -->:auto<!-- -->)。详情请参阅 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-self</a></p>
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('auto', 'flex-start', 'flex-end', 'center', 'stretch', 'baseline')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=aspectratio><code>aspectRatio</code><a href=#aspectratio class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -78,229 +31,58 @@
 <li class="">对于设置了 flex grow/shrink 的节点，若其在交叉轴方向的尺寸未设置，长宽比将决定该尺寸。</li>
 <li class="">长宽比同时考虑了最小/最大尺寸约束。</li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=borderbottomwidth><code>borderBottomWidth</code><a href=#borderbottomwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>borderBottomWidth 与 CSS 中的 border-bottom-width 属性作用相同。详情请参阅 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-bottom-width target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-bottom-width</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=borderendwidth><code>borderEndWidth</code><a href=#borderendwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当方向为 <code>ltr</code> 时，<code>borderEndWidth</code> 等同于 <code>borderRightWidth</code>。当方向为 <code>rtl</code> 时，<code>borderEndWidth</code> 等同于 <code>borderLeftWidth</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=borderleftwidth><code>borderLeftWidth</code><a href=#borderleftwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>borderLeftWidth</code> 的作用类似于 CSS 中的 <code>border-left-width</code>。详情请参阅 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-left-width target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-left-width</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=borderrightwidth><code>borderRightWidth</code><a href=#borderrightwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>borderRightWidth</code> 的作用与 CSS 中的 <code>border-right-width</code> 属性类似。详情请参阅 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-right-width target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-right-width</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=borderstartwidth><code>borderStartWidth</code><a href=#borderstartwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当方向为 <code>ltr</code> 时，<code>borderStartWidth</code> 相当于 <code>borderLeftWidth</code>。当方向为 <code>rtl</code> 时，<code>borderStartWidth</code> 相当于 <code>borderRightWidth</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=bordertopwidth><code>borderTopWidth</code><a href=#bordertopwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>borderTopWidth</code> 的作用类似于 CSS 中的 <code>border-top-width</code>。详情请参阅 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-top-width target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-top-width</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=borderwidth><code>borderWidth</code><a href=#borderwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>borderWidth</code> 的作用类似于 CSS 中的 <code>border-width</code>。详情请参阅 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-width target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-width</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=bottom><code>bottom</code><a href=#bottom class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>bottom</code> 是指将此组件底部边缘向下偏移的逻辑像素数。</p>
 <p>它与 CSS 中的 <code>bottom</code> 类似，但在 React Native 中，您必须使用点或百分比。不支持 em 和其他单位。</p>
 <p>有关 <code>bottom</code> 如何影响布局的更多详细信息，请参见 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/bottom target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/bottom</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=columngap><code>columnGap</code><a href=#columngap class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>columnGap</code> 的作用类似于 CSS 中的 <code>column-gap</code>。在 React Native 中仅支持像素单位。有关更多详细信息，请查看 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap%E3%80%82 target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap。</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=direction><code>direction</code><a href=#direction class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>direction</code>指定了用户界面的阅读顺序。<code>ltr</code>表示 left to right，即从左往右阅读。反之<code>rtl</code>为从右往左阅读。默认值为<code>inherit</code>，但根节点的值会根据用户所在地的不同而不同。访问 <a href=https://yogalayout.com/docs/layout-direction target=_blank rel="noopener noreferrer" class="">https://yogalayout.com/docs/layout-direction</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('inherit', 'ltr', 'rtl')<td>否<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=display><code>display</code><a href=#display class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>display</code>设置组件的显示类型。可用于元素的显示和隐藏。</p>
 <p>它的表现和 CSS 上的<code>display</code>类似，但目前只支持'flex'和'none'两个值。默认值是'flex'。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('none', 'flex')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=end><code>end</code><a href=#end class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当<code>direction</code>设置为<code>ltr</code>时，<code>end</code>等同于<code>right</code>。当<code>direction</code>设置为<code>rtl</code>，<code>end</code>等同于<code>left</code>。</p>
 <p>此样式的优先级高于<code>left</code>和<code>right</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=flex><code>flex</code><a href=#flex class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -309,577 +91,148 @@
 <p>当<code>flex</code>为 0 时，组件尺寸由<code>width</code>和<code>height</code>决定，此时不再具有弹性。</p>
 <p>当<code>flex</code>为-1 时，组件尺寸一般还是由<code>width</code>和<code>height</code>决定。但是当空间不够时，组件尺寸会收缩到<code>minWidth</code>和<code>minHeight</code>所设定的值。</p>
 <p><code>flexGrow</code>、<code>flexShrink</code>、<code>flexBasis</code>和在 CSS 上表现一致。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=flexbasis><code>flexBasis</code><a href=#flexbasis class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>flexBasis</code> 是一种与轴无关的提供项目沿主轴默认大小的方式。设置一个子元素的 <code>flexBasis</code> 与其父元素为 <code>flexDirection: row</code> 的容器时设置该子元素的 <code>width</code> 类似，或者与其父元素为 <code>flexDirection: column</code> 的容器时设置该子元素的 <code>height</code> 类似。一个项目的 <code>flexBasis</code> 是该项目的默认大小，即在执行任何 <code>flexGrow</code> 和 <code>flexShrink</code> 计算之前项目的大小。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=flexdirection><code>flexDirection</code><a href=#flexdirection class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>flexDirection</code> 控制容器内子元素的排列方向。<code>row</code> 为从左到右排列,<code>column</code> 为从上到下排列,你可以猜测其他两种方式的效果。它的作用类似于 CSS 中的 <code>flex-direction</code> 属性，只不过默认值是 <code>column</code>。 访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('row', 'row-reverse', 'column', 'column-reverse')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=flexgrow><code>flexGrow</code><a href=#flexgrow class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>在设置 flexGrow 属性时,它描述了在主轴方向上容器中的剩余空间应该如何分配给子元素。在布局子元素后,容器将根据子元素的 flexGrow 值按比例分配剩余空间。
 flexGrow 接受任意大于等于 0 的浮点数,默认值为 0。容器中剩余的空间将按子元素的 flexGrow 值加权分配。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=flexshrink><code>flexShrink</code><a href=#flexshrink class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><a class="" href=/docs/0.74/layout-props#flexshrink><code>flexShrink</code></a> 描述了在子元素的总大小超出主轴方向容器大小时，如何沿着主轴缩小子元素。<code>flexShrink</code> 与 <code>flexGrow</code> 非常相似，如果将任何溢出的大小视为负剩余空间，可以以相同的方式考虑它。这两个属性一起使用效果也很好，允许子元素根据需要进行扩展和收缩。</p>
 <p><code>flexShrink</code> 接受任何大于等于 0 的浮点值，其中 0 是默认值。容器会根据子元素的 <code>flexShrink</code> 值加权缩小其子元素。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=flexwrap><code>flexWrap</code><a href=#flexwrap class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>flexWrap</code> 控制子元素在到达弹性容器末端后是否可以换行。它的工作原理类似于 CSS 中的 <code>flex-wrap</code>（默认值：nowrap）。访问 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-wrap target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-wrap</a>
 以获取更多信息。注意，它不再与 <code>alignItems: stretch</code>（默认值）一起工作，因此您可能希望使用例如 <code>alignItems: flex-start</code>（破坏性变更详情：<a href=https://github.com/facebook/react-native/releases/tag/v0.28.0%EF%BC%89%E3%80%82 target=_blank rel="noopener noreferrer" class="">https://github.com/facebook/react-native/releases/tag/v0.28.0）。</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('wrap', 'nowrap', 'wrap-reverse')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=gap><code>gap</code><a href=#gap class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>gap</code>效果和 CSS 中的<code>gap</code>一样。React Native 中仅支持像素单位。更多细节请参阅<a href=https://developer.mozilla.org/en-US/docs/Web/CSS/gap target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/gap</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=height><code>height</code><a href=#height class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>height</code>用于设置组件的高度。</p>
 <p>它的表现和 CSS 上的<code>height</code>类似， but in React Native 只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。 访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/height target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/height</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=justifycontent><code>justifyContent</code><a href=#justifycontent class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>justifyContent</code> 用于在主方向上对齐子元素。例如，如果子元素垂直流动，<code>justifyContent</code> 控制它们如何垂直对齐。它的作用类似于 CSS 中的 <code>justify-content</code>（默认值：flex-start）。 访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=left><code>left</code><a href=#left class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>left</code>值是指将本组件定位到距离左边多少个逻辑像素（左边的定义取决于<code>position</code>属性）。</p>
 <p>它的表现和 CSS 上的<code>left</code>类似， but in React Native 只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。</p>
 <p>想了解 <code>left</code> 属性对布局的影响,请访问 <a href=https://developer.mozilla.org/zh-CN/docs/Web/CSS/left target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/zh-CN/docs/Web/CSS/left</a> 查看更多细节。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=margin><code>margin</code><a href=#margin class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置<code>margin</code>相当于同时设置<code>marginTop</code>、<code>marginLeft</code>、<code>marginBottom</code>以及<code>marginRight</code>。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/margin target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/margin</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=marginbottom><code>marginBottom</code><a href=#marginbottom class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>marginBottom</code>和 CSS 上的<code>margin-bottom</code>表现一致。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=marginend><code>marginEnd</code><a href=#marginend class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当方向为 <code>ltr</code> 时，<code>marginEnd</code> 相当于 <code>marginRight</code>。当方向为 <code>rtl</code> 时，<code>marginEnd</code> 相当于 <code>marginLeft</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=marginhorizontal><code>marginHorizontal</code><a href=#marginhorizontal class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置<code>marginHorizontal</code>相当于同时设置<code>marginLeft</code>和<code>marginRight</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=marginleft><code>marginLeft</code><a href=#marginleft class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>marginLeft</code>和 CSS 上的<code>margin-left</code>表现一致。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=marginright><code>marginRight</code><a href=#marginright class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>marginRight</code>和 CSS 上的<code>margin-right</code>表现一致。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=marginstart><code>marginStart</code><a href=#marginstart class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当方向为 <code>ltr</code> 时，<code>marginStart</code> 相当于 <code>marginLeft</code>。当方向为 <code>rtl</code> 时，<code>marginStart</code> 相当于 <code>marginRight</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=margintop><code>marginTop</code><a href=#margintop class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>marginTop</code>和 CSS 上的<code>margin-top</code>表现一致。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=marginvertical><code>marginVertical</code><a href=#marginvertical class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置<code>marginVertical</code>相当于同时设置<code>marginTop</code>和<code>marginBottom</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=maxheight><code>maxHeight</code><a href=#maxheight class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>maxHeight</code> 是该组件的最大高度，以逻辑像素为单位。</p>
 <p>它的表现和 CSS 上的<code>max-height</code>类似，但是在 React Native 上只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。</p>
 <p>访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/max-height target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/max-height</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=maxwidth><code>maxWidth</code><a href=#maxwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>maxWidth</code> 是该组件的最大宽度，以逻辑像素为单位。</p>
 <p>它的表现和 CSS 上的<code>max-width</code>类似，但是在 React Native 上只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。</p>
 <p>访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/max-width target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/max-width</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=minheight><code>minHeight</code><a href=#minheight class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>minHeight</code> 是该组件的最小高度，以逻辑像素为单位。</p>
 <p>它的表现和 CSS 上的<code>min-height</code>类似，但是在 React Native 上只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。</p>
 <p>访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/min-height target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/min-height</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=minwidth><code>minWidth</code><a href=#minwidth class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>minWidth</code> 是该组件的最小宽度，以逻辑像素为单位。</p>
 <p>它的表现和 CSS 上的<code>min-width</code>类似，但是在 React Native 上只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。</p>
 <p>访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/min-width target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/min-width</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=overflow><code>overflow</code><a href=#overflow class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>overflow</code> 控制子元素的测量和显示方式。<code>overflow: hidden</code> 会导致视图被裁剪，而 <code>overflow: scroll</code> 会导致视图独立于其父元素的主轴进行测量。它的工作原理类似于 CSS 中的 <code>overflow</code>（默认值：visible）。 访问 <a href=https://developer.mozilla.org/en/docs/Web/CSS/overflow target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en/docs/Web/CSS/overflow</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('visible', 'hidden', 'scroll')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=padding><code>padding</code><a href=#padding class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置<code>padding</code>相当于同时设置<code>paddingTop</code>、<code>paddingBottom</code>、<code>paddingLeft</code>以及<code>paddingRight</code>。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/padding target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/padding</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=paddingbottom><code>paddingBottom</code><a href=#paddingbottom class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>paddingBottom</code>和 CSS 上的<code>padding-bottom</code>表现一致。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/padding-bottom target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/padding-bottom</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=paddingend><code>paddingEnd</code><a href=#paddingend class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当方向为 <code>ltr</code> 时,<code>paddingEnd</code> 相当于 <code>paddingRight</code>。当方向为 <code>rtl</code> 时,<code>paddingEnd</code> 相当于 <code>paddingLeft</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=paddinghorizontal><code>paddingHorizontal</code><a href=#paddinghorizontal class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置<code>paddingHorizontal</code>相当于同时设置<code>paddingLeft</code>和<code>paddingRight</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=paddingleft><code>paddingLeft</code><a href=#paddingleft class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>paddingLeft</code>和 CSS 上的<code>padding-left</code>表现一致。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/padding-left target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/padding-left</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=paddingright><code>paddingRight</code><a href=#paddingright class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>paddingRight</code>和 CSS 上的<code>padding-right</code>表现一致。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/padding-right target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/padding-right</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=paddingstart><code>paddingStart</code><a href=#paddingstart class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当方向为 <code>ltr</code> 时，<code>paddingStart</code> 等同于 <code>paddingLeft</code>。当方向为 <code>rtl</code> 时，<code>paddingStart</code> 等同于 <code>paddingRight</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=paddingtop><code>paddingTop</code><a href=#paddingtop class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>paddingTop</code>和 CSS 上的<code>padding-top</code>表现一致。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=paddingvertical><code>paddingVertical</code><a href=#paddingvertical class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置<code>paddingVertical</code>相当于同时设置<code>paddingTop</code>和<code>paddingBottom</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=position><code>position</code><a href=#position class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -887,129 +240,38 @@ flexGrow 接受任意大于等于 0 的浮点数,默认值为 0。容器中剩�
 <p>如果您想要使用特定数量的逻辑像素相对于其父元素来定位子元素，请将子元素设置为具有<code>absolute</code>位置。</p>
 <p>如果您想要将子元素相对于不是其父元素的对象进行定位，请不要为此使用样式。请使用组件树。</p>
 <p>有关 React Native 和 CSS 之间<code>position</code>差异的更多详细信息，请参见 <a href=https://github.com/facebook/yoga target=_blank rel="noopener noreferrer" class="">https://github.com/facebook/yoga</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('absolute', 'relative')<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=right><code>right</code><a href=#right class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>right</code>值是指将本组件定位到距离右边多少个逻辑像素（右边的定义取决于<code>position</code>属性）。</p>
 <p>它的表现和 CSS 上的<code>right</code>类似，但是在 React Native 上只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。</p>
 <p>访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/right target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/right</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=rowgap><code>rowGap</code><a href=#rowgap class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>rowGap</code> 的功能类似于 CSS 中的 <code>row-gap</code>。React Native 仅支持像素单位。有关更多详细信息，请查看 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=start><code>start</code><a href=#start class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当<code>direction</code>设置为<code>ltr</code>时，<code>start</code>等同于<code>left</code>。当<code>direction</code>设置为<code>rtl</code>，<code>start</code>等同于<code>right</code>。</p>
 <p>此样式的优先级高于<code>left</code>、<code>right</code>和<code>end</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=top><code>top</code><a href=#top class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>top</code>值是指将本组件定位到距离顶部多少个逻辑像素（顶部的定义取决于<code>position</code>属性）。</p>
 <p>它的表现和 CSS 上的<code>top</code>类似，但是在 React Native 上只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。</p>
 <p>访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/top target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/top</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=width><code>width</code><a href=#width class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>width</code>设置组件的宽度。</p>
 <p>它的表现和 CSS 上的<code>width</code>类似，但是在 React Native 上只能使用逻辑像素值（数字单位）或百分比，而不能使用 em 或是任何其他单位。 访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/width target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/width</a> 来进一步了解。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number, string<td>否</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=zindex><code>zIndex</code><a href=#zindex class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p><code>zIndex</code>控制着组件的堆叠覆盖顺序。多数情况下你不会用到此样式。默认情况下组件按其在文档树的顺序依次渲染，所以在代码结构上靠后的组件会覆盖前面的组件（如果它们在布局上有重叠的部分）。有时候在写一些动画或者自定义的模态窗口时，你可能会需要设置<code>zIndex</code>样式来改变层叠覆盖顺序。</p>
 <p>它的表现和 CSS 上的<code>z-index</code>一致——<code>zIndex</code>大的在上面。这里面的<code>z</code>意味着三维空间中的<code>z轴</code>，你可以想象成垂直于手机屏幕指向你的眼睛的坐标轴。访问 <a href=https://developer.mozilla.org/en-US/docs/Web/CSS/z-index target=_blank rel="noopener noreferrer" class="">https://developer.mozilla.org/en-US/docs/Web/CSS/z-index</a> 来进一步了解。</p>
 <p>在 iOS 上，使用<code>zIndex</code>可能需要<code>View</code>彼此为兄弟节点才能生效。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>否</table></div>
 <hr/></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_QeZL"><a href=https://github.com/reactnativecn/react-native-website/blob/production/cnwebsite/../cndocs/layout-props.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_bHB7 aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>改进此文档</a></div><div class="col lastUpdated_ydrU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label=文档分页导航><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/0.74/image-style-props><div class=pagination-nav__sublabel>上一页</div><div class=pagination-nav__label>图片样式属性</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/0.74/shadow-props><div class=pagination-nav__sublabel>下一页</div><div class=pagination-nav__label>阴影样式属性</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_jeP5 thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#示例 class="table-of-contents__link toc-highlight">示例</a><li><a href=#属性 class="table-of-contents__link toc-highlight">属性</a><ul><li><a href=#aligncontent class="table-of-contents__link toc-highlight"><code>alignContent</code></a><li><a href=#alignitems class="table-of-contents__link toc-highlight"><code>alignItems</code></a><li><a href=#alignself class="table-of-contents__link toc-highlight"><code>alignSelf</code></a><li><a href=#aspectratio class="table-of-contents__link toc-highlight"><code>aspectRatio</code></a><li><a href=#borderbottomwidth class="table-of-contents__link toc-highlight"><code>borderBottomWidth</code></a><li><a href=#borderendwidth class="table-of-contents__link toc-highlight"><code>borderEndWidth</code></a><li><a href=#borderleftwidth class="table-of-contents__link toc-highlight"><code>borderLeftWidth</code></a><li><a href=#borderrightwidth class="table-of-contents__link toc-highlight"><code>borderRightWidth</code></a><li><a href=#borderstartwidth class="table-of-contents__link toc-highlight"><code>borderStartWidth</code></a><li><a href=#bordertopwidth class="table-of-contents__link toc-highlight"><code>borderTopWidth</code></a><li><a href=#borderwidth class="table-of-contents__link toc-highlight"><code>borderWidth</code></a><li><a href=#bottom class="table-of-contents__link toc-highlight"><code>bottom</code></a><li><a href=#columngap class="table-of-contents__link toc-highlight"><code>columnGap</code></a><li><a href=#direction class="table-of-contents__link toc-highlight"><code>direction</code></a><li><a href=#display class="table-of-contents__link toc-highlight"><code>display</code></a><li><a href=#end class="table-of-contents__link toc-highlight"><code>end</code></a><li><a href=#flex class="table-of-contents__link toc-highlight"><code>flex</code></a><li><a href=#flexbasis class="table-of-contents__link toc-highlight"><code>flexBasis</code></a><li><a href=#flexdirection class="table-of-contents__link toc-highlight"><code>flexDirection</code></a><li><a href=#flexgrow class="table-of-contents__link toc-highlight"><code>flexGrow</code></a><li><a href=#flexshrink class="table-of-contents__link toc-highlight"><code>flexShrink</code></a><li><a href=#flexwrap class="table-of-contents__link toc-highlight"><code>flexWrap</code></a><li><a href=#gap class="table-of-contents__link toc-highlight"><code>gap</code></a><li><a href=#height class="table-of-contents__link toc-highlight"><code>height</code></a><li><a href=#justifycontent class="table-of-contents__link toc-highlight"><code>justifyContent</code></a><li><a href=#left class="table-of-contents__link toc-highlight"><code>left</code></a><li><a href=#margin class="table-of-contents__link toc-highlight"><code>margin</code></a><li><a href=#marginbottom class="table-of-contents__link toc-highlight"><code>marginBottom</code></a><li><a href=#marginend class="table-of-contents__link toc-highlight"><code>marginEnd</code></a><li><a href=#marginhorizontal class="table-of-contents__link toc-highlight"><code>marginHorizontal</code></a><li><a href=#marginleft class="table-of-contents__link toc-highlight"><code>marginLeft</code></a><li><a href=#marginright class="table-of-contents__link toc-highlight"><code>marginRight</code></a><li><a href=#marginstart class="table-of-contents__link toc-highlight"><code>marginStart</code></a><li><a href=#margintop class="table-of-contents__link toc-highlight"><code>marginTop</code></a><li><a href=#marginvertical class="table-of-contents__link toc-highlight"><code>marginVertical</code></a><li><a href=#maxheight class="table-of-contents__link toc-highlight"><code>maxHeight</code></a><li><a href=#maxwidth class="table-of-contents__link toc-highlight"><code>maxWidth</code></a><li><a href=#minheight class="table-of-contents__link toc-highlight"><code>minHeight</code></a><li><a href=#minwidth class="table-of-contents__link toc-highlight"><code>minWidth</code></a><li><a href=#overflow class="table-of-contents__link toc-highlight"><code>overflow</code></a><li><a href=#padding class="table-of-contents__link toc-highlight"><code>padding</code></a><li><a href=#paddingbottom class="table-of-contents__link toc-highlight"><code>paddingBottom</code></a><li><a href=#paddingend class="table-of-contents__link toc-highlight"><code>paddingEnd</code></a><li><a href=#paddinghorizontal class="table-of-contents__link toc-highlight"><code>paddingHorizontal</code></a><li><a href=#paddingleft class="table-of-contents__link toc-highlight"><code>paddingLeft</code></a><li><a href=#paddingright class="table-of-contents__link toc-highlight"><code>paddingRight</code></a><li><a href=#paddingstart class="table-of-contents__link toc-highlight"><code>paddingStart</code></a><li><a href=#paddingtop class="table-of-contents__link toc-highlight"><code>paddingTop</code></a><li><a href=#paddingvertical class="table-of-contents__link toc-highlight"><code>paddingVertical</code></a><li><a href=#position class="table-of-contents__link toc-highlight"><code>position</code></a><li><a href=#right class="table-of-contents__link toc-highlight"><code>right</code></a><li><a href=#rowgap class="table-of-contents__link toc-highlight"><code>rowGap</code></a><li><a href=#start class="table-of-contents__link toc-highlight"><code>start</code></a><li><a href=#top class="table-of-contents__link toc-highlight"><code>top</code></a><li><a href=#width class="table-of-contents__link toc-highlight"><code>width</code></a><li><a href=#zindex class="table-of-contents__link toc-highlight"><code>zIndex</code></a></ul></ul><div class="wwads-cn wwads-vertical" data-id=58 style=max-width:227px;margin-top:20px></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>React Native 中文网 © 2026 武汉青罗网络科技有限公司
       <a style=margin-left:10px href=http://beian.miit.gov.cn/>鄂ICP备20002031号-3</a>

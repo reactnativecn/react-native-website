@@ -1,7 +1,7 @@
-<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-0.71 docs-doc-page docs-doc-id-textinput" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.1"><title data-rh=true>TextInput · React Native 中文网</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:image content=https://reactnative.cn/img/logo-og.png /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true property=og:url content=https://reactnative.cn /><meta data-rh=true property=og:image content=img/logo-og.png /><meta data-rh=true name=docusaurus_version content=0.71 /><meta data-rh=true name=docusaurus_tag content=docs-default-0.71 /><meta data-rh=true name=docsearch:version content=0.71 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-0.71 /><meta data-rh=true property=og:title content="TextInput · React Native 中文网"/><meta data-rh=true name=description content="TextInput 是一个允许用户在应用中通过键盘输入文本的基本组件。本组件的属性提供了多种特性的配置，譬如自动完成、自动大小写、占位文字，以及多种不同的键盘类型（如纯数字键盘）等等。"/><meta data-rh=true property=og:description content="TextInput 是一个允许用户在应用中通过键盘输入文本的基本组件。本组件的属性提供了多种特性的配置，譬如自动完成、自动大小写、占位文字，以及多种不同的键盘类型（如纯数字键盘）等等。"/><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://reactnative.cn/docs/0.71/textinput /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.71/textinput hreflang=en /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.71/textinput hreflang=x-default /><link data-rh=true rel=preconnect href=https://GJGDC5L5HP-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://reactnative.cn/docs/0.71/textinput","name":"TextInput","position":1}]}</script><link rel=preconnect href=https://www.google-analytics.com><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63485149-4","auto"),ga("send","pageview")</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63485149-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-63485149-4",{})</script><link rel=search type=application/opensearchdescription+xml title="React Native 中文网" href=/opensearch.xml><script src=//snack.expo.dev/embed.js defer></script><script src=//cdn.wwads.cn/js/makemoney.js defer></script><link rel=stylesheet href=/assets/css/styles.886f30de.css /><script src=/assets/js/runtime~main.7040f597.js defer></script><script src=/assets/js/main.a6a87529.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-0.71 docs-doc-page docs-doc-id-textinput" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.1"><title data-rh=true>TextInput · React Native 中文网</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true name=twitter:image content=https://reactnative.cn/img/logo-og.png /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true property=og:url content=https://reactnative.cn /><meta data-rh=true property=og:image content=img/logo-og.png /><meta data-rh=true name=docusaurus_version content=0.71 /><meta data-rh=true name=docusaurus_tag content=docs-default-0.71 /><meta data-rh=true name=docsearch:version content=0.71 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-0.71 /><meta data-rh=true property=og:title content="TextInput · React Native 中文网"/><meta data-rh=true name=description content="TextInput 是一个允许用户在应用中通过键盘输入文本的基本组件。本组件的属性提供了多种特性的配置，譬如自动完成、自动大小写、占位文字，以及多种不同的键盘类型（如纯数字键盘）等等。"/><meta data-rh=true property=og:description content="TextInput 是一个允许用户在应用中通过键盘输入文本的基本组件。本组件的属性提供了多种特性的配置，譬如自动完成、自动大小写、占位文字，以及多种不同的键盘类型（如纯数字键盘）等等。"/><link data-rh=true rel=icon href=/img/favicon.ico /><link data-rh=true rel=canonical href=https://reactnative.cn/docs/0.71/textinput /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.71/textinput hreflang=en /><link data-rh=true rel=alternate href=https://reactnative.cn/docs/0.71/textinput hreflang=x-default /><link data-rh=true rel=preconnect href=https://GJGDC5L5HP-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://reactnative.cn/docs/0.71/textinput","name":"TextInput","position":1}]}</script><link rel=preconnect href=https://www.google-analytics.com><script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-63485149-4","auto"),ga("send","pageview")</script><script async src=https://www.google-analytics.com/analytics.js></script><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=UA-63485149-4"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-63485149-4",{})</script><link rel=search type=application/opensearchdescription+xml title="React Native 中文网" href=/opensearch.xml><script src=//snack.expo.dev/embed.js defer></script><script src=//cdn.wwads.cn/js/makemoney.js defer></script><link rel=stylesheet href=/assets/css/styles.a8925702.css /><script src=/assets/js/runtime~main.8e05a5a1.js defer></script><script src=/assets/js/main.86489f66.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-714")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss-714")}catch(t){}return!1}())</script><div id=__docusaurus><link rel=preload as=image href=/img/header_logo.svg /><div role=region aria-label=跳到主要内容><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>跳到主要内容</a></div><div class="theme-announcement-bar announcementBar_zJRd" role=banner><div class=announcementBarPlaceholder_NpUd></div><div class="content_bSb_ announcementBarContent_t7IR"><a href=https://ai.cresc.dev target=_blank rel="noopener noreferrer">AI 中转站</a>：纯正官方 GPT-5.5 与 Claude Opus 4.7 模型，价格实惠、服务稳定、绝不掺水、数据安全。</div><button type=button aria-label=Close class="clean-btn close closeButton_J5rP announcementBarClose_Jjdj"><svg viewBox="0 0 15 15" width=14 height=14><g stroke=currentColor stroke-width=3.1><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"/></g></svg></button></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--dark_yETr"/></div><b class="navbar__title text--truncate">React Native 中文网</b></a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/docs/0.71/textinput>0.71</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/next/textinput>Next</a><li><a class=dropdown__link href=/docs/textinput>0.85</a><li><a class=dropdown__link href=/docs/0.84/textinput>0.84</a><li><a class=dropdown__link href=/docs/0.83/textinput>0.83</a><li><a class=dropdown__link href=/docs/0.82/textinput>0.82</a><li><a class=dropdown__link href=/docs/0.81/textinput>0.81</a><li><a class=dropdown__link href=/docs/0.80/textinput>0.80</a><li><a class=dropdown__link href=/docs/0.79/textinput>0.79</a><li><a class=dropdown__link href=/docs/0.78/textinput>0.78</a><li><a class=dropdown__link href=/docs/0.77/textinput>0.77</a><li><a class=dropdown__link href=/docs/0.76/textinput>0.76</a><li><a class=dropdown__link href=/docs/0.75/textinput>0.75</a><li><a class=dropdown__link href=/docs/0.74/textinput>0.74</a><li><a class=dropdown__link href=/docs/0.73/textinput>0.73</a><li><a class=dropdown__link href=/docs/0.72/textinput>0.72</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.71/textinput>0.71</a><li><a class=dropdown__link href=/docs/0.70/textinput>0.70</a><li><a class=dropdown__link href=/versions>所有版本</a></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>开发文档</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/0.71/getting-started>入门指南</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.71/components-and-apis>组件</a><li><a class=dropdown__link href=/docs/0.71/accessibilityinfo>API</a><li><a class=dropdown__link href=/architecture/overview>架构</a></ul></div><a href=//github.com/reactnativecn/react-native-website/issues target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">讨论<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a href=//pushy.reactnative.cn target=_blank rel="noopener noreferrer" class="navbar__item navbar__link hot-link">热更新<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a class="navbar__item navbar__link" href=/about>关于</a><a href=//github.com/facebook/react-native target=_blank rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link" aria-label="GitHub repository"></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m darkNavbarColorModeToggle_m8pZ" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1 menuWithAnnouncementBar_YufC"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/0.71/components-and-apis><span title=核心组件 class=categoryLinkLabel_ufhF>核心组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/components-and-apis><span title=核心组件和API class=linkLabel_fEdy>核心组件和API</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/activityindicator><span title=ActivityIndicator class=linkLabel_fEdy>ActivityIndicator</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/button><span title=Button class=linkLabel_fEdy>Button</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/flatlist><span title=FlatList class=linkLabel_fEdy>FlatList</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/image><span title=Image class=linkLabel_fEdy>Image</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/imagebackground><span title=ImageBackground class=linkLabel_fEdy>ImageBackground</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/keyboardavoidingview><span title=KeyboardAvoidingView class=linkLabel_fEdy>KeyboardAvoidingView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/modal><span title=Modal class=linkLabel_fEdy>Modal</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/pressable><span title=Pressable class=linkLabel_fEdy>Pressable</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/refreshcontrol><span title=RefreshControl class=linkLabel_fEdy>RefreshControl</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/scrollview><span title=ScrollView class=linkLabel_fEdy>ScrollView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/sectionlist><span title=SectionList class=linkLabel_fEdy>SectionList</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/statusbar><span title=StatusBar class=linkLabel_fEdy>StatusBar</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/switch><span title=Switch class=linkLabel_fEdy>Switch</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/text><span title=Text class=linkLabel_fEdy>Text</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/0.71/textinput><span title=TextInput class=linkLabel_fEdy>TextInput</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/touchablehighlight><span title=TouchableHighlight class=linkLabel_fEdy>TouchableHighlight</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/touchableopacity><span title=TouchableOpacity class=linkLabel_fEdy>TouchableOpacity</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/touchablewithoutfeedback><span title=TouchableWithoutFeedback class=linkLabel_fEdy>TouchableWithoutFeedback</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/view><span title=View class=linkLabel_fEdy>View</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/virtualizedlist><span title=VirtualizedList class=linkLabel_fEdy>VirtualizedList</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true tabindex=0 href=/docs/0.71/drawerlayoutandroid><span title="Android 组件" class=categoryLinkLabel_ufhF>Android 组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/drawerlayoutandroid><span title=DrawerLayoutAndroid class=linkLabel_fEdy>DrawerLayoutAndroid</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/touchablenativefeedback><span title=TouchableNativeFeedback class=linkLabel_fEdy>TouchableNativeFeedback</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true tabindex=0 href=/docs/0.71/inputaccessoryview><span title="iOS 组件" class=categoryLinkLabel_ufhF>iOS 组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/inputaccessoryview><span title=InputAccessoryView class=linkLabel_fEdy>InputAccessoryView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/safeareaview><span title=SafeAreaView class=linkLabel_fEdy>SafeAreaView</span></a></ul></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.71/image-style-props><span title=Props class=categoryLinkLabel_ufhF>Props</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.71/layoutevent><span title=内部对象类型 class=categoryLinkLabel_ufhF>内部对象类型</span></a></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role=alert>此为 <!-- -->React Native 中文网<!-- --> <b>0.71</b> 版的文档，现已不再积极维护。<div class=margin-top--md>最新的文档请参阅 <b><a href=/docs/textinput>最新版本</a></b> (<!-- -->0.85<!-- -->)。</div></div><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>核心组件</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>TextInput</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 0.71</span><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>TextInput</h1></header><p>TextInput 是一个允许用户在应用中通过键盘输入文本的基本组件。本组件的属性提供了多种特性的配置，譬如自动完成、自动大小写、占位文字，以及多种不同的键盘类型（如纯数字键盘）等等。</p>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-714")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss-714")}catch(t){}return!1}())</script><div id=__docusaurus><link rel=preload as=image href=/img/header_logo.svg /><div role=region aria-label=跳到主要内容><a class=skipToContent_oPtH href=#__docusaurus_skipToContent_fallback>跳到主要内容</a></div><div class="theme-announcement-bar announcementBar_zJRd" role=banner><div class=announcementBarPlaceholder_NpUd></div><div class="content_bSb_ announcementBarContent_t7IR">自营<a href=https://ai.cresc.dev target=_blank rel="noopener noreferrer">AI 中转</a>：最先进的满血 GPT-5.5 与 Opus 4.7 直连，稳定安全绝不掺水，限时优惠低于一折，企业采购可开票</div><button type=button aria-label=Close class="clean-btn close closeButton_J5rP announcementBarClose_Jjdj"><svg viewBox="0 0 15 15" width=14 height=14><g stroke=currentColor stroke-width=3.1><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"/></g></svg></button></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbar--dark"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--light_hHel"/><img src=/img/header_logo.svg alt="React Native 中文网" class="themedComponent_siVc themedComponent--dark_yETr"/></div><b class="navbar__title text--truncate">React Native 中文网</b></a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/docs/0.71/textinput>0.71</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/next/textinput>Next</a><li><a class=dropdown__link href=/docs/textinput>0.85</a><li><a class=dropdown__link href=/docs/0.84/textinput>0.84</a><li><a class=dropdown__link href=/docs/0.83/textinput>0.83</a><li><a class=dropdown__link href=/docs/0.82/textinput>0.82</a><li><a class=dropdown__link href=/docs/0.81/textinput>0.81</a><li><a class=dropdown__link href=/docs/0.80/textinput>0.80</a><li><a class=dropdown__link href=/docs/0.79/textinput>0.79</a><li><a class=dropdown__link href=/docs/0.78/textinput>0.78</a><li><a class=dropdown__link href=/docs/0.77/textinput>0.77</a><li><a class=dropdown__link href=/docs/0.76/textinput>0.76</a><li><a class=dropdown__link href=/docs/0.75/textinput>0.75</a><li><a class=dropdown__link href=/docs/0.74/textinput>0.74</a><li><a class=dropdown__link href=/docs/0.73/textinput>0.73</a><li><a class=dropdown__link href=/docs/0.72/textinput>0.72</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.71/textinput>0.71</a><li><a class=dropdown__link href=/docs/0.70/textinput>0.70</a><li><a class=dropdown__link href=/versions>所有版本</a></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link>开发文档</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/0.71/getting-started>入门指南</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/0.71/components-and-apis>组件</a><li><a class=dropdown__link href=/docs/0.71/accessibilityinfo>API</a><li><a class=dropdown__link href=/architecture/overview>架构</a></ul></div><a href=//github.com/reactnativecn/react-native-website/issues target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">讨论<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a href=//pushy.reactnative.cn target=_blank rel="noopener noreferrer" class="navbar__item navbar__link hot-link">热更新<svg width=13.5 height=13.5 aria-hidden=true viewBox="0 0 24 24" class=iconExternalLink_2l9O><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a><a class="navbar__item navbar__link" href=/about>关于</a><a href=//github.com/facebook/react-native target=_blank rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link" aria-label="GitHub repository"></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m darkNavbarColorModeToggle_m8pZ" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_bzqh><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts=Meta+k><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 24 24" aria-hidden=true><circle cx=11 cy=11 r=8 stroke=currentColor fill=none stroke-width=1.4 /><path d="m21 21-4.3-4.3" stroke=currentColor fill=none stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class=docsWrapper__sE8><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type=button></button><div class=docRoot_DfVB><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class=sidebarViewport_KYo0><div class=sidebar_CUen><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1 menuWithAnnouncementBar_YufC"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/0.71/components-and-apis><span title=核心组件 class=categoryLinkLabel_ufhF>核心组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/components-and-apis><span title=核心组件和API class=linkLabel_fEdy>核心组件和API</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/activityindicator><span title=ActivityIndicator class=linkLabel_fEdy>ActivityIndicator</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/button><span title=Button class=linkLabel_fEdy>Button</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/flatlist><span title=FlatList class=linkLabel_fEdy>FlatList</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/image><span title=Image class=linkLabel_fEdy>Image</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/imagebackground><span title=ImageBackground class=linkLabel_fEdy>ImageBackground</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/keyboardavoidingview><span title=KeyboardAvoidingView class=linkLabel_fEdy>KeyboardAvoidingView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/modal><span title=Modal class=linkLabel_fEdy>Modal</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/pressable><span title=Pressable class=linkLabel_fEdy>Pressable</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/refreshcontrol><span title=RefreshControl class=linkLabel_fEdy>RefreshControl</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/scrollview><span title=ScrollView class=linkLabel_fEdy>ScrollView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/sectionlist><span title=SectionList class=linkLabel_fEdy>SectionList</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/statusbar><span title=StatusBar class=linkLabel_fEdy>StatusBar</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/switch><span title=Switch class=linkLabel_fEdy>Switch</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/text><span title=Text class=linkLabel_fEdy>Text</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/0.71/textinput><span title=TextInput class=linkLabel_fEdy>TextInput</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/touchablehighlight><span title=TouchableHighlight class=linkLabel_fEdy>TouchableHighlight</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/touchableopacity><span title=TouchableOpacity class=linkLabel_fEdy>TouchableOpacity</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/touchablewithoutfeedback><span title=TouchableWithoutFeedback class=linkLabel_fEdy>TouchableWithoutFeedback</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/view><span title=View class=linkLabel_fEdy>View</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/virtualizedlist><span title=VirtualizedList class=linkLabel_fEdy>VirtualizedList</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true tabindex=0 href=/docs/0.71/drawerlayoutandroid><span title="Android 组件" class=categoryLinkLabel_ufhF>Android 组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/drawerlayoutandroid><span title=DrawerLayoutAndroid class=linkLabel_fEdy>DrawerLayoutAndroid</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/touchablenativefeedback><span title=TouchableNativeFeedback class=linkLabel_fEdy>TouchableNativeFeedback</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true tabindex=0 href=/docs/0.71/inputaccessoryview><span title="iOS 组件" class=categoryLinkLabel_ufhF>iOS 组件</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/inputaccessoryview><span title=InputAccessoryView class=linkLabel_fEdy>InputAccessoryView</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class=menu__link tabindex=0 href=/docs/0.71/safeareaview><span title=SafeAreaView class=linkLabel_fEdy>SafeAreaView</span></a></ul></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.71/image-style-props><span title=Props class=categoryLinkLabel_ufhF>Props</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/0.71/layoutevent><span title=内部对象类型 class=categoryLinkLabel_ufhF>内部对象类型</span></a></div></ul></nav></div></div></aside><main class=docMainContainer_a9sJ><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_Qr34"><div class="theme-doc-version-banner alert alert--warning margin-bottom--md" role=alert>此为 <!-- -->React Native 中文网<!-- --> <b>0.71</b> 版的文档，现已不再积极维护。<div class=margin-top--md>最新的文档请参阅 <b><a href=/docs/textinput>最新版本</a></b> (<!-- -->0.85<!-- -->)。</div></div><div class=docItemContainer_tjFy><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_sfvy><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>核心组件</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>TextInput</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 0.71</span><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type=button class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>TextInput</h1></header><p>TextInput 是一个允许用户在应用中通过键盘输入文本的基本组件。本组件的属性提供了多种特性的配置，譬如自动完成、自动大小写、占位文字，以及多种不同的键盘类型（如纯数字键盘）等等。</p>
 <p>最简单的用法就是丢一个<code>TextInput</code>到应用里，然后订阅它的<code>onChangeText</code>事件来读取用户的输入。注意，从 TextInput 里取值这就是目前唯一的做法！也就是使用在<code>onChangeText</code>中用<code>setState</code>把用户的输入写入到 state 中，然后在需要取值的地方从 this.state 中取出值。它还有一些其它的事件，譬如<code>onSubmitEditing</code>和<code>onFocus</code>。一个简单的例子如下：</p>
 <div class=snack-player data-snack-name=TextInput data-snack-description="Example usage" data-snack-files="%7B%22App.tsx%22%3A%7B%22type%22%3A%22CODE%22%2C%22contents%22%3A%22import%20React%2C%20%7B%20Component%20%7D%20from%20'react'%3B%5Cnimport%20%7B%20TextInput%20%7D%20from%20'react-native'%3B%5Cn%5Cnconst%20UselessTextInput%20%3D%20()%20%3D%3E%20%7B%5Cn%20%20const%20%5Bvalue%2C%20onChangeText%5D%20%3D%20React.useState('Useless%20Placeholder')%3B%5Cn%5Cn%20%20return%20(%5Cn%20%20%20%20%3CTextInput%5Cn%20%20%20%20%20%20style%3D%7B%7B%20height%3A%2040%2C%20borderColor%3A%20'gray'%2C%20borderWidth%3A%201%20%7D%7D%5Cn%20%20%20%20%20%20onChangeText%3D%7Btext%20%3D%3E%20onChangeText(text)%7D%5Cn%20%20%20%20%20%20value%3D%7Bvalue%7D%5Cn%20%20%20%20%2F%3E%5Cn%20%20)%3B%5Cn%7D%5Cn%5Cnexport%20default%20UselessTextInput%3B%22%7D%7D" data-snack-dependencies=react-native-safe-area-context data-snack-platform=web data-snack-supported-platforms=ios,android,web data-snack-theme=light data-snack-preview=true data-snack-loading=lazy data-snack-device-appearance=light data-snack-device-frame=false></div>
 <p>Two methods exposed via the native element are .focus() and .blur() that will focus or blur the TextInput programmatically.</p>
@@ -14,19 +14,6 @@
 <h2 class="anchor anchorTargetStickyNavbar_tleR" id=props>Props<a href=#props class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=allowfontscaling><code>allowFontScaling</code><a href=#allowfontscaling class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>控制字体是否要根据系统的“字体大小”辅助选项来进行缩放。默认值为<code>true</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=autocapitalize><code>autoCapitalize</code><a href=#autocapitalize class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -37,19 +24,6 @@
 <li class=""><code>sentences</code>: 每句话的第一个字符（默认）。</li>
 <li class=""><code>none</code>: 不切换。</li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('none', 'sentences', 'words', 'characters')<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=autocomplete><code>autoComplete</code><a href=#autocomplete class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -70,144 +44,34 @@
 <li class=""><code>cc-exp-month</code></li>
 <li class=""><code>cc-exp-year</code></li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('off', 'username', 'password', 'email', 'name', 'tel', 'street-address', 'postal-code', 'cc-number', 'cc-csc', 'cc-exp', 'cc-exp-month', 'cc-exp-year')<td>否<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=autocorrect><code>autoCorrect</code><a href=#autocorrect class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 false，会关闭拼写自动修正。默认值是 true。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=autofocus><code>autoFocus</code><a href=#autofocus class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 true，在<code>componentDidMount</code>后会获得焦点。默认值为 false。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=bluronsubmit><code>blurOnSubmit</code><a href=#bluronsubmit class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 true，文本框会在提交的时候失焦。对于单行输入框默认值为 true，多行则为 false。注意：对于多行输入框来说，如果将<code>blurOnSubmit</code>设为 true，则在按下回车键时就会失去焦点同时触发<code>onSubmitEditing</code>事件，而不会换行。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=carethidden><code>caretHidden</code><a href=#carethidden class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 true，则隐藏光标。默认值为 false。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=clearbuttonmode><code>clearButtonMode</code><a href=#clearbuttonmode class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>是否要在文本框右侧显示“清除”按钮。仅在单行模式下可用。默认值为<code>never</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('never', 'while-editing', 'unless-editing', 'always')<td>No<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=cleartextonfocus><code>clearTextOnFocus</code><a href=#cleartextonfocus class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 true，每次开始输入的时候都会清除文本框的内容。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>bool<td>No<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=contextmenuhidden><code>contextMenuHidden</code><a href=#contextmenuhidden class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>If <code>true</code>, context menu is hidden. The default value is <code>false</code>.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=datadetectortypes><code>dataDetectorTypes</code><a href=#datadetectortypes class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -222,108 +86,26 @@
 <li class=""><code>'none'</code></li>
 <li class=""><code>'all'</code></li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('phoneNumber', 'link', 'address', 'calendarEvent', 'none', 'all'), ,array of enum('phoneNumber', 'link', 'address', 'calendarEvent', 'none', 'all')<td>No<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=defaultvalue><code>defaultValue</code><a href=#defaultvalue class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>提供一个文本框中的初始值。当用户开始输入的时候，值就可以改变。在一些简单的使用情形下，如果你不想用监听消息然后更新 value 属性的方法来保持属性和状态同步的时候，就可以用 defaultValue 来代替。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>string<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=cursorcolor-android><code>cursorColor</code> <div class="label android">Android</div><a href=#cursorcolor-android class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>When provided it will set the color of the cursor (or "caret") in the component. Unlike the behavior of <code>selectionColor</code> the cursor color will be set independently from the color of the text selection box.</p>
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<tbody><tr><td><a class="" href=/docs/0.71/colors>color</a></table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=disablefullscreenui><code>disableFullscreenUI</code><a href=#disablefullscreenui class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当值为 false 时, 如果 text input 的周围有少量可用空间的话（比如说，当手机横过来时），操作系统可能会将这个 text input 设置为全屏模式。当值为 true 时, 这个特性不可用，text input 就是普通的模式。默认为 false。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>bool<td>No<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=editable><code>editable</code><a href=#editable class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 false，文本框是不可编辑的。默认值为 true。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=enablesreturnkeyautomatically><code>enablesReturnKeyAutomatically</code><a href=#enablesreturnkeyautomatically class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 true，键盘会在文本框内没有文字的时候禁用确认按钮。默认值为 false。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>bool<td>No<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=importantforautofill><code>importantForAutofill</code><a href=#importantforautofill class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -335,79 +117,19 @@
 <li class=""><code>yes</code>: This view is important for autofill.</li>
 <li class=""><code>yesExcludeDescendants</code>: This view is important for autofill, but its children aren't important for autofill.</li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>Required<th>平台<tbody><tr><td>enum('auto', 'no', 'noExcludeDescendants', 'yes', 'yesExcludeDescendants')<td>No<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=inlineimageleft><code>inlineImageLeft</code><a href=#inlineimageleft class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>指定一个图片放置在左侧。图片必须放置在<code>/android/app/src/main/res/drawable</code>目录下，经过编译后按如下形式引用（无路径无后缀）：</p>
 <div class="language-tsx codeBlockContainer_mQmQ theme-code-block" style=--prism-color:#FFFFFF;--prism-background-color:#282C34><div class=codeBlockContent_t_Hd><pre tabindex=0 class="prism-code language-tsx codeBlock_RMoD thin-scrollbar" style=color:#FFFFFF;background-color:#282C34><code class=codeBlockLines_AclH><div class=token-line style=color:#FFFFFF><span class="token tag punctuation" style=color:#657b83>&lt;</span><span class="token tag class-name" style=color:#fac863>TextInput</span><span class="token tag" style=color:#fc929e></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token tag" style=color:#fc929e> </span><span class="token tag attr-name" style=color:#c5a5c5>inlineImageLeft</span><span class="token tag attr-value punctuation attr-equals" style=color:#657b83>=</span><span class="token tag attr-value punctuation" style=color:#657b83>'</span><span class="token tag attr-value" style=color:#8dc891>search_icon</span><span class="token tag attr-value punctuation" style=color:#657b83>'</span><span class="token tag" style=color:#fc929e></span><br/></div><div class=token-line style=color:#FFFFFF><span class="token tag" style=color:#fc929e></span><span class="token tag punctuation" style=color:#657b83>/></span><br/></div></code></pre></div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>string<td>No<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=inlineimagepadding><code>inlineImagePadding</code><a href=#inlineimagepadding class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>给放置在左侧的图片设置 padding 样式。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>number<td>No<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=keyboardappearance><code>keyboardAppearance</code><a href=#keyboardappearance class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>指定键盘的颜色。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('default', 'light', 'dark')<td>No<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=keyboardtype><code>keyboardType</code><a href=#keyboardtype class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -435,331 +157,80 @@
 <ul>
 <li class=""><code>visible-password</code></li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('default', 'email-address', 'numeric', 'phone-pad', 'ascii-capable', 'numbers-and-punctuation', 'url', 'number-pad', 'name-phone-pad', 'decimal-pad', 'twitter', 'web-search', 'visible-password')<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=maxlength><code>maxLength</code><a href=#maxlength class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>限制文本框中最多的字符数。使用这个属性而不用 JS 逻辑去实现，可以避免闪烁的现象。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>number<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=multiline><code>multiline</code><a href=#multiline class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 true，文本框中可以输入多行文字。默认值为 false。注意安卓上如果设置<code>multiline = {true}</code>，文本默认会垂直居中，可设置<code>textAlignVertical: 'top'</code>样式来使其居顶显示。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=numberoflines><code>numberOfLines</code><a href=#numberoflines class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置输入框的行数。当 multiline 设置为 true 时使用它，可以占据对应的行数。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>number<td>No<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onblur><code>onBlur</code><a href=#onblur class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当文本框失去焦点的时候调用此回调函数。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onchange><code>onChange</code><a href=#onchange class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当文本框内容变化时调用此回调函数。回调参数为<code>{ nativeEvent: { eventCount, target, text} }</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onchangetext><code>onChangeText</code><a href=#onchangetext class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当文本框内容变化时调用此回调函数。改变后的文字内容会作为参数传递。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=oncontentsizechange><code>onContentSizeChange</code><a href=#oncontentsizechange class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>Callback that is called when the text input's content size changes. This will be called with <code>{ nativeEvent: { contentSize: { width, height } } }</code>.</p>
 <p>Only called for multiline text inputs.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onendediting><code>onEndEditing</code><a href=#onendediting class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当文本输入结束后调用此回调函数。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onfocus><code>onFocus</code><a href=#onfocus class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当文本框获得焦点的时候调用此回调函数。回调参数为<code>{ nativeEvent: { target } }</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onkeypress><code>onKeyPress</code><a href=#onkeypress class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当一个键被按下的时候调用此回调。传递给回调函数的参数为<code>{ nativeEvent: { key: keyValue } }</code>，其中<code>keyValue</code>即为被按下的键。会在 onChange 之前调用。注意：在 Android 上只有软键盘会触发此事件，物理键盘不会触发。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onlayout><code>onLayout</code><a href=#onlayout class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>当组件加载或者布局变化的时候调用，回调参数为<code>{ nativeEvent: {layout: {x, y, width, height}, target } }</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onscroll><code>onScroll</code><a href=#onscroll class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>在内容滚动时持续调用，传回参数的格式形如<code>{ nativeEvent: { contentOffset: { x, y } } }</code>。也可能包含其他和滚动事件相关的参数，但是在 Android 上，出于性能考虑，不会提供<code>contentSize</code>参数。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onselectionchange><code>onSelectionChange</code><a href=#onselectionchange class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>光标位置变化时，传回参数的格式形如<code>{ nativeEvent: { selection: { start, end } } }</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=onsubmitediting><code>onSubmitEditing</code><a href=#onsubmitediting class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>此回调函数当软键盘的<code>确定</code>/<code>提交</code>按钮被按下的时候调用此函数，所传参数为<code>{nativeEvent: {text, eventCount, target}}</code>。如果<code>multiline={true}</code>，此属性不可用。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>function<td>No</table></div>
 <p>Note that on iOS this method isn't called when using <code>keyboardType="phone-pad"</code>.</p>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=ontextinput><code>onTextInput</code><a href=#ontextinput class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>使用光标在某位置输入文本时的回调 <code>{ nativeEvent: { text, previousText, range: { start, end } } }</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>Required<tbody><tr><td>function<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=placeholder><code>placeholder</code><a href=#placeholder class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果没有任何文字输入，会显示此字符串。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>string<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=placeholdertextcolor><code>placeholderTextColor</code><a href=#placeholdertextcolor class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>占位字符串显示的文字颜色。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td><a class="" href=/docs/0.71/colors>color</a><td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=returnkeylabel><code>returnKeyLabel</code><a href=#returnkeylabel class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>Sets the return key to the label. Use it instead of <code>returnKeyType</code>.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>string<td>No<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=returnkeytype><code>returnKeyType</code><a href=#returnkeytype class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -786,146 +257,36 @@
 <li class=""><code>route</code></li>
 <li class=""><code>yahoo</code></li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>enum('done', 'go', 'next', 'search', 'send', 'none', 'previous', 'default', 'emergency-call', 'google', 'join', 'route', 'yahoo')<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=rejectrespondertermination><code>rejectResponderTermination</code><a href=#rejectrespondertermination class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>Determines how the return key should look. On Android you can also use <code>returnKeyLabel</code>.</p>
 <p><em>iOS Only</em></p>
 <p>If <code>true</code>, allows TextInput to pass touch events to the parent component. This allows components such as SwipeableListView to be swipeable from the TextInput on iOS, as is the case on Android by default.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>Required<th>平台<tbody><tr><td>bool<td>No<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=scrollenabled><code>scrollEnabled</code><a href=#scrollenabled class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>If <code>false</code>, scrolling of the text view will be disabled. The default value is <code>true</code>. Only works with <code>multiline={true}</code>.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>bool<td>否<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=securetextentry><code>secureTextEntry</code><a href=#securetextentry class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 true，文本框会遮住之前输入的文字，这样类似密码之类的敏感文字可以更加安全。默认值为 false。<code>multiline={true}</code>时不可用。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=selection><code>selection</code><a href=#selection class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置选中文字的范围（指定首尾的索引值）。如果首尾为同一索引位置，则相当于指定光标的位置。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>object: <code>{start: number,end: number}</code><td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=selectioncolor><code>selectionColor</code><a href=#selectioncolor class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>设置输入框高亮时的颜色（还包括光标）。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td><a class="" href=/docs/0.71/colors>color</a><td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=selecttextonfocus><code>selectTextOnFocus</code><a href=#selecttextonfocus class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果为 true，当获得焦点的时候，所有的文字都会被选中。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>bool<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=spellcheck><code>spellCheck</code><a href=#spellcheck class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>如果设置为<code>false</code>，则禁用拼写检查的样式（比如错误拼写的单词下的红线）。默认值继承自<code>autoCorrect</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>bool<td>No<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textalign><code>textAlign</code><a href=#textalign class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -936,19 +297,6 @@
 <li class=""><code>center</code></li>
 <li class=""><code>right</code></li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>Required<tbody><tr><td>enum('left', 'center', 'right')<td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textcontenttype><code>textContentType</code><a href=#textcontenttype class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -987,40 +335,10 @@
 <li class=""><code>newPassword</code></li>
 <li class=""><code>oneTimeCode</code></li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('none', 'URL', 'addressCity', 'addressCityAndState', 'addressState', 'countryName', 'creditCardNumber', 'emailAddress', 'familyName', 'fullStreetAddress', 'givenName', 'jobTitle', 'location', 'middleName', 'name', 'namePrefix', 'nameSuffix', 'nickname', 'organizationName', 'postalCode', 'streetAddressLine1', 'streetAddressLine2', 'sublocality', 'telephoneNumber', 'username', 'password')<td>否<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=passwordrules><code>passwordRules</code><a href=#passwordrules class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>When using <code>textContentType</code> as <code>newPassword</code> on iOS we can let the OS know the minimum requirements of the password so that it can generate one that will satisfy them. In order to create a valid string for <code>PasswordRules</code> take a look to the <a href=https://developer.apple.com/password-rules/ target=_blank rel="noopener noreferrer" class="">Apple Docs</a>.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>Required<th>平台<tbody><tr><td>string<td>No<td>iOS</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=style><code>style</code><a href=#style class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
@@ -1037,74 +355,18 @@
 </ul>
 <p>see <a href=https://github.com/facebook/react-native/issues/7070 target=_blank rel="noopener noreferrer" class="">Issue#7070</a> for more detail.</p>
 <p><a class="" href=/docs/0.71/style>Styles</a></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td><a class="" href=/docs/0.71/text#style>Text</a><td>No</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=textbreakstrategy><code>textBreakStrategy</code><a href=#textbreakstrategy class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>在 Android API Level 23+ 的平台上设置文字断行策略, 可能值有<code>simple</code>, <code>highQuality</code>, <code>balanced</code>。默认值为<code>simple</code>。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td>enum('simple', 'highQuality', 'balanced')<td>No<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=underlinecolorandroid><code>underlineColorAndroid</code><a href=#underlinecolorandroid class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>文本框的下划线颜色(译注：如果要去掉文本框的边框，请将此属性设为透明 transparent)。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<th>平台<tbody><tr><td><a class="" href=/docs/0.71/colors>color</a><td>No<td>Android</table></div>
 <hr/>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=value><code>value</code><a href=#value class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
 <p>文本框中的文字内容。 TextInput 是一个受约束的(Controlled)的组件，意味着如果提供了 value 属性，原生值会被强制与 value 属性保持一致。在大部分情况下这都工作的很好，不过有些情况下会导致一些闪烁现象——一个常见的原因就是通过不改变 value 来阻止用户进行编辑。如果你希望阻止用户输入，可以考虑设置<code>editable={false}</code>；如果你是希望限制输入的长度，可以考虑设置<code>maxLength</code>属性，这两个属性都不会导致闪烁。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class=table-wrapper><table><thead><tr><th>类型<th>必需<tbody><tr><td>string<td>No</table></div>
 <h2 class="anchor anchorTargetStickyNavbar_tleR" id=方法>方法<a href=#方法 class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_tleR" id=focus><code>.focus()</code><a href=#focus class=hash-link aria-label=标题的直接链接 title=标题的直接链接 translate=no>​</a></h3>
