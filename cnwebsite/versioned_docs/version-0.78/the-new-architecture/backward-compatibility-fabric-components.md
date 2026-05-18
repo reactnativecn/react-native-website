@@ -38,7 +38,7 @@ import NewArchitectureWarning from '../\_markdown-new-architecture-warning.mdx';
 
 ## 配置 Fabric 原生组件依赖
 
-### iOS {/_dependencies-ios_/}
+### iOS {/_ #dependencies-ios _/}
 
 Apple 平台使用 [Cocoapods](https://cocoapods.org) 作为依赖管理器来安装 Fabric 原生组件。
 

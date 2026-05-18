@@ -29,7 +29,7 @@ While the last step is the same for all the platforms, the first two steps are d
 
 ## Configure the TurboModule Dependencies
 
-### iOS {/_dependencies-ios_/}
+### iOS {/_ #dependencies-ios _/}
 
 The Apple platform installs TurboModules using [Cocoapods](https://cocoapods.org) as dependency manager.
 
