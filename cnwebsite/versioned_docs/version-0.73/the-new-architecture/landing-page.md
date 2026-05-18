@@ -28,5 +28,3 @@ import NewArchitectureWarning from '../\_markdown-new-architecture-warning.mdx';
 首先，阅读一下[支柱](pillars)部分中概述的核心概念。
 
 然后，对于支持新架构的**方法指南**，请查看[第三方库的迁移指南](../new-architecture-library-intro)。
-
-关于**支持新旧架构的信息**，请看 [向后兼容指南](backward-compatibility) 。

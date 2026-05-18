@@ -28,5 +28,3 @@ To **migrate an existing app** to the New Architecture, follow [Adopting the New
 First, read up on the core concepts outlined in the [Pillars](pillars) section.
 
 Then, for a **how-to guide** on supporting the New Architecture, check out the [Migration](../new-architecture-library-intro) guide.
-
-For information on **supporting both the Old and New Architectures**, see the [Backwards Compatibility](backward-compatibility) guide.
