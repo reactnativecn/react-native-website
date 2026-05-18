@@ -14,7 +14,7 @@ export default {
       'more-resources',
     ],
     环境搭建: [
-      'environment-setup',
+      'set-up-your-environment',
       'integration-with-existing-apps',
       'integration-with-android-fragment',
       'building-for-tv',

@@ -15,7 +15,7 @@ import RemoveGlobalCLI from './\_remove-global-cli.md';
 
 If you have constraints that are not served well by a [Framework](/architecture/glossary#react-native-framework), or you prefer to write your own Framework, you can create a React Native app without using a Framework.
 
-To do so, you'll first need to [set up your environment](environment-setup). Once you're set up, continue with the steps below to create an application and start developing.
+To do so, you'll first need to [set up your environment](set-up-your-environment). Once you're set up, continue with the steps below to create an application and start developing.
 
 ### Step 1: Creating a new application
 

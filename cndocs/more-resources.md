@@ -7,7 +7,7 @@ title: 其他参考资源
 
 ## 接下来可以看什么
 
-- [搭建开发环境](environment-setup)
+- [搭建开发环境](set-up-your-environment)
 - [搭建开发工作流](running-on-device)
 - [设计和布局你的应用](flexbox)
 - [调试你的应用](debugging)

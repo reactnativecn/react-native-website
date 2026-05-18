@@ -17,7 +17,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 
 ## 开发环境准备
 
-首先按照[开发环境搭建教程](environment-setup)来安装 React Native 在 Android 平台上所需的一切依赖软件。
+首先按照[开发环境搭建教程](set-up-your-environment)来安装 React Native 在 Android 平台上所需的一切依赖软件。
 
 ### 1. 配置项目目录结构
 

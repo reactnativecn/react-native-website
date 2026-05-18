@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 
 在真机上仔细测试 app 后再发布给用户总是不会错的。本文档将指导你通过必须的步骤在设备上运行 React Native app，为生产做准备。
 
-如果使用 Expo 沙盒环境来建立工程，可以通过 Expo App 扫描 QR 代码在设备上预览 app。为了在设备上编译和运行 app，需要“弹出”(eject)并参照[搭建开发环境](getting-started.md)文档搭建原生环境。
+如果使用 Expo 沙盒环境来建立工程，可以通过 Expo App 扫描 QR 代码在设备上预览 app。为了在设备上编译和运行 app，需要“弹出”(eject)并参照[搭建开发环境](set-up-your-environment)文档搭建原生环境。
 
 <Tabs groupId="platform" defaultValue={constants.defaultPlatform} values={constants.platforms} className="pill-tabs">
 <TabItem value="android">
@@ -318,14 +318,14 @@ $ npx react-native run-android
 
 [//]: # 'Windows, iOS'
 
-> A Mac is required in order to build your app for iOS devices. Alternatively, you can refer to our [environment setup guide](environment-setup) to learn how to build your app using Expo CLI, which will allow you to run your app using the Expo client app.
+> A Mac is required in order to build your app for iOS devices. Alternatively, you can refer to our [environment setup guide](set-up-your-environment) to learn how to build your app using Expo CLI, which will allow you to run your app using the Expo client app.
 
 </TabItem>
 <TabItem value="linux">
 
 [//]: # 'Linux, iOS'
 
-> A Mac is required in order to build your app for iOS devices. Alternatively, you can refer to our [environment setup guide](environment-setup) to learn how to build your app using Expo CLI, which will allow you to run your app using the Expo client app.
+> A Mac is required in order to build your app for iOS devices. Alternatively, you can refer to our [environment setup guide](set-up-your-environment) to learn how to build your app using Expo CLI, which will allow you to run your app using the Expo client app.
 
 </TabItem>
 </Tabs>

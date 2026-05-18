@@ -11,7 +11,7 @@ title: 示例教程：电影列表
 
 ## 准备工作
 
-React Native 需要一些基础的配置工作，你可以参考[开始使用 React Native](getting-started.md)来进行。
+React Native 需要一些基础的配置工作，你可以参考[搭建开发环境](set-up-your-environment)来进行。
 
 在所有依赖的软件都已经安装完毕后，请创建一个 React Native 工程和我们一起开始这次示例：
 
@@ -38,10 +38,10 @@ npx react-native init SampleAppMovies
 ```jsx
 const MOCKED_MOVIES_DATA = [
   {
-    title: "标题",
-    year: "2015",
-    posters: { thumbnail: "http://i.imgur.com/UePbdph.jpg" }
-  }
+    title: '标题',
+    year: '2015',
+    posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'},
+  },
 ];
 ```
 
@@ -53,8 +53,8 @@ const MOCKED_MOVIES_DATA = [
 我们接下来要展现一个电影，绘制它的标题、年份、以及缩略图(_译注：这个过程我们通常会叫做“渲染/render”，后面我们都会用“渲染”这个词_)。渲染缩略图需要用到 Image 组件，所以把 Image 添加到对 React 的 import 列表中。
 
 ```jsx
-import React, { Component } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import React, {Component} from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
 ```
 
 然后修改一下 render 函数，这样我们可以把上面创建的模拟数据渲染出来。
@@ -78,21 +78,24 @@ import { Image, StyleSheet, Text, View } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
   thumbnail: {
     width: 53,
-    height: 81
-  }
+    height: 81,
+  },
 });
 ```
 
 然后把它应用到 Image 组件上：
 
 ```jsx
-<Image source={{ uri: movie.posters.thumbnail }} style={styles.thumbnail} />
+<Image
+  source={{uri: movie.posters.thumbnail}}
+  style={styles.thumbnail}
+/>
 ```
 
 按下`⌘+R`或者`Reload JS`，现在图片应该可以被渲染出来了。
@@ -120,7 +123,10 @@ const styles = StyleSheet.create({
 ```jsx
 return (
   <View style={styles.container}>
-    <Image source={{ uri: movie.posters.thumbnail }} style={styles.thumbnail} />
+    <Image
+      source={{uri: movie.posters.thumbnail}}
+      style={styles.thumbnail}
+    />
     <View style={styles.rightContainer}>
       <Text style={styles.title}>{movie.title}</Text>
       <Text style={styles.year}>{movie.year}</Text>
@@ -187,7 +193,7 @@ return (
  * 当然，由于众所周知的原因，这个地址可能国内访问也比较困难。
  */
 const REQUEST_URL =
-  "https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json";
+  'https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json';
 ```
 
 首先在应用中创建一个初始的 null 状态，这样可以通过`this.state.movies == null`来判断我们的数据是不是已经被抓取到了。我们在服务器响应返回的时候执行`this.setState({movies: moviesData})`来改变这个状态。把下面这段代码放到我们的 React 类的 render 函数之前（下面注释中的“绑定操作”你可以看看这个[短视频教程](http://v.youku.com/v_show/id_XMTgyNzM0NjQzMg==.html)）：
@@ -280,8 +286,14 @@ const REQUEST_URL =
 首先要做的事情：在文件最开头引入`FlatList`。
 
 ```jsx
-import React, { Component } from "react";
-import { Image, FlatList, StyleSheet, Text, View } from "react-native";
+import React, {Component} from 'react';
+import {
+  Image,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 ```
 
 现在来修改 render 函数。当我们已经有了数据之后，渲染一个包含多个电影信息的 FlatList，而不仅仅是单个的电影。
@@ -378,20 +390,25 @@ import { Image, FlatList, StyleSheet, Text, View } from "react-native";
 ### 最终的代码(App.js)
 
 ```jsx
+import React, {Component} from 'react';
 
-import React, { Component } from "react";
-
-import { Image, FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 const REQUEST_URL =
-  "https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json";
+  'https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json';
 
 export default class SampleAppMovies extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
-      loaded: false
+      loaded: false,
     };
     // 在ES6中，如果在自定义的函数里使用了this关键字，则需要对其进行“绑定”操作，否则this的指向会变为空
     // 像下面这行代码一样，在constructor中使用bind是其中一种做法（还有一些其他做法，如使用箭头函数等）
@@ -409,7 +426,7 @@ export default class SampleAppMovies extends Component {
         // 注意，这里使用了this关键字，为了保证this在调用时仍然指向当前组件，我们需要对其进行“绑定”操作
         this.setState({
           data: this.state.data.concat(responseData.movies),
-          loaded: true
+          loaded: true,
         });
       });
   }
@@ -437,13 +454,13 @@ export default class SampleAppMovies extends Component {
     );
   }
 
-  renderMovie({ item }) {
+  renderMovie({item}) {
     // { item }是一种“解构”写法，请阅读ES2015语法的相关文档
     // item也是FlatList中固定的参数名，请阅读FlatList的相关文档
     return (
       <View style={styles.container}>
         <Image
-          source={{ uri: item.posters.thumbnail }}
+          source={{uri: item.posters.thumbnail}}
           style={styles.thumbnail}
         />
         <View style={styles.rightContainer}>
@@ -458,29 +475,29 @@ export default class SampleAppMovies extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
   rightContainer: {
-    flex: 1
+    flex: 1,
   },
   title: {
     fontSize: 20,
     marginBottom: 8,
-    textAlign: "center"
+    textAlign: 'center',
   },
   year: {
-    textAlign: "center"
+    textAlign: 'center',
   },
   thumbnail: {
     width: 53,
-    height: 81
+    height: 81,
   },
   list: {
     paddingTop: 20,
-    backgroundColor: "#F5FCFF"
-  }
+    backgroundColor: '#F5FCFF',
+  },
 });
 ```

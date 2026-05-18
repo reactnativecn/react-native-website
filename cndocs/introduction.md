@@ -7,7 +7,7 @@ description: 本指南将帮助你了解学习 React Native 的前置知识、�
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
 <div className="content-banner">
-  欢迎开启 React Native 学习之旅！如果你在寻找入门说明，它们已经移到了<a href="environment-setup">单独的章节</a>。继续阅读，了解文档结构、原生组件、React 等内容！
+  欢迎开启 React Native 学习之旅！如果你在寻找入门说明，它们已经移到了<a href="set-up-your-environment">单独的章节</a>。继续阅读，了解文档结构、原生组件、React 等内容！
   <img className="content-banner-img" src="/docs/assets/p_android-ios-devices.svg" alt=" " />
 </div>
 
@@ -52,7 +52,7 @@ export default YourApp;
 上面的是一个 Snack Player。这是 Expo 提供的一个便捷工具，用来嵌入并运行 React Native 项目，并展示它们在 Android 和 iOS 等平台上的渲染效果。代码是实时可编辑的，因此你可以直接在浏览器中动手试试。现在就把上面的 “Try editing me!” 改成 “Hello, world!” 吧。
 
 :::tip
-如果你想在本地搭建开发环境，也可以按照我们的指南[在本机上配置开发环境](environment-setup)，然后把这些代码示例粘贴到你的项目中运行。（如果你是 Web 开发者，你可能已经为移动端浏览器调试配置好了本地环境！）
+如果你想在本地搭建开发环境，也可以按照我们的指南[在本机上配置开发环境](set-up-your-environment)，然后把这些代码示例粘贴到你的项目中运行。（如果你是 Web 开发者，你可能已经为移动端浏览器调试配置好了本地环境！）
 :::
 
 ## 开发者提示

@@ -13,7 +13,7 @@ import NewArchitectureWarning from '../\_markdown-new-architecture-warning.mdx';
 
 ## 开发环境
 
-在继续之前，请确保你已经完成[搭建开发环境](getting-started.md)中的**完整原生环境**中的所有步骤。
+在继续之前，请确保你已经完成[搭建开发环境](set-up-your-environment)中的**完整原生环境**中的所有步骤。
 
 如果正在按照指南搭建，当配置到**运行你的 React Native 应用程序**部分时停止，然后继续按照本指南进行。
 

@@ -11,7 +11,7 @@ title: 示例教程：电影列表
 
 ## 准备工作
 
-React Native 需要一些基础的配置工作，你可以参考[开始使用 React Native](getting-started.md)来进行。
+React Native 需要一些基础的配置工作，你可以参考[搭建开发环境](set-up-your-environment)来进行。
 
 在所有依赖的软件都已经安装完毕后，请创建一个 React Native 工程和我们一起开始这次示例：
 

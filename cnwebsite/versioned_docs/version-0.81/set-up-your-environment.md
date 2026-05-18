@@ -1,5 +1,5 @@
 ---
-id: environment-setup
+id: set-up-your-environment
 title: 搭建开发环境
 hide_table_of_contents: true
 ---

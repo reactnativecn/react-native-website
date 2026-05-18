@@ -13,7 +13,7 @@ import PlatformSupport from '@site/src/theme/PlatformSupport';
 
 如果[框架](/architecture/glossary#react-native-framework)无法很好地满足你的需求，或者你更倾向于自己编写框架，那么你可以在不使用框架的情况下创建 React Native 应用。
 
-为此，你首先需要[搭建开发环境](environment-setup)。环境准备就绪后，继续按以下步骤创建应用并开始开发。
+为此，你首先需要[搭建开发环境](set-up-your-environment)。环境准备就绪后，继续按以下步骤创建应用并开始开发。
 
 ### 第 1 步：创建新项目
 

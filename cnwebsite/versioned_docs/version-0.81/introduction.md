@@ -6,7 +6,7 @@ title: 简介
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
 <div className="content-banner">
-  欢迎开启 React Native 的旅程！如果你在找如何搭建环境的文档，请移步<a href="environment-setup">搭建开发环境</a>。 继续往下阅读可了解关于文档结构、原生组件、React等相关的一些介绍。
+  欢迎开启 React Native 的旅程！如果你在找如何搭建环境的文档，请移步<a href="set-up-your-environment">搭建开发环境</a>。 继续往下阅读可了解关于文档结构、原生组件、React等相关的一些介绍。
   <img className="content-banner-img" src="https://cdn.jsdelivr.net/gh/reactnativecn/react-native-website@gh-pages/docs/assets/p_android-ios-devices.svg" alt=" " />
 </div>
 
@@ -45,7 +45,7 @@ export default YourApp;
 
 上面的示例使用了一个叫做 Snack Player 的工具（我们也会用“沙盒环境”代指）。这是由 Expo 公司提供的专门用于演示、学习 React Native 的交互工具。它集成了 react-native-web 兼容层，会尽可能把 React Native 的代码转化为兼容的网页来运行（当然会有无法转化的情况，那种情况下则必须使用模拟器或者手机来运行）。上面的代码可以直接修改和运行，所以你可以在里面直接练习。试着改下上面示例中的文字看看效果吧！
 
-> 沙盒环境通常只用于简单的演示、学习项目，它无法添加新的原生模块。所以对于正式的项目，我们建议[搭建完整的原生环境](environment-setup) 。上面的代码你也可以直接复制粘贴到完整项目的`App.js`文件中来运行。
+> 沙盒环境通常只用于简单的演示、学习项目，它无法添加新的原生模块。所以对于正式的项目，我们建议[搭建完整的原生环境](set-up-your-environment) 。上面的代码你也可以直接复制粘贴到完整项目的`App.js`文件中来运行。
 
 ## 函数式组件与 Class 组件
 

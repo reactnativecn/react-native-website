@@ -436,7 +436,7 @@ Connection to `http://localhost:8081/debugger-proxy?role=client` timed out. Are 
 [//]: # 'Windows, iOS'
 
 :::info
-构建 iOS 应用需要一台 Mac。或者你可以参考我们的[环境搭建指南](environment-setup)，了解如何使用 Expo CLI 构建应用，这将允许你使用 Expo 客户端应用来运行你的应用。
+构建 iOS 应用需要一台 Mac。或者你可以参考我们的[环境搭建指南](set-up-your-environment)，了解如何使用 Expo CLI 构建应用，这将允许你使用 Expo 客户端应用来运行你的应用。
 :::
 
 </TabItem>
@@ -445,7 +445,7 @@ Connection to `http://localhost:8081/debugger-proxy?role=client` timed out. Are 
 [//]: # 'Linux, iOS'
 
 :::info
-构建 iOS 应用需要一台 Mac。或者你可以参考我们的[环境搭建指南](environment-setup)，了解如何使用 Expo CLI 构建应用，这将允许你使用 Expo 客户端应用来运行你的应用。
+构建 iOS 应用需要一台 Mac。或者你可以参考我们的[环境搭建指南](set-up-your-environment)，了解如何使用 Expo CLI 构建应用，这将允许你使用 Expo 客户端应用来运行你的应用。
 :::
 
 </TabItem>
