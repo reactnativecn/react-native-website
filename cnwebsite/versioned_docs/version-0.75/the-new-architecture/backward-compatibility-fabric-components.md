@@ -38,7 +38,7 @@ import NewArchitectureWarning from '../\_markdown-new-architecture-warning.mdx';
 
 ## 配置 Fabric 原生组件依赖
 
-### iOS {#dependencies-ios}
+### iOS {/_dependencies-ios_/}
 
 Apple 平台使用 [Cocoapods](https://cocoapods.org) 作为依赖管理器来安装 Fabric 原生组件。
 
@@ -498,23 +498,3 @@ import MyComponent from 'your-component/src/index';
 ```
 
 由于 `codegenNativeComponent` 在底层调用了 `requireNativeComponent`，我们需要重新导出组件，以避免多次注册。
-
-<Tabs groupId="fabric-component-backward-compatibility" queryString
-      defaultValue={constants.defaultFabricComponentSpecLanguage}
-      values={constants.fabricComponentSpecLanguages}>
-<TabItem value="Flow">
-
-```ts
-// @flow
-export default require('./MyComponentNativeComponent').default;
-```
-
-</TabItem>
-<TabItem value="TypeScript">
-
-```ts
-export default require('./MyComponentNativeComponent').default;
-```
-
-</TabItem>
-</Tabs>

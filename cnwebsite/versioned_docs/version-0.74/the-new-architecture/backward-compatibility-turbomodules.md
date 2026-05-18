@@ -38,7 +38,7 @@ import NewArchitectureWarning from '../\_markdown-new-architecture-warning.mdx';
 
 ## 配置 Turbo 原生模块依赖
 
-### iOS {#dependencies-ios}
+### iOS {/_dependencies-ios_/}
 
 Apple 平台使用[Cocoapods](https://cocoapods.org)作为依赖管理器来安装 Turbo 原生模块。
 
