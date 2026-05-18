@@ -22,7 +22,7 @@ import {getTemplateBranchNameForCurrentVersion} from '@site/src/getTemplateBranc
 
 ## 开发环境准备
 
-按照[开发环境搭建教程](set-up-your-environment)和[不使用框架使用 React Native](getting-started-without-a-framework) 来配置你的 Android 开发环境。
+按照[开发环境搭建教程](environment-setup)和[不使用框架使用 React Native](getting-started-without-a-framework) 来配置你的 Android 开发环境。
 本教程还假设你熟悉 Android 开发的基础知识，例如创建 Activity 和编辑 `AndroidManifest.xml` 文件。
 
 ### 1. 配置项目目录结构

@@ -22,7 +22,7 @@ import {getTemplateBranchNameForCurrentVersion} from '@site/src/getTemplateBranc
 
 ## 准备工作
 
-请按照[设置开发环境](set-up-your-environment)指南和[不使用框架的 React Native](getting-started-without-a-framework)指南来配置您的开发环境，以便构建 iOS 平台的 React Native 应用。
+请按照[设置开发环境](environment-setup)指南和[不使用框架的 React Native](getting-started-without-a-framework)指南来配置您的开发环境，以便构建 iOS 平台的 React Native 应用。
 本指南还假设您熟悉 iOS 开发的基础知识，如创建`UIViewController`和编辑`Podfile`文件。
 
 ### 1. 设置目录结构
