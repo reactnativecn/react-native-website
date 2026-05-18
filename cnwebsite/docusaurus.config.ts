@@ -190,7 +190,7 @@ const config: Config = {
     announcementBar: {
       id: 'ai-cresc-dev',
       content:
-        '<a href="https://ai.cresc.dev" target="_blank" rel="noopener noreferrer">AI 中转</a>：最先进的满血 GPT-5.5 与 Opus 4.7 直连，稳定安全绝不掺水，限时优惠低于一折，企业采购可开票',
+        '<a href="https://ai.cresc.dev" target="_blank" rel="noopener noreferrer">AI 中转</a>：最先进的满血 GPT-5.5 与 Opus 4.7 直连，稳定安全绝不掺水，限时优惠低至一折，企业采购可开票',
       isCloseable: true,
     },
     colorMode: {
