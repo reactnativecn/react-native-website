@@ -73,7 +73,7 @@ export default TextWithRefs;
   - [`nodeType`](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType)
   - [`nodeValue`](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeValue)
   - [`ownerDocument`](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/ownerDocument)
-    - ℹ️ 将返回渲染此组件的[文档实例](/docs/next/document-instances)。
+    - ℹ️ 将返回渲染此组件的[文档节点](/docs/next/document-nodes)。
   - [`parentElement`](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/parentElement)
   - [`parentNode`](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/parentNode)
   - [`previousSibling`](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/previousSibling)

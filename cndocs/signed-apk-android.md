@@ -65,11 +65,11 @@ MYAPP_UPLOAD_KEY_PASSWORD=*****
 
 上面的这些会作为全局 Gradle 变量，在后面的步骤中可以用来给应用签名。
 
-:::note 关于使用 git 的说明
+:::note[关于使用 git 的说明]
 将上述 Gradle 变量保存在 `~/.gradle/gradle.properties` 而非 `android/gradle.properties` 中，可以防止它们被提交到 git。你可能需要先在用户主目录下创建 `~/.gradle/gradle.properties` 文件。
 :::
 
-:::note 关于安全性的说明
+:::note[关于安全性的说明]
 如果你不想以明文方式保存密码，且你使用的是 macOS 系统，你也可以把密码[保存到钥匙串（Keychain）中](https://pilloxa.gitlab.io/posts/safer-passwords-in-gradle/)。这样一来你就可以省略掉 `~/.gradle/gradle.properties` 中的后两行。
 :::
 
@@ -174,7 +174,7 @@ android {
 
 Proguard 是一个 Java 字节码混淆压缩工具，它可以移除掉 React Native Java（和它的依赖库中）未被使用到的部分，从而有效地减少 APK 的大小。
 
-:::caution 重要
+:::caution[重要]
 启用 Proguard 之后，你必须再次全面地测试你的应用。Proguard 有时候需要为你引入的每个原生库做一些额外的配置。参见`app/proguard-rules.pro`文件。
 :::
 
