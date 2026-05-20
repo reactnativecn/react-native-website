@@ -7,13 +7,13 @@ title: useColorScheme
 import {useColorScheme} from 'react-native';
 ```
 
-`useColorScheme` 这个React hook 提供并订阅来自Appearance模块的颜色方案更新。返回值表示当前用户首选的颜色方案。该值可以稍后通过直接用户动作（例如，设备设置中的主题选择）或根据时间表（例如，遵循白天/夜晚周期的亮主题和暗主题）来更新。
+`useColorScheme` 这个 React Hook 提供并订阅来自 [`Appearance`](appearance) 模块的颜色方案更新。返回值表示当前生效的颜色方案。该值可以稍后通过直接用户动作（例如，设备设置中的主题选择，或通过 [`setColorScheme`](appearance#setcolorscheme) 在应用级别选择的用户界面样式）或根据时间表（例如，遵循白天/夜晚周期的亮色和暗色主题）来更新。
 
-### 支持的颜色方案
+### 返回值
 
-- `"light"`: 用户倾向于使用浅色主题。
-- `"dark"`: 用户倾向于使用深色主题。
-- `null`: 用户未指定首选颜色方案。
+- `'light'`: 已应用亮色方案。
+- `'dark'`: 已应用暗色方案。
+- `null`: 如果原生 Appearance 模块不可用，则可能返回该值。
 
 ---
 

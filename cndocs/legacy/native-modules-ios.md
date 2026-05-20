@@ -551,7 +551,7 @@ RCT_EXPORT_METHOD(doSomethingExpensive:(NSString *)param callback:(RCTResponseSe
 
 ```
 
-:::info 在模块之间共享调度队列
+:::info[在模块之间共享调度队列]
 `methodQueue` 方法会在模块初始化时调用一次，然后由 React Native 保留，因此你自己不需要保留对该队列的引用，除非你希望在模块中使用它。但是，如果你希望在多个模块之间共享同一个队列，那么你需要确保为每个模块保留并返回相同的队列实例。
 :::
 
