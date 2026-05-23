@@ -122,7 +122,7 @@ export default App;
 
 ### `android_ripple` <div className="label android">Android</div>
 
-使用并配置 Android 波纹效果。
+启用 Android 波纹效果并配置其属性。`color` 字段既接受普通颜色，也接受 [`PlatformColor`](platformcolor) 值，因此你可以引用类似 `?attr/colorAccent` 的主题属性。使用 `PlatformColor` 时，波纹会在系统配置变化时（例如在浅色和深色模式之间切换）自动更新。
 
 | Type                                   |
 | -------------------------------------- |
@@ -260,9 +260,9 @@ export default App;
 
 **Properties:**
 
-| Name       | Type            | Required | Description                                                                                                                          |
-| ---------- | --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| color      | [color](colors) | No       | 定义波纹的颜色。                                                                                                                      |
-| borderless | boolean         | No       | 定义波纹效果是否包含边框。                                                                                                            |
-| radius     | number          | No       | 定义波纹的半径。                                                                                                                      |
+| Name       | Type            | Required | Description                                                                                                                  |
+| ---------- | --------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| color      | [color](colors) | No       | 定义波纹的颜色。                                                                                                             |
+| borderless | boolean         | No       | 定义波纹效果是否包含边框。                                                                                                   |
+| radius     | number          | No       | 定义波纹的半径。                                                                                                             |
 | foreground | boolean         | No       | 设为 true 可将波纹效果添加到视图的前景而非背景。当子视图有自己的背景色或者你在显示图片时，这很有用，可以避免波纹效果被遮挡。 |
