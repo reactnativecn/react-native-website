@@ -103,9 +103,14 @@
 
 body {
   font-family: var(--ifm-font-family-base);
+  scrollbar-gutter: stable;
 }
 
 html[data-theme="light"] {
+  body {
+    scrollbar-color: var(--subtle) var(--ifm-background-color);
+  }
+
   --ifm-link-color: #357da1;
 }
 
