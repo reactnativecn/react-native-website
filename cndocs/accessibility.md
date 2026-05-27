@@ -4,7 +4,7 @@ title: 无障碍功能
 description: 使用 React Native 面向 Android 和 iOS 的无障碍 API，构建可被辅助技术访问的移动应用。
 ---
 
-import ExperimentalAPIWarning from './_experimental-api-warning.mdx';
+import ExperimentalAPIWarning from './\_experimental-api-warning.mdx';
 
 Android 和 iOS 都提供了与辅助技术集成的能力，例如系统自带的读屏器 VoiceOver（iOS）和 TalkBack（Android）。React Native 提供了配套 API，帮助你的应用更好地服务所有用户。
 
@@ -191,13 +191,13 @@ large content viewer 显示时使用的标题文本。
 
 `accessibilityState` 是对象，包含：
 
-| Name     | Description                                                                                                                           | Type               | Required |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | -------- |
-| disabled | 元素是否禁用。                                                                                                                         | boolean            | No       |
-| selected | 可选元素当前是否选中。                                                                                                                 | boolean            | No       |
-| checked  | 可勾选元素状态。可为布尔值，或字符串 `"mixed"`（混合状态）。                                                                           | boolean or 'mixed' | No       |
-| busy     | 元素当前是否忙碌。                                                                                                                     | boolean            | No       |
-| expanded | 可展开元素当前是展开还是折叠。                                                                                                         | boolean            | No       |
+| Name     | Description                                                  | Type               | Required |
+| -------- | ------------------------------------------------------------ | ------------------ | -------- |
+| disabled | 元素是否禁用。                                               | boolean            | No       |
+| selected | 可选元素当前是否选中。                                       | boolean            | No       |
+| checked  | 可勾选元素状态。可为布尔值，或字符串 `"mixed"`（混合状态）。 | boolean or 'mixed' | No       |
+| busy     | 元素当前是否忙碌。                                           | boolean            | No       |
+| expanded | 可展开元素当前是展开还是折叠。                               | boolean            | No       |
 
 使用时，将 `accessibilityState` 设为符合上述结构的对象。
 
@@ -207,12 +207,12 @@ large content viewer 显示时使用的标题文本。
 
 `accessibilityValue` 是对象，包含：
 
-| Name | Description                                                                                    | Type    | Required                  |
-| ---- | ---------------------------------------------------------------------------------------------- | ------- | ------------------------- |
-| min  | 范围最小值。                                                                                     | integer | Required if `now` is set. |
-| max  | 范围最大值。                                                                                     | integer | Required if `now` is set. |
-| now  | 当前值。                                                                                         | integer | No                        |
-| text | 值的文本描述。若设置该字段，会覆盖 `min`、`now`、`max`。                                           | string  | No                        |
+| Name | Description                                              | Type    | Required                  |
+| ---- | -------------------------------------------------------- | ------- | ------------------------- |
+| min  | 范围最小值。                                             | integer | Required if `now` is set. |
+| max  | 范围最大值。                                             | integer | Required if `now` is set. |
+| now  | 当前值。                                                 | integer | No                        |
+| text | 值的文本描述。若设置该字段，会覆盖 `min`、`now`、`max`。 | string  | No                        |
 
 ### `accessibilityViewIsModal` <div className="label ios">iOS</div>
 
@@ -520,13 +520,13 @@ large content viewer 显示时使用的标题文本。
 - `'magicTap'` - iOS only - VoiceOver 焦点在组件上/内部时，用户双指双击。
 - `'escape'` - iOS only - VoiceOver 焦点在组件上/内部时，用户执行双指擦拭手势（左、右、左）。
 - `'activate'` - 激活动作。应与普通（非辅助技术）操作保持一致；读屏用户双击组件时触发。
-- `'increment'` - 增加可调整组件值。iOS 上，当角色为 `'adjustable'` 且用户上滑时触发；Android 上，当用户聚焦后按音量加键触发。
-- `'decrement'` - 减少可调整组件值。iOS 上，当角色为 `'adjustable'` 且用户下滑时触发；Android 上，当用户聚焦后按音量减键触发。
+- `'increment'` - 增加可调整组件值。iOS 上，当组件角色为 `'adjustable'` 且用户聚焦后向上轻扫时，VoiceOver 会生成此动作。Android 上，在 TalkBack 8.1 及更早版本中，用户聚焦组件并按下音量加键时会生成此动作；在 TalkBack 9.1 及更高版本中，它已被“调整阅读控件”手势（在聚焦的控件上向上轻扫）取代。
+- `'decrement'` - 减少可调整组件值。iOS 上，当组件角色为 `'adjustable'` 且用户聚焦后向下轻扫时，VoiceOver 会生成此动作。Android 上，在 TalkBack 8.2 及更早版本中，用户聚焦组件并按下音量减键时会生成此动作；在 TalkBack 9.2 及更高版本中，它已被“调整阅读控件”手势（在聚焦的控件上向下轻扫）取代。
 - `'longpress'` - Android only - 用户聚焦后双击并按住触发；应与普通长按行为一致。
 - `'expand'` - Android only - 展开组件，TalkBack 会播报“已展开”提示。
 - `'collapse'` - Android only - 折叠组件，TalkBack 会播报“已折叠”提示。
 
-`label` 对标准动作通常不会被辅助技术使用；对自定义动作，`label` 应是本地化字符串，用于向用户描述该动作。
+`label` 字段对标准动作是可选的，辅助技术会用它来描述某个动作的具体结果。例如，TalkBack 会使用该字段将默认的“双击即可激活”播报替换为类似“双击打开聊天”的自定义描述。对于自定义动作，`label` 是一个本地化字符串，用于向用户描述该动作。
 
 处理动作请求时，实现 `onAccessibilityAction`，其参数事件中包含动作名。示例：
 
