@@ -1,6 +1,7 @@
 # Redirects from what the browser requests to what we serve
 
 # Renamed pages
+/docs/environment-setup 	/docs/set-up-your-environment
 /docs/android-setup             /docs/getting-started
 /docs/building-for-apple-tv     /docs/building-for-tv
 /docs/building-from-source      /contributing/how-to-build-from-source
