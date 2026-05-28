@@ -99,7 +99,7 @@ function HomeCallToAction() {
       </ActionButton>
       <ActionButton
         type="secondary"
-        href={useBaseUrl('docs/environment-setup')}
+        href={useBaseUrl('docs/set-up-your-environment')}
         target="_self">
         搭建环境
       </ActionButton>
