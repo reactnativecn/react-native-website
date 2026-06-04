@@ -3,7 +3,6 @@ id: keyboard
 title: Keyboard
 ---
 
-
 `Keyboard`模块用来控制键盘相关的事件。
 
 ### 用法示例
@@ -11,7 +10,7 @@ title: Keyboard
 `Keyboard`模块可以监听原生键盘事件以做出相应回应，比如收回键盘。
 
 ```SnackPlayer name=Keyboard%20Example&supportedPlatforms=ios,android
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Keyboard, Text, TextInput, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -86,10 +85,10 @@ static addListener: (
 
 **参数：**
 
-| 名称                                                                     | 类型     | 说明                                                                    |
-| ------------------------------------------------------------------------ | -------- | ------------------------------------------------------------------------------ |
+| 名称                                                                     | 类型     | 说明                                  |
+| ------------------------------------------------------------------------ | -------- | ------------------------------------- |
 | eventName <div className="label basic two-lines required">Required</div> | string   | 用来指明要监听的事件，具体有以下几种: |
-| callback <div className="label basic two-lines required">Required</div>  | function | 事件触发时调用的 js 函数       
+| callback <div className="label basic two-lines required">Required</div>  | function | 事件触发时调用的 js 函数              |
 
 **`eventName`**
 

@@ -44,7 +44,6 @@ React Native 具有许多核心组件，从表单控件到活动指示器，应�
 在接下来的章节，您将开始组合这些核心组件，来了解 React 的工作方式。先做一些热身吧！
 
 ```SnackPlayer name=Hello%20World
-import React from 'react';
 import { View, Text, Image, ScrollView, TextInput } from 'react-native';
 
 const App = () => {

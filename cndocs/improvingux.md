@@ -21,7 +21,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 <TabItem value="javascript">
 
 ```SnackPlayer name=TextInput%20form%20example&ext=js
-import React, {useState, useRef} from 'react';
+import {useState, useRef} from 'react';
 import {
   Alert,
   Text,
@@ -115,7 +115,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=TextInput%20form%20example&ext=tsx
-import React, {useState, useRef} from 'react';
+import {useState, useRef} from 'react';
 import {
   Alert,
   Text,
@@ -216,7 +216,7 @@ export default App;
 <TabItem value="javascript">
 
 ```SnackPlayer name=KeyboardAvoidingView%20example&ext=js
-import React, {useState, useRef} from 'react';
+import {useState, useRef} from 'react';
 import {
   Alert,
   Text,
@@ -313,7 +313,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=KeyboardAvoidingView%20example&ext=tsx
-import React, {useState, useRef} from 'react';
+import {useState, useRef} from 'react';
 import {
   Alert,
   Text,
@@ -414,7 +414,6 @@ export default App;
 在手机上精确点击按钮是很困难的。确保所有交互式元素的尺寸至少为 44x44。一种做法是给元素留出足够的空间，使用 `padding`、`minWidth` 和 `minHeight` 样式值。或者，你可以使用 [`hitSlop` 属性](touchablewithoutfeedback.md#hitslop) 来增加可交互区域，而不影响布局。以下是一个演示：
 
 ```SnackPlayer name=HitSlop%20example
-import React from 'react';
 import {
   Text,
   StatusBar,
@@ -493,7 +492,6 @@ export default App;
 Android API 21+ 使用 Material Design 水波纹效果，在用户触摸屏幕上的可交互区域时提供反馈。React Native 通过 [`TouchableNativeFeedback` 组件](touchablenativefeedback.md) 暴露了这一功能。使用这种触摸效果代替透明度或高亮，通常会让你的应用在平台上更加自然。不过需要注意的是，它在 iOS 或 Android API < 21 上不起作用，因此你需要在 iOS 上回退使用其他 Touchable 组件。你可以使用像 [react-native-platform-touchable](https://github.com/react-community/react-native-platform-touchable) 这样的库来处理平台差异。
 
 ```SnackPlayer name=Android%20Ripple%20example&supportedPlatforms=android
-import React from 'react';
 import {
   TouchableNativeFeedback,
   TouchableOpacity,

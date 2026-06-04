@@ -423,7 +423,6 @@ It's now time to access our C++ Turbo Native Module from JS. To do so, we have t
 2. Replace the content of the template with the following code:
 
 ```tsx title="App.tsx"
-import React from 'react';
 import {
   Button,
   SafeAreaView,

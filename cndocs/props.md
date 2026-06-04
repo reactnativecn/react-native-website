@@ -10,7 +10,6 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 以常见的基础组件`Image`为例，在创建一个图片时，可以传入一个名为`source`的 prop 来指定要显示的图片的地址，以及使用名为`style`的 prop 来控制其尺寸。
 
 ```SnackPlayer name=Props
-import React from 'react';
 import {Image} from 'react-native';
 
 const Bananas = () => {
@@ -33,7 +32,6 @@ export default Bananas;
 <TabItem value="javascript">
 
 ```SnackPlayer name=Props&ext=js
-import React from 'react';
 import {Text, View} from 'react-native';
 
 const Greeting = props => {
@@ -61,7 +59,6 @@ export default LotsOfGreetings;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Props&ext=tsx
-import React from 'react';
 import {Text, View} from 'react-native';
 
 type GreetingProps = {

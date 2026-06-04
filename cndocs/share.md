@@ -11,7 +11,6 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 <TabItem value="javascript">
 
 ```SnackPlayer name=Example&supportedPlatforms=ios,android&ext=js
-import React from 'react';
 import {Alert, Share, Button} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -51,7 +50,6 @@ export default ShareExample;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Example&supportedPlatforms=ios,android&ext=tsx
-import React from 'react';
 import {Alert, Share, Button} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -108,10 +106,10 @@ static share(content: ShareContent, options?: ShareOptions);
 
 **属性：**
 
-| 名称                                                         | 类型   | 说明                                                                                                                                                                                                                                                                                                                                                                                  |
-| ------------------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| content <div className="label basic required">必需</div> | object | `message` - 要分享的消息<br/>`url` - 要分享的网址 <div className="label ios">iOS</div><br/>`title` - 消息的标题 <div className="label android">Android</div><hr/>至少需要提供 `url` 或 `message` 中的一个。                                                                                                                                                                             |
-| options                                                      | object | `dialogTitle` <div className="label android">Android</div><br/>`excludedActivityTypes` <div className="label ios">iOS</div><br/>`subject` - 通过邮件分享时的主题 <div className="label ios">iOS</div><br/>`tintColor` <div className="label ios">iOS</div><br/>`anchor` - 操作表应锚定到的节点（用于 iPad） <div className="label ios">iOS</div> |
+| 名称                                                     | 类型   | 说明                                                                                                                                                                                                                                                                                                                                             |
+| -------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| content <div className="label basic required">必需</div> | object | `message` - 要分享的消息<br/>`url` - 要分享的网址 <div className="label ios">iOS</div><br/>`title` - 消息的标题 <div className="label android">Android</div><hr/>至少需要提供 `url` 或 `message` 中的一个。                                                                                                                                      |
+| options                                                  | object | `dialogTitle` <div className="label android">Android</div><br/>`excludedActivityTypes` <div className="label ios">iOS</div><br/>`subject` - 通过邮件分享时的主题 <div className="label ios">iOS</div><br/>`tintColor` <div className="label ios">iOS</div><br/>`anchor` - 操作表应锚定到的节点（用于 iPad） <div className="label ios">iOS</div> |
 
 ---
 

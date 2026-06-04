@@ -16,7 +16,6 @@ title: Animated
 下面示例包含一个 `View`，它会根据动画值 `fadeAnim` 淡入和淡出。
 
 ```SnackPlayer name=Animated%20Example
-import React from 'react';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 import {
   Animated,
@@ -475,9 +474,9 @@ static start(callback?: (result: {finished: boolean}) => void);
 
 **参数：**
 
-| 名称     | 类型                                    | 必填 | 说明                                                                                                                             |
-| -------- | --------------------------------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------- |
-| callback | `(result: {finished: boolean}) => void` | 否   | 动画正常结束后，或动画在完成前被 `stop()` 中断后调用的回调函数。                                                                 |
+| 名称     | 类型                                    | 必填 | 说明                                                             |
+| -------- | --------------------------------------- | ---- | ---------------------------------------------------------------- |
+| callback | `(result: {finished: boolean}) => void` | 否   | 动画正常结束后，或动画在完成前被 `stop()` 中断后调用的回调函数。 |
 
 带回调的启动示例：
 

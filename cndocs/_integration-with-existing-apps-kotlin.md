@@ -119,7 +119,7 @@ dependencies {
 }
 
 +react {
-+   // 启用自动链接需要添加以下行，参考： https://github.com/react-native-community/cli/blob/master/docs/autolinking.md
++   // 启用自动链接需要添加以下行，参考： https://github.com/react-native-community/cli/blob/main/docs/autolinking.md
 +   autolinkLibrariesWithApp()
 +}
 ```
@@ -193,7 +193,6 @@ AppRegistry.registerComponent('HelloWorld', () => App);
 下面我们创建一个 `App.tsx` 文件。这是一个 [TypeScript](https://www.typescriptlang.org/) 文件，可以包含 [JSX](<https://en.wikipedia.org/wiki/JSX_(JavaScript)>) 表达式。它包含了我们将在 Android 应用中集成的根 React Native 组件（<RNTemplateRepoLink href="template/App.tsx">链接</RNTemplateRepoLink>）：
 
 ```tsx
-import React from 'react';
 import {
   SafeAreaView,
   ScrollView,

@@ -8,7 +8,7 @@ title: 处理文本输入
 例如，假设当用户输入时，你要把他们的话翻译成另一种语言。在这种新语言里，每一个单词都写成同样的样子：🍕。所以句子“Hello there Bob”会被翻译成“🍕 🍕 🍕”。
 
 ```SnackPlayer name=Handling%20Text%20Input
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
 
 const PizzaTranslator = () => {

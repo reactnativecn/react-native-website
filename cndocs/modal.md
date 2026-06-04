@@ -8,7 +8,7 @@ Modal 组件是一种在外层视图之上展示内容的基本方式。
 ## 示例
 
 ```SnackPlayer name=Modal&supportedPlatforms=android,ios
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Alert, Modal, StyleSheet, Text, Pressable, View} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -199,8 +199,8 @@ export default App;
 `onRequestClose` 回调会在用户按下 Android 上的硬件返回键或 Apple TV 上的菜单键时被调用。由于这是一个必需的属性，请注意只要模态框处于打开状态，`BackHandler` 事件就不会被触发。
 在 iOS 上，当使用 `pageSheet` 或 `formSheet` 的 `presentationStyle` 并通过拖拽手势关闭模态框时，也会调用此回调。当启用了 `allowSwipeDismissal` 时，此回调将在模态框关闭后被调用。
 
-| 类型                                                                                                                                                                                           |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 类型                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | function <div className="label basic required">必需</div><div className="label android">Android</div><div className="label tv">TV</div><hr />function <div className="label ios">iOS</div> |
 
 ---
@@ -226,8 +226,8 @@ export default App;
 - `formSheet` 覆盖窄宽度的居中视图（仅限大屏设备）
 - `overFullScreen` 覆盖整个屏幕，但允许透明
 
-| 类型                                                                   | 默认值                                                                              |
-| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 类型                                                                   | 默认值                                                                                  |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | enum(`'fullScreen'`, `'pageSheet'`, `'formSheet'`, `'overFullScreen'`) | `transparent={false}` 时为 `fullScreen`<hr />`transparent={true}` 时为 `overFullScreen` |
 
 ---

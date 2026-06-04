@@ -162,7 +162,6 @@ Framework build type is static library
 - `getEnforcing<T>(name: string): T` 如果 Turbo 原生模块不可用，将抛出异常。假设模块总是可用。
 
 ```tsx title="App.tsx"
-import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,

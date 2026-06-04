@@ -20,7 +20,7 @@ if (Platform.OS === 'android') {
 ## 示例
 
 ```SnackPlayer name=LayoutAnimation%20Example&supportedPlatforms=android,ios
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   LayoutAnimation,
   Platform,
@@ -99,11 +99,11 @@ static configureNext(
 
 #### 参数：
 
-| 名称               | 类型     | 必需 | 说明                           |
-| ------------------ | -------- | ---- | ------------------------------ |
-| config             | object   | 是   | 参见下方的配置说明。           |
-| onAnimationDidEnd  | function | 否   | 动画完成时调用。               |
-| onAnimationDidFail | function | 否   | 动画失败时调用。               |
+| 名称               | 类型     | 必需 | 说明                 |
+| ------------------ | -------- | ---- | -------------------- |
+| config             | object   | 是   | 参见下方的配置说明。 |
+| onAnimationDidEnd  | function | 否   | 动画完成时调用。     |
+| onAnimationDidFail | function | 否   | 动画失败时调用。     |
 
 `config` 参数是一个包含以下键的对象。[`create`](layoutanimation.md#create) 方法会返回一个有效的 `config` 对象，[`Presets`](layoutanimation.md#presets) 中的对象也都可以作为 `config` 传入。
 
@@ -134,7 +134,7 @@ static create(duration, type, creationProp)
 **示例：**
 
 ```SnackPlayer name=LayoutAnimation&supportedPlatforms=android,ios
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   View,
   Platform,
@@ -263,7 +263,7 @@ export default App;
 **示例：**
 
 ```SnackPlayer name=LayoutAnimation&supportedPlatforms=android,ios
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   View,
   Platform,

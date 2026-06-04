@@ -159,7 +159,6 @@ AppRegistry.registerComponent('HelloWorld', () => App);
 让我们创建一个 `App.tsx` 文件。这是一个 [TypeScript](https://www.typescriptlang.org/) 文件，可以包含 [JSX](<https://en.wikipedia.org/wiki/JSX_(JavaScript)>) 表达式。它包含我们要集成到 iOS 应用程序中的根 React Native 组件（<RNTemplateRepoLink href="template/App.tsx">链接</RNTemplateRepoLink>）：
 
 ```tsx
-import React from 'react';
 import {
   SafeAreaView,
   ScrollView,

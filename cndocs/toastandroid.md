@@ -17,7 +17,6 @@ React Native 的 ToastAndroid API 将 Android 平台的 ToastAndroid 模块以 J
 :::
 
 ```SnackPlayer name=Toast%20Android%20API%20Example&supportedPlatforms=android
-import React from 'react';
 import {StyleSheet, ToastAndroid, Button, StatusBar} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 

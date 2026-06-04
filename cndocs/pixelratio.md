@@ -32,7 +32,6 @@ const image = getImage({
 ## 示例
 
 ```SnackPlayer name=PixelRatio%20Example
-import React from 'react';
 import {
   Image,
   PixelRatio,
@@ -111,7 +110,7 @@ export default App;
 
 ### `get()`
 
-```jsx
+```tsx
 static get()
 ```
 
@@ -141,7 +140,7 @@ static get()
 
 ### `getFontScale()`
 
-```jsx
+```tsx
 static getFontScale(): number
 ```
 
@@ -156,7 +155,7 @@ static getFontScale(): number
 
 ### `getPixelSizeForLayoutSize()`
 
-```jsx
+```tsx
 static getPixelSizeForLayoutSize(layoutSize: number): number
 ```
 
@@ -168,7 +167,7 @@ static getPixelSizeForLayoutSize(layoutSize: number): number
 
 ### `roundToNearestPixel()`
 
-```jsx
+```tsx
 static roundToNearestPixel(layoutSize)
 ```
 

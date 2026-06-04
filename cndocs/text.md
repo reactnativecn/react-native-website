@@ -10,7 +10,7 @@ title: Text
 在下面的例子里，嵌套的标题和正文文字会继承来自`styles.baseText`的`fontFamily`字体样式，不过标题上还附加了它自己额外的样式。标题和文本会在顶部依次堆叠，并且被代码中内嵌的换行符分隔开：
 
 ```SnackPlayer name=Text%20Function%20Component%20Example
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Text, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -59,7 +59,6 @@ export default TextInANest;
 在 iOS 和 Android 中显示格式化文本的方法类似，都是提供你想显示的文本内容，然后使用范围标注来指定一些格式（在 iOS 上是用`NSAttributedString`，Android 上则是`SpannableString`）。这种用法非常繁琐。在 React Native 中，我们决定采用和 Web 一致的设计，这样你可以把相同格式的文本嵌套包裹起来：
 
 ```SnackPlayer name=Nested%20Text%20Example
-import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -745,16 +744,16 @@ React Native 实际上还是有一部分样式继承的实现，不过仅限于�
 
 #### 属性
 
-| Name      | Type   | Optional | Description                                                         |
-| --------- | ------ | -------- | ------------------------------------------------------------------- |
-| ascender  | number | No       | 文本布局变化后的行上升高度。                                        |
-| capHeight | number | No       | 大写字母基线以上的部分的高度。                                      |
-| descender | number | No       | 文本布局变化后的行下降高度。                                        |
-| height    | number | No       | 文本布局变化后的行高。                                              |
-| width     | number | No       | 文本布局变化后的线条宽度。                                          |
-| x         | number | No       | 线条在 Text 组件内的 X 坐标。                                       |
-| xHeight   | number | No       | 基线与中线之间的距离（小写字母大小）。                              |
-| y         | number | No       | 线条在 Text 组件内的 Y 坐标。                                       |
+| Name      | Type   | Optional | Description                            |
+| --------- | ------ | -------- | -------------------------------------- |
+| ascender  | number | No       | 文本布局变化后的行上升高度。           |
+| capHeight | number | No       | 大写字母基线以上的部分的高度。         |
+| descender | number | No       | 文本布局变化后的行下降高度。           |
+| height    | number | No       | 文本布局变化后的行高。                 |
+| width     | number | No       | 文本布局变化后的线条宽度。             |
+| x         | number | No       | 线条在 Text 组件内的 X 坐标。          |
+| xHeight   | number | No       | 基线与中线之间的距离（小写字母大小）。 |
+| y         | number | No       | 线条在 Text 组件内的 Y 坐标。          |
 
 ### TextLayoutEvent
 
@@ -775,7 +774,7 @@ React Native 实际上还是有一部分样式继承的实现，不过仅限于�
 
 #### 属性
 
-| Name   | Type                                    | Optional | Description                                           |
-| ------ | --------------------------------------- | -------- | ----------------------------------------------------- |
-| lines  | array of [TextLayout](text#textlayout)s | No       | 提供了每行渲染的 TextLayout 数据。                    |
-| target | number                                  | No       | 元素的节点 ID。                                       |
+| Name   | Type                                    | Optional | Description                        |
+| ------ | --------------------------------------- | -------- | ---------------------------------- |
+| lines  | array of [TextLayout](text#textlayout)s | No       | 提供了每行渲染的 TextLayout 数据。 |
+| target | number                                  | No       | 元素的节点 ID。                    |

@@ -14,7 +14,6 @@ title: I18nManager
 如果你使用绝对定位来对齐元素，在 RTL 语言下可能无法正确对齐。使用 `isRTL` 可以动态调整对齐方向或动画方向。
 
 ```SnackPlayer name=I18nManager%20Change%20Absolute%20Positions%20And%20Animations
-import React from 'react';
 import {I18nManager, Text, View} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -43,7 +42,7 @@ export default App;
 ### 开发调试
 
 ```SnackPlayer name=I18nManager%20During%20Development
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Alert, I18nManager, StyleSheet, Switch, Text, View} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 

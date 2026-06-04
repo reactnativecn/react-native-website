@@ -14,7 +14,6 @@ title: Image
 ## 示例
 
 ```SnackPlayer name=Image%20Example
-import React from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -61,7 +60,6 @@ export default DisplayAnImage;
 你也可以为图片添加 `style`：
 
 ```SnackPlayer name=Styled%20Image%20Example
-import React from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -276,8 +274,8 @@ dependencies {
 
 加载结束（无论成功还是失败）时调用。
 
-| 类型   |
-| ------ |
+| 类型       |
+| ---------- |
 | () => void |
 
 ---
@@ -288,8 +286,8 @@ dependencies {
 
 **示例：** `onLoadStart={() => this.setState({loading: true})}`
 
-| 类型   |
-| ------ |
+| 类型       |
+| ---------- |
 | () => void |
 
 ---
@@ -298,8 +296,8 @@ dependencies {
 
 当图片部分加载完成时调用。什么是“部分加载”由具体的加载器定义，此属性主要用于渐进式 JPEG。
 
-| 类型   |
-| ------ |
+| 类型       |
+| ---------- |
 | () => void |
 
 ---
@@ -388,9 +386,9 @@ dependencies {
 
 如果源图尺寸为 200x200，目标为 24x24，将 `resizeMultiplier` 设为 `2.0` 会让 Fresco 下采样到 48x48。Fresco 会选择最接近的 2 的幂（因此是 50x50）并解码到该尺寸。若不使用 multiplier，最近的 2 的幂为 25x25，得到的图片将由系统缩小。
 
-| 类型   | 默认值  |
-| ------ | ------- |
-| number | `1.0`   |
+| 类型   | 默认值 |
+| ------ | ------ |
+| number | `1.0`  |
 
 ---
 
@@ -486,8 +484,8 @@ static abortPrefetch(requestId: number);
 
 **参数：**
 
-| 名称                                                       | 类型   | 说明                                       |
-| ---------------------------------------------------------- | ------ | ------------------------------------------ |
+| 名称                                                           | 类型   | 说明                         |
+| -------------------------------------------------------------- | ------ | ---------------------------- |
 | requestId <div className="label basic required">Required</div> | number | `prefetch()` 返回的请求 id。 |
 
 ---
@@ -542,9 +540,9 @@ await Image.prefetch(url);
 
 **参数：**
 
-| 名称                                                     | 类型                                                  | 说明                                              |
-| -------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------- |
-| url <div className="label basic required">Required</div> | string                                                | 图片的远程地址。                                  |
+| 名称                                                     | 类型                                                  | 说明                                  |
+| -------------------------------------------------------- | ----------------------------------------------------- | ------------------------------------- |
+| url <div className="label basic required">Required</div> | string                                                | 图片的远程地址。                      |
 | callback                                                 | function <div className="label android">Android</div> | 将会被调用并携带 `requestId` 的函数。 |
 
 ---
@@ -561,8 +559,8 @@ static queryCache(
 
 **参数：**
 
-| 名称                                                      | 类型  | 说明                  |
-| --------------------------------------------------------- | ----- | --------------------- |
+| 名称                                                      | 类型  | 说明                   |
+| --------------------------------------------------------- | ----- | ---------------------- |
 | urls <div className="label basic required">Required</div> | array | 要查询缓存的图片 URL。 |
 
 ---
@@ -582,8 +580,8 @@ static resolveAssetSource(source: ImageSourcePropType): {
 
 **参数：**
 
-| <div className="wideColumn">名称</div>                      | 类型                                     | 说明                                                                                                 |
-| ----------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| <div className="wideColumn">名称</div>                      | 类型                                     | 说明                                                             |
+| ----------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------- |
 | source <div className="label basic required">Required</div> | [ImageSource](image#imagesource), number | 由 `require('./foo.png')` 返回的不透明数字，或一个 ImageSource。 |
 
 ## 类型定义
@@ -611,19 +609,19 @@ static resolveAssetSource(source: ImageSourcePropType): {
 
 **属性：**
 
-| 名称   | 类型   | 说明                              |
-| ------ | ------ | --------------------------------- |
+| 名称   | 类型   | 说明                            |
+| ------ | ------ | ------------------------------- |
 | source | object | [source 对象](#source-object)。 |
 
 #### Source Object
 
 **属性：**
 
-| 名称   | 类型   | 说明                              |
-| ------ | ------ | --------------------------------- |
-| width  | number | 已加载图片的宽度。                |
-| height | number | 已加载图片的高度。                |
-| uri    | string | 图片资源标识符。                  |
+| 名称   | 类型   | 说明               |
+| ------ | ------ | ------------------ |
+| width  | number | 已加载图片的宽度。 |
+| height | number | 已加载图片的高度。 |
+| uri    | string | 图片资源标识符。   |
 
 ### ImageSource
 
@@ -633,17 +631,17 @@ static resolveAssetSource(source: ImageSourcePropType): {
 
 **当以对象或对象数组形式传入时的属性：**
 
-| <div className="wideColumn">名称</div>     | 类型                                       | 说明                                                                                                                                                                          |
-| ------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| uri                                        | string                                     | 图片资源标识符，可以是 http 地址、本地文件路径或静态图片资源的名称。                                                                                                           |
-| width                                      | number                                     | 若在构建时已知，可以指定该值并作为 `<Image/>` 组件的默认宽度。                                                                                                                |
-| height                                     | number                                     | 若在构建时已知，可以指定该值并作为 `<Image/>` 组件的默认高度。                                                                                                                |
-| scale                                      | number                                     | 指示图片的缩放因子。默认为 `1.0`，表示一个图片像素等于一个显示点/DIP。                                                                                                        |
-| bundle<div className="label ios">iOS</div> | string                                     | 图片所在的 iOS 资源 bundle，若不设置则默认为 `[NSBundle mainBundle]`。                                                                                                       |
-| method                                     | string                                     | 使用的 HTTP 方法，未指定时默认为 `'GET'`。                                                                                                                                     |
-| headers                                    | object                                     | 随远程图片请求发送的 HTTP 头对象。                                                                                                                                            |
-| body                                       | string                                     | 随请求发送的 HTTP body。必须是有效的 UTF-8 字符串，会原样发送，不会做额外编码（如 URL 转义或 base64）。                                                                       |
-| cache<div className="label ios">iOS</div>  | [ImageCacheEnum](image#imagecacheenum-ios) | 决定请求如何处理可能的缓存响应。                                                                                                                                               |
+| <div className="wideColumn">名称</div>     | 类型                                       | 说明                                                                                                    |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
+| uri                                        | string                                     | 图片资源标识符，可以是 http 地址、本地文件路径或静态图片资源的名称。                                    |
+| width                                      | number                                     | 若在构建时已知，可以指定该值并作为 `<Image/>` 组件的默认宽度。                                          |
+| height                                     | number                                     | 若在构建时已知，可以指定该值并作为 `<Image/>` 组件的默认高度。                                          |
+| scale                                      | number                                     | 指示图片的缩放因子。默认为 `1.0`，表示一个图片像素等于一个显示点/DIP。                                  |
+| bundle<div className="label ios">iOS</div> | string                                     | 图片所在的 iOS 资源 bundle，若不设置则默认为 `[NSBundle mainBundle]`。                                  |
+| method                                     | string                                     | 使用的 HTTP 方法，未指定时默认为 `'GET'`。                                                              |
+| headers                                    | object                                     | 随远程图片请求发送的 HTTP 头对象。                                                                      |
+| body                                       | string                                     | 随请求发送的 HTTP body。必须是有效的 UTF-8 字符串，会原样发送，不会做额外编码（如 URL 转义或 base64）。 |
+| cache<div className="label ios">iOS</div>  | [ImageCacheEnum](image#imagecacheenum-ios) | 决定请求如何处理可能的缓存响应。                                                                        |
 
 **当以 number 传入时：**
 

@@ -172,7 +172,6 @@ export default (codegenNativeComponent<NativeProps>(
 最后，你可以在应用中使用该组件。更新你的生成 `App.tsx` 文件：
 
 ```javascript title="Demo/App.tsx"
-import React from 'react';
 import {Alert, StyleSheet, View} from 'react-native';
 import WebView from './specs/WebViewNativeComponent';
 

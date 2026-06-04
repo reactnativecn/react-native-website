@@ -8,7 +8,6 @@ TextInput 是一个允许用户在应用中通过键盘输入文本的基础组�
 最简单的用法就是放一个 `TextInput` 在界面上，然后订阅它的 `onChangeText` 事件来读取用户的输入。通常做法是在 `onChangeText` 中用 `setState`（或 `useState`）把用户的输入写入 state，然后在需要的地方从 state 中取值。它还有一些其它的事件，例如 `onSubmitEditing` 和 `onFocus`。一个简单的例子如下：
 
 ```SnackPlayer name=TextInput%20Example
-import React from 'react';
 import {StyleSheet, TextInput} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -53,7 +52,6 @@ export default TextInputExample;
 注意有些属性仅在 `multiline` 为 `true/false` 时才有效。此外，当 `multiline=true` 时，为元素的某一个边添加边框样式（例如：`borderBottomColor`、`borderLeftWidth` 等）将不会生效。为了实现同样的效果，你可以使用一个 `View` 来包裹 `TextInput`：
 
 ```SnackPlayer name=Multiline%20TextInput%20Example
-import React from 'react';
 import {TextInput, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -1041,7 +1039,7 @@ Possible values for `textContentType` are:
 
 - 是否开启了自动填充：**设置** → **密码与账户** → 打开 **自动填充密码**；
 - 是否启用了 iCloud 钥匙串：**设置** → **Apple ID** → **iCloud** → **钥匙串** → 打开 **iCloud 钥匙串**。
-:::
+  :::
 
 | Type   |
 | ------ |

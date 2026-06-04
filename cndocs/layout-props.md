@@ -17,7 +17,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 <TabItem value="javascript">
 
 ```SnackPlayer name=LayoutProps%20Example&ext=js
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Button, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -190,7 +190,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=LayoutProps%20Example&ext=tsx
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   Button,
   ScrollView,

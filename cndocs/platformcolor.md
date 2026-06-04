@@ -46,7 +46,6 @@ PlatformColor('bogusName', 'linkColor');
 ## 示例
 
 ```SnackPlayer name=PlatformColor%20Example&supportedPlatforms=android,ios
-import React from 'react';
 import {Platform, PlatformColor, StyleSheet, Text} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 

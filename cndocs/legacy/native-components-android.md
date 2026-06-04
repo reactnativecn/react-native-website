@@ -291,7 +291,7 @@ public class ReactImageManager extends SimpleViewManager<MyCustomView> {
 这个回调会传递一个原生事件对象，一般来说我们会在封装组件里进行处理以便外部使用：
 
 ```tsx title="MyCustomView.tsx"
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {requireNativeComponent} from 'react-native';
 
 const MyCustomView = ({onChangeMessage, ...props}) => {
@@ -831,7 +831,7 @@ export const MyViewManager =
 II. `MyView.tsx` 调用 `create` 方法
 
 ```tsx title="MyView.tsx"
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { UIManager, findNodeHandle } from 'react-native';
 import { MyViewManager } from './my-view-manager';
 const createFragment = viewId =>

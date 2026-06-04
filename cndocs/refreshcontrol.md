@@ -8,7 +8,6 @@ title: RefreshControl
 ## 示例
 
 ```SnackPlayer name=RefreshControl&supportedPlatforms=ios,android
-import React from 'react';
 import {RefreshControl, ScrollView, StyleSheet, Text} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 

@@ -19,7 +19,6 @@ title: Button
 ## 示例
 
 ```SnackPlayer name=Button%20Example&ext=js
-import React from 'react';
 import {StyleSheet, Button, View, Text, Alert, Platform} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 

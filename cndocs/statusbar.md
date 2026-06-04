@@ -15,7 +15,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 <TabItem value="javascript">
 
 ```SnackPlayer name=StatusBar%20Component%20Example&supportedPlatforms=android,ios&ext=js
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   Button,
   Platform,
@@ -123,7 +123,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=StatusBar%20Component%20Example&supportedPlatforms=android,ios&ext=tsx
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   Button,
   Platform,
@@ -269,9 +269,9 @@ export default App;
 由于 Android 15 引入的全面屏（edge-to-edge）强制要求，在 API level 35 中设置状态栏背景色已被弃用，设置将不会生效。你可以在[这里阅读我们的全面屏适配建议](https://github.com/react-native-community/discussions-and-proposals/discussions/827)。
 :::
 
-| 类型            | 必需 | 默认值                                              |
-| --------------- | ---- | --------------------------------------------------- |
-| [color](colors) | 否   | 默认系统状态栏背景色，如果未定义则为 `'black'`      |
+| 类型            | 必需 | 默认值                                         |
+| --------------- | ---- | ---------------------------------------------- |
+| [color](colors) | 否   | 默认系统状态栏背景色，如果未定义则为 `'black'` |
 
 ---
 
@@ -341,9 +341,9 @@ static popStackEntry(entry: StatusBarProps);
 
 **参数：**
 
-| 名称                                                       | 类型 | 描述                              |
-| ---------------------------------------------------------- | ---- | --------------------------------- |
-| entry <div className="label basic required">必需</div>     | any  | `pushStackEntry` 返回的条目。     |
+| 名称                                                   | 类型 | 描述                          |
+| ------------------------------------------------------ | ---- | ----------------------------- |
+| entry <div className="label basic required">必需</div> | any  | `pushStackEntry` 返回的条目。 |
 
 ---
 
@@ -357,9 +357,9 @@ static pushStackEntry(props: StatusBarProps): StatusBarProps;
 
 **参数：**
 
-| 名称                                                       | 类型 | 描述                                            |
-| ---------------------------------------------------------- | ---- | ----------------------------------------------- |
-| props <div className="label basic required">必需</div>     | any  | 包含要在栈条目中使用的 StatusBar 属性的对象。    |
+| 名称                                                   | 类型 | 描述                                          |
+| ------------------------------------------------------ | ---- | --------------------------------------------- |
+| props <div className="label basic required">必需</div> | any  | 包含要在栈条目中使用的 StatusBar 属性的对象。 |
 
 ---
 
@@ -376,10 +376,10 @@ static replaceStackEntry(
 
 **参数：**
 
-| 名称                                                       | 类型 | 描述                                                     |
-| ---------------------------------------------------------- | ---- | -------------------------------------------------------- |
-| entry <div className="label basic required">必需</div>     | any  | 要替换的 `pushStackEntry` 返回的条目。                    |
-| props <div className="label basic required">必需</div>     | any  | 包含要在替换栈条目中使用的 StatusBar 属性的对象。         |
+| 名称                                                   | 类型 | 描述                                              |
+| ------------------------------------------------------ | ---- | ------------------------------------------------- |
+| entry <div className="label basic required">必需</div> | any  | 要替换的 `pushStackEntry` 返回的条目。            |
+| props <div className="label basic required">必需</div> | any  | 包含要在替换栈条目中使用的 StatusBar 属性的对象。 |
 
 ---
 
@@ -397,10 +397,10 @@ static setBackgroundColor(color: ColorValue, animated?: boolean);
 
 **参数：**
 
-| 名称                                                       | 类型    | 描述               |
-| ---------------------------------------------------------- | ------- | ------------------ |
-| color <div className="label basic required">必需</div>     | string  | 背景色。           |
-| animated                                                   | boolean | 是否使用动画过渡。 |
+| 名称                                                   | 类型    | 描述               |
+| ------------------------------------------------------ | ------- | ------------------ |
+| color <div className="label basic required">必需</div> | string  | 背景色。           |
+| animated                                               | boolean | 是否使用动画过渡。 |
 
 ---
 
@@ -414,10 +414,10 @@ static setBarStyle(style: StatusBarStyle, animated?: boolean);
 
 **参数：**
 
-| 名称                                                       | 类型                                       | 描述               |
-| ---------------------------------------------------------- | ------------------------------------------ | ------------------ |
-| style <div className="label basic required">必需</div>     | [StatusBarStyle](statusbar#statusbarstyle) | 要设置的状态栏样式。|
-| animated                                                   | boolean                                    | 是否使用动画过渡。 |
+| 名称                                                   | 类型                                       | 描述                 |
+| ------------------------------------------------------ | ------------------------------------------ | -------------------- |
+| style <div className="label basic required">必需</div> | [StatusBarStyle](statusbar#statusbarstyle) | 要设置的状态栏样式。 |
+| animated                                               | boolean                                    | 是否使用动画过渡。   |
 
 ---
 
@@ -431,10 +431,10 @@ static setHidden(hidden: boolean, animation?: StatusBarAnimation);
 
 **参数：**
 
-| 名称                                                        | 类型                                               | 描述                                   |
-| ----------------------------------------------------------- | -------------------------------------------------- | -------------------------------------- |
-| hidden <div className="label basic required">必需</div>     | boolean                                            | 是否隐藏状态栏。                       |
-| animation <div className="label ios">iOS</div>              | [StatusBarAnimation](statusbar#statusbaranimation) | 改变状态栏隐藏属性时的动画效果。       |
+| 名称                                                    | 类型                                               | 描述                             |
+| ------------------------------------------------------- | -------------------------------------------------- | -------------------------------- |
+| hidden <div className="label basic required">必需</div> | boolean                                            | 是否隐藏状态栏。                 |
+| animation <div className="label ios">iOS</div>          | [StatusBarAnimation](statusbar#statusbaranimation) | 改变状态栏隐藏属性时的动画效果。 |
 
 ---
 
@@ -452,9 +452,9 @@ static setNetworkActivityIndicatorVisible(visible: boolean);
 
 **参数：**
 
-| 名称                                                         | 类型    | 描述               |
-| ------------------------------------------------------------ | ------- | ------------------ |
-| visible <div className="label basic required">必需</div>     | boolean | 是否显示指示器。   |
+| 名称                                                     | 类型    | 描述             |
+| -------------------------------------------------------- | ------- | ---------------- |
+| visible <div className="label basic required">必需</div> | boolean | 是否显示指示器。 |
 
 ---
 
@@ -472,9 +472,9 @@ static setTranslucent(translucent: boolean);
 
 **参数：**
 
-| 名称                                                             | 类型    | 描述             |
-| ---------------------------------------------------------------- | ------- | ---------------- |
-| translucent <div className="label basic required">必需</div>     | boolean | 设置为透明。     |
+| 名称                                                         | 类型    | 描述         |
+| ------------------------------------------------------------ | ------- | ------------ |
+| translucent <div className="label basic required">必需</div> | boolean | 设置为透明。 |
 
 ## 类型定义
 
@@ -506,8 +506,8 @@ iOS 上状态栏的过渡动画类型。
 
 **常量：**
 
-| 值                | 类型   | 描述                                                  |
-| ----------------- | ------ | ----------------------------------------------------- |
-| `'default'`       | string | 默认状态栏样式（iOS 为深色，Android 为浅色）          |
-| `'light-content'` | string | 白色文字和图标                                        |
-| `'dark-content'`  | string | 深色文字和图标（Android 上需要 API>=23）               |
+| 值                | 类型   | 描述                                         |
+| ----------------- | ------ | -------------------------------------------- |
+| `'default'`       | string | 默认状态栏样式（iOS 为深色，Android 为浅色） |
+| `'light-content'` | string | 白色文字和图标                               |
+| `'dark-content'`  | string | 深色文字和图标（Android 上需要 API>=23）     |
