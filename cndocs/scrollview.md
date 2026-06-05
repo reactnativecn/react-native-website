@@ -18,7 +18,6 @@ ScrollView 内部的其他响应者尚无法阻止 ScrollView 本身成为响应
 ## 示例
 
 ```SnackPlayer name=ScrollView%20Example
-import React from 'react';
 import {StyleSheet, Text, ScrollView, StatusBar} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 

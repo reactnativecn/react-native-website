@@ -26,7 +26,6 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 <TabItem value="javascript">
 
 ```SnackPlayer name=Simple%20FlatList%20Example&ext=js
-import React from 'react';
 import {View, FlatList, StyleSheet, Text, StatusBar} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -86,7 +85,6 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Simple%20FlatList%20Example&ext=tsx
-import React from 'react';
 import {View, FlatList, StyleSheet, Text, StatusBar} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -158,7 +156,7 @@ export default App;
 <TabItem value="javascript">
 
 ```SnackPlayer name=flatlist-selectable&ext=js
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   FlatList,
   StatusBar,
@@ -242,7 +240,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=flatlist-selectable&ext=tsx
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   FlatList,
   StatusBar,
@@ -514,7 +512,7 @@ renderItem({
 
 `getItemLayout`是一个可选的优化，用于避免动态测量内容尺寸的开销，不过前提是你可以提前知道内容的高度。如果你的行高是固定的，`getItemLayout`用起来就既高效又简单，类似下面这样：
 
-```jsx
+```tsx
   getItemLayout={(data, index) => (
     {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}
   )}
@@ -570,7 +568,7 @@ renderItem({
 
 ### `keyExtractor`
 
-```jsx
+```tsx
 (item: object, index: number) => string;
 ```
 
@@ -594,7 +592,7 @@ renderItem({
 
 ### `onEndReached`
 
-```jsx
+```tsx
 (info: {distanceFromEnd: number}) => void
 ```
 
@@ -618,7 +616,7 @@ renderItem({
 
 ### `onRefresh`
 
-```jsx
+```tsx
 () => void
 ```
 
@@ -632,7 +630,7 @@ renderItem({
 
 ### `onViewableItemsChanged`
 
-```jsx
+```tsx
 (info: {
     viewableItems: array,
     changed: array,
@@ -702,7 +700,7 @@ renderItem({
   Error: Changing viewabilityConfig on the fly is not supported
 ```
 
-```jsx
+```tsx
 constructor (props) {
   super(props)
 
@@ -713,7 +711,7 @@ constructor (props) {
 }
 ```
 
-```jsx
+```tsx
 <FlatList
   viewabilityConfig={this.viewabilityConfig}
   //...
@@ -750,7 +748,7 @@ constructor (props) {
 
 ### `scrollToEnd()`
 
-```jsx
+```tsx
 scrollToEnd([params]);
 ```
 
@@ -852,7 +850,7 @@ scrollToOffset(params: {
 
 ### `flashScrollIndicators()`
 
-```jsx
+```tsx
 flashScrollIndicators();
 ```
 

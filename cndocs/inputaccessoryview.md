@@ -8,7 +8,7 @@ title: InputAccessoryView
 要使用此组件，请将您的自定义工具栏包装在InputAccessoryView组件中，并设置一个`nativeID`。然后，将该`nativeID`作为您想要的任何`TextInput `的`inputAccessoryViewID'。一个基本的例子：
 
 ```SnackPlayer name=InputAccessoryView&supportedPlatforms=ios
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   Button,
   InputAccessoryView,
@@ -88,7 +88,7 @@ export default App;
 
 ### `style`
 
-|| 类型                              |
+|| 类型 |
 || --------------------------------- |
 || [View Style](view-style-props.md) |
 

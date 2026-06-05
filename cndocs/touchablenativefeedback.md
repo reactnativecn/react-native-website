@@ -16,7 +16,7 @@ title: TouchableNativeFeedback
 ## 示例
 
 ```SnackPlayer name=TouchableNativeFeedback%20Android%20Component%20Example&supportedPlatforms=android
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Text, View, StyleSheet, TouchableNativeFeedback} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -207,8 +207,8 @@ static Ripple(
 | Name         | Type    | Required | Description                    |
 | ------------ | ------- | -------- | ------------------------------ |
 | color        | string  | Yes      | 涟漪颜色                       |
-| borderless   | boolean | Yes      | 涟漪是否可以渲染到视图边界之外   |
-| rippleRadius | ?number | No       | 控制涟漪效果的半径              |
+| borderless   | boolean | Yes      | 涟漪是否可以渲染到视图边界之外 |
+| rippleRadius | ?number | No       | 控制涟漪效果的半径             |
 
 ---
 

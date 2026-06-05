@@ -47,7 +47,7 @@ title: Pressable
 ## 示例
 
 ```SnackPlayer name=Pressable
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 

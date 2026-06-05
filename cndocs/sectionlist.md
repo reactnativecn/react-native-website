@@ -21,7 +21,6 @@ title: SectionList
 ## 示例
 
 ```SnackPlayer name=SectionList%20Example
-import React from 'react';
 import {StyleSheet, Text, View, SectionList, StatusBar} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -307,7 +306,7 @@ This may improve scroll performance for large lists.
 
 ### `scrollToLocation()`
 
-```jsx
+```tsx
 scrollToLocation(params);
 ```
 
@@ -333,7 +332,7 @@ Valid `params` keys are:
 
 ### `recordInteraction()`
 
-```jsx
+```tsx
 recordInteraction();
 ```
 
@@ -343,7 +342,7 @@ recordInteraction();
 
 ### `flashScrollIndicators()`
 
-```jsx
+```tsx
 flashScrollIndicators();
 ```
 

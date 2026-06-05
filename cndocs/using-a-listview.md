@@ -14,7 +14,6 @@ React Native 提供了几个适用于展示长列表数据的组件，一般而�
 下面的例子创建了一个简单的`FlatList`，并预设了一些模拟数据。首先是初始化`FlatList`所需的`data`，其中的每一项（行）数据之后都在`renderItem`中被渲染成了`Text`组件，最后构成整个`FlatList`。
 
 ```SnackPlayer name=FlatList%20Basics
-import React from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -57,7 +56,6 @@ export default FlatListBasics;
 如果要渲染的是一组需要分组的数据，也许还带有分组标签的，那么 [SectionList](sectionlist.md) 将是个不错的选择。
 
 ```SnackPlayer name=SectionList%20Basics
-import React from 'react';
 import {SectionList, StyleSheet, Text, View} from 'react-native';
 
 const styles = StyleSheet.create({

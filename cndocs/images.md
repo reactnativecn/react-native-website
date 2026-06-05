@@ -101,11 +101,11 @@ const icon = this.props.active
 
 ```tsx
 // 正确
-<Image source={{uri: 'https://reactjs.org/logo-og.png'}}
+<Image source={{uri: 'https://react.dev/logo-og.png'}}
        style={{width: 400, height: 400}} />
 
 // 错误
-<Image source={{uri: 'https://reactjs.org/logo-og.png'}} />
+<Image source={{uri: 'https://react.dev/logo-og.png'}} />
 ```
 
 ### 网络图片的请求参数
@@ -115,7 +115,7 @@ const icon = this.props.active
 ```tsx
 <Image
   source={{
-    uri: 'https://reactjs.org/logo-og.png',
+    uri: 'https://react.dev/logo-og.png',
     method: 'POST',
     headers: {
       Pragma: 'no-cache',
@@ -140,7 +140,7 @@ const icon = this.props.active
   style={{
     width: 51,
     height: 51,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   }}
   source={{
     uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
@@ -160,7 +160,7 @@ const icon = this.props.active
 ```tsx
 <Image
   source={{
-    uri: 'https://reactjs.org/logo-og.png',
+    uri: 'https://react.dev/logo-og.png',
     cache: 'only-if-cached',
   }}
   style={{width: 400, height: 400}}
@@ -211,7 +211,7 @@ iOS 会为同一张图片在相册中保存多个不同尺寸的副本。为了�
 
 `在浏览器中`，如果你不给图片指定尺寸，那么浏览器会首先渲染一个 0x0 大小的元素占位，然后下载图片，在下载完成后再基于正确的尺寸来渲染图片。这样做的最大问题是 UI 会在图片加载的过程中上下跳动，使得用户体验非常糟糕。这就是所谓的[累计布局偏移](https://web.dev/cls/)。
 
-`在React Native`中我们有意避免了这一行为。如此一来开发者就需要做更多工作来提前知晓远程图片的尺寸（或宽高比），但我们相信这样可以带来更好的用户体验。然而，读取本地静态图片（使用`require('./my-icon.png')`语法）则_无需指定尺寸_，因为它们的尺寸在加载时就可以立刻知道。
+`在React Native`中我们有意避免了这一行为。如此一来开发者就需要做更多工作来提前知晓远程图片的尺寸（或宽高比），但我们相信这样可以带来更好的用户体验。然而，读取本地静态图片（使用`require('./my-icon.png')`语法）则*无需指定尺寸*，因为它们的尺寸在加载时就可以立刻知道。
 
 比如这样一个引用`require('./my-icon.png')`的实际输出结果可能是：
 
@@ -224,7 +224,7 @@ iOS 会为同一张图片在相册中保存多个不同尺寸的副本。为了�
 在 React Native 中，另一个值得一提的变动是我们把`src`属性改为了`source`属性，而且并不接受字符串，正确的值是一个带有`uri`属性的对象。
 
 ```tsx
-<Image source={{ uri: 'something.jpg' }} />
+<Image source={{uri: 'something.jpg'}} />
 ```
 
 深层次的考虑是，这样可以使我们在对象中添加一些元数据(metadata)。假设你在使用`require('./my-icon.png')`，那么我们就会在其中添加真实文件路径以及尺寸等信息（这只是举个例子，未来的版本中 require 的具体行为可能会变化）。此外这也是考虑了未来的扩展性，比如我们可能会加入精灵图（sprites）的支持：在输出`{uri: ...}`的基础上，我们可以进一步输出裁切信息`{uri: ..., crop: {left: 10, top: 50, width: 20, height: 40}}`，这样理论上就可以在现有的代码中无缝支持精灵图的切分。
@@ -263,15 +263,16 @@ return (
 ## 配置 iOS 图像缓存限制
 
 在 iOS 上，我们公开了一个 API 来覆盖 React Native 的默认图像缓存限制。这应该从你的原生 AppDelegate 代码中调用（例如在 `didFinishLaunchingWithOptions` 中）。
+
 ```objectivec
 RCTSetImageCacheLimits(4*1024*1024, 200*1024*1024);
 ```
 
 **Parameters:**
 
-| Name           | Type   | Required | Description             |
-| -------------- | ------ | -------- | ----------------------- |
-| imageSizeLimit | number | Yes      | 图像缓存大小限制 |
+| Name           | Type   | Required | Description       |
+| -------------- | ------ | -------- | ----------------- |
+| imageSizeLimit | number | Yes      | 图像缓存大小限制  |
 | totalCostLimit | number | Yes      | 图像缓存大小限制. |
 
 在上面的代码示例中，图像大小限制设置为 4 MB，总成本限制设置为 200 MB。

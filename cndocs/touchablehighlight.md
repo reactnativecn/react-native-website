@@ -33,7 +33,7 @@ function MyComponent(props: MyComponentProps) {
 ## 示例
 
 ```SnackPlayer name=TouchableHighlight%20Example
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -116,7 +116,7 @@ export default TouchableHighlightExample;
 
 当底层的颜色被显示的时候调用。
 
-|| 类型     |
+|| 类型 |
 || -------- |
 || function |
 

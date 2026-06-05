@@ -2,6 +2,8 @@ import type * as PluginContentDocs from '@docusaurus/plugin-content-docs';
 import type * as Preset from '@docusaurus/preset-classic';
 import type {Config} from '@docusaurus/types';
 import path from 'path';
+import prismThemeDark from './core/PrismThemeDark';
+import prismThemeLight from './core/PrismThemeLight';
 
 // const users = require('./showcase.json');
 const versions = require('./versions.json');
@@ -200,7 +202,8 @@ const config: Config = {
     },
     prism: {
       defaultLanguage: 'tsx',
-      theme: require('./core/PrismTheme'),
+      theme: prismThemeLight,
+      darkTheme: prismThemeDark,
       additionalLanguages: [
         'diff',
         'bash',

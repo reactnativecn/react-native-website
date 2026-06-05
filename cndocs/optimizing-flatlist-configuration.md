@@ -23,8 +23,8 @@ title: 列表配置优化
 
 ### removeClippedSubviews
 
-| 类型    | 默认值 |
-| ------- | ------- |
+| 类型    | 默认值                              |
+| ------- | ----------------------------------- |
 | Boolean | Android 上为 `true`，否则为 `false` |
 
 如果设为 `true`，那些超出视口范围的视图会从原生视图层级结构中分离。
@@ -36,10 +36,9 @@ title: 列表配置优化
 ### maxToRenderPerBatch
 
 | 类型   | 默认值 |
-| ------ | ------- |
-| Number | 10      |
+| ------ | ------ |
+| Number | 10     |
 
- 
 这是一个可以通过 `FlatList` 传递的 `VirtualizedList` 属性。它控制每批渲染的元素数量,也就是每次滚动时渲染的下一组元素。
 
 **好处：** 设置较大的数值意味着在滚动时会减少视觉上的空白区域(提高填充率)。
@@ -49,8 +48,8 @@ title: 列表配置优化
 ### updateCellsBatchingPeriod
 
 | 类型   | 默认值 |
-| ------ | ------- |
-| Number | 50      |
+| ------ | ------ |
+| Number | 50     |
 
 `maxToRenderPerBatch` 告诉 `VirtualizedList` 每批次渲染的元素数量，而 `updateCellsBatchingPeriod` 则用于设置两次批量渲染之间的延迟毫秒数（也就是组件渲染可见区域内元素的频率）。
 
@@ -73,8 +72,8 @@ title: 列表配置优化
 ### windowSize
 
 | 类型   | 默认值 |
-| ------ | ------- |
-| Number | 21      |
+| ------ | ------ |
+| Number | 21     |
 
 这里传递的数字是一个度量单位，其中 1 相当于视口高度。默认值为 21（上方 10 个视口，下方 10 个视口，中间一个视口）。
 
@@ -88,7 +87,7 @@ title: 列表配置优化
 
 ### 使用简单组件
 
-组件越复杂一般渲染就越慢。 
+组件越复杂一般渲染就越慢。
 在列表项中尽量避免过多的逻辑和嵌套。如果你在应用中经常复用这个列表项组件，那就专门为这些大型列表创建一个组件，尽可能减少其中的逻辑和嵌套。
 
 ### 使用轻量组件
@@ -100,7 +99,7 @@ title: 列表配置优化
 `React.memo()` 会创建一个带有记忆化功能的组件，只有当传递给组件的 props 发生变化时，该组件才会重新渲染。我们可以利用这个函数来优化 FlatList 中的组件。
 
 ```tsx
-import React, {memo} from 'react';
+import {memo} from 'react';
 import {View, Text} from 'react-native';
 
 const MyListItem = memo(
@@ -121,7 +120,6 @@ export default MyListItem;
 
 ### 使用优化缓存的图片库
 
- 
 你可以使用社区的扩展包（例如来自 [Dream11](https://github.com/ds-horizon) 的 [@d11/react-native-fast-image](https://github.com/ds-horizon/react-native-fast-image) ）来获得更高性能的图片加载体验。列表中的每张图片都是一个`new Image()`实例。它触发 loaded 钩子的速度越快，你的 Javascript 线程就能越快再次空闲下来。
 
 ### 使用 getItemLayout
@@ -137,7 +135,6 @@ export default MyListItem;
 
 ### 避免在 renderItem 中使用匿名函数
 
- 
 对于函数式组件，把 `renderItem` 函数移到返回的 JSX 之外。另外，确保把它包裹在 `useCallback` 钩子里，防止每次渲染时都重新创建。
 对于类组件，把 `renderItem` 函数移到 render 函数之外，这样每次调用`render`函数时它就不会重新创建自己了。
 

@@ -49,7 +49,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 <TabItem value="javascript">
 
 ```SnackPlayer name=Easing%20Demo&ext=js
-import React, {useRef} from 'react';
+import {useRef} from 'react';
 import {
   Animated,
   Easing,
@@ -209,7 +209,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Easing%20Demo&ext=tsx
-import React, {useRef} from 'react';
+import {useRef} from 'react';
 import {
   Animated,
   Easing,

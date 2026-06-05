@@ -21,7 +21,7 @@ React Native 提供了两个互补的动画系统：[`Animated`](animations#anim
 <TabItem value="javascript">
 
 ```SnackPlayer ext=js
-import React, {useEffect, useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import {Animated, Text, View} from 'react-native';
 
 const FadeInView = props => {
@@ -74,7 +74,7 @@ export default () => {
 <TabItem value="typescript">
 
 ```SnackPlayer ext=tsx
-import React, {useEffect, useRef, type PropsWithChildren} from 'react';
+import {useEffect, useRef, type PropsWithChildren} from 'react';
 import {Animated, Text, View, type ViewStyle} from 'react-native';
 
 type FadeInViewProps = PropsWithChildren<{style: ViewStyle}>;
@@ -309,7 +309,6 @@ Animated.timing(opacity, {
 #### 带有动画事件的 ScrollView 示例
 
 ```SnackPlayer name=Animated&supportedPlatforms=ios,android
-import React from 'react';
 import {
   ScrollView,
   Text,
@@ -452,7 +451,7 @@ onPanResponderMove={Animated.event(
 #### PanResponder 与动画事件示例
 
 ```SnackPlayer name=Animated
-import React, {useRef} from 'react';
+import {useRef} from 'react';
 import {Animated, View, StyleSheet, PanResponder, Text} from 'react-native';
 
 const App = () => {
@@ -593,7 +592,7 @@ UIManager.setLayoutAnimationEnabledExperimental(true);
 ```
 
 ```SnackPlayer name=LayoutAnimations
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   NativeModules,
   LayoutAnimation,

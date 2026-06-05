@@ -6,7 +6,7 @@ description: 要深入理解 React Native，需要扎实的React 基础知识。
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
-React Native 的基础是[React](https://zh-hans.reactjs.org/)， 是在 web 端非常流行的开源 UI 框架。要想掌握 React Native，先了解 React 框架本身是非常有帮助的。本文旨在为初学者介绍一些 react 的入门知识。
+React Native 的基础是[React](https://zh-hans.react.dev/)， 是在 web 端非常流行的开源 UI 框架。要想掌握 React Native，先了解 React 框架本身是非常有帮助的。本文旨在为初学者介绍一些 react 的入门知识。
 
 本文主要会探讨以下几个 React 的核心概念：
 
@@ -15,7 +15,7 @@ React Native 的基础是[React](https://zh-hans.reactjs.org/)， 是在 web 端
 - props 属性
 - state 状态
 
-如果你想更深一步学习，我们建议你阅读[React 的官方文档](https://zh-hans.reactjs.org/)，它也提供有中文版。
+如果你想更深一步学习，我们建议你阅读[React 的官方文档](https://zh-hans.react.dev/)，它也提供有中文版。
 
 ## 尝试编写一个组件
 
@@ -25,7 +25,6 @@ React Native 的基础是[React](https://zh-hans.reactjs.org/)， 是在 web 端
 <TabItem value="functional">
 
 ```SnackPlayer name=Your%20Cat
-import React from 'react';
 import { Text } from 'react-native';
 
 const Cat = () => {
@@ -39,20 +38,19 @@ export default Cat;
 
 要定义一个`Cat`组件，第一步要使用[`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)语句来引入`React`以及`React Native`的[`Text`](text)组件：
 
-```jsx
-import React from 'react';
-import { Text } from 'react-native';
+```tsx
+import {Text} from 'react-native';
 ```
 
 然后一个简单的函数就可以作为一个组件：
 
-```jsx
+```tsx
 const Cat = () => {};
 ```
 
 这个函数的`返回值`就会被渲染为一个 React 元素。这里`Cat`会渲染一个`<Text>`元素：
 
-```jsx
+```tsx
 const Cat = () => {
   return <Text>Hello, I am your cat!</Text>;
 };
@@ -60,7 +58,7 @@ const Cat = () => {
 
 这里我们还使用了[`export default`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)语句来导出这个组件，以使其可以在其他地方引入使用：
 
-```jsx
+```tsx
 const Cat = () => {
   return <Text>Hello, I am your cat!</Text>;
 };
@@ -74,7 +72,7 @@ export default Cat;
 Class 组件比函数组件写起来要繁琐一些。
 
 ```SnackPlayer name=Your%20Cat
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Text } from 'react-native';
 
 class Cat extends Component {
@@ -90,19 +88,19 @@ export default Cat;
 
 你还需要从 React 中引入`Component`：
 
-```jsx
-import React, { Component } from 'react';
+```tsx
+import {Component} from 'react';
 ```
 
 定义组件首先要继承(extends)自`Component`：
 
-```jsx
+```tsx
 class Cat extends Component {}
 ```
 
 Class 组件必须有一个`render()`函数，它的返回值会被渲染为一个 React 元素：
 
-```jsx
+```tsx
 class Cat extends Component {
   render() {
     return <Text>Hello, I am your cat!</Text>;
@@ -112,7 +110,7 @@ class Cat extends Component {
 
 和函数组件一样，我们也可以导出 class 组件：
 
-```jsx
+```tsx
 class Cat extends Component {
   render() {
     return <Text>Hello, I am your cat!</Text>;
@@ -131,10 +129,9 @@ export default Cat;
 
 ## JSX
 
-React 和 React Native 都使用**JSX 语法**，这种语法使得你可以在 JavaScript 中直接输出元素：`<Text>Hello, I am your cat!</Text>`。React 的文档有一份完整的[JSX 指南](https://zh-hans.reactjs.org/docs/jsx-in-depth.html#gatsby-focus-wrapper)可供你参考。因为 JSX 本质上也就是 JavaScript，所以你可以在其中直接使用变量。这里我们为猫猫的名字声明了一个变量`name`，并且用括号把它放在了`<Text>`之中。
+React 和 React Native 都使用**JSX 语法**，这种语法使得你可以在 JavaScript 中直接输出元素：`<Text>Hello, I am your cat!</Text>`。React 的文档有一份完整的[JSX 指南](https://zh-hans.react.dev/docs/jsx-in-depth.html#gatsby-focus-wrapper)可供你参考。因为 JSX 本质上也就是 JavaScript，所以你可以在其中直接使用变量。这里我们为猫猫的名字声明了一个变量`name`，并且用括号把它放在了`<Text>`之中。
 
 ```SnackPlayer name=Curly%20Braces
-import React from 'react';
 import { Text } from 'react-native';
 
 const Cat = () => {
@@ -152,7 +149,6 @@ export default Cat;
 括号中可以使用任意 JavaScript 表达式，包括调用函数，例如`{getFullName("Rum", Tum", "Tugger")}`：
 
 ```SnackPlayer name=Curly%20Braces
-import React from 'react';
 import { Text } from 'react-native';
 
 const getFullName = (firstName, secondName, thirdName) => {
@@ -172,7 +168,7 @@ export default Cat;
 
 你可以把括号`{}`想象成在 JSX 中打开了一个可以调用 JS 功能的传送门！
 
-> 在 React Native 0.71 版本之前，JSX 语法糖的实质是调用`React.createElement`方法，所以你必须在文件头部引用`import React from 'react'`。但在 React Native 0.71 版本之后，官方引入了[新的 JSX 转换](https://zh-hans.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)，可以**不用**再在文件头部写`import React from 'react'`。
+> 在 React Native 0.71 版本之前，JSX 语法糖的实质是调用`React.createElement`方法，所以你必须在文件头部引用`import React from 'react'`。但在 React Native 0.71 版本之后，官方引入了[新的 JSX 转换](https://zh-hans.react.dev/blog/2020/09/22/introducing-the-new-jsx-transform.html)，可以**不用**再在文件头部写`import React from 'react'`。
 
 ## 自定义组件
 
@@ -181,7 +177,6 @@ export default Cat;
 例如你可以把[`Text`](text)和[`TextInput`](textinput)嵌入到[`View`](view) 中，React Native 会把它们一起渲染出来：
 
 ```SnackPlayer name=Custom%20Components
-import React from 'react';
 import { Text, TextInput, View } from 'react-native';
 
 const Cat = () => {
@@ -222,7 +217,6 @@ export default Cat;
 这样你就可以在别处通过`<Cat>`来任意引用这个组件了：
 
 ```SnackPlayer name=Multiple%20Components
-import React from 'react';
 import { Text, TextInput, View } from 'react-native';
 
 const Cat = () => {
@@ -256,7 +250,6 @@ export default Cafe;
 **Props** 是“properties”（属性）的简写。Props 使得我们可以定制组件。比如可以给每只`<Cat>`一个不同的`name`：
 
 ```SnackPlayer name=Multiple%20Props
-import React from 'react';
 import { Text, View } from 'react-native';
 
 const Cat = (props) => {
@@ -283,7 +276,6 @@ export default Cafe;
 React Native 的绝大多数核心组件都提供了可定制的 props。例如，在使用[`Image`](image)组件时，你可以给它传递一个[`source`](image#source)属性，用来指定它显示的内容：
 
 ```SnackPlayer name=Props
-import React from 'react';
 import { Text, View, Image } from 'react-native';
 
 const CatApp = () => {
@@ -303,7 +295,7 @@ export default CatApp;
 
 `Image` 有[很多不同的 props](image#props)，[`style`](image#style)也是其中之一，它接受对象形式的样式和布局键值对。
 
-> 请留意我们在指定`style`属性的宽高时所用到的双层括号`{{ }}`。在 JSX 中，引用 JS 值时需要使用`{}`括起来。在你需要传递非字符串值（比如数组或者数字）的时候会经常用到这种写法：`<Cat food={["fish", "kibble"]} /> age={2}`。然而我们在 JS 中定义一个对象时，本来**_也_**需要用括号括起来：`{width: 200, height: 200}`。因此要在 JSX 中传递一个 JS 对象值的时候，就必须用到两层括号：`{{width: 200, height: 200}}`。
+> 请留意我们在指定`style`属性的宽高时所用到的双层括号`{{ }}`。在 JSX 中，引用 JS 值时需要使用`{}`括起来。在你需要传递非字符串值（比如数组或者数字）的时候会经常用到这种写法：`<Cat food={["fish", "kibble"]} /> age={2}`。然而我们在 JS 中定义一个对象时，本来***也***需要用括号括起来：`{width: 200, height: 200}`。因此要在 JSX 中传递一个 JS 对象值的时候，就必须用到两层括号：`{{width: 200, height: 200}}`。
 
 使用核心组件[`Text`](text), [`Image`](image)以及[`View`](view)搭配 props 已经可以做不少东西了！但是如果想要做一些用户交互，那我们还需要用到状态（state）。
 
@@ -316,10 +308,10 @@ export default CatApp;
 <Tabs groupId="syntax" defaultValue={constants.defaultSyntax} values={constants.syntax}>
 <TabItem value="functional">
 
-你可以使用[React 的`useState` Hook](https://zh-hans.reactjs.org/docs/hooks-state.html)来为组件添加状态。Hook （钩子）是一种特殊的函数，可以让你“钩住”一些 React 的特性。例如`useState`可以在函数组件中添加一个“状态钩子”，在函数组件重新渲染执行的时候能够保持住之前的状态。要了解更多，可以阅读[React 中有关 Hook 的文档](https://zh-hans.reactjs.org/docs/hooks-intro.html)。
+你可以使用[React 的`useState` Hook](https://zh-hans.react.dev/docs/hooks-state.html)来为组件添加状态。Hook （钩子）是一种特殊的函数，可以让你“钩住”一些 React 的特性。例如`useState`可以在函数组件中添加一个“状态钩子”，在函数组件重新渲染执行的时候能够保持住之前的状态。要了解更多，可以阅读[React 中有关 Hook 的文档](https://zh-hans.react.dev/docs/hooks-intro.html)。
 
 ```SnackPlayer name=State
-import React, { useState } from "react";
+import { useState } from 'react';
 import { Button, Text, View } from "react-native";
 
 const Cat = (props) => {
@@ -355,14 +347,14 @@ export default Cafe;
 
 首先要从 react 中引入`useState`：
 
-```jsx
-import React, { useState } from 'react';
+```tsx
+import {useState} from 'react';
 ```
 
 然后可以通过在函数内调用`useState`来为组件声明状态。在本示例中 `useState` 创建了一个 `isHungry` 状态变量：
 
-```jsx
-const Cat = (props) => {
+```tsx
+const Cat = props => {
   const [isHungry, setIsHungry] = useState(true);
   // ...
 };
@@ -377,7 +369,7 @@ const Cat = (props) => {
 
 下面我们添加一个按钮[`Button`](button)组件，并给它一个`onPress`的 prop：
 
-```jsx
+```tsx
 <Button
   onPress={() => {
     setIsHungry(false);
@@ -388,7 +380,7 @@ const Cat = (props) => {
 
 现在当用户点击按钮时，`onPress`函数会被触发，从而调用`setIsHungry(false)`。此时状态变量`isHungry`就被设为了`false`。当`isHungry`为 false 的时候，`Button`的`disabled`属性就变成了`true` ，其`title`也相应变化：
 
-```jsx
+```tsx
 <Button
   //..
   disabled={!isHungry}
@@ -403,7 +395,7 @@ const Cat = (props) => {
 
 最后再把猫咪放进`Cafe`组件：
 
-```jsx
+```tsx
 const Cafe = () => {
   return (
     <>
@@ -420,7 +412,7 @@ const Cafe = () => {
 老式的 class 组件在使用 state 的写法上有所不同：
 
 ```SnackPlayer name=State%20and%20Class%20Components
-import React, { Component } from "react";
+import { Component } from 'react';
 import { Button, Text, View } from "react-native";
 
 class Cat extends Component {
@@ -463,22 +455,22 @@ export default  Cafe;
 
 再次强调，对于 class 组件始终要记得从 React 中引入`Component`：
 
-```jsx
-import React, { Component } from 'react';
+```tsx
+import {Component} from 'react';
 ```
 
 在 class 组件中， state 以对象的形式存放：
 
-```jsx
+```tsx
 export class Cat extends Component {
-  state = { isHungry: true };
+  state = {isHungry: true};
   //..
 }
 ```
 
 和使用`this.props`获取 props 一样，在组件中获取状态也是通过`this.state`：
 
-```jsx
+```tsx
 <Text>
   I am {this.props.name}, and I am
   {this.state.isHungry ? ' hungry' : ' full'}!
@@ -487,10 +479,10 @@ export class Cat extends Component {
 
 要修改状态中的值，只需给`this.setState()`传入一个对象，包含要修改的键值对即可：
 
-```jsx
+```tsx
 <Button
   onPress={() => {
-    this.setState({ isHungry: false });
+    this.setState({isHungry: false});
   }}
 />
 ```
@@ -499,7 +491,7 @@ export class Cat extends Component {
 
 当`this.state.isHungry`为 false 时，`Button`的`disabled`属性随之被设置为`false`，它的`title`也相应变化：
 
-```jsx
+```tsx
 <Button
   // ..
   disabled={!this.state.isHungry}
@@ -513,7 +505,7 @@ export class Cat extends Component {
 
 最后，把你的猫放到一个咖啡店`Cafe`组件中：
 
-```jsx
+```tsx
 class Cafe extends Component {
   render() {
     return (
@@ -531,7 +523,7 @@ export default Cafe;
 </TabItem>
 </Tabs>
 
-> 注意到上面的`<>`和`</>`了吗？ 这一对 JSX 标签称为[Fragments（片段）](https://zh-hans.reactjs.org/docs/fragments.html)。由于 JSX 的语法要求根元素必须为单个元素，如果我们需要在根节点处并列多个元素，在此前不得不额外套一个没有实际用处的`View`。但有了 Fragment 后就不需要引入额外的容器视图了。
+> 注意到上面的`<>`和`</>`了吗？ 这一对 JSX 标签称为[Fragments（片段）](https://zh-hans.react.dev/docs/fragments.html)。由于 JSX 的语法要求根元素必须为单个元素，如果我们需要在根节点处并列多个元素，在此前不得不额外套一个没有实际用处的`View`。但有了 Fragment 后就不需要引入额外的容器视图了。
 
 ---
 

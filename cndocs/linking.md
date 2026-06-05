@@ -141,7 +141,7 @@ func application(
 <TabItem value="javascript">
 
 ```SnackPlayer name=Linking%20Example&supportedPlatforms=ios,android&ext=js
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {Alert, Button, Linking, StyleSheet, View} from 'react-native';
 
 const supportedURL = 'https://google.com';
@@ -189,7 +189,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Linking%20Example&supportedPlatforms=ios,android&ext=tsx
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {Alert, Button, Linking, StyleSheet, View} from 'react-native';
 
 const supportedURL = 'https://google.com';
@@ -247,7 +247,7 @@ export default App;
 <TabItem value="javascript">
 
 ```SnackPlayer name=Linking%20Example&supportedPlatforms=ios,android&ext=js
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {Button, Linking, StyleSheet, View} from 'react-native';
 
 const OpenSettingsButton = ({children}) => {
@@ -282,7 +282,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Linking%20Example&supportedPlatforms=ios,android&ext=tsx
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {Button, Linking, StyleSheet, View} from 'react-native';
 
 type OpenSettingsButtonProps = {
@@ -326,7 +326,7 @@ export default App;
 <TabItem value="javascript">
 
 ```SnackPlayer name=Linking%20Example&supportedPlatforms=ios,android&ext=js
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Linking, StyleSheet, Text, View} from 'react-native';
 
 const useInitialURL = () => {
@@ -380,7 +380,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Linking%20Example&supportedPlatforms=ios,android&ext=tsx
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {Linking, StyleSheet, Text, View} from 'react-native';
 
 const useInitialURL = () => {
@@ -439,7 +439,7 @@ export default App;
 <TabItem value="javascript">
 
 ```SnackPlayer name=Linking%20Example&supportedPlatforms=android&ext=js
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {Alert, Button, Linking, StyleSheet, View} from 'react-native';
 
 const SendIntentButton = ({action, extras, children}) => {
@@ -489,7 +489,7 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Linking%20Example&ext=tsx
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {Alert, Button, Linking, StyleSheet, View} from 'react-native';
 
 type SendIntentButtonProps = {

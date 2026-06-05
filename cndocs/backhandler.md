@@ -14,7 +14,7 @@ Backhandler API 检测用于后退导航的硬件按钮按下情况，允许您�
 如果您的应用程序显示打开的“Modal”，则“BackHandler”将不会发布任何事件（[请参阅“Modal”文档](modal#onrequestclose)）。
 :::
 
-＃＃ 图案
+## 图案
 
 ```tsx
 const subscription = BackHandler.addEventListener(
@@ -47,12 +47,12 @@ const subscription = BackHandler.addEventListener(
 subscription.remove();
 ```
 
-＃＃ 例子
+## 例子
 
 以下示例实现了您确认用户是否要退出应用程序的场景：
 
 ```SnackPlayer name=BackHandler&supportedPlatforms=android
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import {Text, StyleSheet, BackHandler, Alert} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -114,9 +114,9 @@ export default App;
 
 ---
 
-＃ 参考
+# 参考
 
-＃＃ 方法
+## 方法
 
 ### `addEventListener()`
 

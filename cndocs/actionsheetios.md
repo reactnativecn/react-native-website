@@ -8,7 +8,7 @@ title: ActionSheetIOS
 ## 示例
 
 ```SnackPlayer name=ActionSheetIOS%20Example&supportedPlatforms=ios
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {ActionSheetIOS, Button, StyleSheet, Text} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 

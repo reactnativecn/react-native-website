@@ -10,7 +10,6 @@ title: 高度与宽度
 最简单的给组件设定尺寸的方式就是在样式中指定固定的`width`和`height`。React Native 中的尺寸都是无单位的，表示的是与设备像素密度无关的逻辑像素点。
 
 ```SnackPlayer name=Height%20and%20Width
-import React from 'react';
 import {View} from 'react-native';
 
 const FixedDimensionsBasics = () => {
@@ -59,7 +58,6 @@ export default FixedDimensionsBasics;
 :::
 
 ```SnackPlayer name=Flex%20Dimensions
-import React from 'react';
 import {View} from 'react-native';
 
 const FlexDimensionsBasics = () => {
@@ -85,7 +83,6 @@ export default FlexDimensionsBasics;
 如果你想要按比例填充屏幕上某一部分，又不想使用`flex`布局，那么可以在组件的`style`中使用**百分比**。与弹性宽高相似，百分比宽高要求父容器有一个明确的尺寸。
 
 ```SnackPlayer name=Percentage%20Dimensions
-import React from 'react';
 import {View} from 'react-native';
 
 const PercentageDimensionsBasics = () => {

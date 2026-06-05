@@ -14,7 +14,6 @@ React Native 看起来很像 React，只不过它使用原生组件而非 Web �
 按照我们悠久的传统，首先来构建一个只显示 "Hello, world!" 的应用：
 
 ```SnackPlayer name=Hello%20World
-import React from 'react';
 import {Text, View} from 'react-native';
 
 const HelloWorldApp = () => {
@@ -67,7 +66,6 @@ export default HelloWorldApp;
 <TabItem value="javascript">
 
 ```SnackPlayer name=Hello%20Props&ext=js
-import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -101,7 +99,6 @@ export default LotsOfGreetings;
 <TabItem value="typescript">
 
 ```SnackPlayer name=Hello%20Props&ext=tsx
-import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -159,7 +156,7 @@ export default LotsOfGreetings;
 ```tsx
 // ReactJS Counter Example using Hooks!
 
-import React, {useState} from 'react';
+import {useState} from 'react';
 
 
 
@@ -190,7 +187,7 @@ const App = () => {
 ```tsx
 // React Native Counter Example using Hooks!
 
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
 const App = () => {
@@ -224,7 +221,7 @@ const styles = StyleSheet.create({
 下面的示例使用类组件实现了同样的计数器：
 
 ```SnackPlayer name=Hello%20Classes
-import React, {Component} from 'react';
+import {Component} from 'react';
 import {StyleSheet, TouchableOpacity, Text, View} from 'react-native';
 
 class App extends Component {

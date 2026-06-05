@@ -25,7 +25,6 @@ title: 处理触摸事件
 再试试下面这个使用`Button`的例子吧。你可以点击"Tap to Play"来预览真实效果。
 
 ```SnackPlayer name=Button%20Basics
-import React from 'react';
 import {Alert, Button, StyleSheet, View} from 'react-native';
 
 const ButtonBasics = () => {
@@ -87,7 +86,6 @@ export default ButtonBasics;
 我们来看一下示例：
 
 ```SnackPlayer name=Touchables
-import React from 'react';
 import {
   Alert,
   Platform,

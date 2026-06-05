@@ -30,7 +30,7 @@ function MyComponent(props: MyComponentProps) {
 ## 示例
 
 ```SnackPlayer name=TouchableWithoutFeedback
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {StyleSheet, TouchableWithoutFeedback, Text, View} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -218,9 +218,9 @@ export default TouchableWithoutFeedbackExample;
 
 表示可选中元素的状态。此字段可以接受布尔值或 "mixed" 字符串来表示混合复选框。
 
-| 类型              | 默认值 |
-| ----------------- | ------ |
-| boolean, 'mixed'  | false  |
+| 类型             | 默认值 |
+| ---------------- | ------ |
+| boolean, 'mixed' | false  |
 
 ---
 
@@ -410,9 +410,9 @@ export default TouchableWithoutFeedbackExample;
 触摸区域不会超出父视图的边界，且如果触摸命中两个重叠的视图，兄弟视图的 Z-index 始终优先。
 :::
 
-| 类型                     |
-| ------------------------ |
-| [Rect](rect) 或 number   |
+| 类型                   |
+| ---------------------- |
+| [Rect](rect) 或 number |
 
 ### `id`
 
@@ -498,9 +498,9 @@ export default TouchableWithoutFeedbackExample;
 
 当滚动视图禁用时，定义手指可以从按钮移开多远才会取消激活按钮。取消激活后，尝试将手指移回，你会看到按钮再次被激活！在滚动视图禁用时来回移动多次试试。请确保传入常量以减少内存分配。
 
-| 类型                     |
-| ------------------------ |
-| [Rect](rect) 或 number   |
+| 类型                   |
+| ---------------------- |
+| [Rect](rect) 或 number |
 
 ---
 

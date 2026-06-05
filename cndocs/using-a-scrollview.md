@@ -8,7 +8,6 @@ title: 使用滚动视图
 下面的示例代码创建了一个垂直滚动的`ScrollView`，其中还混杂了图片和文字组件。
 
 ```SnackPlayer name=Using%20ScrollView
-import React from 'react';
 import {Image, ScrollView, Text} from 'react-native';
 
 const logo = {

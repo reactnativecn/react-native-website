@@ -15,7 +15,6 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 <TabItem value="javascript">
 
 ```SnackPlayer name=VirtualizedListExample&ext=js
-import React from 'react';
 import {View, VirtualizedList, StyleSheet, Text, StatusBar} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -71,7 +70,6 @@ export default App;
 <TabItem value="typescript">
 
 ```SnackPlayer name=VirtualizedListExample&ext=tsx
-import React from 'react';
 import {View, VirtualizedList, StyleSheet, Text, StatusBar} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -156,7 +154,7 @@ export default App;
 
 ---
 
-### <div class="label required basic">Required</div> **`renderItem`**
+### <div className="label required basic">Required</div> **`renderItem`**
 
 ```tsx
 (info: any) => ?React.Element<any>
@@ -180,7 +178,7 @@ export default App;
 
 ---
 
-### <div class="label required basic">Required</div> **`getItem`**
+### <div className="label required basic">Required</div> **`getItem`**
 
 ```tsx
 (data: any, index: number) => any;
@@ -194,7 +192,7 @@ export default App;
 
 ---
 
-### <div class="label required basic">Required</div> **`getItemCount`**
+### <div className="label required basic">Required</div> **`getItemCount`**
 
 ```tsx
 (data: any) => number;

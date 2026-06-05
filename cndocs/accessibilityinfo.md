@@ -8,7 +8,7 @@ title: AccessibilityInfo
 ## 示例
 
 ```SnackPlayer name=AccessibilityInfo%20Example&supportedPlatforms=android,ios
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {AccessibilityInfo, Text, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -90,16 +90,16 @@ static addEventListener(
 
 添加事件处理函数。支持的事件如下：
 
-| 事件名                                                                                 | 说明                                                                                                                                                                                                                                                                                          |
-| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `accessibilityServiceChanged`<br/><div className="label two-lines android">Android</div> | 当 TalkBack、其他 Android 辅助技术或第三方无障碍服务被启用时触发。处理函数参数为布尔值：当任一无障碍服务启用时为 `true`，否则为 `false`。                                                                                                                                                     |
-| `announcementFinished`<br/><div className="label two-lines ios">iOS</div>                | 当读屏器完成播报时触发。处理函数参数是一个对象，包含：<ul><li>`announcement`：读屏器播报的文本。</li><li>`success`：是否成功播报的布尔值。</li></ul>                                                                                                                                            |
-| `boldTextChanged`<br/><div className="label two-lines ios">iOS</div>                     | 当“粗体文本”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                                                                                                                                                    |
-| `grayscaleChanged`<br/><div className="label two-lines ios">iOS</div>                    | 当“灰度”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                                                                                                                                                        |
-| `invertColorsChanged`<br/><div className="label two-lines ios">iOS</div>                 | 当“反转颜色”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                                                                                                                                                    |
-| `reduceMotionChanged`                                                                      | 当“减少动态效果”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。（在 Android 上，“开发者选项”中的“过渡动画比例”设为“动画关闭”也会返回 `true`。）                                                                                                                             |
-| `reduceTransparencyChanged`<br/><div className="label two-lines ios">iOS</div>           | 当“降低透明度”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                                                                                                                                                  |
-| `screenReaderChanged`                                                                       | 当读屏器状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                                                                                                                                                            |
+| 事件名                                                                                   | 说明                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `accessibilityServiceChanged`<br/><div className="label two-lines android">Android</div> | 当 TalkBack、其他 Android 辅助技术或第三方无障碍服务被启用时触发。处理函数参数为布尔值：当任一无障碍服务启用时为 `true`，否则为 `false`。                         |
+| `announcementFinished`<br/><div className="label two-lines ios">iOS</div>                | 当读屏器完成播报时触发。处理函数参数是一个对象，包含：<ul><li>`announcement`：读屏器播报的文本。</li><li>`success`：是否成功播报的布尔值。</li></ul>              |
+| `boldTextChanged`<br/><div className="label two-lines ios">iOS</div>                     | 当“粗体文本”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                     |
+| `grayscaleChanged`<br/><div className="label two-lines ios">iOS</div>                    | 当“灰度”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                         |
+| `invertColorsChanged`<br/><div className="label two-lines ios">iOS</div>                 | 当“反转颜色”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                     |
+| `reduceMotionChanged`                                                                    | 当“减少动态效果”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。（在 Android 上，“开发者选项”中的“过渡动画比例”设为“动画关闭”也会返回 `true`。） |
+| `reduceTransparencyChanged`<br/><div className="label two-lines ios">iOS</div>           | 当“降低透明度”开关状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                   |
+| `screenReaderChanged`                                                                    | 当读屏器状态变化时触发。参数为布尔值：启用为 `true`，否则为 `false`。                                                                                             |
 
 ---
 
@@ -126,10 +126,10 @@ static announceForAccessibilityWithOptions(
 
 **参数：**
 
-| 名称                                                              | 类型   | 说明                                                                                  |
-| ----------------------------------------------------------------- | ------ | ------------------------------------------------------------------------------------- |
-| announcement <div className="label basic required">Required</div> | string | 要播报的字符串                                                                          |
-| options <div className="label basic required">Required</div>      | object | `queue` - 是否排队到当前播报之后 <div className="label ios">iOS</div>                |
+| 名称                                                              | 类型   | 说明                                                                  |
+| ----------------------------------------------------------------- | ------ | --------------------------------------------------------------------- |
+| announcement <div className="label basic required">Required</div> | string | 要播报的字符串                                                        |
+| options <div className="label basic required">Required</div>      | object | `queue` - 是否排队到当前播报之后 <div className="label ios">iOS</div> |
 
 ---
 
@@ -144,9 +144,9 @@ static getRecommendedTimeoutMillis(originalTimeout: number): Promise<number>;
 
 **参数：**
 
-| 名称                                                                 | 类型   | 说明                                                                                     |
-| -------------------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------- |
-| originalTimeout <div className="label basic required">Required</div> | number | 当“辅助功能超时”未设置时返回的超时值（毫秒）。                                            |
+| 名称                                                                 | 类型   | 说明                                           |
+| -------------------------------------------------------------------- | ------ | ---------------------------------------------- |
+| originalTimeout <div className="label basic required">Required</div> | number | 当“辅助功能超时”未设置时返回的超时值（毫秒）。 |
 
 ---
 
@@ -287,7 +287,7 @@ static sendAccessibilityEvent(host: HostInstance, eventType: AccessibilityEventT
 确保希望接收无障碍焦点的 `View` 设置了 `accessible={true}`。
 :::
 
-| 名称                                                           | 类型                    | 说明                                                                 |
-| -------------------------------------------------------------- | ----------------------- | -------------------------------------------------------------------- |
-| host <div className="label basic required">Required</div>      | HostInstance            | 要向其发送事件的组件 ref。                                           |
+| 名称                                                           | 类型                    | 说明                                                                                                           |
+| -------------------------------------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------- |
+| host <div className="label basic required">Required</div>      | HostInstance            | 要向其发送事件的组件 ref。                                                                                     |
 | eventType <div className="label basic required">Required</div> | AccessibilityEventTypes | `'click'`（仅 Android）、`'focus'`、`'viewHoverEnter'`（仅 Android）或 `'windowStateChange'`（仅 Android）之一 |

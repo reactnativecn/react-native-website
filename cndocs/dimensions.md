@@ -27,7 +27,7 @@ const windowHeight = Dimensions.get('window').height;
 ## 示例
 
 ```SnackPlayer name=Dimensions%20Example
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {StyleSheet, Text, Dimensions} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -119,9 +119,9 @@ static get(dim: 'window' | 'screen'): ScaledSize;
 
 **参数:**
 
-| 名称                                                               | 类型   | 描述                                                                              |
-| ------------------------------------------------------------------ | ------ | --------------------------------------------------------------------------------- |
-| dim <div className="label basic required two-lines">必需</div>     | 字符串 | 调用 `set` 时定义的尺寸的名称。返回该尺寸的值。                                   |
+| 名称                                                           | 类型   | 描述                                            |
+| -------------------------------------------------------------- | ------ | ----------------------------------------------- |
+| dim <div className="label basic required two-lines">必需</div> | 字符串 | 调用 `set` 时定义的尺寸的名称。返回该尺寸的值。 |
 
 > 对于 Android，`window` 尺寸将不包括 `状态栏`（如果不透明）和 `底部导航栏` 占用的大小。
 
@@ -133,16 +133,16 @@ static get(dim: 'window' | 'screen'): ScaledSize;
 
 **属性:**
 
-| 名称    | 类型                                | 描述                                   |
-| ------ | ----------------------------------- | --------------------------------------- |
-| window | [ScaledSize](dimensions#scaledsize) | 可见应用窗口的大小。                  |
-| screen | [ScaledSize](dimensions#scaledsize) | 设备屏幕的大小。                      |
+| 名称   | 类型                                | 描述                 |
+| ------ | ----------------------------------- | -------------------- |
+| window | [ScaledSize](dimensions#scaledsize) | 可见应用窗口的大小。 |
+| screen | [ScaledSize](dimensions#scaledsize) | 设备屏幕的大小。     |
 
 ### ScaledSize
 
-| 类型   |
-| ------ |
-| 对象   |
+| 类型 |
+| ---- |
+| 对象 |
 
 **属性:**
 

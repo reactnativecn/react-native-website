@@ -17,7 +17,6 @@ title: PermissionsAndroid
 ### 示例
 
 ```SnackPlayer name=PermissionsAndroid%20Example&supportedPlatforms=android
-import React from 'react';
 import {
   Button,
   PermissionsAndroid,
@@ -150,8 +149,8 @@ static check(permission: Permission): Promise<boolean>;
 
 **参数:**
 
-| 名称       | 类型   | 必需 | 说明         |
-| ---------- | ------ | ---- | ------------ |
+| 名称       | 类型   | 必需 | 说明           |
+| ---------- | ------ | ---- | -------------- |
 | permission | string | 是   | 要检查的权限。 |
 
 ---

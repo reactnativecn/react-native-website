@@ -12,7 +12,6 @@ title: Alert
 ## 示例
 
 ```SnackPlayer name=Alert%20Example&supportedPlatforms=ios,android
-import React from 'react';
 import {StyleSheet, Button, Alert} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -81,7 +80,6 @@ export default App;
 ### 示例 <div className="label android">Android</div>
 
 ```SnackPlayer name=Alert%20Android%20Dissmissable%20Example&supportedPlatforms=android
-import React from 'react';
 import {StyleSheet, Button, Alert} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -143,12 +141,12 @@ static alert (
 
 **参数：**
 
-| 名称                                                       | 类型                               | 说明                                             |
-| ---------------------------------------------------------- | ---------------------------------- | ------------------------------------------------ |
-| title <div className="label basic required">Required</div> | string                             | 对话框标题。传入 `null` 或空字符串将隐藏标题。   |
-| message                                                    | string                             | 可选消息，显示在标题下方。                       |
-| buttons                                                    | [AlertButton](alert#alertbutton)[] | 可选的按钮配置数组。                             |
-| options                                                    | [AlertOptions](alert#alertoptions) | 可选的 Alert 配置。                              |
+| 名称                                                       | 类型                               | 说明                                           |
+| ---------------------------------------------------------- | ---------------------------------- | ---------------------------------------------- |
+| title <div className="label basic required">Required</div> | string                             | 对话框标题。传入 `null` 或空字符串将隐藏标题。 |
+| message                                                    | string                             | 可选消息，显示在标题下方。                     |
+| buttons                                                    | [AlertButton](alert#alertbutton)[] | 可选的按钮配置数组。                           |
+| options                                                    | [AlertOptions](alert#alertoptions) | 可选的 Alert 配置。                            |
 
 ---
 
@@ -169,15 +167,15 @@ static prompt: (
 
 **参数：**
 
-| 名称                                                       | 类型                                            | 说明                                                                                                                                             |
-| ---------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| title <div className="label basic required">Required</div> | string                                          | 对话框标题。                                                                                                                                     |
-| message                                                    | string                                          | 可选消息，显示在文本输入框上方。                                                                                                                 |
-| callbackOrButtons                                          | function<hr/>[AlertButton](alert#alertButton)[] | 如果传入函数，用户点击"确定"时将以输入值为参数调用该函数<br/>`(text: string) => void`。<hr/>如果传入数组，则按照数组内容配置按钮。               |
-| type                                                       | [AlertType](alert#alerttype-ios)                | 配置文本输入框的类型。                                                                                                                           |
-| defaultValue                                               | string                                          | 文本输入框中的默认文本。                                                                                                                         |
-| keyboardType                                               | string                                          | 第一个文本输入框（如果存在）的键盘类型。参见 TextInput 的 [keyboardTypes](textinput#keyboardtype)。                                              |
-| options                                                    | [AlertOptions](alert#alertoptions)              | 可选的 Alert 配置。                                                                                                                              |
+| 名称                                                       | 类型                                            | 说明                                                                                                                               |
+| ---------------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| title <div className="label basic required">Required</div> | string                                          | 对话框标题。                                                                                                                       |
+| message                                                    | string                                          | 可选消息，显示在文本输入框上方。                                                                                                   |
+| callbackOrButtons                                          | function<hr/>[AlertButton](alert#alertButton)[] | 如果传入函数，用户点击"确定"时将以输入值为参数调用该函数<br/>`(text: string) => void`。<hr/>如果传入数组，则按照数组内容配置按钮。 |
+| type                                                       | [AlertType](alert#alerttype-ios)                | 配置文本输入框的类型。                                                                                                             |
+| defaultValue                                               | string                                          | 文本输入框中的默认文本。                                                                                                           |
+| keyboardType                                               | string                                          | 第一个文本输入框（如果存在）的键盘类型。参见 TextInput 的 [keyboardTypes](textinput#keyboardtype)。                                |
+| options                                                    | [AlertOptions](alert#alertoptions)              | 可选的 Alert 配置。                                                                                                                |
 
 ---
 
@@ -193,10 +191,10 @@ iOS Alert 的按钮样式。
 
 **常量：**
 
-| 值              | 说明           |
-| --------------- | -------------- |
-| `'default'`     | 默认按钮样式。 |
-| `'cancel'`      | 取消按钮样式。 |
+| 值              | 说明             |
+| --------------- | ---------------- |
+| `'default'`     | 默认按钮样式。   |
+| `'cancel'`      | 取消按钮样式。   |
 | `'destructive'` | 破坏性按钮样式。 |
 
 ---
@@ -211,11 +209,11 @@ iOS Alert 的类型。
 
 **常量：**
 
-| 值                 | 说明                   |
-| ------------------ | ---------------------- |
-| `'default'`        | 不带输入框的默认提示框 |
-| `'plain-text'`     | 带纯文本输入框的提示框 |
-| `'secure-text'`    | 带密文输入框的提示框   |
+| 值                 | 说明                       |
+| ------------------ | -------------------------- |
+| `'default'`        | 不带输入框的默认提示框     |
+| `'plain-text'`     | 带纯文本输入框的提示框     |
+| `'secure-text'`    | 带密文输入框的提示框       |
 | `'login-password'` | 带用户名密码输入框的提示框 |
 
 ---
@@ -230,12 +228,12 @@ iOS Alert 的类型。
 
 **对象属性：**
 
-| 名称                                             | 类型                                           | 说明                                                     |
-| ------------------------------------------------ | ---------------------------------------------- | -------------------------------------------------------- |
-| text                                             | string                                         | 按钮标签。                                               |
-| onPress                                          | function                                       | 按钮被点击时的回调函数。                                 |
-| style <div className="label ios">iOS</div>       | [AlertButtonStyle](alert#alertbuttonstyle-ios) | 按钮样式，在 Android 上此属性将被忽略。                  |
-| isPreferred <div className="label ios">iOS</div> | boolean                                        | 是否为强调按钮，在 Android 上此属性将被忽略。            |
+| 名称                                             | 类型                                           | 说明                                          |
+| ------------------------------------------------ | ---------------------------------------------- | --------------------------------------------- |
+| text                                             | string                                         | 按钮标签。                                    |
+| onPress                                          | function                                       | 按钮被点击时的回调函数。                      |
+| style <div className="label ios">iOS</div>       | [AlertButtonStyle](alert#alertbuttonstyle-ios) | 按钮样式，在 Android 上此属性将被忽略。       |
+| isPreferred <div className="label ios">iOS</div> | boolean                                        | 是否为强调按钮，在 Android 上此属性将被忽略。 |
 
 ---
 
@@ -247,8 +245,8 @@ iOS Alert 的类型。
 
 **属性：**
 
-| 名称                                                    | 类型     | 说明                                                                               |
-| ------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------- |
-| cancelable <div className="label android">Android</div> | boolean  | 是否允许通过点击提示框外部区域来关闭提示框。                                       |
-| userInterfaceStyle <div className="label ios">iOS</div> | string   | 提示框的界面样式，可以设置为 `light` 或 `dark`，否则将使用默认的系统样式。         |
-| onDismiss <div className="label android">Android</div>  | function | 提示框被关闭时触发的回调函数。                                                     |
+| 名称                                                    | 类型     | 说明                                                                       |
+| ------------------------------------------------------- | -------- | -------------------------------------------------------------------------- |
+| cancelable <div className="label android">Android</div> | boolean  | 是否允许通过点击提示框外部区域来关闭提示框。                               |
+| userInterfaceStyle <div className="label ios">iOS</div> | string   | 提示框的界面样式，可以设置为 `light` 或 `dark`，否则将使用默认的系统样式。 |
+| onDismiss <div className="label android">Android</div>  | function | 提示框被关闭时触发的回调函数。                                             |

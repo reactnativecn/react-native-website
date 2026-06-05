@@ -8,7 +8,6 @@ title: ActivityIndicator
 ## 示例
 
 ```SnackPlayer name=ActivityIndicator%20Example
-import React from 'react';
 import {ActivityIndicator, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
@@ -62,8 +61,8 @@ export default App;
 
 滚轮的前景颜色。
 
-| 类型            | 默认值                                                                                                                                                                                          |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 类型            | 默认值                                                                                                                                                                              |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [color](colors) | `null`（系统默认强调色）<div className="label android">Android</div><hr/><ins style={{background: '#999'}} className="color-box" />`'#999999'` <div className="label ios">iOS</div> |
 
 ---

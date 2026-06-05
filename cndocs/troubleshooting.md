@@ -91,7 +91,6 @@ pod 'React', :path => '../node_modules/react-native', :subspecs => [
 React Native 实现了 WebSocket 的 polyfill。这些 [polyfill](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Core/InitializeCore.js) 会在你通过 `import React from 'react'` 引入 react-native 模块时初始化。如果你加载了其他需要 WebSocket 的模块（如 [Firebase](https://github.com/facebook/react-native/issues/3645)），请确保在 react-native 之后加载/引入：
 
 ```
-import React from 'react';
 import Firebase from 'firebase';
 ```
 
@@ -115,7 +114,7 @@ adb start-server
 
 ### 情况 1：错误 "code":"ENOSPC","errno":"ENOSPC"
 
-此问题由 [inotify](https://github.com/guard/listen/blob/master/README.md#increasing-the-amount-of-inotify-watchers)（watchman 在 Linux 上使用）可监控的目录数量限制导致。要解决此问题，请在终端中执行以下命令：
+此问题由 [inotify](https://github.com/guard/listen/blob/main/README.md#increasing-the-amount-of-inotify-watchers)（watchman 在 Linux 上使用）可监控的目录数量限制导致。要解决此问题，请在终端中执行以下命令：
 
 ```shell
 echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
