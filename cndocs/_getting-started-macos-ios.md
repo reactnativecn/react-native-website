@@ -1,3 +1,5 @@
+import ThemedImage from '@theme/ThemedImage';
+
 ## 安装依赖
 
 必须安装的依赖有：Node、Watchman、Xcode 和 CocoaPods。
@@ -47,7 +49,13 @@ React Native 目前需要[Xcode](https://developer.apple.com/xcode/downloads/) 1
 
 启动 Xcode，并在`Xcode | Preferences | Locations`菜单中检查一下是否装有某个版本的`Command Line Tools`。Xcode 的命令行工具中包含一些必须的工具，比如`git`等。
 
-![Xcode Command Line Tools](/docs/assets/GettingStartedXcodeCommandLineTools.png)
+<ThemedImage
+alt="Xcode Command Line Tools 配置"
+sources={{
+    light: '/docs/assets/GettingStartedXcodeCommandLineTools.png',
+    dark: '/docs/assets/GettingStartedXcodeCommandLineToolsDark.png',
+  }}
+/>
 
 #### 在 Xcode 中安装 iOS 模拟器
 
