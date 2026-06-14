@@ -143,6 +143,11 @@ export default {
             id: 'appendix',
             label: '附录',
           },
+          {
+            type: 'doc',
+            id: 'the-new-architecture/create-module-library',
+            label: '为模块创建库',
+          },
         ],
       },
     ],
