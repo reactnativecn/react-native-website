@@ -1,3 +1,4 @@
+import ThemedImage from '@theme/ThemedImage';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import constants from '@site/core/TabsConstants';
@@ -68,7 +69,13 @@ yarn install
 
 安装命令行工具。选择 Xcode 菜单中的 **Settings...（或 Preferences...）**。转到位置面板，并安装工具，方法是选择命令行工具下拉菜单中最新的版本。
 
-![Xcode Command Line Tools](/docs/assets/GettingStartedXcodeCommandLineTools.png)
+<ThemedImage
+alt="Xcode Command Line Tools 配置"
+sources={{
+    light: '/docs/assets/GettingStartedXcodeCommandLineTools.png',
+    dark: '/docs/assets/GettingStartedXcodeCommandLineToolsDark.png',
+  }}
+/>
 
 ### CocoaPods
 
@@ -159,6 +166,7 @@ AppRegistry.registerComponent('HelloWorld', () => App);
 让我们创建一个 `App.tsx` 文件。这是一个 [TypeScript](https://www.typescriptlang.org/) 文件，可以包含 [JSX](<https://en.wikipedia.org/wiki/JSX_(JavaScript)>) 表达式。它包含我们要集成到 iOS 应用程序中的根 React Native 组件（<RNTemplateRepoLink href="template/App.tsx">链接</RNTemplateRepoLink>）：
 
 ```tsx
+import {type JSX} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -176,7 +184,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-function App(): React.JSX.Element {
+function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {

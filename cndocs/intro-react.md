@@ -21,6 +21,12 @@ React Native 的基础是[React](https://zh-hans.react.dev/)， 是在 web 端�
 
 本文档会用"Cat"这种有个名字和咖啡馆就能开始工作的人畜无害的生物来作为例子。下面是我们的第一个 Cat 组件:
 
+<Tabs groupId="component-style" queryString defaultValue="functional" values={[
+{label: '函数组件', value: 'functional'},
+{label: 'Class 组件', value: 'classical'},
+]}>
+<TabItem value="functional">
+
 ```SnackPlayer name=Your%20Cat
 import {Text} from 'react-native';
 
@@ -117,7 +123,6 @@ export default Cat;
 
 </TabItem>
 </Tabs>
-
 
 :::tip
 上面只是导出组件的写法之一。你还可以看看这篇博客整理[handy cheatsheet on JavaScript imports and exports](https://www.samanthaming.com/tidbits/79-module-cheatsheet/)整理的各种不同的写法。
@@ -377,7 +382,6 @@ export default CatApp;
 
 你可以使用[React 的`useState` Hook](https://zh-hans.react.dev/docs/hooks-state.html)来为组件添加状态。Hook （钩子）是一种特殊的函数，可以让你“钩住”一些 React 的特性。例如`useState`可以在函数组件中添加一个“状态钩子”，在函数组件重新渲染执行的时候能够保持住之前的状态。要了解更多，可以阅读[React 中有关 Hook 的文档](https://zh-hans.react.dev/docs/hooks-intro.html)。
 
-
 <Tabs groupId="language" queryString defaultValue={constants.defaultSnackLanguage} values={constants.snackLanguages}>
 <TabItem value="javascript">
 
@@ -460,6 +464,12 @@ export default Cafe;
 
 </TabItem>
 </Tabs>
+
+<Tabs groupId="component-style" queryString defaultValue="functional" values={[
+{label: '函数组件', value: 'functional'},
+{label: 'Class 组件', value: 'classical'},
+]}>
+<TabItem value="functional">
 
 首先要从 react 中引入`useState`：
 
@@ -642,7 +652,6 @@ export default Cafe;
 
 </TabItem>
 </Tabs>
-
 
 :::info
 注意到上面的`<>`和`</>`了吗？ 这一对 JSX 标签称为[Fragments（片段）](https://zh-hans.react.dev/docs/fragments.html)。由于 JSX 的语法要求根元素必须为单个元素，如果我们需要在根节点处并列多个元素，在此前不得不额外套一个没有实际用处的`View`。但有了 Fragment 后就不需要引入额外的容器视图了。

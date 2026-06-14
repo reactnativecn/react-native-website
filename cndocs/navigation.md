@@ -63,8 +63,7 @@ npm install @react-navigation/native @react-navigation/native-stack
 
 下面是一个包含首页和个人资料页的示例：
 
-```tsx
-import * as React from 'react';
+```tsx title="App.tsx"
 import {createStaticNavigation} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -93,10 +92,10 @@ export default function App() {
 
 在页面组件内部，可以使用 `useNavigation` Hook 获取 `navigation` 对象，该对象提供了跳转到其他页面的各种方法。例如，使用 `navigation.navigate` 跳转到 `Profile` 页面：
 
-```tsx
+```tsx title="HomeScreen.tsx"
 import {useNavigation} from '@react-navigation/native';
 
-function HomeScreen() {
+export default function HomeScreen() {
   const navigation = useNavigation();
 
   return (
@@ -108,8 +107,10 @@ function HomeScreen() {
     />
   );
 }
+```
 
-function ProfileScreen({route}) {
+```tsx title="ProfileScreen.tsx"
+export default function ProfileScreen({route}) {
   return <Text>This is {route.params.name}'s profile</Text>;
 }
 ```

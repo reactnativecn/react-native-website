@@ -3,6 +3,8 @@ id: publishing-to-app-store
 title: 上架 App Store
 ---
 
+import ThemedImage from '@theme/ThemedImage';
+
 上架应用的过程和任何其它原生 iOS 应用一样，但有一些额外的注意事项要考虑。
 
 :::info
@@ -13,9 +15,15 @@ title: 上架 App Store
 
 需要在 Xcode 使用`Release` scheme 编译在 App Store 发布的 app。`Release`版本的应用会自动禁用开发者菜单，同时也会将 js 文件和静态图片打包压缩后内置到包中，这样应用可以在本地读取而无需访问开发服务器（同时这样一来你也无法再调试，需要调试请将 Build Configuration 再改为 debug）。
 
-要配置 app 为使用`Release` scheme 编译，请前往**Product** → **Scheme** → **Edit Scheme**。选择侧边栏的**Run**标签，然后设置下拉的 Build Configuration 为`Release`。
+要配置 app 为使用`Release` scheme 编译，请前往**Product** → **Scheme** → **Edit Scheme**。选择侧边栏的**Run**标签，然后设置下拉的 **Build Configuration** 为`Release`。
 
-![](/docs/assets/ConfigureReleaseScheme.png)
+<ThemedImage
+alt="Xcode Release Scheme 配置"
+sources={{
+    light: '/docs/assets/ConfigureReleaseScheme.png',
+    dark: '/docs/assets/ConfigureReleaseSchemeDark.png',
+  }}
+/>
 
 #### 优化技巧
 
