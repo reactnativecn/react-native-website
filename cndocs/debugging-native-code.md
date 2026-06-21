@@ -50,7 +50,7 @@ adb logcat "*:S" ReactNative:V ReactNativeJS:V YourModuleName:D
 
 在原生模块中，使用 `NSLog` 添加自定义日志：
 
-```objective-c
+```objectivec
 NSLog(@"YourModuleName: %@", message);
 ```
 
