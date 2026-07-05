@@ -235,7 +235,7 @@ The following values work across platforms:
 
 ### 🗑️ `blurOnSubmit`
 
-:::warning Deprecated
+:::warning[Deprecated]
 `submitBehavior` 现在取代了 `blurOnSubmit`，并会覆盖由 `blurOnSubmit` 定义的行为。详见 [submitBehavior](textinput#submitbehavior)。
 :::
 

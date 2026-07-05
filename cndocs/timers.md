@@ -25,7 +25,7 @@ title: 定时器
 
 ## InteractionManager
 
-:::warning 已弃用
+:::warning[已弃用]
 `InteractionManager` 的行为已更改为与 `setImmediate` 相同，应该改用 `setImmediate`。
 :::
 

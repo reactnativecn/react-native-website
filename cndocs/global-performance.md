@@ -21,7 +21,7 @@ title: performance
 
 ### `rnStartupTiming` ⚠️
 
-:::warning 非标准
+:::warning[非标准]
 这是 React Native 特有的扩展。
 :::
 
@@ -33,15 +33,15 @@ get rnStartupTiming(): ReactNativeStartupTiming;
 
 `ReactNativeStartupTiming` 接口提供以下字段：
 
-| 名称                                     | 类型           | 描述                                           |
-| ---------------------------------------- | -------------- | ---------------------------------------------- |
-| `startTime`                              | number \| void | React Native 运行时初始化开始的时间。          |
-| `executeJavaScriptBundleEntryPointStart` | number \| void | 应用 bundle 开始执行的时间。                   |
-| `endTime`                                | number \| void | React Native 运行时完全初始化完成的时间。      |
+| 名称                                     | 类型           | 描述                                      |
+| ---------------------------------------- | -------------- | ----------------------------------------- |
+| `startTime`                              | number \| void | React Native 运行时初始化开始的时间。     |
+| `executeJavaScriptBundleEntryPointStart` | number \| void | 应用 bundle 开始执行的时间。              |
+| `endTime`                                | number \| void | React Native 运行时完全初始化完成的时间。 |
 
 ### `timeOrigin`
 
-:::warning 部分支持
+:::warning[部分支持]
 提供的是从 UNIX 纪元到系统启动的毫秒数，而非从 UNIX 纪元到应用启动的毫秒数。
 :::
 
@@ -79,7 +79,7 @@ get rnStartupTiming(): ReactNativeStartupTiming;
 
 ### `now()`
 
-:::warning 部分支持
+:::warning[部分支持]
 提供的是从系统启动开始的毫秒数，而非从应用启动开始的毫秒数。
 :::
 

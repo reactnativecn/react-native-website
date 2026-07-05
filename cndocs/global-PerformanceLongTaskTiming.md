@@ -3,7 +3,7 @@ id: global-PerformanceLongTaskTiming
 title: PerformanceLongTaskTiming
 ---
 
-:::warning
+:::warning[部分支持]
 🚧 本页面仍在完善中，请参考 [MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceLongTaskTiming) 获取更多信息。
 :::
 
