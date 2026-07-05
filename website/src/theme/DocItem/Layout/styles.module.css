@@ -24,6 +24,10 @@ div[class^="copyPageArticleAction"] {
   margin-bottom: 0;
 }
 
+.copyPageArticleAction {
+  margin-left: auto;
+}
+
 button[class^="copyPageButton"] {
   border-radius: var(--ifm-global-radius);
   border-color: var(--ifm-color-gray-500);
