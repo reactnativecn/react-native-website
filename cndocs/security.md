@@ -27,11 +27,11 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 
 [Async Storage](https://github.com/react-native-async-storage/async-storage) 是一个由社区维护的 React Native 模块，它提供了一个异步、未加密的键值对存储。异步存储不是在应用之间共享的：每个应用都有自己的沙盒环境，并且无法访问其他应用的数据。
 
-| **使用Async Storage的情况** | **不推荐使用Async Storage的情况** |
-| ---------------------- | -------------------------- |
-| 在应用运行间持久保存非敏感数据   | 令牌存储                   |
-| 持久保存 Redux 状态         | 密钥                        |
-| 持久保存 GraphQL 状态       |                             |
+| **使用Async Storage的情况**    | **不推荐使用Async Storage的情况** |
+| ------------------------------ | --------------------------------- |
+| 在应用运行间持久保存非敏感数据 | 令牌存储                          |
+| 持久保存 Redux 状态            | 密钥                              |
+| 持久保存 GraphQL 状态          |                                   |
 
 :::note
 Async Storage 是 React Native 中与 Web 的 Local Storage 类似的功能
@@ -58,10 +58,9 @@ React Native 本身没有提供任何用于安全地储存敏感数据的方式�
 - [expo-secure-store](https://docs.expo.dev/versions/latest/sdk/securestore/)
 - [react-native-keychain](https://github.com/oblador/react-native-keychain)
 
-:::warning Caution
+:::warning[Caution]
 **请注意不要无意中存储或暴露敏感信息。**这可能会意外发生，例如在redux状态中保存敏感表单数据并持久化整个状态树到Async Storage。或者将用户令牌和个人信息发送到应用程序监控服务如Sentry或Crashlytics。
 :::
-
 
 ## 认证和深度链接（Deep Linking）
 
@@ -86,14 +85,14 @@ OAuth2 认证协议现在非常流行，被誉为最完整和安全的协议之�
 
 [PKCE](https://oauth.net/2/pkce/)发音为“Pixy”代表Proof of Key Code Exchange，是对OAuth 2规范的一个扩展。这涉及到增加了一层安全措施，用来验证身份验证和令牌交换请求来自同一个客户端。PKCE使用了SHA256加密哈希算法。SHA256 为任意大小的文字或者文件创建了一个独特的“签名”,但它:
 
-* 不管输入文件的大小总是保持一致的长度
-* 对同样的输入始终产生一样的结果
-* 是单向的（也就是说你不可以通过它反向工程出原始输入）
-  
+- 不管输入文件的大小总是保持一致的长度
+- 对同样的输入始终产生一样的结果
+- 是单向的（也就是说你不可以通过它反向工程出原始输入）
+
 现在你有这两个值：
 
-* **code_verifier** -由客户端生成的大随机字符串
-* **code_challenge** - code_verifier 的 SHA256
+- **code_verifier** -由客户端生成的大随机字符串
+- **code_challenge** - code_verifier 的 SHA256
 
 在初始的 `/authorize` 请求期间，客户端还会发送它保存在内存中的 `code_verifier` 对应的 `code_challenge`。授权请求正确返回后，客户端还会发送用于生成 `code_challenge` 的 `code_verifier`。身份提供商（IDP）随后会计算 `code_challenge`，检查它是否与最初的 `/authorize` 请求中设置的值匹配，并仅在值匹配时才发送访问令牌。
 
@@ -117,7 +116,7 @@ React-native-app-auth 只有在您的身份提供商支持 PKCE 时才能支持�
 
 **SSL固定**是一种可以在客户端使用的技巧来避免这种攻击。它的工作原理是在开发期间将受信任的证书列表嵌入（或固定）到客户端中，以便只接受用其中一个受信任的证书签名的请求，并拒绝任何自签名的证书。
 
-:::warning Caution
+:::warning[Caution]
 使用SSL固定时，您应该注意到期日期的问题。每1-2年就需要更新一次数字认证书，在数字认证书过期之后需要同时更新应用程序和服务器上的版本信息。一旦服务器上的数字认证书得到更新，则那些内嵌有旧版数字认证书的应用将无法正常工作了。
 :::
 

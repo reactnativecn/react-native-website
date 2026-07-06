@@ -231,7 +231,7 @@ request.open('GET', 'https://mywebsite.com/endpoint/');
 request.send();
 ```
 
-:::warning 注意
+:::warning[注意]
 XMLHttpRequest 的安全模型与网页不同，因为在原生应用中没有[跨域](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)的概念。
 :::
 

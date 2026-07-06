@@ -106,7 +106,7 @@ export default App;
 
 ### 🗑️ `animated`
 
-:::warning 已弃用
+:::warning[已弃用]
 请改用 [`animationType`](modal.md#animationtype) 属性。
 :::
 

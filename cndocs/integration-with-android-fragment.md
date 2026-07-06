@@ -32,7 +32,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 
 进入你的宿主 Activity，确保它实现了 `DefaultHardwareBackBtnHandler` 接口：
 
-:::warning 已弃用
+:::warning[已弃用]
 自 API 级别 33 起，`Activity.onBackPressed()` 已被[弃用](<https://developer.android.com/reference/android/app/Activity#onBackPressed()>)。面向 API 级别 36 的 Android 16 设备将[不再调用此方法](https://developer.android.com/about/versions/16/behavior-changes-16#predictive-back)，应改用 [OnBackPressedDispatcher](https://developer.android.com/reference/androidx/activity/OnBackPressedDispatcher)。
 :::
 

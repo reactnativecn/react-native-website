@@ -171,7 +171,7 @@ export default App;
 
 ### `setStyleAttributePreprocessor()`
 
-:::warning 实验性功能
+:::warning[实验性功能]
 可能会频繁发生破坏性变更，且不一定会提前通知。整个功能都可能被删除。使用需自担风险。
 :::
 

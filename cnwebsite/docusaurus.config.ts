@@ -5,7 +5,7 @@ import path from 'path';
 import prismThemeDark from './core/PrismThemeDark';
 import prismThemeLight from './core/PrismThemeLight';
 
-// const users = require('./showcase.json');
+import users from './showcase.json';
 const versions = require('./versions.json');
 const lastVersion = versions[0];
 const cdnUrl = '';
@@ -63,6 +63,9 @@ const config: Config = {
   ],
   favicon: cdnUrl + 'img/favicon.ico',
   titleDelimiter: '·',
+  customFields: {
+    users,
+  },
   onBrokenLinks: 'ignore',
   onBrokenAnchors: 'ignore',
   presets: [

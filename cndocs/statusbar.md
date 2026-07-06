@@ -440,7 +440,7 @@ static setHidden(hidden: boolean, animation?: StatusBarAnimation);
 
 ### 🗑️ `setNetworkActivityIndicatorVisible()` <div className="label ios">iOS</div>
 
-:::warning 已弃用
+:::warning[已弃用]
 iOS 13 及更高版本不再支持状态栏网络活动指示器。此方法将在未来版本中移除。
 :::
 

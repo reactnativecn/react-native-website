@@ -3,7 +3,7 @@ id: pushnotificationios
 title: '🗑️ PushNotificationIOS'
 ---
 
-:::warning 已弃用
+:::warning[已弃用]
 请改用[社区提供的替代方案](https://reactnative.directory/?search=notification)。
 :::
 
@@ -201,9 +201,9 @@ static getDeliveredNotifications(callback: (notifications: Object[]) => void);
 
 **参数：**
 
-| 名称     | 类型     | 必需 | 说明                                 |
-| -------- | -------- | ---- | ------------------------------------ |
-| callback | function | 是   | 接收已送达通知数组的函数。           |
+| 名称     | 类型     | 必需 | 说明                       |
+| -------- | -------- | ---- | -------------------------- |
+| callback | function | 是   | 接收已送达通知数组的函数。 |
 
 一个已送达的通知是包含以下字段的对象：
 
@@ -226,9 +226,9 @@ static removeDeliveredNotifications(identifiers: string[]);
 
 **参数：**
 
-| 名称        | 类型  | 必需 | 说明                 |
-| ----------- | ----- | ---- | -------------------- |
-| identifiers | array | 是   | 通知标识符数组。     |
+| 名称        | 类型  | 必需 | 说明             |
+| ----------- | ----- | ---- | ---------------- |
+| identifiers | array | 是   | 通知标识符数组。 |
 
 ---
 
@@ -258,9 +258,9 @@ static getApplicationIconBadgeNumber(callback: (num: number) => void);
 
 **参数：**
 
-| 名称     | 类型     | 必需 | 说明                           |
-| -------- | -------- | ---- | ------------------------------ |
-| callback | function | 是   | 处理当前角标数字的函数。       |
+| 名称     | 类型     | 必需 | 说明                     |
+| -------- | -------- | ---- | ------------------------ |
+| callback | function | 是   | 处理当前角标数字的函数。 |
 
 ---
 
@@ -292,9 +292,9 @@ static getScheduledLocalNotifications(
 
 **参数：**
 
-| 名称     | 类型     | 必需 | 说明                                   |
-| -------- | -------- | ---- | -------------------------------------- |
-| callback | function | 是   | 处理描述本地通知的对象数组的函数。     |
+| 名称     | 类型     | 必需 | 说明                               |
+| -------- | -------- | ---- | ---------------------------------- |
+| callback | function | 是   | 处理描述本地通知的对象数组的函数。 |
 
 ---
 
@@ -340,9 +340,9 @@ static removeEventListener(
 
 **参数：**
 
-| 名称 | 类型   | 必需 | 说明                                            |
-| ---- | ------ | ---- | ----------------------------------------------- |
-| type | string | 是   | 事件类型。可选值参见 `addEventListener()`。     |
+| 名称 | 类型   | 必需 | 说明                                        |
+| ---- | ------ | ---- | ------------------------------------------- |
+| type | string | 是   | 事件类型。可选值参见 `addEventListener()`。 |
 
 ---
 
@@ -364,9 +364,9 @@ static requestPermissions(permissions?: PushNotificationPermissions[]);
 
 **参数：**
 
-| 名称        | 类型  | 必需 | 说明                   |
-| ----------- | ----- | ---- | ---------------------- |
-| permissions | array | 否   | alert、badge 或 sound  |
+| 名称        | 类型  | 必需 | 说明                  |
+| ----------- | ----- | ---- | --------------------- |
+| permissions | array | 否   | alert、badge 或 sound |
 
 ---
 
@@ -447,7 +447,7 @@ finish(result: string);
 
 在 JS 端完成通知处理后，调用 `finish()` 来执行原生完成处理器。调用此方法时，传入最能描述操作结果的获取结果值。可能的值列表请参见 `PushNotificationIOS.FetchResult`。
 
-如果你使用了 `application:didReceiveRemoteNotification:fetchCompletionHandler:`，你_必须_调用此处理器，并且应尽快调用。更多详情请参阅[官方文档](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application?language=objc)。
+如果你使用了 `application:didReceiveRemoteNotification:fetchCompletionHandler:`，你*必须*调用此处理器，并且应尽快调用。更多详情请参阅[官方文档](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application?language=objc)。
 
 ---
 

@@ -3,7 +3,7 @@ id: safeareaview
 title: '🗑️ SafeAreaView'
 ---
 
-:::warning 已弃用
+:::warning[已弃用]
 请改用 [react-native-safe-area-context](https://github.com/AppAndFlow/react-native-safe-area-context)。
 :::
 

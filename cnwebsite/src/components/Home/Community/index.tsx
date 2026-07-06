@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {ShowcaseData} from '@site/src/types';
 
+import PartnersShowcase from './PartnersShowcase';
 import Section from '../Section';
 import SectionTitle from '../SectionTitle';
 
@@ -17,85 +17,87 @@ import styles from './styles.module.css';
 
 function Community() {
   const {siteConfig} = useDocusaurusContext();
-  const apps = Object.values(siteConfig.customFields.users)
+  const apps = Object.values(siteConfig.customFields?.users as ShowcaseData)
     .flat()
-    .filter(app => app.pinned);
+    .filter(app => Boolean(app.pinned));
 
   return (
     <Section>
-      <SectionTitle title="Meta supported. Community driven." />
+      <SectionTitle
+        title="Meta 支持，社区驱动。"
+        description={
+          <>
+            React Native 正被用于成千上万款应用，
+            <br />
+            你很可能已经用过其中之一。
+          </>
+        }
+      />
       <div className={styles.featureContainer}>
-        <div>
-          <p>
-            Meta released React Native in 2015 and has been maintaining it ever
-            since.
-          </p>
-          <p>
-            In 2018, React Native had the{' '}
-            <a href="https://octoverse.github.com/2018/projects#repositories">
-              2nd highest
-            </a>{' '}
-            number of contributors for any repository in GitHub. Today, React
-            Native is supported by contributions from individuals and companies
-            around the world including{' '}
-            <span>
-              <a href="https://callstack.com/">Callstack</a>
-            </span>
-            ,{' '}
-            <span>
-              <a href="https://expo.io/">Expo</a>
-            </span>
-            , <a href="https://infinite.red/">Infinite Red</a>,{' '}
-            <a href="https://www.microsoft.com/">Microsoft</a> and{' '}
-            <a href="https://swmansion.com/">Software Mansion</a>.
-          </p>
-          <p>
-            Our community is always shipping exciting new projects and exploring
-            platforms beyond Android and iOS with repos like{' '}
-            <span>
-              <a href="https://github.com/microsoft/react-native-windows#readme">
-                React Native Windows
-              </a>
-            </span>
-            ,{' '}
-            <a href="https://github.com/microsoft/react-native-macos#readme">
-              React Native macOS
-            </a>{' '}
-            and{' '}
-            <a href="https://github.com/necolas/react-native-web#readme">
-              React Native Web
-            </a>
-            .
-          </p>
-        </div>
-        <div>
-          <p>
-            React Native is being used in thousands of apps, but it's likely
-            you've already used it in one of these apps:
-          </p>
-          <ul className="AppList">
-            {apps.map((app, i) => {
-              const imgSource = !app.icon.startsWith('http')
-                ? useBaseUrl('img/showcase/' + app.icon)
-                : app.icon;
-              return (
-                <li key={i} className="item">
-                  {app.infoLink ? (
-                    <a href={app.infoLink}>
-                      <img src={imgSource} alt={app.name} />
-                    </a>
-                  ) : (
+        <ul className={styles.appList}>
+          {apps.map((app, i) => {
+            const imgSource = !app.icon.startsWith('http')
+              ? useBaseUrl('img/showcase/' + app.icon)
+              : app.icon;
+            return (
+              <li key={i} className="item">
+                {app.infoLink ? (
+                  <a
+                    href={app.infoLink}
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <img src={imgSource} alt={app.name} />
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-          <p>
-            and <a href={useBaseUrl(`showcase`)}>many more</a>.
-          </p>
-        </div>
+                  </a>
+                ) : (
+                  <img src={imgSource} alt={app.name} />
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </div>
+      <a href={useBaseUrl(`showcase`)} className={styles.secondaryButton}>
+        查看全部精选应用
+      </a>
+      <div className={styles.communityNote}>
+        <p>
+          Meta 在 2015 年发布了 React Native，并一直维护至今。
+          <br />
+          如今，React Native 也由来自世界各地的个人和公司共同贡献支持，包括：
+        </p>
+        <PartnersShowcase />
+        <p>
+          此外，我们的社区也在不断推出令人兴奋的新项目，并通过{' '}
+          <a
+            href="https://microsoft.github.io/react-native-windows/"
+            target="_blank"
+            rel="noopener noreferrer">
+            React Native Windows
+          </a>
+          、{' '}
+          <a
+            href="https://microsoft.github.io/react-native-macos/"
+            target="_blank"
+            rel="noopener noreferrer">
+            React Native macOS
+          </a>{' '}
+          和{' '}
+          <a
+            href="https://necolas.github.io/react-native-web/"
+            target="_blank"
+            rel="noopener noreferrer">
+            React Native Web
+          </a>{' '}
+          等项目持续拓展 Android 与 iOS 之外的平台。
+        </p>
+      </div>
+      <a
+        href="https://github.com/react/react-native/blob/main/ECOSYSTEM.md"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.secondaryButton}>
+        进一步了解生态系统
+      </a>
     </Section>
   );
 }
