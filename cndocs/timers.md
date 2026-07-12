@@ -22,37 +22,3 @@ title: 定时器
 在 Android 上调试时，如果调试器和设备之间的时间出现偏差，动画、事件行为等可能无法正常工作，或者结果可能不准确。
 请在调试器机器上运行 ``adb shell "date `date +%m%d%H%M%Y.%S%3N`"`` 来纠正此问题。在真实设备上使用需要 root 权限。
 :::
-
-## InteractionManager
-
-:::warning[已弃用]
-`InteractionManager` 的行为已更改为与 `setImmediate` 相同，应该改用 `setImmediate`。
-:::
-
-原生应用感觉如此流畅的一个重要原因就是在互动和动画的过程中避免繁重的操作。在 React Native 里，我们目前受到限制，因为我们只有一个 JavaScript 执行线程。不过你可以用`InteractionManager`来确保在执行繁重工作之前所有的交互和动画都已经处理完毕。
-
-应用可以通过以下代码来安排一个任务，使其在交互结束之后执行：
-
-```ts
-InteractionManager.runAfterInteractions(() => {
-  // ...long-running synchronous task...
-});
-```
-
-我们来把它和之前的几个任务安排方法对比一下：
-
-- requestAnimationFrame(): 用来执行在一段时间内控制视图动画的代码
-- setImmediate/setTimeout/setInterval(): 在稍后执行代码。注意这有可能会延迟当前正在进行的动画。
-- runAfterInteractions(): 在稍后执行代码，不会延迟当前进行的动画。
-
-触摸处理系统会把一个或多个进行中的触摸操作认定为'交互'，并且会将`runAfterInteractions()`的回调函数延迟执行，直到所有的触摸操作都结束或取消了。
-
-InteractionManager 还允许应用注册动画，在动画开始时创建一个交互“句柄”，然后在结束的时候清除它。
-
-```ts
-const handle = InteractionManager.createInteractionHandle();
-// run animation... (`runAfterInteractions` tasks are queued)
-// later, on animation completion:
-InteractionManager.clearInteractionHandle(handle);
-// queued tasks run if all handles were cleared
-```
