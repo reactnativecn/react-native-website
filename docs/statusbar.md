@@ -61,7 +61,6 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <StatusBar
           animated={true}
-          backgroundColor="#61dafb"
           barStyle={statusBarStyle}
           showHideTransition={statusBarTransition}
           hidden={hidden}
@@ -172,7 +171,6 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <StatusBar
           animated={true}
-          backgroundColor="#61dafb"
           barStyle={statusBarStyle}
           showHideTransition={statusBarTransition}
           hidden={hidden}
@@ -253,25 +251,11 @@ The height of the status bar, which includes the notch height, if present.
 
 ### `animated`
 
-If the transition between status bar property changes should be animated. Supported for `backgroundColor`, `barStyle` and `hidden` properties.
+If the transition between status bar property changes should be animated. Supported for `barStyle` and `hidden` properties.
 
 | Type    | Required | Default |
 | ------- | -------- | ------- |
 | boolean | No       | `false` |
-
----
-
-### `backgroundColor` <div className="label android">Android</div>
-
-The background color of the status bar.
-
-:::warning
-Due to edge-to-edge enforcement introduced in Android 15, setting background color of the status bar is deprecated in API level 35 and setting it will have no effect. You can read more about our [edge-to-edge recommendations here](https://github.com/react-native-community/discussions-and-proposals/discussions/827).
-:::
-
-| Type            | Required | Default                                                                |
-| --------------- | -------- | ---------------------------------------------------------------------- |
-| [color](colors) | No       | default system StatusBar background color, or `'black'` if not defined |
 
 ---
 
@@ -297,16 +281,6 @@ If the status bar is hidden.
 
 ---
 
-### `networkActivityIndicatorVisible` <div className="label ios">iOS</div>
-
-If the network activity indicator should be visible.
-
-| Type    | Default |
-| ------- | ------- |
-| boolean | `false` |
-
----
-
 ### `showHideTransition` <div className="label ios">iOS</div>
 
 The transition effect when showing and hiding the status bar using the `hidden` prop.
@@ -314,20 +288,6 @@ The transition effect when showing and hiding the status bar using the `hidden` 
 | Type                                               | Default  |
 | -------------------------------------------------- | -------- |
 | [StatusBarAnimation](statusbar#statusbaranimation) | `'fade'` |
-
----
-
-### `translucent` <div className="label android">Android</div>
-
-If the status bar is translucent. When translucent is set to `true`, the app will draw under the status bar. This is useful when using a semi transparent status bar color.
-
-:::warning
-Due to edge-to-edge enforcement introduced in Android 15, setting the status bar as translucent is deprecated in API level 35 and setting it will have no effect. You can read more about our [edge-to-edge recommendations here](https://github.com/react-native-community/discussions-and-proposals/discussions/827).
-:::
-
-| Type    | Default |
-| ------- | ------- |
-| boolean | `false` |
 
 ## Methods
 
@@ -383,27 +343,6 @@ Replace an existing StatusBar stack entry with new props.
 
 ---
 
-### `setBackgroundColor()` <div className="label android">Android</div>
-
-```tsx
-static setBackgroundColor(color: ColorValue, animated?: boolean);
-```
-
-Set the background color for the status bar.
-
-:::warning
-Due to edge-to-edge enforcement introduced in Android 15, setting background color of the status bar is deprecated in API level 35 and setting it will have no effect. You can read more about our [edge-to-edge recommendations here](https://github.com/react-native-community/discussions-and-proposals/discussions/827).
-:::
-
-**Parameters:**
-
-| Name                                                       | Type    | Description               |
-| ---------------------------------------------------------- | ------- | ------------------------- |
-| color <div className="label basic required">Required</div> | string  | Background color.         |
-| animated                                                   | boolean | Animate the style change. |
-
----
-
 ### `setBarStyle()`
 
 ```tsx
@@ -437,44 +376,6 @@ Show or hide the status bar.
 | animation <div className="label ios">iOS</div>              | [StatusBarAnimation](statusbar#statusbaranimation) | Animation when changing the status bar hidden property. |
 
 ---
-
-### 🗑️ `setNetworkActivityIndicatorVisible()` <div className="label ios">iOS</div>
-
-:::warning[Deprecated]
-The status bar network activity indicator is not supported in iOS 13 and later. This will be removed in a future release.
-:::
-
-```tsx
-static setNetworkActivityIndicatorVisible(visible: boolean);
-```
-
-Control the visibility of the network activity indicator.
-
-**Parameters:**
-
-| Name                                                         | Type    | Description         |
-| ------------------------------------------------------------ | ------- | ------------------- |
-| visible <div className="label basic required">Required</div> | boolean | Show the indicator. |
-
----
-
-### `setTranslucent()` <div className="label android">Android</div>
-
-```tsx
-static setTranslucent(translucent: boolean);
-```
-
-Control the translucency of the status bar.
-
-:::warning
-Due to edge-to-edge enforcement introduced in Android 15, setting the status bar as translucent is deprecated in API level 35 and setting it will have no effect. You can read more about our [edge-to-edge recommendations here](https://github.com/react-native-community/discussions-and-proposals/discussions/827).
-:::
-
-**Parameters:**
-
-| Name                                                             | Type    | Description         |
-| ---------------------------------------------------------------- | ------- | ------------------- |
-| translucent <div className="label basic required">Required</div> | boolean | Set as translucent. |
 
 ## Type Definitions
 
