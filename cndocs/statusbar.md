@@ -61,7 +61,6 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <StatusBar
           animated={true}
-          backgroundColor="#61dafb"
           barStyle={statusBarStyle}
           showHideTransition={statusBarTransition}
           hidden={hidden}
@@ -172,7 +171,6 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <StatusBar
           animated={true}
-          backgroundColor="#61dafb"
           barStyle={statusBarStyle}
           showHideTransition={statusBarTransition}
           hidden={hidden}
@@ -253,25 +251,11 @@ export default App;
 
 ### `animated`
 
-状态栏属性变化时是否使用动画过渡。支持 `backgroundColor`、`barStyle` 和 `hidden` 属性。
+状态栏属性变化时是否使用动画过渡。支持 `barStyle` 和 `hidden` 属性。
 
 | 类型    | 必需 | 默认值  |
 | ------- | ---- | ------- |
 | boolean | 否   | `false` |
-
----
-
-### `backgroundColor` <div className="label android">Android</div>
-
-状态栏的背景色。
-
-:::warning
-由于 Android 15 引入的全面屏（edge-to-edge）强制要求，在 API level 35 中设置状态栏背景色已被弃用，设置将不会生效。你可以在[这里阅读我们的全面屏适配建议](https://github.com/react-native-community/discussions-and-proposals/discussions/827)。
-:::
-
-| 类型            | 必需 | 默认值                                         |
-| --------------- | ---- | ---------------------------------------------- |
-| [color](colors) | 否   | 默认系统状态栏背景色，如果未定义则为 `'black'` |
 
 ---
 
@@ -297,16 +281,6 @@ export default App;
 
 ---
 
-### `networkActivityIndicatorVisible` <div className="label ios">iOS</div>
-
-是否显示网络活动指示器。
-
-| 类型    | 默认值  |
-| ------- | ------- |
-| boolean | `false` |
-
----
-
 ### `showHideTransition` <div className="label ios">iOS</div>
 
 使用 `hidden` 属性显示和隐藏状态栏时的过渡效果。
@@ -316,18 +290,6 @@ export default App;
 | [StatusBarAnimation](statusbar#statusbaranimation) | `'fade'` |
 
 ---
-
-### `translucent` <div className="label android">Android</div>
-
-指定状态栏是否透明。设置为 `true` 时，应用会在状态栏下方绘制内容。这在使用半透明状态栏背景色时非常有用。
-
-:::warning
-由于 Android 15 引入的全面屏（edge-to-edge）强制要求，在 API level 35 中设置状态栏透明已被弃用，设置将不会生效。你可以在[这里阅读我们的全面屏适配建议](https://github.com/react-native-community/discussions-and-proposals/discussions/827)。
-:::
-
-| 类型    | 默认值  |
-| ------- | ------- |
-| boolean | `false` |
 
 ## 方法
 
@@ -383,27 +345,6 @@ static replaceStackEntry(
 
 ---
 
-### `setBackgroundColor()` <div className="label android">Android</div>
-
-```tsx
-static setBackgroundColor(color: ColorValue, animated?: boolean);
-```
-
-设置状态栏的背景色。
-
-:::warning
-由于 Android 15 引入的全面屏（edge-to-edge）强制要求，在 API level 35 中设置状态栏背景色已被弃用，设置将不会生效。你可以在[这里阅读我们的全面屏适配建议](https://github.com/react-native-community/discussions-and-proposals/discussions/827)。
-:::
-
-**参数：**
-
-| 名称                                                   | 类型    | 描述               |
-| ------------------------------------------------------ | ------- | ------------------ |
-| color <div className="label basic required">必需</div> | string  | 背景色。           |
-| animated                                               | boolean | 是否使用动画过渡。 |
-
----
-
 ### `setBarStyle()`
 
 ```tsx
@@ -437,44 +378,6 @@ static setHidden(hidden: boolean, animation?: StatusBarAnimation);
 | animation <div className="label ios">iOS</div>          | [StatusBarAnimation](statusbar#statusbaranimation) | 改变状态栏隐藏属性时的动画效果。 |
 
 ---
-
-### 🗑️ `setNetworkActivityIndicatorVisible()` <div className="label ios">iOS</div>
-
-:::warning[已弃用]
-iOS 13 及更高版本不再支持状态栏网络活动指示器。此方法将在未来版本中移除。
-:::
-
-```tsx
-static setNetworkActivityIndicatorVisible(visible: boolean);
-```
-
-控制网络活动指示器的可见性。
-
-**参数：**
-
-| 名称                                                     | 类型    | 描述             |
-| -------------------------------------------------------- | ------- | ---------------- |
-| visible <div className="label basic required">必需</div> | boolean | 是否显示指示器。 |
-
----
-
-### `setTranslucent()` <div className="label android">Android</div>
-
-```tsx
-static setTranslucent(translucent: boolean);
-```
-
-控制状态栏的透明度。
-
-:::warning
-由于 Android 15 引入的全面屏（edge-to-edge）强制要求，在 API level 35 中设置状态栏透明已被弃用，设置将不会生效。你可以在[这里阅读我们的全面屏适配建议](https://github.com/react-native-community/discussions-and-proposals/discussions/827)。
-:::
-
-**参数：**
-
-| 名称                                                         | 类型    | 描述         |
-| ------------------------------------------------------------ | ------- | ------------ |
-| translucent <div className="label basic required">必需</div> | boolean | 设置为透明。 |
 
 ## 类型定义
 

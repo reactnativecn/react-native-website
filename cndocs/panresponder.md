@@ -5,7 +5,7 @@ title: PanResponder
 
 `PanResponder`类可以将多点触摸操作协调成一个手势。它使得一个单点触摸可以接受更多的触摸操作，也可以用于识别简单的多点触摸手势。
 
-默认情况下`PanResponder`会通过`InteractionManager`来阻止长时间运行的 JS 事件打断当前的手势活动。
+默认情况下，`PanResponder` 会持有一个 interaction handle，以阻止长时间运行的 JS 事件打断当前手势。
 
 它提供了一个对[触摸响应系统](gesture-responder-system.md)响应器的可预测的包装。对于每一个处理函数，它在原生事件之外提供了一个新的`gestureState`对象：
 

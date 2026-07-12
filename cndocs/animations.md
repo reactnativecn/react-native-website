@@ -669,4 +669,4 @@ const styles = StyleSheet.create({
 
 我们可以在 Rebound 示例中使用它来更新比例 - 如果我们要更新的组件是深度嵌套的并且尚未使用“shouldComponentUpdate”进行优化，这可能会有所帮助。
 
-如果您发现动画掉帧（每秒执行低于 60 帧），请考虑使用“setNativeProps”或“shouldComponentUpdate”来优化它们。或者，您可以在 UI 线程而不是 JavaScript 线程上运行动画 [使用 useNativeDriver 选项](/blog/2017/02/14/using-native-driver-for-animated)。您可能还想使用 [InteractionManager](interactionmanager) 将任何计算密集型工作推迟到动画完成之后。您可以使用应用程序内开发菜单中的“FPS Monitor”工具来监视帧速率。
+如果您发现动画掉帧（每秒执行低于 60 帧），请考虑使用“setNativeProps”或“shouldComponentUpdate”来优化它们。或者，您可以在 UI 线程而不是 JavaScript 线程上运行动画 [使用 useNativeDriver 选项](/blog/2017/02/14/using-native-driver-for-animated)。你可能还需要将计算密集型工作推迟到 JS 线程空闲时执行（例如使用 `requestIdleCallback`）。您可以使用应用程序内开发菜单中的“FPS Monitor”工具来监视帧速率。

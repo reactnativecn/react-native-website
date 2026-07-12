@@ -104,14 +104,6 @@ export default App;
 
 ---
 
-### 🗑️ `animated`
-
-:::warning[已弃用]
-请改用 [`animationType`](modal.md#animationtype) 属性。
-:::
-
----
-
 ### `animationType`
 
 `animationType` 属性控制模态框的动画方式。

@@ -219,7 +219,7 @@ static decay(value, config): CompositeAnimation;
 
 - `velocity`：初始速度。必填。
 - `deceleration`：衰减率。默认 `0.997`。
-- `isInteraction`：是否在 `InteractionManager` 上创建 interaction handle。默认 `true`。
+- `isInteraction`：是否创建 interaction handle。默认 `true`。
 - `useNativeDriver`：为 `true` 时使用原生驱动。必填。
 
 ---
@@ -237,7 +237,7 @@ static timing(value, config): CompositeAnimation;
 - `duration`：动画时长（毫秒）。默认 `500`。
 - `easing`：定义曲线的缓动函数。默认为 `Easing.inOut(Easing.ease)`。
 - `delay`：延迟多久后开始（毫秒）。默认 `0`。
-- `isInteraction`：是否在 `InteractionManager` 上创建 interaction handle。默认 `true`。
+- `isInteraction`：是否创建 interaction handle。默认 `true`。
 - `useNativeDriver`：为 `true` 时使用原生驱动。必填。
 
 ---
@@ -274,7 +274,7 @@ static spring(value, config): CompositeAnimation;
 - `restDisplacementThreshold`：位移阈值；低于该值可视为静止。默认 `0.001`。
 - `restSpeedThreshold`：速度阈值（像素/秒）；低于该值可视为静止。默认 `0.001`。
 - `delay`：延迟多久后开始（毫秒）。默认 `0`。
-- `isInteraction`：是否在 `InteractionManager` 上创建 interaction handle。默认 `true`。
+- `isInteraction`：是否创建 interaction handle。默认 `true`。
 - `useNativeDriver`：为 `true` 时使用原生驱动。必填。
 
 ---
