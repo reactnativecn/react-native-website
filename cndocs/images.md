@@ -65,6 +65,21 @@ const icon = this.props.active
 
 请注意：通过这种方式引用的图片资源包含图片的尺寸（宽度，高度）信息，如果你需要动态缩放图片（例如，通过 flex），你可能必须手动在 style 属性设置`{ width: null, height: null }`。
 
+### iOS 中使用 Asset Catalog 打包图片
+
+默认情况下，打包工具会将每张通过 `require` 引入的图片及其对应的 `@2x` / `@3x` 变体，作为独立文件放到 iOS 应用中，和 JavaScript bundle 放在同一目录下。你也可以在 iOS 平台上改为编译到 [Asset Catalog](https://developer.apple.com/documentation/xcode/managing-assets-with-asset-catalogs) 中，让系统只下发设备所需的 scale。
+
+要开启此特性，请在应用的 `Info.plist` 中将 `RCTUseAssetCatalog` 设置为 `true`：
+
+```xml
+<key>RCTUseAssetCatalog</key>
+<true/>
+```
+
+开启后，iOS 构建脚本会在构建时将打包图片编译到 `RNAssets.bundle` 的 asset catalog 中。`require('./my-icon.png')` 的引用方式可以保持不变，无需改动 Xcode 工程。
+
+修改该设置后，请记得清理工程并重新构建。
+
 ## 静态的非图片资源
 
 上面描述的`require`语法也可以用来静态地加载你项目中的声音、视频或者文档文件。大多数常见文件类型都支持，包括`.mp3`, `.wav`, `.mp4`, `.mov`, `.html`, `.pdf`等。完整列表请看 [bundler defaults](https://github.com/facebook/metro/blob/main/packages/metro-config/src/defaults/defaults.js#L16-L51)。
