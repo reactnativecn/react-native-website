@@ -26,6 +26,7 @@ export default {
       'libraries',
       'typescript',
       'strict-typescript-api',
+      'release-levels',
       'upgrading',
     ],
     界面与交互: [
@@ -60,11 +61,6 @@ export default {
         collapsed: false,
         items: ['accessibility'],
       },
-    ],
-    版本规划: [
-      'releases/releases',
-      'releases/release-levels',
-      'releases/versioning-policy',
     ],
     调试: [
       'debugging',

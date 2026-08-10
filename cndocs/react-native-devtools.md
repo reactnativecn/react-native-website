@@ -11,28 +11,6 @@ React Native DevTools 是我们为 React Native 打造的现代调试体验。�
 
 React Native DevTools 旨在调试 React 应用层面的问题，而不是取代原生工具。如果你需要检查 React Native 的底层平台层（例如，在开发原生模块时），请使用 Android Studio 和 Xcode 中可用的调试工具（请参阅[调试原生代码](/docs/debugging-native-code)）。
 
-<details>
-<summary>**💡 兼容性** — 在 0.76 中发布</summary>
-
-React Native DevTools 支持所有运行 Hermes 的 React Native 应用。它取代了以前的 Flipper、实验性调试器和 Hermes 调试器（Chrome）前端。
-
-无法在任何旧版本的 React Native 上使用 React Native DevTools。
-
-- **Chrome Browser DevTools — 不再支持**
-  - 通过 `chrome://inspect` 连接到 React Native 不再受支持。由于最新版本的 Chrome DevTools（构建用于匹配最新浏览器功能和 API）未经过测试，并且此前端缺少我们的定制内容，因此功能可能无法正常工作。我们会随 React Native DevTools 一起提供受支持的版本。
-- **Visual Studio Code — 不再支持**（已有限制）
-  - 第三方扩展如 [Expo Tools](https://github.com/expo/vscode-expo) 和 [Radon IDE](https://ide.swmansion.com/) 可能具有改进的兼容性，但不受 React 团队的直接支持。
-
-</details>
-<details>
-<summary>**💡 反馈和常见问题**</summary>
-
-我们希望你在所有平台上用来调试 React 的工具是可靠的、熟悉的、简单的和一致的。本页描述的所有功能都是基于这些原则构建的，我们还计划在未来提供更多能力。
-
-我们正在积极迭代 React Native DevTools 的未来，并创建了一个集中的 [GitHub 讨论](https://github.com/react-native-community/discussions-and-proposals/discussions/819)来跟踪问题、常见问题和反馈。
-
-</details>
-
 ## 核心功能
 
 React Native DevTools 基于 Chrome DevTools 前端。如果你有 Web 开发背景，其功能应该很熟悉。作为起点，我们建议浏览 [Chrome DevTools 文档](https://developer.chrome.com/docs/devtools)，其中包含完整的指南以及视频资源。

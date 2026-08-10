@@ -3,7 +3,6 @@ id: view-style-props
 title: View Style Props
 ---
 
-import ExperimentalAPIWarning from './\_experimental-api-warning.mdx';
 import {getCoreBranchNameForCurrentVersion} from '@site/src/getCoreBranchNameForCurrentVersion';
 
 ### 示例
@@ -73,20 +72,38 @@ export default App;
 
 ---
 
-### `experimental_backgroundImage`
+### `backgroundImage`
 
-<ExperimentalAPIWarning />
-
-`experimental_backgroundImage` 提供了使用类似 Web 的语法绘制 [`linear-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient)（[0.76.x+](https://github.com/facebook/react-native/blob/main/CHANGELOG-0.7x.md#v0760)）和 [`radial-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/radial-gradient)（[0.80.x+](https://github.com/facebook/react-native/blob/main/CHANGELOG.md#v0800)）的能力。
+`backgroundImage` 提供了使用类似 Web 的语法绘制 [`linear-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/linear-gradient) 和 [`radial-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/radial-gradient) 的能力。
 
 ```tsx
 // Simple usage:
-<View style={{
-  experimental_backgroundImage: 'linear-gradient(45deg, blue, red)'
-}} />
-<View style={{
-  experimental_backgroundImage: 'radial-gradient(ellipse farthest-corner at 30% 40%, red, blue)'
-}} />
+<View style={{ backgroundImage: 'linear-gradient(45deg, blue, red)' }} />
+
+<View style={{ backgroundImage: 'radial-gradient(ellipse farthest-corner at 30% 40%, red, blue)' }} />
+
+// Also with PlatformColor:
+<View
+  style={{
+    backgroundImage: [
+      {
+        type: 'linear-gradient',
+        direction: 'to bottom',
+        colorStops: [
+          {
+            color: Platform.select({
+              ios: PlatformColor('systemTealColor'),
+              android: PlatformColor('@android:color/holo_purple'),
+              default: 'blue',
+            }),
+            positions: ['0%'],
+          },
+          {color: 'green', positions: ['100%']},
+        ],
+      },
+    ],
+  }}
+/>
 ```
 
 更多复杂用法示例可在 RNTester 应用中找到（支持 `PlatformColor`）：
