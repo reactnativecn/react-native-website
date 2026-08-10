@@ -15,7 +15,7 @@ import RNRepoLink from '@site/core/RNRepoLink';
 
 严格 TypeScript API 是 React Native 的现代 TypeScript API，取代早期版本中手动维护的 TypeScript 类型定义。
 
-### 主要变更（破坏性）
+## 主要变更（破坏性）
 
 1. **不再支持深度导入。** API 仅限于 `react-native` 的索引文件。这是一份范围更明确、更严格的公共 API 契约，也能确保 React Native 源代码内部文件路径的变更不会成为破坏性变更。
 2. **直接从源代码生成。** React Native 过去使用单独手动维护的类型；现在从源代码生成类型，可以提高覆盖率、正确性和兼容性保证。
