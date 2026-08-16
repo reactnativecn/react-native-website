@@ -8,12 +8,13 @@ TextInput 是一个允许用户在应用中通过键盘输入文本的基础组�
 最简单的用法就是放一个 `TextInput` 在界面上，然后订阅它的 `onChangeText` 事件来读取用户的输入。通常做法是在 `onChangeText` 中用 `setState`（或 `useState`）把用户的输入写入 state，然后在需要的地方从 state 中取值。它还有一些其它的事件，例如 `onSubmitEditing` 和 `onFocus`。一个简单的例子如下：
 
 ```SnackPlayer name=TextInput%20Example
+import {useState} from 'react';
 import {StyleSheet, TextInput} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 const TextInputExample = () => {
-  const [text, onChangeText] = React.useState('Useless Text');
-  const [number, onChangeNumber] = React.useState('');
+  const [text, onChangeText] = useState('Useless Text');
+  const [number, onChangeNumber] = useState('');
 
   return (
     <SafeAreaProvider>
@@ -49,14 +50,15 @@ export default TextInputExample;
 
 原生元素还暴露了两个方法：`.focus()` 和 `.blur()`，可以让你在代码中主动让 TextInput 获取或失去焦点。
 
-注意有些属性仅在 `multiline` 为 `true/false` 时才有效。此外，当 `multiline=true` 时，为元素的某一个边添加边框样式（例如：`borderBottomColor`、`borderLeftWidth` 等）将不会生效。为了实现同样的效果，你可以使用一个 `View` 来包裹 `TextInput`：
+注意有些属性仅在 `multiline` 为 `true/false` 时才有效：
 
 ```SnackPlayer name=Multiline%20TextInput%20Example
+import {useState} from 'react';
 import {TextInput, StyleSheet} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 const MultilineTextInputExample = () => {
-  const [value, onChangeText] = React.useState('Useless Multiline Placeholder');
+  const [value, onChangeText] = useState('Useless Multiline Placeholder');
 
   // 你可以试着输入一种颜色，比如red，那么这个red就会作用到View的背景色样式上
   return (
