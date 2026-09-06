@@ -188,15 +188,15 @@ Animated.timing({}).start(({finished}) => {
 例如在横向滚动中，将 `event.nativeEvent.contentOffset.x` 映射到 `scrollX`（一个 `Animated.Value`）：
 
 ```tsx
- onScroll={Animated.event(
-   // scrollX = e.nativeEvent.contentOffset.x
-   [{nativeEvent: {
-        contentOffset: {
-          x: scrollX
-        }
-      }
-    }]
- )}
+onScroll={Animated.event(
+  // scrollX = e.nativeEvent.contentOffset.x
+  [{
+    nativeEvent: {
+      contentOffset: {x: scrollX},
+    },
+  }],
+  {useNativeDriver: true},
+)}
 ```
 
 ---

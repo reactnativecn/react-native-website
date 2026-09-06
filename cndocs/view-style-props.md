@@ -117,6 +117,67 @@ export default App;
 
 ---
 
+### `backgroundPosition`
+
+控制背景渐变在视图内部的位置。当设置了 `backgroundImage` 时，可用它偏移或居中渐变，而不是让渐变填满整个区域。
+
+```tsx
+<View
+  style={{
+    backgroundImage: 'radial-gradient(circle, #ff6b6b, #4ecdc4)',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '50px 50px',
+  }}
+/>
+```
+
+| 类型                                                                            |
+| ------------------------------------------------------------------------------- |
+| string \| 对象数组 `{top: string, left: string, right: string, bottom: string}` |
+
+---
+
+### `backgroundRepeat`
+
+控制背景渐变是否以及如何重复。它与 `backgroundImage` 配合使用，以平铺视图中的渐变。
+
+```tsx
+<View
+  style={{
+    backgroundImage: 'linear-gradient(45deg, #ff6b6b, #4ecdc4)',
+    backgroundRepeat: 'repeat',
+    backgroundSize: '20px 20px',
+  }}
+/>
+```
+
+| 类型                                                                                       |
+| ------------------------------------------------------------------------------------------ |
+| enum(`'repeat'`, `'space'`, `'round'`, `'no-repeat'`) \| 对象数组 `{x: string, y: string}` |
+
+---
+
+### `backgroundSize`
+
+控制背景渐变的尺寸。当设置了 `backgroundImage` 且渐变默认不应填满整个视图时，此属性尤其有用。
+
+```tsx
+<View
+  style={{
+    backgroundImage: 'linear-gradient(90deg, #a8edea, #fed6e3)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100px 100px',
+  }}
+/>
+```
+
+| 类型                                        |
+| ------------------------------------------- |
+| string \| 对象数组 `{x: number, y: number}` |
+
+---
+
 ### `borderBottomColor`
 
 | 类型               |
