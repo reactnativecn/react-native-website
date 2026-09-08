@@ -26,7 +26,7 @@ import {
 } from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
-const STYLES = ['default', 'dark-content', 'light-content'];
+const STYLES = ['default', 'auto', 'dark-content', 'light-content'];
 const TRANSITIONS = ['fade', 'slide', 'none'];
 
 const App = () => {
@@ -134,7 +134,7 @@ import {
 } from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
-const STYLES = ['default', 'dark-content', 'light-content'] as const;
+const STYLES = ['default', 'auto', 'dark-content', 'light-content'] as const;
 const TRANSITIONS = ['fade', 'slide', 'none'] as const;
 
 const App = () => {
@@ -409,8 +409,9 @@ iOS 上状态栏的过渡动画类型。
 
 **常量：**
 
-| 值                | 类型   | 描述                                         |
-| ----------------- | ------ | -------------------------------------------- |
-| `'default'`       | string | 默认状态栏样式（iOS 为深色，Android 为浅色） |
-| `'light-content'` | string | 白色文字和图标                               |
-| `'dark-content'`  | string | 深色文字和图标（Android 上需要 API>=23）     |
+| 值                | 类型   | 描述                                                                                   |
+| ----------------- | ------ | -------------------------------------------------------------------------------------- |
+| `'default'`       | string | 默认状态栏样式（Android 为浅色，iOS 为深色）                                           |
+| `'auto'`          | string | 根据当前配色方案自动选择 `light-content` 或 `dark-content`，并会在配色方案变化时更新。 |
+| `'light-content'` | string | 白色文字和图标                                                                         |
+| `'dark-content'`  | string | 深色文字和图标（Android 上需要 API>=23）                                               |
