@@ -19,7 +19,7 @@ In this guide, we will go through the creation of a pure C++ Turbo Native Module
 The rest of this guide assumes that you have created your application running the command:
 
 <CodeBlock language="bash" title="shell">
-{`npx @react-native-community/cli@latest init SampleApp --version ${getCurrentVersion()}`}
+{`npx @react-native-community/cli@latest init SampleApp --version "${getCurrentVersion()}"`}
 </CodeBlock>
 
 ## 1. Create the JS specs
@@ -423,6 +423,7 @@ It's now time to access our C++ Turbo Native Module from JS. To do so, we have t
 2. Replace the content of the template with the following code:
 
 ```tsx title="App.tsx"
+import {type JSX, useState} from 'react';
 import {
   Button,
   SafeAreaView,
@@ -433,9 +434,9 @@ import {
 } from 'react-native';
 import SampleTurboModule from './specs/NativeSampleModule';
 
-function App(): React.JSX.Element {
-  const [value, setValue] = React.useState('');
-  const [reversedValue, setReversedValue] = React.useState('');
+function App(): JSX.Element {
+  const [value, setValue] = useState('');
+  const [reversedValue, setReversedValue] = useState('');
 
   const onPress = () => {
     const revString = SampleTurboModule.reverseString(value);

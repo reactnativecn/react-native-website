@@ -4,6 +4,8 @@ title: 'Turbo 原生模块介绍'
 ---
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
+import CodeBlock from '@theme/CodeBlock';
+import {getCurrentVersion} from '@site/src/getCurrentVersion';
 import {TurboNativeModulesAndroid, TurboNativeModulesIOS} from './\_turbo-native-modules-components';
 
 # 原生模块
@@ -19,9 +21,9 @@ import {TurboNativeModulesAndroid, TurboNativeModulesIOS} from './\_turbo-native
 
 让我们通过构建一个示例 Turbo 原生模块来逐步完成这些步骤。本指南的其余部分假设你已经使用以下命令创建了应用：
 
-```shell
-npx @react-native-community/cli@latest init TurboModuleExample --version 0.76.0
-```
+<CodeBlock language="bash" title="shell">
+{`npx @react-native-community/cli@latest init TurboModuleExample --version "${getCurrentVersion()}"`}
+</CodeBlock>
 
 ## 本地持久存储
 
@@ -162,6 +164,7 @@ Framework build type is static library
 - `getEnforcing<T>(name: string): T` 如果 Turbo 原生模块不可用，将抛出异常。假设模块总是可用。
 
 ```tsx title="App.tsx"
+import {useEffect, useState, type JSX} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -174,14 +177,14 @@ import NativeLocalStorage from './specs/NativeLocalStorage';
 
 const EMPTY = '<empty>';
 
-function App(): React.JSX.Element {
-  const [value, setValue] = React.useState<string | null>(null);
+function App(): JSX.Element {
+  const [value, setValue] = useState<string | null>(null);
 
-  const [editingValue, setEditingValue] = React.useState<
-    string | null
-  >(null);
+  const [editingValue, setEditingValue] = useState<string | null>(
+    null,
+  );
 
-  React.useEffect(() => {
+  useEffect(() => {
     const storedValue = NativeLocalStorage?.getItem('myKey');
     setValue(storedValue ?? '');
   }, []);
@@ -197,7 +200,7 @@ function App(): React.JSX.Element {
   }
 
   function deleteValue() {
-    NativeLocalStorage?.removeItem(editingValue ?? EMPTY);
+    NativeLocalStorage?.removeItem('myKey');
     setValue('');
   }
 
