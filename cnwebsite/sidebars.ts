@@ -221,6 +221,7 @@ export default {
       'panresponder',
       'pixelratio',
       'platform',
+      'reactnativeversion',
       'platformcolor',
       'roottag',
       'share',

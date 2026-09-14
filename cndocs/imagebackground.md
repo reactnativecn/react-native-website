@@ -1,7 +1,11 @@
 ---
 id: imagebackground
-title: ImageBackground
+title: '🗑️ ImageBackground'
 ---
+
+:::warning[已弃用]
+请改用绝对定位的 [`Image`](image.md) 配合 [`View`](view.md)。
+:::
 
 对于熟悉 Web 开发的开发人员来说，`background-image`是一个常见的功能请求。为了处理这种情况，您可以使用`<ImageBackground>`组件，它具有与`<Image>`相同的属性，并且可以添加任何子元素以覆盖在其上面。
 

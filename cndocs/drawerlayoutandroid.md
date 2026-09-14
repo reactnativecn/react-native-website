@@ -1,7 +1,11 @@
 ---
 id: drawerlayoutandroid
-title: DrawerLayoutAndroid
+title: '🗑️ DrawerLayoutAndroid'
 ---
+
+:::warning[已弃用]
+请改用 [`react-native-drawer-layout`](https://reactnavigation.org/docs/drawer-layout/)。
+:::
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
