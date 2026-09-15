@@ -195,7 +195,7 @@ const config: Config = {
     announcementBar: {
       id: 'ai-cresc-dev',
       content:
-        '<a href="https://ai.cresc.dev/model-plaza" target="_blank" rel="noopener noreferrer">无需代理直连最先进的编程模型</a>，优惠低至一折，采购可开票。$5 优惠码：RNCN5',
+        '<a href="https://ai.cresc.dev/model-plaza" target="_blank" rel="noopener noreferrer">无需代理直连最前沿的 GPT/Claude/Deepseek/GLM/Kimi 等模型</a>，优惠低至一折',
       isCloseable: true,
     },
     colorMode: {
