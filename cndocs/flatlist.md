@@ -484,6 +484,16 @@ renderItem({
 
 ---
 
+### `ListItemComponent`
+
+列表中的每个数据项都使用此元素来渲染，作为 `renderItem` 的替代方式。它接收与 `renderItem` 相同的属性；当两者同时提供时，`ListItemComponent` 优先。
+
+| 类型               |
+| ------------------ |
+| component, element |
+
+---
+
 ### `columnWrapperStyle`
 
 如果设置了多列布局（即将`numColumns`值设为大于 1 的整数），则可以额外指定此样式作用在每行容器上。

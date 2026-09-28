@@ -825,6 +825,31 @@ iOS 上支持通用字体族 `system-ui`、`ui-sans-serif`、`ui-serif`、`ui-mo
 
 ---
 
+### `fontVariationSettings`
+
+配置可变字体的变化轴。每个变化轴由一个四字符 OpenType 标签标识，例如 `wght`（字重）、`wdth`（字宽）、`opsz`（光学尺寸），或字体支持的自定义轴。可以用对象或与 CSS 兼容的字符串形式来设置。
+
+下面对象和字符串两种写法是等价的，都是将 wght 轴设为 500：
+
+```tsx
+<Text
+  style={{
+    fontVariationSettings: {wght: 500},
+    // 等价的 CSS 兼容字符串写法：
+    fontVariationSettings: "'wght' 500",
+  }}>
+  Variable font
+</Text>
+```
+
+关于变化轴和 CSS 字符串语法的更多信息，请参阅 MDN 的 font-variation-settings (https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings) 文档。
+
+| 类型                                         |
+| -------------------------------------------- |
+| string or object: `{[axis: string]: number}` |
+
+---
+
 ### `letterSpacing`
 
 增加或减少字符间距。默认没有额外的字母间距。
