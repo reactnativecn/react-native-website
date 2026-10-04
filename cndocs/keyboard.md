@@ -76,7 +76,7 @@ export default Example;
 static addListener: (
   eventType: KeyboardEventName,
   listener: KeyboardEventListener,
-) => EmitterSubscription;
+) => EventSubscription;
 ```
 
 `addListener`用于注册一个 JavaScript 函数来监听处理原生键盘通知事件。

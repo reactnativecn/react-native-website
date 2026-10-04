@@ -104,20 +104,20 @@ static addEventListener(
   handler: ({
     window,
     screen,
-  }: DimensionsValue) => void,
-): EmitterSubscription;
+  }: DimensionsPayload) => void,
+): EventSubscription;
 ```
 
 添加一个事件监听函数。目前支持的事件有：
 
-- `change`：在`Dimensions`对象内部的属性发生变化时触发。事件处理程序的参数是一个[`DimensionsValue`](#dimensionsvalue)类型的对象。
+- `change`：在`Dimensions`对象内部的属性发生变化时触发。事件处理程序的参数是一个[`DimensionsPayload`](#dimensionspayload)对象。
 
 ---
 
 ### `get()`
 
 ```tsx
-static get(dim: 'window' | 'screen'): ScaledSize;
+static get(dim: string): DisplayMetrics | DisplayMetricsAndroid;
 ```
 
 初始尺寸在调用 `runApplication` 之前设置，因此在运行任何其他 require 之前应该可用，但可能会在之后更新。
@@ -130,22 +130,26 @@ static get(dim: 'window' | 'screen'): ScaledSize;
 | -------------------------------------------------------------- | ------ | ----------------------------------------------- |
 | dim <div className="label basic required two-lines">必需</div> | 字符串 | 调用 `set` 时定义的尺寸的名称。返回该尺寸的值。 |
 
-> 对于 Android，`window` 尺寸将不包括 `状态栏`（如果不透明）和 `底部导航栏` 占用的大小。
+:::note
+对于 Android，`window` 尺寸将不包括`状态栏`（如果不透明）和`底部导航栏`占用的大小。
+:::
 
 ---
 
 ## 类型定义
 
-### DimensionsValue
+### DimensionsPayload
 
 **属性:**
 
-| 名称   | 类型                                | 描述                 |
-| ------ | ----------------------------------- | -------------------- |
-| window | [ScaledSize](dimensions#scaledsize) | 可见应用窗口的大小。 |
-| screen | [ScaledSize](dimensions#scaledsize) | 设备屏幕的大小。     |
+| 名称                 | 类型                                                      | 描述                     |
+| -------------------- | --------------------------------------------------------- | ------------------------ |
+| window               | [DisplayMetrics](dimensions#displaymetrics)               | 可见应用窗口的大小。     |
+| screen               | [DisplayMetrics](dimensions#displaymetrics)               | 设备屏幕的大小。         |
+| windowPhysicalPixels | [DisplayMetricsAndroid](dimensions#displaymetricsandroid) | Android 窗口的物理像素。 |
+| screenPhysicalPixels | [DisplayMetricsAndroid](dimensions#displaymetricsandroid) | Android 屏幕的物理像素。 |
 
-### ScaledSize
+### DisplayMetrics
 
 | 类型 |
 | ---- |
@@ -159,3 +163,11 @@ static get(dim: 'window' | 'screen'): ScaledSize;
 | height    | number |
 | scale     | number |
 | fontScale | number |
+
+### DisplayMetricsAndroid
+
+`DisplayMetricsAndroid` 包含 [`DisplayMetrics`](dimensions#displaymetrics) 的全部属性，以及以下属性：
+
+| 名称       | 类型   |
+| ---------- | ------ |
+| densityDpi | number |

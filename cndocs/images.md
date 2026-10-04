@@ -248,19 +248,18 @@ iOS 会为同一张图片在相册中保存多个不同尺寸的副本。为了�
 
 ## 背景图片与嵌套写法
 
-开发者们常面对的一种需求就是类似 web 中的背景图（`background-image`）。要实现这一用例，只需使用`<ImageBackground>`组件（其 props 与`<Image>`完全相同），然后把需要背景图的子组件嵌入其中即可。
-
-也可能你并不需要使用`<ImageBackground>`，因为它的实现其实非常简单。你可以阅读其[文档](imagebackground.md)然后思考你是否有更好更简单的布局方案。
+要在图片上层叠内容，可以在一个 [`View`](view.md) 内渲染一个绝对定位的 [`Image`](image.md)，然后在其后放置应显示在上层的内容。
 
 ```tsx
 return (
-  <ImageBackground source={...} style={{width: '100%', height: '100%'}}>
+  <View style={{width: '100%', height: '100%'}}>
+    <Image source={...} style={StyleSheet.absoluteFill} />
     <Text>Inside</Text>
-  </ImageBackground>
+  </View>
 );
 ```
 
-注意你必须指定宽高样式。
+注意必须在外层 `View` 上指定宽高样式。
 
 ## iOS 边框圆角的注意事项
 

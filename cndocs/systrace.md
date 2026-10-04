@@ -7,20 +7,16 @@ title: Systrace
 
 ## 示例
 
-`Systrace` 允许您使用标签和整数值标记 JavaScript (JS) 事件。在 EasyProfiler 中捕获非计时的 JS 事件。
+`Systrace` 允许您使用标签和整数值标记 JavaScript (JS) 事件。先用 Perfetto 或 EasyProfiler 等 Android 性能分析工具开始抓取，然后用这些标记在捕获的 trace 中识别相应事件。
 
 ```SnackPlayer name=Systrace%20Example
 import {Button, Text, View, StyleSheet, Systrace} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 const App = () => {
-  const enableProfiling = () => {
-    Systrace.setEnabled(true); // 调用 setEnabled 来开启性能分析
+  const markEvent = () => {
     Systrace.beginEvent('event_label');
     Systrace.counterEvent('event_label', 10);
-  };
-
-  const stopProfiling = () => {
     Systrace.endEvent();
   };
 
@@ -31,15 +27,7 @@ const App = () => {
           React Native Systrace API
         </Text>
         <View style={styles.buttonsColumn}>
-          <Button
-            title="在 EasyProfiler 中捕获非计时的 JS 事件"
-            onPress={() => enableProfiling()}
-          />
-          <Button
-            title="停止捕获"
-            onPress={() => stopProfiling()}
-            color="#FF0000"
-          />
+          <Button title="标记事件" onPress={markEvent} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
