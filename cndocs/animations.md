@@ -74,12 +74,12 @@ export default () => {
 <TabItem value="typescript">
 
 ```SnackPlayer ext=tsx
-import {useEffect, useRef, type PropsWithChildren} from 'react';
+import {useEffect, useRef, type PropsWithChildren, type FC} from 'react';
 import {Animated, Text, View, type ViewStyle} from 'react-native';
 
 type FadeInViewProps = PropsWithChildren<{style: ViewStyle}>;
 
-const FadeInView: React.FC<FadeInViewProps> = props => {
+const FadeInView: FC<FadeInViewProps> = props => {
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
 
   useEffect(() => {
@@ -314,7 +314,7 @@ import {
   Text,
   StyleSheet,
   View,
-  ImageBackground,
+  Image,
   Animated,
   useWindowDimensions,
   useAnimatedValue,
@@ -356,13 +356,17 @@ const App = () => {
                 <View
                   style={{width: windowWidth, height: 250}}
                   key={imageIndex}>
-                  <ImageBackground source={{uri: image}} style={styles.card}>
+                  <View style={styles.card}>
+                    <Image
+                      source={{uri: image}}
+                      style={StyleSheet.absoluteFill}
+                    />
                     <View style={styles.textContainer}>
                       <Text style={styles.infoText}>
                         {'Image - ' + imageIndex}
                       </Text>
                     </View>
-                  </ImageBackground>
+                  </View>
                 </View>
               );
             })}

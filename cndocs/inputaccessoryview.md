@@ -1,7 +1,11 @@
 ---
 id: inputaccessoryview
-title: InputAccessoryView
+title: '🗑️ InputAccessoryView'
 ---
+
+:::warning[已弃用]
+`InputAccessoryView` 已弃用，将在未来的版本中移除。
+:::
 
 一个可以在iOS上自定义键盘输入辅助视图的组件。当`TextInput`获得焦点时，输入辅助视图显示在键盘上方。该组件可用于创建自定义工具栏。
 

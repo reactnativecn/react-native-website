@@ -122,7 +122,7 @@ static setColorScheme('light' | 'dark' | 'auto' | 'unspecified'): void;
 ```tsx
 static addChangeListener(
   listener: (preferences: {colorScheme: 'light' | 'dark' | null}) => void,
-): NativeEventSubscription;
+): EventSubscription;
 ```
 
 添加一个事件监听器，在外观偏好发生变化时触发。在 iOS 和 Android 上，回调中的 `colorScheme` 值始终为 `'light'` 或 `'dark'`。
