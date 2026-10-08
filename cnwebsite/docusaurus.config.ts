@@ -1,7 +1,6 @@
 import type * as PluginContentDocs from '@docusaurus/plugin-content-docs';
 import type * as Preset from '@docusaurus/preset-classic';
 import type {Config} from '@docusaurus/types';
-import path from 'path';
 import prismThemeDark from './core/PrismThemeDark';
 import prismThemeLight from './core/PrismThemeLight';
 
@@ -350,6 +349,10 @@ const config: Config = {
       {
         name: 'baidu-site-verification',
         content: 'oUywJUUf2B',
+      },
+      {
+        name: 'bytedance-verification-code',
+        content: 'QKUETScfymYhblOAyItO',
       },
       {
         name: 'description',
