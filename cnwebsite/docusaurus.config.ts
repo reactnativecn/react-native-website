@@ -348,6 +348,10 @@ const config: Config = {
     },
     metadata: [
       {
+        name: 'baidu-site-verification',
+        content: 'oUywJUUf2B',
+      },
+      {
         name: 'description',
         content: '使用React来编写原生应用的框架',
       },
