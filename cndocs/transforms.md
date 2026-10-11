@@ -208,6 +208,14 @@ export default App;
 }
 ```
 
+平移变换（`translateX` 和 `translateY`）接受数值（单位为点）或百分比字符串（例如 `'50%'`、`'100%'`）。使用百分比时，偏移量相对于元素的宽度（`translateX`）或高度（`translateY`）。百分比平移在[新架构](/architecture/landing-page)上受支持。例如：
+
+```js
+{
+  transform: [{translateX: '50%'}, {translateY: 100}],
+}
+```
+
 ### 矩阵变换（Matrix Transform）
 
 `matrix` 变换接受一个 4x4 变换矩阵，以 16 个数字的数组形式表示。这使你可以在单次操作中应用结合了平移、旋转、缩放和倾斜的复杂变换。
@@ -261,7 +269,7 @@ export default App;
 
 | Type                                                                                                                                                                                                                                                                                                          | Required |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| array of objects: `{matrix: number[]}`, `{perspective: number}`, `{rotate: string}`, `{rotateX: string}`, `{rotateY: string}`, `{rotateZ: string}`, `{scale: number}`, `{scaleX: number}`, `{scaleY: number}`, `{translateX: number}`, `{translateY: number}`, `{skewX: string}`, `{skewY: string}` or string | No       |
+| array of objects: `{matrix: number[]}`, `{perspective: number}`, `{rotate: string}`, `{rotateX: string}`, `{rotateY: string}`, `{rotateZ: string}`, `{scale: number}`, `{scaleX: number}`, `{scaleY: number}`, `{translateX: number \| string}`, `{translateY: number \| string}`, `{skewX: string}`, `{skewY: string}` or string | No       |
 
 ---
 

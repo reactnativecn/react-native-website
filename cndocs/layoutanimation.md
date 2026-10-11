@@ -7,7 +7,8 @@ title: LayoutAnimation
 
 使用此 API 的常见方式是在函数组件中更新 state hook 之前调用它，或在类组件中调用 `setState` 之前调用。
 
-请注意，要在 **Android** 上使此功能生效，你需要通过 `UIManager` 设置以下标志：
+:::note
+在 **Android** 上使用**旧架构（Legacy Architecture）**时，你需要通过 `UIManager` 启用布局动画。此标志会全局启用布局动画，只需调用一次（例如在应用的根入口文件 `index.js` 或根组件中），在触发任何布局动画之前调用即可：
 
 ```js
 if (Platform.OS === 'android') {
@@ -16,6 +17,9 @@ if (Platform.OS === 'android') {
   }
 }
 ```
+
+在**新架构（New Architecture）**上，布局动画会自动启用，无需调用 `setLayoutAnimationEnabledExperimental`（它是一个空操作）。
+:::
 
 ## 示例
 
