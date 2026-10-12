@@ -1869,7 +1869,7 @@ export default App;
 
 - [`gap`](layout-props#gap) 设置行和列之间的间隙（gutter）大小。它是 `rowGap` 和 `columnGap` 的简写形式。
 
-您可以使用 `flexWrap` 和 `alignContent` 以及 `gap` 来为项目添加一致的间距。
+您可以使用 `flexWrap` 和 `alignContent` 以及 `gap` 来为项目添加一致的间距。Gap 属性接受数值（单位为点）或百分比字符串（例如[新架构](/architecture/landing-page)上的 `'10%'`）。
 
 <Tabs groupId="language" queryString defaultValue={constants.defaultSnackLanguage} values={constants.snackLanguages}>
 <TabItem value="javascript">

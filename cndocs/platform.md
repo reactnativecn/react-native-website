@@ -73,6 +73,7 @@ static constants: PlatformConstants;
 
 | <div className="widerColumn">名称</div>                   | 类型    | 可选 | 说明                                                                                                                                                                           |
 | --------------------------------------------------------- | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| isDisableAnimations                                       | boolean | 是   | 是否应禁用动画。未设置时，默认值为 `isTesting` 的值。                                                                                                                                                                                      |
 | isTesting                                                 | boolean | 否   |                                                                                                                                                                                |
 | reactNativeVersion                                        | object  | 否   | React Native 版本信息。键为 `major`、`minor`、`patch`（可选 `prerelease`），值为 `number` 类型。                                                                               |
 | Version <div className="label android">Android</div>      | number  | 否   | Android 特定的操作系统版本常量。                                                                                                                                               |
@@ -88,6 +89,20 @@ static constants: PlatformConstants;
 | interfaceIdiom <div className="label ios">iOS</div>       | string  | 否   | 设备的界面类型。详见 [UIUserInterfaceIdiom](https://developer.apple.com/documentation/uikit/uiuserinterfaceidiom)。                                                            |
 | osVersion <div className="label ios">iOS</div>            | string  | 否   | iOS 特定的操作系统版本常量。                                                                                                                                                   |
 | systemName <div className="label ios">iOS</div>           | string  | 否   | iOS 特定的操作系统名称常量。                                                                                                                                                   |
+
+---
+
+### `isDisableAnimations`
+
+```tsx
+static isDisableAnimations: boolean;
+```
+
+当动画被关闭时返回 `true`，通常在自动化测试期间。如果未设置，则回退到 [`isTesting`](#istesting) 的值。在 Android 上，可以通过 `IS_DISABLE_ANIMATIONS` 系统属性进行设置。
+
+| 类型    |
+| ------- |
+| boolean |
 
 ---
 
