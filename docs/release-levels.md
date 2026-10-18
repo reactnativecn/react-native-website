@@ -14,7 +14,7 @@ This approach is similar to [Canary and Experimental releases in React](https://
 React Native is also not using `@canary` or `@experimental` NPM tags, as release levels are available for both stable and nightly releases of React Native.
 :::
 
-Moreover, setting the release level to `EXPERIMENTAL` or `CANARY` will **not** result in consuming `react@nightly` or `react@canary` due to how react-native is consuming the React version ([you can read more about it here](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Renderer/README.md#react--react-native-versions)).
+Moreover, setting the release level to `EXPERIMENTAL` or `CANARY` will **not** result in consuming `react@nightly` or `react@canary` due to how react-native is consuming the React version ([you can read more about it here](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Renderer/README.md#react--react-native-versions)).
 
 ## When to Use Each Release Level
 
@@ -44,7 +44,27 @@ The build system generates different feature flag override classes for each rele
 
 ### iOS
 
-The `RCTReactNativeFactory` class now has an initializer that accepts a `releaseLevel` parameter. The feature flag setup uses this parameter to select the correct feature flag overrides.
+The `RCTReactNativeFactory` class now has an initializer that accepts a `releaseLevel` parameter. The feature flag setup uses this parameter to select the correct feature flag overrides. Create the factory from your `SceneDelegate` (or `AppDelegate` if you are not using the UIScene lifecycle).
+
+<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
+<TabItem value="objc">
+
+```objc title="SceneDelegate.m"
+self.reactNativeFactory = [[RCTReactNativeFactory alloc] initWithDelegate:self releaseLevel:Canary];
+```
+
+</TabItem>
+<TabItem value="swift">
+
+```swift title="SceneDelegate.swift"
+reactNativeFactory = RCTReactNativeFactory(delegate: self, releaseLevel: RCTReleaseLevel.Canary)
+```
+
+</TabItem>
+</Tabs>
+
+<details>
+<summary>Apps without UIScene lifecycle</summary>
 
 <Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
 <TabItem value="objc">
@@ -62,5 +82,7 @@ let factory = RCTReactNativeFactory(delegate: delegate, releaseLevel: RCTRelease
 
 </TabItem>
 </Tabs>
+
+</details>
 
 The system ensures that only one release level is active per app instance, and will crash if multiple factories are created with different release levels.
