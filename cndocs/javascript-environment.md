@@ -21,7 +21,7 @@ import TableRow from '@site/core/TableRowWithCodeBlock';
 
 React Native 内置了 [Babel JavaScript 编译器](https://babeljs.io)。你可以查看 [Babel 文档](https://babeljs.io/docs/plugins/#transform-plugins) 了解它所支持的转换的更多细节。
 
-React Native 启用的完整转换列表可以在 [@react-native/babel-preset](https://github.com/facebook/react-native/tree/main/packages/react-native-babel-preset) 中找到。
+React Native 启用的完整转换列表可以在 [@react-native/babel-preset](https://github.com/react/react-native/tree/main/packages/react-native-babel-preset) 中找到。
 
 <table>
 <thead>

@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-还可以看看[RNTester 中的 PanResponder 示例](https://github.com/facebook/react-native/blob/main/packages/rn-tester/js/examples/PanResponder/PanResponderExample.js)。
+还可以看看[RNTester 中的 PanResponder 示例](https://github.com/react/react-native/blob/main/packages/rn-tester/js/examples/PanResponder/PanResponderExample.js)。
 
 ---
 

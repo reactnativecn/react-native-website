@@ -240,7 +240,7 @@ React Native 实际上还是有一部分样式继承的实现，不过仅限于�
 
 告诉屏幕阅读器将当前聚焦的元素视为具有特定角色。
 
-在 iOS 上，这些角色映射到相应的辅助功能特征。图像按钮的功能与将特征设置为"图像"和"按钮"相同。有关更多信息，请查看[辅助功能指南](accessibility.md#accessibilitytraits-ios)。
+在 iOS 上，这些角色映射到相应的辅助功能特征。图像按钮的功能与将特征设置为"图像"和"按钮"相同。有关更多信息，请查看[辅助功能指南](accessibility.md#accessibilityrole)。
 
 在 Android 上，这些角色在 TalkBack 上的类似功能就像在 iOS 的 Voiceover 上添加辅助功能特征一样。
 
@@ -290,7 +290,7 @@ React Native 实际上还是有一部分样式继承的实现，不过仅限于�
 
 当设置为 `true` 时，表示该视图是一个辅助功能元素。
 
-更多信息请参阅[辅助功能指南](accessibility#accessible-ios-android)。
+更多信息请参阅[辅助功能指南](accessibility.md#accessible)。
 
 | Type    | Default |
 | ------- | ------- |

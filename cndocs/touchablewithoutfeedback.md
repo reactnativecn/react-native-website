@@ -90,7 +90,7 @@ export default TouchableWithoutFeedbackExample;
 
 指示当颜色反转打开时，此视图是否应被反转。设为 `true` 会告诉视图即使颜色反转打开也不要被反转。
 
-更多信息请参阅[无障碍指南](accessibility.md#accessibilityignoresinvertcolors)。
+更多信息请参阅[无障碍指南](accessibility.md#accessibilityignoresinvertcolors-ios)。
 
 | 类型    |
 | ------- |
@@ -184,7 +184,7 @@ export default TouchableWithoutFeedbackExample;
 
 向辅助技术的用户描述组件的当前状态。
 
-更多信息请参阅[无障碍指南](accessibility.md#accessibilitystate-ios-android)。
+更多信息请参阅[无障碍指南](accessibility.md#accessibilitystate)。
 
 | 类型                                                                                             |
 | ------------------------------------------------------------------------------------------------ |
@@ -282,7 +282,7 @@ export default TouchableWithoutFeedbackExample;
 
 ### `aria-modal` <div className="label ios">iOS</div>
 
-布尔值，表示 VoiceOver 是否应忽略接收者的兄弟视图中的元素。优先级高于 [`accessibilityViewIsModal`](#accessibilityviewismodal-ios) 属性。
+布尔值，表示 VoiceOver 是否应忽略接收者的兄弟视图中的元素。优先级高于 [`accessibilityViewIsModal`](accessibility.md#accessibilityviewismodal-ios) 属性。
 
 | 类型    | 默认值 |
 | ------- | ------ |
@@ -314,7 +314,7 @@ export default TouchableWithoutFeedbackExample;
 
 表示组件的当前值。它可以是组件值的文本描述，或者对于基于范围的组件（如滑块和进度条），它包含范围信息（最小值、当前值和最大值）。
 
-更多信息请参阅[无障碍指南](accessibility.md#accessibilityvalue-ios-android)。
+更多信息请参阅[无障碍指南](accessibility.md#accessibilityvalue)。
 
 | 类型                                                            |
 | --------------------------------------------------------------- |

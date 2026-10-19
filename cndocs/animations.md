@@ -557,7 +557,7 @@ Animated.timing(this.state.animatedValue, {
 </Animated.ScrollView>
 ```
 
-您可以通过运行 [RNTester 应用程序](https://github.com/facebook/react-native/blob/main/packages/rn-tester/) 查看本机驱动程序的运行情况，然后加载本机动画示例。您还可以查看[源代码](https://github.com/facebook/react-native/blob/main/packages/rn-tester/js/examples/NativeAnimation/NativeAnimationsExample.js)以了解这些示例是如何生成的。
+您可以通过运行 [RNTester 应用程序](https://github.com/react/react-native/blob/main/packages/rn-tester/) 查看本机驱动程序的运行情况，然后加载本机动画示例。您还可以查看[源代码](https://github.com/react/react-native/blob/main/packages/rn-tester/js/examples/NativeAnimation/NativeAnimationsExample.js)以了解这些示例是如何生成的。
 
 #### 注意事项
 
@@ -585,8 +585,8 @@ Animated.timing(this.state.animatedValue, {
 
 RNTester 应用程序有各种使用“Animated”的示例：
 
-- [AnimatedGratuitousApp](https://github.com/facebook/react-native/tree/main/packages/rn-tester/js/examples/AnimatedGratuitousApp)
-- [NativeAnimationsExample](https://github.com/facebook/react-native/blob/main/packages/rn-tester/js/examples/NativeAnimation/NativeAnimationsExample.js)
+- [AnimatedGratuitousApp](https://github.com/react/react-native/tree/main/packages/rn-tester/js/examples/AnimatedGratuitousApp)
+- [NativeAnimationsExample](https://github.com/react/react-native/blob/main/packages/rn-tester/js/examples/NativeAnimation/NativeAnimationsExample.js)
 
 ## `布局动画` API
 
@@ -664,7 +664,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-本示例使用预设值，您可以根据需要自定义动画，请参阅 [LayoutAnimation.js](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/LayoutAnimation/LayoutAnimation.js) 了解更多信息。
+本示例使用预设值，您可以根据需要自定义动画，请参阅 [LayoutAnimation.js](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/LayoutAnimation/LayoutAnimation.js) 了解更多信息。
 
 ## 附加说明
 

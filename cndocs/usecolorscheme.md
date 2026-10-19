@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-您可以在[`AppearanceExample.js`](https://github.com/facebook/react-native/blob/main/packages/rn-tester/js/examples/Appearance/AppearanceExample.js)中找到一个完整的示例，该示例演示了如何使用此钩子以及React上下文来为您的应用程序添加浅色和深色主题支持。
+您可以在[`AppearanceExample.js`](https://github.com/react/react-native/blob/main/packages/rn-tester/js/examples/Appearance/AppearanceExample.js)中找到一个完整的示例，该示例演示了如何使用此钩子以及React上下文来为您的应用程序添加浅色和深色主题支持。

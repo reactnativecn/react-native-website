@@ -44,7 +44,7 @@ RCT_EXPORT_MODULE(RNTMap)
 @end
 ```
 
-**注意：** 请不要在`-view`中给`UIView`实例设置`frame`或是`backgroundColor`属性。为了和 JavaScript 端的布局属性一致，React Native 会覆盖你所设置的值。 如果您需要这种粒度的操作的话，比较好的方法是用另一个`UIView`来封装你想操作的`UIView`实例，并返回外层的`UIView`。请参阅[Issue 2948](https://github.com/facebook/react-native/issues/2948)获取更多信息。
+**注意：** 请不要在`-view`中给`UIView`实例设置`frame`或是`backgroundColor`属性。为了和 JavaScript 端的布局属性一致，React Native 会覆盖你所设置的值。 如果您需要这种粒度的操作的话，比较好的方法是用另一个`UIView`来封装你想操作的`UIView`实例，并返回外层的`UIView`。请参阅[Issue 2948](https://github.com/react/react-native/issues/2948)获取更多信息。
 
 > 在上例中，我们的类名使用了`RNT`前缀以避免与其它框架产生命名冲突。苹果自有框架使用了两个字符的前缀，而 React Native 则使用`RCT`作为前缀。为避免命名冲突，我们建议您在自己的类中使用`RNT`以外的其它三字符前缀。
 
@@ -98,7 +98,7 @@ RCT_EXPORT_VIEW_PROPERTY(zoomEnabled, BOOL)
 
 ```jsx
 // MyApp.js
-<MapView zoomEnabled={false} style={{ flex: 1 }} />
+<MapView zoomEnabled={false} style={{flex: 1}} />
 ```
 
 但这样并不能很好的说明这个组件的用法——用户要想知道我们的组件有哪些属性可以用，以及可以取什么样的值，他不得不一路翻到 Objective-C 的代码。要解决这个问题，我们可以创建一个封装组件，并且通过`PropTypes`来说明这个组件的接口。
@@ -107,7 +107,7 @@ RCT_EXPORT_VIEW_PROPERTY(zoomEnabled, BOOL)
 // MapView.js
 import PropTypes from 'prop-types';
 import React from 'react';
-import { requireNativeComponent } from 'react-native';
+import {requireNativeComponent} from 'react-native';
 
 class MapView extends React.Component {
   render() {
@@ -120,7 +120,7 @@ MapView.propTypes = {
    * A Boolean value that determines whether the user may use pinch
    * gestures to zoom in and out of the map.
    */
-  zoomEnabled: PropTypes.bool
+  zoomEnabled: PropTypes.bool,
 };
 
 const RNTMap = requireNativeComponent('RNTMap', MapView);
@@ -246,7 +246,7 @@ render() {
 
 ```jsx
 const RCTSwitch = requireNativeComponent('RCTSwitch', Switch, {
-  nativeOnly: { onChange: true }
+  nativeOnly: {onChange: true},
 });
 ```
 
@@ -511,4 +511,4 @@ const styles = StyleSheet.create({
 }
 ```
 
-本向导覆盖了包装原生组件所需了解的许多方面，不过你可能还有很多知识需要了解，譬如特殊的方式来插入和布局子视图。如果你想更深入了解，可以尝试阅读一些[源代码](https://github.com/facebook/react-native/blob/master/React/Views)。
+本向导覆盖了包装原生组件所需了解的许多方面，不过你可能还有很多知识需要了解，譬如特殊的方式来插入和布局子视图。如果你想更深入了解，可以尝试阅读一些[源代码](https://github.com/react/react-native/tree/main/packages/react-native/React/Views)。

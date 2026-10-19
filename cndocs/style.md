@@ -48,4 +48,4 @@ export default LotsOfStyles;
 
 ## 已知问题
 
-- [react-native#29308](https://github.com/facebook/react-native/issues/29308#issuecomment-792864162)：在某些情况下，React Native 与 web 上 CSS 的工作方式不一致，例如触摸区域永远不会超出父视图的边界，以及在 Android 上不支持负 margin。
+- [react-native#29308](https://github.com/react/react-native/issues/29308#issuecomment-792864162)：在某些情况下，React Native 与 web 上 CSS 的工作方式不一致，例如触摸区域永远不会超出父视图的边界，以及在 Android 上不支持负 margin。

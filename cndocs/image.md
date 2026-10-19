@@ -112,7 +112,7 @@ dependencies {
 ```
 
 :::note
-以上列出的版本可能并非最新。请在主仓库的 [`packages/react-native/gradle/libs.versions.toml`](https://github.com/facebook/react-native/blob/main/packages/react-native/gradle/libs.versions.toml) 中查看特定标签版本所使用的 Fresco 版本。
+以上列出的版本可能并非最新。请在主仓库的 [`packages/react-native/gradle/libs.versions.toml`](https://github.com/react/react-native/blob/main/packages/react-native/gradle/libs.versions.toml) 中查看特定标签版本所使用的 Fresco 版本。
 :::
 
 ---

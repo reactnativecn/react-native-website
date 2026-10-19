@@ -289,7 +289,7 @@ NativeCalendarModule.createCalendarEvent('foo', 'bar');
 - Number -> float
   :::
 
-对于 iOS，你还可以使用 `RCTConvert` 类支持的任何参数类型来编写原生模块方法（有关支持的类型的详细信息，请参阅 [RCTConvert](https://github.com/facebook/react-native/blob/main/packages/react-native/React/Base/RCTConvert.h)）。RCTConvert 辅助函数都接受一个 JSON 值作为输入，并将其映射到原生 Objective-C 类型或类。
+对于 iOS，你还可以使用 `RCTConvert` 类支持的任何参数类型来编写原生模块方法（有关支持的类型的详细信息，请参阅 [RCTConvert](https://github.com/react/react-native/blob/main/packages/react-native/React/Base/RCTConvert.h)）。RCTConvert 辅助函数都接受一个 JSON 值作为输入，并将其映射到原生 Objective-C 类型或类。
 
 ### 导出常量
 
@@ -361,7 +361,7 @@ const onSubmit = () => {
 };
 ```
 
-原生模块应该只调用其回调一次。但是，它可以保存 callback 并在以后调用。此模式通常用于封装需要委托的 iOS API——请参阅 [`RCTAlertManager`](https://github.com/facebook/react-native/blob/main/packages/react-native/React/CoreModules/RCTAlertManager.mm) 作为示例。如果回调从未被调用，则会泄漏一些内存。
+原生模块应该只调用其回调一次。但是，它可以保存 callback 并在以后调用。此模式通常用于封装需要委托的 iOS API——请参阅 [`RCTAlertManager`](https://github.com/react/react-native/blob/main/packages/react-native/React/CoreModules/RCTAlertManager.mm) 作为示例。如果回调从未被调用，则会泄漏一些内存。
 
 有两种处理回调错误的方法。第一种是遵循 Node 的约定，将传递给回调数组的第一个参数视为错误对象。
 
@@ -426,7 +426,7 @@ const onPress = () => {
 };
 ```
 
-如果你想向 JavaScript 传递类似错误的对象，请使用 [`RCTUtils.h`](https://github.com/facebook/react-native/blob/main/packages/react-native/React/Base/RCTUtils.h) 中的 `RCTMakeError`。目前它只是向 JavaScript 传递一个 Error 形状的字典，但 React Native 的目标是在将来自动生成真正的 JavaScript Error 对象。你还可以提供一个 `RCTResponseErrorBlock` 参数，用于错误回调并接受一个 `NSError \* object`。请注意，此参数类型在 TurboModules 中将不被支持。
+如果你想向 JavaScript 传递类似错误的对象，请使用 [`RCTUtils.h`](https://github.com/react/react-native/blob/main/packages/react-native/React/Base/RCTUtils.h) 中的 `RCTMakeError`。目前它只是向 JavaScript 传递一个 Error 形状的字典，但 React Native 的目标是在将来自动生成真正的 JavaScript Error 对象。你还可以提供一个 `RCTResponseErrorBlock` 参数，用于错误回调并接受一个 `NSError \* object`。请注意，此参数类型在 TurboModules 中将不被支持。
 
 ### Promises
 
@@ -618,7 +618,7 @@ RCT_EXTERN_METHOD(addEvent:(NSString *)name location:(NSString *)location date:(
 #import <React/RCTBridgeModule.h>
 ```
 
-你还可以使用 `RCT_EXTERN_REMAP_MODULE` 和 `_RCT_EXTERN_REMAP_METHOD` 来更改你正在导出的模块或方法的 JavaScript 名称。更多信息请参阅 [`RCTBridgeModule`](https://github.com/facebook/react-native/blob/main/packages/react-native/React/Base/RCTBridgeModule.h)。
+你还可以使用 `RCT_EXTERN_REMAP_MODULE` 和 `_RCT_EXTERN_REMAP_METHOD` 来更改你正在导出的模块或方法的 JavaScript 名称。更多信息请参阅 [`RCTBridgeModule`](https://github.com/react/react-native/blob/main/packages/react-native/React/Base/RCTBridgeModule.h)。
 
 :::note
 制作第三方模块时的重要注意事项：只有 Xcode 9 及更高版本才支持在静态库中使用 Swift。为了在使用模块中包含的 iOS 静态库中的 Swift 时构建 Xcode 项目，你的主应用项目必须包含 Swift 代码和桥接头文件本身。如果你的应用项目不包含任何 Swift 代码，一个解决方法是添加一个空的 .swift 文件和一个空的桥接头文件。
@@ -628,4 +628,4 @@ RCT_EXTERN_METHOD(addEvent:(NSString *)name location:(NSString *)location date:(
 
 #### invalidate()
 
-在 iOS 上，原生模块可以通过实现 `invalidate()` 方法来符合 [RCTInvalidating](https://github.com/facebook/react-native/blob/main/packages/react-native/React/Base/RCTInvalidating.h) 协议。当原生桥接失效时（例如在开发模式重新加载时），可以[调用](https://github.com/facebook/react-native/blob/0.62-stable/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm#L456)此方法。请根据需要使用此机制为你的原生模块执行必要的清理工作。
+在 iOS 上，原生模块可以通过实现 `invalidate()` 方法来符合 [RCTInvalidating](https://github.com/react/react-native/blob/main/packages/react-native/React/Base/RCTInvalidating.h) 协议。当原生桥接失效时（例如在开发模式重新加载时），可以[调用](https://github.com/react/react-native/blob/0.62-stable/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm#L456)此方法。请根据需要使用此机制为你的原生模块执行必要的清理工作。

@@ -118,18 +118,21 @@ static announceForAccessibility(announcement: string);
 ```tsx
 static announceForAccessibilityWithOptions(
   announcement: string,
-  options: {queue?: boolean},
+  options: {
+    queue?: boolean;
+    priority?: 'low' | 'default' | 'high';
+  },
 );
 ```
 
-发送一段字符串让读屏器播报，并可附带选项。默认会打断当前播报；在 iOS 上可通过将 `queue` 设为 `true`，把新播报排队到当前播报之后。
+发送一段字符串让读屏器播报，并可附带选项。默认会打断当前播报；在 iOS 上可通过将 `queue` 设为 `true`，把新播报排队到当前播报之后。在 iOS 上还可以指定可选的 `priority`。
 
 **参数：**
 
-| 名称                                                              | 类型   | 说明                                                                  |
-| ----------------------------------------------------------------- | ------ | --------------------------------------------------------------------- |
-| announcement <div className="label basic required">Required</div> | string | 要播报的字符串                                                        |
-| options <div className="label basic required">Required</div>      | object | `queue` - 是否排队到当前播报之后 <div className="label ios">iOS</div> |
+| 名称                                                              | 类型   | 说明                                                                                                                                                                                                                                                                                                                                                                 |
+| ----------------------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| announcement <div className="label basic required">Required</div> | string | 要播报的字符串                                                                                                                                                                                                                                                                                                                                                       |
+| options <div className="label basic required">Required</div>      | object | 包含以下键的对象：<ul><li>`queue`：将播报排队到当前播报之后。<div className="label ios">iOS</div></li><li>`priority`：播报的优先级（`'low'`、`'default'` 或 `'high'`）。高优先级播报会打断任何正在进行的播报且不会被打断；默认优先级播报会打断正在进行的播报但可被打断；低优先级播报不会打断正在进行的播报且可被打断。<div className="label ios">iOS</div></li></ul> |
 
 ---
 

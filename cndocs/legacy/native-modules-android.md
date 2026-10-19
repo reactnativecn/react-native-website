@@ -270,7 +270,7 @@ class MyAppPackage : ReactPackage {
 这个文件导入了你创建的原生模块`CalendarModule`。然后在`createNativeModules()`函数中实例化了`CalendarModule`并将其作为`NativeModules`列表返回以便注册。如果将来你添加更多原生模块，也可以在这里实例化它们并添加到返回的列表中。
 
 :::note
-值得注意的是，这种注册原生模块的方式会在应用启动时主动地初始化所有原生模块，从而增加了应用的启动时间。你可以使用[TurboReactPackage](https://github.com/facebook/react-native/blob/main/packages/react-native/ReactAndroid/src/main/java/com/facebook/react/TurboReactPackage.kt)作为替代方案。与返回已实例化的原生模块对象列表的`createNativeModules`不同，TurboReactPackage 实现了一个`getModule(String name， ReactApplicationContext rac)`方法，在需要时创建原生模块对象。目前实现 TurboReactPackage 有点复杂。除了实现`getModule()`方法外，你还必须实现一个`getReactModuleInfoProvider()`方法，该方法返回包可实例化的所有原生模块列表以及实例化它们的函数，示例[在此](https://github.com/facebook/react-native/blob/8ac467c51b94c82d81930b4802b2978c85539925/ReactAndroid/src/main/java/com/facebook/react/CoreModulesPackage.java#L86-L165)。再次说明，使用 TurboReactPackage 将使你的应用拥有更快的启动时间，但目前编写起来有些麻烦。所以如果你选择使用 TurboReactPackage，请小心谨慎。
+值得注意的是，这种注册原生模块的方式会在应用启动时主动地初始化所有原生模块，从而增加了应用的启动时间。你可以使用[TurboReactPackage](https://github.com/react/react-native/blob/main/packages/react-native/ReactAndroid/src/main/java/com/facebook/react/TurboReactPackage.kt)作为替代方案。与返回已实例化的原生模块对象列表的`createNativeModules`不同，TurboReactPackage 实现了一个`getModule(String name， ReactApplicationContext rac)`方法，在需要时创建原生模块对象。目前实现 TurboReactPackage 有点复杂。除了实现`getModule()`方法外，你还必须实现一个`getReactModuleInfoProvider()`方法，该方法返回包可实例化的所有原生模块列表以及实例化它们的函数，示例[在此](https://github.com/react/react-native/blob/8ac467c51b94c82d81930b4802b2978c85539925/ReactAndroid/src/main/java/com/facebook/react/CoreModulesPackage.java#L86-L165)。再次说明，使用 TurboReactPackage 将使你的应用拥有更快的启动时间，但目前编写起来有些麻烦。所以如果你选择使用 TurboReactPackage，请小心谨慎。
 :::
 
 要注册`CalendarModule`包，你必须将`MyAppPackage`添加到 ReactNativeHost 的`getPackages()`方法返回的包列表中。打开`MainApplication.java`或`MainApplication.kt`文件，位于如下路径:`android/app/src/main/java/com/your-app-name/`。
@@ -775,7 +775,7 @@ code: String， message: String， userInfo: WritableMap， throwable: Throwable
 </TabItem>
 </Tabs>
 
-更多详细内容，您可以在[这里](https://github.com/facebook/react-native/blob/main/packages/react-native/ReactAndroid/src/main/java/com/facebook/react/bridge/Promise.kt)查阅 `Promise.java` 接口。如果未提供 `userInfo`，React Native 会将其设置为 null。对于其余参数，React Native 将使用默认值。`message` 参数提供了显示在错误调用堆栈顶部的错误 `message`。以下是在 JavaScript 中显示的错误消息示例，该消息来自 Java/Kotlin 中的以下 reject 调用。
+更多详细内容，您可以在[这里](https://github.com/react/react-native/blob/main/packages/react-native/ReactAndroid/src/main/java/com/facebook/react/bridge/Promise.kt)查阅 `Promise.java` 接口。如果未提供 `userInfo`，React Native 会将其设置为 null。对于其余参数，React Native 将使用默认值。`message` 参数提供了显示在错误调用堆栈顶部的错误 `message`。以下是在 JavaScript 中显示的错误消息示例，该消息来自 Java/Kotlin 中的以下 reject 调用。
 
 Java/Kotlin 的 reject 调用:
 
@@ -894,7 +894,7 @@ sendEvent(reactContext， "EventReminder"， params)
 </TabItem>
 </Tabs>
 
-JavaScript 模块可通过在 [NativeEventEmitter](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/EventEmitter/NativeEventEmitter.js) 类上调用 `addListener` 方法来注册接收事件。
+JavaScript 模块可通过在 [NativeEventEmitter](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/EventEmitter/NativeEventEmitter.js) 类上调用 `addListener` 方法来注册接收事件。
 
 ```tsx
 import {NativeEventEmitter， NativeModules} from 'react-native';
