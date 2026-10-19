@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-该组件还可用于创建粘性文本输入框（锚定在键盘顶部的文本输入框）。为此，用`InputAccessoryView`组件包裹一个`TextInput`，并不要设置`nativeID`。示例请参考[InputAccessoryViewExample.js](https://github.com/facebook/react-native/blob/main/packages/rn-tester/js/examples/InputAccessoryView/InputAccessoryViewExample.js)。
+该组件还可用于创建粘性文本输入框（锚定在键盘顶部的文本输入框）。为此，用`InputAccessoryView`组件包裹一个`TextInput`，并不要设置`nativeID`。示例请参考[InputAccessoryViewExample.js](https://github.com/react/react-native/blob/main/packages/rn-tester/js/examples/InputAccessoryView/InputAccessoryViewExample.js)。
 
 ---
 
@@ -98,5 +98,5 @@ export default App;
 
 # 已知问题
 
-- [react-native#18997](https://github.com/facebook/react-native/issues/18997): 不支持多行的`TextInput`
-- [react-native#20157](https://github.com/facebook/react-native/issues/20157): 不能和底部 tab 栏一起使用
+- [react-native#18997](https://github.com/react/react-native/issues/18997): 不支持多行的`TextInput`
+- [react-native#20157](https://github.com/react/react-native/issues/20157): 不能和底部 tab 栏一起使用

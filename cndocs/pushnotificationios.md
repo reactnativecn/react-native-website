@@ -22,6 +22,8 @@ title: '🗑️ PushNotificationIOS'
 
 然后，在项目中[启用远程通知](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app#2980038)。这将自动启用所需的设置。
 
+推送通知的注册与送达回调属于 `UIApplicationDelegate`，因此即使 React Native 从 `SceneDelegate` 启动，也请在 `AppDelegate` 中实现它们。
+
 ### 启用 `register` 事件支持
 
 在你的 `AppDelegate.m` 中添加：

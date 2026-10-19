@@ -57,8 +57,93 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 </TabItem>
 <TabItem value="ios">
 
-:::note
-对于 iOS 来说，如果要在 App 启动后也监听传入的 App 链接，那么首先需要按照[步骤 3](linking-libraries-ios#step-3)中的说明将`LinkingIOS`文件夹添加到头文件搜索路径中。如果还想在 App 运行期间监听传入的 App 链接，那么需要在`*AppDelegate.m`中增加以下代码：
+对于 iOS 来说，如果要在 App 启动后也监听传入的 App 链接，那么首先需要按照[步骤 3](linking-libraries-ios#step-3)中的说明将 `LinkingIOS` 文件夹添加到头文件搜索路径中。如果还想在 App 运行期间监听传入的 App 链接，请从你的 `SceneDelegate` 转发深链接。如果你的应用在 `Info.plist` 中声明了 `UIApplicationSceneManifest`，`RCTLinkingManager` 会忽略下面的 `AppDelegate` 链接方法——你必须改为从 `SceneDelegate` 转发链接。
+
+<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
+<TabItem value="objc">
+
+```objc title="SceneDelegate.m"
+#import <React/RCTLinkingManager.h>
+
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts
+{
+  [RCTLinkingManager scene:scene openURLContexts:URLContexts];
+}
+```
+
+如果你的 app 用了 [Universal Links](https://developer.apple.com/ios/universal-links/)，也需要添加以下代码：
+
+```objc title="SceneDelegate.m"
+- (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity
+{
+  [RCTLinkingManager scene:scene continueUserActivity:userActivity];
+}
+```
+
+</TabItem>
+<TabItem value="swift">
+
+```swift title="SceneDelegate.swift"
+func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+  RCTLinkingManager.scene(scene, openURLContexts: URLContexts)
+}
+```
+
+如果你的 app 用了 [Universal Links](https://developer.apple.com/ios/universal-links/)，也需要添加以下代码：
+
+```swift title="SceneDelegate.swift"
+func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+  RCTLinkingManager.scene(scene, continue: userActivity)
+}
+```
+
+</TabItem>
+</Tabs>
+
+这些回调仅覆盖场景连接期间到达的链接。要处理冷启动时的链接（即通过自定义 URL scheme 或 Universal Link 启动应用），还需要在引导 React Native 时把场景的 `UIScene.ConnectionOptions` 交给它，否则 [`getInitialURL()`](#getinitialurl) 会返回 `null`：
+
+<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
+<TabItem value="objc">
+
+```objc title="SceneDelegate.m"
+- (void)scene:(UIScene *)scene
+    willConnectToSession:(UISceneSession *)session
+                 options:(UISceneConnectionOptions *)connectionOptions
+{
+  // ...
+  [self.reactNativeFactory startReactNativeWithModuleName:@"HelloWorld"
+                                                 inWindow:self.window
+                                        connectionOptions:connectionOptions];
+}
+```
+
+</TabItem>
+<TabItem value="swift">
+
+```swift title="SceneDelegate.swift"
+func scene(
+  _ scene: UIScene,
+  willConnectTo session: UISceneSession,
+  options connectionOptions: UIScene.ConnectionOptions
+) {
+  // ...
+  reactNativeFactory?.startReactNative(
+    withModuleName: "HelloWorld",
+    in: window,
+    connectionOptions: connectionOptions
+  )
+}
+```
+
+</TabItem>
+</Tabs>
+
+完整的 `SceneDelegate` 配置请参阅[与 SceneDelegate 一起引导](integration-with-existing-apps#6-bootstrapping-with-scenedelegate)。
+
+<details>
+<summary>未使用 UIScene 生命周期的应用</summary>
+
+如果你的应用不使用 `SceneDelegate`，请改为在 `AppDelegate` 中添加以下代码：
 
 <Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
 <TabItem value="objc">
@@ -114,7 +199,7 @@ func application(
 </TabItem>
 </Tabs>
 
-:::
+</details>
 
 </TabItem>
 </Tabs>

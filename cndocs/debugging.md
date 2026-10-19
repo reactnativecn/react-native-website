@@ -87,7 +87,7 @@ LogBox.ignoreLogs([
 
 :::note
 
-LogBox 会将来自 React 的某些错误视为警告，这意味着它们不会显示为应用内错误通知。高级用户可以通过自定义 LogBox 的 warning filter，使用 [`LogBoxData.setWarningFilter()`](https://github.com/facebook/react-native/blob/d334f4d77eea538dff87fdcf2ebc090246cfdbb0/packages/react-native/Libraries/LogBox/Data/LogBoxData.js#L338) 来更改此行为。
+LogBox 会将来自 React 的某些错误视为警告，这意味着它们不会显示为应用内错误通知。高级用户可以通过自定义 LogBox 的 warning filter，使用 [`LogBoxData.setWarningFilter()`](https://github.com/react/react-native/blob/d334f4d77eea538dff87fdcf2ebc090246cfdbb0/packages/react-native/Libraries/LogBox/Data/LogBoxData.js#L338) 来更改此行为。
 
 :::
 

@@ -689,7 +689,7 @@ renderItem({
 
 ### `viewabilityConfig`
 
-请参考[`ViewabilityHelper.js`](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Lists/ViewabilityHelper.js)的源码来了解具体的配置。
+请参考[`ViewabilityHelper.js`](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Lists/ViewabilityHelper.js)的源码来了解具体的配置。
 
 | 类型              |
 | ----------------- |
@@ -704,7 +704,7 @@ renderItem({
 | itemVisiblePercentThreshold      | number  |
 | waitForInteraction               | boolean |
 
-`viewAreaCoveragePercentThreshold` 或 `itemVisiblePercentThreshold` 至少需要其中之一。这需要在 `constructor` 中完成，以避免以下错误（[参考链接](https://github.com/facebook/react-native/issues/17408)）：
+`viewAreaCoveragePercentThreshold` 或 `itemVisiblePercentThreshold` 至少需要其中之一。这需要在 `constructor` 中完成，以避免以下错误（[参考链接](https://github.com/react/react-native/issues/17408)）：
 
 ```
   Error: Changing viewabilityConfig on the fly is not supported

@@ -41,7 +41,7 @@ title: Pressable
 </figure>
 
 :::info
-`Pressable` 使用了 React Native 的 `Pressability` API。查看 [Pressability](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Pressability/Pressability.js#L350) 的实现，了解更多关于 Pressability 的状态机流程和原理。
+`Pressable` 使用了 React Native 的 `Pressability` API。查看 [Pressability](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Pressability/Pressability.js#L350) 的实现，了解更多关于 Pressability 的状态机流程和原理。
 :::
 
 ## 示例

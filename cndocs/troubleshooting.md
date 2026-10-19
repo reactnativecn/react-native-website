@@ -5,7 +5,7 @@ title: 问题排查
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
-以下是搭建 React Native 环境时可能遇到的一些常见问题。如果你遇到的问题不在此列，请尝试在 [GitHub 上搜索相关 issue](https://github.com/facebook/react-native/issues/)。
+以下是搭建 React Native 环境时可能遇到的一些常见问题。如果你遇到的问题不在此列，请尝试在 [GitHub 上搜索相关 issue](https://github.com/react/react-native/issues/)。
 
 ### 端口被占用
 
@@ -88,7 +88,7 @@ pod 'React', :path => '../node_modules/react-native', :subspecs => [
 
 ### 无可用传输层
 
-React Native 实现了 WebSocket 的 polyfill。这些 [polyfill](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Core/InitializeCore.js) 会在你通过 `import React from 'react'` 引入 react-native 模块时初始化。如果你加载了其他需要 WebSocket 的模块（如 [Firebase](https://github.com/facebook/react-native/issues/3645)），请确保在 react-native 之后加载/引入：
+React Native 实现了 WebSocket 的 polyfill。这些 [polyfill](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Core/InitializeCore.js) 会在你通过 `import React from 'react'` 引入 react-native 模块时初始化。如果你加载了其他需要 WebSocket 的模块（如 [Firebase](https://github.com/react/react-native/issues/3645)），请确保在 react-native 之后加载/引入：
 
 ```
 import Firebase from 'firebase';
@@ -114,7 +114,7 @@ adb start-server
 
 ### 情况 1：错误 "code":"ENOSPC","errno":"ENOSPC"
 
-此问题由 [inotify](https://github.com/guard/listen/blob/main/README.md#increasing-the-amount-of-inotify-watchers)（watchman 在 Linux 上使用）可监控的目录数量限制导致。要解决此问题，请在终端中执行以下命令：
+此问题由 [inotify](https://github.com/guard/listen/blob/master/README.md#increasing-the-amount-of-inotify-watchers)（watchman 在 Linux 上使用）可监控的目录数量限制导致。要解决此问题，请在终端中执行以下命令：
 
 ```shell
 echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p

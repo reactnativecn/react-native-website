@@ -66,7 +66,7 @@ rootView.appProperties = @{@"images" : imageList};
 
 你可以随时更新属性，但是更新必须在主线程中进行，读取则可以在任何线程中进行。
 
-> **_注意:_** 目前有一个已知问题，如果在 bridge 还没初始化完成前就设置 appProperties，设置可能会无效，具体讨论请见 https://github.com/facebook/react-native/issues/20115
+> **_注意:_** 目前有一个已知问题，如果在 bridge 还没初始化完成前就设置 appProperties，设置可能会无效，具体讨论请见 https://github.com/react/react-native/issues/20115
 
 更新属性时并不能做到只更新一部分属性。我们建议你自己封装一个函数来构造属性。
 
@@ -106,7 +106,7 @@ React Native 允许使用跨语言的函数调用。你可以在 JS 中调用原
 
 事实上原生模块的单实例模式限制了嵌入。假设我们有一个 React Native 组件被嵌入了一个原生视图，并且我们希望更新原生的父视图。使用原生模块机制，我们可以导出一个函数，不仅要接收预设参数，还要接收父视图的标识。这个标识将会用来获得父视图的引用以更新父视图。那样的话，我们需要维持模块中标识到原生模块的映射。虽然这个解决办法很复杂，它仍被用在了管理所有 React Native 视图的`RCTUIManager`类中，
 
-原生模块同样可以暴露已有的原生库给 JS，[地理定位库](https://github.com/react-native-community/react-native-geolocation)就是一个现成的例子。
+原生模块同样可以暴露已有的原生库给 JS，[地理定位库](https://github.com/michalchudziak/react-native-geolocation)就是一个现成的例子。
 
 > 警告：所有原生模块共享同一个命名空间。创建新模块时注意避免命名冲突。
 
@@ -194,7 +194,7 @@ typedef NS_ENUM(NSInteger, RCTRootViewSizeFlexibility) {
 
 在例子中我们使用一个`FlexibleSizeExampleView`视图来包含根视图。我们创建了根视图，初始化并且设置了代理。代理将会处理尺寸更新。然后，我们设置根视图的弹性尺寸为`RCTRootViewSizeFlexibilityHeight`，意味着`rootViewDidChangeIntrinsicSize:`方法将会在每次 React Native 内容高度变化时进行调用。最后，我们设置根视图的宽度和位置。注意我们也设置了高度，但是并没有效果，因为我们已经将高度设置为根据 RN 内容进行弹性变化了。
 
-你可以在这里查看完整的例子[源代码](https://github.com/facebook/react-native/blob/main/packages/rn-tester/RNTester/NativeExampleViews/FlexibleSizeExampleView.m)。
+你可以在这里查看完整的例子[源代码](https://github.com/react/react-native/blob/main/packages/rn-tester/RNTester/NativeExampleViews/FlexibleSizeExampleView.mm)。
 
 动态改变根视图的弹性模式是可行的。改变根视图的弹性模式将会导致布局的重新计算，并且在重新量出内容尺寸时会调用`rootViewDidChangeIntrinsicSize`方法。
 

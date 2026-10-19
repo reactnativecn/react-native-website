@@ -70,7 +70,7 @@ export default App;
 
 ### `StickyHeaderComponent`
 
-一个 React 组件，用于渲染粘性头部，应与`stickyHeaderIndices`一起使用。如果你的粘性头部使用了自定义变换（例如，当你希望列表具有可动画隐藏的头部时），你可能需要设置此组件。如果未提供组件，则将使用默认的 [`ScrollViewStickyHeader`](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js) 组件。
+一个 React 组件，用于渲染粘性头部，应与`stickyHeaderIndices`一起使用。如果你的粘性头部使用了自定义变换（例如，当你希望列表具有可动画隐藏的头部时），你可能需要设置此组件。如果未提供组件，则将使用默认的 [`ScrollViewStickyHeader`](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js) 组件。
 
 | 类型               |
 | ------------------ |
@@ -691,7 +691,7 @@ _仅 iOS 可用的值_
 
 ### `StickyHeaderComponent`
 
-一个 React 组件，用于渲染粘性头部，应与 `stickyHeaderIndices` 一起使用。如果粘性头部使用自定义变换，例如，当您希望列表具有可动画化和可隐藏的头部时，可能需要设置此组件。如果未提供组件，将使用默认的 [`ScrollViewStickyHeader`](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js) 组件。
+一个 React 组件，用于渲染粘性头部，应与 `stickyHeaderIndices` 一起使用。如果粘性头部使用自定义变换，例如，当您希望列表具有可动画化和可隐藏的头部时，可能需要设置此组件。如果未提供组件，将使用默认的 [`ScrollViewStickyHeader`](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js) 组件。
 
 | 类型               |
 | ------------------ |

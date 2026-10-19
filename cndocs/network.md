@@ -270,8 +270,8 @@ ws.onclose = e => {
 - `redirect:manual`
 - `credentials:omit`
 
-* 在 Android 上重复使用相同名称的标头将导致仅存在最新的标头。您可以在此处找到一个临时解决方案：https://github.com/facebook/react-native/issues/18837#issuecomment-398779994。
-* 基于 cookie 的身份验证目前不稳定。您可以在此处查看引发的一些问题：https://github.com/facebook/react-native/issues/23185
+* 在 Android 上重复使用相同名称的标头将导致仅存在最新的标头。您可以在此处找到一个临时解决方案：https://github.com/react/react-native/issues/18837#issuecomment-398779994。
+* 基于 cookie 的身份验证目前不稳定。您可以在此处查看引发的一些问题：https://github.com/react/react-native/issues/23185
 * 在 iOS 上，至少在通过 `302` 重定向时，如果存在 `Set-Cookie` 标头，则 cookie 不会正确设置。由于无法手动处理重定向，由过期会话引起的重定向可能会导致无限请求的死循环发生。
 
 ## 在 iOS 上配置 NSURLSession
@@ -282,7 +282,26 @@ ws.onclose = e => {
 #import <React/RCTHTTPRequestHandler.h>
 ```
 
-`RCTSetCustomNSURLSessionConfigurationProvider` 应在应用程序生命周期的早期调用，以便在 React 需要时可以轻松访问，例如：
+`RCTSetCustomNSURLSessionConfigurationProvider` 应在应用程序生命周期的早期调用，以便在 React 需要时可以轻松访问。
+
+对于使用 UIScene 生命周期的应用，请在启动 React Native 之前从 `scene:willConnectToSession:options:` 中调用：
+
+```objectivec
+- (void)scene:(UIScene *)scene
+    willConnectToSession:(UISceneSession *)session
+                 options:(UISceneConnectionOptions *)connectionOptions
+{
+  RCTSetCustomNSURLSessionConfigurationProvider(^NSURLSessionConfiguration *{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    // configure the session
+    return configuration;
+  });
+
+  // set up React Native
+}
+```
+
+对于未使用 UIScene 生命周期的应用，请在启动 React Native 之前从 `application:didFinishLaunchingWithOptions:` 中调用：
 
 ```objectivec
 -(void)application:(__unused UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

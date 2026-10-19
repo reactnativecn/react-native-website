@@ -658,7 +658,7 @@ export default App;
 
 `flexWrap` 控制子元素在到达 flex 容器末尾后是否换行。其用法与 CSS 中的 `flex-wrap` 相同（默认值：nowrap）。
 
-注意，它与 `alignItems: stretch`（默认值）搭配不再起作用，因此你可能需要改用例如 `alignItems: flex-start`（破坏性变更详情：https://github.com/facebook/react-native/releases/tag/v0.28.0）。
+注意，它与 `alignItems: stretch`（默认值）搭配不再起作用，因此你可能需要改用例如 `alignItems: flex-start`（破坏性变更详情：https://github.com/react/react-native/releases/tag/v0.28.0）。
 
 更多详情请参阅 [MDN CSS 参考](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap)。
 

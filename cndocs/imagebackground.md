@@ -9,7 +9,7 @@ title: '🗑️ ImageBackground'
 
 对于熟悉 Web 开发的开发人员来说，`background-image`是一个常见的功能请求。为了处理这种情况，您可以使用`<ImageBackground>`组件，它具有与`<Image>`相同的属性，并且可以添加任何子元素以覆盖在其上面。
 
-在某些情况下，您可能不想使用`<ImageBackground>`，因为其实现比较基础。请参考`<ImageBackground>`的[源代码](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Image/ImageBackground.js)以获取更多信息，并在需要时创建自己的自定义组件。
+在某些情况下，您可能不想使用`<ImageBackground>`，因为其实现比较基础。请参考`<ImageBackground>`的[源代码](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Image/ImageBackground.js)以获取更多信息，并在需要时创建自己的自定义组件。
 
 请注意，您必须指定一些宽度和高度样式属性。
 

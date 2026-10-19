@@ -276,7 +276,7 @@ return (
 
 ## 配置 iOS 图像缓存限制
 
-在 iOS 上，我们公开了一个 API 来覆盖 React Native 的默认图像缓存限制。这应该从你的原生 AppDelegate 代码中调用（例如在 `didFinishLaunchingWithOptions` 中）。
+在 iOS 上，我们公开了一个 API 来覆盖 React Native 的默认图像缓存限制。请在应用启动早期调用此 API：使用 UIScene 生命周期的应用请在 `SceneDelegate` 的 `scene:willConnectToSession:options:` 中调用，未使用 UIScene 生命周期的应用请在 `AppDelegate` 中调用（例如在 `application:didFinishLaunchingWithOptions:` 中）。
 
 ```objectivec
 RCTSetImageCacheLimits(4*1024*1024, 200*1024*1024);
@@ -284,9 +284,9 @@ RCTSetImageCacheLimits(4*1024*1024, 200*1024*1024);
 
 **Parameters:**
 
-| Name           | Type   | Required | Description       |
-| -------------- | ------ | -------- | ----------------- |
-| imageSizeLimit | number | Yes      | 图像缓存大小限制  |
-| totalCostLimit | number | Yes      | 图像缓存大小限制. |
+| Name           | Type   | Required | Description      |
+| -------------- | ------ | -------- | ---------------- |
+| imageSizeLimit | number | Yes      | 图像缓存大小限制 |
+| totalCostLimit | number | Yes      | 缓存总开销限制   |
 
 在上面的代码示例中，图像大小限制设置为 4 MB，总成本限制设置为 200 MB。

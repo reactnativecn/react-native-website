@@ -3,7 +3,7 @@ id: viewtoken
 title: ViewToken 对象类型
 ---
 
-`ViewToken` 对象作为 `onViewableItemsChanged` 回调中的属性之一返回（例如，在 [FlatList](flatlist) 组件中）。它由 [`ViewabilityHelper.js`](https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/Lists/ViewabilityHelper.js) 导出。
+`ViewToken` 对象作为 `onViewableItemsChanged` 回调中的属性之一返回（例如，在 [FlatList](flatlist) 组件中）。它由 [`ViewabilityHelper.js`](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Lists/ViewabilityHelper.js) 导出。
 
 ## 示例
 
@@ -21,6 +21,8 @@ title: ViewToken 对象类型
 ### `index`
 
 分配给数据元素的唯一数字标识符。
+
+当可视元素不是数据数组中的项时（例如 [`SectionList`](sectionlist) 中的分区头或分区尾变为可见时），此属性可能为 `null`。
 
 | 类型   | 可选 |
 | ------ | ---- |

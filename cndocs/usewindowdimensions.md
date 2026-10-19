@@ -16,7 +16,7 @@ const {height, width} = useWindowDimensions();
 ## 示例
 
 ```SnackPlayer name=useWindowDimensions&supportedPlatforms=ios,android
-import {StyleSheet, Text, useWindowDimensions} from 'react-native';
+import {StyleSheet, Text, View, useWindowDimensions} from 'react-native';
 import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 const App = () => {
@@ -25,10 +25,20 @@ const App = () => {
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <Text style={styles.header}>Window Dimension Data</Text>
-        <Text>Height: {height}</Text>
-        <Text>Width: {width}</Text>
-        <Text>Font scale: {fontScale}</Text>
-        <Text>Pixel ratio: {scale}</Text>
+        <View>
+          <Text>Height: {height}</Text>
+          <Text>Width: {width}</Text>
+          <Text>Font scale: {fontScale}</Text>
+          <Text>Pixel ratio: {scale}</Text>
+        </View>
+        <View
+          style={{
+            width: 100 * fontScale,
+            padding: 16 * fontScale,
+            ...styles.box,
+          }}>
+          <Text style={{fontSize: 14 / fontScale}}>Dynamic Box</Text>
+        </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -38,10 +48,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    gap: 12,
   },
   header: {
     fontSize: 20,
-    marginBottom: 12,
+  },
+  box: {
+    minWidth: 100,
+    backgroundColor: '#06bcee',
   },
 });
 
@@ -57,6 +71,10 @@ useWindowDimensions().fontScale;
 ```
 
 The scale of the font currently used. Some operating systems allow users to scale their font sizes larger or smaller for reading comfort. This property will let you know what is in effect.
+
+:::note
+可以将字体大小百分比用于动态调整 UI 元素（如内边距、外边距和容器高度）的尺寸，以确保一致且无障碍的用户体验。利用 fontScale 属性，开发者可以让应用更好地适配用户对更大或更小文本的偏好，从而提高可读性和易用性。
+:::
 
 ---
 
