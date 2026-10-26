@@ -3,7 +3,7 @@ id: handling-text-input
 title: 处理文本输入
 ---
 
-[`TextInput`](textinput#content)是一个允许用户输入文本的[基础组件](intro-react-native-components)。它有一个`onChangeText`属性，此属性接受一个函数，并会在文本每次发生变化时调用。它还有一个`onSubmitEditing`属性，此属性接受一个函数，并会在文本被提交时调用。
+[`TextInput`](textinput)是一个允许用户输入文本的[基础组件](intro-react-native-components)。它有一个`onChangeText`属性，此属性接受一个函数，并会在文本每次发生变化时调用。它还有一个`onSubmitEditing`属性，此属性接受一个函数，并会在文本被提交时调用。
 
 例如，假设当用户输入时，你要把他们的话翻译成另一种语言。在这种新语言里，每一个单词都写成同样的样子：🍕。所以句子“Hello there Bob”会被翻译成“🍕 🍕 🍕”。
 

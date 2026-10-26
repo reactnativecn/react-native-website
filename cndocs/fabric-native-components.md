@@ -115,7 +115,7 @@ export default (codegenNativeComponent<NativeProps>(
 - `NativeProps` 是定义可以在组件上设置的属性。
 - `codegenNativeComponent` 语句允许我们为自定义组件生成代码，并定义用于匹配原生实现的名称。
 
-与原生模块一样，你可以在 `specs/` 目录中拥有多个规范文件。更多信息请参阅 [附录](appendix.md#codegen-typings)。
+与原生模块一样，你可以在 `specs/` 目录中拥有多个规范文件。更多信息请参阅 [附录](appendix.md#ii-codegen-typings)。
 
 ## 2. 配置 Codegen 运行
 

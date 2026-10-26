@@ -112,7 +112,7 @@ const icon = this.props.active
 
 ## 网络图片
 
-很多要在 App 中显示的图片并不能在编译的时候获得，又或者有时候需要动态载入来减少打包后的二进制文件的大小。这些时候，与静态资源不同的是，_你需要手动指定图片的尺寸_。同时我们强烈建议你使用 https 以满足 iOS [App Transport Security](publishing-to-app-store.md#1-enable-app-transport-security) 的要求。
+很多要在 App 中显示的图片并不能在编译的时候获得，又或者有时候需要动态载入来减少打包后的二进制文件的大小。这些时候，与静态资源不同的是，_你需要手动指定图片的尺寸_。同时我们强烈建议你使用 https 以满足 iOS [App Transport Security](https://developer.apple.com/documentation/security/preventing_insecure_network_connections) 的要求。
 
 ```tsx
 // 正确

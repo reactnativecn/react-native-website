@@ -61,7 +61,7 @@ sudo chown -R $USER /usr/local/lib/node_modules
 
 ### 缺少 React 依赖库
 
-如果你是手动将 React Native 添加到项目中的，请确保包含了所有使用到的相关依赖，如 `RCTText.xcodeproj`、`RCTImage.xcodeproj` 等。接下来，这些依赖生成的二进制文件需要链接到你的应用二进制文件。请使用 Xcode 项目设置中的 `Linked Frameworks and Binaries` 部分。更详细的步骤请参阅[链接原生库](linking-libraries-ios.md#content)。
+如果你是手动将 React Native 添加到项目中的，请确保包含了所有使用到的相关依赖，如 `RCTText.xcodeproj`、`RCTImage.xcodeproj` 等。接下来，这些依赖生成的二进制文件需要链接到你的应用二进制文件。请使用 Xcode 项目设置中的 `Linked Frameworks and Binaries` 部分。更详细的步骤请参阅[链接原生库](linking-libraries-ios.md)。
 
 如果你使用 CocoaPods，请确认在 `Podfile` 中添加了 React 及相关子规范（subspecs）。例如，如果你使用了 `<Text />`、`<Image />` 和 `fetch()` API，需要在 `Podfile` 中添加以下内容：
 

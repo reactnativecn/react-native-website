@@ -149,7 +149,7 @@ export default App;
 
 下面是一个更复杂的、可选择的例子。
 
-- 通过给`FlatList`传递`extraData={selectedId}`，我们确保当状态变化时`FlatList`本身会重新渲染。如果不设置此属性，`FlatList`不会知道需要重新渲染任何项目，因为它是一个`PureComponent`，属性比较不会显示任何变化。
+- 向`FlatList`传递`extraData={selectedId}`可以确保当`selectedId`变化时`FlatList`会重新渲染。由于`FlatList`实现了`PureComponent`，它只在 props 发生变化时才会重新渲染。虽然本示例中的`renderItem`因内联定义而每次渲染都会重新创建，但当`renderItem`的引用稳定时（例如被`memo`包裹或在组件外部定义），传递`extraData`就变得至关重要，这样才能让`FlatList`知道某个外部依赖已经更新。
 - `keyExtractor`告诉列表使用`id`作为 React key，而不是默认的`key`属性。
 
 <Tabs groupId="language" queryString defaultValue={constants.defaultSnackLanguage} values={constants.snackLanguages}>
