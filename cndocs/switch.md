@@ -116,7 +116,7 @@ export default App;
 
 关闭状态时的边框颜色(iOS)或背景颜色(Android)。
 
-_iOS_: 当开关值为 `false` 时，轨道会收缩到边框内。如果你想改变收缩后轨道露出的背景颜色，请使用 [`ios_backgroundColor`](switch.md#ios_backgroundColor)。
+_iOS_: 当开关值为 `false` 时，轨道会收缩到边框内。如果你想改变收缩后轨道露出的背景颜色，请使用 [`ios_backgroundColor`](switch.md#ios_backgroundcolor-ios)。
 
 | Type                                                         |
 | ------------------------------------------------------------ |

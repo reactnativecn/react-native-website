@@ -248,7 +248,14 @@ React Native 的初始化与 iOS 应用的其他部分无关。
 
 React Native 可以通过一个名为 `RCTReactNativeFactory` 的类来初始化，该类负责处理 React Native 的生命周期。
 
-一旦类被初始化，您可以启动一个 React Native 视图，提供一个 `UIWindow` 对象，或者您可以要求工厂生成一个 `UIView`，您可以在任何 `UIViewController` 中加载它。
+:::note[`RCTAppDelegate` 已废弃]
+`RCTAppDelegate` 已被废弃，并将在未来版本的 React Native 中移除。新应用应通过应用自有的 `SceneDelegate` 进行引导启动（参见[使用 SceneDelegate 引导启动](#6-使用-scenedelegate-引导启动)）。现有继承 `RCTAppDelegate` 的应用应直接迁移到 `RCTReactNativeFactory`。
+:::
+
+一旦类被初始化，您可以：
+
+- 在 `SceneDelegate` 中引导启动整个应用（参见[使用 SceneDelegate 引导启动](#6-使用-scenedelegate-引导启动)），或者
+- 让工厂生成一个 `UIView`，并在任意 `UIViewController` 中加载它（即下述做法）。
 
 在以下示例中，我们将创建一个可以加载 React Native 视图的 ViewController。
 
@@ -268,7 +275,7 @@ React Native 可以通过一个名为 `RCTReactNativeFactory` 的类来初始化
 +#import <React/RCTBundleURLProvider.h>
 +#import <RCTReactNativeFactory.h>
 +#import <RCTDefaultReactNativeFactoryDelegate.h>
-+#import <RCTAppDependencyProvider.h>
++#import <ReactAppDependencyProvider/RCTAppDependencyProvider.h>
 
 
 @interface ReactViewController ()
@@ -461,7 +468,226 @@ class ViewController: UIViewController {
 
 ![Disable UIViewControllerBasedStatusBarAppearance](/docs/assets/disable-UIViewControllerBasedStatusBarAppearance.png)
 
-## 6. 测试您的集成
+## 6. 使用 SceneDelegate 引导启动
+
+:::info[需要 React Native 0.88 或更高版本]
+本节介绍的 `SceneDelegate` API 需要 React Native 0.88 或更高版本。更早的版本不提供 `startReactNative` 的 `connectionOptions:` 重载，也不提供 `RCTLinkingManager` 上的 `SceneDelegate` 方法。
+:::
+
+如果您的应用使用 UIScene 生命周期（近期版本的 Xcode 创建的默认方式），React Native 的引导启动就在应用自有的 `SceneDelegate` 中完成。`AppDelegate` 仍然是进程入口（`@main`），并负责处理 `UIApplication` 级别的回调，例如推送通知。
+
+使用 SceneDelegate 引导启动 React Native 的步骤如下：
+
+1. 在 `Info.plist` 中声明 `UIApplicationSceneManifest`，并指向您的 `SceneDelegate` 类。
+2. 保持 `UIApplicationSupportsMultipleScenes` 为 `false`。React Native 目前还不支持多窗口 / 多实例应用。
+3. 继承 `RCTDefaultReactNativeFactoryDelegate`，遵循 `UIWindowSceneDelegate`，创建 `RCTReactNativeFactory`，并在 `scene:willConnectToSession:options:` 中调用 `startReactNativeWithModuleName:inWindow:connectionOptions:`。
+4. 将 `SceneDelegate` 中的深度链接转发给 `RCTLinkingManager`。
+5. 将推送通知以及其他 `UIApplicationDelegate` 回调保留在 `AppDelegate` 中。
+
+### Info.plist
+
+参照社区模板添加 scene manifest。至少需要包含：
+
+```xml
+<key>UIApplicationSceneManifest</key>
+<dict>
+  <key>UIApplicationSupportsMultipleScenes</key>
+  <false/>
+  <key>UISceneConfigurations</key>
+  <dict>
+    <key>UIWindowSceneSessionRoleApplication</key>
+    <array>
+      <dict>
+        <key>UISceneConfigurationName</key>
+        <string>Default Configuration</string>
+        <key>UISceneDelegateClassName</key>
+        <string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+      </dict>
+    </array>
+  </dict>
+</dict>
+```
+
+对于 Objective-C 应用，请直接使用您的 SceneDelegate 类名，而不是 `$(PRODUCT_MODULE_NAME).SceneDelegate`。
+
+### 创建 SceneDelegate
+
+<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
+<TabItem value="objc">
+
+创建 `SceneDelegate.h`：
+
+```objc title="SceneDelegate.h"
+#import <RCTDefaultReactNativeFactoryDelegate.h>
+#import <RCTReactNativeFactory.h>
+#import <UIKit/UIKit.h>
+
+@interface SceneDelegate : RCTDefaultReactNativeFactoryDelegate <UIWindowSceneDelegate>
+
+@property (nonatomic, strong, nullable) UIWindow *window;
+@property (nonatomic, strong, nullable) RCTReactNativeFactory *reactNativeFactory;
+
+@end
+```
+
+创建 `SceneDelegate.m`：
+
+```objc title="SceneDelegate.m"
+#import "SceneDelegate.h"
+
+#import <React/RCTBundleURLProvider.h>
+#import <React/RCTLinkingManager.h>
+#import <ReactAppDependencyProvider/RCTAppDependencyProvider.h>
+
+@implementation SceneDelegate
+
+- (void)scene:(UIScene *)scene
+    willConnectToSession:(UISceneSession *)session
+                 options:(UISceneConnectionOptions *)connectionOptions
+{
+  if (![scene isKindOfClass:[UIWindowScene class]]) {
+    return;
+  }
+
+  self.dependencyProvider = [RCTAppDependencyProvider new];
+  self.reactNativeFactory = [[RCTReactNativeFactory alloc] initWithDelegate:self];
+
+  UIWindowScene *windowScene = (UIWindowScene *)scene;
+  self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
+
+  [self.reactNativeFactory startReactNativeWithModuleName:@"HelloWorld"
+                                                 inWindow:self.window
+                                        connectionOptions:connectionOptions];
+}
+
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts
+{
+  [RCTLinkingManager scene:scene openURLContexts:URLContexts];
+}
+
+- (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity
+{
+  [RCTLinkingManager scene:scene continueUserActivity:userActivity];
+}
+
+- (NSURL *)bundleURL
+{
+#if DEBUG
+  return [RCTBundleURLProvider.sharedSettings jsBundleURLForBundleRoot:@"index"];
+#else
+  return [NSBundle.mainBundle URLForResource:@"main" withExtension:@"jsbundle"];
+#endif
+}
+
+@end
+```
+
+</TabItem>
+<TabItem value="swift">
+
+创建 `SceneDelegate.swift`：
+
+```swift title="SceneDelegate.swift"
+import React
+import React_RCTAppDelegate
+import ReactAppDependencyProvider
+import UIKit
+
+class SceneDelegate: RCTDefaultReactNativeFactoryDelegate, UIWindowSceneDelegate {
+  var window: UIWindow?
+  var reactNativeFactory: RCTReactNativeFactory?
+
+  func scene(
+    _ scene: UIScene,
+    willConnectTo session: UISceneSession,
+    options connectionOptions: UIScene.ConnectionOptions
+  ) {
+    guard let windowScene = scene as? UIWindowScene else {
+      return
+    }
+
+    dependencyProvider = RCTAppDependencyProvider()
+    reactNativeFactory = RCTReactNativeFactory(delegate: self)
+    window = UIWindow(windowScene: windowScene)
+
+    reactNativeFactory?.startReactNative(
+      withModuleName: "HelloWorld",
+      in: window,
+      connectionOptions: connectionOptions
+    )
+  }
+
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    RCTLinkingManager.scene(scene, openURLContexts: URLContexts)
+  }
+
+  func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+    RCTLinkingManager.scene(scene, continue: userActivity)
+  }
+
+  override func bundleURL() -> URL? {
+    #if DEBUG
+    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
+    #else
+    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+    #endif
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### 应用代理的职责
+
+`AppDelegate` 可以保持精简，只处理属于 application 对象的回调，例如推送通知：
+
+<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
+<TabItem value="objc">
+
+```objc title="AppDelegate.m"
+#import "AppDelegate.h"
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  return YES;
+}
+
+@end
+```
+
+</TabItem>
+<TabItem value="swift">
+
+```swift title="AppDelegate.swift"
+import UIKit
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+  ) -> Bool {
+    true
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+React Native 目前每个进程只支持一个实例，因此不支持多个 scene。请保持 `UIApplicationSupportsMultipleScenes` 为 `false`。
+:::
+
+:::tip[`reactNativeFactory` 字段]
+请把 `RCTReactNativeFactory` 保存在 `SceneDelegate` 的属性中，使其在 scene 的整个生命周期内都被持有。如果只保存在局部变量中，`scene:willConnectToSession:options:` 一返回它就会被释放，React Native 也会随之销毁。
+:::
+
+## 7. 测试您的集成
 
 您已经完成了将 React Native 与您的应用程序集成所需的所有基本步骤。现在我们将启动 [Metro bundler](https://metrobundler.dev/) 来构建您的 TypeScript 应用程序代码。Metro 的 HTTP 服务器从您的开发环境共享 bundle 到模拟器或设备。这允许 [热重载](https://reactnative.dev/blog/2016/03/24/introducing-hot-reloading)。
 
@@ -528,7 +754,7 @@ REACT_NATIVE_XCODE="$REACT_NATIVE_PATH/scripts/react-native-xcode.sh"
 
 现在，如果您为发布版本构建您的应用，它将按预期工作。
 
-## 7. 将初始属性传递给 React Native 视图
+## 8. 将初始属性传递给 React Native 视图
 
 在某些情况下，您可能希望从原生应用传递一些信息到 JavaScript。例如，您可能希望传递当前登录用户的用户 ID 和令牌，以便从数据库中检索信息。
 
@@ -605,6 +831,45 @@ export default App;
 这些更改将告诉 React Native 您的 App 组件现在接受一些属性。`RCTreactNativeFactory` 将负责在组件渲染时将它们传递给它。
 
 ### 更新原生代码以将初始属性传递给 JavaScript
+
+#### SceneDelegate 引导启动
+
+<Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
+<TabItem value="objc">
+
+修改 `SceneDelegate.m`，在启动 React Native 时传入初始属性：
+
+```diff title="SceneDelegate.m"
+  [self.reactNativeFactory startReactNativeWithModuleName:@"HelloWorld"
+                                                 inWindow:self.window
++                                       initialProperties:@{
++                                         @"userID": @"12345678",
++                                         @"token": @"secretToken"
++                                       }
+                                        connectionOptions:connectionOptions];
+```
+
+</TabItem>
+<TabItem value="swift">
+
+修改 `SceneDelegate.swift`，在启动 React Native 时传入初始属性：
+
+```diff title="SceneDelegate.swift"
+    reactNativeFactory?.startReactNative(
+      withModuleName: "HelloWorld",
+      in: window,
++     initialProperties: [
++       "userID": "12345678",
++       "token": "secretToken"
++     ],
+      connectionOptions: connectionOptions
+    )
+```
+
+</TabItem>
+</Tabs>
+
+#### 嵌入式视图控制器
 
 <Tabs groupId="ios-language" queryString defaultValue={constants.defaultAppleLanguage} values={constants.appleLanguages}>
 <TabItem value="objc">

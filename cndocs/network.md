@@ -202,7 +202,7 @@ export default App;
 </Tabs>
 
 :::info
-默认情况下，iOS 9.0 或更高版本会强制执行 App Transport Security (ATS)。ATS 要求所有 HTTP 连接使用 HTTPS。如果你需要从明文 URL（以`http`开头的 URL）获取数据，你需要先[添加 ATS 例外](integration-with-existing-apps.md#test-your-integration)。如果你提前知道需要访问哪些域名，只为这些域名添加例外会更安全；如果域名在运行时才知道，你可以[完全禁用 ATS](publishing-to-app-store.md#1-enable-app-transport-security)。但请注意，从 2017 年 1 月起，[Apple App Store 审核将要求对禁用 ATS 提供合理理由](https://forums.developer.apple.com/thread/48979)。更多信息请参阅 [Apple 文档](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW33)。
+默认情况下，iOS 会强制执行 App Transport Security (ATS)，要求所有 HTTP 连接都使用 HTTPS。如果你需要从明文 URL（以`http`开头的 URL）获取数据，必须在 `Info.plist` 文件中通过 [`NSAppTransportSecurity`](https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity) 配置 ATS 例外。建议使用 `NSExceptionDomains` 只为特定域名添加例外，而不是全局禁用 ATS（`NSAllowsArbitraryLoads`），因为 Apple App Store 审核要求对禁用 ATS 提供合理理由。更多信息请参阅 Apple 关于[防止不安全的网络连接](https://developer.apple.com/documentation/security/preventing_insecure_network_connections)的文档。
 :::
 
 :::tip

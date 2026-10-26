@@ -144,7 +144,7 @@ iOS / iPadOS 提供“反转颜色”辅助功能，帮助色弱、低视力等�
 - **image** 图片（可与 button/link 组合）。
 - **imagebutton** 图片按钮。
 - **keyboardkey** 键盘按键。
-- **link** 链接。
+- **link** 链接。特指在浏览器中打开外部 URL 或网页的交互元素。如果是应用内的页面跳转或操作，请改用 `button`。
 - **menu** 菜单。
 - **menubar** 菜单栏容器。
 - **menuitem** 菜单项。
@@ -476,7 +476,7 @@ large content viewer 显示时使用的标题文本。
 - **grid** 与 ScrollView / VirtualizedList / FlatList / SectionList 结合表示网格，并为 Android GridView 增加进出网格播报。
 - **heading** 内容区标题。
 - **img** 图片（可与按钮或链接组合）。
-- **link** 链接。
+- **link** 链接。特指在浏览器中打开外部 URL 或网页的交互元素。如果是应用内的页面跳转或操作，请改用 `button`。
 - **list** 列表。
 - **listitem** 列表项。
 - **menu** 菜单。
