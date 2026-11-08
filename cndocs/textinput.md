@@ -235,20 +235,6 @@ The following values work across platforms:
 
 ---
 
-### 🗑️ `blurOnSubmit`
-
-:::warning[Deprecated]
-`submitBehavior` 现在取代了 `blurOnSubmit`，并会覆盖由 `blurOnSubmit` 定义的行为。详见 [submitBehavior](textinput#submitbehavior)。
-:::
-
-如果为 `true`，文本框会在提交的时候失焦。对于单行输入框默认值为 `true`，多行则为 `false`。注意：对于多行输入框来说，如果将 `blurOnSubmit` 设为 `true`，按下回车键时会失去焦点并触发 `onSubmitEditing` 事件，而不会在输入框中插入换行。
-
-| Type |
-| ---- |
-| bool |
-
----
-
 ### `caretHidden`
 
 如果为 true，则隐藏光标。默认值为 false。
