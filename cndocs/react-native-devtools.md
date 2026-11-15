@@ -172,6 +172,15 @@ React Profiler 面板允许你录制性能分析报告，以了解组件渲染�
 
 更多信息请参阅[原始的 2018 年指南](https://legacy.reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html#reading-performance-data)（注意部分内容可能已过时）。
 
+### React Suspense <div className="label primary">自 0.90 起</div>
+
+![在 React Suspense 面板中选择一个 Suspense 边界，旁边是设备](/docs/assets/debugging-rndt-react-suspense.jpg)
+
+React Suspense 面板允许你检查应用中的 [`<Suspense>`](https://react.dev/reference/react/Suspense) 边界，并查看导致每个边界挂起（suspend）的原因。
+
+- 边界地图会按边界在屏幕上的实际布局逐一展示，其下方的时间轴会依次展示它们显示内容的顺序。
+- 选择某个边界即可查看是什么导致它挂起，例如 `React.lazy()` 组件或通过 `use()` 读取的 promise。
+
 ## 重新连接 DevTools
 
 有时 DevTools 可能会与目标设备断开连接。这可能发生在以下情况下：

@@ -86,16 +86,6 @@ export default App;
 
 ---
 
-### `hasTVPreferredFocus` <div className="label ios">iOS</div>
-
-_(仅 Apple TV)_ TV 首选焦点（参见 View 组件文档）。
-
-| Type |
-| ---- |
-| bool |
-
----
-
 ### `nextFocusDown` <div className="label android">Android</div>
 
 TV 下一个向下焦点（参见 View 组件文档）。

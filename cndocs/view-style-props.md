@@ -448,7 +448,7 @@ export default App;
 
 ### `elevation` <div className="label android">Android</div>
 
-使用 Android 底层的 [elevation API](https://developer.android.com/training/material/shadows-clipping.html#Elevation) 设置视图的高度。这会为元素添加投影并影响重叠视图的 z 轴顺序。仅支持 Android 5.0+，在更早版本上无效。
+使用 Android 底层的 [elevation API](https://developer.android.com/develop/ui/views/theming/shadows-clipping#Elevation) 设置视图的高度。这会为元素添加投影并影响重叠视图的 z 轴顺序。仅支持 Android 5.0+，在更早版本上无效。
 
 | 类型   |
 | ------ |

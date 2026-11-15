@@ -8,7 +8,7 @@ import ThemedImage from '@theme/ThemedImage';
 
 ### Node & Watchman
 
-我们推荐使用[Homebrew](http://brew.sh/)来安装 Node 和 Watchman。在命令行中执行下列命令安装（如安装较慢可以尝试阿里云的[镜像源](https://developer.aliyun.com/mirror/homebrew)）：
+我们推荐使用[Homebrew](https://brew.sh/)来安装 Node 和 Watchman。在命令行中执行下列命令安装（如安装较慢可以尝试阿里云的[镜像源](https://developer.aliyun.com/mirror/homebrew)）：
 
 ```
 brew install node@22
@@ -43,7 +43,7 @@ npm install -g yarn
 
 ### Xcode
 
-React Native 目前需要[Xcode](https://developer.apple.com/xcode/downloads/) 14.1 或更高版本（建议选择尽量新的版本）。你可以通过 [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)或是到[Apple 开发者官网](https://developer.apple.com/xcode/downloads/)上下载。这一步骤会同时安装 Xcode IDE、Xcode 的命令行工具和 iOS 模拟器。
+React Native 目前需要[Xcode](https://developer.apple.com/xcode/downloads/) 14.1 或更高版本（建议选择尽量新的版本）。你可以通过 [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835)或是到[Apple 开发者官网](https://developer.apple.com/xcode/downloads/)上下载。这一步骤会同时安装 Xcode IDE、Xcode 的命令行工具和 iOS 模拟器。
 
 #### Xcode 的命令行工具
 

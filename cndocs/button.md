@@ -151,7 +151,7 @@ export default App;
 
 ### `accessibilityLanguage` <div className="label ios">iOS</div>
 
-指定读屏器在用户与该元素交互时应使用的语言。该值应遵循 [BCP 47 规范](https://www.rfc-editor.org/info/bcp47)。
+指定读屏器在用户与该元素交互时应使用的语言。该值应遵循 [BCP 47 规范](https://www.rfc-editor.org/info/bcp47/)。
 
 更多信息请参阅 [iOS `accessibilityLanguage` 文档](https://developer.apple.com/documentation/objectivec/nsobject/1615192-accessibilitylanguage)。
 
@@ -212,16 +212,6 @@ export function ColorDefaults() {
 ### `disabled`
 
 如果为 `true`，则禁用此组件的所有交互。
-
-| Type | Default |
-| ---- | ------- |
-| bool | `false` |
-
----
-
-### `hasTVPreferredFocus` <div className="label tv">TV</div>
-
-TV 平台上的首选焦点。
 
 | Type | Default |
 | ---- | ------- |

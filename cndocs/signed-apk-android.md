@@ -5,7 +5,7 @@ title: 发布到 Google Play Store
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import constants from '@site/core/TabsConstants';
 
-Android 要求所有应用都有一个数字签名才会被允许安装在用户手机上。要通过 [Google Play 商店](https://play.google.com/store)发布你的 Android 应用，需要使用一个发布密钥对其进行签名，此后所有的更新也需要使用同一个密钥。自 2017 年起，借助 [Google Play 应用签名](https://developer.android.com/studio/publish/app-signing#app-signing-google-play)功能，Google Play 可以自动管理签名发布。但在将应用二进制文件上传到 Google Play 之前，仍需要使用上传密钥进行签名。Android 开发者官网上的[应用签名](https://developer.android.com/tools/publishing/app-signing.html)文档描述了签名的细节。本指南旨在提供一个简化的签名和打包流程，以及打包 JavaScript 代码所需的步骤。
+Android 要求所有应用都有一个数字签名才会被允许安装在用户手机上。要通过 [Google Play 商店](https://play.google.com/store)发布你的 Android 应用，需要使用一个发布密钥对其进行签名，此后所有的更新也需要使用同一个密钥。自 2017 年起，借助 [Google Play 应用签名](https://developer.android.com/studio/publish/app-signing#app-signing-google-play)功能，Google Play 可以自动管理签名发布。但在将应用二进制文件上传到 Google Play 之前，仍需要使用上传密钥进行签名。Android 开发者官网上的[应用签名](https://developer.android.com/studio/publish/app-signing)文档描述了签名的细节。本指南旨在提供一个简化的签名和打包流程，以及打包 JavaScript 代码所需的步骤。
 
 :::info
 如果你使用的是 Expo，请阅读 Expo 的[发布到应用商店](https://docs.expo.dev/distribution/app-stores/)指南来构建和提交应用到 Google Play 商店。此指南适用于任何 React Native 应用，可以自动化部署流程。

@@ -146,16 +146,6 @@ export default TouchableHighlightExample;
 
 ---
 
-### `hasTVPreferredFocus` <div className="label ios">iOS</div>
-
-_(Apple TV 专用)_ 是否允许在 Apple TV 上获取焦点。(请参考 [View](view.md) 组件的文档).
-
-| 类型 |
-| ---- |
-| bool |
-
----
-
 ### `nextFocusDown` <div className="label android">Android</div>
 
 TV 平台上向下选择焦点 (请参考 [View](view.md) 组件的文档).

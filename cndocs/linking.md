@@ -21,10 +21,10 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 
 | Scheme           | 说明                                         | iOS | Android |
 | ---------------- | -------------------------------------------- | --- | ------- |
-| `mailto`         | 打开 mail app, 例如: mailto: support@expo.io | ✅  | ✅      |
+| `mailto`         | 打开 mail app, 例如: mailto: hello@world.dev | ✅  | ✅      |
 | `tel`            | 打开 phone app, 例如: tel:+123456789         | ✅  | ✅      |
 | `sms`            | 打开 SMS app, 例如: sms:+123456789           | ✅  | ✅      |
-| `https` / `http` | 打开 web browser app, 例如: https://expo.io  | ✅  | ✅      |
+| `https` / `http` | 打开 web browser app, 例如: https://expo.dev | ✅  | ✅      |
 
 ### 基本用法
 
@@ -43,7 +43,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 <TabItem value="android">
 
 :::info
-要了解更多如何在 Android 上支持深度链接的说明，请参阅[Enabling Deep Links for App Content - Add Intent Filters for Your Deep Links](https://developer.android.com/training/app-indexing/deep-linking.html#adding-filters)。
+要了解更多如何在 Android 上支持深度链接的说明，请参阅[Create Deep Links to App Content - Add intent filters for incoming links](https://developer.android.com/training/app-links/create-deeplinks#adding-filters)。
 :::
 
 如果要在现有的 MainActivity 中监听传入的 intent，那么需要在`AndroidManifest.xml`中将 MainActivity 的`launchMode`设置为`singleTask`。相关解释可参考[`<activity>`](https://developer.android.com/guide/topics/manifest/activity-element.html)文档。
@@ -711,7 +711,7 @@ static getInitialURL(): Promise<string | null>;
 If the app launch was triggered by an app link, it will give the link url, otherwise it will give `null`.
 
 :::info
-要支持 Android 上的深度链接，请参考 https://developer.android.com/training/app-indexing/deep-linking.html#handling-intents。
+要支持 Android 上的深度链接，请参阅 [Create Deep Links to App Content - Read data from incoming intents](https://developer.android.com/training/app-links/create-deeplinks#handling-intents)。
 :::
 
 :::tip

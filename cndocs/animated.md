@@ -254,7 +254,7 @@ static spring(value, config): CompositeAnimation;
 
 注意：`bounciness/speed`、`tension/friction`、`stiffness/damping/mass` 三组参数只能选一组定义，不能混用。
 
-`friction/tension` 或 `bounciness/speed` 与 [`Facebook Pop`](https://github.com/facebook/pop)、[Rebound](https://github.com/facebookarchive/rebound) 和 [Origami](https://origami.design/) 的弹簧模型一致。
+`friction/tension` 或 `bounciness/speed` 与 [`Facebook Pop`](https://github.com/facebookarchive/pop)、[Rebound](https://github.com/facebookarchive/rebound) 和 [Origami](https://origami.design/) 的弹簧模型一致。
 
 - `friction`：控制“弹性”/过冲。默认 `7`。
 - `tension`：控制速度。默认 `40`。
