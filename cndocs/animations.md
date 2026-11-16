@@ -557,7 +557,7 @@ Animated.timing(this.state.animatedValue, {
 </Animated.ScrollView>
 ```
 
-您可以通过运行 [RNTester 应用程序](https://github.com/react/react-native/blob/main/packages/rn-tester/) 查看本机驱动程序的运行情况，然后加载本机动画示例。您还可以查看[源代码](https://github.com/react/react-native/blob/main/packages/rn-tester/js/examples/NativeAnimation/NativeAnimationsExample.js)以了解这些示例是如何生成的。
+您可以通过运行 [RNTester 应用程序](https://github.com/react/react-native/tree/main/packages/rn-tester) 查看本机驱动程序的运行情况，然后加载本机动画示例。您还可以查看[源代码](https://github.com/react/react-native/blob/main/packages/rn-tester/js/examples/NativeAnimation/NativeAnimationsExample.js)以了解这些示例是如何生成的。
 
 #### 注意事项
 
@@ -565,7 +565,7 @@ Animated.timing(this.state.animatedValue, {
 
 当动画运行时，它可以阻止“VirtualizedList”组件渲染更多行。如果您需要在用户滚动列表时运行长动画或循环动画，您可以在动画配置中使用“isInteraction: false”来防止此问题。
 
-###记住
+### 记住
 
 在使用“rotateY”、“rotateX”等变换样式时，确保变换样式“perspective”就位。目前，如果没有它，某些动画可能无法在 Android 上呈现。下面的例子。
 

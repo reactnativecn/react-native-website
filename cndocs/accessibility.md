@@ -85,7 +85,7 @@ Android 与 iOS 在无障碍实现方式上有差异，因此 React Native 的�
 
 <div className="label ios basic">iOS</div>
 
-如果用户在设备 VoiceOver 设置中启用了提示，VoiceOver 会在 label 之后朗读 hint。更多建议请见 [iOS Developer Docs](https://developer.apple.com/documentation/objectivec/nsobject/1615093-accessibilityhint)。
+如果用户在设备 VoiceOver 设置中启用了提示，VoiceOver 会在 label 之后朗读 hint。更多建议请见 [iOS Developer Docs](https://developer.apple.com/documentation/objectivec/nsobject-swift.class/accessibilityhint)。
 
 <div className="label android basic">Android</div>
 
@@ -93,7 +93,7 @@ TalkBack 会在 label 后朗读 hint；当前 Android 不支持关闭 hint。
 
 ### `accessibilityLanguage` <div className="label ios">iOS</div>
 
-通过 `accessibilityLanguage` 指定读屏器朗读 **label**、**value**、**hint** 所使用的语言。值必须符合 [BCP 47 规范](https://www.rfc-editor.org/info/bcp47)。
+通过 `accessibilityLanguage` 指定读屏器朗读 **label**、**value**、**hint** 所使用的语言。值必须符合 [BCP 47 规范](https://www.rfc-editor.org/info/bcp47/)。
 
 ```tsx
 <View
@@ -601,4 +601,4 @@ adb shell settings put secure enabled_accessibility_services com.google.android.
 
 ## 更多资源
 
-- [Making React Native Apps Accessible](https://engineering.fb.com/ios/making-react-native-apps-accessible/)
+- [Making React Native Apps Accessible](https://engineering.fb.com/2015/11/23/android/making-react-native-apps-accessible/)

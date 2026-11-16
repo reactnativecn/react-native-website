@@ -391,7 +391,7 @@ $ adb devices
 ![](/docs/assets/RunningOnDeviceReady.png)
 
 :::note
-如果你遇到任何问题，请查看 Apple 的[在设备上启动应用](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/LaunchingYourApponDevices/LaunchingYourApponDevices.html#//apple_ref/doc/uid/TP40012582-CH27-SW4)文档。
+如果你遇到任何问题，请查看 Apple 的[在设备上启动应用](https://help.apple.com/xcode/mac/current/#/dev60b6fbbc7)文档。
 :::
 
 <h2>从设备上访问开发服务器</h2>

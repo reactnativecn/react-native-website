@@ -216,7 +216,7 @@ React Native 实际上还是有一部分样式继承的实现，不过仅限于�
 
 ### `accessibilityLanguage` <div className="label ios">iOS</div>
 
-指示当用户与元素交互时屏幕阅读器应该使用哪种语言。它应该遵循[BCP 47 规范](https://www.rfc-editor.org/info/bcp47)。
+指示当用户与元素交互时屏幕阅读器应该使用哪种语言。它应该遵循[BCP 47 规范](https://www.rfc-editor.org/info/bcp47/)。
 
 更多信息请参阅[iOS `accessibilityLanguage`文档](https://developer.apple.com/documentation/objectivec/nsobject/1615192-accessibilitylanguage)。
 

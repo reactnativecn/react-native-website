@@ -9,7 +9,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 
 ## 使用 Fetch
 
-React Native 提供了和 web 标准一致的[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)，用于满足开发者访问网络的需求。如果你之前使用过`XMLHttpRequest`(即俗称的 ajax)或是其他的网络 API，那么 Fetch 用起来将会相当容易上手。这篇文档只会列出 Fetch 的基本用法，并不会讲述太多细节，你可以使用你喜欢的搜索引擎去搜索`fetch api`关键字以了解更多信息。
+React Native 提供了和 web 标准一致的[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)，用于满足开发者访问网络的需求。如果你之前使用过`XMLHttpRequest`(即俗称的 ajax)或是其他的网络 API，那么 Fetch 用起来将会相当容易上手。这篇文档只会列出 Fetch 的基本用法，并不会讲述太多细节，你可以参阅 MDN 上关于 [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 的指南以了解更多信息。
 
 ### 发起请求
 
@@ -268,7 +268,6 @@ ws.onclose = e => {
 目前，以下选项在 `fetch` 中无法正常工作：
 
 - `redirect:manual`
-- `credentials:omit`
 
 * 在 Android 上重复使用相同名称的标头将导致仅存在最新的标头。您可以在此处找到一个临时解决方案：https://github.com/react/react-native/issues/18837#issuecomment-398779994。
 * 基于 cookie 的身份验证目前不稳定。您可以在此处查看引发的一些问题：https://github.com/react/react-native/issues/23185

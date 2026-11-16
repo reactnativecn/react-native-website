@@ -2,7 +2,7 @@
 id: testing-overview
 title: Testing
 author: Vojtech Novak
-authorURL: 'https://twitter.com/vonovak'
+authorURL: 'https://x.com/vonovak'
 description: This guide introduces React Native developers to the key concepts behind testing, how to write good tests, and what kinds of tests you can incorporate into your workflow.
 ---
 
@@ -120,7 +120,7 @@ Jest 从函数到模块级别都支持[模拟](https://jestjs.io/docs/en/mock-fu
 - 使用外部系统
 - 对其他应用（如天气服务 API）进行网络调用
 - 进行任何类型的文件或数据库 <abbr title="Input/Output">I/O</abbr> 操作
-:::
+  :::
 
 <img src="/docs/assets/p_tests-integration.svg" alt=" " />
 
@@ -137,8 +137,8 @@ React 组件负责渲染你的应用，用户将直接与它们交互。即使�
 
 有几个库可以帮助你进行这些测试：
 
-- React 的 [Test Renderer](https://reactjs.org/docs/test-renderer.html)，与核心一起开发，提供了一个 React 渲染器，可以用来将 React 组件渲染为纯 JavaScript 对象，而不依赖于 DOM 或原生移动环境。
 - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/) 建立在 React 的测试渲染器之上，并添加了本段中描述的 `fireEvent` 和 `query` API。
+- [已废弃] React 的 [Test Renderer](https://react.dev/blog/2024/04/25/react-19-upgrade-guide#deprecated-react-test-renderer)，与核心一起开发，提供了一个 React 渲染器，可以用来将 React 组件渲染为纯 JavaScript 对象，而不依赖于 DOM 或原生移动环境。
 
 :::warning
 组件测试仅在 Node.js 环境中运行。它们不考虑任何 iOS、Android 或其他平台代码，这些代码支持 React Native 组件。因此，它们不能给你 100% 的信心确保一切正常工作。如果 iOS 或 Android 代码中存在错误，它们将无法找到。
@@ -265,7 +265,7 @@ E2E 测试给你最高的信心，部分应用正在工作。权衡包括：
 
 尝试用 E2E 测试覆盖应用的关键部分：认证流程、核心功能、支付等。对于应用的非关键部分，使用更快的 JS 测试。你添加的测试越多，你的信心就越高，但同时，你维护和运行它们的成本也越高。考虑权衡，并决定什么最适合你。
 
-有几种 E2E 测试工具可用：在 React Native 社区中，[Detox](https://github.com/wix/detox/) 是一个流行的框架，因为它专为 React Native 应用设计。另一个流行的库是 [Appium](https://appium.io/) 或 [Maestro](https://maestro.mobile.dev/)。
+有几种 E2E 测试工具可用：在 React Native 社区中，[Detox](https://github.com/wix/detox/) 是一个流行的框架，因为它专为 React Native 应用设计。另一个流行的库是 [Appium](https://appium.io/)、[Maestro](https://maestro.mobile.dev/) 或 [e2e](https://github.com/e2e-inc/e2e)。
 
 <img src="/docs/assets/p_tests-e2e.svg" alt=" " />
 
@@ -275,7 +275,7 @@ E2E 测试给你最高的信心，部分应用正在工作。权衡包括：
 
 ### 链接
 
-- [React 测试概述](https://reactjs.org/docs/testing.html)
+- [React 测试概述](https://react.dev/reference/react/act)
 - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/)
 - [Jest docs](https://jestjs.io/docs/en/tutorial-react-native)
 - [Detox](https://github.com/wix/detox/)
@@ -284,4 +284,4 @@ E2E 测试给你最高的信心，部分应用正在工作。权衡包括：
 
 ---
 
-_This guide originally authored and contributed in full by [Vojtech Novak](https://twitter.com/vonovak)._
+_This guide originally authored and contributed in full by [Vojtech Novak](https://x.com/vonovak)._

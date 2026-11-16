@@ -106,16 +106,6 @@ export default App;
 
 ---
 
-### `hasTVPreferredFocus` <div className="label android">Android</div>
-
-TV 优先聚焦（参见 View 组件的文档）。
-
-| Type |
-| ---- |
-| bool |
-
----
-
 ### `nextFocusDown` <div className="label android">Android</div>
 
 TV 下一个向下聚焦（参见 View 组件的文档）。

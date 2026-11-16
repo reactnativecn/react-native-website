@@ -18,21 +18,21 @@ import {Appearance} from 'react-native';
 <TabItem value="web">
 
 :::info
-`Appearance` API 的灵感来自 W3C 的[媒体查询草案](https://drafts.csswg.org/mediaqueries-5/)。配色方案偏好基于 [`prefers-color-scheme` CSS 媒体特性](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) 建模。
+`Appearance` API 的灵感来自 W3C 的[媒体查询草案](https://drafts.csswg.org/mediaqueries-5/)。配色方案偏好基于 [`prefers-color-scheme` CSS 媒体特性](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) 建模。
 :::
 
 </TabItem>
 <TabItem value="android">
 
 :::info
-在 Android 10（API level 29）及更高版本的设备上，配色方案偏好将映射到用户的浅色或[深色主题](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme)偏好。
+在 Android 10（API level 29）及更高版本的设备上，配色方案偏好将映射到用户的浅色或[深色主题](https://developer.android.com/develop/ui/views/theming/darktheme)偏好。
 :::
 
 </TabItem>
 <TabItem value="ios">
 
 :::info
-在 iOS 13 及更高版本的设备上，配色方案偏好将映射到用户的浅色或[深色模式](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/dark-mode/)偏好。
+在 iOS 13 及更高版本的设备上，配色方案偏好将映射到用户的浅色或[深色模式](https://developer.apple.com/design/human-interface-guidelines/dark-mode)偏好。
 :::
 
 :::note

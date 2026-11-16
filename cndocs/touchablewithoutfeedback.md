@@ -120,7 +120,7 @@ export default TouchableWithoutFeedbackExample;
 
 ### `accessibilityLanguage` <div className="label ios">iOS</div>
 
-指示屏幕阅读器在用户与元素交互时应使用的语言。它应遵循 [BCP 47 规范](https://www.rfc-editor.org/info/bcp47)。
+指示屏幕阅读器在用户与元素交互时应使用的语言。它应遵循 [BCP 47 规范](https://www.rfc-editor.org/info/bcp47/)。
 
 更多信息请参阅 [iOS `accessibilityLanguage` 文档](https://developer.apple.com/documentation/objectivec/nsobject/1615192-accessibilitylanguage)。
 
