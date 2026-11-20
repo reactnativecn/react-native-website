@@ -194,7 +194,7 @@ const config: Config = {
     announcementBar: {
       id: '36kai',
       content:
-        '<a href="https://36k.ai/model-plaza?embedded=1" target="_blank" rel="noopener noreferrer">无需代理直连最前沿的 GPT/Claude/Deepseek/GLM/Kimi 等模型</a>，优惠低至一折',
+        '<a href="https://36k.ai/model-plaza?embedded=1" target="_blank" rel="noopener noreferrer">无需代理直连最前沿的 GPT/Claude/Gemini/Deepseek/GLM/Kimi 等模型</a>，优惠低至一折',
       isCloseable: true,
     },
     colorMode: {
