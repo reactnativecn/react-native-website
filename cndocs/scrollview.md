@@ -70,7 +70,7 @@ export default App;
 
 ### `StickyHeaderComponent`
 
-一个 React 组件，用于渲染粘性头部，应与`stickyHeaderIndices`一起使用。如果你的粘性头部使用了自定义变换（例如，当你希望列表具有可动画隐藏的头部时），你可能需要设置此组件。如果未提供组件，则将使用默认的 [`ScrollViewStickyHeader`](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js) 组件。
+一个 React 组件，用于渲染粘性头部，应与 `stickyHeaderIndices` 一起使用。如果你的粘性头部使用了自定义变换（例如，当你希望列表具有可动画隐藏的头部时），你可能需要设置此组件。如果未提供组件，则将使用默认的 [`ScrollViewStickyHeader`](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js) 组件。
 
 | 类型               |
 | ------------------ |
@@ -130,7 +130,7 @@ export default App;
 
 ### `bounces` <div className="label ios">iOS</div>
 
-当值为 true 时，如果内容范围比滚动视图本身大，在到达内容末尾的时候，可以弹性地拉动一截。如果为 false，尾部的所有弹性都会被禁用，即使`alwaysBounce`属性为 true。默认值为 true。
+当值为 true 时，如果内容范围比滚动视图本身大，在到达内容末尾的时候，可以弹性地拉动一截。如果为 false，尾部的所有弹性都会被禁用，即使 `alwaysBounce*` 系列属性为 `true`。默认值为 true。
 
 | 类型 | 默认值 |
 | ---- | ------ |
@@ -170,7 +170,7 @@ export default App;
 
 ### `contentContainerStyle`
 
-这些样式会应用到一个内层的内容容器上，所有的子视图都会包裹在内容容器内。示例：
+应用于内容容器的样式，该容器包裹所有子视图。示例：
 
 ```
 return (
@@ -184,6 +184,13 @@ const styles = StyleSheet.create({
   }
 });
 ```
+
+**与 `contentInsetAdjustmentBehavior` 的交互（iOS）**
+
+通常，`contentContainerStyle` 用于让条目与屏幕边缘或滚动指示器保持间距。当设置了 [`contentInsetAdjustmentBehavior`](#contentinsetadjustmentbehavior-ios) 时（推荐如此），`padding` 的应用方式与普通 `<View>` 略有不同：
+
+- **像素值：** 如果某个边缘适用安全区域内边距，则取 `padding` 与内边距中**较大的那个**。没有内边距的边缘（例如表头下方的滚动视图顶部）会保留完整的 `padding`。
+- **百分比值：** 在垂直于可滚动轴的方向上，`padding` 会被直接使用，取代安全区域内边距；在沿可滚动轴的方向上，安全区域内边距仍然生效，而 `padding` 会在其基础上叠加。
 
 | 类型                           |
 | ------------------------------ |
@@ -203,7 +210,12 @@ const styles = StyleSheet.create({
 
 ### `contentInsetAdjustmentBehavior` <div className="label ios">iOS</div>
 
-本属性用于指定安全区域内边距如何修改滚动视图的内容区域。
+安全区域内边距如何修改滚动视图的内容区域。
+
+- **在沿可滚动轴的方向上**，内边距会变为内容内边距，因此内容会滚动到系统 UI（例如状态栏或主屏幕指示条）下方。
+- **在垂直于可滚动轴的方向上**，除 `'never'` 之外的每个值都会用内边距为内容容器留出空间，因此内容会布局在系统 UI 之外，例如 iPhone Duo 上的侧边栏或横屏时的摄像头挖孔。容器的背景和滚动指示器仍会延伸到屏幕边缘。
+
+在每个边缘上，来自 [`contentContainerStyle`](#contentcontainerstyle) 的 padding 都会计入内边距，因此内容会位于两者中较大的那个位置。
 
 | 类型                                                           | 默认值    |
 | -------------------------------------------------------------- | --------- |
@@ -280,9 +292,9 @@ const styles = StyleSheet.create({
 
 如果值大于 `0`，则会根据当前的滚动方向和位置设置淡出边缘，指示是否有更多内容可显示。
 
-| 类型   | 默认值 |
-| ------ | ------ |
-| number | `0`    |
+| 类型                                               | 默认值 |
+| -------------------------------------------------- | ------ |
+| number<hr />object: `{start: number, end: number}` | `0`    |
 
 ---
 
@@ -435,7 +447,7 @@ _仅 iOS 可用的值_
 
 ### `onScroll`
 
-在滚动的过程中，每帧最多调用一次此回调函数。调用的频率可以用`scrollEventThrottle`属性来控制。事件的构型如下（所有值都是数字）：
+在滚动的过程中，每帧最多调用一次此回调函数。调用的频率可以用`scrollEventThrottle`属性来控制。事件的构型如下（未标明类型的值均为数字）：
 
 ```js
 {
@@ -444,7 +456,11 @@ _仅 iOS 可用的值_
     contentOffset: {x, y},
     contentSize: {height, width},
     layoutMeasurement: {height, width},
-    zoomScale
+    velocity: {x, y},
+    responderIgnoreScroll: boolean,
+    zoomScale,
+    // iOS only
+    targetContentOffset: {x, y}
   }
 }
 ```
@@ -485,7 +501,7 @@ _仅 iOS 可用的值_
 
 ---
 
-### `overScrollMode`
+### `overScrollMode` <div className="label android">Android</div>
 
 覆盖默认的 overScroll 模式
 
@@ -543,11 +559,15 @@ _仅 iOS 可用的值_
 
 ### `removeClippedSubviews`
 
-（实验特性）：当此属性为 true 时，屏幕之外的子视图（子视图的`overflow`样式需要设为`hidden`）会被移除。这个可以提升大列表的滚动性能。
+:::warning
+使用此属性在某些情况下可能导致缺陷（内容缺失）——请自行承担风险。
+:::
 
-| 类型 | 默认值  |
-| ---- | ------- |
-| bool | `false` |
+当为 `true` 时，屏幕之外的子视图会从其原生父视图（native backing superview）中移除。这可以提升大列表的滚动性能。在 Android 上默认值为 `true`。
+
+| 类型    |
+| ------- |
+| boolean |
 
 ---
 
@@ -593,6 +613,16 @@ _仅 iOS 可用的值_
 
 ---
 
+### `scrollsChildToFocus` <div className="label android">Android</div>
+
+当为 `true` 时，ScrollView 会自动滚动，使获得焦点的子视图进入视野。设为 `false` 可禁用此行为，在焦点变化时手动控制滚动位置。
+
+| 类型 | 默认值 |
+| ---- | ------ |
+| bool | `true` |
+
+---
+
 ### `scrollToOverflowEnabled` <div className="label ios">iOS</div>
 
 当值为 true 时，滚动视图可以被编程地滚动超过其内容大小。
@@ -633,7 +663,7 @@ _仅 iOS 可用的值_
 
 ---
 
-### `snapToAlignment` <div className="label ios">iOS</div>
+### `snapToAlignment`
 
 当设置了 `snapToInterval` 时，`snapToAlignment` 会定义停驻点与滚动视图之间的关系。
 
@@ -689,16 +719,6 @@ _仅 iOS 可用的值_
 
 ---
 
-### `StickyHeaderComponent`
-
-一个 React 组件，用于渲染粘性头部，应与 `stickyHeaderIndices` 一起使用。如果粘性头部使用自定义变换，例如，当您希望列表具有可动画化和可隐藏的头部时，可能需要设置此组件。如果未提供组件，将使用默认的 [`ScrollViewStickyHeader`](https://github.com/react/react-native/blob/main/packages/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js) 组件。
-
-| 类型               |
-| ------------------ |
-| component, element |
-
----
-
 ### `stickyHeaderHiddenOnScroll`
 
 当设置为 `true` 时，粘性头部将在向下滚动列表时隐藏，当向上滚动时，它将固定在列表顶部。
@@ -751,11 +771,15 @@ scrollTo(
 );
 ```
 
-滚动到指定的 x, y 偏移处。第三个参数为是否启用平滑滚动动画。
+滚动到指定的 x, y 偏移处，可以立即滚动，也可以使用平滑动画。
 
-示例：
+**示例：**
 
 `scrollTo({x: 0, y: 0, animated: true})`
+
+:::note
+这个略显奇怪的函数签名是历史原因造成的：该函数还接受分开的参数作为选项对象的替代。由于存在歧义（y 在 x 之前），这种做法已被废弃，不应再使用。
+:::
 
 ---
 
