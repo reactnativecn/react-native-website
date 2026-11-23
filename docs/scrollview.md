@@ -219,7 +219,7 @@ How the safe area insets modify the content area of the scroll view.
 - **Along the scrollable axis**, the insets become content insets, so content scrolls under the system UI, such as the status bar or home indicator.
 - **Across the scrollable axis**, every value except `'never'` pads the content container by the insets, so content is laid out clear of the system UI, such as the rail on iPhone Duo or the camera cutout in landscape. The container's background and the scroll indicator still extend to the screen edge.
 
-On every edge, padding from [`contentContainerStyle`](#contentcontainerstyle) counts toward the inset, so content sits at the larger of the two.
+For pixel padding from [`contentContainerStyle`](#contentcontainerstyle), if a safe area inset applies on an edge, the larger value is used. [Percentage padding](#contentcontainerstyle) behaves differently.
 
 | Type                                                           | Default   |
 | -------------------------------------------------------------- | --------- |
@@ -567,7 +567,7 @@ See [RefreshControl](refreshcontrol).
 Using this property may lead to bugs (missing content) in some circumstances - use at your own risk.
 :::
 
-When `true`, offscreen child views are removed from their native backing superview when offscreen. This may improve scroll performance for large lists. On Android the default value is `true`.
+When `true`, offscreen child views are removed from their native backing superview when offscreen. This may improve scroll performance for large lists. On Android the default value is `false`.
 
 | Type    |
 | ------- |

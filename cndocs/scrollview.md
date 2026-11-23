@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
 - **在沿可滚动轴的方向上**，内边距会变为内容内边距，因此内容会滚动到系统 UI（例如状态栏或主屏幕指示条）下方。
 - **在垂直于可滚动轴的方向上**，除 `'never'` 之外的每个值都会用内边距为内容容器留出空间，因此内容会布局在系统 UI 之外，例如 iPhone Duo 上的侧边栏或横屏时的摄像头挖孔。容器的背景和滚动指示器仍会延伸到屏幕边缘。
 
-在每个边缘上，来自 [`contentContainerStyle`](#contentcontainerstyle) 的 padding 都会计入内边距，因此内容会位于两者中较大的那个位置。
+对于 [`contentContainerStyle`](#contentcontainerstyle) 中以像素为单位的 padding，如果某个边缘适用安全区域内边距，则取两者中较大的值。[百分比 padding 的处理方式](#contentcontainerstyle)有所不同。
 
 | 类型                                                           | 默认值    |
 | -------------------------------------------------------------- | --------- |
@@ -563,7 +563,7 @@ _仅 iOS 可用的值_
 使用此属性在某些情况下可能导致缺陷（内容缺失）——请自行承担风险。
 :::
 
-当为 `true` 时，屏幕之外的子视图会从其原生父视图（native backing superview）中移除。这可以提升大列表的滚动性能。在 Android 上默认值为 `true`。
+当为 `true` 时，屏幕之外的子视图会从其原生父视图（native backing superview）中移除。这可以提升大列表的滚动性能。在 Android 上默认值为 `false`。
 
 | 类型    |
 | ------- |
