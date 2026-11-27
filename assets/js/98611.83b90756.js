@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_native_website=self.webpackChunkreact_native_website||[]).push([["98611"],{109502(e,t,c){c.d(t,{createArchitectureServices:()=>a.S});var a=c(686571);c(404462)}}]);
